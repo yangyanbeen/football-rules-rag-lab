@@ -150,3 +150,25 @@ python scripts/manage_delivery_manifest.py --verify
 新结果：reports/acceptance/task123_recheck_summary.json；逐项基线与限制：reports/TASK_01_03_REDELIVERY.md；当前操作权威说明：docs/TASK_01_03_SUPPLEMENT.md。
 
 历史UI三问保留原日期与哈希，不描述为本轮浏览器三问；本轮新跑的是后端开发题。未进行全新依赖安装、正式检索评测或性能优化。原工程178项静态文件未变；本地全文、账号、数据库和完整模型输出不进公开Git。
+
+## TASK-001-003-FRESH：独立环境与浏览器缺项关闭（2026-11-11）
+
+基于 main 40c2e9432121178427cae4c3010cdae2a3e9fbf9，分支 fix/task-02-fresh-ui-and-runtime。用户要求完成交付报告未完成的缺陷。原技术/执行文档、任务标准、Corpus B0 不变。
+
+- 在新目录取得官方固定 commit 的干净源码；独立 Python 发行版和 uv 工具由本机副本复制到新目录，虚拟环境重新建立。原 uv.lock 导出 260 个核心依赖，require-hashes 安装，加两个 editable 固定源码包，共 262 项；版本、包和解释器位置实际验证。未安装可选高级 torch/图/开发 extras，没有复制旧虚拟环境或数据库。
+- 首次全量离线 uv sync 因未缓存 torch 失败；独立环境重建曾遇 uv 默认全局缓存跨盘错误，改用本项目缓存后完成。脚本最终默认选本目录独立 Python，离线重复安装实际退出 0。失败和成功日志均在忽略的 .runtime/fresh-runtime-20261111。
+- prepare_kotaemon_assets.py 下载真实 NLTK punkt/punkt_tab 并按发布者 SHA-256 核验；官方 raw 不通时使用同一官方仓库 GitHub API，资源不伪造。缓存可在虚拟环境重建后复用。新配置仅启用 Ollama/私有文件集合，无未安装图依赖或远程 tokenizer 启动重试。
+- 新空数据库先留存 admin/零文件证明；通过浏览器创建普通账号 yanyanbeen，退出 admin，浏览器上传五份原 MD，5/5 成功、50 临时块。正文哈希均与冻结数据一致；未转移 admin 私有资料。
+- 浏览器首问发现上游在关闭重排时仍提前读取空重排池，实际报 No models in pool。增加本地工厂明确不实例化重排/相关性打分，继续用原检索和文件范围；上游源码保持干净。重启新实例 7861 后实际重新输入 Q1/Q2/Q3，逐段原文、信息面板和来源 URL 均通过。原 7860 实例保留。
+- 本机原始 UI 证据：.runtime/fresh-runtime-20261111/ui-three-dom.json；公开摘要：reports/evidence/fresh_ui_three_questions.json。完整答案/DOM/凭据/数据库/模型不公开。
+- 检查器首轮把未填充的 relation.user 当作所有权而报 29/30；按上游真实 Source 所有权关联计数修正，保留失败回执，不改数据或标准。
+
+实际统一命令（原工程/变更前快照路径仅本机提供）：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delivery.ps1 -UiCapture .runtime/fresh-runtime-20261111/ui-three-dom.json -OriginalRoot <原工程目录> -OriginalSnapshot <变更前快照JSON>
+```
+
+实际退出 0：综合 33/33，UI 3/3，开发回归 16/16，引用契约 19/19；任务三原校验 18/18、suite 8/8、坏数据拒绝 16/16。10 个冻结文件、4 个历史前缀、61 个本地语料和原工程 178 个静态文件未变。Chroma 仅保留候选容量自动收敛提示。资料资格说明保留，任务四至十四未完成，不编造正式检索/答案/延迟成绩。
+
+当前操作说明 docs/PUBLIC_SETUP.md、docs/FRESH_ACCEPTANCE.md；当前交付 reports/TASK_01_03_REDELIVERY.md；实测 reports/acceptance/fresh_delivery.json。后续按小提交、PR 合并和标签管理；只写新仓库 football-rules-rag-lab，原有其他仓库只读。

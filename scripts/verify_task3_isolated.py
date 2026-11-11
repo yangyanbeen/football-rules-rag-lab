@@ -60,7 +60,7 @@ def main():
         'generated_at': datetime.now(timezone(timedelta(hours=8))).isoformat(timespec='seconds'),
         'criteria': 'Original task 3, unchanged',
         'execution': {'python_version': sys.version.split()[0],
-                      'python_scope': 'Explicit interpreter; may reuse the original local environment',
+                      'python_scope': 'This checkout virtualenv' if Path(sys.prefix).resolve() == (ROOT / '.venv').resolve() else 'Explicit external interpreter',
                       'fixture': fixture.relative_to(ROOT).as_posix(), 'exit_code': process.returncode,
                       'stdout': process.stdout, 'stderr': process.stderr},
         'input_files_unchanged': unchanged,

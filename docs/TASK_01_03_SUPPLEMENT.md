@@ -15,7 +15,13 @@
 
 这次补的是前三项任务的交付完整性和复核入口，没有提前替代任务四至十四。
 
-## 可复核的完整入口
+## 当前独立环境入口
+
+上一轮依赖原环境的缺项已关闭：新实例 http://127.0.0.1:7861/，普通账号拥有五份原资料，浏览器三问重新完成。原锁文件、原标准和 Corpus B0 不变。核心依赖 260 个、固定本地包两个；不包含可选高级/图/开发 extras。
+
+按 [PUBLIC_SETUP](PUBLIC_SETUP.md) 安装，按 [FRESH_ACCEPTANCE](FRESH_ACCEPTANCE.md) 采集新 UI 证据并执行 `scripts/recheck_fresh_delivery.ps1`。当前回执 `reports/acceptance/fresh_delivery.json` 为 33/33，旧回执不覆盖。
+
+## 上一轮复用原环境的完整入口（历史）
 
 先按原 LOCAL_SETUP 启动既有 Ollama 与 Kotaemon。对已有固定环境执行：
 

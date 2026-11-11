@@ -6,5 +6,7 @@
 - 配置示例：根目录 `.env.example`；原启动器不会自动加载它，须按文档设置环境或页面配置。
 - 资源准备和兼容：`scripts/prepare_kotaemon_assets.py`、`kotaemon_runtime_env.py`。
 - 安装入口：[PUBLIC_SETUP](../docs/PUBLIC_SETUP.md)；历史已执行记录：[LOCAL_SETUP](../docs/LOCAL_SETUP.md)。
+- 当前核心安装：`scripts/install_local_runtime.ps1`，本目录独立 Python/虚拟环境；从原锁导出核心依赖，260 + 两个源码包。可选高级/图/开发 extras 不包含。
+- 当前复核：[FRESH_ACCEPTANCE](../docs/FRESH_ACCEPTANCE.md)，新实例 7861；未复用旧虚拟环境或索引数据库，显式复用本机 Ollama 模型服务。
 
 本轮不增加 Docker、远程部署或 CI 模型任务；这些尚未在原任务中完成。

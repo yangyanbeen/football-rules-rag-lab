@@ -25,9 +25,12 @@ def configure_local_runtime() -> dict:
     if cache is None:
         raise FileNotFoundError("The verified cl100k_base tokenizer cache is missing; prepare the runtime assets described in docs/LOCAL_SETUP.md before startup.")
     os.environ["TIKTOKEN_CACHE_DIR"] = str(cache)
-    nltk_cache = root / ".venv/Lib/site-packages/llama_index/core/_static/nltk_cache"
-    if (nltk_cache / "corpora/stopwords").is_dir() and (nltk_cache / "tokenizers/punkt_tab").is_dir():
-        os.environ.setdefault("NLTK_DATA", str(nltk_cache))
+    nltk_candidates = [root / '.cache/nltk_data', root / '.venv/Lib/site-packages/llama_index/core/_static/nltk_cache']
+    nltk_cache = next((p for p in nltk_candidates if all((p / item).is_file() for item in (
+        'corpora/stopwords/english', 'tokenizers/punkt/english.pickle',
+        'tokenizers/punkt_tab/english/abbrev_types.txt', 'tokenizers/punkt_tab/english/ortho_context.tab'))), None)
+    if nltk_cache:
+        os.environ['NLTK_DATA'] = str(nltk_cache)
     bypass = [item.strip() for item in os.environ.get("NO_PROXY", "").split(",") if item.strip()]
     for address in ("127.0.0.1", "localhost", "::1"):
         if address not in bypass:
