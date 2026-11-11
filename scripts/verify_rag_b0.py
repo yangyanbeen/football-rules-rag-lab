@@ -12,8 +12,8 @@ from unittest.mock import patch
 
 from eval_dataset import ROOT, digest, load_jsonl, write_json
 from dense_index import DEFAULT_INDEX, inventory
-from rag_b0 import (CONFIG, RagB0Engine, PinnedChat, load_config, normalize_query,
-                    pack_context, passages_for, validate_payload, citations_for, render_panel)
+from rag_b0 import (CONFIG, RagB0Engine, PinnedChat, GenerationRejected, load_config, normalize_query,
+                    pack_context, passages_for, parse_generated_text, validate_payload, citations_for, render_panel)
 from rag_b0_worker_client import call_worker
 
 BASE='0f6abdcc2b5ef8f35b9add68e0a1c15ee56f7fff'
@@ -52,9 +52,12 @@ def main():
         for m in r['retrieval']['results']:
             original=corpus[m['chunk_id']]
             aligned &= m['content_zh']==original['content_zh'] and m['metadata']=={k:v for k,v in original.items() if k!='content_zh'}
-        selected,messages,schema,size=pack_context(r['normalized_query'],r['retrieval']['results'],cfg,prompt)
+        effective_prompt=r['messages'][0]['content']
+        selected,messages,schema,size=pack_context(r['normalized_query'],r['retrieval']['results'],cfg,effective_prompt)
         budget &= selected==r['context'] and messages==r['messages'] and size==r['prompt_utf8_bytes'] and size<=cfg['input_utf8_byte_budget']
-        statements=validate_payload(r['generation']['parsed_payload'],selected,cfg)
+        parsed=parse_generated_text(r['generation']['raw_content'],selected,cfg)
+        valid &= parsed==r['generation']['parsed_payload']
+        statements=validate_payload(parsed,selected,cfg)
         valid &= citations_for(statements,selected)==r['citations']
     record('retrieved_original_bodies_and_all_metadata_exact',aligned)
     record('whole_blocks_and_exact_prompt_budget_reproducible',budget)
@@ -80,8 +83,10 @@ def main():
         'refusal_html':{'answerable':False,'statements':[],'refusal_reason':'<b>错误</b>'},
         'answer_with_refusal_reason':{**payload,'refusal_reason':'矛盾'},
         'excess_statements':{**payload,'statements':payload['statements']*5},
-        'overlong_statement':{**payload,'statements':[{'text':'中'*161,'passage_id':pid}]},
+        'overlong_statement':{**payload,'statements':[{'text':'中'*321,'passage_id':pid}]},
         'unsupported_numeric_fact':{**payload,'statements':[{'text':'该数值为98765米。','passage_id':pid}]},
+        'incomplete_sentence':{**payload,'statements':[{'text':'这句话还没讲完','passage_id':pid}]},
+        'repeated_sentence':{**payload,'statements':[{'text':'这是一句重复的完整回答。这是一句重复的完整回答。','passage_id':pid}]},
     }
     for name,value in cases.items():record('reject_'+name,rejects(lambda v=value:validate_payload(v,offered,cfg)))
     chat=PinnedChat(cfg)
@@ -94,7 +99,7 @@ def main():
         ('unfinished',{'done':False,'done_reason':'stop'}),
         ('context_overflow',{'done':True,'done_reason':'stop','prompt_eval_count':cfg['llm']['num_ctx']})):
         response_request.response=response
-        with patch.object(chat,'request',side_effect=response_request):record('reject_model_'+name,rejects(lambda:chat.generate([],{})))
+        with patch.object(chat,'request',side_effect=response_request):record('reject_model_'+name,rejects(lambda:chat.generate([])))
     with patch.object(chat,'request',return_value={'version':'wrong'}):record('reject_ollama_version_change',rejects(chat.verify_model))
     with patch.object(chat,'request',side_effect=[{'version':cfg['llm']['ollama_version']},{'models':[]}]) :
         record('reject_missing_pinned_model',rejects(chat.verify_model))
@@ -107,7 +112,20 @@ def main():
         record('service_failure_fails_closed_with_trace',failure['status']=='refused' and failure['error'].startswith('RuntimeError:') and not failure['citations'] and not failure['generation_attempted'])
         official=engine.answer('请给出2026赛季现行IFAB官方规则')
         record('official_unverified_version_refused_before_generation',official['status']=='refused' and official['refusal_reason']=='official_version_not_verified' and not official['generation_attempted'])
+        rejected={'model':cfg['llm']['name'],'done':True,'done_reason':'length',
+                  'message':{'content':'ANSWER: 未完成的回答'},'prompt_eval_count':100,'eval_count':1024}
+        with patch.object(engine.index,'query',return_value=rows[0]['retrieval']),patch.object(engine.chat,'generate',side_effect=GenerationRejected('deliberate truncation',rejected)):
+            truncated=engine.answer('规则查询')
+        record('truncated_response_preserved_and_retry_bounded',truncated['status']=='refused' and len(truncated['attempts'])==cfg['max_generation_attempts'] and
+               all(a['generation']['raw_content']==rejected['message']['content'] and a['validation_error'] for a in truncated['attempts']))
+        refusal={'model':cfg['llm']['name'],'done':True,'done_reason':'stop','message':{'content':'REFUSE: 资料中没有直接依据。'}}
+        with patch.object(engine.index,'query',return_value=rows[0]['retrieval']),patch.object(engine.chat,'generate',return_value=refusal):
+            refused=engine.answer('规则查询')
+        record('valid_refusal_is_not_retried',refused['status']=='refused' and len(refused['attempts'])==1)
     finally:engine.close()
+    record('missing_text_prefix_rejected',rejects(lambda:parse_generated_text('没有规定前缀的回答。',offered,cfg)))
+    record('real_smoke_attempts_and_budgets_bounded',all(1<=len(r['attempts'])<=cfg['max_generation_attempts'] and
+        all(a['prompt_utf8_bytes']<=cfg['input_utf8_byte_budget'] for a in r['attempts']) for r in rows))
     with patch('rag_b0_worker_client.subprocess.run',side_effect=OSError('deliberate unavailable worker')):
         worker=call_worker('资料查询')
     record('worker_failure_fails_closed',worker['status']=='refused' and worker['refusal_reason']=='isolated_worker_failed' and not worker['citations'])
@@ -116,7 +134,9 @@ def main():
     ui_path=ROOT/'.runtime/rag-b0/ui-captures.jsonl'
     captures=load_jsonl(ui_path);journal={r['trace_id']:r for r in load_jsonl(ROOT/'.runtime/rag-b0/ui-events.jsonl')}
     mixed=journal['6634f9e466e149fd8ca17024ade83a8e']
-    record('actual_prior_ui_numeric_citation_error_now_rejected',rejects(lambda:validate_payload(mixed['generation']['parsed_payload'],mixed['context'],cfg)))
+    mixed_payload=copy.deepcopy(mixed['generation']['parsed_payload'])
+    for statement in mixed_payload['statements']:statement['passage_id']=statement['passage_id'].split(':')[0]+':full'
+    record('actual_prior_ui_numeric_citation_error_now_rejected',rejects(lambda:validate_payload(mixed_payload,mixed['context'],cfg)))
     visible=True
     for c in captures:
         r=journal[c['trace_id']]

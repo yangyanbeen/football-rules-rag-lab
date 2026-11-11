@@ -33,6 +33,8 @@ def main():
         ('isolated-server.err.log','Pinned ChatPage required selector inputs even for a fixed corpus; supplied a read-only BaseIndex/selector contract without another actual vector index.'),
         ('attempt1-ui-events.jsonl','Initial UI attempt included a real cross-paragraph numeric/source mismatch and a truncated generation. Final B0 caps generation context to one whole chunk, limits statement length, rejects numeric facts absent from the cited paragraph, and preserves incomplete raw responses.'),
         ('attempt4-smoke.jsonl','The preceding backend smoke passed 3+1 before the independent UI surfaced additional failures; retained rather than overwritten or used as final UI proof.'),
+        ('attempt5-smoke.jsonl','Paragraph numbering inside a short answer was rejected by numeric/source checks. Final source addressing uses one complete chunk.'),
+        ('attempt6-smoke.jsonl','Constrained JSON string limits still allowed repeated text and mid-sentence endings despite correct IDs. Final model API uses simple ANSWER:/REFUSE: text; application validates and binds the only supplied evidence, rejecting repetitions and incomplete sentences.'),
     ]
     records=[]
     for name,note in observations:

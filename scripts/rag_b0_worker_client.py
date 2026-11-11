@@ -23,7 +23,7 @@ def call_worker(question=None, check=False):
     try:
         with WORKER_LOCK:
             proc=subprocess.run(command,cwd=ROOT,env={**os.environ,'PYTHONIOENCODING':'utf-8','PYTHONDONTWRITEBYTECODE':'1'},
-                capture_output=True,text=True,encoding='utf-8',timeout=240,
+                capture_output=True,text=True,encoding='utf-8',timeout=420,
                 creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
         if proc.returncode:
             trace.with_suffix('.stderr.log').write_text(proc.stderr,encoding='utf-8')

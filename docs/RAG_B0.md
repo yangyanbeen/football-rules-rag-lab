@@ -9,9 +9,9 @@
   → 独立Python问答进程（每条请求新建，串行）
   → NFKC + 首尾/连续空白规范化
   → 任务五BGE-M3查询Embedding → 正式Chroma Dense Top5
-  → 按输入预算保留完整知识块，按原空行给段落临时编号
-  → 本机Qwen2.5:3b结构化生成中文text并选择passage_id
-  → 校验结构/已提供段落ID，恢复原文和原始来源metadata
+  → 按输入预算保留1个完整知识块
+  → 本机Qwen2.5:3b生成ANSWER:答案或REFUSE:原因
+  → 校验前缀、完整性、重复及数值，程序绑定该唯一证据的原始来源
   → 显示回答引用、完整知识块、许可、版本与审校状态
 ```
 
@@ -28,23 +28,25 @@
 | Top-K | 固定5；score=1-distance，不是答案置信概率 |
 | 生成模型 | qwen2.5:3b，Q4_K_M，digest 357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b |
 | 推理参数 | Ollama0.40.16；CPU8线程、num_gpu=0、temperature=0、seed=42、num_ctx=8192、num_predict=1024 |
-| 提示词 | config/rag_b0_system.txt；grounded-generation-v5，确切SHA见每条trace |
+| 提示词 | config/rag_b0_system.txt；grounded-text-v7，确切SHA见每条trace |
 | 配置 | config/rag_b0.json；每条trace记录配置SHA、提示词SHA和索引manifest SHA |
-| 接口 | http://127.0.0.1:11434/api/chat；非流式、结构化JSON，无付费Key |
+| 接口 | http://127.0.0.1:11434/api/chat；非流式文本生成，无付费Key |
 
-Ollama官方说明支持JSON Schema形式的format和stream=false；本实现另行校验done_reason、模型digest及实际token计数。[Chat API](https://docs.ollama.com/api/chat)、[结构化输出](https://docs.ollama.com/capabilities/structured-outputs)。
+本实现使用stream=false，校验done_reason、模型digest及实际token计数。早期尝试JSON Schema约束生成，实际出现重复续写和残句，最终移除模型端format约束；应用内部仍使用严格字段校验。[Ollama Chat API](https://docs.ollama.com/api/chat)。
 
 ## 3. 证据预算和引用
 
-问题规范化后最多1200 UTF-8字节。messages连同响应schema的序列化输入预算6200 UTF-8字节，另留512模板token和1024输出token；对当前Qwen字节BPE采取保守上界，并检查实际prompt_eval_count。6200字节不等于6200个汉字或token。
+问题规范化后最多1200 UTF-8字节。messages连同应用内部校验schema的保守序列化预算6200 UTF-8字节（只有messages送入模型），另留512模板token和1024输出token；对当前Qwen字节BPE采取保守上界，并检查实际prompt_eval_count。6200字节不等于6200个汉字或token。
 
 固定召回Top5，当前生成证据上限为1个完整知识块；按排名尝试，若整块超预算则检查后续候选。不截断块内条件、表格或校核提示。该保守B0设置是在临时页面检查发现混用相似块数值后选定，没有读取锁定评测题；不声明它优于多块上下文，跨块问题可能因证据不足拒答。完整Top5、实际送入的context、精确messages/schema与字节数分别记录，候选召回与生成上下文不混为一谈。本阶段没有压缩/重切Corpus B0或修改Task5索引。
 
-passage_id形如L01-03:p1，只是本次原块按双换行划分的原段地址，不是新chunk版本。模型只返回text和已有passage_id；程序从该地址恢复chunk_id及完整support_quote。这样避免让模型重新抄写来源时改字。引用示例形式为`[L01-03 · 第1条 · L187–L189](原source_url)`；URL、规则号和行号均取原metadata。
+内部passage_id形如L01-03:full，仅表示完整原知识块，不是新chunk版本；模型不生成这个ID。当前只提供一个完整证据块，程序将通过检查的答案绑定这个已提供块，并恢复完整support_quote。模型不负责抄写来源或生成引用。引用形式为`[L01-03 · 第1条 · L187–L189](原source_url)`；URL、规则号和行号均取原metadata。
 
 L起止行来自采集时的带行号网页快照，不是网页锚点或规则书页码。现有revision ID对应正文未独立回取核验，引用链接不冒充已验证的历史版本链接。
 
-最多3条生成结论，每条不超过160字；文本内的数字必须在其所引用的同一原段出现，避免把其他段的数值混进来。结构校验能证明引用段落实际被提供、摘录逐字来自原文；数字存在也不能证明生成text的每个结论必被该段语义蕴含。当前保留完整证据以便检查，正式答案质量、条件遗漏和拒答误判在任务十二评测，本任务不声明准确率。模型仍可能误拒答或错误选段。
+提示词要求尽量120字，应用硬上限320字符；不是通过截断正文实现限长，超长、残句或重复句子直接判为无效。答案内的数字必须在其引用的完整证据块出现。校验能证明来源实际被提供、摘录逐字来自原文；数字存在不能证明答案的每个结论都被证据语义蕴含。正式答案质量、条件遗漏和拒答误判在任务十二评测，本任务不声明准确率。
+
+格式、长度、重复或数值等校验失败时，最多额外重试一次；每次重新核算输入预算，保留各次精确messages、原响应、错误和token计数。正常证据不足拒答不重试，服务失败也不会无限重试；两次都无效时拒答。该策略可能增加延迟和token，没有宣称性能提升。界面不会展示被拒绝的中间输出。
 
 ## 4. 启动和试用
 

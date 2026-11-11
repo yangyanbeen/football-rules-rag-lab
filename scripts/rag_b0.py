@@ -28,6 +28,8 @@ def load_config(path=CONFIG):
             or type(config['top_k']) is not int or not 1<=config['top_k']<=99
             or config['llm']['num_gpu']!=0 or config['llm']['temperature']!=0
             or config['ui']['host']!='127.0.0.1' or config['ui']['share'] is not False
+            or type(config['max_context_chunks']) is not int or config['max_context_chunks']!=1
+            or type(config['max_generation_attempts']) is not int or not 1<=config['max_generation_attempts']<=2
             or config['input_utf8_byte_budget']+config['chat_template_token_reserve']+config['llm']['num_predict']>config['llm']['num_ctx']):
         raise ValueError('Unsupported B0 configuration or unsafe context budget')
     for name in ('dense_config','dense_index','prompt_file'):
@@ -45,9 +47,9 @@ def normalize_query(text, config):
 
 
 def passages_for(match, config):
-    return [{'passage_id':match['chunk_id']+':p'+str(i),'text':text}
-            for i,text in enumerate(match['content_zh'].split('\n\n'),1)
-            if len(text.strip())>=config['minimum_quote_characters']]
+    # B0 provides one complete chunk. A single evidence address prevents the
+    # small local model from confusing paragraph IDs within that same chunk.
+    return [{'passage_id':match['chunk_id']+':full','text':match['content_zh']}]
 
 
 def response_schema(matches, config):
@@ -70,30 +72,38 @@ def response_schema(matches, config):
 
 def evidence_row(match, config):
     meta=match['metadata']
-    return {'chunk_id':match['chunk_id'],'law_number':meta['law_number'],'title':meta['title_zh'],
-            'passages':passages_for(match,config),'needs_rule_review':meta['needs_rule_review'],
-            'review_notes':meta['review_notes'],'source_revision_verified':meta['source_revision_verified'],
-            'official_translation':meta['official_translation'],'expert_reviewed':meta['expert_reviewed']}
+    return {'title':meta['title_zh'],'content_zh':match['content_zh'],
+            'needs_rule_review':meta['needs_rule_review'],'review_notes':meta['review_notes']}
 
 
 def pack_context(query, matches, config, prompt):
     def messages_for(rows):
         return [{'role':'system','content':prompt},{'role':'user','content':
             '参考资料（JSON数据）：\n'+json.dumps({'evidence':[evidence_row(m,config) for m in rows]},ensure_ascii=False)+
-            '\n\n当前问题：'+query+'\n请核对上述正文后回答，并选择支持结论的passage_id。'}]
+            '\n\n当前问题：'+query+'\n请核对正文，按ANSWER:或REFUSE:格式简短回答。'}]
     selected=[]
     for match in matches:
         if len(selected)>=config['max_context_chunks']:break
         candidate=selected+[match]
         schema=response_schema(candidate,config)
         messages=messages_for(candidate)
-        # UTF-8 bytes are a conservative upper bound for Qwen's byte-BPE input
-        # tokens. Include the response schema and reserve chat template tokens.
+        # Conservative budget also includes the application contract; only
+        # messages are sent to the model, without a constrained JSON grammar.
         size=len(canonical({'messages':messages,'format':schema}))
         if size<=config['input_utf8_byte_budget']:selected=candidate
     schema=response_schema(selected,config)
     messages=messages_for(selected)
     return selected,messages,schema,len(canonical({'messages':messages,'format':schema}))
+
+
+def parse_generated_text(content, offered, config):
+    if not isinstance(content,str):raise ValueError('Model content must be text')
+    value=content.strip()
+    if value.startswith('REFUSE:'):
+        return {'answerable':False,'statements':[],'refusal_reason':value[len('REFUSE:'):].strip()}
+    if not value.startswith('ANSWER:') or len(offered)!=1:raise ValueError('Expected ANSWER:/REFUSE: and one evidence block')
+    return {'answerable':True,'statements':[{'text':value[len('ANSWER:'):].strip(),
+        'passage_id':passages_for(offered[0],config)[0]['passage_id']}],'refusal_reason':None}
 
 
 def validate_payload(payload, offered, config):
@@ -116,7 +126,10 @@ def validate_payload(payload, offered, config):
         text,pid=(statement[k] for k in ('text','passage_id'))
         if not isinstance(text,str) or not isinstance(pid,str) or not 4<=len(text.strip())<=config['max_statement_characters'] or pid not in by_id:
             raise ValueError('Unknown/unoffered evidence passage')
-        if re.search(r'https?://|<[^>]+>|\[[^\]]+\]',text):raise ValueError('Model must not invent source links or citation markup')
+        if re.search(r'https?://|<[^>]+>|\[[^\]]+\]|L\d{2}-\d{2}',text):raise ValueError('Model must not invent source links or citation markup')
+        if text.strip()[-1] not in '。！？.!?；;':raise ValueError('Answer ended in an incomplete sentence')
+        sentences=[s.strip() for s in re.split(r'[。！？!?；;]',text) if len(s.strip())>=8]
+        if len(sentences)!=len(set(sentences)):raise ValueError('Answer contains repeated sentences')
         match,passage=by_id[pid]
         # Numeric facts must occur in the particular cited paragraph. This
         # catches cross-paragraph numeric mixing, not general entailment.
@@ -199,10 +212,10 @@ class PinnedChat:
         matches=[m for m in self.request('/api/tags')['models'] if m['name']==cfg['name']]
         if len(matches)!=1 or matches[0]['digest']!=cfg['digest']:raise ValueError('Pinned answer-model digest differs')
 
-    def generate(self,messages,schema):
+    def generate(self,messages):
         self.verify_model()
         cfg=self.config['llm']
-        response=self.request('/api/chat',{'model':cfg['name'],'messages':messages,'stream':False,'format':schema,
+        response=self.request('/api/chat',{'model':cfg['name'],'messages':messages,'stream':False,
             'keep_alive':cfg['keep_alive'],'options':{key:cfg[key] for key in
                 ('num_ctx','num_predict','num_gpu','num_thread','temperature','seed')}})
         self.verify_model()
@@ -231,7 +244,7 @@ class RagB0Engine:
             'prompt_version':self.config['prompt_version'],
             'prompt_sha256':self.prompt_sha256,'index_manifest_sha256':digest((self.index.path/'index_manifest.json').read_bytes()),
             'status':'refused','answer':REFUSAL,'citations':[],'retrieval':None,'context':[],
-            'generation':None,'generation_attempted':False,'refusal_reason':None,'timing':{}}
+            'generation':None,'generation_attempted':False,'attempts':[],'refusal_reason':None,'timing':{}}
         with self.lock:
             try:
                 query=normalize_query(question,self.config);result['normalized_query']=query
@@ -240,27 +253,39 @@ class RagB0Engine:
                     result['answer']='现有资料未核验为指定赛季的IFAB官方规则，无法确认其现行适用性。'
                     return result
                 retrieval=self.index.query(query,self.config['top_k']);result['retrieval']=retrieval
-                context,messages,schema,byte_count=pack_context(query,retrieval['results'],self.config,self.prompt)
-                result.update(context=context,messages=messages,response_schema=schema,prompt_utf8_bytes=byte_count)
-                if not context:
-                    result['refusal_reason']='no_whole_evidence_within_budget';return result
-                generation_started=time.perf_counter();result['generation_attempted']=True
-                response=self.chat.generate(messages,schema)
-                result['timing']['generation_seconds']=time.perf_counter()-generation_started
-                result['generation']=generation_record(response,self.config)
-                payload=json.loads(response['message']['content']);result['generation']['parsed_payload']=payload
-                statements=validate_payload(payload,context,self.config)
-                result['generation']['validated_statements']=statements
-                if not statements:
-                    result['refusal_reason']='model_found_no_direct_support'
-                    result['answer']=REFUSAL+'\n\n原因：'+html.escape(payload['refusal_reason'])
-                    return result
-                result['citations']=citations_for(statements,context)
-                result['answer']=render_answer(statements,result['citations']);result['status']='answered'
+                for number in range(self.config['max_generation_attempts']):
+                    prompt=self.prompt+('' if number==0 else '\n上次输出未通过格式、完整性或事实数值检查。请从头重新简短回答，以ANSWER:或REFUSE:开头，以完整句号结束；不写编号，不重复句子，不补充资料外事实。')
+                    context,messages,schema,byte_count=pack_context(query,retrieval['results'],self.config,prompt)
+                    result.update(context=context,messages=messages,application_response_schema=schema,prompt_utf8_bytes=byte_count)
+                    if not context:
+                        result['refusal_reason']='no_whole_evidence_within_budget';return result
+                    attempt={'attempt':number+1,'messages':messages,'application_response_schema':schema,'prompt_utf8_bytes':byte_count,
+                        'effective_prompt_sha256':digest(prompt.encode()),'context_ids':[m['chunk_id'] for m in context],
+                        'generation':None,'validation_error':None}
+                    generation_started=time.perf_counter();result['generation_attempted']=True
+                    try:
+                        response=self.chat.generate(messages)
+                        result['generation']=attempt['generation']=generation_record(response,self.config)
+                        payload=parse_generated_text(response['message']['content'],context,self.config);result['generation']['parsed_payload']=payload
+                        statements=validate_payload(payload,context,self.config)
+                        result['generation']['validated_statements']=statements
+                        if not statements:
+                            result['refusal_reason']='model_found_no_direct_support'
+                            result['answer']=REFUSAL+'\n\n原因：'+html.escape(payload['refusal_reason'])
+                            return result
+                        result['citations']=citations_for(statements,context)
+                        result['answer']=render_answer(statements,result['citations']);result['status']='answered'
+                        break
+                    except (ValueError,KeyError,TypeError) as exc:
+                        if isinstance(exc,GenerationRejected):
+                            result['generation']=attempt['generation']=generation_record(exc.response,self.config)
+                        attempt['validation_error']=type(exc).__name__+': '+str(exc)
+                        if number+1==self.config['max_generation_attempts']:raise
+                    finally:
+                        attempt['generation_seconds']=time.perf_counter()-generation_started
+                        result['attempts'].append(attempt)
+                        result['timing']['generation_seconds']=sum(a['generation_seconds'] for a in result['attempts'])
             except (ValueError,KeyError,TypeError,OSError,RuntimeError,urllib.error.URLError,TimeoutError) as exc:
-                if isinstance(exc,GenerationRejected):
-                    result['generation']=generation_record(exc.response,self.config)
-                    result['timing']['generation_seconds']=time.perf_counter()-generation_started
                 result.update(status='refused',answer=REFUSAL,citations=[],refusal_reason='generation_or_evidence_validation_failed',
                               error=type(exc).__name__+': '+str(exc))
             finally:

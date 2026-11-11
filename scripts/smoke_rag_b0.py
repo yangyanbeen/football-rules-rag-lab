@@ -47,6 +47,11 @@ def main():
             retrieved_ids=[m['chunk_id'] for m in r['retrieval']['results']] if r['retrieval'] else [],
             context_ids=[m['chunk_id'] for m in r['context']],
             prompt_utf8_bytes=r.get('prompt_utf8_bytes'),
+            generation_attempt_count=len(r.get('attempts',[])),
+            attempts=[{'attempt':a['attempt'],'validation_error':a['validation_error'],
+                'prompt_eval_count':(a['generation'] or {}).get('prompt_eval_count'),
+                'eval_count':(a['generation'] or {}).get('eval_count'),
+                'generation_seconds':a['generation_seconds']} for a in r.get('attempts',[])],
             citations=[{k:c[k] for k in ('chunk_id','source_url','law_number','source_lines','content_zh_sha256',
                 'needs_rule_review','source_revision_verified','expert_reviewed','official_translation')} for c in r['citations']],
             generation={k:v for k,v in (r['generation'] or {}).items() if k in
