@@ -1,0 +1,14 @@
+{
+  "status": "FAIL",
+  "stage": "initial telemetry override integration",
+  "code_base": "80ae86a",
+  "observed_errors": [
+    "TypeError: Method capture overrides method from chromadb.telemetry.product.ProductTelemetryClient but does not have @override decorator",
+    "Full acceptance refused to load the incomplete index because index_manifest.json did not exist"
+  ],
+  "index_was_marked_ready": false,
+  "initial_separate_prototype_had_99_vectors_and_successful_query": true,
+  "private_logs": [".runtime/task5/build-initial.log", ".runtime/task5/query-first.log", ".runtime/task5/build-final.log"],
+  "fix": "Add required overrides decorator and validate telemetry component import before embedding; rebuild in a new empty canonical directory",
+  "scope": "Historical failure retained; not task five delivery"
+}

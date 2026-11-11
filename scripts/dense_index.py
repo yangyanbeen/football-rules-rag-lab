@@ -213,6 +213,9 @@ def inventory(path):
 
 
 def build(output=DEFAULT_INDEX, config_path=CONFIG):
+    # Import the configured telemetry component before costly model encoding;
+    # Chroma's Component metaclass validates overrides at import time.
+    from dense_telemetry import DisabledTelemetry
     began = time.perf_counter()
     cfg, output = load_config(config_path), safe_output(output)
     if output.exists() and (not output.is_dir() or any(output.iterdir())):
