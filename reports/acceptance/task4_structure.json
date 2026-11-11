@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-11-11T10:54:20.672456+00:00",
+  "captured_at": "2026-11-11T13:44:38.177942+00:00",
   "phase": "structure",
   "status": "PASS",
   "passed": 22,
@@ -240,7 +240,7 @@
     }
   },
   "human_review": {
-    "approved": 0,
+    "approved": 90,
     "total": 90
   },
   "does_not_prove": [

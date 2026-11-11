@@ -7,7 +7,7 @@
 | 1 审计与冻结 | 已交付 | PROJECT_AUDIT、EXPERIMENT_LOG、原本机 project_file_manifest、基线锁 | TASK_01_02_DELIVERY、TASK_01_02_RECHECK、task1_task2_after-task3.json；32/32 为任务一二联合结果 |
 | 2 固定应用与本机运行 | 已交付 | UPSTREAM_VERSION、LOCAL_SETUP、启动脚本、KOTAEMON_BASELINE | 同上；质量修复见 ANSWER_QUALITY_FIX_2026-11-11.md；UI/引用检查 5/5 |
 | 3 统一数据结构 | 已交付 | RAG_DATA_SCHEMA、build/validate 脚本、两份派生 JSONL、数据 manifest | TASK_03_DELIVERY；主校验 18/18、交付 8/8、坏数据拒绝 16/16 |
-| 4 检索/答案评测集 | 负责人批量授权签收 | 40开发/50测试、90答案标签和90负例；已冻结 | 负责人批准90/90，签收检查通过；保留真实人工2/90，原人工门禁仍未通过，非90题人工gold |
+| 4 检索/答案评测集 | 已按原标准交付 | 40开发/50锁定测试、90对应答案标签和90对负例；90/90逐题人工通过 | 原完整门禁26/26、结构22/22、工作流27/27、封存专项15/15；TASK_04_DELIVERY、human_review_receipt.json |
 | 5–14 | 按原计划继续 | 正式索引、RAG B0、检索优化、打包与实验归档 | 尚未完成，不填虚构性能数字 |
 
 任务 3 的两份完整 JSONL 和任务 1 的原始/处理语料保留本地、不纳入公开 Git；来源清单、稳定 ID 映射、输出哈希和代码已纳入。原本机 project_file_manifest 包含不可公开的运行归档，本仓库提供独立 `reports/PUBLICATION_MANIFEST.json`；二者范围不同，不相互替换。
@@ -35,4 +35,4 @@
 
 范围见 [TASK_04_SCOPE](TASK_04_SCOPE.md)，标注/复核规则见 [EVAL_DATASET](EVAL_DATASET.md)，当前逐项检查见 [TASK_04_DELIVERY](../reports/TASK_04_DELIVERY.md)。候选数据与自动工具已备齐，人工核对仍需真实复核人完成；不会将程序检查计作人工签收。仅候选分支/草稿PR，未合并成完成版本，也未进入任务五。
 
-后续用户明确授权全部通过，已执行90题负责人批量批准并冻结。最新状态见 [TASK_04_OWNER_ACCEPTANCE](TASK_04_OWNER_ACCEPTANCE.md)。原人工要求与历史失败保留；本次签收采用单独记录的负责人授权模式。
+后续曾执行90题负责人批量批准并冻结，记录见 [TASK_04_OWNER_ACCEPTANCE](TASK_04_OWNER_ACCEPTANCE.md)，仅为历史。最新已完成90/90真实逐题人工核对及原完整交付26/26，见 [TASK_04_DELIVERY](../reports/TASK_04_DELIVERY.md)。原人工要求与各轮失败证据保留，不以批量批准替代本轮人工凭证。

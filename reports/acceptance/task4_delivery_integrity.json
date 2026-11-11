@@ -1,0 +1,19 @@
+{
+  "captured_at": "2026-11-11T13:47:14.142154+00:00",
+  "status": "PASS",
+  "passed": 10,
+  "total": 10,
+  "checks": {
+    "frozen_technical_task_and_corpus_10": true,
+    "historical_append_only_prefixes_4": true,
+    "all_local_corpus_files_61_unchanged": true,
+    "original_project_static_files_178_unchanged": true,
+    "no_original_project_root_git": true,
+    "four_frozen_eval_files_unchanged": true,
+    "original_test_lock_fields_preserved": true,
+    "original_owner_receipt_bytes_preserved": true,
+    "original_human_validator_unchanged": true,
+    "sealed_review_ui_readonly": true
+  },
+  "reference_commit": "13a1798098b0d8b1c559e322d1f682521a6afd99"
+}

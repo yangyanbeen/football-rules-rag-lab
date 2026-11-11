@@ -1,0 +1,16 @@
+{
+  "captured_at": "2026-11-11T13:45:11.400Z",
+  "url": "http://127.0.0.1:7862/",
+  "progress": "负责人批量批准 90 / 90；逐题人工复核 90 / 90；测试已冻结",
+  "mode": "人工审核已完成并封存，本页只读。修订须另建版本，冻结测试不能用于调参。",
+  "approved": 90,
+  "total": 90,
+  "owner_approved": 90,
+  "locked": true,
+  "can_review": false,
+  "approve_disabled": true,
+  "reject_disabled": true,
+  "checked_count": 0,
+  "reviewer_field_empty": true,
+  "review_submitted_by_agent": false
+}

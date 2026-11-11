@@ -196,3 +196,24 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 - 代码：owner_approve_eval.py、UI状态更新、计分显式label-policy owner_approved；默认逐题人工策略保留。模型/检索预测未运行，无新增性能数字。
 - 签收性质：按负责人授权完成本轮批准与冻结，原人工质量条件的未满足事实继续保留。记录docs/TASK_04_OWNER_ACCEPTANCE.md、owner_approval_receipt.json及task4_owner_*；原候选失败和登记作为历史保存。
 - Git：追加小提交到PR #7，按负责人签收版本合并，版本v0.4.0-owner-approved；原有其他仓库与冻结语料不变。
+
+## TASK-004-HUMAN-REOPEN：开启冻结版本逐题人工审核（2026-11-11）
+
+- 用户指令：现在开启人工审核。在独立分支 feat/task-04-human-review 调整本地审核入口，不改原技术/任务标准。
+- 新增启动选项 --allow-frozen-human-review，允许对原冻结快照追加真人审核记录。默认启动仍禁止写入冻结版本；快照文件哈希变化时拒绝继续接收记录。
+- 修复页面按负责人批量批准跳过全部待人工题的问题；下拉列表分别标识真人通过与负责人批准，下一条只看实际人工状态。
+- 本机7862已使用该选项重启，浏览器已加载，两个判定按钮可用，四项检查未自动勾选。页面显示负责人90/90、实际人工2/90，保留以前记录；未代用户提交审核。
+- 本轮仅开启服务和查看页面，未运行新增自动化测试、正式检索或模型评测；没有新增人工通过或性能数据。原始冻结数据、测试锁与批准凭证保持原样。
+- 操作说明：docs/TASK_04_MANUAL_REVIEW.md。未完成的88题须由实际复核人阅读提交；全部审核后仍需完成原正式交付校验与人工发布状态处理。
+
+## TASK-004-HUMAN-DELIVER：90题人工核对后按原标准交付（2026-11-11）
+
+- 用户告知人工审核全部通过并要求验收交付。实际读取私有追加日志133条事件：90个当前问题最新判定均为human通过，时间、四项检查及annotation_sha256有效；没有把133条事件计成133题，也没有由本Agent生成真实人工记录。
+- 首轮原完整门禁24/26 FAIL，真实人工90/90已通过；仅缺人工发布状态及封存日志哈希，保留task4_before_human_release.json。
+- 新增受限的负责人冻结快照→人工签收元数据转换：必须原批准有效、结构通过、90题人工记录匹配。保留四份标签正文、99段语料、原测试锁定时间、测试SHA和使用历史；不解除锁、不放宽原验证器/技术或任务标准。
+- 暂停7862写入以封存日志，生成去姓名/备注的human_review_receipt.json，并更新发布状态与日志/凭证哈希。完整姓名、备注、原始勾选日志仍留本机忽略目录。日志SHA为1e7161c703bce47ae7a8c3d13dafa04a09009cd8ea5311cd082e4dce309fb464。
+- 实际执行freeze_eval_dataset.py、recheck_task4.ps1（完整模式）、verify_task4_human_release.py、owner_approve_eval.py、verify_task3_isolated.py。结果：结构22/22、原正式交付26/26、工作流27/27、16类坏数据拒绝；封存专项15/15，原负责人10项仍有效；原任务三18/18、8/8及16类坏数据拒绝，输入未变。
+- 重新冻结命令返回Already locked且不改文件。7862恢复为只读展示，人工90/90、测试冻结、提交按钮禁用；实际浏览器证据reports/evidence/task4_human_review_ui.json。封存后不继续追加审核，修订须另建数据版本。
+- 交付40开发题、50锁定测试题、90对应答案/拒答标签、90对负例；两集合各覆盖1—17条。原失败回执及负责人批准凭证保留为历史；最新依据reports/TASK_04_DELIVERY.md和task4_delivery_gate.json。
+- 没有运行真实检索/LLM评测、正式测试计分或调参，没有新增Recall/MRR/nDCG/延迟成绩，不宣称专家或官方赛季规则认证。后续任务五起另按原计划实施。
+- Git继续独立feat/task-04-human-review分支、小步提交、PR #8与发布标签管理，仅新仓库football-rules-rag-lab写入。

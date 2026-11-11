@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-11-11T12:33:39.641143+00:00",
+  "captured_at": "2026-11-11T13:44:41.009488+00:00",
   "status": "PASS",
   "scope": "Automated structure/arithmetic/adversarial checks ONLY; does not complete required real human annotation review.",
   "passed": 27,
@@ -427,8 +427,8 @@
     "validate_eval_dataset.py": "f943adc5eeab93296434b7b05edb1706272033a2913dbb2ea20ccb71fc5fdff5",
     "retrieval_metrics.py": "350759f655b78e43f4d0c4114a4a2c7d03b87c7281ac0cae40678bae15341168",
     "run_retrieval_metrics.py": "11021dfc06a8c6e3e765c051c594f598b6c2bea220ee78f7a96ce08d0d56eae5",
-    "freeze_eval_dataset.py": "c9f046b791d4d9641eb6a6e8434ff0912b22946ca477cc5e3155917da7cd297d",
-    "serve_eval_review.py": "4e1e1ecea327508ae36c13fca48155163df1abed8536f5f77940277596cfeb26",
+    "freeze_eval_dataset.py": "4fc6cfc20f6b7ff68e7ef7533d32151a715b6b9fa8f34719e91cbe310f01ebd7",
+    "serve_eval_review.py": "6debc4cb7d04b8f53fd94bf052992a593609274ab337be98168a27d75ac72cf4",
     "verify_task4_workflow.py": "ac9e2a335a2bcad115333281933d926addbe6ff458a90020b3aa00dbc049a689",
     "recheck_task4.ps1": "a5db6c1aacd83e1ab84579c52c8478c00e6814cb87b2c012e41ef3c9904da6d8"
   },

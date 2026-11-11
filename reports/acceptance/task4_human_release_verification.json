@@ -1,0 +1,76 @@
+{
+  "captured_at": "2026-11-11T13:44:42.450354+00:00",
+  "status": "PASS",
+  "passed": 15,
+  "total": 15,
+  "checks": [
+    {
+      "check": "real_full_human_delivery_passes",
+      "passed": true
+    },
+    {
+      "check": "public_receipt_hash_and_ledger_match",
+      "passed": true
+    },
+    {
+      "check": "public_records_omit_names_notes_and_checklists",
+      "passed": true
+    },
+    {
+      "check": "original_owner_receipt_still_valid",
+      "passed": true
+    },
+    {
+      "check": "original_lock_preserved",
+      "passed": true
+    },
+    {
+      "check": "promotion_rejects_missing_reviews_without_writes",
+      "passed": true
+    },
+    {
+      "check": "promotion_rejects_89_of_90_without_writes",
+      "passed": true
+    },
+    {
+      "check": "synthetic_approvals_never_count_as_real",
+      "passed": true
+    },
+    {
+      "check": "promotion_rejects_invalid_owner_provenance",
+      "passed": true
+    },
+    {
+      "check": "synthetic_only_promotion_passes_original_gate",
+      "passed": true
+    },
+    {
+      "check": "promotion_preserves_every_original_lock_field",
+      "passed": true
+    },
+    {
+      "check": "promotion_preserves_data_and_owner_receipt",
+      "passed": true
+    },
+    {
+      "check": "repeated_finalization_is_idempotent",
+      "passed": true
+    },
+    {
+      "check": "later_ledger_edit_invalidates_sealed_release",
+      "passed": true
+    },
+    {
+      "check": "real_eval_files_unchanged_by_fixtures",
+      "passed": true
+    }
+  ],
+  "actual_human_reviews_created": false,
+  "synthetic_records_only_under_ignored_tmp": true,
+  "real_dataset_scores_computed": false,
+  "implementation_sha256": {
+    "freeze_eval_dataset.py": "4fc6cfc20f6b7ff68e7ef7533d32151a715b6b9fa8f34719e91cbe310f01ebd7",
+    "owner_approve_eval.py": "3b768b2e362c11a4971bf533cc005eb2c77f93985ff322d3a37891f90948c9ee",
+    "verify_task4_human_release.py": "adc54929873c76c0d7d627869e2a81545a648d0634b84ed3f017bb02c93532b4"
+  }
+}
