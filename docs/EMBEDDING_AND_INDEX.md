@@ -69,6 +69,10 @@ $env:PYTHONDONTWRITEBYTECODE='1'
 
 本任务验收99条映射、持久化重载、非评测示例查询、从空目录真实重建、错误配置/模型/哈希/向量拒绝及原输入不变。具体命令、次数、环境与实测耗时记录在reports/TASK_05_DELIVERY.md、reports/acceptance/task5_*。
 
+已实际通过核心22项；本机加原工程保全2项为24/24，18种错误全部拒绝。统一入口`powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_task5.ps1`每次在新忽略目录重新编码99段，并导出无正文公开manifest/映射。可选OriginalRoot与OriginalSnapshot参数用于复核原工程；两者需一起提供。
+
+同一进程同一路径应复用一个DenseIndex实例；本阶段未验证Web并发或QPS，应用生命周期与并发管理留后续接入层。固定Chroma版没有公共close接口，本适配器只停止当前路径的系统并移除其缓存项，不reset/delete集合，也不清理其他路径的客户端。
+
 两次构建比较ID与向量数值，不要求Chroma SQLite/HNSW文件字节相同；集合UUID、创建时间和存储布局可变化。向量比较使用明确的float32容差，不预设不同硬件或软件版本位级一致。构建耗时包含接口与写盘开销，单次查询smoke耗时不是P95或性能优化结论。
 
 任务五不解析或计分锁定测试问题，仅读其文件字节做哈希保全；不训练模型、不混BM25/RRF/Reranker/缓存、不测Recall/MRR。公开结果只证明索引可用。硬件存在GPU不代表本轮使用了GPU。

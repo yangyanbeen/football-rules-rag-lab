@@ -217,3 +217,17 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 - 交付40开发题、50锁定测试题、90对应答案/拒答标签、90对负例；两集合各覆盖1—17条。原失败回执及负责人批准凭证保留为历史；最新依据reports/TASK_04_DELIVERY.md和task4_delivery_gate.json。
 - 没有运行真实检索/LLM评测、正式测试计分或调参，没有新增Recall/MRR/nDCG/延迟成绩，不宣称专家或官方赛季规则认证。后续任务五起另按原计划实施。
 - Git继续独立feat/task-04-human-review分支、小步提交、PR #8与发布标签管理，仅新仓库football-rules-rag-lab写入。
+
+## TASK-005-DENSE：固定Embedding与99段持久化向量索引（2026-11-11）
+
+- 用户要求按同样标准执行原任务五。基线8e8b93c6556943b4d08ee82f2620a5bc21ee759a，分支feat/task-05-dense-index；原技术/任务标准、任务一至四数据和已有应用不改。
+- 本机核对i7-13650HX（14核/20逻辑线程）、物理内存16,858,472,448字节和已有模型环境。选择Ollama0.40.16的bge-m3:latest，精确digest7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab；1024维F16，强制CPU8线程、8192窗口、batch4、truncate=false。
+- 固定原完整section_path + content_zh模板，float32 L2归一化、Chroma0.5.16 cosine；模型前后digest校验、显式embedding_function=None。没有另装Torch、下载模型、重切表格或混入BM25/RRF/Reranker/缓存。
+- 首轮原型99段成功且独立查询可用，但Chroma/PostHog遥测签名提示；独立禁用遥测组件首次缺@override而失败，未产生READY清单，完整验收正确拒绝。补声明并前置导入检查；保留两次原输出和日志，不改site-packages/上游，不覆盖原工程或已交付索引。失败见task5_before_runtime_fix.json。
+- 最终代码真实构建data/indexes/dense：99×1024向量、Chroma持久化、原99行记录、位置/ID/正文及检索文本哈希映射、含实现/配置/输入/制品/运行环境的manifest。实际CPU构建43.811秒（Embedding43.062秒）；已有接口探测，非冷启动。
+- 实际完整命令：build_dense_index.py；recheck_task5.ps1 -OriginalRoot <原工程目录> -OriginalSnapshot <变更前快照JSON>。后者在新.tmp目录重新编码99段，43.070秒（Embedding42.336秒）；向量最大绝对差0.0，本次字节相同，跨硬件仍只约定明确float32容差，不要求Chroma数据库位级一致。
+- 结果：原标准完整24/24 PASS；18种无效输入/损坏索引拒绝。3条非评测示例各用2个新进程查询，ID/分数与原来源metadata一致；存储向量自查仅为契约检查，不是质量评测。正式回执task5_delivery_gate.json，smoke/hardware证据位于reports/evidence/。
+- 输入保全：原10冻结文件、4历史前缀、61本机语料、178原工程静态文件不变；任务四manifest、人工/负责人凭证及测试与基线逐字节相同，原工程无根Git。任务五对测试文件仅读字节哈希，不解析题目做参数选择或计分。
+- 分发：实际索引、向量、正文副本留本机忽略目录；仅公开config、dense_index_manifest.json和dense_chunk_ids.json等哈希元数据。不上传完整日志、账号或数据库。模型服务复用原本机Ollama，应用7860/7861/7862的代码/数据库未接管。
+- 交付：docs/EMBEDDING_AND_INDEX.md、reports/TASK_05_DELIVERY.md与当前状态索引已更新。小步提交、PR与版本标签保存；仅新football-rules-rag-lab仓库写入。
+- 本轮没有LLM回答、正式测试预测、Recall/MRR/nDCG、答案准确率、P95/QPS或优化提升数字；来源非官方/未专家审校边界不变。任务六起按原计划单独推进。

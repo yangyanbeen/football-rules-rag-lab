@@ -1,6 +1,6 @@
 {
   "manifest_version": "1.0.0",
-  "generated_at": "2026-11-11T13:47:14.254161+00:00",
+  "generated_at": "2026-11-11T14:31:25.572781+00:00",
   "scope": "Registry established at task 3; earlier original reports remain the historical evidence.",
   "experiments": [
     {
@@ -437,6 +437,155 @@
           "path": "reports/evidence/task4_human_review_ui.json",
           "size_bytes": 541,
           "sha256": "0fffcc979d5b91ca8d87e9791580808229a48a202546c6311d397002b7fee136"
+        }
+      ]
+    },
+    {
+      "id": "TASK-005-DENSE",
+      "objective": "Original task 5: pinned traceable 99-unit dense index with empty-directory rebuild",
+      "baseline": "Unchanged Corpus B0 and human-reviewed locked football-eval-0.1.0",
+      "main_variable": "Standalone pinned CPU BGE-M3 and Chroma index; no retrieval parameter experiment",
+      "dataset_version": "corpus-b0-rag-adapter-1.0.0",
+      "evaluation_version": "football-eval-0.1.0; hash-preservation only",
+      "code_base_commit": "8e8b93c6556943b4d08ee82f2620a5bc21ee759a",
+      "implementation_commit": "c3aa793",
+      "code_version_method": "Git PR plus exact implementation SHA-256 in acceptance/index manifests",
+      "model": {
+        "name": "bge-m3:latest",
+        "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+        "architecture": "bert",
+        "dimensions": 1024,
+        "context_length": 8192,
+        "quantization": "F16",
+        "ollama_version": "0.40.16"
+      },
+      "hardware": {
+        "gpu_vram_note": "Win32 adapter memory is not used to infer VRAM size; this run forces CPU and confirms size_vram=0.",
+        "captured_at": "2026-11-11T14:23:34.6685398Z",
+        "gpu_names": [
+          "Intel(R) UHD Graphics",
+          "NVIDIA GeForce RTX 4060 Laptop GPU"
+        ],
+        "computer": {
+          "TotalPhysicalMemory": 16858472448,
+          "NumberOfLogicalProcessors": 20
+        },
+        "cpu": {
+          "Name": "13th Gen Intel(R) Core(TM) i7-13650HX",
+          "NumberOfCores": 14,
+          "NumberOfLogicalProcessors": 20
+        },
+        "memory": {
+          "FreePhysicalMemory": 2757244,
+          "TotalVisibleMemorySize": 16463352
+        }
+      },
+      "environment": {
+        "python": "3.10.22",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "logical_cpus": 20,
+        "packages": {
+          "numpy": "1.26.4",
+          "chromadb": "0.5.16",
+          "chroma-hnswlib": "0.7.6"
+        }
+      },
+      "commands": [
+        "build_dense_index.py",
+        "recheck_task5.ps1 -OriginalRoot <prior project> -OriginalSnapshot <prior file hashes>",
+        "export_dense_manifest.py"
+      ],
+      "result": {
+        "index_records": 99,
+        "dimensions": 1024,
+        "full_gate": "24/24",
+        "invalid_cases_rejected": "18/18",
+        "build_seconds": 43.81099629999517,
+        "rebuild_seconds": 43.0695618000027,
+        "maximum_vector_difference": 0.0,
+        "retrieval_or_answer_metrics": "not measured"
+      },
+      "decision": "Task 5 delivered; original task 6 integration remains pending",
+      "artifacts": [
+        {
+          "path": "config/dense_index.json",
+          "size_bytes": 1613,
+          "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988"
+        },
+        {
+          "path": "scripts/build_dense_index.py",
+          "size_bytes": 626,
+          "sha256": "3905c09ddad3ee1a8b5f5db2ad8adf215601fc4abb7eebe9c457e5efb57158c3"
+        },
+        {
+          "path": "scripts/dense_index.py",
+          "size_bytes": 20242,
+          "sha256": "2feae6d25eba812338ebebab85ba78ed9d38673ef850bcd0fb48fddcd5ac84f6"
+        },
+        {
+          "path": "scripts/dense_telemetry.py",
+          "size_bytes": 489,
+          "sha256": "a4feda38a98504a437e614b55d9cb15a79be3fd0ca77444be7ad67277537d179"
+        },
+        {
+          "path": "scripts/query_dense_index.py",
+          "size_bytes": 927,
+          "sha256": "82995c42d2d61e96a2204de73bd5314a3d54499655a4989b25136a2e19ea5b59"
+        },
+        {
+          "path": "scripts/verify_task5_delivery.py",
+          "size_bytes": 14316,
+          "sha256": "11e74eab9554c746ff0092f5939e735b7c6a2db7ee226939856c23968743da2c"
+        },
+        {
+          "path": "scripts/recheck_task5.ps1",
+          "size_bytes": 1041,
+          "sha256": "4ddf2eaeec279ea1b977b82aed2568a32687147443a49f1452637fc502e390fb"
+        },
+        {
+          "path": "scripts/export_dense_manifest.py",
+          "size_bytes": 857,
+          "sha256": "9468e4d5d84a66e116d235d1c661a4e47f0dca5e3f5b12424099c79430ff6a5b"
+        },
+        {
+          "path": "docs/EMBEDDING_AND_INDEX.md",
+          "size_bytes": 7086,
+          "sha256": "92506bc7e608af2448bbaad7819395d81970c85cd9767139d30d24d64474b2dd"
+        },
+        {
+          "path": "reports/TASK_05_DELIVERY.md",
+          "size_bytes": 7406,
+          "sha256": "6594affa6fb9ad952954a6bf8253c0efdfb7823bb8c641e2cb1e25d1dfeab7c2"
+        },
+        {
+          "path": "reports/acceptance/task5_delivery_gate.json",
+          "size_bytes": 17142,
+          "sha256": "6c8509e21c1461a1de65bb216f7d6ab9bce4218313517665db9987fa2ad7aa1e"
+        },
+        {
+          "path": "reports/acceptance/task5_final_integrity.json",
+          "size_bytes": 1069,
+          "sha256": "a57b527f3d91b9e883470330022a317aa8aab347117841b561c30690ce67db89"
+        },
+        {
+          "path": "reports/evidence/task5_dense_smoke.json",
+          "size_bytes": 5879,
+          "sha256": "902294943316ae6b74230dc31a6aa63a92d5ced8c4c51100c1f4f6800f61ad50"
+        },
+        {
+          "path": "reports/evidence/task5_hardware.json",
+          "size_bytes": 606,
+          "sha256": "f007f1da8ae83bee5d8b8abe8ad9c50be211210fcc317cde94e55e4f0513a713"
+        },
+        {
+          "path": "data/manifests/dense_index_manifest.json",
+          "size_bytes": 11745,
+          "sha256": "9ea5d0403acb9ccaae8185623cf3cd66f834f555f7d839fa12cdbc8f60b2d557"
+        },
+        {
+          "path": "data/manifests/dense_chunk_ids.json",
+          "size_bytes": 32967,
+          "sha256": "0bdff8a39d7a458d586fecb921582224ad7a854cc3bf6fa589e04a1150b95b61"
         }
       ]
     }
