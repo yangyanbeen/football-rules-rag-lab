@@ -1,0 +1,119 @@
+{
+  "task": 3,
+  "criteria": "Unchanged task 3 in docs/DEVELOPMENT_PLAN_AND_REPORT.md",
+  "generated_at": "2026-11-11T15:43:54+08:00",
+  "command": ".venv/Scripts/python.exe scripts/validate_rag_dataset.py --data-dir data/processed --report reports/task3_dataset_validation.json",
+  "summary": {
+    "documents": 5,
+    "chinese_records": 99,
+    "parallel_records": 99,
+    "unique_ids": 99,
+    "available_source_pages": 18,
+    "referenced_source_pages": 17,
+    "null_parent_ids": 99,
+    "chunk_types": {
+      "paragraph": 98,
+      "table": 1,
+      "unknown": 0
+    },
+    "needs_rule_review": 28,
+    "expert_reviewed": 0
+  },
+  "manifest": "data/manifests/rag_dataset_manifest.json",
+  "dataset_content_id": "77aea70e0e19e08b4bf3f041e22af8d5c979416cc43b7670a6ef702ee26edce0",
+  "checks": [
+    {
+      "check": "original_technical_task_and_Corpus_B0_files_unchanged",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "existing_report_prefixes_preserved",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "frozen_inputs_have_99_unique_aligned_IDs_and_18_sources",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "both_outputs_preserve_all_99_original_IDs_in_order",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "required_fields_and_types",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "stable_chunk_and_source_IDs",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "Chinese_and_English_content_match_input_by_ID",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "all_original_metadata_preserved",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "source_URL_lines_and_version",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "license_attribution_and_acquisition",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "translation_review_status_and_notes",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "hashes_match_actual_text_and_records",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "parent_IDs_and_structure_types",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "provenance_paths",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "Chinese_and_parallel_shared_fields_match_by_ID",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "dataset_manifest_hashes_versions_and_99_ID_mapping",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "summary_matches_actual_records_and_manifest",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "check": "table_headers_rows_conditions_and_review_notes_preserved_whole",
+      "passed": true,
+      "errors": []
+    }
+  ],
+  "passed_checks": 18,
+  "total_checks": 18,
+  "status": "PASS"
+}
