@@ -1,0 +1,78 @@
+{
+  "captured_at": "2026-11-10T23:18:53+08:00",
+  "purpose": "Hashes captured before task 1/2 delivery supplements. Technical design and original task specification remain unchanged; original Corpus B0 is preserved.",
+  "files": [
+    {
+      "path": "docs/TECHNICAL_DESIGN.md",
+      "size_bytes": 17821,
+      "sha256": "aa320f48dbfb27a7c55b2c3d599dd48fab23509d85aa73ba470cbc9bb61778b9"
+    },
+    {
+      "path": "docs/DEVELOPMENT_PLAN_AND_REPORT.md",
+      "size_bytes": 22690,
+      "sha256": "acb3bb80dd4401b751476ce36437657e2d3a3dc59db4d3d25106b81d11c9bd96"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/01_场地器材与队员.md",
+      "size_bytes": 15214,
+      "sha256": "23ccd5914b1f3649b9a5216314ce5dad7ea7e5cc72cd289ccadca415f44a938c"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/02_裁判比赛流程与结果.md",
+      "size_bytes": 21023,
+      "sha256": "a193ee7170613eafeefa5fc689ac69f3b67e40e6dd7ecbbc91c7569a7cdeae23"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/03_越位犯规与纪律.md",
+      "size_bytes": 19015,
+      "sha256": "78a79d9c55e9f363e6a341d692797111044adfbb144de3c143b8f9a5f61b6e22"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/04_任意球与罚球点球.md",
+      "size_bytes": 11017,
+      "sha256": "7917580e5e4330f526d2aea9bf933e0c9814b30fa324b46790f1fcf71185cf97"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/05_界外球球门球与角球.md",
+      "size_bytes": 10721,
+      "sha256": "cb9bb7db36055f38062fe87dd02c1fef9910ee5471672d0fc1b3bf5ec9e2c3ce"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/chunks_zh.jsonl",
+      "size_bytes": 205915,
+      "sha256": "8dc715386b92f3fe0c3b193c2f9c3cdc9f157d6ffa9899a50401c4352a5bfad6"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/parallel_zh_en.jsonl",
+      "size_bytes": 287566,
+      "sha256": "a39aefc312d2eebec9f1714991f7a747dbffe81583c129e3b6c0ea59d725af1a"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/corpus_manifest.json",
+      "size_bytes": 33750,
+      "sha256": "cd7a16fc2f9233d14ee79c4acfe6555f6a3abf95606d33f4fe05ae0d992e19bf"
+    }
+  ],
+  "append_only_files": [
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "original_size_bytes": 4028,
+      "original_prefix_sha256": "67f69b9b0bb5c54fec7b7b469ba1b9e5d5cfafa588096ab3dac378c05898c790"
+    },
+    {
+      "path": "docs/KOTAEMON_BASELINE.md",
+      "original_size_bytes": 8024,
+      "original_prefix_sha256": "0bd4f474f4eb8084f94936fec3b4011cccfde69df92bc70bcf0078343a1646e7"
+    },
+    {
+      "path": "docs/PROJECT_AUDIT.md",
+      "original_size_bytes": 10477,
+      "original_prefix_sha256": "aed10fe81ddf9b4884deb220af6e42667339b769a09835490abf5208e01a0cd9"
+    },
+    {
+      "path": "docs/LOCAL_SETUP.md",
+      "original_size_bytes": 5298,
+      "original_prefix_sha256": "8cc4dc1a69cbcbe6f492f2a2c54c9e22db972ab6161cd3cfd1b6d2560ef1af39"
+    }
+  ]
+}
