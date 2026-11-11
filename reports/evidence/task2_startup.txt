@@ -1,0 +1,12 @@
+Captured at: 2026-11-11T16:40:41+08:00
+Scope: selected nonsecret lines; paths redacted.
+Original captured log SHA-256: 46f191e67affd18914402cc5903a32c0c26341d3b629bf4ce3c4d4ea282492b5
+Local runtime: verified tokenizer cache at <LOCAL_RUNTIME>\.cache\tiktoken
+Football answer profile: evidence-guard-v1 (config/answer_quality.json)
+Pinned upstream: <LOCAL_RUNTIME>\third_party\kotaemon-v0.12.0
+Document store: upstream SimpleFileDocumentStore (Windows compatibility overlay)
+Vector store: configured upstream ChromaVectorStore
+GraphRAG dependencies not installed. Try `pip install graphrag future` to install. GraphRAG retriever pipeline will not work properly.
+LightRAG dependencies not installed. Try `pip install git+https://github.com/HKUDS/LightRAG.git` to install. LighthRAG retriever pipeline will not work properly.
+Nano-GraphRAG dependencies not installed. Try `pip install nano-graphrag` to install. Nano-GraphRAG retriever pipeline will not work properly.
+Running on local URL:  http://127.0.0.1:7860

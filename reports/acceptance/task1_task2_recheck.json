@@ -1,0 +1,795 @@
+{
+  "generated_at": "2026-11-11T16:41:44+08:00",
+  "command": ".\\.venv\\Scripts\\python.exe scripts/audit_task1_task2.py --live --ui-evidence reports/answer-quality-ui-evidence-2026-11-11.json --model-evidence reports/task2-model-runtime-2026-11-11.json --startup-log reports/kotaemon-quality-fix-final-2026-11-11.log --output .tmp/task123-recheck-20261111-164143/task1_task2.json",
+  "criteria": "docs/DEVELOPMENT_PLAN_AND_REPORT.md tasks 1 and 2 (unchanged)",
+  "fixed_inputs": {
+    "frozen_files": 10,
+    "append_only_reports": 4
+  },
+  "task1": {
+    "documents": 5,
+    "knowledge_units": 99,
+    "parallel_units": 99,
+    "sources": 18,
+    "raw_snapshot_files": 36,
+    "review_marked_units": 28,
+    "expert_reviewed_units": 0,
+    "supplement_environment": {
+      "python": "3.10.22",
+      "executable": "<LOCAL_RUNTIME>\\.venv\\Scripts\\python.exe",
+      "packages": {
+        "requests": "2.32.5",
+        "beautifulsoup4": "4.12.3",
+        "torch": "not installed in project .venv",
+        "transformers": "not installed in project .venv",
+        "sentence-transformers": "not installed in project .venv",
+        "huggingface-hub": "0.35.3",
+        "chromadb": "0.5.16",
+        "faiss-cpu": "not installed in project .venv",
+        "qdrant-client": "not installed in project .venv",
+        "lancedb": "0.25.1",
+        "langchain": "0.2.15",
+        "langgraph": "not installed in project .venv"
+      },
+      "ollama_model_cache_present": true,
+      "local_ollama_binary_present": true,
+      "hardware_acceleration": "not rechecked in this supplement; no hardware-performance claim"
+    }
+  },
+  "task2": {
+    "commit": "9ad3e4e49aa35b8acddd235918a5d9753c1cfdf9",
+    "python": "3.10.22",
+    "uv_lock_sha256": "cead56f491c1c35464ae7fdd4898dc8d5bd4f2a2e848d55627507d49c85b919f",
+    "dependencies": {
+      "kotaemon": {
+        "installed": "0.12.0",
+        "lock_versions": [],
+        "matches": true
+      },
+      "ktem": {
+        "installed": "0.12.0",
+        "lock_versions": [],
+        "matches": true
+      },
+      "gradio": {
+        "installed": "4.39.0",
+        "lock_versions": [
+          "4.39.0"
+        ],
+        "matches": true
+      },
+      "chromadb": {
+        "installed": "0.5.16",
+        "lock_versions": [
+          "0.5.16"
+        ],
+        "matches": true
+      },
+      "lancedb": {
+        "installed": "0.25.1",
+        "lock_versions": [
+          "0.25.1"
+        ],
+        "matches": true
+      },
+      "llama-index-core": {
+        "installed": "0.10.68.post1",
+        "lock_versions": [
+          "0.10.68.post1"
+        ],
+        "matches": true
+      },
+      "langchain": {
+        "installed": "0.2.15",
+        "lock_versions": [
+          "0.2.15"
+        ],
+        "matches": true
+      },
+      "theflow": {
+        "installed": "0.8.6",
+        "lock_versions": [
+          "0.8.6"
+        ],
+        "matches": true
+      },
+      "tiktoken": {
+        "installed": "0.11.0",
+        "lock_versions": [
+          "0.11.0"
+        ],
+        "matches": true
+      }
+    },
+    "splitter": {
+      "class": "kotaemon.indices.splitters.TokenSplitter",
+      "delegate": "llama_index.core.node_parser.text.token.TokenTextSplitter",
+      "reader": "kotaemon.loaders.TxtReader",
+      "chunk_size_tokens": 1024,
+      "chunk_overlap_tokens": 256,
+      "persisted_values": {
+        "chunk_size": 0,
+        "chunk_overlap": 0
+      },
+      "developer_overrides": {},
+      "separator": "\n\n",
+      "backup_separators": [
+        "\n",
+        ".",
+        "​"
+      ],
+      "tokenizer_default": "tiktoken / gpt-3.5-turbo / cl100k_base",
+      "evidence": [
+        {
+          "path": "third_party/kotaemon-v0.12.0/libs/ktem/ktem/index/file/pipelines.py",
+          "sha256": "372f5ee872103487cced2486627bbacd6a4299cc96b0198361ebf290e75eb193"
+        },
+        {
+          "path": "third_party/kotaemon-v0.12.0/flowsettings.py",
+          "sha256": "f4bf88cc92063ff543a7a2c5d6932aa7d72c7065c69a8e9c1929f6af5e6a4605"
+        }
+      ],
+      "resolution_method": "Persisted collection configuration plus exact pinned route defaults; zero means inherit, not zero-length chunks."
+    },
+    "retrieval_settings": {
+      "index.options.1.retrieval_mode": "hybrid",
+      "index.options.1.use_reranking": false
+    },
+    "application_local_models": {
+      "llm_table": {
+        "__type__": "kotaemon.llms.ChatOpenAI",
+        "model": "qwen2.5:3b",
+        "base_url": "http://127.0.0.1:11434/v1/",
+        "default": true
+      },
+      "embedding": {
+        "__type__": "kotaemon.embeddings.OpenAIEmbeddings",
+        "model": "bge-m3",
+        "base_url": "http://127.0.0.1:11434/v1/",
+        "default": true
+      }
+    },
+    "model_runtime_evidence": "reports/task2-model-runtime-2026-11-11.json",
+    "ui_evidence": "reports/answer-quality-ui-evidence-2026-11-11.json",
+    "startup_log": "reports/kotaemon-quality-fix-final-2026-11-11.log",
+    "quality_observation": "Raw smoke answers and citation behavior are retained. Task 2 has no answer-accuracy threshold; known defects remain open for the original later retrieval/answer tasks.",
+    "formal_retrieval_or_answer_metrics": "not measured"
+  },
+  "log_snapshots": [
+    {
+      "source_path": "reports/ollama-server-2026-11-10.log",
+      "archive_path": "reports/archive/task1_task2_2026-11-10/ollama-server-2026-11-10.log",
+      "captured_at": "2026-11-10T23:27:21+08:00",
+      "size_bytes": 165811,
+      "sha256": "3d2dd4cf33cb5adfeb2182397b36661d5cdfe8953b15454a726ec75ab634edbc",
+      "reason": "The live server may continue appending to source_path. This immutable archived prefix is included in the frozen delivery manifest."
+    },
+    {
+      "source_path": "reports/kotaemon-app-windows-overlay-2026-11-10.log",
+      "archive_path": "reports/archive/task1_task2_2026-11-10/kotaemon-app-windows-overlay-2026-11-10.log",
+      "captured_at": "2026-11-10T23:27:21+08:00",
+      "size_bytes": 950,
+      "sha256": "2a9739469dbc1f18177e9e270dbee73cb7c86bd279940186c8d79c0eb7ad480b",
+      "reason": "The live server may continue appending to source_path. This immutable archived prefix is included in the frozen delivery manifest."
+    },
+    {
+      "source_path": "reports/ollama-server-2026-11-11.log",
+      "archive_path": "reports/archive/task1_task2_2026-11-11/ollama-server-2026-11-11.log",
+      "captured_at": "2026-11-11T12:58:37+08:00",
+      "size_bytes": 86856,
+      "sha256": "ee4f36c016327cce2b2dfe883cc8a318a00eadb7a95433d13ec5b2b0985544d7",
+      "reason": "The running local service or transcript may continue appending. This immutable captured snapshot is included in the frozen delivery manifest; the live source is retained."
+    },
+    {
+      "source_path": "reports/kotaemon-startup-cached-2026-11-11.log",
+      "archive_path": "reports/archive/task1_task2_2026-11-11/kotaemon-startup-cached-2026-11-11.log",
+      "captured_at": "2026-11-11T12:58:37+08:00",
+      "size_bytes": 19141,
+      "sha256": "eee65c7362883a9ad246828ff59ab7101440cc587701645f7b113a8d3a6e6b22",
+      "reason": "The running local service or transcript may continue appending. This immutable captured snapshot is included in the frozen delivery manifest; the live source is retained."
+    },
+    {
+      "source_path": "reports/kotaemon-baseline-20261111-124053.log",
+      "archive_path": "reports/archive/task1_task2_2026-11-11/kotaemon-baseline-20261111-124053.log",
+      "captured_at": "2026-11-11T12:58:37+08:00",
+      "size_bytes": 1905,
+      "sha256": "92e7464a2f592b6312b2844620375de3f7637392616196ab7bc2d1fc714c7d68",
+      "reason": "The running local service or transcript may continue appending. This immutable captured snapshot is included in the frozen delivery manifest; the live source is retained."
+    },
+    {
+      "source_path": "reports/ollama-server-2026-11-11.log",
+      "archive_path": "reports/archive/answer_quality_fix_2026-11-11/ollama-server-2026-11-11.log",
+      "captured_at": "2026-11-11T13:53:26+08:00",
+      "size_bytes": 1275146,
+      "sha256": "c6a88c313cee790447335ae85cd5983589346b6908bf696f38773e04af220865",
+      "reason": "Dated capture after the answer/citation quality fix. Earlier snapshots of this service are retained; live logs may continue appending."
+    },
+    {
+      "source_path": "reports/kotaemon-quality-fix-2026-11-11.log",
+      "archive_path": "reports/archive/answer_quality_fix_2026-11-11/kotaemon-quality-fix-2026-11-11.log",
+      "captured_at": "2026-11-11T13:53:26+08:00",
+      "size_bytes": 13204,
+      "sha256": "31015d5c35a32c35733e5449a5604a6ba2609234ee3babb5c76827978d339a4d",
+      "reason": "Dated capture after the answer/citation quality fix. Earlier snapshots of this service are retained; live logs may continue appending."
+    },
+    {
+      "source_path": "reports/kotaemon-baseline-20261111-134128.log",
+      "archive_path": "reports/archive/answer_quality_fix_2026-11-11/kotaemon-baseline-20261111-134128.log",
+      "captured_at": "2026-11-11T13:53:26+08:00",
+      "size_bytes": 1905,
+      "sha256": "9acf4e5471b342818b8b410338d44cf073d25a14760870620c53332cfc45bbc6",
+      "reason": "Dated capture after the answer/citation quality fix. Earlier snapshots of this service are retained; live logs may continue appending."
+    },
+    {
+      "source_path": "reports/kotaemon-quality-fix-final-2026-11-11.log",
+      "archive_path": "reports/archive/answer_quality_fix_2026-11-11/kotaemon-quality-fix-final-2026-11-11.log",
+      "captured_at": "2026-11-11T13:59:45+08:00",
+      "size_bytes": 11042,
+      "sha256": "857a5067f849bf731fa0d406b3406f44af26c6ead1512a6faa6a41e46c04644b",
+      "reason": "Final code startup and repeated original-three UI run; live source retained."
+    },
+    {
+      "source_path": "reports/kotaemon-baseline-20261111-135518.log",
+      "archive_path": "reports/archive/answer_quality_fix_2026-11-11/kotaemon-baseline-20261111-135518.log",
+      "captured_at": "2026-11-11T13:59:45+08:00",
+      "size_bytes": 1904,
+      "sha256": "55b49619eefa3999bb32df8d9c0218c1ff05dd11876b8e0a801a18dfc979997f",
+      "reason": "Final code startup and repeated original-three UI run; live source retained."
+    }
+  ],
+  "current_services": {
+    "application": {
+      "url": "http://127.0.0.1:7860/",
+      "status": 200
+    },
+    "model_version": {
+      "url": "http://127.0.0.1:11434/api/version",
+      "status": 200,
+      "data": {
+        "version": "0.40.16"
+      }
+    },
+    "models": {
+      "url": "http://127.0.0.1:11434/api/tags",
+      "status": 200,
+      "data": {
+        "models": [
+          {
+            "name": "bge-m3:latest",
+            "model": "bge-m3:latest",
+            "modified_at": "2026-11-10T21:20:50.0506707+08:00",
+            "size": 1157672605,
+            "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "bert",
+              "families": [
+                "bert"
+              ],
+              "parameter_size": "566.70M",
+              "quantization_level": "F16",
+              "context_length": 8192,
+              "embedding_length": 1024,
+              "runner": "ggml"
+            },
+            "capabilities": [
+              "embedding"
+            ]
+          },
+          {
+            "name": "qwen2.5:3b",
+            "model": "qwen2.5:3b",
+            "modified_at": "2026-11-10T21:17:16.3994174+08:00",
+            "size": 1929912432,
+            "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen2",
+              "families": [
+                "qwen2"
+              ],
+              "parameter_size": "3.1B",
+              "quantization_level": "Q4_K_M",
+              "context_length": 32768,
+              "embedding_length": 2048,
+              "runner": "ggml"
+            },
+            "capabilities": [
+              "completion",
+              "tools"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "checks": [
+    {
+      "task": "shared",
+      "check": "technical_and_task_specs_and_Corpus_B0_unchanged",
+      "passed": true,
+      "details": []
+    },
+    {
+      "task": "shared",
+      "check": "existing_delivery_text_preserved_before_supplements",
+      "passed": true,
+      "details": []
+    },
+    {
+      "task": "task1",
+      "check": "five_documents_99_aligned_unique_units_18_sources",
+      "passed": true,
+      "details": null
+    },
+    {
+      "task": "task1",
+      "check": "five_markdown_hashes_match_corpus_manifest",
+      "passed": true,
+      "details": []
+    },
+    {
+      "task": "task1",
+      "check": "nonempty_text_and_valid_source_URL_ID_lines",
+      "passed": true,
+      "details": []
+    },
+    {
+      "task": "task1",
+      "check": "bilingual_content_checksums_match",
+      "passed": true,
+      "details": []
+    },
+    {
+      "task": "task1",
+      "check": "laws_1_through_17_covered",
+      "passed": true,
+      "details": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "task": "task1",
+      "check": "source_versions_license_and_raw_snapshots_present",
+      "passed": true,
+      "details": []
+    },
+    {
+      "task": "task1",
+      "check": "source_CSV_and_JSON_content_consistent",
+      "passed": true,
+      "details": []
+    },
+    {
+      "task": "task1",
+      "check": "raw_and_clean_source_hashes_recomputed_from_18_snapshots",
+      "passed": true,
+      "details": []
+    },
+    {
+      "task": "task1",
+      "check": "all_99_English_excerpts_recoverable_from_declared_source_lines",
+      "passed": true,
+      "details": []
+    },
+    {
+      "task": "task1",
+      "check": "corpus_builder_syntax_without_running_builders",
+      "passed": true,
+      "details": null
+    },
+    {
+      "task": "task1",
+      "check": "existing_validation_report_PASS",
+      "passed": true,
+      "details": null
+    },
+    {
+      "task": "task1",
+      "check": "project_Git_not_initialized",
+      "passed": true,
+      "details": null
+    },
+    {
+      "task": "task1",
+      "check": "audit_date_command_and_results_delivered_in_experiment_log",
+      "passed": true,
+      "details": null
+    },
+    {
+      "task": "task1",
+      "check": "audit_report_and_manifest_delivered",
+      "passed": true,
+      "details": null
+    },
+    {
+      "task": "task2",
+      "check": "pinned_upstream_commit_and_clean_source",
+      "passed": true,
+      "details": {
+        "commit": "9ad3e4e49aa35b8acddd235918a5d9753c1cfdf9",
+        "tracked_source_clean": true
+      }
+    },
+    {
+      "task": "task2",
+      "check": "isolated_Python_3_10_or_newer",
+      "passed": true,
+      "details": {
+        "version": "3.10.22",
+        "executable": "<LOCAL_RUNTIME>\\.venv\\Scripts\\python.exe"
+      }
+    },
+    {
+      "task": "task2",
+      "check": "critical_dependency_versions_match_pinned_lock",
+      "passed": true,
+      "details": {
+        "kotaemon": {
+          "installed": "0.12.0",
+          "lock_versions": [],
+          "matches": true
+        },
+        "ktem": {
+          "installed": "0.12.0",
+          "lock_versions": [],
+          "matches": true
+        },
+        "gradio": {
+          "installed": "4.39.0",
+          "lock_versions": [
+            "4.39.0"
+          ],
+          "matches": true
+        },
+        "chromadb": {
+          "installed": "0.5.16",
+          "lock_versions": [
+            "0.5.16"
+          ],
+          "matches": true
+        },
+        "lancedb": {
+          "installed": "0.25.1",
+          "lock_versions": [
+            "0.25.1"
+          ],
+          "matches": true
+        },
+        "llama-index-core": {
+          "installed": "0.10.68.post1",
+          "lock_versions": [
+            "0.10.68.post1"
+          ],
+          "matches": true
+        },
+        "langchain": {
+          "installed": "0.2.15",
+          "lock_versions": [
+            "0.2.15"
+          ],
+          "matches": true
+        },
+        "theflow": {
+          "installed": "0.8.6",
+          "lock_versions": [
+            "0.8.6"
+          ],
+          "matches": true
+        },
+        "tiktoken": {
+          "installed": "0.11.0",
+          "lock_versions": [
+            "0.11.0"
+          ],
+          "matches": true
+        }
+      }
+    },
+    {
+      "task": "task2",
+      "check": "local_models_selected_in_application",
+      "passed": true,
+      "details": {
+        "llm_table": {
+          "__type__": "kotaemon.llms.ChatOpenAI",
+          "model": "qwen2.5:3b",
+          "base_url": "http://127.0.0.1:11434/v1/",
+          "default": true
+        },
+        "embedding": {
+          "__type__": "kotaemon.embeddings.OpenAIEmbeddings",
+          "model": "bge-m3",
+          "base_url": "http://127.0.0.1:11434/v1/",
+          "default": true
+        }
+      }
+    },
+    {
+      "task": "task2",
+      "check": "splitter_parameters_resolved_from_persisted_config_and_source",
+      "passed": true,
+      "details": {
+        "class": "kotaemon.indices.splitters.TokenSplitter",
+        "delegate": "llama_index.core.node_parser.text.token.TokenTextSplitter",
+        "reader": "kotaemon.loaders.TxtReader",
+        "chunk_size_tokens": 1024,
+        "chunk_overlap_tokens": 256,
+        "persisted_values": {
+          "chunk_size": 0,
+          "chunk_overlap": 0
+        },
+        "developer_overrides": {},
+        "separator": "\n\n",
+        "backup_separators": [
+          "\n",
+          ".",
+          "​"
+        ],
+        "tokenizer_default": "tiktoken / gpt-3.5-turbo / cl100k_base",
+        "evidence": [
+          {
+            "path": "third_party/kotaemon-v0.12.0/libs/ktem/ktem/index/file/pipelines.py",
+            "sha256": "372f5ee872103487cced2486627bbacd6a4299cc96b0198361ebf290e75eb193"
+          },
+          {
+            "path": "third_party/kotaemon-v0.12.0/flowsettings.py",
+            "sha256": "f4bf88cc92063ff543a7a2c5d6932aa7d72c7065c69a8e9c1929f6af5e6a4605"
+          }
+        ],
+        "resolution_method": "Persisted collection configuration plus exact pinned route defaults; zero means inherit, not zero-length chunks."
+      }
+    },
+    {
+      "task": "task2",
+      "check": "five_documents_and_50_smoke_chunks_persisted",
+      "passed": true,
+      "details": {
+        "source_files": 5,
+        "relations": {
+          "document": 50,
+          "vector": 50
+        },
+        "docstore_documents": 50
+      }
+    },
+    {
+      "task": "task2",
+      "check": "real_UI_HTTP_200_and_three_nonempty_Chinese_answers",
+      "passed": true,
+      "details": {
+        "captured_at": "2026-11-11T05:59:03.369Z",
+        "url": "http://127.0.0.1:7860/",
+        "answers": [
+          {
+            "question_id": "Q1",
+            "answer_characters": 1008
+          },
+          {
+            "question_id": "Q2",
+            "answer_characters": 885
+          },
+          {
+            "question_id": "Q3",
+            "answer_characters": 932
+          }
+        ]
+      }
+    },
+    {
+      "task": "task2",
+      "check": "local_chat_and_embedding_models_available",
+      "passed": true,
+      "details": {
+        "captured_at": "2026-11-11T04:51:16.185Z",
+        "endpoint": "http://127.0.0.1:11434",
+        "version": "0.40.16",
+        "models": [
+          {
+            "name": "bge-m3:latest",
+            "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+            "size": 1157672605,
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "bert",
+              "families": [
+                "bert"
+              ],
+              "parameter_size": "566.70M",
+              "quantization_level": "F16",
+              "context_length": 8192,
+              "embedding_length": 1024,
+              "runner": "ggml"
+            }
+          },
+          {
+            "name": "qwen2.5:3b",
+            "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+            "size": 1929912432,
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen2",
+              "families": [
+                "qwen2"
+              ],
+              "parameter_size": "3.1B",
+              "quantization_level": "Q4_K_M",
+              "context_length": 32768,
+              "embedding_length": 2048,
+              "runner": "ggml"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "task": "task2",
+      "check": "required_delivery_files_present",
+      "passed": true,
+      "details": [
+        "docs/UPSTREAM_VERSION.md",
+        "docs/LOCAL_SETUP.md",
+        "scripts/run_baseline_check.ps1",
+        "scripts/run_kotaemon_local.py",
+        "scripts/kotaemon_runtime_env.py",
+        "scripts/prepare_kotaemon_assets.py",
+        "docs/KOTAEMON_BASELINE.md",
+        "reports/task2-indexing-windows-overlay-final-2026-11-10.log"
+      ]
+    },
+    {
+      "task": "task2",
+      "check": "splitter_and_actual_dependency_versions_added_to_baseline",
+      "passed": true,
+      "details": null
+    },
+    {
+      "task": "task2",
+      "check": "nonsecret_environment_example_delivered",
+      "passed": true,
+      "details": null
+    },
+    {
+      "task": "task2",
+      "check": "documented_runner_really_started_server_after_import_checks",
+      "passed": true,
+      "details": "reports/kotaemon-quality-fix-final-2026-11-11.log"
+    },
+    {
+      "task": "task2",
+      "check": "verified_local_tokenizer_cache_really_loads",
+      "passed": true,
+      "details": {
+        "loopback_bypass": [
+          "127.0.0.1",
+          "localhost",
+          "::1"
+        ],
+        "unsupported_proxy_variables_skipped": [
+          "ALL_PROXY"
+        ],
+        "tiktoken_cache": "<LOCAL_RUNTIME>\\.cache\\tiktoken",
+        "cl100k_base_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+        "nltk_data": "<LOCAL_RUNTIME>\\.venv\\Lib\\site-packages\\llama_index\\core\\_static\\nltk_cache"
+      }
+    },
+    {
+      "task": "task2",
+      "check": "no_high_confidence_secrets_in_public_delivery_evidence",
+      "passed": true,
+      "details": {
+        "flagged_paths": [],
+        "scope": "Delivered setup/baseline/version documents, scripts, selected runtime evidence, and environment example; model specs exported through a nonsecret whitelist."
+      }
+    },
+    {
+      "task": "shared",
+      "check": "frozen_log_snapshots_match_recorded_hashes",
+      "passed": true,
+      "details": []
+    },
+    {
+      "task": "task2",
+      "check": "fresh_loopback_HTTP_and_local_models_reachable",
+      "passed": true,
+      "details": {
+        "application": {
+          "url": "http://127.0.0.1:7860/",
+          "status": 200
+        },
+        "model_version": {
+          "url": "http://127.0.0.1:11434/api/version",
+          "status": 200,
+          "data": {
+            "version": "0.40.16"
+          }
+        },
+        "models": {
+          "url": "http://127.0.0.1:11434/api/tags",
+          "status": 200,
+          "data": {
+            "models": [
+              {
+                "name": "bge-m3:latest",
+                "model": "bge-m3:latest",
+                "modified_at": "2026-11-10T21:20:50.0506707+08:00",
+                "size": 1157672605,
+                "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+                "details": {
+                  "parent_model": "",
+                  "format": "gguf",
+                  "family": "bert",
+                  "families": [
+                    "bert"
+                  ],
+                  "parameter_size": "566.70M",
+                  "quantization_level": "F16",
+                  "context_length": 8192,
+                  "embedding_length": 1024,
+                  "runner": "ggml"
+                },
+                "capabilities": [
+                  "embedding"
+                ]
+              },
+              {
+                "name": "qwen2.5:3b",
+                "model": "qwen2.5:3b",
+                "modified_at": "2026-11-10T21:17:16.3994174+08:00",
+                "size": 1929912432,
+                "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+                "details": {
+                  "parent_model": "",
+                  "format": "gguf",
+                  "family": "qwen2",
+                  "families": [
+                    "qwen2"
+                  ],
+                  "parameter_size": "3.1B",
+                  "quantization_level": "Q4_K_M",
+                  "context_length": 32768,
+                  "embedding_length": 2048,
+                  "runner": "ggml"
+                },
+                "capabilities": [
+                  "completion",
+                  "tools"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "status": "PASS",
+  "task1_status": "PASS",
+  "task2_status": "PASS",
+  "project_file_manifest_note": "Run update_project_manifest.py and --verify after this report and all documents are saved; that read-only final verification avoids a self-referential hash.",
+  "review_context": {
+    "current_runtime": "Original local environment; source/config hashes checked below",
+    "audit_source_sha256": "da58c188542b801a97cec7e42df45e48a705ac4c0bc6b547b05eff0197bd425f",
+    "ui_evidence_time_scope": "Historical real UI questions, not fresh browser questions",
+    "fresh_checks": "Current loopback services, installed packages, database, frozen corpus, source provenance"
+  }
+}

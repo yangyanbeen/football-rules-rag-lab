@@ -1,0 +1,77 @@
+{
+  "scope": "Historical UI proof; original dates retained. Current UI startup is checked separately.",
+  "source_sha256": "4c41e5b6e1e5c6f8fe37ee4eb8901486e596bf54863ec13e8e8cdac1c8738441",
+  "captured_at": "2026-11-11T05:59:03.369Z",
+  "url": "http://127.0.0.1:7860/",
+  "http_status": 200,
+  "information_panel_present": true,
+  "qa": [
+    {
+      "question_id": "Q1",
+      "question": "越位位置本身是否就是越位犯规？裁判还需要判断哪些参与比赛的行为？请给出规则来源。",
+      "answer_characters": 1008,
+      "answer_sha256": "18a4ad405cd6f792aafcb3dcded8608c139ff581b16bfb950783395060f147e9",
+      "information_panel_present": true,
+      "source_links": [
+        {
+          "text": "wiki-11:L208-L216",
+          "url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+        },
+        {
+          "text": "wiki-11:L221-L228",
+          "url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+        },
+        {
+          "text": "wiki-11:L229-L234",
+          "url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+        }
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "question": "哪些行为可以判直接任意球？请从规则资料中列举三项，并分别给出引用。",
+      "answer_characters": 885,
+      "answer_sha256": "b95f32f478e1c473d288dd3107aa253c8b8d12f9b3404d5e74b0872338b39009",
+      "information_panel_present": true,
+      "source_links": [
+        {
+          "text": "wiki-12:L181-L181",
+          "url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "text": "wiki-12:L170-L177",
+          "url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "text": "wiki-12:L178-L180",
+          "url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        }
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "question": "球门球开出后，球在什么条件下才算进入比赛？请说明触球或进球相关条件，并给出引用。",
+      "answer_characters": 932,
+      "answer_sha256": "0e18003a5d688d6435da4c25a20ce70c2bc9940d2bff82c76529d1e3bce26197",
+      "information_panel_present": true,
+      "source_links": [
+        {
+          "text": "wiki-16:L151-L156",
+          "url": "https://en.wikipedia.org/wiki/Goal_kick"
+        },
+        {
+          "text": "wiki-16:L178-L182",
+          "url": "https://en.wikipedia.org/wiki/Goal_kick"
+        },
+        {
+          "text": "wiki-16:L157-L163",
+          "url": "https://en.wikipedia.org/wiki/Goal_kick"
+        },
+        {
+          "text": "wiki-16:L169-L173",
+          "url": "https://en.wikipedia.org/wiki/Goal_kick"
+        }
+      ]
+    }
+  ]
+}

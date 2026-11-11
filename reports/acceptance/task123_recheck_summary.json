@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-11-11T16:42:01+08:00",
+  "status": "PASS",
+  "task1": "PASS",
+  "task2": "PASS",
+  "task3": "PASS",
+  "task1_task2_checks": [
+    32,
+    32
+  ],
+  "task3_dataset_checks": [
+    18,
+    18
+  ],
+  "task3_delivery_checks": [
+    8,
+    8
+  ],
+  "corrupt_cases_rejected": [
+    16,
+    16
+  ],
+  "development_regression": [
+    16,
+    16
+  ],
+  "answer_contracts": [
+    19,
+    19
+  ],
+  "limitations": [
+    "UI three-question evidence is historical, with new live service/backend checks.",
+    "No fresh dependency installation in the public checkout.",
+    "Full corpus and model outputs remain local; formal RAG B0 and tasks 4-14 are not complete."
+  ]
+}

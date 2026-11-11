@@ -1,0 +1,48 @@
+{
+  "captured_at": "2026-11-11T16:42:01+08:00",
+  "files": [
+    {
+      "path": "scripts/run_kotaemon_local.py",
+      "checkout_sha256": "81a05ed69da06c65a8cabc2488c05ed8f902b36da7f13c053e82e915a7347f31",
+      "runtime_sha256": "81a05ed69da06c65a8cabc2488c05ed8f902b36da7f13c053e82e915a7347f31",
+      "same": true
+    },
+    {
+      "path": "scripts/run_baseline_check.ps1",
+      "checkout_sha256": "1ea04778157cceb448f7f55b51c9e48c973afa05eb19bb4000a5df827fcf16ac",
+      "runtime_sha256": "1ea04778157cceb448f7f55b51c9e48c973afa05eb19bb4000a5df827fcf16ac",
+      "same": true
+    },
+    {
+      "path": "scripts/kotaemon_runtime_env.py",
+      "checkout_sha256": "858494cd711f9369f7030202fcc7daad31ac6dfdd50384a86d053f938ff31f70",
+      "runtime_sha256": "858494cd711f9369f7030202fcc7daad31ac6dfdd50384a86d053f938ff31f70",
+      "same": true
+    },
+    {
+      "path": "scripts/check_kotaemon_runtime.py",
+      "checkout_sha256": "ef8edf6034315cd1d6ac7e0745765a8d20dcd34e18cde2d74cd705b9c1d206bf",
+      "runtime_sha256": "ef8edf6034315cd1d6ac7e0745765a8d20dcd34e18cde2d74cd705b9c1d206bf",
+      "same": true
+    },
+    {
+      "path": "scripts/football_evidence.py",
+      "checkout_sha256": "0d650f28eaa13e0f92f88b165eb350e19d5843792f1124e74d93e13049a4e846",
+      "runtime_sha256": "0d650f28eaa13e0f92f88b165eb350e19d5843792f1124e74d93e13049a4e846",
+      "same": true
+    },
+    {
+      "path": "scripts/football_quality_pipeline.py",
+      "checkout_sha256": "9f07b2b65ca48a28f54bbb99f51d99c060e47617410249d73d85a9b336bdb53b",
+      "runtime_sha256": "9f07b2b65ca48a28f54bbb99f51d99c060e47617410249d73d85a9b336bdb53b",
+      "same": true
+    },
+    {
+      "path": "config/answer_quality.json",
+      "checkout_sha256": "3d52167eee2c49ad3d8752e6e6e0cf5b5f618c24d496ee21dd5c1959812983d5",
+      "runtime_sha256": "3d52167eee2c49ad3d8752e6e6e0cf5b5f618c24d496ee21dd5c1959812983d5",
+      "same": true
+    }
+  ],
+  "scope": "Current runtime is external; does not claim dependencies installed in public checkout"
+}
