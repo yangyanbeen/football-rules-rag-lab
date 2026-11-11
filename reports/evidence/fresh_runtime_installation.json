@@ -1,0 +1,83 @@
+{
+  "captured_at": "2026-11-11T10:17:23.701495+00:00",
+  "scope": "Install/startup failure and success log metadata; full logs remain private.",
+  "installation": {
+    "profile": "Core Ollama runtime from unmodified pinned uv.lock",
+    "locked_dependencies": 260,
+    "editable_workspace_packages": 2,
+    "total_distributions": 262,
+    "fresh_virtualenv": true,
+    "old_database_copied": false,
+    "standalone_python": "Existing distribution copied into new checkout; new virtualenv created there",
+    "repeat_offline_install_exit_code": 0,
+    "optional_advanced_graph_dev_extras_installed": false
+  },
+  "observed_failures": [
+    {
+      "stage": "first offline full workspace sync",
+      "reason": "Optional torch wheel was not cached; current core profile exported from same original lock"
+    },
+    {
+      "stage": "standalone environment creation",
+      "reason": "Global uv cache temporary-file persistence failed with os error 17; fixed project-local cache"
+    },
+    {
+      "stage": "fresh first UI question",
+      "reason": "Upstream factory resolved empty reranking model pool before disabled-setting check; local factory now omits unused reranking"
+    },
+    {
+      "stage": "first fresh verifier",
+      "reason": "Counted unpopulated relation.user; fixed query joins actual source ownership; initial 29/30 retained"
+    }
+  ],
+  "logs": [
+    {
+      "name": "dependency-install.log",
+      "sha256": "d6b8adb770763b89ba15511578fc6de14adca8899b92c88944780b5926df16d7",
+      "size_bytes": 9000,
+      "full_content": "local-only"
+    },
+    {
+      "name": "independent-install.log",
+      "sha256": "6fb8f52e728bfb8e07c6e84a8d0952d022f8cf9087a5833621c2203167b8fe0d",
+      "size_bytes": 2821,
+      "full_content": "local-only"
+    },
+    {
+      "name": "independent-install-retry.log",
+      "sha256": "7a47d385859c92027b7823048efe365131a0cac8ea90f4470fb8c816d4496dcc",
+      "size_bytes": 7592,
+      "full_content": "local-only"
+    },
+    {
+      "name": "final-installer-idempotence.log",
+      "sha256": "6ce4c1859070279f6486a365783c37e46733509acb49dce9c1a26aed48878483",
+      "size_bytes": 1053,
+      "full_content": "local-only"
+    },
+    {
+      "name": "app.stderr.log",
+      "sha256": "c86ebed6a2b8e81479731f8966a1f3fff65c9ba0f89ac524487d907ee68be736",
+      "size_bytes": 3876,
+      "full_content": "local-only"
+    },
+    {
+      "name": "app-fixed.stdout.log",
+      "sha256": "beab4fb8e1ad185d0b6158bb689a575fc2bf167e12f111b7ffadae93a0e360da",
+      "size_bytes": 5788,
+      "full_content": "local-only"
+    },
+    {
+      "name": "app-fixed.stderr.log",
+      "sha256": "4bdd031562c26613963e7b48a5dc1f9b8f741dec38d1e04b36846e60ab14cd76",
+      "size_bytes": 315,
+      "full_content": "local-only"
+    },
+    {
+      "name": "initial-verifier-failure.json",
+      "sha256": "dda5d675acbab2509c313189064c824088b4669134b133333235b83a3db102d2",
+      "size_bytes": 5483,
+      "full_content": "local-only"
+    }
+  ]
+}
