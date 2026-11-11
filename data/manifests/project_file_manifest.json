@@ -3,7 +3,7 @@
   "scope": "New public checkout: tracked files plus hash-only local corpus inventory; original local project manifest is preserved separately.",
   "self_hash_policy": "This manifest excludes itself to avoid recursion.",
   "runtime_policy": "External runtime, credentials, databases, caches, live logs and temporary fixtures are excluded.",
-  "file_count": 191,
+  "file_count": 192,
   "files": [
     {
       "path": ".env.example",
@@ -658,8 +658,8 @@
     },
     {
       "path": "docs/EXPERIMENT_LOG.md",
-      "size_bytes": 26383,
-      "sha256": "80751a0687862e1bccf75497ceeeca65cd73ee55d889f59b924674aa7fc1a4e7",
+      "size_bytes": 27579,
+      "sha256": "e693b09f1965dd5e5c2ef43e9783bb6f3adc293cd8f2043cfd24c369865541c8",
       "purpose": "技术、执行或当前交付文档",
       "distribution": "public-git"
     },
@@ -730,6 +730,13 @@
       "path": "docs/TASK_01_03_SUPPLEMENT.md",
       "size_bytes": 4694,
       "sha256": "114df56c7dfc07b8adf9f2b2c0c3ff21f78c78aef84450157ac3d4764ffc8e9f",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/TASK_04_MANUAL_REVIEW.md",
+      "size_bytes": 2046,
+      "sha256": "6fc5048a771920060ce204b61d8e56b86ceb1a32bcbab05452e08db60b3954bc",
       "purpose": "技术、执行或当前交付文档",
       "distribution": "public-git"
     },
@@ -1281,8 +1288,8 @@
     },
     {
       "path": "scripts/serve_eval_review.py",
-      "size_bytes": 14301,
-      "sha256": "4e1e1ecea327508ae36c13fca48155163df1abed8536f5f77940277596cfeb26",
+      "size_bytes": 16281,
+      "sha256": "b9fbc428dd39678e2b0a84c844abdea0e8b5c33243cbf97df297c5c625ec0207",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },

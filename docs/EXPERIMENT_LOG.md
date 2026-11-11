@@ -196,3 +196,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 - 代码：owner_approve_eval.py、UI状态更新、计分显式label-policy owner_approved；默认逐题人工策略保留。模型/检索预测未运行，无新增性能数字。
 - 签收性质：按负责人授权完成本轮批准与冻结，原人工质量条件的未满足事实继续保留。记录docs/TASK_04_OWNER_ACCEPTANCE.md、owner_approval_receipt.json及task4_owner_*；原候选失败和登记作为历史保存。
 - Git：追加小提交到PR #7，按负责人签收版本合并，版本v0.4.0-owner-approved；原有其他仓库与冻结语料不变。
+
+## TASK-004-HUMAN-REOPEN：开启冻结版本逐题人工审核（2026-11-11）
+
+- 用户指令：现在开启人工审核。在独立分支 feat/task-04-human-review 调整本地审核入口，不改原技术/任务标准。
+- 新增启动选项 --allow-frozen-human-review，允许对原冻结快照追加真人审核记录。默认启动仍禁止写入冻结版本；快照文件哈希变化时拒绝继续接收记录。
+- 修复页面按负责人批量批准跳过全部待人工题的问题；下拉列表分别标识真人通过与负责人批准，下一条只看实际人工状态。
+- 本机7862已使用该选项重启，浏览器已加载，两个判定按钮可用，四项检查未自动勾选。页面显示负责人90/90、实际人工2/90，保留以前记录；未代用户提交审核。
+- 本轮仅开启服务和查看页面，未运行新增自动化测试、正式检索或模型评测；没有新增人工通过或性能数据。原始冻结数据、测试锁与批准凭证保持原样。
+- 操作说明：docs/TASK_04_MANUAL_REVIEW.md。未完成的88题须由实际复核人阅读提交；全部审核后仍需完成原正式交付校验与人工发布状态处理。
