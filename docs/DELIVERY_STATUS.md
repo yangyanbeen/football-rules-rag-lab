@@ -11,7 +11,7 @@
 
 任务 3 的两份完整 JSONL 和任务 1 的原始/处理语料保留本地、不纳入公开 Git；来源清单、稳定 ID 映射、输出哈希和代码已纳入。原本机 project_file_manifest 包含不可公开的运行归档，本仓库提供独立 `reports/PUBLICATION_MANIFEST.json`；二者范围不同，不相互替换。
 
-## 这次整理做了什么
+## 首次导入做了什么（历史）
 
 1. 创建独立的新仓库目录；原工程未初始化 Git、未搬移、未改写。
 2. 原技术设计、执行文档、原脚本和选定报告按字节复制；映射见 PUBLICATION_MANIFEST。
@@ -26,4 +26,6 @@
 
 原任务一二重新在线验收 32/32；任务三主校验 18/18、交付 8/8、坏数据拒绝 16/16；新开发回归 16/16、引用契约 19/19。原工程 178 个静态文件未变。机器汇总见 `reports/acceptance/task123_recheck_summary.json`。
 
-历史 UI 三问与本轮后端回归分开标注，未声称本轮重新完成浏览器三问或全新依赖安装。操作与清单范围见 [TASK_01_03_SUPPLEMENT](TASK_01_03_SUPPLEMENT.md)。任务四至十四状态不变。
+上段为上一轮补交付结果。后续缺陷关闭已在新目录真实安装独立环境（260 个核心依赖 + 两个固定本地包），新建空数据库与普通账号并从浏览器上传五份资料，重新提交三问。综合检查 33/33、UI 三问 3/3、开发回归 16/16、引用契约 19/19；任务三原 suite 继续通过。证据为 `reports/acceptance/fresh_delivery.json` 和 `reports/evidence/fresh_ui_three_questions.json`。
+
+运行入口见 [PUBLIC_SETUP](PUBLIC_SETUP.md)，验收与重新采集方法见 [FRESH_ACCEPTANCE](FRESH_ACCEPTANCE.md)。旧的外部环境复核结果保留为历史。任务四至十四状态不变。
