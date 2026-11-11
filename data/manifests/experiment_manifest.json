@@ -1,0 +1,98 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at": "2026-11-11T15:42:12+08:00",
+  "scope": "Registry established at task 3; earlier original reports remain the historical evidence.",
+  "experiments": [
+    {
+      "id": "TASK-003",
+      "objective": "Complete original task 3 dataset adaptation and acceptance",
+      "baseline": "Corpus B0, 99 unchanged stable knowledge units",
+      "main_variable": "Unified schema normalization and ID-based merge",
+      "dataset_version": "corpus-b0-rag-adapter-1.0.0",
+      "dataset_content_id": "77aea70e0e19e08b4bf3f041e22af8d5c979416cc43b7670a6ef702ee26edce0",
+      "evaluation_version": "task3-dataset-acceptance-v1",
+      "code_commit": null,
+      "code_version_method": "SHA-256; root Git absent and not initialized",
+      "model": null,
+      "hardware_performance_claim": null,
+      "environment": {
+        "python": "3.10.22",
+        "platform": "win32"
+      },
+      "commands": [
+        ".venv/Scripts/python.exe scripts/build_rag_dataset.py",
+        ".venv/Scripts/python.exe scripts/validate_rag_dataset.py",
+        ".venv/Scripts/python.exe scripts/verify_task3_delivery.py"
+      ],
+      "result": {
+        "dataset_checks": "18/18",
+        "delivery_checks": "8/8",
+        "corrupt_cases_rejected": "16/16",
+        "retrieval_or_answer_metrics": "not measured"
+      },
+      "decision": "Task 3 accepted; proceed according to original task 4",
+      "artifacts": [
+        {
+          "path": "docs/RAG_DATA_SCHEMA.md",
+          "size_bytes": 8607,
+          "sha256": "db055a7dcd75e278bc38ee7bdcf11107c3a02fa772e2901453c8f8ddc79f2217"
+        },
+        {
+          "path": "scripts/build_rag_dataset.py",
+          "size_bytes": 10634,
+          "sha256": "dd04f1a3b01074af5d923fe588ba79fa67f8aca71f649901768f4791007c9bae"
+        },
+        {
+          "path": "scripts/validate_rag_dataset.py",
+          "size_bytes": 18659,
+          "sha256": "db841c04fdf2a82fa46da1bcb8b739e30a8d6cf57d07e3b0815dc8230b154979"
+        },
+        {
+          "path": "scripts/verify_task3_delivery.py",
+          "size_bytes": 10356,
+          "sha256": "4c3e45898a925bdf177e85b04c0ffd66cbe4d9f348e35c343d6cce27f7c74036"
+        },
+        {
+          "path": "data/processed/rag_chunks_zh.jsonl",
+          "size_bytes": 302368,
+          "sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3"
+        },
+        {
+          "path": "data/processed/rag_chunks_parallel.jsonl",
+          "size_bytes": 400859,
+          "sha256": "3e3167bd3590c66c58d617796e5495440ac219cd9599245aee02ca810dd36467"
+        },
+        {
+          "path": "data/manifests/rag_dataset_manifest.json",
+          "size_bytes": 13868,
+          "sha256": "529596d1fae73186065fc70d39749f000ffc2f4fa960252cba6285ddd538c39c"
+        },
+        {
+          "path": "reports/task3_dataset_validation.json",
+          "size_bytes": 3004,
+          "sha256": "794e3b317f75993e776f211a830e0eb93dc119d37c8c9a477179166a0fce0efc"
+        },
+        {
+          "path": "reports/task3_delivery_verification.json",
+          "size_bytes": 25122,
+          "sha256": "3baabe87f71c5db8cc5135d0f7a99a2b37f6083416f66acc049136bbbb724561"
+        },
+        {
+          "path": "reports/TASK_03_DELIVERY.md",
+          "size_bytes": 6489,
+          "sha256": "82e61e0c4e3abae135d529146a439f1558fe499e8db98b6cfc37d85445cf9bc1"
+        },
+        {
+          "path": "reports/all_experiments_summary.csv",
+          "size_bytes": 805,
+          "sha256": "734227bde15e3dfccfc216a367223ed92a00d5190ecda61a3ad535f760471ed9"
+        },
+        {
+          "path": "reports/resume_evidence.md",
+          "size_bytes": 1025,
+          "sha256": "e41e0abcef16b7d6c214f605f656ae3a87901975d40ce0ac7ee773febfe636b9"
+        }
+      ]
+    }
+  ]
+}
