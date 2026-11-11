@@ -1,5 +1,6 @@
 """Read-only evidence contract checks; writes a separate verification receipt."""
 
+import argparse
 import json
 from datetime import datetime, timezone
 
@@ -12,6 +13,16 @@ from run_answer_quality_regression import structural_checks
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--regression-report', default='reports/answer-quality-regression-final-2026-11-11.json')
+    parser.add_argument('--output', default='reports/answer-quality-contract-verification-2026-11-11.json')
+    args = parser.parse_args()
+    input_path = (ROOT / args.regression_report).resolve()
+    output_path = (ROOT / args.output).resolve()
+    if not input_path.is_relative_to(ROOT) or not output_path.is_relative_to(ROOT):
+        raise ValueError('Reports must remain inside this checkout')
+    if output_path == input_path or output_path.suffix != '.json' or not any(output_path.is_relative_to(ROOT / folder) for folder in ('reports', '.tmp')):
+        raise ValueError('Use a distinct JSON receipt under reports/ or .tmp/')
     engine = get_engine()
     checks = []
     def record(name, passed, details=None):
@@ -60,7 +71,7 @@ def main():
     record("fabricated_rule_request_refused", fabrication["status"] == "refused" and not fabrication["citations"])
     long_question = engine.answer("足球规则" * 2000)
     record("oversized_question_refused_without_truncation", long_question["refusal_reason"] == "question_exceeds_budget")
-    saved = json.loads((ROOT / "reports/answer-quality-regression-final-2026-11-11.json").read_text(encoding="utf-8"))
+    saved = json.loads(input_path.read_text(encoding="utf-8"))
     errors = [{"id": r["case"]["id"], "errors": structural_checks(engine, r)} for r in saved["results"]]
     record("saved_16_regressions_have_real_corpus_quotes_and_citations", len(saved["results"]) == 16 and saved["passed"] == 16 and not any(item["errors"] for item in errors), errors)
     required = {int(law) for law in (16, 17)}
@@ -68,7 +79,8 @@ def main():
     record("comparison_requires_both_rules", set(route["required_laws"]) == required)
     record("runtime_context_exceeds_budget_plus_output", engine.config["num_ctx"] > engine.config["input_token_budget"] + engine.config["output_tokens"])
     result = {"captured_at": datetime.now(timezone.utc).isoformat(), "passed": sum(item["passed"] for item in checks), "total": len(checks), "checks": checks}
-    path = ROOT / "reports/answer-quality-contract-verification-2026-11-11.json"
+    path = output_path
+    path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Evidence contracts: {result['passed']}/{result['total']}")
     return 0 if result["passed"] == result["total"] else 1

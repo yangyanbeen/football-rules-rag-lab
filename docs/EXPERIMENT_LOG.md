@@ -129,3 +129,24 @@
 - 结果边界：本轮完成任务三数据适配；无正式人工标签、RAG B0或检索/答案性能成绩。数据版本corpus-b0-rag-adapter-1.0.0，content ID和两输出SHA见dataset manifest。
 - 交付说明：reports/TASK_03_DELIVERY.md；字段权威说明docs/RAG_DATA_SCHEMA.md；账号说明docs/LOCAL_ACCOUNT.md。登记all_experiments_summary.csv、resume_evidence.md和experiment_manifest.json，仅写真实工程证据。
 - 最终文件清单：保留上轮159文件manifest到reports/archive/task3_2026-11-11；所有交付文档保存后重建project_file_manifest.json并运行--verify，零错误才签收。模型和应用保持运行。
+
+
+## TASK-001-003-SUPPLEMENT：公开交付复核（2026-11-11）
+
+原技术设计与任务验收标准保持不变；原工程及 Corpus B0 不修改。基线 Git main：a3f573fe9e7e489efc165739a0c7f8b27509cfea；补交付分支 fix/tasks-01-03-delivery-supplement。
+
+发现并补齐：规定路径的当前文件清单、公开可查看的任务二证据、16条既有开发题输入、可指定输入/输出的契约检查、任务三隔离执行及统一复核入口。
+
+实际执行：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_tasks_01_03.ps1 -RuntimeRoot "<已有原工程目录>"
+python scripts/manage_delivery_manifest.py
+python scripts/manage_delivery_manifest.py --verify
+```
+
+初次在线检查31/32，原因是应用与Ollama未启动；按原配置恢复后32/32。原任务三独立校验18/18、原交付suite8/8、16类重签哈希坏数据全部拒绝；16条后端开发回归和19项引用契约均通过。完整统一入口已实际运行，退出码0。文件清单在所有补交付文件暂存后生成并只读核对。
+
+新结果：reports/acceptance/task123_recheck_summary.json；逐项基线与限制：reports/TASK_01_03_REDELIVERY.md；当前操作权威说明：docs/TASK_01_03_SUPPLEMENT.md。
+
+历史UI三问保留原日期与哈希，不描述为本轮浏览器三问；本轮新跑的是后端开发题。未进行全新依赖安装、正式检索评测或性能优化。原工程178项静态文件未变；本地全文、账号、数据库和完整模型输出不进公开Git。

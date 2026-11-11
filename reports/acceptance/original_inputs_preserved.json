@@ -1,0 +1,9 @@
+{
+  "scope": "Original project static files; runtime databases/cache and live logs are excluded as originally specified",
+  "checked_files": 178,
+  "changed_files": [],
+  "original_git_initialized": false,
+  "technical_design_sha256": "aa320f48dbfb27a7c55b2c3d599dd48fab23509d85aa73ba470cbc9bb61778b9",
+  "execution_plan_sha256": "acb3bb80dd4401b751476ce36437657e2d3a3dc59db4d3d25106b81d11c9bd96",
+  "status": "PASS"
+}

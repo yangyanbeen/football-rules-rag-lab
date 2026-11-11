@@ -1,0 +1,1038 @@
+{
+  "manifest_version": "public-checkout-1.0",
+  "scope": "New public checkout: tracked files plus hash-only local corpus inventory; original local project manifest is preserved separately.",
+  "self_hash_policy": "This manifest excludes itself to avoid recursion.",
+  "runtime_policy": "External runtime, credentials, databases, caches, live logs and temporary fixtures are excluded.",
+  "file_count": 147,
+  "files": [
+    {
+      "path": ".env.example",
+      "size_bytes": 419,
+      "sha256": "7ce67e138493f17f325d7034ce6c2427b83dd488c472254c30475bf4d1ff187f",
+      "purpose": "仓库入口、许可证或 Git 配置",
+      "distribution": "public-git"
+    },
+    {
+      "path": ".gitattributes",
+      "size_bytes": 90,
+      "sha256": "6a1d49fc163ff487b3f37ddfa94c24e162ebf46048266a81a92361a071911e2a",
+      "purpose": "仓库入口、许可证或 Git 配置",
+      "distribution": "public-git"
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "size_bytes": 619,
+      "sha256": "aa4faa7578b984e76649d5a43d38f988baac587af45b70fa045218d0d2c587ac",
+      "purpose": "PR 工作流模板",
+      "distribution": "public-git"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 278,
+      "sha256": "f9c19bd843c1d6aefe76ff613ac709ccaafea28dc7dfedf351a1f33975b55765",
+      "purpose": "仓库入口、许可证或 Git 配置",
+      "distribution": "public-git"
+    },
+    {
+      "path": "LICENSE",
+      "size_bytes": 11558,
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+      "purpose": "仓库入口、许可证或 Git 配置",
+      "distribution": "public-git"
+    },
+    {
+      "path": "NOTICE",
+      "size_bytes": 557,
+      "sha256": "5485c328b9568a61364ba8786e20ff6ef2c891b9c163ec1b21f07a498b8c79ab",
+      "purpose": "仓库入口、许可证或 Git 配置",
+      "distribution": "public-git"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 4480,
+      "sha256": "8df4b232d700f277e27cc5bbd2c558bd5c669c5ba14458f41e820e7107fb8bc0",
+      "purpose": "仓库入口、许可证或 Git 配置",
+      "distribution": "public-git"
+    },
+    {
+      "path": "backend/README.md",
+      "size_bytes": 866,
+      "sha256": "1d87b6dca17597aa64f8673fd2988b3ad3f98f36d25e0de42ad317e94f671a8b",
+      "purpose": "后端职责说明",
+      "distribution": "public-git"
+    },
+    {
+      "path": "config/answer_quality.json",
+      "size_bytes": 656,
+      "sha256": "3d52167eee2c49ad3d8752e6e6e0cf5b5f618c24d496ee21dd5c1959812983d5",
+      "purpose": "非敏感应用配置",
+      "distribution": "public-git"
+    },
+    {
+      "path": "data/README.md",
+      "size_bytes": 1098,
+      "sha256": "448c45fda9b45f12c5eacb1df5760c1cc3be08dcd32aacad30a24d2960ebf58e",
+      "purpose": "数据格式、来源或版本清单",
+      "distribution": "public-git"
+    },
+    {
+      "path": "data/manifests/experiment_manifest.json",
+      "size_bytes": 3879,
+      "sha256": "7a5cee82ad8a284e08ac8133d1c1083fd83efe5af621d5c9bccc35b8204e292b",
+      "purpose": "数据格式、来源或版本清单",
+      "distribution": "public-git"
+    },
+    {
+      "path": "data/manifests/local_data_files.json",
+      "size_bytes": 11934,
+      "sha256": "f10c562de07cad7120ecd16593f2dd32df55fc88391dd74cb5a0d1c96bbee41b",
+      "purpose": "数据格式、来源或版本清单",
+      "distribution": "public-git"
+    },
+    {
+      "path": "data/manifests/rag_dataset_manifest.json",
+      "size_bytes": 13868,
+      "sha256": "529596d1fae73186065fc70d39749f000ffc2f4fa960252cba6285ddd538c39c",
+      "purpose": "数据格式、来源或版本清单",
+      "distribution": "public-git"
+    },
+    {
+      "path": "data/manifests/sources.csv",
+      "size_bytes": 6772,
+      "sha256": "a2e4fa92202ce2e610e050752c244178c9791c2871e2d0402ea14aecc39cec69",
+      "purpose": "数据格式、来源或版本清单",
+      "distribution": "public-git"
+    },
+    {
+      "path": "data/manifests/task1_task2_baseline_lock.json",
+      "size_bytes": 3079,
+      "sha256": "5adf7708ef42462068ca17b646c4676cca6d3b829777e26f0ae21c3daea20e19",
+      "purpose": "数据格式、来源或版本清单",
+      "distribution": "public-git"
+    },
+    {
+      "path": "data/processed/rag_chunks_parallel.jsonl",
+      "size_bytes": 400859,
+      "sha256": "3e3167bd3590c66c58d617796e5495440ac219cd9599245aee02ca810dd36467",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/rag_chunks_zh.jsonl",
+      "size_bytes": 302368,
+      "sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_2026-11-10/collection_summary.json",
+      "size_bytes": 302,
+      "sha256": "a5138051efe09925347f817bb900ec501995c6dfe89a02458ee5bd8bdc6929a5",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_2026-11-10/source_documents.jsonl",
+      "size_bytes": 170680,
+      "sha256": "4292d110e45df25021a7eaa9795e45b0903a6994a949d057d4b29e1088de17c9",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_2026-11-10/sources.json",
+      "size_bytes": 29768,
+      "sha256": "9814024597d2c88bde4a1ff6fa365d47b936fef87a66f34dacb606cef19f1342",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_2026-11-10/translation_input.json",
+      "size_bytes": 130082,
+      "sha256": "5d73ef805e12849ee3a41e836f0389a6cfe8cbe224edf9960e99bca38bd78e5b",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_2026-11-10/足球规则资料_网站采集版.html",
+      "size_bytes": 162039,
+      "sha256": "18dcca924347b89d9449473a9f40daaedc765efe5822f76c1c01bb902be304e7",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_2026-11-10/足球规则资料_网站采集版.md",
+      "size_bytes": 155495,
+      "sha256": "6963a1b53f7e847eed4ee30d21431650a17cee8483756f41a8d1fb32abae7fab",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/00_阅读与切分说明.md",
+      "size_bytes": 2751,
+      "sha256": "b01cca4f84033060eddcfc27d1bcca446ac92f850f89b0ff5818900bf0d9a0f0",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/01_场地器材与队员.html",
+      "size_bytes": 17725,
+      "sha256": "e113aca7bd09309bc51af63f886cf8cf57735f63d5b2efaf9faad0de51f86458",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/01_场地器材与队员.md",
+      "size_bytes": 15214,
+      "sha256": "23ccd5914b1f3649b9a5216314ce5dad7ea7e5cc72cd289ccadca415f44a938c",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/02_裁判比赛流程与结果.html",
+      "size_bytes": 24053,
+      "sha256": "2f6910928a030884b2dae481cb4a728e2bafb9c68c6fe7479fa494def0ea1eb3",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/02_裁判比赛流程与结果.md",
+      "size_bytes": 21023,
+      "sha256": "a193ee7170613eafeefa5fc689ac69f3b67e40e6dd7ecbbc91c7569a7cdeae23",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/03_越位犯规与纪律.html",
+      "size_bytes": 21783,
+      "sha256": "f563e195ef4d1ad947c10961bcb40cff5e66ac3ad2d95e64468cf9af7489507a",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/03_越位犯规与纪律.md",
+      "size_bytes": 19015,
+      "sha256": "78a79d9c55e9f363e6a341d692797111044adfbb144de3c143b8f9a5f61b6e22",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/04_任意球与罚球点球.html",
+      "size_bytes": 13517,
+      "sha256": "a5d0dee58ac3f2fa0b332eac5137b287751ebc8b4534fb3b05e0be225919b6c1",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/04_任意球与罚球点球.md",
+      "size_bytes": 11017,
+      "sha256": "7917580e5e4330f526d2aea9bf933e0c9814b30fa324b46790f1fcf71185cf97",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/05_界外球球门球与角球.html",
+      "size_bytes": 13019,
+      "sha256": "1852fa454c78189993dbe28719370dec379829bed9d9022babf44733ecd3f02b",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/05_界外球球门球与角球.md",
+      "size_bytes": 10721,
+      "sha256": "cb9bb7db36055f38062fe87dd02c1fef9910ee5471672d0fc1b3bf5ec9e2c3ce",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/chunks_zh.jsonl",
+      "size_bytes": 205915,
+      "sha256": "8dc715386b92f3fe0c3b193c2f9c3cdc9f157d6ffa9899a50401c4352a5bfad6",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/corpus_manifest.json",
+      "size_bytes": 33750,
+      "sha256": "cd7a16fc2f9233d14ee79c4acfe6555f6a3abf95606d33f4fe05ae0d992e19bf",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/parallel_zh_en.jsonl",
+      "size_bytes": 287566,
+      "sha256": "a39aefc312d2eebec9f1714991f7a747dbffe81583c129e3b6c0ea59d725af1a",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/validation_report.json",
+      "size_bytes": 355,
+      "sha256": "fe09d3f9efeca300ff8bbec588a465bdcf859b831a35e88fef1f4aa6ec4cad3f",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/足球规则_中文阅读版.html",
+      "size_bytes": 84766,
+      "sha256": "57e617dc310677853df81a11f13350d513c62c3ccd3caff0afa87fde54ed0e18",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/processed/足球规则中文语料包_2026-11-10.zip",
+      "size_bytes": 227242,
+      "sha256": "2f47ba773bffc1181b3583436f6a602dc2e254da831fe148eba68cbd7c861316",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/quality_regression/development_cases.jsonl",
+      "size_bytes": 4341,
+      "sha256": "b3e1721098c4c3c820829dd6f7bd953c8e62bc7db9fd433ef51d878987464241",
+      "purpose": "数据格式、来源或版本清单",
+      "distribution": "public-git"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/00.web.txt",
+      "size_bytes": 31200,
+      "sha256": "39f11b0b2c361ea91e29c2a97da00a017b7cb44eea27443cc530987c58c6b867",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/00_footer.web.txt",
+      "size_bytes": 28548,
+      "sha256": "92d1c6ec6d8b5b0933b85b14bd7a0962228c88a079300754636f7928426d242e",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/00_laws_overview.web.txt",
+      "size_bytes": 31200,
+      "sha256": "21ea9b2769e60febac8bc3314df396008aaf21876c833208e6840e6b33dc0432",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/01.web.txt",
+      "size_bytes": 28411,
+      "sha256": "22d3fc31c82d9d2cc33addfd895b7f136f85630843af20afaeb5d617edac545f",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/02.web.txt",
+      "size_bytes": 28625,
+      "sha256": "ce59af747859c2369e090876bb22741d8d67e15c51ef9616dec41319500567c5",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/02_recovered_footer.web.txt",
+      "size_bytes": 5717,
+      "sha256": "b26b90db9bd831c80633dcd5068ea6f5b8423259abe42a93ff39f14ebd14616e",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/03.web.txt",
+      "size_bytes": 28526,
+      "sha256": "c4499a5ff8b38b17cccc034c1dd8ab2450598e0189c8cebc37294dec53d4ccd7",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/03_extra.web.txt",
+      "size_bytes": 33352,
+      "sha256": "44321195e2b6eaf61d97245fa139324fd52c4ad54412c16f17a048f9ba4cec69",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/03_players.web.txt",
+      "size_bytes": 33876,
+      "sha256": "94a2e266b5fdcfc45adb5a1df25ce73c9d60c68956096e7660a5d3c9e725f949",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/03_recovered_footer.web.txt",
+      "size_bytes": 6940,
+      "sha256": "0820fa1585e71265df269f75358b88cd3fbd299798559bf3da42fee31a94ef54",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/04.web.txt",
+      "size_bytes": 33637,
+      "sha256": "8ea10c58d2a65a08bd7a2591a2edb8f440e501db3e28a287a08ed136c0d78091",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/04_recovered_footer.web.txt",
+      "size_bytes": 5514,
+      "sha256": "48e140dee9014d44e76e831298fb7152d2e0262fbfe72e21843acb46385de9c8",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/05.web.txt",
+      "size_bytes": 31115,
+      "sha256": "9832d11d0e4bd15bb67d4451f5febd06cd65e813e943dd8c1ba9ef5d9e56b21b",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/05_recovered_footer.web.txt",
+      "size_bytes": 4984,
+      "sha256": "2f798acd1b84f6df64dc09e06f03ae193e7036c6ce86ea08a83b11261661d959",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/06.web.txt",
+      "size_bytes": 23274,
+      "sha256": "2440d28ebbd67526da6c47fa6727afde8aad27db59eeee19d6698857757246a9",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/08a.web.txt",
+      "size_bytes": 28544,
+      "sha256": "b02907d430bd0876df32c116a0d35de38378f8b4f7ebde5eb8efdb78d5c09934",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/08b.web.txt",
+      "size_bytes": 20986,
+      "sha256": "ca358b45f2d577e8798e636f047d1cc9776858d7baa8b1b2aa04ad31a71032d6",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/09.web.txt",
+      "size_bytes": 11899,
+      "sha256": "3cc471ec7af09dbf5e389b351fc6b2238de8ddcbab3193e3b276496dbae8dbb1",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/10.web.txt",
+      "size_bytes": 16515,
+      "sha256": "6695cfd4830fb60aa98f5b444a53a2a455d2589c30a67986dd2e3e1e84011757",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/11.web.txt",
+      "size_bytes": 32165,
+      "sha256": "93443e6cd9c7fb2990c2e3b21a7122350b8fc0ffc00b235ef34d58c1fb33f32c",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/11_extra.web.txt",
+      "size_bytes": 10324,
+      "sha256": "b2afb2b9e9e3a71e7682bf14a9820f689c60501ce5311dc35fa3478a9761baac",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/11_recovered_footer.web.txt",
+      "size_bytes": 5279,
+      "sha256": "a0ba5f3ae4af725da7b44d64bfaf275bd183544bf432c84df56191cdd4ccf069",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/12.web.txt",
+      "size_bytes": 32093,
+      "sha256": "d810b5dacf19f5261cd39a8b83cea2e8c77607af0b934677f4e23dab802539be",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/12_extra.web.txt",
+      "size_bytes": 9775,
+      "sha256": "797c4158a179c467580bbd23d50a69c2c67df07e6523d2535bc2d1add9a70fe9",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/13.web.txt",
+      "size_bytes": 29729,
+      "sha256": "937afa1336bac9346e96cb748309fcf826e78508a84653922975fd50d068e7bb",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/13_recovered_footer.web.txt",
+      "size_bytes": 5978,
+      "sha256": "1e9acc52b84d3083f97d55fe8787448665c723c12ed65181606353d5de14e3c3",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/14.web.txt",
+      "size_bytes": 30855,
+      "sha256": "99f4d74de0f867923d3cf0f73b110487a3749db5050e767844ac7e99703bb4e5",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/14_recovered_footer.web.txt",
+      "size_bytes": 6349,
+      "sha256": "45f86addf750b3ed35e62e64331952bf383f5fd0a2c70127b93acf6a176e120e",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/15.web.txt",
+      "size_bytes": 29346,
+      "sha256": "77d49f1df9e0d60b0482dac045b102b1fd0dc4d7f26d84ee42bf883a561ab443",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/15_recovered_footer.web.txt",
+      "size_bytes": 5554,
+      "sha256": "61d11e13dc418fdb730f1a3a8f002086a0b6dd9855e4f565f95dc2af8b9e8b43",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/16.web.txt",
+      "size_bytes": 28945,
+      "sha256": "c8a81cb0ad540acb2dd7190c4f907a7de3390fe2c6c7ec82f3e98f17a4f93b51",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/16_recovered_footer.web.txt",
+      "size_bytes": 4885,
+      "sha256": "6aca59681d463c3b94371baceb8a99b66f7ce2285236fc86593637ddfffd68cc",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/17.web.txt",
+      "size_bytes": 29756,
+      "sha256": "3d9ea315e662fa375424a9a5a02618936b5904b77603c9cda51352f25f86b8ab",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/17_recovered_footer.web.txt",
+      "size_bytes": 5689,
+      "sha256": "55c2d44e948d9c75b8fe8011e129510abb69424685588ff38b2de3786d397364",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/batch01.web.txt",
+      "size_bytes": 29853,
+      "sha256": "e2465d2521c3e0e433356a9d9d969f468240d0962653f140438ab32fc3da4358",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/batch02.web.txt",
+      "size_bytes": 30647,
+      "sha256": "b3f5ba86279dd1dd5769fa088fa9392e270d0e5eb782dfa564e5c0536ec46d90",
+      "purpose": "原本地冻结语料；只公开此元数据，不上传全文",
+      "distribution": "local-only"
+    },
+    {
+      "path": "docs/ANSWER_QUALITY_FIX.md",
+      "size_bytes": 12620,
+      "sha256": "72951e5e6c592efec758149719909b980df20b5aab496667715af3319306b2bc",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "size_bytes": 2145,
+      "sha256": "71e5d3e2691908a295c47469292b2198578ff7e59becedd87bd15f33a3ebee7b",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/COLLECTION_LOG.md",
+      "size_bytes": 2433,
+      "sha256": "0220c38b56b842f715c86fbbbe04ec91d2e0c1cf3886ca99c2772a7f746c6527",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/DATASET.md",
+      "size_bytes": 7728,
+      "sha256": "86a7dfdc2af707fa721a436436eb8e25a21a20b888590283ed5abc003cdaff22",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/DECISIONS.md",
+      "size_bytes": 4782,
+      "sha256": "4855b077c68d0fb39b90d62bd55dbd231421c8627b07a28bbadbbef5196c801a",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/DELIVERY_STATUS.md",
+      "size_bytes": 2792,
+      "sha256": "c1820bc8d30b38f670c4943683e4c0a40c02c53ca68c92c533352642c4334972",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/DEVELOPMENT_PLAN_AND_REPORT.md",
+      "size_bytes": 22690,
+      "sha256": "acb3bb80dd4401b751476ce36437657e2d3a3dc59db4d3d25106b81d11c9bd96",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "size_bytes": 18973,
+      "sha256": "c48332bb918074853248ca48cf1c76e64d286fc4ace160a034994e0ee46530be",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/GIT_WORKFLOW.md",
+      "size_bytes": 2858,
+      "sha256": "591ee6a691ac727e056f462bf1c81e92fcb5b170144029b2d42c15841e56716b",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/KOTAEMON_BASELINE.md",
+      "size_bytes": 17916,
+      "sha256": "d2d7db4b8e0eb2a2ec21d2f738dc2455953cabb8c882d0baf758e864bcaefe97",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/LOCAL_SETUP.md",
+      "size_bytes": 15251,
+      "sha256": "8caf643609b880c1c5d4b662ea4e020d66443be823bd60e0541f7dc9f6007019",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/PROJECT_AUDIT.md",
+      "size_bytes": 16365,
+      "sha256": "b5447e8e95c2d3a9c521a66daae4bd10013df13da5bf3afb796a56c0f1575855",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/PROJECT_SCOPE.md",
+      "size_bytes": 2161,
+      "sha256": "5896d583c009f434289c46ecc15baebc251a27cbf0989737d688e95aced1e8a0",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/PUBLICATION_POLICY.md",
+      "size_bytes": 1928,
+      "sha256": "7aed2496ea2e81a8feed2d7e530fc8ca0c3bced85861e254c336fefd7da536ad",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/PUBLIC_SETUP.md",
+      "size_bytes": 4046,
+      "sha256": "60d08b44e4f918b4b0fe6432fc50ba56ef5cb2f5901e2c89b1ef47785e5de7c7",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/RAG_DATA_SCHEMA.md",
+      "size_bytes": 8607,
+      "sha256": "db055a7dcd75e278bc38ee7bdcf11107c3a02fa772e2901453c8f8ddc79f2217",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/TASK_01_03_SUPPLEMENT.md",
+      "size_bytes": 4108,
+      "sha256": "c742a001e08f5985e888f7e53223b9c53a8ba2f10073ab84f855620ada18e34a",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/TECHNICAL_DESIGN.md",
+      "size_bytes": 17821,
+      "sha256": "aa320f48dbfb27a7c55b2c3d599dd48fab23509d85aa73ba470cbc9bb61778b9",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/TRANSLATION_LOG.md",
+      "size_bytes": 3168,
+      "sha256": "8578dc9a5ad296d456d33513b63eb7349c172545bb081d1613b0dba6971209a9",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/UPSTREAM_VERSION.md",
+      "size_bytes": 3237,
+      "sha256": "29d7e32c824cdc5c440f4c2aa7f17a8572f65e5fdfe5964cd1488beb96862a6e",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/WORKFLOW.md",
+      "size_bytes": 2650,
+      "sha256": "28fed8a581f70c729ed02aad3d4a75c6f419c31ef86ca47f9b1b00a3d29ac004",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "frontend/README.md",
+      "size_bytes": 580,
+      "sha256": "b20fdadde52c8677c6b01ac1874a68fbddd0770b46a229b0a91bb9a2a6b0cb34",
+      "purpose": "界面入口与职责说明",
+      "distribution": "public-git"
+    },
+    {
+      "path": "frontend/start.ps1",
+      "size_bytes": 278,
+      "sha256": "e7fe5dc5a55d3f2d9820b9293aa5d6b3b78131dcf40d4dc15a1231208a031d75",
+      "purpose": "界面入口与职责说明",
+      "distribution": "public-git"
+    },
+    {
+      "path": "infra/README.md",
+      "size_bytes": 712,
+      "sha256": "e6fc6a3b714e8382bec08191a3e6ea2ede3716efa421f3b278d64345378daa78",
+      "purpose": "运行环境说明",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/ANSWER_QUALITY_FIX_2026-11-11.md",
+      "size_bytes": 1327,
+      "sha256": "97e45d40a630f91f5918f329c8081e25f176fa94b03e46871af37a810b0d522d",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/PUBLICATION_MANIFEST.json",
+      "size_bytes": 25899,
+      "sha256": "cc5b666e9e12c9b52e304273fd7c7b96b0f08fc5c15b740ae54477ead24b0a77",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/README.md",
+      "size_bytes": 1689,
+      "sha256": "83deb689dbbd7d6f55e89831db304f7a5acdb5e36da7629568f4bdec3ecbd0ff",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/TASK_01_02_DELIVERY.md",
+      "size_bytes": 6707,
+      "sha256": "720cf04580fdccdc9aaf85bef31174954496bedb27731fecbdb81358d21579f6",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/TASK_01_02_RECHECK_2026-11-11.md",
+      "size_bytes": 7449,
+      "sha256": "f4b71ec128b51ab87d292c6e74315542b02a5be6311f8b374e233020a7375c7e",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/TASK_01_03_REDELIVERY.md",
+      "size_bytes": 4891,
+      "sha256": "d37bf9b7e22e607e11596f24d8efff0639b0aa62a3b2c0ac157485d711d71536",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/TASK_03_DELIVERY.md",
+      "size_bytes": 6489,
+      "sha256": "82e61e0c4e3abae135d529146a439f1558fe499e8db98b6cfc37d85445cf9bc1",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/acceptance/answer_quality_contract.json",
+      "size_bytes": 3541,
+      "sha256": "28d390d6d72b7a4b68b926191dc6899adee7a41cf525db4be141be64f01f8269",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/acceptance/development_regression_summary.json",
+      "size_bytes": 7668,
+      "sha256": "a0768fd7a1b4da06ad698713ee27b0011bd661e631e00b25db4dbcc32f3492d8",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/acceptance/original_inputs_preserved.json",
+      "size_bytes": 428,
+      "sha256": "84f737c3798ae682dbb0f48e2fb3767233060d8840cd275bae62609091b4ace0",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/acceptance/task123_recheck_summary.json",
+      "size_bytes": 720,
+      "sha256": "0b46581176508cfe83e36e1aa27b1215e5ead45147e050d732a4fcc8af9871a9",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/acceptance/task1_task2_recheck.json",
+      "size_bytes": 26656,
+      "sha256": "188dae6f8a7c6df9d5948bebf16639cae411dccd339337252057da1fcc8c1aa1",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/acceptance/task3_recheck.json",
+      "size_bytes": 31023,
+      "sha256": "a6eefeb8efb35da0563afa0673832cf5b9b248326eaae526b524d53b3284f8d9",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/all_experiments_summary.csv",
+      "size_bytes": 805,
+      "sha256": "734227bde15e3dfccfc216a367223ed92a00d5190ecda61a3ad535f760471ed9",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/answer-quality-contract-verification-2026-11-11.json",
+      "size_bytes": 3541,
+      "sha256": "098112e2455c87738f3cf2b9b538d5ea5e686b14ff4f9cc11cae5bcf9026d9a8",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/answer-quality-ui-verification-2026-11-11.json",
+      "size_bytes": 2597,
+      "sha256": "9e378f8f04658494aa54d66d0c58077c793939f67851176b44708a650c7075c9",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/evidence/current_services.json",
+      "size_bytes": 831,
+      "sha256": "4f3b641172668d1822afd40a1c91c9893f50f7113057e5321e10fe4a46af42c1",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/evidence/historical_ui_three_questions.json",
+      "size_bytes": 2912,
+      "sha256": "9edc91f202c220455f404359a7098cd196bf97ded3ad389f840cec2fbdbf8280",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/evidence/runtime_code_correspondence.json",
+      "size_bytes": 2072,
+      "sha256": "66e764bc3e341ff7eaae16a964ce11fb2edcaa3245d98bf30d185085593cc868",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/evidence/task1_task2_before_service_restart.json",
+      "size_bytes": 23181,
+      "sha256": "11fe3e7216949963f9b51e73ed8aebe10068283b56fb5b24dfe7ef0d81059b36",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/evidence/task2_startup.txt",
+      "size_bytes": 1023,
+      "sha256": "3cc9d8f1601707ed64f661659173b08bd78aba184247fce631f4c13af9337d7f",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/resume_evidence.md",
+      "size_bytes": 1025,
+      "sha256": "e41e0abcef16b7d6c214f605f656ae3a87901975d40ce0ac7ee773febfe636b9",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/task1_task2_after-task3.json",
+      "size_bytes": 26395,
+      "sha256": "97f061359bdc18d2b22615abfbe1b12372294b053b7730b733ba0bdb6d4e5ca7",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/task3_dataset_validation.json",
+      "size_bytes": 3004,
+      "sha256": "794e3b317f75993e776f211a830e0eb93dc119d37c8c9a477179166a0fce0efc",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/task3_delivery_verification.json",
+      "size_bytes": 25122,
+      "sha256": "3baabe87f71c5db8cc5135d0f7a99a2b37f6083416f66acc049136bbbb724561",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/audit_task1_task2.py",
+      "size_bytes": 22481,
+      "sha256": "c3bb1df4dd875e1cfd2c6982056636018b72d4f3b9d3ef4a43e581bf0ec89b5a",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/build_chinese_rules.py",
+      "size_bytes": 13733,
+      "sha256": "affeb34ce0bb1a63f694bc11a88a7e522791bb890fb4585b4dc83cdeef3c5616",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/build_rag_dataset.py",
+      "size_bytes": 10634,
+      "sha256": "dd04f1a3b01074af5d923fe588ba79fa67f8aca71f649901768f4791007c9bae",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/build_rules_document.py",
+      "size_bytes": 10447,
+      "sha256": "54c1297cddaa4acbc72419b22740a7f8b123e70bb663b63ecb12fc51715b9008",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/check_kotaemon_runtime.py",
+      "size_bytes": 618,
+      "sha256": "ef8edf6034315cd1d6ac7e0745765a8d20dcd34e18cde2d74cd705b9c1d206bf",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/collect_delivery_evidence.py",
+      "size_bytes": 8501,
+      "sha256": "9b8bfcc377bc599851bec85114d1f390c3df2c231de061bf12bd0dc43377cd4e",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/football_evidence.py",
+      "size_bytes": 23332,
+      "sha256": "0d650f28eaa13e0f92f88b165eb350e19d5843792f1124e74d93e13049a4e846",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/football_quality_pipeline.py",
+      "size_bytes": 2512,
+      "sha256": "9f07b2b65ca48a28f54bbb99f51d99c060e47617410249d73d85a9b336bdb53b",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/import_local_corpus.py",
+      "size_bytes": 2427,
+      "sha256": "207d4cfe32d7b866698dfbaf102a23e83304742500f2f002030ef06ca7aea7a4",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/kotaemon_runtime_env.py",
+      "size_bytes": 2582,
+      "sha256": "858494cd711f9369f7030202fcc7daad31ac6dfdd50384a86d053f938ff31f70",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/manage_delivery_manifest.py",
+      "size_bytes": 3360,
+      "sha256": "e2d36da834050c6df00317584657fb62e4ae77add22e48f7c999fb95eea6c864",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/prepare_kotaemon_assets.py",
+      "size_bytes": 3003,
+      "sha256": "46aed85dbe95590d552b48a6fa9b2e902e25561b9330770e39d8d957ec1a106c",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/recheck_tasks_01_03.ps1",
+      "size_bytes": 2272,
+      "sha256": "ac410b1c7625dbc6cf56df419ba011cba2b32e04e3829f5cd85907ead0bfc260",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/run_answer_quality_regression.py",
+      "size_bytes": 3910,
+      "sha256": "fe2632b849c9983ccbe45cd117eda8edf5ea956c4cc512bb296eea35fbc95f5b",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/run_baseline_check.ps1",
+      "size_bytes": 5332,
+      "sha256": "1ea04778157cceb448f7f55b51c9e48c973afa05eb19bb4000a5df827fcf16ac",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/run_kotaemon_local.py",
+      "size_bytes": 2045,
+      "sha256": "81a05ed69da06c65a8cabc2488c05ed8f902b36da7f13c053e82e915a7347f31",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/update_project_manifest.py",
+      "size_bytes": 7173,
+      "sha256": "513f29e206866bf7ded6a9b58468a45615911e85a2236468332ecdda6e214851",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/validate_rag_dataset.py",
+      "size_bytes": 18659,
+      "sha256": "db841c04fdf2a82fa46da1bcb8b739e30a8d6cf57d07e3b0815dc8230b154979",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/verify_answer_quality.py",
+      "size_bytes": 5243,
+      "sha256": "d68588af9a9825ea722e67629e4a5751c110e82c7031eecfffe8ba566324acfa",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/verify_task3_delivery.py",
+      "size_bytes": 10356,
+      "sha256": "4c3e45898a925bdf177e85b04c0ffd66cbe4d9f348e35c343d6cce27f7c74036",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/verify_task3_isolated.py",
+      "size_bytes": 4075,
+      "sha256": "c3177dcb3356d5bd4b0ed284d0c4c17f2c4a7ed87eb715c641486828ebdfec2d",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    }
+  ]
+}

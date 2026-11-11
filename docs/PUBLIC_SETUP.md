@@ -55,3 +55,23 @@ python scripts/verify_task3_delivery.py
 ```
 
 这些是复现操作说明，此次发布没有执行它们。任务一二的完整在线验收依赖原本机日志、截图和数据库等状态，不能只靠公开副本声称重新通过；原通过结果参见 reports 中的历史证据。
+
+## 5. 补交付后的统一复核入口
+
+首次导入时没有重跑测试；后续补交付已实际重新执行。当前结果与历史记录分开，见 `reports/TASK_01_03_REDELIVERY.md`。
+
+复用原已安装环境、语料到位且两项本地服务启动后，在新 checkout 根目录执行：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_tasks_01_03.ps1 -RuntimeRoot "<已有原工程目录>"
+```
+
+该入口明确复用原 Python/模型，不表示公开目录已装完整依赖。任务三在隔离副本执行，不覆盖原报告。16 条开发题已补入 `data/quality_regression/`，完整模型回答写忽略的 `.runtime/`，公开摘要在 `reports/acceptance/`。
+
+单独检查引用契约时可指定本轮输出，不必改名或覆盖旧报告：
+
+```powershell
+python scripts/verify_answer_quality.py --regression-report <本次本地回归JSON路径> --output reports/acceptance/answer_quality_contract.json
+```
+
+完整参数、公开文件清单维护及范围说明见 `docs/TASK_01_03_SUPPLEMENT.md`。

@@ -1,0 +1,27 @@
+{
+  "captured_at": "2026-11-11T16:42:01+08:00",
+  "services": {
+    "application": {
+      "url": "http://127.0.0.1:7860/",
+      "http_status": 200,
+      "body_sha256": "5f2f0e7656f5c45e54c8edc8f172c890d3de384a6c6149fda9d3185096977fc9"
+    },
+    "models": {
+      "url": "http://127.0.0.1:11434/api/tags",
+      "http_status": 200,
+      "body_sha256": "85790176015728d2a994b22b4b0e5353c9aa0995971d365ad55d61ef442e7697",
+      "models": [
+        {
+          "name": "bge-m3:latest",
+          "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+          "size": 1157672605
+        },
+        {
+          "name": "qwen2.5:3b",
+          "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+          "size": 1929912432
+        }
+      ]
+    }
+  }
+}
