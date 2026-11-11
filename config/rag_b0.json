@@ -5,7 +5,7 @@
   "top_k": 5,
   "query_normalization": "NFKC then trim and collapse whitespace",
   "max_query_utf8_bytes": 1200,
-  "prompt_version": "grounded-generation-v1",
+  "prompt_version": "grounded-generation-v4",
   "prompt_file": "config/rag_b0_system.txt",
   "input_utf8_byte_budget": 6200,
   "chat_template_token_reserve": 512,
