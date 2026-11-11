@@ -14,6 +14,7 @@ def main():
     args=parser.parse_args()
     if args.trace and not args.trace.resolve().is_relative_to(ROOT/'.runtime'):
         raise ValueError('Keep complete answer/evidence traces under ignored .runtime/')
+    if args.trace and args.trace.exists():raise ValueError('Do not overwrite an existing trace')
     engine=RagB0Engine()
     try:
         if args.check:

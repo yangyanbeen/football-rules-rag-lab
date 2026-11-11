@@ -155,7 +155,9 @@ def render_panel(result):
             f"{c['chunk_id']} · 第{c['law_number']}条 · {c['title_zh']}")+"</summary><blockquote>"+
             html.escape(match['content_zh']).replace('\n','<br>')+"</blockquote><a target='_blank' rel='noopener noreferrer' href='"+
             html.escape(c['source_url'],quote=True)+"'>"+html.escape(f"{c['source_id']} · L{c['source_lines'][0]}–L{c['source_lines'][1]}")+
-            "</a><p>"+html.escape(c['source_attribution']+' · '+c['license'])+"</p>"+
+            "</a><p>"+html.escape(c['source_attribution'])+' · <a href="'+html.escape(c['license_url'],quote=True)+'">'+html.escape(c['license'])+'</a></p>'+
+            '<p>规则校核：'+('有待核对项' if c['needs_rule_review'] else '无额外校核标记（不代表专家通过）')+
+            '；历史版本正文：'+('已核验' if c['source_revision_verified'] else '未独立核验')+'</p>'+
             '<p>'+html.escape(BOUNDARY)+('</p><p>校核提示：'+html.escape('；'.join(c['review_notes'])) if c['needs_rule_review'] else '')+'</p></details>')
     blocks.append('<p>'+html.escape(BOUNDARY)+'</p>')
     return ''.join(blocks)

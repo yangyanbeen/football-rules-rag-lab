@@ -44,8 +44,8 @@ def main():
     flowsettings.KH_GRADIO_SHARE=False
     flowsettings.KH_FEATURE_USER_MANAGEMENT=False
     flowsettings.KH_FEATURE_CHAT_SUGGESTION=False
-    flowsettings.KH_INDICES=[]
-    flowsettings.KH_INDEX_TYPES=[]
+    flowsettings.KH_INDICES=[{'name':'足球规则知识库','config':{},'index_type':'rag_b0_index_ui.FixedFootballIndex'}]
+    flowsettings.KH_INDEX_TYPES=['rag_b0_index_ui.FixedFootballIndex']
     flowsettings.KH_REASONINGS=['rag_b0_pipeline.FootballRagB0Pipeline']
     flowsettings.KH_LLMS={'ollama':{'spec':{'__type__':'kotaemon.llms.ChatOpenAI',
         'base_url':'http://127.0.0.1:11434/v1/','model':cfg['llm']['name'],'api_key':'ollama','temperature':0},'default':True}}
@@ -59,6 +59,23 @@ def main():
     print('Task 6: importing pinned Kotaemon UI',flush=True)
     from ktem.main import App
     from ktem.pages.chat import ChatPage
+    import ktem.pages.chat as chat_module
+    import ktem.pages.chat.chat_panel as chat_panel_module
+    import ktem.pages.help as help_page
+    help_page.download_changelogs=lambda release_url:''
+    chat_panel_module.PLACEHOLDER_TEXT='请直接输入足球规则问题。回答依据固定资料，并显示可核对的原文来源。'
+    # Treat all question text literally; this profile has no URL ingestion or
+    # @WebSearch command. These overrides exist only in this new process.
+    chat_module.get_urls=lambda text:([],text)
+    chat_module.get_mentions_regex=lambda text:([],text)
+    original_submit=ChatPage.submit_msg
+
+    def literal_submit(self,chat_input,chat_history,user_id,settings,conv_id,conv_name,first_selector_choices):
+        if chat_input and chat_input.get('files'):
+            raise ValueError('本入口只支持文字提问，请使用已有的足球规则知识库。')
+        return original_submit(self,chat_input,chat_history,user_id,settings,conv_id,conv_name,first_selector_choices,request=None)
+
+    ChatPage.submit_msg=literal_submit
 
     def local_title(self, chat_history):
         if len(chat_history)==1:
@@ -73,6 +90,13 @@ def main():
     app=App()
     print('Task 6: building isolated ChatPage',flush=True)
     demo=app.make()
+    app.chat_page.chat_panel.text_input.placeholder='请输入足球规则问题'
+    app.chat_page.chat_panel.text_input.file_types=[]
+    app.chat_page.chat_control.cb_suggest_chat.visible=False
+    app.chat_page.use_mindmap.visible=False
+    for block in demo.blocks.values():
+        if isinstance(block,gr.Accordion) and block.label=='Quick Upload':block.visible=False
+    demo.css=(demo.css or '')+'\n#chat-input .upload-button {display:none !important;}'
     # Resource editing is outside this fixed-corpus entry point.
     for tab in ('resources-tab','settings-tab'):
         app._tabs[tab].visible=False
