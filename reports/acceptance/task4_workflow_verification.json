@@ -1,0 +1,436 @@
+{
+  "captured_at": "2026-11-11T12:33:39.641143+00:00",
+  "status": "PASS",
+  "scope": "Automated structure/arithmetic/adversarial checks ONLY; does not complete required real human annotation review.",
+  "passed": 27,
+  "total": 27,
+  "checks": [
+    {
+      "check": "real_candidate_structure",
+      "passed": true,
+      "detail": {
+        "checks": [
+          22,
+          22
+        ]
+      }
+    },
+    {
+      "check": "hand_calculated_Recall@5",
+      "passed": true,
+      "detail": {
+        "expected": 0.5,
+        "actual": 0.5
+      }
+    },
+    {
+      "check": "hand_calculated_Recall@10",
+      "passed": true,
+      "detail": {
+        "expected": 1.0,
+        "actual": 1.0
+      }
+    },
+    {
+      "check": "hand_calculated_MRR@10",
+      "passed": true,
+      "detail": {
+        "expected": 0.3333333333333333,
+        "actual": 0.3333333333333333
+      }
+    },
+    {
+      "check": "hand_calculated_all_gold_coverage@5",
+      "passed": true,
+      "detail": {
+        "expected": 0.25,
+        "actual": 0.25
+      }
+    },
+    {
+      "check": "unanswerable_excluded_from_retrieval_denominator",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_unjustified_nDCG",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "metrics_reject_missing_prediction",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "metrics_reject_duplicate_question_prediction",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "metrics_reject_duplicate_ranked_chunk",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "metrics_reject_nonconsecutive_ranks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_16_rehashed_corrupt_cases_rejected",
+      "passed": true,
+      "detail": [
+        {
+          "case": "duplicate_question_id",
+          "rejected": true,
+          "validator_errors": [
+            "unique_question_ids",
+            "hard_negative_ids_reasons_and_sources",
+            "each_question_has_a_traceable_hard_negative"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        },
+        {
+          "case": "unknown_support",
+          "rejected": true,
+          "validator_errors": [
+            "all_question_labels_and_provenance_valid"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        },
+        {
+          "case": "string_answerable",
+          "rejected": true,
+          "validator_errors": [
+            "TypeError"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        },
+        {
+          "case": "empty_refusal_reason",
+          "rejected": true,
+          "validator_errors": [
+            "all_question_labels_and_provenance_valid"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        },
+        {
+          "case": "forged_support_url",
+          "rejected": true,
+          "validator_errors": [
+            "all_question_labels_and_provenance_valid"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        },
+        {
+          "case": "overstated_revision_verified",
+          "rejected": true,
+          "validator_errors": [
+            "all_question_labels_and_provenance_valid"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        },
+        {
+          "case": "overstated_expert_review",
+          "rejected": true,
+          "validator_errors": [
+            "all_question_labels_and_provenance_valid"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        },
+        {
+          "case": "missing_required_field",
+          "rejected": true,
+          "validator_errors": [
+            "KeyError"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        },
+        {
+          "case": "negative_is_support",
+          "rejected": true,
+          "validator_errors": [
+            "hard_negative_ids_reasons_and_sources"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        },
+        {
+          "case": "empty_negative_reason",
+          "rejected": true,
+          "validator_errors": [
+            "hard_negative_ids_reasons_and_sources"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        },
+        {
+          "case": "forged_negative_source",
+          "rejected": true,
+          "validator_errors": [
+            "hard_negative_ids_reasons_and_sources"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        },
+        {
+          "case": "test_duplicates_dev_question",
+          "rejected": true,
+          "validator_errors": [
+            "questions_nonempty_and_no_exact_duplicates"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        },
+        {
+          "case": "test_duplicates_dev_intent",
+          "rejected": true,
+          "validator_errors": [
+            "dev_test_distinct_intent_groups"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        },
+        {
+          "case": "duplicate_support_id",
+          "rejected": true,
+          "validator_errors": [
+            "all_question_labels_and_provenance_valid"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        },
+        {
+          "case": "cross_chunk_without_second_unit",
+          "rejected": true,
+          "validator_errors": [
+            "all_question_labels_and_provenance_valid"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        },
+        {
+          "case": "invalid_law_zero",
+          "rejected": true,
+          "validator_errors": [
+            "all_question_labels_and_provenance_valid",
+            "dev_covers_rules_1_to_17"
+          ],
+          "outer_and_annotation_hashes_recalculated": true
+        }
+      ]
+    },
+    {
+      "check": "isolated_candidate_build_is_deterministic",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "freeze_refuses_missing_human_review",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthetic_records_never_count_as_real_reviews",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthetic_only_complete_lock_roundtrip",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "builder_refuses_overwriting_frozen_test",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthetic_final_report_requires_matching_config",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "test_gate_rejects_changed_configuration",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "annotation_edit_invalidates_previous_review",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "ai_signoff_rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "stale_human_hash_rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "future_review_timestamp_rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "incomplete_review_checklist_rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "test_gate_rejects_parameter_tuning",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "test_gate_rejects_unreviewed_test",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "original_eval_inputs_unchanged",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "synthetic_hand_calculation": {
+    "questions": [
+      {
+        "question_id": "fixture-A",
+        "answerable": true,
+        "expected_chunk_ids": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "question_id": "fixture-B",
+        "answerable": true,
+        "expected_chunk_ids": [
+          "d"
+        ]
+      },
+      {
+        "question_id": "fixture-U",
+        "answerable": false,
+        "expected_chunk_ids": []
+      }
+    ],
+    "predictions": [
+      {
+        "question_id": "fixture-A",
+        "results": [
+          {
+            "chunk_id": "x",
+            "rank": 1,
+            "score": 1.0
+          },
+          {
+            "chunk_id": "b",
+            "rank": 2,
+            "score": 0.5
+          }
+        ]
+      },
+      {
+        "question_id": "fixture-B",
+        "results": [
+          {
+            "chunk_id": "u",
+            "rank": 1,
+            "score": 1.0
+          },
+          {
+            "chunk_id": "v",
+            "rank": 2,
+            "score": 0.5
+          },
+          {
+            "chunk_id": "w",
+            "rank": 3,
+            "score": 0.3333333333333333
+          },
+          {
+            "chunk_id": "x",
+            "rank": 4,
+            "score": 0.25
+          },
+          {
+            "chunk_id": "y",
+            "rank": 5,
+            "score": 0.2
+          },
+          {
+            "chunk_id": "d",
+            "rank": 6,
+            "score": 0.16666666666666666
+          }
+        ]
+      },
+      {
+        "question_id": "fixture-U",
+        "results": []
+      }
+    ],
+    "expected_metrics": {
+      "Recall@5": 0.5,
+      "Recall@10": 1.0,
+      "MRR@10": 0.3333333333333333,
+      "all_gold_coverage@5": 0.25
+    },
+    "actual": {
+      "questions": 3,
+      "answerable_denominator": 2,
+      "unanswerable_excluded": 1,
+      "definitions": {
+        "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+        "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+        "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+      },
+      "metrics": {
+        "Recall@5": 0.5,
+        "Recall@10": 1.0,
+        "MRR@10": 0.3333333333333333,
+        "all_gold_coverage@5": 0.25
+      },
+      "nDCG@10": null,
+      "nDCG_reason": "No graded relevance labels; not reported.",
+      "per_question": [
+        {
+          "question_id": "fixture-A",
+          "retrieval_metric_included": true,
+          "Recall@5": 1.0,
+          "Recall@10": 1.0,
+          "MRR@10": 0.5,
+          "all_gold_coverage@5": 0.5,
+          "first_relevant_rank_within_10": 2
+        },
+        {
+          "question_id": "fixture-B",
+          "retrieval_metric_included": true,
+          "Recall@5": 0.0,
+          "Recall@10": 1.0,
+          "MRR@10": 0.16666666666666666,
+          "all_gold_coverage@5": 0.0,
+          "first_relevant_rank_within_10": 6
+        },
+        {
+          "question_id": "fixture-U",
+          "retrieval_metric_included": false,
+          "reason": "No gold evidence; report refusal separately in task 12"
+        }
+      ]
+    }
+  },
+  "real_dataset_scores_computed": false,
+  "actual_human_reviews_created": false,
+  "implementation_sha256": {
+    "eval_dataset.py": "48d47343ce008457d031c54a40019ae8bc3a9c76bdaf2d9cbbc274628e3785c1",
+    "build_eval_dataset.py": "a0e2c7b8df80e260912fd131abfdb037689743833a6aa9f9c90ff4f8964a0340",
+    "validate_eval_dataset.py": "f943adc5eeab93296434b7b05edb1706272033a2913dbb2ea20ccb71fc5fdff5",
+    "retrieval_metrics.py": "350759f655b78e43f4d0c4114a4a2c7d03b87c7281ac0cae40678bae15341168",
+    "run_retrieval_metrics.py": "11021dfc06a8c6e3e765c051c594f598b6c2bea220ee78f7a96ce08d0d56eae5",
+    "freeze_eval_dataset.py": "c9f046b791d4d9641eb6a6e8434ff0912b22946ca477cc5e3155917da7cd297d",
+    "serve_eval_review.py": "4e1e1ecea327508ae36c13fca48155163df1abed8536f5f77940277596cfeb26",
+    "verify_task4_workflow.py": "ac9e2a335a2bcad115333281933d926addbe6ff458a90020b3aa00dbc049a689",
+    "recheck_task4.ps1": "a5db6c1aacd83e1ab84579c52c8478c00e6814cb87b2c012e41ef3c9904da6d8"
+  },
+  "synthetic_review_notice": "Only disposable .tmp fixtures contain synthetic review records to test program logic. They never count toward the real dataset."
+}
