@@ -1,0 +1,34 @@
+{
+  "version": "rag-b0-1.0.0",
+  "dense_config": "config/dense_index.json",
+  "dense_index": "data/indexes/dense",
+  "top_k": 5,
+  "query_normalization": "NFKC then trim and collapse whitespace",
+  "max_query_utf8_bytes": 1200,
+  "prompt_version": "grounded-generation-v1",
+  "prompt_file": "config/rag_b0_system.txt",
+  "input_utf8_byte_budget": 6200,
+  "chat_template_token_reserve": 512,
+  "max_statements": 4,
+  "minimum_quote_characters": 8,
+  "llm": {
+    "name": "qwen2.5:3b",
+    "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+    "ollama_version": "0.40.16",
+    "num_ctx": 8192,
+    "num_predict": 1024,
+    "num_gpu": 0,
+    "num_thread": 8,
+    "temperature": 0,
+    "seed": 42,
+    "keep_alive": "10m",
+    "timeout_seconds": 180
+  },
+  "ui": {
+    "host": "127.0.0.1",
+    "port": 7863,
+    "share": false,
+    "scope": "Local fixed curated corpus; no user uploads or private file selection",
+    "app_data": ".runtime/rag-b0/kotaemon"
+  }
+}
