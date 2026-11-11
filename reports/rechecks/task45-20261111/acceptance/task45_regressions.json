@@ -1,0 +1,174 @@
+{
+  "captured_at": "2026-11-11T14:50:23.474716+00:00",
+  "status": "PASS",
+  "passed": 39,
+  "total": 39,
+  "checks": [
+    {
+      "check": "real_public_receipt_13_checks",
+      "passed": true
+    },
+    {
+      "check": "public_receipt_does_not_claim_private_reading_proof",
+      "passed": true
+    },
+    {
+      "check": "published_only_checkout_validation_without_corpus_ledger_or_models",
+      "passed": true
+    },
+    {
+      "check": "missing_public_receipt_detected",
+      "passed": true
+    },
+    {
+      "check": "refreeze_missing_receipt_rejected_without_writes",
+      "passed": true
+    },
+    {
+      "check": "rehashed_public_receipt_rejects_duplicate_question",
+      "passed": true
+    },
+    {
+      "check": "rehashed_public_receipt_rejects_wrong_annotation",
+      "passed": true
+    },
+    {
+      "check": "rehashed_public_receipt_rejects_ai_signoff",
+      "passed": true
+    },
+    {
+      "check": "rehashed_public_receipt_rejects_nonapproved_decision",
+      "passed": true
+    },
+    {
+      "check": "rehashed_public_receipt_rejects_private_field",
+      "passed": true
+    },
+    {
+      "check": "rehashed_public_receipt_rejects_naive_time",
+      "passed": true
+    },
+    {
+      "check": "rehashed_public_receipt_rejects_invalid_time_type",
+      "passed": true
+    },
+    {
+      "check": "rehashed_public_receipt_rejects_future_review",
+      "passed": true
+    },
+    {
+      "check": "rehashed_public_receipt_rejects_wrong_version",
+      "passed": true
+    },
+    {
+      "check": "rehashed_public_receipt_rejects_wrong_ledger_hash",
+      "passed": true
+    },
+    {
+      "check": "rehashed_public_receipt_rejects_wrong_test_hash",
+      "passed": true
+    },
+    {
+      "check": "published_metadata_cannot_replace_real_private_ledger",
+      "passed": true
+    },
+    {
+      "check": "other_shared_instance_remains_queryable",
+      "passed": true
+    },
+    {
+      "check": "shared_instances_close_idempotently",
+      "passed": true
+    },
+    {
+      "check": "closed_index_query_rejected",
+      "passed": true
+    },
+    {
+      "check": "closed_index_vector_query_rejected",
+      "passed": true
+    },
+    {
+      "check": "failed_collection_open_releases_its_system",
+      "passed": true
+    },
+    {
+      "check": "failed_shared_open_keeps_other_client_alive",
+      "passed": true
+    },
+    {
+      "check": "query_packet_rejects_partial",
+      "passed": true
+    },
+    {
+      "check": "query_packet_rejects_duplicate",
+      "passed": true
+    },
+    {
+      "check": "query_packet_rejects_misaligned",
+      "passed": true
+    },
+    {
+      "check": "query_packet_rejects_missing_fields",
+      "passed": true
+    },
+    {
+      "check": "query_packet_rejects_incorrect_finite_distance",
+      "passed": true
+    },
+    {
+      "check": "unqualified_external_embedder_rejected",
+      "passed": true
+    },
+    {
+      "check": "different_pinned_embedder_configuration_rejected",
+      "passed": true
+    },
+    {
+      "check": "unsupported_configuration_rejected_api",
+      "passed": true
+    },
+    {
+      "check": "unsupported_configuration_rejected_query_template",
+      "passed": true
+    },
+    {
+      "check": "unsupported_configuration_rejected_num_gpu",
+      "passed": true
+    },
+    {
+      "check": "unsupported_configuration_rejected_expected_records",
+      "passed": true
+    },
+    {
+      "check": "nested_index_output_rejected_before_write",
+      "passed": true
+    },
+    {
+      "check": "original_index_files_unchanged",
+      "passed": true
+    },
+    {
+      "check": "all_historical_eval_reports_and_public_index_metadata_unchanged",
+      "passed": true
+    },
+    {
+      "check": "original_human_validator_source_unchanged",
+      "passed": true
+    },
+    {
+      "check": "no_client_reference_leaks_after_all_cases",
+      "passed": true
+    }
+  ],
+  "reference_commit": "3e41191c145da963fb24057bb1b39354287ebc5a",
+  "actual_human_reviews_created": false,
+  "real_dataset_quality_metrics_computed": false,
+  "historical_files_preserved": 64,
+  "implementation_sha256": {
+    "dense_index.py": "43f384fbd6172f3ccecb8577b3cfdd32253a1d6dabdba407fdc9f52d1f154b1a",
+    "freeze_eval_dataset.py": "b0ac10d24c275be516e4701195551ffb1bcdc70086f06b0c07e9d68b3f9e0a26",
+    "validate_eval_receipt.py": "80e6126c8e2f27af44fe11850a56842a711b0995b6cfbab4f67eb239e2427f95",
+    "verify_task45_regressions.py": "5a86d7b7957b505a253d3493aaf3dd2d98c60da8e93ee48b05c8c95b62a24e06"
+  }
+}

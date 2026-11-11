@@ -40,6 +40,9 @@ def main():
         return False
     historical_names=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'reports','data/eval',
         'data/manifests/dense_index_manifest.json','data/manifests/dense_chunk_ids.json'],cwd=ROOT,text=True).splitlines()
+    # These three files are maintained indexes, not immutable acceptance data.
+    historical_names=[name for name in historical_names if name not in
+        ('reports/README.md','reports/all_experiments_summary.csv','reports/resume_evidence.md')]
     historical={name:digest((ROOT/name).read_bytes()) for name in historical_names}
     original_index={**inventory(DEFAULT_INDEX),'index_manifest.json':digest((DEFAULT_INDEX/'index_manifest.json').read_bytes())}
 

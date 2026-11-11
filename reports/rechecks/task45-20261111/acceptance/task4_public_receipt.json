@@ -1,0 +1,63 @@
+{
+  "status": "PASS_PUBLIC_RECEIPT",
+  "passed": 13,
+  "total": 13,
+  "checks": [
+    {
+      "check": "published_eval_files_match_manifest",
+      "passed": true
+    },
+    {
+      "check": "unique_90_reviewed_questions",
+      "passed": true
+    },
+    {
+      "check": "annotation_hashes_match_published_labels",
+      "passed": true
+    },
+    {
+      "check": "human_release_counts_and_status",
+      "passed": true
+    },
+    {
+      "check": "receipt_path_and_hash",
+      "passed": true
+    },
+    {
+      "check": "receipt_version_status_count",
+      "passed": true
+    },
+    {
+      "check": "each_receipt_record_binds_current_question",
+      "passed": true
+    },
+    {
+      "check": "all_receipt_decisions_are_human_approved",
+      "passed": true
+    },
+    {
+      "check": "public_records_do_not_expose_private_review_fields",
+      "passed": true
+    },
+    {
+      "check": "review_times_precede_completed_release",
+      "passed": true
+    },
+    {
+      "check": "private_ledger_hash_bound_without_disclosure",
+      "passed": true
+    },
+    {
+      "check": "test_lock_and_receipt_bind_same_test_bytes",
+      "passed": true
+    },
+    {
+      "check": "receipt_completion_matches_locked_release",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "reviewed_questions": 90,
+  "scope": "Published receipt consistency only; full delivery still requires the private matching human reviews",
+  "private_human_reading_independently_proven": false
+}
