@@ -1,0 +1,96 @@
+{
+  "captured_at": "2026-11-11T05:59:45.846370+00:00",
+  "passed": 5,
+  "total": 5,
+  "checks": [
+    {
+      "case_id": "Q1",
+      "passed": true,
+      "answer_status": "answered",
+      "citation_ID_URL_and_source_lines_match": true,
+      "all_complete_source_paragraphs_visible_in_answer": true,
+      "citation_chunk_ids": [
+        "L11-01",
+        "L11-02",
+        "L11-03"
+      ],
+      "prompt_eval_count": 1045,
+      "allowed_document_ids": [
+        "football-zh-02",
+        "football-zh-03",
+        "football-zh-04",
+        "football-zh-05"
+      ]
+    },
+    {
+      "case_id": "Q2",
+      "passed": true,
+      "answer_status": "answered",
+      "citation_ID_URL_and_source_lines_match": true,
+      "all_complete_source_paragraphs_visible_in_answer": true,
+      "citation_chunk_ids": [
+        "L12-03",
+        "L12-01",
+        "L12-02"
+      ],
+      "prompt_eval_count": 859,
+      "allowed_document_ids": [
+        "football-zh-03",
+        "football-zh-04",
+        "football-zh-05"
+      ]
+    },
+    {
+      "case_id": "Q3",
+      "passed": true,
+      "answer_status": "answered",
+      "citation_ID_URL_and_source_lines_match": true,
+      "all_complete_source_paragraphs_visible_in_answer": true,
+      "citation_chunk_ids": [
+        "L16-01",
+        "L16-04",
+        "L16-02",
+        "L16-03"
+      ],
+      "prompt_eval_count": 952,
+      "allowed_document_ids": [
+        "football-zh-01",
+        "football-zh-02",
+        "football-zh-04",
+        "football-zh-05"
+      ]
+    },
+    {
+      "case_id": "UI-OOS",
+      "passed": true,
+      "answer_status": "refused",
+      "citation_ID_URL_and_source_lines_match": true,
+      "all_complete_source_paragraphs_visible_in_answer": true,
+      "citation_chunk_ids": [],
+      "prompt_eval_count": 3901,
+      "allowed_document_ids": [
+        "football-zh-01",
+        "football-zh-02",
+        "football-zh-03",
+        "football-zh-05"
+      ]
+    },
+    {
+      "case_id": "UI-FALSE-PREMISE",
+      "passed": true,
+      "answer_status": "answered",
+      "citation_ID_URL_and_source_lines_match": true,
+      "all_complete_source_paragraphs_visible_in_answer": true,
+      "citation_chunk_ids": [
+        "L16-03"
+      ],
+      "prompt_eval_count": 942,
+      "allowed_document_ids": [
+        "football-zh-02",
+        "football-zh-04",
+        "football-zh-05"
+      ]
+    }
+  ],
+  "note": "Original three repeated with final code; extra cases retain earlier timestamps. No expert accuracy claim."
+}
