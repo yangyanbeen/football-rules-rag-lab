@@ -6,6 +6,7 @@ import json
 import os
 import platform
 import subprocess
+import threading
 import time
 import urllib.error
 import urllib.request
@@ -21,25 +22,29 @@ CONFIG = ROOT/'config/dense_index.json'
 DEFAULT_INDEX = ROOT/'data/indexes/dense'
 TEMPLATE = "join(section_path, ' / ') + '\\n\\n' + content_zh"
 UPSTREAM = '9ad3e4e49aa35b8acddd235918a5d9753c1cfdf9'
+_CLIENT_LOCK = threading.RLock()
+_CLIENT_REFERENCES = {}
 
 
 def load_config(path=CONFIG):
     cfg = json.loads(Path(path).read_text('utf-8'))
-    if (cfg['expected_records'] != 99 or cfg['storage']['backend'] != 'chromadb'
+    if (type(cfg['expected_records']) is not int or cfg['expected_records'] != 99 or cfg['storage']['backend'] != 'chromadb'
             or cfg['storage']['distance'] != 'cosine'
             or cfg['storage']['hnsw_metadata']['hnsw:space'] != 'cosine'
             or cfg['text']['document_template'] != TEMPLATE
             or cfg['text']['template_version'] != 'section-path-content-zh-v1'
+            or cfg['text']['query_template'] != 'query unchanged; reject blank input'
             or cfg['text']['secondary_chunking'] is not False
             or cfg['text']['unicode_normalization'] != 'none'
             or cfg['embedding']['truncate'] is not False
+            or cfg['embedding']['api'] != '/api/embed'
             or cfg['embedding']['normalization'] != 'L2 float32; reject nonfinite and zero vectors'
             or cfg['model']['query_prefix'] != '' or cfg['model']['document_prefix'] != ''):
         raise ValueError('Unsupported dense B0 configuration or text/normalization policy')
     for field in ('batch_size', 'num_ctx', 'num_thread', 'timeout_seconds'):
         if type(cfg['embedding'][field]) is not int or cfg['embedding'][field] < 1:
             raise ValueError('Embedding options must be positive integers')
-    if cfg['embedding']['num_gpu'] != 0 or type(cfg['model']['dimensions']) is not int or cfg['model']['dimensions'] < 1:
+    if type(cfg['embedding']['num_gpu']) is not int or cfg['embedding']['num_gpu'] != 0 or type(cfg['model']['dimensions']) is not int or cfg['model']['dimensions'] < 1:
         raise ValueError('This baseline fixes CPU encoding and positive embedding dimensions')
     for package, expected in (('chromadb',cfg['storage']['version']),('numpy',cfg['storage']['numpy_version']),
                               ('chroma-hnswlib',cfg['storage']['hnswlib_version'])):
@@ -176,19 +181,33 @@ def safe_output(path):
     path = Path(path).resolve()
     if not any(path.is_relative_to(base) and path != base for base in (ROOT/'data/indexes',ROOT/'.tmp')):
         raise ValueError('Index output must be a child of data/indexes/ or ignored .tmp/')
+    for parent in path.parents:
+        if parent == ROOT:
+            break
+        if (parent/'index_manifest.json').exists() or (parent/'embeddings.npy').exists():
+            raise ValueError('Refusing a nested index path inside an existing or incomplete index')
     return path
 
 
 def open_collection(path, cfg, create=False):
     import chromadb
     from chromadb.config import Settings
-    client = chromadb.PersistentClient(path=str(path/'chroma'),settings=Settings(anonymized_telemetry=False,allow_reset=False,
-        chroma_product_telemetry_impl='dense_telemetry.DisabledTelemetry'))
-    if create:
-        collection = client.create_collection(cfg['storage']['collection'],embedding_function=None,
-            metadata={**cfg['storage']['hnsw_metadata'],'index_version':cfg['index_version']})
-    else:
-        collection = client.get_collection(cfg['storage']['collection'],embedding_function=None)
+    with _CLIENT_LOCK:
+        client = chromadb.PersistentClient(path=str(path/'chroma'),settings=Settings(anonymized_telemetry=False,allow_reset=False,
+            chroma_product_telemetry_impl='dense_telemetry.DisabledTelemetry'))
+        client._dense_system = client._system
+        client._dense_released = False
+        entry = _CLIENT_REFERENCES.setdefault(client._identifier,{'system':client._system,'count':0})
+        entry['count'] += 1
+        try:
+            if create:
+                collection = client.create_collection(cfg['storage']['collection'],embedding_function=None,
+                    metadata={**cfg['storage']['hnsw_metadata'],'index_version':cfg['index_version']})
+            else:
+                collection = client.get_collection(cfg['storage']['collection'],embedding_function=None)
+        except Exception:
+            close_client(client)
+            raise
     return client, collection
 
 
@@ -196,10 +215,21 @@ def close_client(client):
     # Chroma 0.5.16 has no public close(). Release this path's system only;
     # never reset/delete a collection or clear unrelated clients' caches.
     from chromadb.api.shared_system_client import SharedSystemClient
-    key, system = client._identifier, client._system
-    system.stop()
-    if SharedSystemClient._identifier_to_system.get(key) is system:
-        SharedSystemClient._identifier_to_system.pop(key)
+    with _CLIENT_LOCK:
+        if getattr(client,'_dense_released',False):
+            return
+        key, system = client._identifier, client._dense_system
+        client._dense_released = True
+        entry = _CLIENT_REFERENCES[key]
+        entry['count'] -= 1
+        if entry['count']:
+            return
+        try:
+            system.stop()
+        finally:
+            _CLIENT_REFERENCES.pop(key)
+            if SharedSystemClient._identifier_to_system.get(key) is system:
+                SharedSystemClient._identifier_to_system.pop(key)
 
 
 def collection_metadata(row):
@@ -263,8 +293,11 @@ def build(output=DEFAULT_INDEX, config_path=CONFIG):
 
 class DenseIndex:
     def __init__(self, path=DEFAULT_INDEX, config_path=CONFIG, embedder=None):
+        self.client = None
         self.path = safe_output(path)
         self.cfg = load_config(config_path)
+        if embedder is not None and (not isinstance(embedder,PinnedEmbedder) or embedder.cfg != self.cfg):
+            raise ValueError('A supplied embedder must use the exact pinned index configuration')
         self.manifest = json.loads((self.path/'index_manifest.json').read_text('utf-8'))
         if (self.manifest['state'] != 'READY' or self.manifest['records'] != self.cfg['expected_records']
                 or self.manifest['dimensions'] != self.cfg['model']['dimensions']
@@ -287,6 +320,7 @@ class DenseIndex:
                 or digest(self.vectors.tobytes(order='C')) != self.manifest['vector_fingerprint']):
             raise ValueError('Stored normalized vectors differ')
         self.by_id = {r['chunk_id']:r for r in self.rows}
+        self.vector_positions = {r['chunk_id']:i for i,r in enumerate(self.rows)}
         self.client, self.collection = open_collection(self.path,self.cfg)
         try:
             actual = self.collection.get(include=['embeddings','metadatas'])
@@ -312,15 +346,26 @@ class DenseIndex:
     def __exit__(self, *_): self.close()
 
     def query_vector(self, vector, top_k=5):
+        if self.client is None:
+            raise ValueError('DenseIndex is closed')
         if type(top_k) is not int or not 1 <= top_k <= len(self.rows):
             raise ValueError('top_k must be an integer between 1 and corpus size')
         normalized = unit_vectors([vector],self.cfg['model']['dimensions'],1)[0]
         raw = self.collection.query(query_embeddings=[normalized.tolist()],n_results=top_k,include=['distances','metadatas'])
+        try:
+            if (any(len(raw[key]) != 1 or len(raw[key][0]) != top_k for key in ('ids','distances','metadatas'))
+                    or len(set(raw['ids'][0])) != top_k):
+                raise ValueError('Query results are incomplete, duplicate or misaligned')
+        except (KeyError,TypeError) as exc:
+            raise ValueError('Malformed query result packet') from exc
         matches = []
         for qid, distance, metadata in zip(raw['ids'][0],raw['distances'][0],raw['metadatas'][0]):
             if qid not in self.by_id or not np.isfinite(distance) or metadata != collection_metadata(self.by_id[qid]):
                 raise ValueError('Query result ID/score/source integrity differs')
             row = self.by_id[qid]
+            expected_distance = 1.0-float(np.dot(normalized,self.vectors[self.vector_positions[qid]]))
+            if not np.isclose(distance,expected_distance,atol=3e-6,rtol=0):
+                raise ValueError('Query distance differs from the stored normalized vector')
             matches.append({'chunk_id':qid,'distance':float(distance),'score':1.0-float(distance),
                             'content_zh':row['content_zh'],'metadata':{k:v for k,v in row.items() if k!='content_zh'}})
         matches.sort(key=lambda r:(r['distance'],r['chunk_id']))
@@ -328,12 +373,16 @@ class DenseIndex:
         return matches
 
     def query(self, text, top_k=5):
+        if self.client is None:
+            raise ValueError('DenseIndex is closed')
         if not isinstance(text,str) or not text.strip():
             raise ValueError('Query must be a nonblank string')
         if type(top_k) is not int or not 1 <= top_k <= len(self.rows):
             raise ValueError('top_k must be an integer between 1 and corpus size')
         if self.embedder is None:
             self.embedder = PinnedEmbedder(self.cfg)
+        elif self.embedder.cfg != self.cfg:
+            raise ValueError('Query embedder configuration differs from the index')
         began = time.perf_counter()
         vector = self.embedder.encode([text])[0]
         embed_seconds = time.perf_counter()-began

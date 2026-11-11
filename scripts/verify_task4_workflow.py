@@ -6,9 +6,11 @@ real manual review. No live test predictions, model calls or label approvals.
 from __future__ import annotations
 
 import json
+import argparse
 import math
 import shutil
 from datetime import datetime, timezone
+from pathlib import Path
 
 from eval_dataset import CHECKLIST, CORPUS, EVAL, ROOT, active_reviews, canonical, digest, load_jsonl, question_digest, write_json, write_jsonl
 from retrieval_metrics import compute_metrics
@@ -19,6 +21,12 @@ from freeze_eval_dataset import freeze
 
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--report',type=Path,default=ROOT/'reports/acceptance/task4_workflow_verification.json')
+    args=parser.parse_args()
+    report=args.report.resolve()
+    if not any(report.is_relative_to(ROOT/name) for name in ('reports','.tmp')) or report.suffix!='.json':
+        raise ValueError('Use a JSON report under reports/ or .tmp/')
     before = {p.name:digest(p.read_bytes()) for p in EVAL.iterdir() if p.is_file()}
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%f')
     fixture_root = ROOT/'.tmp'/('task4-workflow-'+stamp)
@@ -173,7 +181,7 @@ def main():
                 'eval_dataset.py','build_eval_dataset.py','validate_eval_dataset.py','retrieval_metrics.py',
                 'run_retrieval_metrics.py','freeze_eval_dataset.py','serve_eval_review.py','verify_task4_workflow.py','recheck_task4.ps1')},
             'synthetic_review_notice':'Only disposable .tmp fixtures contain synthetic review records to test program logic. They never count toward the real dataset.'}
-    write_json(ROOT/'reports/acceptance/task4_workflow_verification.json',result)
+    write_json(report,result)
     print(json.dumps({'status':result['status'],'passed':result['passed'],'total':result['total'],
                       'corrupt_cases_rejected':sum(r['rejected'] for r in rejections),'actual_human_reviews_created':False}))
     return 0 if result['status']=='PASS' else 1

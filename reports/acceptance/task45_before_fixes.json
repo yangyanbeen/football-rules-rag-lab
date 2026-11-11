@@ -1,0 +1,36 @@
+{
+  "captured_at": "2026-11-11T14:42:54.695944+00:00",
+  "reference_commit": "3e41191c145da963fb24057bb1b39354287ebc5a",
+  "findings": {
+    "task4_missing_public_receipt_not_detected": {
+      "reproduced": true,
+      "original_gate": [
+        26,
+        26
+      ],
+      "freeze_returned": "Already locked; no files changed"
+    },
+    "task5_shared_clients_close_raises": {
+      "reproduced": true,
+      "close_error_type": "KeyError",
+      "query_after_other_close_failed": false,
+      "query_error_type": null
+    },
+    "task5_failed_open_leaves_cached_system": {
+      "reproduced": true
+    },
+    "task5_partial_duplicate_wrong_scores_accepted": {
+      "reproduced": true
+    },
+    "task5_ignored_api_and_query_template_options": {
+      "reproduced": true
+    },
+    "task5_build_path_inside_existing_index_allowed": {
+      "reproduced": true,
+      "no_build_performed": true
+    }
+  },
+  "reproduced": 6,
+  "total": 6,
+  "scope": "Isolated edge-case defect reproductions; real human records/eval/corpus/index files were not edited"
+}

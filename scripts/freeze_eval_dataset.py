@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 
 from eval_dataset import EVAL, REVIEW_LEDGER, active_reviews, canonical, digest, load_jsonl, write_json
 from validate_eval_dataset import validate
+from validate_eval_receipt import require_receipt
 
 
 def freeze(directory=EVAL, ledger=REVIEW_LEDGER, allow_synthetic=False):
@@ -16,6 +17,7 @@ def freeze(directory=EVAL, ledger=REVIEW_LEDGER, allow_synthetic=False):
     if already_locked and manifest.get('release_status') == 'human_reviewed_and_test_locked':
         result = validate(directory,phase='delivery',ledger=ledger,allow_synthetic_reviews=allow_synthetic)
         if result['status'] != 'PASS':raise ValueError('Existing lock or human review is invalid')
+        require_receipt(directory)
         return 'Already locked; no files changed'
     if already_locked:
         from owner_approve_eval import validate_owner_acceptance
@@ -54,6 +56,7 @@ def freeze(directory=EVAL, ledger=REVIEW_LEDGER, allow_synthetic=False):
     manifest['human_review'].update(receipt_path='data/eval/human_review_receipt.json',
                                    receipt_sha256=digest((directory/'human_review_receipt.json').read_bytes()))
     write_json(path,manifest)
+    require_receipt(directory)
     return 'All questions human-approved; test frozen. Run delivery validation before committing.'
 
 
