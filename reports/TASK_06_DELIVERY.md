@@ -67,6 +67,8 @@
 
 所有新回执位于reports/rechecks/task6-20261111/，原报告未覆盖。原10个冻结文件、4个历史前缀、61份本机语料、178份原工程静态文件、任务四评测及人工日志、任务五索引/公开清单均保持原内容。原应用启动代码未改；7860/7861/7862实例未停止或接管，原工程无根Git。
 
+文档更新后再次62/62通过，回执为rechecks/task6-20261111/acceptance/task6_final_gate.json；只读检查7860/7861/7862/7863均HTTP200，固定模型和99段索引READY，见evidence/task6_live_runtime.json。
+
 ## 5. 交付文件和运行
 
 - 使用说明：docs/RAG_B0.md；执行范围与原标准映射：docs/TASK_06_SCOPE.md。

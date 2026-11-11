@@ -18,8 +18,8 @@
 
 | 层 | 目录/入口 | 现状 |
 | --- | --- | --- |
-| 前端 | [frontend/](frontend/README.md) | 复用固定版本 Kotaemon 的 Gradio UI；启动入口 `frontend/start.ps1` |
-| 后端 | [backend/](backend/README.md)、`scripts/football_*.py` | 本地证据选择、引用恢复及运行时兼容层；与 UI 同进程 |
+| 前端 | [frontend/](frontend/README.md) | 固定Kotaemon Gradio UI；正式RAG入口 `frontend/start_rag_b0.ps1`，旧任务二入口保留 |
+| 后端 | [backend/](backend/README.md)、`scripts/rag_b0.py` | 正式Dense→本机LLM→引用/拒答；UI通过独立Python问答进程调用 |
 | 数据 | [data/](data/README.md)、`scripts/build_rag_dataset.py` | 冻结语料、稳定 ID、统一 Schema、独立校验与来源清单 |
 | 环境 | [infra/](infra/README.md)、`config/` | 上游 commit、锁定依赖、本地模型配置 |
 | 设计与执行 | `docs/` | 原技术设计、14 项任务计划及新增 Git 治理说明 |

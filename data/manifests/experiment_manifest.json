@@ -1,6 +1,6 @@
 {
   "manifest_version": "1.0.0",
-  "generated_at": "2026-11-11T16:13:35.063657+00:00",
+  "generated_at": "2026-11-11T16:18:01.806077+00:00",
   "scope": "Registry established at task 3; earlier original reports remain the historical evidence.",
   "experiments": [
     {
@@ -759,8 +759,8 @@
       "artifacts": [
         {
           "path": "reports/TASK_06_DELIVERY.md",
-          "size_bytes": 8399,
-          "sha256": "a759d510ca5b1b1c9f8cc471ba1f9e400c9486b929d2fe8aa47bad2e978eacc7"
+          "size_bytes": 8620,
+          "sha256": "b14cf85abf90d37bd7941b25c97218d3928e7c46be45d81efb2b933cde13e189"
         },
         {
           "path": "reports/acceptance/task6_delivery_gate.json",
@@ -826,9 +826,19 @@
           "path": "reports/rechecks/task6-20261111/manifests/dense_index_manifest.json",
           "size_bytes": 11745,
           "sha256": "9ea5d0403acb9ccaae8185623cf3cd66f834f555f7d839fa12cdbc8f60b2d557"
+        },
+        {
+          "path": "reports/rechecks/task6-20261111/acceptance/task6_final_gate.json",
+          "size_bytes": 4169,
+          "sha256": "a1e9e55d995ea40d5e796066926465b6c047b9cae4c4fff7b097360396176616"
+        },
+        {
+          "path": "reports/evidence/task6_live_runtime.json",
+          "size_bytes": 771,
+          "sha256": "b2ece7af184544259e356feb3d72de5b39d6b7fcb2ffea65d2aa10015f92b1ea"
         }
       ]
     }
   ],
-  "last_updated_at": "2026-11-11T16:13:35.063657+00:00"
+  "last_updated_at": "2026-11-11T16:18:01.806077+00:00"
 }
