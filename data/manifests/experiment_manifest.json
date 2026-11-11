@@ -1,6 +1,6 @@
 {
   "manifest_version": "1.0.0",
-  "generated_at": "2026-11-11T14:31:25.572781+00:00",
+  "generated_at": "2026-11-11T14:57:35.841306+00:00",
   "scope": "Registry established at task 3; earlier original reports remain the historical evidence.",
   "experiments": [
     {
@@ -586,6 +586,156 @@
           "path": "data/manifests/dense_chunk_ids.json",
           "size_bytes": 32967,
           "sha256": "0bdff8a39d7a458d586fecb921582224ad7a854cc3bf6fa589e04a1150b95b61"
+        }
+      ]
+    },
+    {
+      "id": "TASK-004-005-SUPPLEMENT",
+      "objective": "Audit uploaded tasks 4/5 and close six isolated delivery edge defects",
+      "baseline_commit": "3e41191c145da963fb24057bb1b39354287ebc5a",
+      "main_variable": "Stricter receipt/lifecycle/result/config/path checks; data and vectors unchanged",
+      "dataset_version": "corpus-b0-rag-adapter-1.0.0",
+      "evaluation_version": "football-eval-0.1.0 unchanged",
+      "implementation_sha256": {
+        "dense_index.py": "43f384fbd6172f3ccecb8577b3cfdd32253a1d6dabdba407fdc9f52d1f154b1a",
+        "freeze_eval_dataset.py": "b0ac10d24c275be516e4701195551ffb1bcdc70086f06b0c07e9d68b3f9e0a26",
+        "validate_eval_receipt.py": "80e6126c8e2f27af44fe11850a56842a711b0995b6cfbab4f67eb239e2427f95",
+        "verify_task45_regressions.py": "304b7bea974dac7b017d81b43d76f9e9c63775ead1fae85ab3cad5dd3ca31117"
+      },
+      "model": {
+        "name": "bge-m3:latest",
+        "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+        "architecture": "bert",
+        "dimensions": 1024,
+        "context_length": 8192,
+        "quantization": "F16",
+        "ollama_version": "0.40.16"
+      },
+      "environment": {
+        "python": "3.10.22",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "logical_cpus": 20,
+        "packages": {
+          "numpy": "1.26.4",
+          "chromadb": "0.5.16",
+          "chroma-hnswlib": "0.7.6"
+        }
+      },
+      "commands": [
+        "recheck_task45.ps1 -ReportDir reports/rechecks/task45-20261111 -OriginalRoot <prior project> -OriginalSnapshot <prior snapshot>",
+        "verify_task45_regressions.py --report reports/rechecks/task45-20261111/acceptance/task45_regressions_final.json",
+        "audit_remote_delivery.py --expected-commit 3e41191c145da963fb24057bb1b39354287ebc5a"
+      ],
+      "result": {
+        "original_human_gate": "26/26",
+        "public_receipt_consistency": "13/13",
+        "original_dense_gate": "24/24",
+        "new_regressions": "39/39",
+        "remote_snapshot": "12/12; 157 exact public files",
+        "final_integrity": "18/18",
+        "retrieval_or_answer_metrics": "not measured"
+      },
+      "decision": "Six reproduced edge defects closed; original task data and old evidence retained; task 6 not started",
+      "artifacts": [
+        {
+          "path": "scripts/validate_eval_receipt.py",
+          "size_bytes": 5790,
+          "sha256": "80e6126c8e2f27af44fe11850a56842a711b0995b6cfbab4f67eb239e2427f95"
+        },
+        {
+          "path": "scripts/freeze_eval_dataset.py",
+          "size_bytes": 4221,
+          "sha256": "b0ac10d24c275be516e4701195551ffb1bcdc70086f06b0c07e9d68b3f9e0a26"
+        },
+        {
+          "path": "scripts/dense_index.py",
+          "size_bytes": 22814,
+          "sha256": "43f384fbd6172f3ccecb8577b3cfdd32253a1d6dabdba407fdc9f52d1f154b1a"
+        },
+        {
+          "path": "scripts/verify_task45_regressions.py",
+          "size_bytes": 10156,
+          "sha256": "304b7bea974dac7b017d81b43d76f9e9c63775ead1fae85ab3cad5dd3ca31117"
+        },
+        {
+          "path": "scripts/recheck_task45.ps1",
+          "size_bytes": 2220,
+          "sha256": "78f71e48b26855c91ae0b20e01c7b77cb639a85ff695e21767fc68fecfff81d5"
+        },
+        {
+          "path": "scripts/audit_remote_delivery.py",
+          "size_bytes": 5809,
+          "sha256": "4408ca4d8a18ad2c4c3009cb9b1f23deac9ffa8298a6ec174a62d4a34d4c4890"
+        },
+        {
+          "path": "reports/TASK_04_05_SUPPLEMENT.md",
+          "size_bytes": 6876,
+          "sha256": "e411c1a23344f8e8fbc8f7126b62302cce0015a609942fd5467236b9f1d7d6c6"
+        },
+        {
+          "path": "reports/acceptance/task45_before_fixes.json",
+          "size_bytes": 1057,
+          "sha256": "b15db84914d92edd769fe12dc306ac2e610e6c545d3fd46ade2f24ecbd7672bb"
+        },
+        {
+          "path": "reports/rechecks/task45-20261111/acceptance/task45_final_integrity.json",
+          "size_bytes": 1846,
+          "sha256": "9b47bbaa4d485bab2c49d80f790cb177bcd3f432b139b43490a003ece14fc41b"
+        },
+        {
+          "path": "reports/rechecks/task45-20261111/acceptance/task45_regressions.json",
+          "size_bytes": 4474,
+          "sha256": "f5c08d3419b7a34d9df37fe65234b243e79839405772d55cc1014eaf7420b616"
+        },
+        {
+          "path": "reports/rechecks/task45-20261111/acceptance/task45_regressions_final.json",
+          "size_bytes": 4474,
+          "sha256": "b6b7001b8122b0f084e8370b05efa61b91ed2a3ef6371fa6ea18da617709039a"
+        },
+        {
+          "path": "reports/rechecks/task45-20261111/acceptance/task4_delivery_gate.json",
+          "size_bytes": 5103,
+          "sha256": "08592002412c58c288d84cc38a5102040edcb840e69605528c29af7bd1fb021e"
+        },
+        {
+          "path": "reports/rechecks/task45-20261111/acceptance/task4_human_release_verification.json",
+          "size_bytes": 1975,
+          "sha256": "80a6de50a8b87a0e91405c3c5c6b00d438bc003efb744e530e41ad0cccd9b928"
+        },
+        {
+          "path": "reports/rechecks/task45-20261111/acceptance/task4_public_receipt.json",
+          "size_bytes": 1469,
+          "sha256": "2cc4586a1472de5cc8861f4d39c153219c667000d0130d81b776bd9946f01383"
+        },
+        {
+          "path": "reports/rechecks/task45-20261111/acceptance/task4_workflow_verification.json",
+          "size_bytes": 11958,
+          "sha256": "ef16fd62a254516cc7ce02f70671deef6a9aeacd858168a8db920263c03c044b"
+        },
+        {
+          "path": "reports/rechecks/task45-20261111/acceptance/task5_delivery_gate.json",
+          "size_bytes": 17142,
+          "sha256": "87a7c7832c302765c77f6b5664de2b866dfbe57a32a452501e90c1710322a707"
+        },
+        {
+          "path": "reports/rechecks/task45-20261111/evidence/github_before.json",
+          "size_bytes": 1870,
+          "sha256": "c1a7d8f9c921a0c85cc0cb5c898097d76ca72291d8b4584c29e580f6775830a4"
+        },
+        {
+          "path": "reports/rechecks/task45-20261111/evidence/task5_dense_smoke.json",
+          "size_bytes": 5881,
+          "sha256": "a263238d5ff0d05339c96186a3794ee5797524c2f1b60534cec6b19f28eae921"
+        },
+        {
+          "path": "reports/rechecks/task45-20261111/manifests/dense_chunk_ids.json",
+          "size_bytes": 32967,
+          "sha256": "0bdff8a39d7a458d586fecb921582224ad7a854cc3bf6fa589e04a1150b95b61"
+        },
+        {
+          "path": "reports/rechecks/task45-20261111/manifests/dense_index_manifest.json",
+          "size_bytes": 11745,
+          "sha256": "9ea5d0403acb9ccaae8185623cf3cd66f834f555f7d839fa12cdbc8f60b2d557"
         }
       ]
     }

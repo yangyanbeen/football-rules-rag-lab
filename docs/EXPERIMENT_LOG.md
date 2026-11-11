@@ -231,3 +231,15 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 - 分发：实际索引、向量、正文副本留本机忽略目录；仅公开config、dense_index_manifest.json和dense_chunk_ids.json等哈希元数据。不上传完整日志、账号或数据库。模型服务复用原本机Ollama，应用7860/7861/7862的代码/数据库未接管。
 - 交付：docs/EMBEDDING_AND_INDEX.md、reports/TASK_05_DELIVERY.md与当前状态索引已更新。小步提交、PR与版本标签保存；仅新football-rules-rag-lab仓库写入。
 - 本轮没有LLM回答、正式测试预测、Recall/MRR/nDCG、答案准确率、P95/QPS或优化提升数字；来源非官方/未专家审校边界不变。任务六起按原计划单独推进。
+
+## TASK-004-005-SUPPLEMENT：仓库核对与6组边界缺陷修复（2026-11-11）
+
+- 用户要求任务四、五上传仓库、查缺陷并补齐。起点3e41191c145da963fb24057bb1b39354287ebc5a，新分支fix/task-04-05-delivery-audit；原技术/任务标准不改，不进入任务六。
+- 只读GitHub核对：原PR8/9已合并，两个原发布标签有效；157个公开文件的Git对象、清单大小和SHA完全匹配，规定交付物无缺失、无全文/索引/账号上传，12/12通过。
+- 在隔离.tmp复现6/6：原门禁不检查缺失的公开凭证；共享路径两个实例末次close抛KeyError（查询当时仍工作，不写成查询失败）；集合打开失败留系统缓存；部分/重复/错位或错误有限距离结果被接受；api/query_template配置被忽略；允许嵌套输出进已有索引。原始复现task45_before_fixes.json。
+- 修复：新公开凭证13项一致性验证和冻结工具守卫，原人工验证器不改；按路径引用计数、锁与幂等关闭及失败清理；结果形状/唯一ID/来源和实际余弦距离复算；同配置Embedding及严格字段校验；写前拒绝嵌套索引路径。
+- 增加--report/--report-dir和统一recheck_task45.ps1，新报告写入独立目录，旧数据/报告/公开索引元数据不覆盖。公开克隆只有2个检查脚本和eval元数据、没有语料/日志/模型时，公开凭证仍13/13；该状态不证明私人真实阅读，原完整门禁仍需真实日志。
+- 实际统一复核：recheck_task45.ps1 -ReportDir reports/rechecks/task45-20261111 -OriginalRoot <原工程目录> -OriginalSnapshot <变更前快照JSON>。原任务四26/26（人工90/90）、公开凭证13/13、工作流27/27、封存15/15、原任务五24/24及18种错误拒绝，补缺回归39/39全部通过。
+- 任务五再次从新空目录真实编码99段，向量最大绝对差0.0；不使用锁定测试调参或计分。原正式索引所有文件哈希不变，最终61份旧证据/任务四数据/公开索引元数据不变，另3份入口/实验汇总随补交付更新；首轮在文档维护前64份一致的结果保留。原人工日志未追加，原10冻结、4历史前缀、61本机语料和178原工程静态文件通过保全。
+- 当前依据reports/TASK_04_05_SUPPLEMENT.md及reports/rechecks/task45-20261111；旧构建producer哈希保留在旧manifest，当前reader和本次重建用新代码哈希，不回写旧实验。新增只读audit_remote_delivery.py支持后续远程逐文件复核。
+- 仅新足球仓库走独立分支、小提交、PR与版本标签；全文、向量、数据库、完整日志和账号仍留本机。无新LLM回答、正式检索/答案/延迟优化成绩。
