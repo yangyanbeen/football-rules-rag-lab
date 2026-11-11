@@ -1,0 +1,27 @@
+{
+  "captured_at": "2026-11-11T14:31:25.551785+00:00",
+  "status": "PASS",
+  "passed": 18,
+  "total": 18,
+  "checks": {
+    "full_gate_pass_24_of_24": true,
+    "negative_cases_all_18_rejected": true,
+    "gate_implementation_hashes_current": true,
+    "index_build_implementation_hashes_current": true,
+    "configuration_matches_built_bytes": true,
+    "public_manifest_preserves_local_metadata": true,
+    "public_id_map_matches_local": true,
+    "index_manifest_matches_acceptance": true,
+    "sealed_private_human_ledger_unchanged": true,
+    "post_smoke_index_reload_99": true,
+    "unchanged_task4_dataset_manifest.json": true,
+    "unchanged_task4_human_review_receipt.json": true,
+    "unchanged_task4_owner_approval_receipt.json": true,
+    "unchanged_task4_retrieval_dev.jsonl": true,
+    "unchanged_task4_retrieval_test.jsonl": true,
+    "unchanged_task4_answer_eval.jsonl": true,
+    "unchanged_task4_hard_negatives.jsonl": true,
+    "no_index_or_private_runtime_files_tracked": true
+  },
+  "reference_commit": "8e8b93c6556943b4d08ee82f2620a5bc21ee759a"
+}

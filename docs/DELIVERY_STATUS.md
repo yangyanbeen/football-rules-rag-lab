@@ -8,7 +8,8 @@
 | 2 固定应用与本机运行 | 已交付 | UPSTREAM_VERSION、LOCAL_SETUP、启动脚本、KOTAEMON_BASELINE | 同上；质量修复见 ANSWER_QUALITY_FIX_2026-11-11.md；UI/引用检查 5/5 |
 | 3 统一数据结构 | 已交付 | RAG_DATA_SCHEMA、build/validate 脚本、两份派生 JSONL、数据 manifest | TASK_03_DELIVERY；主校验 18/18、交付 8/8、坏数据拒绝 16/16 |
 | 4 检索/答案评测集 | 已按原标准交付 | 40开发/50锁定测试、90对应答案标签和90对负例；90/90逐题人工通过 | 原完整门禁26/26、结构22/22、工作流27/27、封存专项15/15；TASK_04_DELIVERY、human_review_receipt.json |
-| 5–14 | 按原计划继续 | 正式索引、RAG B0、检索优化、打包与实验归档 | 尚未完成，不填虚构性能数字 |
+| 5 Embedding与可追溯向量索引 | 已按原标准交付 | 固定BGE-M3 1024维CPU、Chroma99段索引、ID/来源映射、空目录重建和查询适配层 | TASK_05_DELIVERY；完整24/24、18种错误拒绝；未测正式检索质量 |
+| 6–14 | 按原计划继续 | RAG B0接入、检索优化、打包与实验归档 | 尚未完成，不填虚构性能数字 |
 
 任务 3 的两份完整 JSONL 和任务 1 的原始/处理语料保留本地、不纳入公开 Git；来源清单、稳定 ID 映射、输出哈希和代码已纳入。原本机 project_file_manifest 包含不可公开的运行归档，本仓库提供独立 `reports/PUBLICATION_MANIFEST.json`；二者范围不同，不相互替换。
 

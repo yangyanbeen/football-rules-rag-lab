@@ -1,0 +1,21 @@
+{
+  "gpu_vram_note": "Win32 adapter memory is not used to infer VRAM size; this run forces CPU and confirms size_vram=0.",
+  "captured_at": "2026-11-11T14:23:34.6685398Z",
+  "gpu_names": [
+    "Intel(R) UHD Graphics",
+    "NVIDIA GeForce RTX 4060 Laptop GPU"
+  ],
+  "computer": {
+    "TotalPhysicalMemory": 16858472448,
+    "NumberOfLogicalProcessors": 20
+  },
+  "cpu": {
+    "Name": "13th Gen Intel(R) Core(TM) i7-13650HX",
+    "NumberOfCores": 14,
+    "NumberOfLogicalProcessors": 20
+  },
+  "memory": {
+    "FreePhysicalMemory": 2757244,
+    "TotalVisibleMemorySize": 16463352
+  }
+}

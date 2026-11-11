@@ -11,3 +11,5 @@
 | `scripts/run_answer_quality_regression.py` | 原已交付开发回归入口，非锁定评测集 |
 
 为保留原数据 manifest 的实现哈希与相对路径，这些脚本本轮仍位于 scripts/。未来迁移为 Python 包时单独增加任务、兼容入口和验收记录。
+
+任务五另交付scripts/dense_index.py、build_dense_index.py与query_dense_index.py，提供固定99段独立索引和可重复读取/查询的适配层。该模块尚未接管现有应用问答；任务六再接入，避免将现有50块临时索引当作新正式索引。固定配置为config/dense_index.json，原环境/模型池与用户数据库不改。
