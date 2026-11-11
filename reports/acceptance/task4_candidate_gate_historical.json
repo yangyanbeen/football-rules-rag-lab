@@ -1,0 +1,366 @@
+{
+  "captured_at": "2026-11-11T10:54:24.837150+00:00",
+  "phase": "delivery",
+  "status": "FAIL",
+  "passed": 22,
+  "total": 25,
+  "errors": [
+    "all_questions_actually_human_reviewed",
+    "test_frozen_after_review",
+    "release_status_matches_human_review"
+  ],
+  "checks": [
+    {
+      "check": "corpus_has_99_unique_units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "corpus_matches_manifest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "annotation_input_matches_manifest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "file_integrity_retrieval_dev.jsonl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "file_integrity_retrieval_test.jsonl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "file_integrity_answer_eval.jsonl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "file_integrity_hard_negatives.jsonl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "pilot_development_30_to_50",
+      "passed": true,
+      "detail": {
+        "count": 40,
+        "suggested_not_original_mandatory_threshold": true
+      }
+    },
+    {
+      "check": "first_test_candidate_at_least_50",
+      "passed": true,
+      "detail": {
+        "count": 50,
+        "suggested_not_original_mandatory_threshold": true
+      }
+    },
+    {
+      "check": "unique_question_ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "questions_nonempty_and_no_exact_duplicates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "dev_test_distinct_intent_groups",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_question_labels_and_provenance_valid",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "split_membership",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "answer_eval_one_to_one_aligned",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "hard_negative_ids_reasons_and_sources",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "each_question_has_a_traceable_hard_negative",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "dev_covers_rules_1_to_17",
+      "passed": true,
+      "detail": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "check": "dev_covers_required_question_types",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "test_covers_rules_1_to_17",
+      "passed": true,
+      "detail": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "check": "test_covers_required_question_types",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "test_does_not_reuse_16_tuned_questions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_questions_actually_human_reviewed",
+      "passed": false,
+      "detail": {
+        "approved": 0,
+        "total": 90,
+        "not_approved": [
+          "D001",
+          "D002",
+          "D003",
+          "D004",
+          "D005",
+          "D006",
+          "D007",
+          "D008",
+          "D009",
+          "D010",
+          "D011",
+          "D012",
+          "D013",
+          "D014",
+          "D015",
+          "D016",
+          "D017",
+          "D018",
+          "D019",
+          "D020",
+          "D021",
+          "D022",
+          "D023",
+          "D024",
+          "D025",
+          "D026",
+          "D027",
+          "D028",
+          "D029",
+          "D030",
+          "D031",
+          "D032",
+          "D033",
+          "D034",
+          "D035",
+          "D036",
+          "D037",
+          "D038",
+          "D039",
+          "D040",
+          "T001",
+          "T002",
+          "T003",
+          "T004",
+          "T005",
+          "T006",
+          "T007",
+          "T008",
+          "T009",
+          "T010",
+          "T011",
+          "T012",
+          "T013",
+          "T014",
+          "T015",
+          "T016",
+          "T017",
+          "T018",
+          "T019",
+          "T020",
+          "T021",
+          "T022",
+          "T023",
+          "T024",
+          "T025",
+          "T026",
+          "T027",
+          "T028",
+          "T029",
+          "T030",
+          "T031",
+          "T032",
+          "T033",
+          "T034",
+          "T035",
+          "T036",
+          "T037",
+          "T038",
+          "T039",
+          "T040",
+          "T041",
+          "T042",
+          "T043",
+          "T044",
+          "T045",
+          "T046",
+          "T047",
+          "T048",
+          "T049",
+          "T050"
+        ]
+      }
+    },
+    {
+      "check": "test_frozen_after_review",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "check": "release_status_matches_human_review",
+      "passed": false,
+      "detail": null
+    }
+  ],
+  "coverage": {
+    "dev": {
+      "questions": 40,
+      "answerable": 32,
+      "unanswerable": 8,
+      "laws": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "categories": {
+        "term": 9,
+        "number": 8,
+        "exception": 9,
+        "condition": 20,
+        "version": 6,
+        "cross_chunk": 3,
+        "out_of_scope": 4,
+        "unanswerable": 4
+      },
+      "difficulty": {
+        "easy": 17,
+        "medium": 14,
+        "hard": 9
+      }
+    },
+    "test": {
+      "questions": 50,
+      "answerable": 40,
+      "unanswerable": 10,
+      "laws": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "categories": {
+        "number": 6,
+        "term": 15,
+        "condition": 23,
+        "exception": 16,
+        "version": 7,
+        "cross_chunk": 2,
+        "out_of_scope": 6,
+        "unanswerable": 5
+      },
+      "difficulty": {
+        "easy": 13,
+        "medium": 26,
+        "hard": 11
+      }
+    }
+  },
+  "human_review": {
+    "approved": 0,
+    "total": 90
+  },
+  "does_not_prove": [
+    "AI labels are factually correct",
+    "human review happened without matching real records",
+    "expert or official rule validation",
+    "retrieval or answer accuracy"
+  ]
+}

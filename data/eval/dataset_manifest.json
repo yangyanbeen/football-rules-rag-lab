@@ -1,6 +1,6 @@
 {
   "dataset_version": "football-eval-0.1.0",
-  "release_status": "owner_batch_approved_and_test_locked",
+  "release_status": "human_reviewed_and_test_locked",
   "corpus_version": "corpus-b0-rag-adapter-1.0.0",
   "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
   "annotation_source_sha256": "878e8e8d7ebe54826b19d4a4e4cb3113261edf5c26658166b0ccc1909bb7db55",
@@ -24,9 +24,12 @@
   },
   "human_review": {
     "required": true,
-    "approved": 2,
+    "approved": 90,
     "total": 90,
-    "ledger_distribution": "local-only; generated approvals forbidden"
+    "ledger_distribution": "local-only; generated approvals forbidden",
+    "ledger_sha256": "1e7161c703bce47ae7a8c3d13dafa04a09009cd8ea5311cd082e4dce309fb464",
+    "receipt_path": "data/eval/human_review_receipt.json",
+    "receipt_sha256": "69cf9f772528476c4a3da31a006edc498cfb1b411e56dfd573d033dad6460ec3"
   },
   "test_lock": {
     "state": "locked",
@@ -34,7 +37,8 @@
     "locked_at": "2026-11-11T12:31:34.505684+00:00",
     "approval_mode": "owner_batch_authorized",
     "used_for_parameter_selection": false,
-    "formal_test_runs": 0
+    "formal_test_runs": 0,
+    "human_review_completed_at": "2026-11-11T13:41:34.481232+00:00"
   },
   "metric_scope": "No real retrieval or answer performance measured by task 4",
   "license_scope": "Original questions/annotations; source metadata retains Wikipedia attribution. No full source corpus distributed.",

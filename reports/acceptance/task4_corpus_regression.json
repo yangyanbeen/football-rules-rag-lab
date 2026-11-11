@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-11T18:48:00+08:00",
+  "generated_at": "2026-11-11T21:42:19+08:00",
   "criteria": "Original task 3, unchanged",
   "execution": {
     "python_version": "3.10.22",
     "python_scope": "This checkout virtualenv",
-    "fixture": ".tmp/task3-isolated-20261111-184751-482648",
+    "fixture": ".tmp/task3-isolated-20261111-214209-704152",
     "exit_code": 0,
     "stdout": "Negative case: duplicate_id: REJECTED\nNegative case: missing_record: REJECTED\nNegative case: changed_source_id: REJECTED\nNegative case: forged_source_URL: REJECTED\nNegative case: invalid_source_lines: REJECTED\nNegative case: invented_parent: REJECTED\nNegative case: overstated_revision_verification: REJECTED\nNegative case: overstated_expert_review: REJECTED\nNegative case: removed_review_notes: REJECTED\nNegative case: rewritten_Chinese: REJECTED\nNegative case: rewritten_English: REJECTED\nNegative case: truncated_table: REJECTED\nNegative case: table_mislabeled_as_paragraph: REJECTED\nNegative case: boolean_source_line_numbers: REJECTED\nNegative case: missing_required_field: REJECTED\nNegative case: forged_provenance: REJECTED\nTask 3 delivery: PASS; checks 8/8; corrupt cases rejected 16/16\n",
     "stderr": ""
@@ -13,7 +13,7 @@
   "canonical_validation": {
     "task": 3,
     "criteria": "Unchanged task 3 in docs/DEVELOPMENT_PLAN_AND_REPORT.md",
-    "generated_at": "2026-11-11T18:48:00+08:00",
+    "generated_at": "2026-11-11T21:42:18+08:00",
     "command": ".venv/Scripts/python.exe scripts/validate_rag_dataset.py --data-dir data/processed --report reports/task3_dataset_validation.json",
     "summary": {
       "documents": 5,
@@ -131,7 +131,7 @@
   },
   "original_delivery_suite": {
     "task": 3,
-    "generated_at": "2026-11-11T18:48:00+08:00",
+    "generated_at": "2026-11-11T21:42:19+08:00",
     "criteria": "Original task 3 unchanged",
     "checks": [
       {
