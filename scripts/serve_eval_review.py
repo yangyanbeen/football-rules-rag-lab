@@ -80,6 +80,9 @@ def main():
     def review_access():
         if args.allow_frozen_human_review and not snapshot_unchanged():
             return False, '审核快照发生变化，已停止接收记录。请核对版本后重新启动。'
+        current_manifest = json.loads((EVAL/'dataset_manifest.json').read_text('utf-8'))
+        if current_manifest.get('release_status') == 'human_reviewed_and_test_locked':
+            return False, '人工审核已完成并封存，本页只读。修订须另建版本，冻结测试不能用于调参。'
         if locked():
             if args.allow_frozen_human_review:
                 return True, '已开启冻结版本人工审核。只追加逐题记录；需要修改时请说明原因，题目修订另建版本。测试集不能用于调参。'

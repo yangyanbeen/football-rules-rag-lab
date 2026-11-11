@@ -25,6 +25,18 @@ def validate_owner_acceptance(directory=EVAL):
     approvals = receipt.get('records', [])
     actual = {r.get('question_id'):r.get('annotation_sha256') for r in approvals}
     structure = validate(directory, phase='structure')
+    human_release_ok = False
+    human_receipt_path = directory/'human_review_receipt.json'
+    if manifest.get('release_status') == 'human_reviewed_and_test_locked' and human_receipt_path.exists():
+        human_receipt = json.loads(human_receipt_path.read_text('utf-8'))
+        human_records = human_receipt.get('records', [])
+        human_release_ok = (manifest.get('human_review',{}).get('approved') == len(rows)
+            and manifest['human_review'].get('receipt_sha256') == digest(human_receipt_path.read_bytes())
+            and human_receipt.get('status') == 'APPROVED'
+            and human_receipt.get('private_ledger_sha256') == manifest['human_review'].get('ledger_sha256')
+            and len(human_records) == len(rows)
+            and {r.get('question_id'):r.get('annotation_sha256') for r in human_records} == expected
+            and all(r.get('reviewer_type') == 'human' and r.get('decision') == 'approved' for r in human_records))
     checks = {
         'structure': structure['status']=='PASS',
         'all_current_questions_approved': actual==expected and len(approvals)==len(rows)==90,
@@ -38,7 +50,7 @@ def validate_owner_acceptance(directory=EVAL):
         'test_frozen_at_approved_bytes': manifest['test_lock'].get('state')=='locked'
             and manifest['test_lock'].get('approval_mode')=='owner_batch_authorized'
             and manifest['test_lock'].get('sha256')==digest((directory/'retrieval_test.jsonl').read_bytes()),
-        'release_is_qualified': manifest.get('release_status')=='owner_batch_approved_and_test_locked'
+        'release_is_qualified': (manifest.get('release_status')=='owner_batch_approved_and_test_locked' or human_release_ok)
             and manifest.get('owner_approval',{}).get('approved')==len(rows),
         'test_not_used_for_parameter_selection': manifest['test_lock'].get('used_for_parameter_selection') is False,
     }
