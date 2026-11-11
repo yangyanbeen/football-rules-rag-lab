@@ -1,0 +1,24 @@
+{
+  "version": "evidence-guard-v1",
+  "ollama_url": "http://127.0.0.1:11434",
+  "chat_model": "qwen2.5:3b",
+  "embedding_model": "bge-m3",
+  "num_ctx": 16384,
+  "input_token_budget": 9000,
+  "output_tokens": 1200,
+  "candidate_units": 20,
+  "candidate_units_per_law": 4,
+  "max_selected_paragraphs": 8,
+  "prompt_version": "paragraph-selection-v2",
+  "topic_aliases": {
+    "11": ["越位"],
+    "12": ["犯规", "手球", "回传", "绊人", "拉扯", "危险方式"],
+    "13": ["任意球"],
+    "14": ["罚球点球", "点球"],
+    "15": ["界外球"],
+    "16": ["球门球"],
+    "17": ["角球"]
+  },
+  "temperature": 0,
+  "timeout_seconds": 120
+}
