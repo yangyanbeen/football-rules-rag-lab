@@ -31,6 +31,8 @@
 
 ## 任务四候选与门禁
 
-`TASK_04_DELIVERY.md` 保留候选准备及后续授权签收过程。`acceptance/task4_structure.json` 和 `task4_workflow_verification.json` 是自动检查通过；历史 `task4_delivery_gate.json` 记录当时人工0/90、测试未冻结。不要把自动PASS或合成指标/签名当作人工评测集完成。`task4_corpus_regression.json` 为原数据独立回归。
+最新任务四已按原标准交付：`acceptance/task4_delivery_gate.json`为26/26 PASS、真实人工90/90；`task4_human_release_verification.json`为15/15 PASS；`evidence/task4_human_review_ui.json`为已封存只读页面证据。去姓名/备注人工凭证在`data/eval/human_review_receipt.json`。先看`TASK_04_DELIVERY.md`顶部当前结论，以下为早期阶段说明。
+
+`TASK_04_DELIVERY.md` 保留候选准备及后续授权签收过程。`acceptance/task4_structure.json` 和 `task4_workflow_verification.json` 是自动检查通过；早期人工0/90、测试未冻结的失败已另存`task4_candidate_gate_historical.json`。不要把自动PASS或合成指标/签名当作人工评测集完成。`task4_corpus_regression.json`为原数据独立回归。
 
 以上为原候选阶段。用户随后授权90题批量通过，当前按负责人模式批准并冻结：`task4_owner_acceptance.json`、`task4_owner_workflow_verification.json`。原逐题人工门禁仍23/26未通过，保存为 `task4_original_human_gate_after_owner_approval.json`；已有2条真实人工记录保留，批量批准不冒充逐题人工gold。

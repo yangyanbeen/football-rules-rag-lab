@@ -205,3 +205,15 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 - 本机7862已使用该选项重启，浏览器已加载，两个判定按钮可用，四项检查未自动勾选。页面显示负责人90/90、实际人工2/90，保留以前记录；未代用户提交审核。
 - 本轮仅开启服务和查看页面，未运行新增自动化测试、正式检索或模型评测；没有新增人工通过或性能数据。原始冻结数据、测试锁与批准凭证保持原样。
 - 操作说明：docs/TASK_04_MANUAL_REVIEW.md。未完成的88题须由实际复核人阅读提交；全部审核后仍需完成原正式交付校验与人工发布状态处理。
+
+## TASK-004-HUMAN-DELIVER：90题人工核对后按原标准交付（2026-11-11）
+
+- 用户告知人工审核全部通过并要求验收交付。实际读取私有追加日志133条事件：90个当前问题最新判定均为human通过，时间、四项检查及annotation_sha256有效；没有把133条事件计成133题，也没有由本Agent生成真实人工记录。
+- 首轮原完整门禁24/26 FAIL，真实人工90/90已通过；仅缺人工发布状态及封存日志哈希，保留task4_before_human_release.json。
+- 新增受限的负责人冻结快照→人工签收元数据转换：必须原批准有效、结构通过、90题人工记录匹配。保留四份标签正文、99段语料、原测试锁定时间、测试SHA和使用历史；不解除锁、不放宽原验证器/技术或任务标准。
+- 暂停7862写入以封存日志，生成去姓名/备注的human_review_receipt.json，并更新发布状态与日志/凭证哈希。完整姓名、备注、原始勾选日志仍留本机忽略目录。日志SHA为1e7161c703bce47ae7a8c3d13dafa04a09009cd8ea5311cd082e4dce309fb464。
+- 实际执行freeze_eval_dataset.py、recheck_task4.ps1（完整模式）、verify_task4_human_release.py、owner_approve_eval.py、verify_task3_isolated.py。结果：结构22/22、原正式交付26/26、工作流27/27、16类坏数据拒绝；封存专项15/15，原负责人10项仍有效；原任务三18/18、8/8及16类坏数据拒绝，输入未变。
+- 重新冻结命令返回Already locked且不改文件。7862恢复为只读展示，人工90/90、测试冻结、提交按钮禁用；实际浏览器证据reports/evidence/task4_human_review_ui.json。封存后不继续追加审核，修订须另建数据版本。
+- 交付40开发题、50锁定测试题、90对应答案/拒答标签、90对负例；两集合各覆盖1—17条。原失败回执及负责人批准凭证保留为历史；最新依据reports/TASK_04_DELIVERY.md和task4_delivery_gate.json。
+- 没有运行真实检索/LLM评测、正式测试计分或调参，没有新增Recall/MRR/nDCG/延迟成绩，不宣称专家或官方赛季规则认证。后续任务五起另按原计划实施。
+- Git继续独立feat/task-04-human-review分支、小步提交、PR #8与发布标签管理，仅新仓库football-rules-rag-lab写入。

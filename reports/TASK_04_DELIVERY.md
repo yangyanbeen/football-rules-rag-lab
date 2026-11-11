@@ -1,5 +1,61 @@
 # 任务四交付检查与阶段报告
 
+## 最新交付：原完整标准通过（2026-11-11）
+
+**结论：任务四已完成并交付。90/90题逐题人工核对有效，原完整门禁26/26通过。** 此结论替代下方历史阶段的“人工未齐”状态；失败报告和负责人批量批准记录保留，不回写历史结果。原TECHNICAL_DESIGN.md和DEVELOPMENT_PLAN_AND_REPORT.md未改，原人工验证器未放宽。
+
+### 原交付基线逐项对照
+
+| 原交付/通过条件 | 当前交付物与证据 | 结果 |
+| --- | --- | --- |
+| 三份规定JSONL | data/eval/retrieval_dev.jsonl（40题）、retrieval_test.jsonl（50题）、answer_eval.jsonl（90个对应标签） | 文件哈希、字段、ID、来源与一一对齐通过 |
+| 标注/版本/数量/切分/冻结说明 | docs/EVAL_DATASET.md、data/eval/dataset_manifest.json、docs/TASK_04_MANUAL_REVIEW.md | 当前发布状态human_reviewed_and_test_locked |
+| 可回答题人工核对支持chunk | 开发32+测试40，共72题；每条支持稳定ID及条件/例外均有匹配的四项人工通过 | 90/90全部问题确认，包含72题可回答题 |
+| 不可回答题有理由 | 开发8+测试10，共18题拒答理由 | 结构及人工核对通过 |
+| 覆盖及样本报告 | 两集合各覆盖规则1—17、数字/术语、条件/例外、跨段、资料外/版本题；task4_structure.json | 22/22通过；难度与类别分布见机器报告 |
+| hard negative逐条理由 | hard_negatives.jsonl共90对，绑定问题、来源和理由哈希 | 每题一对，人工核对并通过 |
+| 格式和指标脚本 | validate_eval_dataset.py、retrieval_metrics.py、verify_task4_workflow.py | 完整26/26、工作流27/27；16类重签哈希坏数据拒绝 |
+| 锁定测试不用于调参 | 原50题内容与原锁定时间保留，used_for_parameter_selection=false、formal_test_runs=0；正式计分有配置/用途门禁 | 本轮未调用真实检索或模型，未运行正式测试计分；后续调参只用开发集 |
+| 人工记录可追溯 | 本机133条事件中，90题最新有效判定全部通过；公开human_review_receipt.json仅含逐题哈希、类型、判定和时间 | 姓名、备注、四项原始记录不公开，完整日志SHA已封存 |
+
+### 本轮修复与封存
+
+原冻结工具拒绝给已“负责人批准并冻结”的数据补齐人工发布元数据。现新增受限转换：只有原负责人凭证有效、结构通过且90题真实人工确认全部匹配，才补齐人工发布状态、日志哈希及去身份凭证；不解除锁、不覆盖题目、不重置原锁定时间或使用历史。原正式验证器没有改动。
+
+测试SHA-256保持 `269d49e7d65c4ad3a97b588f34093a65bbc483c7382f78b0e9cf466eaa759a62`；原锁定时间 `2026-11-11T12:31:34.505684+00:00`，人工封存时间 `2026-11-11T13:41:34.481232+00:00`。
+
+私有日志SHA-256：`1e7161c703bce47ae7a8c3d13dafa04a09009cd8ea5311cd082e4dce309fb464`。公开人工凭证SHA-256：`69cf9f772528476c4a3da31a006edc498cfb1b411e56dfd573d033dad6460ec3`。本次没有自动生成真实人工通过；自动测试中的合成记录仅位于忽略的.tmp夹具。
+
+### 实际验收命令与记录
+
+```powershell
+.\.venv\Scripts\python.exe scripts/validate_eval_dataset.py --phase delivery --report reports/acceptance/task4_before_human_release.json
+# 首轮24/26：90题人工已通过，但缺人工发布状态与封存日志哈希；保留该失败。
+.\.venv\Scripts\python.exe scripts/freeze_eval_dataset.py
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_task4.ps1
+.\.venv\Scripts\python.exe scripts/verify_task4_human_release.py
+.\.venv\Scripts\python.exe scripts/owner_approve_eval.py
+.\.venv\Scripts\python.exe scripts/verify_task3_isolated.py --report reports/acceptance/task4_corpus_regression.json
+```
+
+| 证据文件（reports/acceptance/） | 实际结果 |
+| --- | --- |
+| task4_before_human_release.json | 修复前24/26 FAIL，缺2项元数据，人工90/90已通过 |
+| task4_structure.json | 22/22 PASS |
+| task4_delivery_gate.json | 26/26 PASS，人工90/90 |
+| task4_workflow_verification.json | 27/27 PASS，16类坏数据全部拒绝 |
+| task4_human_release_verification.json | 15/15 PASS，包含拒绝缺少/89条审核、无效负责人凭证、封存幂等、数据/锁不变、日志变化失效和公开凭证无姓名/备注 |
+| task4_owner_acceptance.json | PASS_OWNER_AUTHORIZED，原批准凭证继续有效，仅为历史批准性质 |
+| task4_corpus_regression.json | 原任务三主校验18/18、交付8/8、坏数据拒绝16/16，输入未变 |
+
+审核页http://127.0.0.1:7862/已恢复只读，显示人工90/90和测试冻结。后续修订另建数据版本。代码和证据沿独立分支、小提交、PR流程保存；本轮不进入任务五，不改原有其他仓库或原本地工程。
+
+### 本阶段边界
+
+本次交付的是人工核对的证据检索/答案标签集及验证工作流，不是系统答案质量评测或性能优化结果。来源仍为固定Wikipedia快照与AI中文翻译，现行官方赛季/裁判专家核验状态不变。尚无正式Recall/MRR/nDCG/延迟成绩；这些按后续任务实际测量。
+
+## 以下为负责人批准与候选阶段历史
+
 日期：2026-11-11。**当前按负责人最新批量授权签收：90/90批准，测试已冻结。** 审阅性质是负责人委托Codex批量批准，保留2条真实逐题人工记录；不冒充90条人工gold或专家审校。
 
 ## 最新授权执行结果
