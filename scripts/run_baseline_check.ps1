@@ -52,8 +52,8 @@ try {
         $PreviousProjectEnvironment = $env:UV_PROJECT_ENVIRONMENT
         try {
             $env:UV_PROJECT_ENVIRONMENT = Join-Path $ProjectRoot '.venv'
-            & $UvExe sync --locked --python 3.10.22 --project $UpstreamPath
-            if ($LASTEXITCODE -ne 0) { throw "uv sync failed with exit code $LASTEXITCODE" }
+            & (Join-Path $ProjectRoot 'scripts/install_local_runtime.ps1') -UvExe $UvExe
+            if ($LASTEXITCODE -ne 0) { throw "Locked local runtime installation failed with exit code $LASTEXITCODE" }
         }
         finally {
             if ($null -eq $PreviousProjectEnvironment) {
@@ -83,6 +83,10 @@ try {
         throw "Local compatibility launcher is missing: $LauncherPath"
     }
 
+    $AssetScript = Join-Path $ProjectRoot 'scripts/prepare_kotaemon_assets.py'
+    if ($InstallDependencies) { & $PythonExe $AssetScript }
+    else { & $PythonExe $AssetScript --verify-only }
+    if ($LASTEXITCODE -ne 0) { throw 'Required local tokenizer resources are missing or invalid.' }
     & $PythonExe $RuntimeCheckPath
     if ($LASTEXITCODE -ne 0) {
         throw 'Pinned runtime imports are missing. Run this script with -InstallDependencies when uv and package sources are available.'
