@@ -1,0 +1,623 @@
+{
+  "dataset_content_id": "77aea70e0e19e08b4bf3f041e22af8d5c979416cc43b7670a6ef702ee26edce0",
+  "dataset_version": "corpus-b0-rag-adapter-1.0.0",
+  "determinism": "No generated run timestamp in data; validation reports record execution time.",
+  "id_mapping": [
+    {
+      "chunk_id": "L01-01",
+      "old_id": "L01-01",
+      "source_id": "wiki-01"
+    },
+    {
+      "chunk_id": "L01-02",
+      "old_id": "L01-02",
+      "source_id": "wiki-01"
+    },
+    {
+      "chunk_id": "L01-03",
+      "old_id": "L01-03",
+      "source_id": "wiki-01"
+    },
+    {
+      "chunk_id": "L01-04",
+      "old_id": "L01-04",
+      "source_id": "wiki-01"
+    },
+    {
+      "chunk_id": "L01-05",
+      "old_id": "L01-05",
+      "source_id": "wiki-01"
+    },
+    {
+      "chunk_id": "L01-06",
+      "old_id": "L01-06",
+      "source_id": "wiki-01"
+    },
+    {
+      "chunk_id": "L01-07",
+      "old_id": "L01-07",
+      "source_id": "wiki-01"
+    },
+    {
+      "chunk_id": "L02-01",
+      "old_id": "L02-01",
+      "source_id": "wiki-02"
+    },
+    {
+      "chunk_id": "L02-02",
+      "old_id": "L02-02",
+      "source_id": "wiki-02"
+    },
+    {
+      "chunk_id": "L03-01",
+      "old_id": "L03-01",
+      "source_id": "wiki-03"
+    },
+    {
+      "chunk_id": "L03-02",
+      "old_id": "L03-02",
+      "source_id": "wiki-03"
+    },
+    {
+      "chunk_id": "L03-03",
+      "old_id": "L03-03",
+      "source_id": "wiki-03"
+    },
+    {
+      "chunk_id": "L03-04",
+      "old_id": "L03-04",
+      "source_id": "wiki-03"
+    },
+    {
+      "chunk_id": "L04-01",
+      "old_id": "L04-01",
+      "source_id": "wiki-04"
+    },
+    {
+      "chunk_id": "L04-02",
+      "old_id": "L04-02",
+      "source_id": "wiki-04"
+    },
+    {
+      "chunk_id": "L04-03",
+      "old_id": "L04-03",
+      "source_id": "wiki-04"
+    },
+    {
+      "chunk_id": "L04-04",
+      "old_id": "L04-04",
+      "source_id": "wiki-04"
+    },
+    {
+      "chunk_id": "L04-05",
+      "old_id": "L04-05",
+      "source_id": "wiki-04"
+    },
+    {
+      "chunk_id": "L05-01",
+      "old_id": "L05-01",
+      "source_id": "wiki-05"
+    },
+    {
+      "chunk_id": "L05-02",
+      "old_id": "L05-02",
+      "source_id": "wiki-05"
+    },
+    {
+      "chunk_id": "L05-03",
+      "old_id": "L05-03",
+      "source_id": "wiki-05"
+    },
+    {
+      "chunk_id": "L05-04",
+      "old_id": "L05-04",
+      "source_id": "wiki-05"
+    },
+    {
+      "chunk_id": "L06-01",
+      "old_id": "L06-01",
+      "source_id": "wiki-06"
+    },
+    {
+      "chunk_id": "L06-02",
+      "old_id": "L06-02",
+      "source_id": "wiki-06"
+    },
+    {
+      "chunk_id": "L06-03",
+      "old_id": "L06-03",
+      "source_id": "wiki-06"
+    },
+    {
+      "chunk_id": "L06-04",
+      "old_id": "L06-04",
+      "source_id": "wiki-06"
+    },
+    {
+      "chunk_id": "L06-05",
+      "old_id": "L06-05",
+      "source_id": "wiki-06"
+    },
+    {
+      "chunk_id": "L06-06",
+      "old_id": "L06-06",
+      "source_id": "wiki-06"
+    },
+    {
+      "chunk_id": "L07-01",
+      "old_id": "L07-01",
+      "source_id": "wiki-03"
+    },
+    {
+      "chunk_id": "L07-02",
+      "old_id": "L07-02",
+      "source_id": "wiki-03"
+    },
+    {
+      "chunk_id": "L07-03",
+      "old_id": "L07-03",
+      "source_id": "wiki-03"
+    },
+    {
+      "chunk_id": "L08A-01",
+      "old_id": "L08A-01",
+      "source_id": "wiki-08a"
+    },
+    {
+      "chunk_id": "L08A-02",
+      "old_id": "L08A-02",
+      "source_id": "wiki-08a"
+    },
+    {
+      "chunk_id": "L08A-03",
+      "old_id": "L08A-03",
+      "source_id": "wiki-08a"
+    },
+    {
+      "chunk_id": "L08B-01",
+      "old_id": "L08B-01",
+      "source_id": "wiki-08b"
+    },
+    {
+      "chunk_id": "L08B-02",
+      "old_id": "L08B-02",
+      "source_id": "wiki-08b"
+    },
+    {
+      "chunk_id": "L08B-03",
+      "old_id": "L08B-03",
+      "source_id": "wiki-08b"
+    },
+    {
+      "chunk_id": "L08B-04",
+      "old_id": "L08B-04",
+      "source_id": "wiki-08b"
+    },
+    {
+      "chunk_id": "L09-01",
+      "old_id": "L09-01",
+      "source_id": "wiki-09"
+    },
+    {
+      "chunk_id": "L09-02",
+      "old_id": "L09-02",
+      "source_id": "wiki-09"
+    },
+    {
+      "chunk_id": "L09-03",
+      "old_id": "L09-03",
+      "source_id": "wiki-09"
+    },
+    {
+      "chunk_id": "L09-04",
+      "old_id": "L09-04",
+      "source_id": "wiki-09"
+    },
+    {
+      "chunk_id": "L10-01",
+      "old_id": "L10-01",
+      "source_id": "wiki-10"
+    },
+    {
+      "chunk_id": "L10-02",
+      "old_id": "L10-02",
+      "source_id": "wiki-10"
+    },
+    {
+      "chunk_id": "L11-01",
+      "old_id": "L11-01",
+      "source_id": "wiki-11"
+    },
+    {
+      "chunk_id": "L11-02",
+      "old_id": "L11-02",
+      "source_id": "wiki-11"
+    },
+    {
+      "chunk_id": "L11-03",
+      "old_id": "L11-03",
+      "source_id": "wiki-11"
+    },
+    {
+      "chunk_id": "L11-04",
+      "old_id": "L11-04",
+      "source_id": "wiki-11"
+    },
+    {
+      "chunk_id": "L11-05",
+      "old_id": "L11-05",
+      "source_id": "wiki-11"
+    },
+    {
+      "chunk_id": "L11-06",
+      "old_id": "L11-06",
+      "source_id": "wiki-11"
+    },
+    {
+      "chunk_id": "L11-07",
+      "old_id": "L11-07",
+      "source_id": "wiki-11"
+    },
+    {
+      "chunk_id": "L11-08",
+      "old_id": "L11-08",
+      "source_id": "wiki-11"
+    },
+    {
+      "chunk_id": "L11-09",
+      "old_id": "L11-09",
+      "source_id": "wiki-11"
+    },
+    {
+      "chunk_id": "L12-01",
+      "old_id": "L12-01",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L12-02",
+      "old_id": "L12-02",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L12-03",
+      "old_id": "L12-03",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L12-04",
+      "old_id": "L12-04",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L12-05",
+      "old_id": "L12-05",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L12-06",
+      "old_id": "L12-06",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L12-07",
+      "old_id": "L12-07",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L12-08",
+      "old_id": "L12-08",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L12-09",
+      "old_id": "L12-09",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L12-10",
+      "old_id": "L12-10",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L12-11",
+      "old_id": "L12-11",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L12-12",
+      "old_id": "L12-12",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L12-13",
+      "old_id": "L12-13",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L12-14",
+      "old_id": "L12-14",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L12-15",
+      "old_id": "L12-15",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L12-16",
+      "old_id": "L12-16",
+      "source_id": "wiki-12"
+    },
+    {
+      "chunk_id": "L13-01",
+      "old_id": "L13-01",
+      "source_id": "wiki-13"
+    },
+    {
+      "chunk_id": "L13-02",
+      "old_id": "L13-02",
+      "source_id": "wiki-13"
+    },
+    {
+      "chunk_id": "L13-03",
+      "old_id": "L13-03",
+      "source_id": "wiki-13"
+    },
+    {
+      "chunk_id": "L13-04",
+      "old_id": "L13-04",
+      "source_id": "wiki-13"
+    },
+    {
+      "chunk_id": "L13-05",
+      "old_id": "L13-05",
+      "source_id": "wiki-13"
+    },
+    {
+      "chunk_id": "L13-06",
+      "old_id": "L13-06",
+      "source_id": "wiki-13"
+    },
+    {
+      "chunk_id": "L13-07",
+      "old_id": "L13-07",
+      "source_id": "wiki-13"
+    },
+    {
+      "chunk_id": "L13-08",
+      "old_id": "L13-08",
+      "source_id": "wiki-13"
+    },
+    {
+      "chunk_id": "L14-01",
+      "old_id": "L14-01",
+      "source_id": "wiki-14"
+    },
+    {
+      "chunk_id": "L14-02",
+      "old_id": "L14-02",
+      "source_id": "wiki-14"
+    },
+    {
+      "chunk_id": "L14-03",
+      "old_id": "L14-03",
+      "source_id": "wiki-14"
+    },
+    {
+      "chunk_id": "L14-04",
+      "old_id": "L14-04",
+      "source_id": "wiki-14"
+    },
+    {
+      "chunk_id": "L14-05",
+      "old_id": "L14-05",
+      "source_id": "wiki-14"
+    },
+    {
+      "chunk_id": "L14-06",
+      "old_id": "L14-06",
+      "source_id": "wiki-14"
+    },
+    {
+      "chunk_id": "L15-01",
+      "old_id": "L15-01",
+      "source_id": "wiki-15"
+    },
+    {
+      "chunk_id": "L15-02",
+      "old_id": "L15-02",
+      "source_id": "wiki-15"
+    },
+    {
+      "chunk_id": "L15-03",
+      "old_id": "L15-03",
+      "source_id": "wiki-15"
+    },
+    {
+      "chunk_id": "L15-04",
+      "old_id": "L15-04",
+      "source_id": "wiki-15"
+    },
+    {
+      "chunk_id": "L15-05",
+      "old_id": "L15-05",
+      "source_id": "wiki-15"
+    },
+    {
+      "chunk_id": "L16-01",
+      "old_id": "L16-01",
+      "source_id": "wiki-16"
+    },
+    {
+      "chunk_id": "L16-02",
+      "old_id": "L16-02",
+      "source_id": "wiki-16"
+    },
+    {
+      "chunk_id": "L16-03",
+      "old_id": "L16-03",
+      "source_id": "wiki-16"
+    },
+    {
+      "chunk_id": "L16-04",
+      "old_id": "L16-04",
+      "source_id": "wiki-16"
+    },
+    {
+      "chunk_id": "L16-05",
+      "old_id": "L16-05",
+      "source_id": "wiki-16"
+    },
+    {
+      "chunk_id": "L17-01",
+      "old_id": "L17-01",
+      "source_id": "wiki-17"
+    },
+    {
+      "chunk_id": "L17-02",
+      "old_id": "L17-02",
+      "source_id": "wiki-17"
+    },
+    {
+      "chunk_id": "L17-03",
+      "old_id": "L17-03",
+      "source_id": "wiki-17"
+    },
+    {
+      "chunk_id": "L17-04",
+      "old_id": "L17-04",
+      "source_id": "wiki-17"
+    },
+    {
+      "chunk_id": "L17-05",
+      "old_id": "L17-05",
+      "source_id": "wiki-17"
+    },
+    {
+      "chunk_id": "L17-06",
+      "old_id": "L17-06",
+      "source_id": "wiki-17"
+    }
+  ],
+  "implementation": [
+    {
+      "path": "scripts/build_rag_dataset.py",
+      "sha256": "dd04f1a3b01074af5d923fe588ba79fa67f8aca71f649901768f4791007c9bae",
+      "size_bytes": 10634
+    },
+    {
+      "path": "scripts/validate_rag_dataset.py",
+      "sha256": "db841c04fdf2a82fa46da1bcb8b739e30a8d6cf57d07e3b0815dc8230b154979",
+      "size_bytes": 18659
+    }
+  ],
+  "inputs": [
+    {
+      "path": "docs/TECHNICAL_DESIGN.md",
+      "sha256": "aa320f48dbfb27a7c55b2c3d599dd48fab23509d85aa73ba470cbc9bb61778b9",
+      "size_bytes": 17821
+    },
+    {
+      "path": "docs/DEVELOPMENT_PLAN_AND_REPORT.md",
+      "sha256": "acb3bb80dd4401b751476ce36437657e2d3a3dc59db4d3d25106b81d11c9bd96",
+      "size_bytes": 22690
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/01_场地器材与队员.md",
+      "sha256": "23ccd5914b1f3649b9a5216314ce5dad7ea7e5cc72cd289ccadca415f44a938c",
+      "size_bytes": 15214
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/02_裁判比赛流程与结果.md",
+      "sha256": "a193ee7170613eafeefa5fc689ac69f3b67e40e6dd7ecbbc91c7569a7cdeae23",
+      "size_bytes": 21023
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/03_越位犯规与纪律.md",
+      "sha256": "78a79d9c55e9f363e6a341d692797111044adfbb144de3c143b8f9a5f61b6e22",
+      "size_bytes": 19015
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/04_任意球与罚球点球.md",
+      "sha256": "7917580e5e4330f526d2aea9bf933e0c9814b30fa324b46790f1fcf71185cf97",
+      "size_bytes": 11017
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/05_界外球球门球与角球.md",
+      "sha256": "cb9bb7db36055f38062fe87dd02c1fef9910ee5471672d0fc1b3bf5ec9e2c3ce",
+      "size_bytes": 10721
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/chunks_zh.jsonl",
+      "sha256": "8dc715386b92f3fe0c3b193c2f9c3cdc9f157d6ffa9899a50401c4352a5bfad6",
+      "size_bytes": 205915
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/parallel_zh_en.jsonl",
+      "sha256": "a39aefc312d2eebec9f1714991f7a747dbffe81583c129e3b6c0ea59d725af1a",
+      "size_bytes": 287566
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/corpus_manifest.json",
+      "sha256": "cd7a16fc2f9233d14ee79c4acfe6555f6a3abf95606d33f4fe05ae0d992e19bf",
+      "size_bytes": 33750
+    },
+    {
+      "path": "data/processed/wikipedia_2026-11-10/sources.json",
+      "sha256": "9814024597d2c88bde4a1ff6fa365d47b936fef87a66f34dacb606cef19f1342",
+      "size_bytes": 29768
+    },
+    {
+      "path": "data/manifests/sources.csv",
+      "sha256": "a2e4fa92202ce2e610e050752c244178c9791c2871e2d0402ea14aecc39cec69",
+      "size_bytes": 6772
+    },
+    {
+      "path": "data/manifests/task1_task2_baseline_lock.json",
+      "sha256": "5adf7708ef42462068ca17b646c4676cca6d3b829777e26f0ae21c3daea20e19",
+      "size_bytes": 3079
+    }
+  ],
+  "limitations": {
+    "historical_revision_body_independently_verified": false,
+    "official_rulebook": false,
+    "official_season": null,
+    "translation_expert_reviewed": false
+  },
+  "outputs": [
+    {
+      "path": "data/processed/rag_chunks_zh.jsonl",
+      "records": 99,
+      "sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+      "size_bytes": 302368
+    },
+    {
+      "path": "data/processed/rag_chunks_parallel.jsonl",
+      "records": 99,
+      "sha256": "3e3167bd3590c66c58d617796e5495440ac219cd9599245aee02ca810dd36467",
+      "size_bytes": 400859
+    }
+  ],
+  "schema_document": {
+    "path": "docs/RAG_DATA_SCHEMA.md",
+    "sha256": "db055a7dcd75e278bc38ee7bdcf11107c3a02fa772e2901453c8f8ddc79f2217",
+    "size_bytes": 8607
+  },
+  "schema_version": "1.0.0",
+  "summary": {
+    "available_source_pages": 18,
+    "chinese_records": 99,
+    "chunk_types": {
+      "paragraph": 98,
+      "table": 1,
+      "unknown": 0
+    },
+    "documents": 5,
+    "expert_reviewed": 0,
+    "needs_rule_review": 28,
+    "null_parent_ids": 99,
+    "parallel_records": 99,
+    "referenced_source_pages": 17,
+    "unique_ids": 99
+  }
+}
