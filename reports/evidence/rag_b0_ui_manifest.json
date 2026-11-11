@@ -1,0 +1,117 @@
+{
+  "captured_at": "2026-11-11T16:08:33.629669+00:00",
+  "kind": "real_browser_submission",
+  "raw_captures_sha256": "1336761daaafd40a84a10d1370b548d9e4f0fcaff24ae48b09d267bd1f47c685",
+  "private_ui_journal_snapshot_sha256": "b19f2927f79304fd62324522cd9acdaf53ca45e612bf311c0983b50f7cb7af36",
+  "raw_public": false,
+  "questions": 4,
+  "answered": 3,
+  "refused": 1,
+  "rows": [
+    {
+      "trace_id": "8ea10ff6ec3d4dafaa507926ac55ddde",
+      "question": "足球场的边界线属于场内还是场外？",
+      "status": "answered",
+      "page_url": "http://127.0.0.1:7863/",
+      "captured_at": "2026-11-11T16:04:41.253Z",
+      "answer_sha256": "61fb4cb18d9ef0ad56876b74bd0f1e963c83ae9e263a1e29ffd0d12cde5d9a9f",
+      "rendered_last_answer_sha256": "14c745a21547b2b9e61e8f2ee957cf8d5f26503f8f001e52f5e3d7c6e2cff1cf",
+      "citations": [
+        {
+          "chunk_id": "L01-01",
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+          "law_number": 1,
+          "source_lines": [
+            167,
+            171
+          ],
+          "needs_rule_review": false
+        }
+      ],
+      "evidence_count": 1,
+      "config_sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7",
+      "timing": {
+        "generation_seconds": 5.698663300005137,
+        "total_seconds": 6.039345299999695,
+        "worker_wall_seconds": 8.527971399998933
+      },
+      "error": null
+    },
+    {
+      "trace_id": "6b10986f9a964124a5ef37cf8aa0cc77",
+      "question": "球门两根门柱之间的距离和横梁高度各是多少？",
+      "status": "answered",
+      "page_url": "http://127.0.0.1:7863/",
+      "captured_at": "2026-11-11T16:06:27.243Z",
+      "answer_sha256": "68d34a5b8132e94fb83d014e3bec4e8184b65c441b056677b05f9cec5d8fef9e",
+      "rendered_last_answer_sha256": "0d367d873a5a7b567336a891ae38e82ed6a2000975603b1cfab68c14c02b6812",
+      "citations": [
+        {
+          "chunk_id": "L01-03",
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+          "law_number": 1,
+          "source_lines": [
+            187,
+            189
+          ],
+          "needs_rule_review": false
+        }
+      ],
+      "evidence_count": 1,
+      "config_sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7",
+      "timing": {
+        "generation_seconds": 3.570054399999208,
+        "total_seconds": 3.9934540999965975,
+        "worker_wall_seconds": 6.482246700004907
+      },
+      "error": null
+    },
+    {
+      "trace_id": "eb8ba5527e724296927563be66d27928",
+      "question": "队员掷界外球时双脚和双手应满足什么要求？",
+      "status": "answered",
+      "page_url": "http://127.0.0.1:7863/",
+      "captured_at": "2026-11-11T16:07:43.518Z",
+      "answer_sha256": "5a97985432984400a9670d09ce7a6e993772f83e7ea3354d4cf9416306d479b7",
+      "rendered_last_answer_sha256": "d94796c16a3894032b5bb14bcafea1a62e252de3c7b36b93edf9b58b56949976",
+      "citations": [
+        {
+          "chunk_id": "L15-02",
+          "source_url": "https://en.wikipedia.org/wiki/Throw-in",
+          "law_number": 15,
+          "source_lines": [
+            171,
+            174
+          ],
+          "needs_rule_review": false
+        }
+      ],
+      "evidence_count": 1,
+      "config_sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7",
+      "timing": {
+        "generation_seconds": 3.5446085999938077,
+        "total_seconds": 3.9288498000023537,
+        "worker_wall_seconds": 6.299756299995352
+      },
+      "error": null
+    },
+    {
+      "trace_id": "4e09fb4a7319448697a9586866523e7a",
+      "question": "火星明天的天气怎么样？",
+      "status": "refused",
+      "page_url": "http://127.0.0.1:7863/",
+      "captured_at": "2026-11-11T16:08:21.900Z",
+      "answer_sha256": "db13ed046bcbd41218ce9d4020a4a50e02b0bcbead98c31d46cf972e9d7bbed8",
+      "rendered_last_answer_sha256": "db13ed046bcbd41218ce9d4020a4a50e02b0bcbead98c31d46cf972e9d7bbed8",
+      "citations": [],
+      "evidence_count": 0,
+      "config_sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7",
+      "timing": {
+        "generation_seconds": 2.433673200001067,
+        "total_seconds": 2.840967100004491,
+        "worker_wall_seconds": 5.192624900002556
+      },
+      "error": null
+    }
+  ]
+}

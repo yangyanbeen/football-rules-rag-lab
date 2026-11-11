@@ -19,6 +19,7 @@ def main():
     parser.add_argument('--report',type=Path,required=True)
     parser.add_argument('--expected-commit')
     parser.add_argument('--require-supplement',action='store_true')
+    parser.add_argument('--require-task6',action='store_true')
     args=parser.parse_args()
     report=args.report.resolve()
     if not any(report.is_relative_to(ROOT/name) for name in ('reports','.runtime','.tmp')) or report.suffix!='.json':
@@ -54,6 +55,17 @@ def main():
     if args.require_supplement:required.update({'scripts/validate_eval_receipt.py','scripts/recheck_task45.ps1',
                                                'scripts/verify_task45_regressions.py','reports/TASK_04_05_SUPPLEMENT.md'})
     record('required_task4_task5_deliverables_present',required<=set(remote))
+    if args.require_task6:
+        task6={'config/rag_b0.json','config/rag_b0_system.txt','scripts/rag_b0.py','scripts/query_rag_b0.py',
+            'scripts/rag_b0_pipeline.py','scripts/rag_b0_worker_client.py','scripts/run_rag_b0.py',
+            'scripts/rag_b0_index_ui.py','scripts/smoke_rag_b0.py','scripts/verify_rag_b0.py',
+            'frontend/start_rag_b0.ps1','docs/RAG_B0.md','docs/TASK_06_SCOPE.md','reports/TASK_06_DELIVERY.md',
+            'reports/evidence/rag_b0_smoke_manifest.json','reports/evidence/rag_b0_ui_manifest.json',
+            'reports/evidence/rag_b0_failures.json','reports/acceptance/task6_delivery_gate.json'}
+        required.update(task6)
+        record('required_task6_public_deliverables_present',task6<=set(remote))
+        tag=api('git/ref/tags/v0.6.0-rag-b0')['object']['sha']
+        record('task6_release_tag_matches_remote_main',tag==head)
     record('no_private_runtime_corpus_or_index_uploaded',not any(name.startswith(('.runtime/','.venv/','.models/',
         '.cache/','data/raw/','data/processed/','data/indexes/')) for name in remote))
     manifest=json.loads(run(['git','show',head+':data/manifests/project_file_manifest.json']))
