@@ -257,7 +257,94 @@
           "sha256": "a5db6c1aacd83e1ab84579c52c8478c00e6814cb87b2c012e41ef3c9904da6d8"
         }
       ]
+    },
+    {
+      "id": "TASK-004-OWNER-ACCEPT",
+      "status": "ACCEPTED_BY_EXPLICIT_OWNER_BATCH_AUTHORIZATION",
+      "objective": "Execute owner instruction approving all 90 current questions and freeze snapshot",
+      "baseline": "Candidate snapshot from PR #7; four evaluation data files unchanged",
+      "main_variable": "Recorded owner-delegated batch acceptance; no human review fabricated",
+      "dataset_version": "corpus-b0-rag-adapter-1.0.0",
+      "evaluation_version": "football-eval-0.1.0; owner_batch_approved_and_test_locked",
+      "code_commit": "0f02af7ab0a49559a6ea0303706918d123861230",
+      "model": null,
+      "environment": {
+        "python": "3.10.22"
+      },
+      "commands": [
+        "python scripts/owner_approve_eval.py --authorization-file <ignored-local-authorization>",
+        "python scripts/verify_task4_workflow.py",
+        "python scripts/validate_eval_dataset.py --phase delivery --report reports/acceptance/task4_original_human_gate_after_owner_approval.json"
+      ],
+      "result": {
+        "owner_approved": "90/90",
+        "actual_individual_human_reviews": "2/90",
+        "original_human_gate": "FAIL 23/26; unchanged",
+        "owner_checks": "10/10",
+        "owner_workflow_checks": "6/6",
+        "automatic_workflow": "27/27",
+        "test_locked": true,
+        "real_retrieval_metrics": "not measured"
+      },
+      "decision": "Accept under latest owner instruction; retain original human-review shortfall and qualification in all reports",
+      "artifacts": [
+        {
+          "path": "docs/TASK_04_OWNER_ACCEPTANCE.md",
+          "size_bytes": 2248,
+          "sha256": "300c7b5e3b48a1e7c241e98471b83a1e89327de16ddb2620b79bd3ae6fa98d56"
+        },
+        {
+          "path": "reports/TASK_04_DELIVERY.md",
+          "size_bytes": 5571,
+          "sha256": "7dd6c873bd137bd2a3eeaed33de2d65840031972f6d3c82d72b221e2ad113ad7"
+        },
+        {
+          "path": "data/eval/dataset_manifest.json",
+          "size_bytes": 1887,
+          "sha256": "81d191db7fb477e6db96df7bf9e9f11c7211dec235af74ef2775fe110c0dce06"
+        },
+        {
+          "path": "data/eval/owner_approval_receipt.json",
+          "size_bytes": 20234,
+          "sha256": "972b9a70fba30adc2e06bf5cdc0eb20d2db840839d1a8ea0a3140e44dfb7fd6b"
+        },
+        {
+          "path": "reports/acceptance/task4_owner_acceptance.json",
+          "size_bytes": 813,
+          "sha256": "3a33fd16bb85c5f105e19cb5a1089d8de203bdc4fc761dfdd6ba2e16395bd953"
+        },
+        {
+          "path": "reports/acceptance/task4_owner_workflow_verification.json",
+          "size_bytes": 504,
+          "sha256": "8a58f2a425b2c93b481d851e559b98a97e027f6f3b37833a95fcbaa067d270e3"
+        },
+        {
+          "path": "reports/acceptance/task4_original_human_gate_after_owner_approval.json",
+          "size_bytes": 6824,
+          "sha256": "13063b14e619bd16faf96a1fa683712334a284eb50b33de7e714b12f2cc75824"
+        },
+        {
+          "path": "reports/acceptance/task4_workflow_verification.json",
+          "size_bytes": 11958,
+          "sha256": "dc44c2866bb75ac477d7b7ccdf2d24e4ccafd1b559d30d3e6e3edad06a81dd85"
+        },
+        {
+          "path": "scripts/owner_approve_eval.py",
+          "size_bytes": 7103,
+          "sha256": "3d728d779cb1a3265446cc25a2ee72eaae1575bbda54c39670b61ea7026319d1"
+        },
+        {
+          "path": "scripts/serve_eval_review.py",
+          "size_bytes": 14301,
+          "sha256": "4e1e1ecea327508ae36c13fca48155163df1abed8536f5f77940277596cfeb26"
+        },
+        {
+          "path": "scripts/run_retrieval_metrics.py",
+          "size_bytes": 4121,
+          "sha256": "11021dfc06a8c6e3e765c051c594f598b6c2bea220ee78f7a96ce08d0d56eae5"
+        }
+      ]
     }
   ],
-  "last_updated_at": "2026-11-11T10:56:27.218086+00:00"
+  "last_updated_at": "2026-11-11T12:36:47.437636+00:00"
 }

@@ -31,4 +31,6 @@
 
 ## 任务四候选与门禁
 
-`TASK_04_DELIVERY.md` 是当前未签收的阶段报告。`acceptance/task4_structure.json` 和 `task4_workflow_verification.json` 是自动检查通过；`task4_delivery_gate.json` 明确记录人工0/90、测试未冻结导致正式门禁未通过。不要把自动PASS或合成指标/签名当作人工评测集完成。`task4_corpus_regression.json` 为原数据独立回归。
+`TASK_04_DELIVERY.md` 保留候选准备及后续授权签收过程。`acceptance/task4_structure.json` 和 `task4_workflow_verification.json` 是自动检查通过；历史 `task4_delivery_gate.json` 记录当时人工0/90、测试未冻结。不要把自动PASS或合成指标/签名当作人工评测集完成。`task4_corpus_regression.json` 为原数据独立回归。
+
+以上为原候选阶段。用户随后授权90题批量通过，当前按负责人模式批准并冻结：`task4_owner_acceptance.json`、`task4_owner_workflow_verification.json`。原逐题人工门禁仍23/26未通过，保存为 `task4_original_human_gate_after_owner_approval.json`；已有2条真实人工记录保留，批量批准不冒充逐题人工gold。

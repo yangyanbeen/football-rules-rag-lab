@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "checks": {
+    "owner_receipt_passes_current_bytes": true,
+    "actual_user_authorization_hash_matches": true,
+    "no_human_checklist_in_owner_records": true,
+    "all_90_distinct_current_questions_approved": true,
+    "all_four_candidate_files_unchanged": true,
+    "test_builder_rejects_frozen_version": true
+  },
+  "owner_approved": 90,
+  "actual_individual_human_reviews_preserved": 2,
+  "authority_mode": "owner_batch_authorized; no per-question human review fabricated"
+}

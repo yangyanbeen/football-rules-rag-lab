@@ -1,0 +1,22 @@
+{
+  "captured_at": "2026-11-11T12:32:15.328715+00:00",
+  "status": "PASS_OWNER_AUTHORIZED",
+  "checks": {
+    "structure": true,
+    "all_current_questions_approved": true,
+    "owner_delegation_explicit": true,
+    "does_not_claim_individual_human_review": true,
+    "authority_reference_present": true,
+    "receipt_matches_manifest": true,
+    "candidate_files_unchanged_from_owner_approval": true,
+    "test_frozen_at_approved_bytes": true,
+    "release_is_qualified": true,
+    "test_not_used_for_parameter_selection": true
+  },
+  "approved": 90,
+  "total": 90,
+  "per_question_human_review_attested": false,
+  "original_human_review_criterion_automatically_satisfied": false,
+  "scope": "Owner delegated batch acceptance and frozen snapshot; not individual human/expert annotation review",
+  "errors": []
+}

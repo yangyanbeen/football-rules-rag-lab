@@ -15,3 +15,9 @@
 - 自动验证：结构22/22、工作流27/27、16类重签哈希坏数据全部拒绝；可由逐项回执复查。合成指标数值仅证明算术实现。
 - 不能写成“已构建90条人工gold集”或“已完成任务四”；当前真实人工0/90、测试未冻结，正式交付门禁未通过。
 - 回链：docs/EVAL_DATASET.md、reports/TASK_04_DELIVERY.md、reports/acceptance/task4_*、data/eval/dataset_manifest.json。真实Recall/MRR/答案质量与性能数字继续待测。
+
+## TASK-004-OWNER-ACCEPT：负责人授权批准
+
+- 后续用户明确授权批量通过，90题已批准并冻结，保留2条真实逐题人工记录。负责人检查10/10、专项6/6、自动工作流27/27通过。
+- 该版本标记为AI起草+负责人批量签收，不能把90题写成逐题人工gold；原人工条件的未满足记录保留，未测系统性能指标仍待测。
+- 回链：data/eval/owner_approval_receipt.json、reports/acceptance/task4_owner_acceptance.json、docs/TASK_04_OWNER_ACCEPTANCE.md。

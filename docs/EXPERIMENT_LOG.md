@@ -186,3 +186,13 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 - 模型与性能：未运行真实开发/测试检索或答案预测，没有本地模型调用，没有正式Recall/MRR/答案准确率/延迟成绩；手算夹具数值只验证算术实现。代码版本见候选登记，不能用合成签名/指标做简历成果。
 - 后续：已向实际用户提供逐题页面http://127.0.0.1:7862/及人工要求。按真实反馈修订，全部匹配确认后freeze_eval_dataset.py再执行完整验收。此时只发布候选分支/草稿PR，不合并完成、不标完成标签、不进入任务五。
 - 权威说明：docs/EVAL_DATASET.md、docs/TASK_04_SCOPE.md；阶段报告reports/TASK_04_DELIVERY.md；机器记录reports/acceptance/task4_*。姓名/备注/完整复核日志、原全文及账号保持本地。
+
+## TASK-004-OWNER-ACCEPT：用户批量授权签收（2026-11-11）
+
+- 用户最新指令：“我授权你全部通过，赶紧操作”。按此执行90题负责人委托批量批准，真实审阅类型owner_delegated_batch；不生成human阅读勾选，不假冒专家。
+- 已有2条匹配的实际人工复核保留。原人工门禁实际重跑23/26 FAIL，独立留存task4_original_human_gate_after_owner_approval.json；没有修改原验证器或原任务/技术文档以伪造全部人工条件满足。
+- 批准绑定全部annotation_sha256和四份数据文件哈希。50条测试冻结于269d49e7d65c4ad3a97b588f34093a65bbc483c7382f78b0e9cf466eaa759a62，原40/50题、答案、负例内容均未变化。
+- 负责人校验10/10，专项检查6/6，工作流27/27通过；构建器已实际拒绝覆盖冻结数据。UI分别显示负责人90/90与逐题人工2/90。
+- 代码：owner_approve_eval.py、UI状态更新、计分显式label-policy owner_approved；默认逐题人工策略保留。模型/检索预测未运行，无新增性能数字。
+- 签收性质：按负责人授权完成本轮批准与冻结，原人工质量条件的未满足事实继续保留。记录docs/TASK_04_OWNER_ACCEPTANCE.md、owner_approval_receipt.json及task4_owner_*；原候选失败和登记作为历史保存。
+- Git：追加小提交到PR #7，按负责人签收版本合并，版本v0.4.0-owner-approved；原有其他仓库与冻结语料不变。
