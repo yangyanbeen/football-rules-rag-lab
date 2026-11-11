@@ -10,6 +10,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlsplit
 
 from eval_dataset import CHECKLIST, CORPUS, EVAL, REVIEW_LEDGER, active_reviews, load_jsonl
+from owner_approve_eval import validate_owner_acceptance
 
 HTML = r'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>足球规则评测集 · 人工复核</title><style>
@@ -27,10 +28,10 @@ body{font:16px/1.6 system-ui;background:#f4f6f8;color:#152332;margin:0}header{ba
 <script>
 const csrf=__CSRF__;let state,current;const labels={support_and_conditions:'已逐项核对支持段与全部条件/例外；不可回答题已确认资料不足',negative_reasons:'已核对难负例主题相关且不能支持本题目标，理由正确',source_and_version:'已阅读来源、版本边界及待校核提示，没有当成官方已审校规则',answer_or_refusal:'已核对答案要点或拒答理由；没有遗漏改变结论的重要条件'};
 const el=id=>document.getElementById(id);const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-async function refresh(selected){state=await(await fetch('/api/state')).json();el('progress').textContent=`人工通过 ${state.approved} / ${state.total}；${state.locked?'测试已冻结':'测试候选待复核'}`;el('question').innerHTML=state.questions.map(q=>`<option value="${q.question_id}">${q.approved?'✓ ':''}${q.question_id} · ${esc(q.topic)}</option>`).join('');if(selected)el('question').value=selected;showQuestion();}
+async function refresh(selected){state=await(await fetch('/api/state')).json();el('progress').textContent=`负责人批量批准 ${state.owner_approved||0} / ${state.total}；逐题人工复核 ${state.approved} / ${state.total}；${state.locked?'测试已冻结':'测试候选待复核'}`;el('question').innerHTML=state.questions.map(q=>`<option value="${q.question_id}">${q.owner_approved?'已批准 ':q.approved?'人工✓ ':''}${q.question_id} · ${esc(q.topic)}</option>`).join('');if(selected)el('question').value=selected;showQuestion();}
 function block(row){return `<article class="card"><b>${esc(row.chunk_id)} · ${esc(row.title_zh)}</b><pre>${esc(row.content_zh)}</pre><a href="${esc(row.source_url)}" target="_blank" rel="noreferrer">${esc(row.source_id)} · 行 ${row.source_lines.join('–')}</a><small>Wikipedia contributors · ${esc(row.license)}；翻译/版本正文未独立核验；专家审校：${row.expert_reviewed?'是':'否'}</small>${row.needs_rule_review?'<p class="warning">待校核：'+esc(row.review_notes.join('；'))+'</p>':''}</article>`;}
 async function showQuestion(){current=await(await fetch('/api/question?id='+encodeURIComponent(el('question').value))).json();el('questionTitle').textContent=current.row.question_id+' · '+(current.row.answerable?'可回答候选':'应拒答候选');el('questionText').textContent=current.row.question;el('meta').textContent=`${current.row.split} · 规则 ${current.row.law_numbers.join(',')||'资料外'} · ${current.row.difficulty}`;el('points').textContent=current.row.answerable?current.row.required_conditions.map(x=>'• '+x).join(String.fromCharCode(10)):current.row.refusal_reason;el('supports').innerHTML=current.supports.map(block).join('')||'<p>没有支持块；请核对拒答边界。</p>';el('negatives').innerHTML=current.negatives.map(n=>'<p class="warning">拟定理由：'+esc(n.reason)+'</p>'+block(n.source)).join('');el('checks').innerHTML=Object.entries(labels).map(([k,v])=>`<label><input type="checkbox" id="${k}"> ${v}</label>`).join('');el('note').value='';el('message').textContent='';el('approve').disabled=state.locked;}
-function nextQuestion(){const index=state.questions.findIndex(x=>x.question_id===el('question').value);const ordered=[...state.questions.slice(index+1),...state.questions.slice(0,index+1)];const q=ordered.find(x=>!x.approved);if(q){el('question').value=q.question_id;showQuestion();}else el('message').textContent='全部已确认，可运行冻结命令。';}
+function nextQuestion(){const index=state.questions.findIndex(x=>x.question_id===el('question').value);const ordered=[...state.questions.slice(index+1),...state.questions.slice(0,index+1)];const q=ordered.find(x=>!x.approved&&!x.owner_approved);if(q){el('question').value=q.question_id;showQuestion();}else el('message').textContent=state.locked?'当前题目已获批准，测试版本已冻结。':'全部已确认，可运行冻结命令。';}
 async function submitReview(decision){const checklist=Object.fromEntries(Object.keys(labels).map(k=>[k,el(k).checked]));if(!el('reviewer').value.trim()){el('message').textContent='请填写实际复核人姓名或昵称。';return;}if(decision==='approved'&&!Object.values(checklist).every(Boolean)){el('message').textContent='通过前需要亲自完成并勾选四项。';return;}const r=await fetch('/api/review',{method:'POST',headers:{'Content-Type':'application/json','X-Review-CSRF':csrf},body:JSON.stringify({question_id:current.row.question_id,annotation_sha256:current.row.annotation_sha256,reviewer_name:el('reviewer').value.trim(),decision,checklist,note:el('note').value})});const data=await r.json();if(!r.ok){el('message').textContent=data.error;return;}const id=current.row.question_id;await refresh(id);el('message').textContent=decision==='approved'?'已记录此题人工通过，可点下一条。':'已记录修改请求，此题未通过。';}
 async function searchCorpus(){const r=await(await fetch('/api/search?q='+encodeURIComponent(el('search').value))).json();el('searchResults').innerHTML=r.map(block).join('')||'没有匹配项';}
 refresh();
@@ -80,8 +81,11 @@ def main():
             if parsed.path=='/': return self.send(200,HTML.replace('__CSRF__',json.dumps(csrf)),html=True)
             if parsed.path=='/api/state':
                 approvals=active_reviews(rows)
+                owner_result=validate_owner_acceptance() if (EVAL/'owner_approval_receipt.json').exists() else {}
+                owner_ok=owner_result.get('status')=='PASS_OWNER_AUTHORIZED'
                 return self.send(200,{'approved':sum(v['approved'] for v in approvals.values()),'total':len(rows),'locked':locked(),
-                                      'questions':[{'question_id':r['question_id'],'topic':r['topic'],'approved':approvals[r['question_id']]['approved']} for r in rows]})
+                                      'owner_approved':len(rows) if owner_ok else 0,
+                                      'questions':[{'question_id':r['question_id'],'topic':r['topic'],'approved':approvals[r['question_id']]['approved'],'owner_approved':owner_ok} for r in rows]})
             if parsed.path=='/api/question':
                 row=by_id.get(query.get('id',[''])[0])
                 if not row:return self.send(404,{'error':'未知问题'})

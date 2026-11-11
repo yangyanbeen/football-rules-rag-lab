@@ -1,0 +1,559 @@
+{
+  "dataset_version": "football-eval-0.1.0",
+  "approval_mode": "owner_batch_authorized",
+  "approved_at": "2026-11-11T12:31:34.505684+00:00",
+  "delegated_by": "project_owner",
+  "executed_by": "Codex under explicit user instruction",
+  "private_authorization_sha256": "cbe7ce0079ffc3a1a7c9f1e7fb2500dc40ac6c5463d1c179d0c9c4f563206bf8",
+  "approval_summary": "Owner requested assistant to approve all current candidates; individual reading was not attested.",
+  "per_question_human_review_attested": false,
+  "approved_question_count": 90,
+  "approved_file_sha256": {
+    "retrieval_dev.jsonl": "b24b2dc9c1483495623407c472ca1ff3b0b0a6846b4894892f8d85e9ffb34e04",
+    "retrieval_test.jsonl": "269d49e7d65c4ad3a97b588f34093a65bbc483c7382f78b0e9cf466eaa759a62",
+    "answer_eval.jsonl": "640480e1e203f67f6aaac090d75369a00eab1448dc19271fa19de56eb066de1b",
+    "hard_negatives.jsonl": "179c2abbb804b55d1b6e36c3514ba5c9f353fb2e727573fe396229bee9f55ca2"
+  },
+  "records": [
+    {
+      "question_id": "D001",
+      "annotation_sha256": "8b3f36b9d74bc67f1f05ddf95ed7f8035dde617d163e75a8b2881484e7b80f68",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D002",
+      "annotation_sha256": "e3653165685fb447f78c9ca20ac3322b8b3587499a92322db47f19f0af267cf2",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D003",
+      "annotation_sha256": "cb67ca008119dd8f459b18b2e15b5ea1c8f41de0925382b8460d820caf591861",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D004",
+      "annotation_sha256": "fffdd0a80bb94fff32090a4ae989ab389fbfbd0789e83d234ed3ad09d7ebf412",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D005",
+      "annotation_sha256": "7b6f921f53efaf19c97abef75962dcd9085b415c8837a784631a75b1683afcea",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D006",
+      "annotation_sha256": "0e4f4f9044e0ee0fcacc521be4739cc0531661b1800bad305740d864ce226d58",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D007",
+      "annotation_sha256": "b0affdadcde6bbcafd196199d6856d86a00b985866f3506d45d53f965a059ef4",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D008",
+      "annotation_sha256": "79dd51e36eab78a5a9015642ca2d305bcc51e1538290ac86212c70ab50a24bbc",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D009",
+      "annotation_sha256": "8ae642f8c04f410bad6eabbe14109c5c0ade520851cff487598574063bae3cee",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D010",
+      "annotation_sha256": "379a21872d8628ff4ba0c8dec370c13add92fb983bcaa7a695f549f2767800af",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D011",
+      "annotation_sha256": "d0c864638df63bba73b309c766118c804848e37944f6c20d7624a3c705d0cf22",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D012",
+      "annotation_sha256": "6e3dde2dcfc20ed87f4e6ae4db603dfcbcebdec20c0b11cd7d5d44b9c46c43a4",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D013",
+      "annotation_sha256": "16f4b61e416e1c756fa4ab30b466dacebfd4255e18aeeffe0b2d7acef408e904",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D014",
+      "annotation_sha256": "9e2f7ae694ea24acb873f1505e3c72c8500fff3b445fe10fec369213abdff147",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D015",
+      "annotation_sha256": "2257539ccd142694f2ee847545598e0c304b3076d3d47dfbba494c8d997548f0",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D016",
+      "annotation_sha256": "8cd408e528a1667567b0f3a15524a3effa697da60da31ee97921f2b131c8db70",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D017",
+      "annotation_sha256": "1c357e4cc9ad16cc53c997ac486da11e2775575c3a0f115c6a55a2783bf0ae4a",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D018",
+      "annotation_sha256": "605c6640452abdf65b5d3bd291c39ff5e4f787fedf8d16a992041ec0b363eddd",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D019",
+      "annotation_sha256": "c8d222d0215a8d360b5cb27d201d1e1ca13b9cc67ba1fc2c8ee52fec73e2669b",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D020",
+      "annotation_sha256": "1c4c91060691da062d2a31d829f7eb27d6637422627858f05d4e354a37f066ff",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D021",
+      "annotation_sha256": "0ff4460f97be18a2941e24607f7019843d296497587e396606f5d2d8c99da66c",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D022",
+      "annotation_sha256": "719f5d23f7dce84822fe419f0ca99bdfa255058fcf2f677a1179318f8c3e271b",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D023",
+      "annotation_sha256": "613d6ce60d89d65fab5e6be5f60b691310b7229e24f3f06e14b323179a925649",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D024",
+      "annotation_sha256": "67f9dda80f5b4a84c4f9148f96faab5e8fb85115dc590298401f015759269e0a",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D025",
+      "annotation_sha256": "b993218a53c04664d2203b087c7da5a7454efaef40a472f63271c1e10ec732e5",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D026",
+      "annotation_sha256": "132a47806a03e50067b4bc36363760296a5a20d2f111f366c1d7154ff0807bdd",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D027",
+      "annotation_sha256": "3fa810c30e0704e4172a3cbe4927bc2d0c8e27bd8a78c83258a3659ebd2bfd05",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D028",
+      "annotation_sha256": "a237d20e1563540db2324809aa14f90ac11f6430114755250d3c87dfd35c7899",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D029",
+      "annotation_sha256": "ba2c73ec0519090ab3ae38ee72fb3420e3ebe8ac60ff40b2a6a78e9f9cbde9ed",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D030",
+      "annotation_sha256": "9954eb39665acc4f108e783ea8fa037f3b960fbcacc9af0b586bc19e52e3d319",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D031",
+      "annotation_sha256": "3bcd9c9c592cf3913a70689856d3a6a7c1793d1e759b5921fb59d4b30f9ffdee",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D032",
+      "annotation_sha256": "1d08e0a0ae1806a897bb9cb7c5b9ce72bd3af53fef6b3b034b91938f513ee669",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D033",
+      "annotation_sha256": "760f34e334373f941154a78e0b45dcaa104312185188b980523e7b3b604f67d4",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D034",
+      "annotation_sha256": "5b415c9c523a770100d3c4de76a5081cc8474246b017ccccebdf6b92ee9b2ad7",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D035",
+      "annotation_sha256": "b8489b82c8f98f97dc80047512c28d56be4318bfd91bb457d8a12a1ba0c4a5e6",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D036",
+      "annotation_sha256": "461a8dc0ed9a28d7d11a05d3148a056d7a981a06e26873cd1d65fcff42e1f4e9",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D037",
+      "annotation_sha256": "26da34a04f90eba41c40d730eb302f3dcd7205ee738ed5e6bade6a1cb6c187c2",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D038",
+      "annotation_sha256": "fd2b8f9dc3c8bd2868327486e9e19e68e9482b238d88c629043dbb3205003306",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D039",
+      "annotation_sha256": "7de01a5e9c48ef7a8755f2c9f891378404a9170dd1b1867d46c4d00412f83d26",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "D040",
+      "annotation_sha256": "685ee4965abc94d4a4c7e3cffe5946ac1b61e09a2a58d9268ac904667a76aacc",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T001",
+      "annotation_sha256": "85da0b8b77175430738dd53eef35b73e85947ac30432daba5166d538281a2ce2",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T002",
+      "annotation_sha256": "7fd92eff8cc4176664cccb531a06704bae5c3837620687541215c6f0af040381",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T003",
+      "annotation_sha256": "eb031a3bd0e23546bd96835f38ea770ffa9dda7a16cff16a4c5f4609b44fa170",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T004",
+      "annotation_sha256": "f1797516538d4aebd6450d13175b9b836a159f99e4bb828e8f28232a60901099",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T005",
+      "annotation_sha256": "a781244cca2ff2ea854bcea6d3b04717474001a2e653bf0a8e5f3d45b231353f",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T006",
+      "annotation_sha256": "0e5c02e3ccdfa04b84fa1babc117e181fafb084ac32e8046e05df8ed138637b5",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T007",
+      "annotation_sha256": "1c6718f9ee77fdc75711a649570b25e9e9035bbf4467f6fe0e72d4d7ba057b4d",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T008",
+      "annotation_sha256": "965db8a11f55765f23bdef0d9d17d5543089ddd6b0ad05783921dc0c8cecdb81",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T009",
+      "annotation_sha256": "3bcee817a8480323321e091c16435a9a47a8bf60ad169e779a4c47cc74ac0004",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T010",
+      "annotation_sha256": "debfed8064067ca6f7910d94e828229223d54d086606bcb988e3b155a9c452a7",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T011",
+      "annotation_sha256": "e09c89674d15e1a5fb165fce5b35d78fd904981a056b3bcac8f121ca37064bc1",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T012",
+      "annotation_sha256": "f61b673945a9f733cb7a1ff755a8f9705401e9279ebe5665ddabda79f8df63d0",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T013",
+      "annotation_sha256": "1cb7d5a8f9842aa0592cca5545a0a3dbcfe76d752121e478c1e8ed5d036c58c5",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T014",
+      "annotation_sha256": "bf9f31bd63c3fb76ccf133911014c19d74f23c29d71f63f0671f22a8f3279d3f",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T015",
+      "annotation_sha256": "373e276001f04102248e97be0df57e90300c2cf6fd4d16c2ff5eaa5be56e47a2",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T016",
+      "annotation_sha256": "dcf1ca5e9633d24e428fddb89be08cc8641adf562cc13659f7c2ce77ee60e1db",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T017",
+      "annotation_sha256": "ae4b3876a442f86576b666edb21b8391db133228981f493f5cf545d2ec73f35e",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T018",
+      "annotation_sha256": "ce3e2eae09eeb67fe218858961986b81c08a080987df1561f560c49bee39541d",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T019",
+      "annotation_sha256": "d82766c3d18be797ac3f7606e5065e52411e6be938242c353bf0a2041aa3f975",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T020",
+      "annotation_sha256": "32668299208753540f64887b6c7f7d76a7e0eb731bb84251a7815d5333b28093",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T021",
+      "annotation_sha256": "ffb3450647e733eebfbb8c5b888c46f6fa22d774c8351fcac90480a0983cb115",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T022",
+      "annotation_sha256": "a491fdf5abc11ffcc742bf70b7debf59ec1736001ca39bec4d098d0ef1f0ae0e",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T023",
+      "annotation_sha256": "29532653cf4aa8619a2c4a3eb12dc8403c9d2f43d6ed5832145c6959e1247a8b",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T024",
+      "annotation_sha256": "01e399fc9f79a795894b6cc8985500f7517dd02f5b29e173acaa87be9684f06f",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T025",
+      "annotation_sha256": "8b9fd3251c0d8142c4fe481e4117d34918112f60e357bbf801ccb3f94ae43038",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T026",
+      "annotation_sha256": "59c0fd07f2673b088a4aa4ed06c5cb9f67ef9a2d4954efb0330f7f40c835506e",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T027",
+      "annotation_sha256": "26e58ec158b186e5e5bec6f47ed98e0c07b9d5b30220647e32fb1ea252271c3c",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T028",
+      "annotation_sha256": "7819974df4e329a4631120ce81f5f328a52cefb56459b78eea79d89b434b640e",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T029",
+      "annotation_sha256": "5cca201142b5a624035da1098fb9f99dbeeaabd07e8420a87d41b6ad5c5b4896",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T030",
+      "annotation_sha256": "cf58bfe628a9fc24520d8200bb1f932059949ee08e126d7dda5d7a8013d79829",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T031",
+      "annotation_sha256": "098ea30b38e068b1c1962b7a496d7ee0e0f2671b517484c922e48cdbe416b13e",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T032",
+      "annotation_sha256": "e3bb7699ac941578758a7ddfb7a51424b5b2c7ce9dab794414a740fa4d685d61",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T033",
+      "annotation_sha256": "c7c56acfa658e004149f7f1fc4c0d0cc540977aa71947bdd323ccc9a99be2b34",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T034",
+      "annotation_sha256": "187e11201b6a707087c414eeffa90a477fea8de2dfe9f673663cef0ec7833eca",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T035",
+      "annotation_sha256": "74a2f4a56536eafe5973ee0b7779ffc823e58f82410278cc0d04d4ebe03b9658",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T036",
+      "annotation_sha256": "2d9ef8f32b051488fec044f89ec77b73c0d5fb0b8fa793b83153ab409dd77009",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T037",
+      "annotation_sha256": "734002e451a1e55ae0a07d03960970e5f3aca18e62647c54015a5d1f5a79c01c",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T038",
+      "annotation_sha256": "a0812036eabb1836ee098ab20288746cd88dfd242fda0c0d665b61ba564dd1e0",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T039",
+      "annotation_sha256": "ba18adc4bb117ecf1a9947b4a2c49914a54276bfbdabb522b9f0e1d47bf61913",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T040",
+      "annotation_sha256": "40be6a8652afd75190f8b1eb34eff7abf7fcaaa0722f81d5948b8c8ba4f82d7a",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T041",
+      "annotation_sha256": "afbbb6b930be834217a5edc150b999f868a002eed6e6f774ac95945a3993770b",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T042",
+      "annotation_sha256": "f316cac613ab6075009d4062ccbc313fbc17fab328ca0187ec8098d3057b1afb",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T043",
+      "annotation_sha256": "202dacabcce7f7a21cf7950c96592218b25c028f16fb08743c83856c488d3633",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T044",
+      "annotation_sha256": "9091bdc2a5adf137f3742e0ad3f0f6927b0feeee552e37883c4ea1b076c9f4f8",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T045",
+      "annotation_sha256": "bc5923cfdd1132c0a894b9766be17512b777e714830e263edfee70616746e6bc",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T046",
+      "annotation_sha256": "ae546a11d6fb1817d98b112fa5af32fc61cd509f792ea176fbb41f6b92644d9b",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T047",
+      "annotation_sha256": "922f4b5d2ac15cbd0bf005997691c4d076cd554d7db2f5c98a495292c8e7855b",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T048",
+      "annotation_sha256": "c41ab0940e4f9fbc2950d7f86b9be730b6c5f43db55bd9827182a0ef0e571d4c",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T049",
+      "annotation_sha256": "21884adee625ed3ef1e50d6bbb823db7c901e7a9b1c919909252c3a8417459c8",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    },
+    {
+      "question_id": "T050",
+      "annotation_sha256": "3360a78339fe5a3ab6f7ef93e2497bda399481cad4aef6132e2b49e7ac644d5c",
+      "decision": "approved",
+      "reviewer_type": "owner_delegated_batch"
+    }
+  ]
+}

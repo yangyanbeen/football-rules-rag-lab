@@ -31,14 +31,19 @@ def main():
     parser.add_argument('--purpose', choices=('development','final_report'), default='development')
     parser.add_argument('--run-manifest')
     parser.add_argument('--config')
+    parser.add_argument('--label-policy',choices=('human_reviewed','owner_approved'),default='human_reviewed')
     parser.add_argument('--output', required=True)
     args = parser.parse_args()
     manifest = json.loads((EVAL/'dataset_manifest.json').read_text('utf-8'))
     if args.split == 'test':
         run = json.loads(Path(args.run_manifest).read_text('utf-8')) if args.run_manifest else None
         authorize_test(manifest, args.purpose, run, Path(args.config).read_bytes() if args.config else b'')
-        reviewed = validate(phase='delivery')
-        if reviewed['status'] != 'PASS':raise ValueError('Full task 4 acceptance must pass before a formal test run')
+        if args.label_policy=='owner_approved':
+            from owner_approve_eval import validate_owner_acceptance
+            if validate_owner_acceptance()['status']!='PASS_OWNER_AUTHORIZED':raise ValueError('Owner acceptance is invalid')
+        else:
+            reviewed = validate(phase='delivery')
+            if reviewed['status'] != 'PASS':raise ValueError('Full human-reviewed task 4 acceptance must pass; owner-approved labels require explicit --label-policy owner_approved')
     elif validate(phase='structure')['status'] != 'PASS':
         raise ValueError('Candidate structure validation failed')
     output = (ROOT/args.output).resolve()
@@ -49,6 +54,7 @@ def main():
     if any(x['chunk_id'] not in known for r in predictions for x in r['results']):raise ValueError('Prediction references an unknown corpus chunk')
     results = compute_metrics(load_jsonl(EVAL/f'retrieval_{args.split}.jsonl'), predictions)
     write_json(output, {'dataset_version': manifest['dataset_version'], 'split': args.split,
+                        'label_policy':args.label_policy,'individual_human_gold_claim':args.label_policy=='human_reviewed' and manifest['release_status']=='human_reviewed_and_test_locked',
                         'label_status': manifest['release_status'], 'purpose': args.purpose,
                         'predictions_sha256': digest(Path(args.predictions).read_bytes()),
                         'question_file_sha256': manifest['files'][f'retrieval_{args.split}.jsonl']['sha256'],
