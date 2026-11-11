@@ -1,0 +1,54 @@
+{
+  "index_version": "dense-b0-1.0.0",
+  "corpus_version": "corpus-b0-rag-adapter-1.0.0",
+  "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+  "expected_records": 99,
+  "model": {
+    "source_id": "BAAI/bge-m3",
+    "distribution": "Ollama GGUF",
+    "name": "bge-m3:latest",
+    "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+    "dimensions": 1024,
+    "quantization": "F16",
+    "ollama_version": "0.40.16",
+    "license": "MIT",
+    "query_prefix": "",
+    "document_prefix": ""
+  },
+  "embedding": {
+    "api": "/api/embed",
+    "num_ctx": 8192,
+    "num_gpu": 0,
+    "num_thread": 8,
+    "batch_size": 4,
+    "truncate": false,
+    "normalization": "L2 float32; reject nonfinite and zero vectors",
+    "keep_alive": "10m",
+    "timeout_seconds": 180
+  },
+  "text": {
+    "template_version": "section-path-content-zh-v1",
+    "document_template": "join(section_path, ' / ') + '\\n\\n' + content_zh",
+    "query_template": "query unchanged; reject blank input",
+    "unicode_normalization": "none",
+    "secondary_chunking": false
+  },
+  "storage": {
+    "backend": "chromadb",
+    "version": "0.5.16",
+    "numpy_version": "1.26.4",
+    "hnswlib_version": "0.7.6",
+    "collection": "football_dense_b0",
+    "distance": "cosine",
+    "score": "1 - cosine distance; higher is closer; not a probability",
+    "hnsw_metadata": {
+      "hnsw:space": "cosine",
+      "hnsw:construction_ef": 100,
+      "hnsw:search_ef": 10,
+      "hnsw:M": 16,
+      "hnsw:num_threads": 1,
+      "hnsw:batch_size": 32,
+      "hnsw:sync_threshold": 32
+    }
+  }
+}
