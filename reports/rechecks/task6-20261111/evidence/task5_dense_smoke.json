@@ -1,0 +1,176 @@
+{
+  "captured_at": "2026-11-11T15:46:16.739687+00:00",
+  "scope": "Ad hoc index usability queries; not taken from evaluation files and not scored for quality",
+  "top_k": 3,
+  "queries": [
+    {
+      "query": "足球场的边界标线如何判定球出界？",
+      "top_k": 3,
+      "two_fresh_processes_consistent": true,
+      "timing": {
+        "query_embedding_seconds": 0.2444794999973965,
+        "vector_search_seconds": 0.005783699998573866
+      },
+      "results": [
+        {
+          "chunk_id": "L01-01",
+          "rank": 1,
+          "distance": 0.25834065675735474,
+          "score": 0.7416593432426453,
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+          "source_id": "wiki-01",
+          "source_lines": [
+            167,
+            171
+          ],
+          "content_zh_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+          "source_revision_verified": false,
+          "expert_reviewed": false
+        },
+        {
+          "chunk_id": "L15-02",
+          "rank": 2,
+          "distance": 0.28957462310791016,
+          "score": 0.7104253768920898,
+          "source_url": "https://en.wikipedia.org/wiki/Throw-in",
+          "source_id": "wiki-15",
+          "source_lines": [
+            171,
+            174
+          ],
+          "content_zh_sha256": "522683d4cac4594f5ef89620c2ca75303c70e871839c25bbc823d4b83a76a18e",
+          "source_revision_verified": false,
+          "expert_reviewed": false
+        },
+        {
+          "chunk_id": "L01-02",
+          "rank": 3,
+          "distance": 0.2914985418319702,
+          "score": 0.7085014581680298,
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+          "source_id": "wiki-01",
+          "source_lines": [
+            177,
+            179
+          ],
+          "content_zh_sha256": "8382e2e43132ae955f49fe74254a38dbd935f568686fefd26284d2bd21e42858",
+          "source_revision_verified": false,
+          "expert_reviewed": false
+        }
+      ]
+    },
+    {
+      "query": "裁判出示黄牌和红牌分别表示什么？",
+      "top_k": 3,
+      "two_fresh_processes_consistent": true,
+      "timing": {
+        "query_embedding_seconds": 0.25014289999671746,
+        "vector_search_seconds": 0.0051308000038261525
+      },
+      "results": [
+        {
+          "chunk_id": "L12-07",
+          "rank": 1,
+          "distance": 0.2930715084075928,
+          "score": 0.7069284915924072,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+          "source_id": "wiki-12",
+          "source_lines": [
+            217,
+            224
+          ],
+          "content_zh_sha256": "fb1c390b66a431f3caf800e53dd882e1723e18f73cf865c8bde2b6416576b3da",
+          "source_revision_verified": false,
+          "expert_reviewed": false
+        },
+        {
+          "chunk_id": "L12-16",
+          "rank": 2,
+          "distance": 0.3350064158439636,
+          "score": 0.6649935841560364,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+          "source_id": "wiki-12",
+          "source_lines": [
+            307,
+            309
+          ],
+          "content_zh_sha256": "1fcd4228ad41ddea7aa254de01ed0d294eac254718d38141e253f992df40b5cf",
+          "source_revision_verified": false,
+          "expert_reviewed": false
+        },
+        {
+          "chunk_id": "L12-10",
+          "rank": 3,
+          "distance": 0.34302568435668945,
+          "score": 0.6569743156433105,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+          "source_id": "wiki-12",
+          "source_lines": [
+            243,
+            244
+          ],
+          "content_zh_sha256": "751789949da226baa64768e383281fb0329113d42fba6fef838a11ad081a764c",
+          "source_revision_verified": false,
+          "expert_reviewed": false
+        }
+      ]
+    },
+    {
+      "query": "足球比赛中，角旗附近的弧线有什么用途？",
+      "top_k": 3,
+      "two_fresh_processes_consistent": true,
+      "timing": {
+        "query_embedding_seconds": 0.24581949999992503,
+        "vector_search_seconds": 0.004895699996268377
+      },
+      "results": [
+        {
+          "chunk_id": "L01-07",
+          "rank": 1,
+          "distance": 0.3200324773788452,
+          "score": 0.6799675226211548,
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+          "source_id": "wiki-01",
+          "source_lines": [
+            217,
+            219
+          ],
+          "content_zh_sha256": "a9b6a663ac2e01caf8dddee39764bfcfd1f463bd3d921f311f5e8dac9da106f8",
+          "source_revision_verified": false,
+          "expert_reviewed": false
+        },
+        {
+          "chunk_id": "L17-03",
+          "rank": 2,
+          "distance": 0.3325231671333313,
+          "score": 0.6674768328666687,
+          "source_url": "https://en.wikipedia.org/wiki/Corner_kick",
+          "source_id": "wiki-17",
+          "source_lines": [
+            212,
+            214
+          ],
+          "content_zh_sha256": "866f3365f634282c1ea5d393156f371689b6765dbbe67d9dcb3cb71f4c96fb9e",
+          "source_revision_verified": false,
+          "expert_reviewed": false
+        },
+        {
+          "chunk_id": "L01-02",
+          "rank": 3,
+          "distance": 0.34710365533828735,
+          "score": 0.6528963446617126,
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+          "source_id": "wiki-01",
+          "source_lines": [
+            177,
+            179
+          ],
+          "content_zh_sha256": "8382e2e43132ae955f49fe74254a38dbd935f568686fefd26284d2bd21e42858",
+          "source_revision_verified": false,
+          "expert_reviewed": false
+        }
+      ]
+    }
+  ],
+  "full_source_text_published": false
+}

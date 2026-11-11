@@ -1,0 +1,33 @@
+{
+  "captured_at": "2026-11-11T16:16:44.190545+00:00",
+  "status": "PASS",
+  "applications": [
+    {
+      "port": 7860,
+      "http_status": 200,
+      "loopback_only_request": true
+    },
+    {
+      "port": 7861,
+      "http_status": 200,
+      "loopback_only_request": true
+    },
+    {
+      "port": 7862,
+      "http_status": 200,
+      "loopback_only_request": true
+    },
+    {
+      "port": 7863,
+      "http_status": 200,
+      "loopback_only_request": true
+    }
+  ],
+  "task6_pinned_model_and_index": {
+    "status": "READY",
+    "records": 99,
+    "config_sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7"
+  },
+  "existing_services_stopped_or_changed": false,
+  "new_model_generation_requests": 0
+}

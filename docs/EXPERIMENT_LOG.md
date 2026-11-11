@@ -243,3 +243,14 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 - 任务五再次从新空目录真实编码99段，向量最大绝对差0.0；不使用锁定测试调参或计分。原正式索引所有文件哈希不变，最终61份旧证据/任务四数据/公开索引元数据不变，另3份入口/实验汇总随补交付更新；首轮在文档维护前64份一致的结果保留。原人工日志未追加，原10冻结、4历史前缀、61本机语料和178原工程静态文件通过保全。
 - 当前依据reports/TASK_04_05_SUPPLEMENT.md及reports/rechecks/task45-20261111；旧构建producer哈希保留在旧manifest，当前reader和本次重建用新代码哈希，不回写旧实验。新增只读audit_remote_delivery.py支持后续远程逐文件复核。
 - 仅新足球仓库走独立分支、小提交、PR与版本标签；全文、向量、数据库、完整日志和账号仍留本机。无新LLM回答、正式检索/答案/延迟优化成绩。
+
+
+## TASK-006-RAG-B0：端到端链路与真实页面交付（2026-11-12）
+
+- 用户要求按前序相同规则执行原任务六。起点0f6abdcc2b5ef8f35b9add68e0a1c15ee56f7fff，分支feat/task-06-rag-b0；原技术/执行文档和任务一至五输入不改。
+- 固定BGE-M3/Chroma99段索引，Dense Top5；本机Qwen2.5:3b精确digest、CPU8线程，grounded-text-v7。只送入一个预算内完整块，不剪裁原块；程序绑定原URL/chunk/规则号/校核/版本/许可。
+- 真实发现并保留多轮误拒答、混合JSON状态、引用/数值错配、截断、重复和残句；最终简化模型输出并校验，最多额外重试一次。完整UI导入后的HNSW原生异常通过独立问答进程隔离；只读选择器满足上游事件约定，未另建临时向量集合。
+- 实际命令：query_rag_b0.py --check；run_rag_b0.py；smoke_rag_b0.py；浏览器填入并提交4问；summarize_rag_b0_ui.py；verify_rag_b0.py。62/62通过；最终后端/真实页面分别3可回答+1资料外拒答，均无处理错误，完整原始记录留本机。
+- recheck_task45.ps1在新reports/rechecks/task6-20261111目录真实重验：原任务四26/26、凭证13/13、工作流27/27、封存15/15，任务五24/24及18类错误拒绝、再次编码99段最大差0.0，补缺39/39。旧报告、人工日志、正式索引与原工程保持原样。
+- 交付docs/RAG_B0.md、reports/TASK_06_DELIVERY.md、机器回执/元数据摘要；10份失败/历史通过文件公开哈希但不公开正文。没有把自动检查记成人工审批，没有检索/答案准确率、P95/QPS或提升数字。单块上下文/一般语义判断的能力限制见报告。
+- Git继续小步提交、独立分支、PR和v0.6.0-rag-b0标签；只写新football-rules-rag-lab仓库。任务7–14继续按原计划。

@@ -39,3 +39,10 @@
 - 后续用户明确授权批量通过，90题已批准并冻结，保留2条真实逐题人工记录。负责人检查10/10、专项6/6、自动工作流27/27通过。
 - 该版本标记为AI起草+负责人批量签收，不能把90题写成逐题人工gold；原人工条件的未满足记录保留，未测系统性能指标仍待测。
 - 回链：data/eval/owner_approval_receipt.json、reports/acceptance/task4_owner_acceptance.json、docs/TASK_04_OWNER_ACCEPTANCE.md。
+
+
+## TASK-006：正式索引到中文生成与引用/拒答
+
+- 可佐证工作：将99段固定BGE-M3/Chroma知识库接入Kotaemon与本机LLM；构建独立运行入口、预算内完整证据、程序恢复引用、无效输出拦截、有限重试和可追溯日志。
+- 工程证据：新交付检查62/62，后端和真实页面各3条可回答+1条资料外拒答；Windows HNSW/UI原生冲突通过问答子进程隔离，旧数据与应用保全。
+- 回执：TASK_06_DELIVERY.md、acceptance/task6_delivery_gate.json、evidence/rag_b0_*。这些运行/契约结果不等于正式答案准确率，不填Recall/MRR、QPS或延迟提升数据。

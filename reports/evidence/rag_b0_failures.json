@@ -1,0 +1,57 @@
+{
+  "status": "preserved_and_fixed_for_delivery",
+  "raw_public": false,
+  "scope": "Engineering failures from ad hoc smoke/startup; not a formal accuracy evaluation",
+  "cases": [
+    {
+      "private_path": ".runtime/rag-b0/probe-first.json",
+      "sha256": "02d755f52de9b3361be3e1714eda6ced3ba3ce53481cf2004b1ac3d0e237134b",
+      "observation": "False refusal despite direct retrieved support; prompt clarified general knowledge vs verified official version."
+    },
+    {
+      "private_path": ".runtime/rag-b0/attempt1-smoke.jsonl",
+      "sha256": "396b28296eb37fa6cdd2d354b5ae008f9eab5dc308731b66cdd5d18e8da6622f",
+      "observation": "Out-of-scope model payload mixed a false flag and asserted statements; validator refused it."
+    },
+    {
+      "private_path": ".runtime/rag-b0/attempt2-smoke.jsonl",
+      "sha256": "94373e45b80bbafb5b5e421d49d70c92b82162da18fbd9393b36ef2a2c83fbe6",
+      "observation": "Mutually exclusive output schema fixed mixed states; one directly supported question was still falsely refused."
+    },
+    {
+      "private_path": ".runtime/rag-b0/attempt3-smoke.jsonl",
+      "sha256": "eeb68be024706fd1c37fcdf91ad7400f62b3fb9184da83edabc6aa84ddb7c27f",
+      "observation": "Question-last evidence layout fixed that probe; verbatim generated quotation mismatch was rejected. Final model selects passage IDs; program restores original quotes."
+    },
+    {
+      "private_path": ".runtime/rag-b0/import-start.log",
+      "sha256": "7eb1ce3fdf55070d608cccaf471bd5aee43eb30157b683f1dd347dac209d9ba9",
+      "observation": "Actual Windows native access violation in Chroma/HNSW get_vectors after full UI imports; final UI delegates index/LLM operations to isolated Python workers."
+    },
+    {
+      "private_path": ".runtime/rag-b0/isolated-server.err.log",
+      "sha256": "6046ebeb6f772b73ff3426e15e03e166b51416046e9e46bf48efa1eff60bb4f1",
+      "observation": "Pinned ChatPage required selector inputs even for a fixed corpus; supplied a read-only BaseIndex/selector contract without another actual vector index."
+    },
+    {
+      "private_path": ".runtime/rag-b0/attempt1-ui-events.jsonl",
+      "sha256": "31c84085b0ade51dafbe01513bb9c11b26bc38e9e0ba7affc7bae7c8e1a6b2b4",
+      "observation": "Initial UI attempt included a real cross-paragraph numeric/source mismatch and a truncated generation. Final B0 caps generation context to one whole chunk, limits statement length, rejects numeric facts absent from the cited paragraph, and preserves incomplete raw responses."
+    },
+    {
+      "private_path": ".runtime/rag-b0/attempt4-smoke.jsonl",
+      "sha256": "bac25eaa66bde8dc81d8b13e1bdcce2120518b263af0cc0ca76202638e643cd6",
+      "observation": "The preceding backend smoke passed 3+1 before the independent UI surfaced additional failures; retained rather than overwritten or used as final UI proof."
+    },
+    {
+      "private_path": ".runtime/rag-b0/attempt5-smoke.jsonl",
+      "sha256": "3f1c3a4121d10985dcf6c01030f06517e169fac0743f85eb508e173951837a1a",
+      "observation": "Paragraph numbering inside a short answer was rejected by numeric/source checks. Final source addressing uses one complete chunk."
+    },
+    {
+      "private_path": ".runtime/rag-b0/attempt6-smoke.jsonl",
+      "sha256": "ff0f99d32d2e9ce58bc62ba20796096b0076713c8ac787eadb6f077d04211041",
+      "observation": "Constrained JSON string limits still allowed repeated text and mid-sentence endings despite correct IDs. Final model API uses simple ANSWER:/REFUSE: text; application validates and binds the only supplied evidence, rejecting repetitions and incomplete sentences."
+    }
+  ]
+}

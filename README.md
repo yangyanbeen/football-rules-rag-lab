@@ -2,7 +2,7 @@
 
 基于 [Cinnamon/kotaemon](https://github.com/Cinnamon/kotaemon) 的足球规则中文问答与可追溯语料工程。面向逐项实现、真实评测和可回滚开发。
 
-**当前已交付任务 1–5。** 任务四90/90题人工核对、原完整门禁26/26通过；任务五99段Dense索引、空目录重建与完整验收24/24通过。详见[任务四报告](reports/TASK_04_DELIVERY.md)、[任务五报告](reports/TASK_05_DELIVERY.md)。本仓库于2026-11-11将既有交付按小提交导入Git；提交时间是整理发布时间，不冒充原来的开发历史。
+**当前已交付任务 1–6。** 任务六已接通正式Dense索引与本机LLM，交付检查62/62、真实页面3条可回答+1条拒答通过。入口[127.0.0.1:7863](http://127.0.0.1:7863/)，见[任务六交付](reports/TASK_06_DELIVERY.md)和[运行说明](docs/RAG_B0.md)。 任务四90/90题人工核对、原完整门禁26/26通过；任务五99段Dense索引、空目录重建与完整验收24/24通过。详见[任务四报告](reports/TASK_04_DELIVERY.md)、[任务五报告](reports/TASK_05_DELIVERY.md)。本仓库于2026-11-11将既有交付按小提交导入Git；提交时间是整理发布时间，不冒充原来的开发历史。
 
 ## 先看什么
 
@@ -18,8 +18,8 @@
 
 | 层 | 目录/入口 | 现状 |
 | --- | --- | --- |
-| 前端 | [frontend/](frontend/README.md) | 复用固定版本 Kotaemon 的 Gradio UI；启动入口 `frontend/start.ps1` |
-| 后端 | [backend/](backend/README.md)、`scripts/football_*.py` | 本地证据选择、引用恢复及运行时兼容层；与 UI 同进程 |
+| 前端 | [frontend/](frontend/README.md) | 固定Kotaemon Gradio UI；正式RAG入口 `frontend/start_rag_b0.ps1`，旧任务二入口保留 |
+| 后端 | [backend/](backend/README.md)、`scripts/rag_b0.py` | 正式Dense→本机LLM→引用/拒答；UI通过独立Python问答进程调用 |
 | 数据 | [data/](data/README.md)、`scripts/build_rag_dataset.py` | 冻结语料、稳定 ID、统一 Schema、独立校验与来源清单 |
 | 环境 | [infra/](infra/README.md)、`config/` | 上游 commit、锁定依赖、本地模型配置 |
 | 设计与执行 | `docs/` | 原技术设计、14 项任务计划及新增 Git 治理说明 |
@@ -34,7 +34,7 @@
 - 任务 3：Schema 1.0.0，99 条中文及 99 条英中对照的统一格式适配；原 ID、正文与来源边界不变。
 - 历史验收：任务 1/2 共 32/32；任务 3 主校验 18/18、交付检查 8/8，16 类坏数据被拒绝。首次整理未重跑模型或应用；后续实测结果见下方补交付章节。
 
-任务4已交付40条开发题、50条锁定测试题、90条对应答案标签和90对难负例。任务5已完成固定BGE-M3/Chroma的99段正式独立向量索引。任务6起的RAG B0接入、BM25/RRF/Reranker、检索性能优化继续按原计划实施。16条已调试问题的通过情况不等于锁定测试集准确率；本项目尚无正式Recall、MRR、nDCG或延迟优化成绩。
+任务4已交付40条开发题、50条锁定测试题、90条对应答案标签和90对难负例。任务5已完成固定BGE-M3/Chroma的99段正式独立向量索引。任务6已完成RAG B0接入；任务7起的检索基线、BM25/RRF/Reranker及性能优化继续按原计划实施。16条已调试问题的通过情况不等于锁定测试集准确率；本项目尚无正式Recall、MRR、nDCG或延迟优化成绩。
 
 ## 数据与运行
 
@@ -46,7 +46,7 @@
 
 ## 版本管理
 
-任务五索引复现、查询和完整验收见[EMBEDDING_AND_INDEX](docs/EMBEDDING_AND_INDEX.md)。本机索引位于被忽略的data/indexes/dense，公开仓库仅保存配置、99个ID/哈希映射与元数据；当前应用接入在任务六实现。
+任务五索引复现、查询和完整验收见[EMBEDDING_AND_INDEX](docs/EMBEDDING_AND_INDEX.md)。本机索引位于被忽略的data/indexes/dense，公开仓库仅保存配置、99个ID/哈希映射与元数据；任务六已通过独立7863页面接入该正式索引，原7861应用继续保留。
 
 `main` 用于已交付版本，任务分支采用 `feat/task-XX-name`，修复用 `fix/name`。每次改动通过 PR 留下目标、基线、提交与实际验证记录。回滚用 `git revert` 新增撤销提交，不改写公开历史。
 

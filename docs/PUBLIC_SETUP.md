@@ -70,3 +70,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 提交前暂存明确文件，运行 `python scripts/manage_delivery_manifest.py` 和 `--verify`，再暂存清单。原规范与冻结语料不改；完整回答、凭据、数据库、依赖、缓存不公开。
 
 任务四至十四未完成；16 条开发题已经用于调试，通过数不代表独立测试集准确率或 Recall/MRR/nDCG。
+
+
+## 任务六RAG B0
+
+先按EMBEDDING_AND_INDEX.md恢复本机原语料并准备任务五正式99段索引、两个固定Ollama模型和独立.venv。执行`.venv/Scripts/python.exe scripts/query_rag_b0.py --check`后，用`powershell -NoProfile -ExecutionPolicy Bypass -File frontend/start_rag_b0.ps1`启动7863。若已在运行直接访问，不重复占用端口。
+
+当前代码不需要新增包或付费Key；公开仓库不包含完整语料、模型和索引，不能仅克隆就假定这些本机输入存在。完整运行、日志、拒答/重试和验收说明见RAG_B0.md。

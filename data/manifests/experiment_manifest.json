@@ -1,6 +1,6 @@
 {
   "manifest_version": "1.0.0",
-  "generated_at": "2026-11-11T14:57:35.841306+00:00",
+  "generated_at": "2026-11-11T16:18:01.806077+00:00",
   "scope": "Registry established at task 3; earlier original reports remain the historical evidence.",
   "experiments": [
     {
@@ -738,7 +738,107 @@
           "sha256": "9ea5d0403acb9ccaae8185623cf3cd66f834f555f7d839fa12cdbc8f60b2d557"
         }
       ]
+    },
+    {
+      "id": "TASK-006-RAG-B0",
+      "objective": "Original Task 6 end-to-end chain",
+      "baseline": "main0f6abdcc2b5ef8f35b9add68e0a1c15ee56f7fff",
+      "code_commit": "29593251bf7d9c3748d3a7b6107c2719a3914ff1",
+      "code_version_method": "Task6 gate source SHA-256; subsequent documentation/manifests through PR",
+      "dataset_version": "corpus-b0-rag-adapter-1.0.0",
+      "evaluation_usage": "Ad hoc smoke only; locked questions not used for tuning/scoring",
+      "model_config": "config/rag_b0.json",
+      "result": {
+        "task6_gate": "62/62",
+        "backend_smoke": "3 answered + 1 refused",
+        "actual_browser": "3 answered + 1 refused",
+        "formal_accuracy": null,
+        "recall": null,
+        "latency_optimization": null
+      },
+      "artifacts": [
+        {
+          "path": "reports/TASK_06_DELIVERY.md",
+          "size_bytes": 8620,
+          "sha256": "b14cf85abf90d37bd7941b25c97218d3928e7c46be45d81efb2b933cde13e189"
+        },
+        {
+          "path": "reports/acceptance/task6_delivery_gate.json",
+          "size_bytes": 4169,
+          "sha256": "775f0a436f8b45a54fd4d49878c7f3d4568f75b195eee68260aab13cb5bbd574"
+        },
+        {
+          "path": "reports/evidence/rag_b0_failures.json",
+          "size_bytes": 3623,
+          "sha256": "7105ab9d2127ea56ee7d5011507dd2261b1b6e9daf01b1e5ae066441e0a569b6"
+        },
+        {
+          "path": "reports/evidence/rag_b0_smoke_manifest.json",
+          "size_bytes": 8658,
+          "sha256": "4750f31b8ca21ac05ea78ee676f64bd061d5efdb378efb03f8cc3f8d5e60389e"
+        },
+        {
+          "path": "reports/evidence/rag_b0_ui_manifest.json",
+          "size_bytes": 4336,
+          "sha256": "1d554731eefe4c919b1f25ecf11c3a63fe43e9f9bf37b1adae5a9531d13b283b"
+        },
+        {
+          "path": "reports/rechecks/task6-20261111/acceptance/task45_regressions.json",
+          "size_bytes": 4474,
+          "sha256": "54d6e2c82c97b33bd01e6b7c2571f50cec2f1ac699857a2168cff5a626064fbe"
+        },
+        {
+          "path": "reports/rechecks/task6-20261111/acceptance/task4_delivery_gate.json",
+          "size_bytes": 5103,
+          "sha256": "c89fb6c16a1f40c371b32eedf530882b935d0c4dfee95b22d7bcd0b0a940493d"
+        },
+        {
+          "path": "reports/rechecks/task6-20261111/acceptance/task4_human_release_verification.json",
+          "size_bytes": 1975,
+          "sha256": "bb322b624f485e1900c18561fc1de037ad3506980c9428c1c153389c0f86890f"
+        },
+        {
+          "path": "reports/rechecks/task6-20261111/acceptance/task4_public_receipt.json",
+          "size_bytes": 1469,
+          "sha256": "2cc4586a1472de5cc8861f4d39c153219c667000d0130d81b776bd9946f01383"
+        },
+        {
+          "path": "reports/rechecks/task6-20261111/acceptance/task4_workflow_verification.json",
+          "size_bytes": 11958,
+          "sha256": "ce94a427978451e60b30f7f61188782a1ad5de06a86cae342354d4bdc8d42741"
+        },
+        {
+          "path": "reports/rechecks/task6-20261111/acceptance/task5_delivery_gate.json",
+          "size_bytes": 17142,
+          "sha256": "bd8db0201cced83729e8c7b2a9edeecf88e787944cc2c9a7b6dea8998e4bef85"
+        },
+        {
+          "path": "reports/rechecks/task6-20261111/evidence/task5_dense_smoke.json",
+          "size_bytes": 5883,
+          "sha256": "bdcf24e10d76adc7e5fb03094ac760c48304719254ef92ac56b9b91a5c195ee9"
+        },
+        {
+          "path": "reports/rechecks/task6-20261111/manifests/dense_chunk_ids.json",
+          "size_bytes": 32967,
+          "sha256": "0bdff8a39d7a458d586fecb921582224ad7a854cc3bf6fa589e04a1150b95b61"
+        },
+        {
+          "path": "reports/rechecks/task6-20261111/manifests/dense_index_manifest.json",
+          "size_bytes": 11745,
+          "sha256": "9ea5d0403acb9ccaae8185623cf3cd66f834f555f7d839fa12cdbc8f60b2d557"
+        },
+        {
+          "path": "reports/rechecks/task6-20261111/acceptance/task6_final_gate.json",
+          "size_bytes": 4169,
+          "sha256": "a1e9e55d995ea40d5e796066926465b6c047b9cae4c4fff7b097360396176616"
+        },
+        {
+          "path": "reports/evidence/task6_live_runtime.json",
+          "size_bytes": 771,
+          "sha256": "b2ece7af184544259e356feb3d72de5b39d6b7fcb2ffea65d2aa10015f92b1ea"
+        }
+      ]
     }
   ],
-  "last_updated_at": "2026-11-11T12:36:47.437636+00:00"
+  "last_updated_at": "2026-11-11T16:18:01.806077+00:00"
 }
