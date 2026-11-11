@@ -80,6 +80,8 @@ def main():
         'refusal_html':{'answerable':False,'statements':[],'refusal_reason':'<b>错误</b>'},
         'answer_with_refusal_reason':{**payload,'refusal_reason':'矛盾'},
         'excess_statements':{**payload,'statements':payload['statements']*5},
+        'overlong_statement':{**payload,'statements':[{'text':'中'*161,'passage_id':pid}]},
+        'unsupported_numeric_fact':{**payload,'statements':[{'text':'该数值为98765米。','passage_id':pid}]},
     }
     for name,value in cases.items():record('reject_'+name,rejects(lambda v=value:validate_payload(v,offered,cfg)))
     chat=PinnedChat(cfg)
@@ -113,6 +115,8 @@ def main():
     record('ui_history_not_factual_context',"result=call_worker(message)" in pipe and 'call_worker(history' not in pipe)
     ui_path=ROOT/'.runtime/rag-b0/ui-captures.jsonl'
     captures=load_jsonl(ui_path);journal={r['trace_id']:r for r in load_jsonl(ROOT/'.runtime/rag-b0/ui-events.jsonl')}
+    mixed=journal['6634f9e466e149fd8ca17024ade83a8e']
+    record('actual_prior_ui_numeric_citation_error_now_rejected',rejects(lambda:validate_payload(mixed['generation']['parsed_payload'],mixed['context'],cfg)))
     visible=True
     for c in captures:
         r=journal[c['trace_id']]

@@ -28,7 +28,7 @@
 | Top-K | 固定5；score=1-distance，不是答案置信概率 |
 | 生成模型 | qwen2.5:3b，Q4_K_M，digest 357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b |
 | 推理参数 | Ollama0.40.16；CPU8线程、num_gpu=0、temperature=0、seed=42、num_ctx=8192、num_predict=1024 |
-| 提示词 | config/rag_b0_system.txt；grounded-generation-v4，确切SHA见每条trace |
+| 提示词 | config/rag_b0_system.txt；grounded-generation-v5，确切SHA见每条trace |
 | 配置 | config/rag_b0.json；每条trace记录配置SHA、提示词SHA和索引manifest SHA |
 | 接口 | http://127.0.0.1:11434/api/chat；非流式、结构化JSON，无付费Key |
 
@@ -38,13 +38,13 @@ Ollama官方说明支持JSON Schema形式的format和stream=false；本实现另
 
 问题规范化后最多1200 UTF-8字节。messages连同响应schema的序列化输入预算6200 UTF-8字节，另留512模板token和1024输出token；对当前Qwen字节BPE采取保守上界，并检查实际prompt_eval_count。6200字节不等于6200个汉字或token。
 
-按检索排名逐块尝试，超预算的整块不传给模型，继续检查后续候选；不截断块内条件、表格或校核提示。完整Top5、实际送入的context、精确messages/schema与字节数分别记录，能看见预算排除了哪些结果。本阶段没有压缩/重切Corpus B0或修改Task5索引。
+固定召回Top5，当前生成证据上限为1个完整知识块；按排名尝试，若整块超预算则检查后续候选。不截断块内条件、表格或校核提示。该保守B0设置是在临时页面检查发现混用相似块数值后选定，没有读取锁定评测题；不声明它优于多块上下文，跨块问题可能因证据不足拒答。完整Top5、实际送入的context、精确messages/schema与字节数分别记录，候选召回与生成上下文不混为一谈。本阶段没有压缩/重切Corpus B0或修改Task5索引。
 
 passage_id形如L01-03:p1，只是本次原块按双换行划分的原段地址，不是新chunk版本。模型只返回text和已有passage_id；程序从该地址恢复chunk_id及完整support_quote。这样避免让模型重新抄写来源时改字。引用示例形式为`[L01-03 · 第1条 · L187–L189](原source_url)`；URL、规则号和行号均取原metadata。
 
 L起止行来自采集时的带行号网页快照，不是网页锚点或规则书页码。现有revision ID对应正文未独立回取核验，引用链接不冒充已验证的历史版本链接。
 
-结构校验能证明引用段落实际被提供、摘录逐字来自原文；不能证明生成text的每个结论必被该段语义蕴含。当前保留完整证据以便检查，正式答案质量、条件遗漏和拒答误判在任务十二评测，本任务不声明准确率。模型仍可能误拒答或错误选段。
+最多3条生成结论，每条不超过160字；文本内的数字必须在其所引用的同一原段出现，避免把其他段的数值混进来。结构校验能证明引用段落实际被提供、摘录逐字来自原文；数字存在也不能证明生成text的每个结论必被该段语义蕴含。当前保留完整证据以便检查，正式答案质量、条件遗漏和拒答误判在任务十二评测，本任务不声明准确率。模型仍可能误拒答或错误选段。
 
 ## 4. 启动和试用
 

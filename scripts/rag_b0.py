@@ -52,7 +52,7 @@ def passages_for(match, config):
 
 def response_schema(matches, config):
     statement={'type':'object','additionalProperties':False,'properties':{
-                'text':{'type':'string'},'passage_id':{'type':'string','enum':
+                'text':{'type':'string','maxLength':config['max_statement_characters']},'passage_id':{'type':'string','enum':
                     [p['passage_id'] for m in matches for p in passages_for(m,config)]}},
                 'required':['text','passage_id']}
     # Encode the two valid states in the grammar, rather than allowing a false
@@ -83,6 +83,7 @@ def pack_context(query, matches, config, prompt):
             '\n\n当前问题：'+query+'\n请核对上述正文后回答，并选择支持结论的passage_id。'}]
     selected=[]
     for match in matches:
+        if len(selected)>=config['max_context_chunks']:break
         candidate=selected+[match]
         schema=response_schema(candidate,config)
         messages=messages_for(candidate)
@@ -113,10 +114,14 @@ def validate_payload(payload, offered, config):
         if not isinstance(statement,dict) or set(statement)!={'text','passage_id'}:
             raise ValueError('Invalid answer statement')
         text,pid=(statement[k] for k in ('text','passage_id'))
-        if not isinstance(text,str) or not isinstance(pid,str) or not 4<=len(text.strip())<=800 or pid not in by_id:
+        if not isinstance(text,str) or not isinstance(pid,str) or not 4<=len(text.strip())<=config['max_statement_characters'] or pid not in by_id:
             raise ValueError('Unknown/unoffered evidence passage')
         if re.search(r'https?://|<[^>]+>|\[[^\]]+\]',text):raise ValueError('Model must not invent source links or citation markup')
         match,passage=by_id[pid]
+        # Numeric facts must occur in the particular cited paragraph. This
+        # catches cross-paragraph numeric mixing, not general entailment.
+        numbers=lambda value:set(re.findall(r'\d+(?:\.\d+)?',unicodedata.normalize('NFKC',value)))
+        if not numbers(text)<=numbers(passage['text']):raise ValueError('Numeric facts are absent from the cited paragraph')
         resolved.append({**statement,'chunk_id':match['chunk_id'],'support_quote':passage['text']})
     return resolved
 
@@ -163,6 +168,18 @@ def render_panel(result):
     return ''.join(blocks)
 
 
+class GenerationRejected(ValueError):
+    def __init__(self,message,response):
+        super().__init__(message)
+        self.response=response
+
+
+def generation_record(response, config):
+    result={key:response.get(key) for key in ('model','done','done_reason','prompt_eval_count','eval_count','load_duration','total_duration')}
+    result.update(raw_content=response.get('message',{}).get('content'),raw_response=response,model_digest=config['llm']['digest'])
+    return result
+
+
 class PinnedChat:
     def __init__(self, config, base_url='http://127.0.0.1:11434'):
         self.config=config;self.base_url=base_url.rstrip('/')
@@ -189,9 +206,9 @@ class PinnedChat:
             'keep_alive':cfg['keep_alive'],'options':{key:cfg[key] for key in
                 ('num_ctx','num_predict','num_gpu','num_thread','temperature','seed')}})
         self.verify_model()
-        if response.get('done') is not True or response.get('done_reason')!='stop':raise ValueError('Model response was incomplete or truncated')
+        if response.get('done') is not True or response.get('done_reason')!='stop':raise GenerationRejected('Model response was incomplete or truncated',response)
         if response.get('prompt_eval_count',0)+cfg['num_predict']+self.config['chat_template_token_reserve']>cfg['num_ctx']:
-            raise ValueError('Actual model input exceeded context policy')
+            raise GenerationRejected('Actual model input exceeded context policy',response)
         return response
 
 
@@ -230,8 +247,7 @@ class RagB0Engine:
                 generation_started=time.perf_counter();result['generation_attempted']=True
                 response=self.chat.generate(messages,schema)
                 result['timing']['generation_seconds']=time.perf_counter()-generation_started
-                result['generation']={key:response.get(key) for key in ('model','done','done_reason','prompt_eval_count','eval_count','load_duration','total_duration')}
-                result['generation'].update(raw_content=response['message']['content'],model_digest=self.config['llm']['digest'])
+                result['generation']=generation_record(response,self.config)
                 payload=json.loads(response['message']['content']);result['generation']['parsed_payload']=payload
                 statements=validate_payload(payload,context,self.config)
                 result['generation']['validated_statements']=statements
@@ -242,6 +258,9 @@ class RagB0Engine:
                 result['citations']=citations_for(statements,context)
                 result['answer']=render_answer(statements,result['citations']);result['status']='answered'
             except (ValueError,KeyError,TypeError,OSError,RuntimeError,urllib.error.URLError,TimeoutError) as exc:
+                if isinstance(exc,GenerationRejected):
+                    result['generation']=generation_record(exc.response,self.config)
+                    result['timing']['generation_seconds']=time.perf_counter()-generation_started
                 result.update(status='refused',answer=REFUSAL,citations=[],refusal_reason='generation_or_evidence_validation_failed',
                               error=type(exc).__name__+': '+str(exc))
             finally:
