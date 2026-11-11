@@ -1,0 +1,2 @@
+# Preserve original bytes: frozen data/specification hashes include line endings.
+* -text

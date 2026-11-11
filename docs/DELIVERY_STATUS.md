@@ -1,0 +1,21 @@
+# 当前进度与交付索引
+
+日期：2026-11-11。原设计/执行文档是冻结的历史基线，其中的历史进度、未初始化 Git 等描述不改写；当前事实由本页及对应交付报告补充。
+
+| 任务 | 状态 | 原交付要求与已交付文件 | 证据 |
+| --- | --- | --- | --- |
+| 1 审计与冻结 | 已交付 | PROJECT_AUDIT、EXPERIMENT_LOG、原本机 project_file_manifest、基线锁 | TASK_01_02_DELIVERY、TASK_01_02_RECHECK、task1_task2_after-task3.json；32/32 为任务一二联合结果 |
+| 2 固定应用与本机运行 | 已交付 | UPSTREAM_VERSION、LOCAL_SETUP、启动脚本、KOTAEMON_BASELINE | 同上；质量修复见 ANSWER_QUALITY_FIX_2026-11-11.md；UI/引用检查 5/5 |
+| 3 统一数据结构 | 已交付 | RAG_DATA_SCHEMA、build/validate 脚本、两份派生 JSONL、数据 manifest | TASK_03_DELIVERY；主校验 18/18、交付 8/8、坏数据拒绝 16/16 |
+| 4–14 | 按原计划继续 | 人工评测集、正式索引、RAG B0、检索优化、打包与实验归档 | 尚未完成，不填虚构性能数字 |
+
+任务 3 的两份完整 JSONL 和任务 1 的原始/处理语料保留本地、不纳入公开 Git；来源清单、稳定 ID 映射、输出哈希和代码已纳入。原本机 project_file_manifest 包含不可公开的运行归档，本仓库提供独立 `reports/PUBLICATION_MANIFEST.json`；二者范围不同，不相互替换。
+
+## 这次整理做了什么
+
+1. 创建独立的新仓库目录；原工程未初始化 Git、未搬移、未改写。
+2. 原技术设计、执行文档、原脚本和选定报告按字节复制；映射见 PUBLICATION_MANIFEST。
+3. 增加分层说明、公开复现入口、PR 模板与 Git 回滚说明。
+4. 既有成果分任务导入，建立可追踪的小提交。没有重跑模型、重建索引或变更任务验收条件。
+
+本仓库 Git 历史从整理日开始；此前的开发过程由原报告和 SHA-256 记录。公开仓库的导入提交不能用来推断此前实验的运行时间。

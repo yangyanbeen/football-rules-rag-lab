@@ -1,0 +1,8 @@
+Football Rules RAG Lab — project integration and experiment tooling.
+Code is distributed under Apache License 2.0; see LICENSE.
+This repository integrates Cinnamon/kotaemon v0.12.0 (Apache License 2.0).
+Pinned upstream commit: 9ad3e4e49aa35b8acddd235918a5d9753c1cfdf9
+Upstream code is obtained separately and is not vendored in this repository.
+Wikipedia content and translations have separate attribution/license metadata.
+Original corpus text, raw snapshots, application user data, credentials and models
+are NOT included in this public Git repository.
