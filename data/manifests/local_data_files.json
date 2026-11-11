@@ -1,0 +1,310 @@
+{
+  "scope": "Existing local data only; full text is excluded from public Git",
+  "files": [
+    {
+      "path": "data/processed/rag_chunks_parallel.jsonl",
+      "size_bytes": 400859,
+      "sha256": "3e3167bd3590c66c58d617796e5495440ac219cd9599245aee02ca810dd36467"
+    },
+    {
+      "path": "data/processed/rag_chunks_zh.jsonl",
+      "size_bytes": 302368,
+      "sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3"
+    },
+    {
+      "path": "data/processed/足球规则中文语料包_2026-11-10.zip",
+      "size_bytes": 227242,
+      "sha256": "2f47ba773bffc1181b3583436f6a602dc2e254da831fe148eba68cbd7c861316"
+    },
+    {
+      "path": "data/processed/wikipedia_2026-11-10/collection_summary.json",
+      "size_bytes": 302,
+      "sha256": "a5138051efe09925347f817bb900ec501995c6dfe89a02458ee5bd8bdc6929a5"
+    },
+    {
+      "path": "data/processed/wikipedia_2026-11-10/source_documents.jsonl",
+      "size_bytes": 170680,
+      "sha256": "4292d110e45df25021a7eaa9795e45b0903a6994a949d057d4b29e1088de17c9"
+    },
+    {
+      "path": "data/processed/wikipedia_2026-11-10/sources.json",
+      "size_bytes": 29768,
+      "sha256": "9814024597d2c88bde4a1ff6fa365d47b936fef87a66f34dacb606cef19f1342"
+    },
+    {
+      "path": "data/processed/wikipedia_2026-11-10/translation_input.json",
+      "size_bytes": 130082,
+      "sha256": "5d73ef805e12849ee3a41e836f0389a6cfe8cbe224edf9960e99bca38bd78e5b"
+    },
+    {
+      "path": "data/processed/wikipedia_2026-11-10/足球规则资料_网站采集版.html",
+      "size_bytes": 162039,
+      "sha256": "18dcca924347b89d9449473a9f40daaedc765efe5822f76c1c01bb902be304e7"
+    },
+    {
+      "path": "data/processed/wikipedia_2026-11-10/足球规则资料_网站采集版.md",
+      "size_bytes": 155495,
+      "sha256": "6963a1b53f7e847eed4ee30d21431650a17cee8483756f41a8d1fb32abae7fab"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/00_阅读与切分说明.md",
+      "size_bytes": 2751,
+      "sha256": "b01cca4f84033060eddcfc27d1bcca446ac92f850f89b0ff5818900bf0d9a0f0"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/01_场地器材与队员.html",
+      "size_bytes": 17725,
+      "sha256": "e113aca7bd09309bc51af63f886cf8cf57735f63d5b2efaf9faad0de51f86458"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/01_场地器材与队员.md",
+      "size_bytes": 15214,
+      "sha256": "23ccd5914b1f3649b9a5216314ce5dad7ea7e5cc72cd289ccadca415f44a938c"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/02_裁判比赛流程与结果.html",
+      "size_bytes": 24053,
+      "sha256": "2f6910928a030884b2dae481cb4a728e2bafb9c68c6fe7479fa494def0ea1eb3"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/02_裁判比赛流程与结果.md",
+      "size_bytes": 21023,
+      "sha256": "a193ee7170613eafeefa5fc689ac69f3b67e40e6dd7ecbbc91c7569a7cdeae23"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/03_越位犯规与纪律.html",
+      "size_bytes": 21783,
+      "sha256": "f563e195ef4d1ad947c10961bcb40cff5e66ac3ad2d95e64468cf9af7489507a"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/03_越位犯规与纪律.md",
+      "size_bytes": 19015,
+      "sha256": "78a79d9c55e9f363e6a341d692797111044adfbb144de3c143b8f9a5f61b6e22"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/04_任意球与罚球点球.html",
+      "size_bytes": 13517,
+      "sha256": "a5d0dee58ac3f2fa0b332eac5137b287751ebc8b4534fb3b05e0be225919b6c1"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/04_任意球与罚球点球.md",
+      "size_bytes": 11017,
+      "sha256": "7917580e5e4330f526d2aea9bf933e0c9814b30fa324b46790f1fcf71185cf97"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/05_界外球球门球与角球.html",
+      "size_bytes": 13019,
+      "sha256": "1852fa454c78189993dbe28719370dec379829bed9d9022babf44733ecd3f02b"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/05_界外球球门球与角球.md",
+      "size_bytes": 10721,
+      "sha256": "cb9bb7db36055f38062fe87dd02c1fef9910ee5471672d0fc1b3bf5ec9e2c3ce"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/chunks_zh.jsonl",
+      "size_bytes": 205915,
+      "sha256": "8dc715386b92f3fe0c3b193c2f9c3cdc9f157d6ffa9899a50401c4352a5bfad6"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/corpus_manifest.json",
+      "size_bytes": 33750,
+      "sha256": "cd7a16fc2f9233d14ee79c4acfe6555f6a3abf95606d33f4fe05ae0d992e19bf"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/parallel_zh_en.jsonl",
+      "size_bytes": 287566,
+      "sha256": "a39aefc312d2eebec9f1714991f7a747dbffe81583c129e3b6c0ea59d725af1a"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/validation_report.json",
+      "size_bytes": 355,
+      "sha256": "fe09d3f9efeca300ff8bbec588a465bdcf859b831a35e88fef1f4aa6ec4cad3f"
+    },
+    {
+      "path": "data/processed/wikipedia_zh_2026-11-10/足球规则_中文阅读版.html",
+      "size_bytes": 84766,
+      "sha256": "57e617dc310677853df81a11f13350d513c62c3ccd3caff0afa87fde54ed0e18"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/00.web.txt",
+      "size_bytes": 31200,
+      "sha256": "39f11b0b2c361ea91e29c2a97da00a017b7cb44eea27443cc530987c58c6b867"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/00_footer.web.txt",
+      "size_bytes": 28548,
+      "sha256": "92d1c6ec6d8b5b0933b85b14bd7a0962228c88a079300754636f7928426d242e"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/00_laws_overview.web.txt",
+      "size_bytes": 31200,
+      "sha256": "21ea9b2769e60febac8bc3314df396008aaf21876c833208e6840e6b33dc0432"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/01.web.txt",
+      "size_bytes": 28411,
+      "sha256": "22d3fc31c82d9d2cc33addfd895b7f136f85630843af20afaeb5d617edac545f"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/02.web.txt",
+      "size_bytes": 28625,
+      "sha256": "ce59af747859c2369e090876bb22741d8d67e15c51ef9616dec41319500567c5"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/02_recovered_footer.web.txt",
+      "size_bytes": 5717,
+      "sha256": "b26b90db9bd831c80633dcd5068ea6f5b8423259abe42a93ff39f14ebd14616e"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/03.web.txt",
+      "size_bytes": 28526,
+      "sha256": "c4499a5ff8b38b17cccc034c1dd8ab2450598e0189c8cebc37294dec53d4ccd7"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/03_extra.web.txt",
+      "size_bytes": 33352,
+      "sha256": "44321195e2b6eaf61d97245fa139324fd52c4ad54412c16f17a048f9ba4cec69"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/03_players.web.txt",
+      "size_bytes": 33876,
+      "sha256": "94a2e266b5fdcfc45adb5a1df25ce73c9d60c68956096e7660a5d3c9e725f949"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/03_recovered_footer.web.txt",
+      "size_bytes": 6940,
+      "sha256": "0820fa1585e71265df269f75358b88cd3fbd299798559bf3da42fee31a94ef54"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/04.web.txt",
+      "size_bytes": 33637,
+      "sha256": "8ea10c58d2a65a08bd7a2591a2edb8f440e501db3e28a287a08ed136c0d78091"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/04_recovered_footer.web.txt",
+      "size_bytes": 5514,
+      "sha256": "48e140dee9014d44e76e831298fb7152d2e0262fbfe72e21843acb46385de9c8"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/05.web.txt",
+      "size_bytes": 31115,
+      "sha256": "9832d11d0e4bd15bb67d4451f5febd06cd65e813e943dd8c1ba9ef5d9e56b21b"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/05_recovered_footer.web.txt",
+      "size_bytes": 4984,
+      "sha256": "2f798acd1b84f6df64dc09e06f03ae193e7036c6ce86ea08a83b11261661d959"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/06.web.txt",
+      "size_bytes": 23274,
+      "sha256": "2440d28ebbd67526da6c47fa6727afde8aad27db59eeee19d6698857757246a9"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/08a.web.txt",
+      "size_bytes": 28544,
+      "sha256": "b02907d430bd0876df32c116a0d35de38378f8b4f7ebde5eb8efdb78d5c09934"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/08b.web.txt",
+      "size_bytes": 20986,
+      "sha256": "ca358b45f2d577e8798e636f047d1cc9776858d7baa8b1b2aa04ad31a71032d6"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/09.web.txt",
+      "size_bytes": 11899,
+      "sha256": "3cc471ec7af09dbf5e389b351fc6b2238de8ddcbab3193e3b276496dbae8dbb1"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/10.web.txt",
+      "size_bytes": 16515,
+      "sha256": "6695cfd4830fb60aa98f5b444a53a2a455d2589c30a67986dd2e3e1e84011757"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/11.web.txt",
+      "size_bytes": 32165,
+      "sha256": "93443e6cd9c7fb2990c2e3b21a7122350b8fc0ffc00b235ef34d58c1fb33f32c"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/11_extra.web.txt",
+      "size_bytes": 10324,
+      "sha256": "b2afb2b9e9e3a71e7682bf14a9820f689c60501ce5311dc35fa3478a9761baac"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/11_recovered_footer.web.txt",
+      "size_bytes": 5279,
+      "sha256": "a0ba5f3ae4af725da7b44d64bfaf275bd183544bf432c84df56191cdd4ccf069"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/12.web.txt",
+      "size_bytes": 32093,
+      "sha256": "d810b5dacf19f5261cd39a8b83cea2e8c77607af0b934677f4e23dab802539be"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/12_extra.web.txt",
+      "size_bytes": 9775,
+      "sha256": "797c4158a179c467580bbd23d50a69c2c67df07e6523d2535bc2d1add9a70fe9"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/13.web.txt",
+      "size_bytes": 29729,
+      "sha256": "937afa1336bac9346e96cb748309fcf826e78508a84653922975fd50d068e7bb"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/13_recovered_footer.web.txt",
+      "size_bytes": 5978,
+      "sha256": "1e9acc52b84d3083f97d55fe8787448665c723c12ed65181606353d5de14e3c3"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/14.web.txt",
+      "size_bytes": 30855,
+      "sha256": "99f4d74de0f867923d3cf0f73b110487a3749db5050e767844ac7e99703bb4e5"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/14_recovered_footer.web.txt",
+      "size_bytes": 6349,
+      "sha256": "45f86addf750b3ed35e62e64331952bf383f5fd0a2c70127b93acf6a176e120e"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/15.web.txt",
+      "size_bytes": 29346,
+      "sha256": "77d49f1df9e0d60b0482dac045b102b1fd0dc4d7f26d84ee42bf883a561ab443"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/15_recovered_footer.web.txt",
+      "size_bytes": 5554,
+      "sha256": "61d11e13dc418fdb730f1a3a8f002086a0b6dd9855e4f565f95dc2af8b9e8b43"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/16.web.txt",
+      "size_bytes": 28945,
+      "sha256": "c8a81cb0ad540acb2dd7190c4f907a7de3390fe2c6c7ec82f3e98f17a4f93b51"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/16_recovered_footer.web.txt",
+      "size_bytes": 4885,
+      "sha256": "6aca59681d463c3b94371baceb8a99b66f7ce2285236fc86593637ddfffd68cc"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/17.web.txt",
+      "size_bytes": 29756,
+      "sha256": "3d9ea315e662fa375424a9a5a02618936b5904b77603c9cda51352f25f86b8ab"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/17_recovered_footer.web.txt",
+      "size_bytes": 5689,
+      "sha256": "55c2d44e948d9c75b8fe8011e129510abb69424685588ff38b2de3786d397364"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/batch01.web.txt",
+      "size_bytes": 29853,
+      "sha256": "e2465d2521c3e0e433356a9d9d969f468240d0962653f140438ab32fc3da4358"
+    },
+    {
+      "path": "data/raw/wikipedia_2026-11-10/batch02.web.txt",
+      "size_bytes": 30647,
+      "sha256": "b3f5ba86279dd1dd5769fa088fa9392e270d0e5eb782dfa564e5c0536ec46d90"
+    }
+  ]
+}
