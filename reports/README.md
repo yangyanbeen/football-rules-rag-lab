@@ -28,3 +28,7 @@
 - `acceptance/fresh_answer_quality_contract.json`：新环境 19 项引用契约。
 
 旧的 `task123_recheck_summary.json`、代码对应关系和历史 UI 文件保留原范围，当前不再用“新旧启动代码相同”作为通过条件；本轮运行覆盖层有实际修复，当前代码哈希见 fresh_delivery。
+
+## 任务四候选与门禁
+
+`TASK_04_DELIVERY.md` 是当前未签收的阶段报告。`acceptance/task4_structure.json` 和 `task4_workflow_verification.json` 是自动检查通过；`task4_delivery_gate.json` 明确记录人工0/90、测试未冻结导致正式门禁未通过。不要把自动PASS或合成指标/签名当作人工评测集完成。`task4_corpus_regression.json` 为原数据独立回归。

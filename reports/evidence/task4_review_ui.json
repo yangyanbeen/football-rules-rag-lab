@@ -1,0 +1,13 @@
+{
+  "captured_at": "2026-11-11T10:48:56.997Z",
+  "scope": "Read-only browser UI checks and a rejected POST without CSRF. No real annotation was approved.",
+  "url": "http://127.0.0.1:7862/",
+  "questions": 90,
+  "approved": 0,
+  "test_locked": false,
+  "missing_csrf_http": 403,
+  "no_review_created": true,
+  "updated_refusal_question": "请确认2026/27赛季某个未指明联赛是否仍使用客场进球制度，并给确定晋级依据。",
+  "has_support_card": true,
+  "checkboxes_clear": true
+}

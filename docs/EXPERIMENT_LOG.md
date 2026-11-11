@@ -172,3 +172,17 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 实际退出 0：综合 33/33，UI 3/3，开发回归 16/16，引用契约 19/19；任务三原校验 18/18、suite 8/8、坏数据拒绝 16/16。10 个冻结文件、4 个历史前缀、61 个本地语料和原工程 178 个静态文件未变。Chroma 仅保留候选容量自动收敛提示。资料资格说明保留，任务四至十四未完成，不编造正式检索/答案/延迟成绩。
 
 当前操作说明 docs/PUBLIC_SETUP.md、docs/FRESH_ACCEPTANCE.md；当前交付 reports/TASK_01_03_REDELIVERY.md；实测 reports/acceptance/fresh_delivery.json。后续按小提交、PR 合并和标签管理；只写新仓库 football-rules-rag-lab，原有其他仓库只读。
+
+## TASK-004-PREPARE：候选评测集和签收门禁（2026-11-11）
+
+- 用户任务：执行原任务四，达到原交付标准。原技术/任务文档不改；起点4830c28a90f2d6d2b1aa31544728f283e222bed3，分支feat/task-04-evaluation。
+- 输入：任务三99个稳定知识段，corpus-b0-rag-adapter-1.0.0；既有五份正文、英中数据、来源和模型/问答参数不变。
+- 主要变量：新增自拟评测候选与可复核标注/冻结流程，不进行检索参数实验。数据football-eval-0.1.0目前candidate；40开发候选（32可回答/8拒答）、50测试候选（40/10）、90对应答案标签、90对逐题负例，两组各覆盖1—17条。
+- 起草：本Agent读取固定正文后编写，明确AI来源。发现两条普遍化问法可能实际可回答“不一定”，改为缺具体赛事/赛季的数值或制度查询；补入已知等价支持段；能由一段完整回答的题不机械记为跨段。这些是AI编辑，不冒充人工评测。
+- 工具：确定性构建、结构/正式交付验证、合成手算指标、16类重签哈希坏数据、实际人工逐题页面、签名失效及冻结门禁。合成复核只在.tmp夹具测试，默认不计真实人工记录；主评测数据没有被自动通过。
+- 实际执行：build_eval_dataset.py；recheck_task4.ps1 -PreparationOnly；默认完整recheck_task4.ps1；verify_task3_isolated.py --report reports/acceptance/task4_corpus_regression.json。
+- 自动结果：结构22/22、工作流27/27、坏数据拒绝16/16；任务三原18/18、8/8、16/16继续通过，输入未变。浏览器实际打开7862，缺CSRF的写入被403拒绝，未生成人工确认。
+- 原正式门禁：FAIL，22/25；默认完整入口实际退出1。缺项是真实人工0/90、测试冻结及相应正式发布状态。PreparationOnly退出0仅代表准备检查，不是任务四交付。
+- 模型与性能：未运行真实开发/测试检索或答案预测，没有本地模型调用，没有正式Recall/MRR/答案准确率/延迟成绩；手算夹具数值只验证算术实现。代码版本见候选登记，不能用合成签名/指标做简历成果。
+- 后续：已向实际用户提供逐题页面http://127.0.0.1:7862/及人工要求。按真实反馈修订，全部匹配确认后freeze_eval_dataset.py再执行完整验收。此时只发布候选分支/草稿PR，不合并完成、不标完成标签、不进入任务五。
+- 权威说明：docs/EVAL_DATASET.md、docs/TASK_04_SCOPE.md；阶段报告reports/TASK_04_DELIVERY.md；机器记录reports/acceptance/task4_*。姓名/备注/完整复核日志、原全文及账号保持本地。
