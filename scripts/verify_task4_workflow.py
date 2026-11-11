@@ -169,6 +169,9 @@ def main():
             'passed':sum(x['passed'] for x in outcomes),'total':len(outcomes),'checks':outcomes,
             'synthetic_hand_calculation':{'questions':questions,'predictions':predictions,'expected_metrics':hand,'actual':score},
             'real_dataset_scores_computed':False,'actual_human_reviews_created':False,
+            'implementation_sha256':{name:digest((ROOT/'scripts'/name).read_bytes()) for name in (
+                'eval_dataset.py','build_eval_dataset.py','validate_eval_dataset.py','retrieval_metrics.py',
+                'run_retrieval_metrics.py','freeze_eval_dataset.py','serve_eval_review.py','verify_task4_workflow.py','recheck_task4.ps1')},
             'synthetic_review_notice':'Only disposable .tmp fixtures contain synthetic review records to test program logic. They never count toward the real dataset.'}
     write_json(ROOT/'reports/acceptance/task4_workflow_verification.json',result)
     print(json.dumps({'status':result['status'],'passed':result['passed'],'total':result['total'],
