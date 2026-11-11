@@ -20,14 +20,21 @@ from eval_dataset import ROOT, digest, load_jsonl, write_json, write_jsonl
 
 BASE = '8e8b93c6556943b4d08ee82f2620a5bc21ee759a'
 SMOKE_QUERIES = ['足球场的边界标线如何判定球出界？','裁判出示黄牌和红牌分别表示什么？','足球比赛中，角旗附近的弧线有什么用途？']
+ACTIVE_REPORT_ROOT = None
 
 
 def main():
+    global ACTIVE_REPORT_ROOT
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--index',type=Path,default=DEFAULT_INDEX)
     parser.add_argument('--original-root',type=Path)
     parser.add_argument('--original-snapshot',type=Path)
+    parser.add_argument('--report-dir',type=Path,default=ROOT/'reports')
     args = parser.parse_args()
+    report_root=args.report_dir.resolve()
+    if not any(report_root.is_relative_to(ROOT/name) for name in ('reports','.tmp')):
+        raise ValueError('Use a report directory under reports/ or ignored .tmp/')
+    ACTIVE_REPORT_ROOT=report_root
     if bool(args.original_root) != bool(args.original_snapshot):
         raise ValueError('Provide original root and prior snapshot together')
     cfg = load_config()
@@ -201,10 +208,10 @@ def main():
         'retrieval_quality_metrics_computed':False,'smoke_query_count':len(smoke),
         'implementation_sha256':{name:digest((ROOT/'scripts'/name).read_bytes()) for name in
             ('dense_index.py','dense_telemetry.py','build_dense_index.py','query_dense_index.py','verify_task5_delivery.py','recheck_task5.ps1')}}
-    write_json(ROOT/'reports/evidence/task5_dense_smoke.json',{'captured_at':result['captured_at'],
+    write_json(report_root/'evidence/task5_dense_smoke.json',{'captured_at':result['captured_at'],
         'scope':'Ad hoc index usability queries; not taken from evaluation files and not scored for quality',
         'top_k':3,'queries':smoke,'full_source_text_published':False})
-    write_json(ROOT/'reports/acceptance/task5_delivery_gate.json',result)
+    write_json(report_root/'acceptance/task5_delivery_gate.json',result)
     print(json.dumps({k:result[k] for k in ('status','passed','total','negative_cases_rejected','negative_cases_total','max_rebuild_vector_difference')}))
     return 0 if result['status']=='PASS' else 1
 
@@ -214,9 +221,10 @@ if __name__=='__main__':
         raise SystemExit(main())
     except Exception as exc:
         message=str(exc).replace(str(ROOT),'<project>')
-        write_json(ROOT/'reports/acceptance/task5_delivery_gate.json',{
-            'captured_at':datetime.now(timezone.utc).isoformat(),'status':'FAIL',
-            'errors':[type(exc).__name__+': '+message],
-            'retrieval_quality_metrics_computed':False,'locked_test_queries_parsed_or_scored':False})
+        if ACTIVE_REPORT_ROOT is not None:
+            write_json(ACTIVE_REPORT_ROOT/'acceptance/task5_delivery_gate.json',{
+                'captured_at':datetime.now(timezone.utc).isoformat(),'status':'FAIL',
+                'errors':[type(exc).__name__+': '+message],
+                'retrieval_quality_metrics_computed':False,'locked_test_queries_parsed_or_scored':False})
         print(json.dumps({'status':'FAIL','error':message},ensure_ascii=False))
         raise SystemExit(1)

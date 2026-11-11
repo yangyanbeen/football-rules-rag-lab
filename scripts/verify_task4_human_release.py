@@ -2,8 +2,10 @@
 from __future__ import annotations
 
 import json
+import argparse
 import shutil
 from datetime import datetime, timezone
+from pathlib import Path
 
 from eval_dataset import CHECKLIST, EVAL, ROOT, active_reviews, digest, load_jsonl, write_json, write_jsonl
 from freeze_eval_dataset import freeze
@@ -12,6 +14,12 @@ from validate_eval_dataset import validate
 
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--report',type=Path,default=ROOT/'reports/acceptance/task4_human_release_verification.json')
+    args=parser.parse_args()
+    report=args.report.resolve()
+    if not any(report.is_relative_to(ROOT/name) for name in ('reports','.tmp')) or report.suffix!='.json':
+        raise ValueError('Use a JSON report under reports/ or .tmp/')
     before = {p.name: digest(p.read_bytes()) for p in EVAL.iterdir() if p.is_file()}
     folder = ROOT/'.tmp'/('task4-human-release-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%f'))
     folder.mkdir(parents=True)
@@ -91,7 +99,7 @@ def main():
               'real_dataset_scores_computed': False,
               'implementation_sha256': {name: digest((ROOT/'scripts'/name).read_bytes()) for name in
                                         ('freeze_eval_dataset.py', 'owner_approve_eval.py', 'verify_task4_human_release.py')}}
-    write_json(ROOT/'reports/acceptance/task4_human_release_verification.json', result)
+    write_json(report, result)
     print(json.dumps({k: result[k] for k in ('status', 'passed', 'total', 'actual_human_reviews_created')}))
     return 0 if result['status'] == 'PASS' else 1
 

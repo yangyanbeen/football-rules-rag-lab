@@ -6,6 +6,8 @@
 
 ## 先看什么
 
+任务四、五最新补缺见[仓库审计与补交付](reports/TASK_04_05_SUPPLEMENT.md)：原上传文件完整，6组边界问题已修复，新增39项回归通过；原交付数据、人工记录和索引不变。统一复核入口为scripts/recheck_task45.ps1，公开凭证可单独用python scripts/validate_eval_receipt.py检查。
+
 1. [当前进度与交付基线](docs/DELIVERY_STATUS.md)：哪些已完成，哪些未做。
 2. [技术文档](docs/TECHNICAL_DESIGN.md) 和 [原执行文档](docs/DEVELOPMENT_PLAN_AND_REPORT.md)：原件逐字节保留。
 3. [架构与分层](docs/ARCHITECTURE.md)：前端、后端、数据和运行环境的边界。

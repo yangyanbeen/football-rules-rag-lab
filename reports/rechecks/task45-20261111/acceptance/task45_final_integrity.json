@@ -1,0 +1,39 @@
+{
+  "captured_at": "2026-11-11T14:57:35.663302+00:00",
+  "status": "PASS",
+  "passed": 18,
+  "total": 18,
+  "checks": {
+    "task4_original_gate_26": true,
+    "task4_original_human_90": true,
+    "task4_published_receipt_13": true,
+    "task5_original_gate_24": true,
+    "new_regression_gate_39": true,
+    "remote_old_delivery_157_exact_files": true,
+    "current_dense_recheck_code_hashes": true,
+    "current_supplement_code_hashes": true,
+    "original_index_artifacts_unchanged": true,
+    "original_index_manifest_unchanged": true,
+    "private_human_ledger_unchanged": true,
+    "original_61_evidence_and_eval_files_unchanged": true,
+    "frozen_10_files": true,
+    "append_only_4_historical_prefixes": true,
+    "local_61_corpus_files": true,
+    "original_human_validator_source_unchanged": true,
+    "original_project_static_178": true,
+    "original_project_no_root_git": true
+  },
+  "reference_commit": "3e41191c145da963fb24057bb1b39354287ebc5a",
+  "original_index_producer_sha256": {
+    "dense_index.py": "2feae6d25eba812338ebebab85ba78ed9d38673ef850bcd0fb48fddcd5ac84f6",
+    "dense_telemetry.py": "a4feda38a98504a437e614b55d9cb15a79be3fd0ca77444be7ad67277537d179",
+    "build_dense_index.py": "3905c09ddad3ee1a8b5f5db2ad8adf215601fc4abb7eebe9c457e5efb57158c3"
+  },
+  "current_reader_and_regression_sha256": {
+    "dense_index.py": "43f384fbd6172f3ccecb8577b3cfdd32253a1d6dabdba407fdc9f52d1f154b1a",
+    "freeze_eval_dataset.py": "b0ac10d24c275be516e4701195551ffb1bcdc70086f06b0c07e9d68b3f9e0a26",
+    "validate_eval_receipt.py": "80e6126c8e2f27af44fe11850a56842a711b0995b6cfbab4f67eb239e2427f95",
+    "verify_task45_regressions.py": "304b7bea974dac7b017d81b43d76f9e9c63775ead1fae85ab3cad5dd3ca31117"
+  },
+  "note": "Producer hashes belong to the immutable previous build; reader/regression hashes belong to this supplement."
+}

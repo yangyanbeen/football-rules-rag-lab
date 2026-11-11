@@ -1,5 +1,7 @@
 # 报告阅读说明
 
+任务四、五最新补审：[TASK_04_05_SUPPLEMENT](TASK_04_05_SUPPLEMENT.md)。修复前6组复现保留在acceptance/task45_before_fixes.json；全部新验收在rechecks/task45-20261111，不覆盖旧交付/评测记录。39项新回归与原26项/24项门禁分别记录。只读audit_remote_delivery.py检查远程文件树和公开清单哈希。
+
 任务五当前交付见[TASK_05_DELIVERY](TASK_05_DELIVERY.md)：acceptance/task5_delivery_gate.json为24/24 PASS、18种错误拒绝；evidence/task5_dense_smoke.json只含非评测示例ID/分数和来源摘要，task5_hardware.json记录真实CPU环境。task5_before_runtime_fix.json保留首轮兼容失败；没有正式Recall/MRR或模型回答成绩。
 
 这里同时保留原工程历史交付和后续公开 checkout 实测。根目录下原任务报告是历史证据；当前各轮结果在 `acceptance/` 与 `evidence/`，不能混淆运行范围。
