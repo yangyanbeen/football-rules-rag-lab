@@ -40,3 +40,14 @@
 `TASK_04_DELIVERY.md` 保留候选准备及后续授权签收过程。`acceptance/task4_structure.json` 和 `task4_workflow_verification.json` 是自动检查通过；早期人工0/90、测试未冻结的失败已另存`task4_candidate_gate_historical.json`。不要把自动PASS或合成指标/签名当作人工评测集完成。`task4_corpus_regression.json`为原数据独立回归。
 
 以上为原候选阶段。用户随后授权90题批量通过，当前按负责人模式批准并冻结：`task4_owner_acceptance.json`、`task4_owner_workflow_verification.json`。原逐题人工门禁仍23/26未通过，保存为 `task4_original_human_gate_after_owner_approval.json`；已有2条真实人工记录保留，批量批准不冒充逐题人工gold。
+
+
+## 任务六正式交付
+
+- TASK_06_DELIVERY.md：原标准逐项核对、实际失败/修复、62/62及前序回归结果。
+- acceptance/task6_delivery_gate.json：真实生成/页面、应用输出合同、故障和冻结输入保全62项通过。
+- evidence/rag_b0_smoke_manifest.json、rag_b0_ui_manifest.json：后端与真实页面分别3条可回答+1条拒答，公开元数据及私有完整记录哈希。
+- evidence/rag_b0_failures.json：10份原型/页面失败和历史通过文件的哈希及具体观察；原始记录不上传。
+- rechecks/task6-20261111/：本次原任务四26/26、公开凭证13/13、工作流27/27、封存15/15、任务五24/24与补缺39/39，旧报告未覆盖。
+
+原规定reports/rag_b0_smoke.jsonl完整交付位于本机并被既有忽略规则排除；公开SHA不等于公开了全文。没有正式答案准确率或检索提升数字。
