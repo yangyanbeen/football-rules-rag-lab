@@ -1,0 +1,6 @@
+{
+  "scope": "Correction of the source-inspection expression in before-fixes.json; original result retained",
+  "original_false_reason": "Searching for visible_answer also matched the pre-existing visible_answer_sha256 output field. That field records a hash without comparing it with the expected rendered answer.",
+  "quote_presence_only_without_complete_answer_comparison": true,
+  "independent_reproduction": "review-tools.json: appended and partial visible answers rejected; original code only checked quote inclusion."
+}
