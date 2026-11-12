@@ -1,5 +1,9 @@
 # 报告阅读说明
 
+任务七当前交付：[TASK_07_DELIVERY](TASK_07_DELIVERY.md)。retrieval/dense_b0/dev与test保存真实逐题Top10、3次计时、run manifest、汇总和错误分析；acceptance/task7_delivery_gate.json为43/43。54项算术、110项合同与113项开发期回归均为程序验证，不能当成绩样本。test_authorization.json与test_usage.jsonl绑定开发完成→代码/配置冻结→一次正式测试；旧测试锁清单未改。
+
+锁定测试可回答40/50，Recall@5/10=38/40=95%，MRR@10=0.8604167；延迟150次，P50/P95=270.18/312.82ms。public-only-replay.json记录无私有语料/模型/索引、Python -S禁用第三方包的真实独立复算。contract-before-fix.json为开发期100/101 FAIL（曾允许额外全文字段），修复后的110/110和实际预测均不含全文；arithmetic.json保留最初无producer SHA的旧合成回执，正式凭证绑定arithmetic-final.json。
+
 任务四至六最新补审：[TASK_04_06_SUPPLEMENT](TASK_04_06_SUPPLEMENT.md)。修复前18个检查中16个为隔离实际复现、2个为代码判断问题；不冒充线上故障。新证据在rechecks/task456-20261112：original/为任务四五原验收，final/为最终58项边界回归与新smoke/真实UI。acceptance/regressions-first.json为先前55项历史结果，不能当作最终代码证明；final/acceptance/task6_portability_regression.json重放旧记录验证工具可移植性，不能代替新页面。原任务交付报告与旧证据不覆盖。
 
 任务四、五最新补审：[TASK_04_05_SUPPLEMENT](TASK_04_05_SUPPLEMENT.md)。修复前6组复现保留在acceptance/task45_before_fixes.json；全部新验收在rechecks/task45-20261111，不覆盖旧交付/评测记录。39项新回归与原26项/24项门禁分别记录。只读audit_remote_delivery.py检查远程文件树和公开清单哈希。

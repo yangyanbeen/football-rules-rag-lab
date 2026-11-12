@@ -123,3 +123,7 @@ UI检查子进程返回结构、query/trace、配置/索引/提示词哈希、To
 完整门禁verify_rag_b0.py增加--smoke-file、--smoke-manifest、--ui-captures、--ui-journal与--reference-commit；具体本轮已执行命令、路径和结果见reports/TASK_04_06_SUPPLEMENT.md。公开回执检查不需要模型/私有语料/原型日志，也不能证明私人真实执行或答案正确。
 
 任务六原发布标签v0.6.0-rag-b0固定在f97c0df；后续审计检查其为新main祖先，不移动旧标签。补交付使用新PR和v0.6.1-task456-audit。
+
+## 8. 任务七测量衔接
+
+任务七现已完成同一语料/模型/索引的离线Dense Retrieval B0，见DENSE_RETRIEVAL.md和reports/TASK_07_DELIVERY.md。固定离线Top10前缀计算Recall@5/10，UI原Top5配置保持原字节。正式锁定测试R@5/10=95%、MRR@10=0.86042，结果只衡量标注证据检索，不验证本页生成模型的答案/引用语义正确率。
