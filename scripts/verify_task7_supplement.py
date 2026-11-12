@@ -173,7 +173,8 @@ def main():
     check('all_original_evaluation_and_delivery_evidence_unchanged',all(digest((ROOT/p).read_bytes())==sha for p,sha in old.items()))
     result={'captured_at':datetime.now(timezone.utc).isoformat(),'status':'PASS' if all(checks.values()) else 'FAIL',
       'passed':sum(checks.values()),'total':len(checks),'checks':checks,'failed':[k for k,v in checks.items() if not v],
-      'actual_model_requests':0,'formal_test_experiments_started':0,'test_individual_predictions_read':False,
+      'actual_model_requests':0,'formal_test_experiments_started':0,'test_individual_predictions_exposed':False,
+      'saved_test_records_replayed_by_delivery_gate':True,
       'scope':'Isolated development mutations, synthetic authorizations/lifecycle and replay of original evidence; no new test measurement',
       'source_sha256':{n:digest((ROOT/'scripts'/n).read_bytes()) for n in ('dense_retrieval_contracts.py','dense_retrieval_eval.py','run_dense_retrieval.py','verify_task7_delivery.py','verify_task7_supplement.py')}}
     write_json(report,result);print(json.dumps({k:result[k] for k in ('status','passed','total','failed')}))
