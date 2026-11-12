@@ -155,8 +155,10 @@ class PinnedEmbedder:
 
 
 def snapshot_inputs():
-    # This reads test files only as bytes for SHA-256. No test question or label
-    # is parsed, displayed, used to choose parameters, or scored in task 5.
+    # Validate the published review metadata, including annotation hashes.
+    # Evaluation text is never passed to embedding/generation, tuned or scored.
+    from validate_eval_receipt import require_receipt
+    require_receipt(ROOT/'data/eval')
     names = ['docs/TECHNICAL_DESIGN.md','docs/DEVELOPMENT_PLAN_AND_REPORT.md','docs/UPSTREAM_VERSION.md',
              'data/processed/rag_chunks_zh.jsonl','data/manifests/rag_dataset_manifest.json',
              'data/eval/dataset_manifest.json','data/eval/retrieval_dev.jsonl','data/eval/retrieval_test.jsonl',
