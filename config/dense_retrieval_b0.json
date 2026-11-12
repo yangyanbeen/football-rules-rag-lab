@@ -1,0 +1,18 @@
+{
+  "evaluation_version": "dense-retrieval-b0-1.0.0",
+  "dense_config": "config/dense_index.json",
+  "dense_index": "data/indexes/dense",
+  "rag_config": "config/rag_b0.json",
+  "top_k": 10,
+  "query_normalization": "NFKC then trim and collapse whitespace",
+  "quality_repetition": 1,
+  "measured_repetitions": 3,
+  "warmup_repetitions": 3,
+  "warmup_query": "足球比赛场地的边线如何判断球出界？",
+  "concurrency": 1,
+  "cache": false,
+  "percentile_method": "linear interpolation at q * (n - 1)",
+  "latency_unit": "seconds in raw rows; milliseconds in summary",
+  "test_purpose": "final_report",
+  "used_for_parameter_selection": false
+}
