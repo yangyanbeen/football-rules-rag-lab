@@ -1,0 +1,102 @@
+{
+  "captured_at": "2026-11-12T07:39:37.404049+00:00",
+  "status": "DEFECTS_REPRODUCED",
+  "baseline_commit": "f97c0df32566a62f9a2106367a048a5cd77da1f5",
+  "groups": 8,
+  "reproduced": 18,
+  "cases": [
+    {
+      "group": "config",
+      "case": "accepts_negative_prediction",
+      "defect_reproduced": true
+    },
+    {
+      "group": "config",
+      "case": "accepts_boolean_gpu",
+      "defect_reproduced": true
+    },
+    {
+      "group": "config",
+      "case": "accepts_boolean_threads",
+      "defect_reproduced": true
+    },
+    {
+      "group": "config",
+      "case": "accepts_negative_timeout",
+      "defect_reproduced": true
+    },
+    {
+      "group": "config",
+      "case": "accepts_invalid_ui_port",
+      "defect_reproduced": true
+    },
+    {
+      "group": "model_response",
+      "case": "accepts_wrong_model",
+      "defect_reproduced": true
+    },
+    {
+      "group": "model_response",
+      "case": "accepts_missing_token_count",
+      "defect_reproduced": true
+    },
+    {
+      "group": "model_response",
+      "case": "accepts_negative_token_count",
+      "defect_reproduced": true
+    },
+    {
+      "group": "model_response",
+      "case": "accepts_wrong_message_role",
+      "defect_reproduced": true
+    },
+    {
+      "group": "failure_trace",
+      "case": "post_request_pin_change_loses_raw_response",
+      "defect_reproduced": true
+    },
+    {
+      "group": "refusal",
+      "case": "model_refusal_reason_displays_assertion_without_citation",
+      "defect_reproduced": true
+    },
+    {
+      "group": "failure_trace",
+      "case": "network_failure_attempt_has_no_error",
+      "defect_reproduced": true
+    },
+    {
+      "group": "failure_trace",
+      "case": "second_failed_attempt_leaves_previous_generation_as_latest",
+      "defect_reproduced": true
+    },
+    {
+      "group": "worker",
+      "case": "malformed_successful_worker_crashes_instead_of_refusing",
+      "defect_reproduced": true
+    },
+    {
+      "group": "worker",
+      "case": "forged_citation_url_is_displayable",
+      "defect_reproduced": true
+    },
+    {
+      "group": "task5_prerequisite",
+      "case": "invalid_rehashed_receipt_passes_snapshot_inputs",
+      "defect_reproduced": true
+    },
+    {
+      "group": "recheck_portability",
+      "case": "task6_gate_requires_fixed_private_trace",
+      "defect_reproduced": true
+    },
+    {
+      "group": "remote_release",
+      "case": "release_audit_requires_old_tag_to_equal_every_future_main",
+      "defect_reproduced": true
+    }
+  ],
+  "real_eval_or_ledger_modified": false,
+  "actual_llm_requests": 0,
+  "scope": "Mocked service/worker packets and isolated receipt fixture, not a quality score"
+}

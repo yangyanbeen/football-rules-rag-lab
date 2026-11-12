@@ -1,0 +1,84 @@
+{
+  "captured_at": "2026-11-12T07:40:01.941704+00:00",
+  "status": "PASS",
+  "passed": 14,
+  "total": 14,
+  "checks": [
+    {
+      "check": "authorized_public_repository_identity",
+      "passed": true
+    },
+    {
+      "check": "remote_main_matches_expected_commit",
+      "passed": true
+    },
+    {
+      "check": "remote_tree_complete",
+      "passed": true
+    },
+    {
+      "check": "every_remote_file_matches_exact_local_commit",
+      "passed": true
+    },
+    {
+      "check": "required_task4_task5_deliverables_present",
+      "passed": true
+    },
+    {
+      "check": "required_task6_public_deliverables_present",
+      "passed": true
+    },
+    {
+      "check": "task6_release_tag_matches_remote_main",
+      "passed": true
+    },
+    {
+      "check": "no_private_runtime_corpus_or_index_uploaded",
+      "passed": true
+    },
+    {
+      "check": "public_file_inventory_paths_match_remote",
+      "passed": true
+    },
+    {
+      "check": "all_public_inventory_sizes_and_hashes_match_remote",
+      "passed": true
+    },
+    {
+      "check": "original_delivery_pr_8_merged",
+      "passed": true
+    },
+    {
+      "check": "original_delivery_pr_9_merged",
+      "passed": true
+    },
+    {
+      "check": "original_release_tag_v0.4.1-human-reviewed",
+      "passed": true
+    },
+    {
+      "check": "original_release_tag_v0.5.0-dense",
+      "passed": true
+    }
+  ],
+  "repository": "yangyanbeen/football-rules-rag-lab",
+  "remote_commit": "f97c0df32566a62f9a2106367a048a5cd77da1f5",
+  "remote_files": 205,
+  "required_missing": [],
+  "inventory_hash_mismatches": [],
+  "original_pull_requests": [
+    {
+      "number": 8,
+      "url": "https://github.com/yangyanbeen/football-rules-rag-lab/pull/8",
+      "merged": true,
+      "merge_commit": "8e8b93c6556943b4d08ee82f2620a5bc21ee759a"
+    },
+    {
+      "number": 9,
+      "url": "https://github.com/yangyanbeen/football-rules-rag-lab/pull/9",
+      "merged": true,
+      "merge_commit": "3e41191c145da963fb24057bb1b39354287ebc5a"
+    }
+  ],
+  "remote_mutations_performed": false
+}
