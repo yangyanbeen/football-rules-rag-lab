@@ -1,0 +1,87 @@
+{
+  "miss_top5": 1,
+  "miss_top10": 1,
+  "not_all_gold_in_top5": 2,
+  "multi_gold_questions": 5,
+  "multi_gold_all_covered_top5": 4,
+  "category_groups_overlap": true,
+  "by_category": {
+    "condition": {
+      "answerable_questions": 20,
+      "miss_top5": 1,
+      "miss_top10": 1
+    },
+    "cross_chunk": {
+      "answerable_questions": 3,
+      "miss_top5": 0,
+      "miss_top10": 0
+    },
+    "exception": {
+      "answerable_questions": 9,
+      "miss_top5": 0,
+      "miss_top10": 0
+    },
+    "number": {
+      "answerable_questions": 8,
+      "miss_top5": 0,
+      "miss_top10": 0
+    },
+    "term": {
+      "answerable_questions": 9,
+      "miss_top5": 0,
+      "miss_top10": 0
+    },
+    "version": {
+      "answerable_questions": 2,
+      "miss_top5": 0,
+      "miss_top10": 0
+    }
+  },
+  "labels_may_not_be_exhaustive": true,
+  "unanswerable_retrieval_is_not_refusal": "Dense always retrieves; refusal quality belongs to task12",
+  "development_cases": [
+    {
+      "question_id": "D015",
+      "expected_chunk_ids": [
+        "L15-05",
+        "L12-05"
+      ],
+      "retrieved_top10": [
+        "L15-05",
+        "L16-02",
+        "L17-06",
+        "L09-03",
+        "L16-01",
+        "L16-04",
+        "L12-05",
+        "L08A-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "first_relevant_rank_within_10": 1,
+      "miss_top5": false,
+      "miss_top10": false
+    },
+    {
+      "question_id": "D020",
+      "expected_chunk_ids": [
+        "L17-01"
+      ],
+      "retrieved_top10": [
+        "L09-03",
+        "L16-01",
+        "L16-02",
+        "L17-06",
+        "L16-04",
+        "L08B-03",
+        "L08A-03",
+        "L11-04",
+        "L12-05",
+        "L15-05"
+      ],
+      "first_relevant_rank_within_10": null,
+      "miss_top5": true,
+      "miss_top10": true
+    }
+  ]
+}

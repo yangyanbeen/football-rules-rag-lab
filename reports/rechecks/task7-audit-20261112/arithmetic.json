@@ -1,0 +1,372 @@
+{
+  "status": "PASS",
+  "generated_at": "2026-11-12T11:07:43.527822+00:00",
+  "kind": "synthetic_metric_arithmetic_and_rejection_regression",
+  "model_requests": 0,
+  "actual_evaluation_questions_read": false,
+  "actual_labels_or_document_text_read": false,
+  "definitions": {
+    "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+    "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+    "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+  },
+  "checks_passed": 54,
+  "checks_total": 54,
+  "checks": [
+    {
+      "name": "question_count",
+      "passed": true,
+      "actual": 6,
+      "expected": 6
+    },
+    {
+      "name": "answerable_denominator_excludes_U",
+      "passed": true,
+      "actual": 5,
+      "expected": 5
+    },
+    {
+      "name": "unanswerable_count",
+      "passed": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "U_is_not_included",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "U_has_no_numeric_recall",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "A_Recall_at_5",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "name": "A_Recall_at_10",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "name": "A_MRR_at_10",
+      "passed": true,
+      "actual": 0.2,
+      "expected": 0.2
+    },
+    {
+      "name": "A_first_relevant_rank_within_10",
+      "passed": true,
+      "actual": 5,
+      "expected": 5
+    },
+    {
+      "name": "B_Recall_at_5",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "name": "B_Recall_at_10",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "name": "B_MRR_at_10",
+      "passed": true,
+      "actual": 0.16666666666666666,
+      "expected": 0.16666666666666666
+    },
+    {
+      "name": "B_first_relevant_rank_within_10",
+      "passed": true,
+      "actual": 6,
+      "expected": 6
+    },
+    {
+      "name": "C_Recall_at_5",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "name": "C_Recall_at_10",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "name": "C_MRR_at_10",
+      "passed": true,
+      "actual": 0.1,
+      "expected": 0.1
+    },
+    {
+      "name": "C_first_relevant_rank_within_10",
+      "passed": true,
+      "actual": 10,
+      "expected": 10
+    },
+    {
+      "name": "D_Recall_at_5",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "name": "D_Recall_at_10",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "name": "D_MRR_at_10",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "name": "D_first_relevant_rank_within_10",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "M_Recall_at_5",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "name": "M_Recall_at_10",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "name": "M_MRR_at_10",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "name": "M_first_relevant_rank_within_10",
+      "passed": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "M_any_hit_recall_is_one",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "name": "M_separate_all_gold_coverage_is_half",
+      "passed": true,
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "aggregate_Recall_at_5_is_2_over_5",
+      "passed": true,
+      "actual": 0.4,
+      "expected": 0.4
+    },
+    {
+      "name": "aggregate_Recall_at_10_is_4_over_5",
+      "passed": true,
+      "actual": 0.8,
+      "expected": 0.8
+    },
+    {
+      "name": "aggregate_MRR_at_10",
+      "passed": true,
+      "actual": 0.29333333333333333,
+      "expected": 0.29333333333333333
+    },
+    {
+      "name": "aggregate_separate_all_gold_coverage_at_5",
+      "passed": true,
+      "actual": 0.3,
+      "expected": 0.3
+    },
+    {
+      "name": "nDCG_not_fabricated_without_graded_labels",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "empty_prediction_Recall@5",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "name": "empty_prediction_Recall@10",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "name": "empty_prediction_MRR@10",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "name": "empty_prediction_all_gold_coverage@5",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "name": "two_gold_hits_do_not_double_any_hit_recall",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "name": "two_gold_hits_complete_separate_coverage",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "name": "second_gold_hit_does_not_inflate_MRR",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "name": "input_order_does_not_change_aggregates",
+      "passed": true,
+      "actual": {
+        "Recall@5": 0.4,
+        "Recall@10": 0.8,
+        "MRR@10": 0.29333333333333333,
+        "all_gold_coverage@5": 0.3
+      },
+      "expected": {
+        "Recall@5": 0.4,
+        "Recall@10": 0.8,
+        "MRR@10": 0.29333333333333333,
+        "all_gold_coverage@5": 0.3
+      }
+    },
+    {
+      "name": "missing_prediction_rejected",
+      "passed": true,
+      "expected": "ValueError",
+      "actual": "Predictions must cover every question exactly once"
+    },
+    {
+      "name": "duplicate_prediction_rejected",
+      "passed": true,
+      "expected": "ValueError",
+      "actual": "Predictions must cover every question exactly once"
+    },
+    {
+      "name": "unexpected_prediction_rejected",
+      "passed": true,
+      "expected": "ValueError",
+      "actual": "Predictions must cover every question exactly once"
+    },
+    {
+      "name": "duplicate_question_rejected",
+      "passed": true,
+      "expected": "ValueError",
+      "actual": "Duplicate question ID"
+    },
+    {
+      "name": "duplicate_chunk_rejected",
+      "passed": true,
+      "expected": "ValueError",
+      "actual": "Predictions require unique chunk IDs and consecutive ranks starting at 1"
+    },
+    {
+      "name": "rank_starts_at_zero_rejected",
+      "passed": true,
+      "expected": "ValueError",
+      "actual": "Predictions require unique chunk IDs and consecutive ranks starting at 1"
+    },
+    {
+      "name": "rank_gap_rejected",
+      "passed": true,
+      "expected": "ValueError",
+      "actual": "Predictions require unique chunk IDs and consecutive ranks starting at 1"
+    },
+    {
+      "name": "rank_duplicate_rejected",
+      "passed": true,
+      "expected": "ValueError",
+      "actual": "Predictions require unique chunk IDs and consecutive ranks starting at 1"
+    },
+    {
+      "name": "rank_reversed_rejected",
+      "passed": true,
+      "expected": "ValueError",
+      "actual": "Predictions require unique chunk IDs and consecutive ranks starting at 1"
+    },
+    {
+      "name": "answerable_without_gold_rejected",
+      "passed": true,
+      "expected": "ValueError",
+      "actual": "Answerability and supporting evidence disagree"
+    },
+    {
+      "name": "unanswerable_with_gold_rejected",
+      "passed": true,
+      "expected": "ValueError",
+      "actual": "Answerability and supporting evidence disagree"
+    },
+    {
+      "name": "non_boolean_answerability_rejected",
+      "passed": true,
+      "expected": "ValueError",
+      "actual": "answerable must be a boolean"
+    },
+    {
+      "name": "all_unanswerable_denominator_rejected",
+      "passed": true,
+      "expected": "ValueError",
+      "actual": "At least one answerable question is required for retrieval averages"
+    },
+    {
+      "name": "empty_dataset_denominator_rejected",
+      "passed": true,
+      "expected": "ValueError",
+      "actual": "At least one answerable question is required for retrieval averages"
+    }
+  ],
+  "schema_observations": [
+    {
+      "name": "boolean_rank_compares_equal_to_integer_one",
+      "arithmetic_helper_accepts": true,
+      "required_outer_validation": "Reject invalid schema before metric arithmetic"
+    },
+    {
+      "name": "string_gold_container_is_interpreted_as_characters",
+      "arithmetic_helper_accepts": true,
+      "required_outer_validation": "Reject invalid schema before metric arithmetic"
+    },
+    {
+      "name": "non_string_identifiers_are_accepted",
+      "arithmetic_helper_accepts": true,
+      "required_outer_validation": "Reject invalid schema before metric arithmetic"
+    }
+  ],
+  "source_sha256": {
+    "verify_dense_metric_arithmetic.py": "5e5a548389cadd21b1f92b4c51c02c2cd770edd260421b7a9210de66eb0abb49",
+    "retrieval_metrics.py": "350759f655b78e43f4d0c4114a4a2c7d03b87c7281ac0cae40678bae15341168"
+  }
+}
