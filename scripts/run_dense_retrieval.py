@@ -93,6 +93,8 @@ def evaluate(args):
     output=Path(args.run_dir).resolve()
     if not output.is_relative_to(ROOT/'reports/retrieval') or output.exists():
         raise ValueError('Use a new directory under reports/retrieval; preserve previous attempts')
+    if split=='test' and not args.authorization:
+        raise ValueError('Locked test requires a preregistered authorization')
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     require_committed_sources(commit)
     before=snapshots();ticket=None
