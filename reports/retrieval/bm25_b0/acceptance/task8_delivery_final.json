@@ -1,0 +1,66 @@
+{
+  "captured_at": "2026-11-12T13:19:16.128541+00:00",
+  "checks": {
+    "61_local_corpus_files_unchanged": true,
+    "74_contract_checks_passed_before_test": true,
+    "accurate_search_mode_dev_comparison_replays": true,
+    "all_11_original_experiment_objects_preserved": true,
+    "all_510_successful_measurements_present": true,
+    "all_original_eval_and_historical_report_bytes_unchanged": true,
+    "all_three_persisted_indexes_validate_99_original_units": true,
+    "authority_docs_and_original_eval_validator_unchanged": true,
+    "authorization_binds_source_data_selection_and_verification": true,
+    "bm25_indexes_dependency_and_corpus_not_public": true,
+    "current_contract_checks_pass": true,
+    "development_and_contract_predate_authorization": true,
+    "failed_initial_development_run_still_rejected": true,
+    "fixed_development_counts_40_32_8": true,
+    "fixed_test_counts_50_40_10": true,
+    "formal_dense_index_all_files_unchanged": true,
+    "four_historical_prefixes_unchanged": true,
+    "one_formal_test_with_started_completed_events": true,
+    "original_private_human_review_ledger_unchanged": true,
+    "original_task4_human_delivery_unchanged": true,
+    "prescribed_report_recomputed_from_original_predictions": true,
+    "required_original_task8_files_delivered": true,
+    "restored_index_eight_regressions_and_actual_dev_pass": true,
+    "rule_decimal_terminology_diagnostics_present": true,
+    "rule_number_and_decimals_preserved_in_probes": true,
+    "selection_exactly_recomputes_from_all_three_dev_runs": true,
+    "supplement_did_not_rewrite_original_test_or_usage_ledger": true,
+    "supplement_timestamp_after_original_test_declared": true,
+    "ten_frozen_files_unchanged": true,
+    "test_completion_binds_exact_original_run_manifest": true,
+    "test_error_analysis_only_aggregate": true,
+    "test_source_frozen_before_authorization": true,
+    "test_uses_only_selected_template": true,
+    "three_development_and_one_test_replay_without_model_calls": true,
+    "three_fresh_rebuild_payloads_byte_identical": true
+  },
+  "errors": [],
+  "new_locked_test_retrievals_in_this_gate": 0,
+  "passed": 35,
+  "rebuilds": [
+    {
+      "build_seconds": 0.8215437999970163,
+      "payload_and_source_map_identical": true,
+      "template": "body"
+    },
+    {
+      "build_seconds": 0.814534500001173,
+      "payload_and_source_map_identical": true,
+      "template": "title_body"
+    },
+    {
+      "build_seconds": 0.8376943000039319,
+      "payload_and_source_map_identical": true,
+      "template": "path_body"
+    }
+  ],
+  "scope": "Original Task8 acceptance plus independent saved-result replay, private index rebuild and preservation. Test retrieval is not rerun.",
+  "selected_template": "title_body",
+  "source_sha256": "09e6b3d89a3c1a692983a68edb42f80a3b48e9a793242f7a297e3359dec8c130",
+  "status": "PASS",
+  "test_individual_results_exposed_by_gate": false,
+  "total": 35
+}

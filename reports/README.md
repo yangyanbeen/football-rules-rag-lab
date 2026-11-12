@@ -66,3 +66,10 @@
 最新依据 [TASK_01_07_AUDIT_DELIVERY.md](TASK_01_07_AUDIT_DELIVERY.md)。新证据在 rechecks/task1-7-audit-20261112；最终汇总final/aggregate-final.json为29/29，原任务各自门禁和新增37项专项分别统计。final/aggregate.json为新汇总器适配格式失败的真实中间记录，不覆盖。
 
 旧报告、原始检索测试、真实UI和人工账本保留。本轮当前后端3+1实跑，UI只重验原采集，锁定测试只重放旧逐题结果。当前入口都应使用新的报告目录，避免覆盖原交付。
+
+
+## 任务八BM25中文基线
+
+最新 [TASK_08_DELIVERY.md](TASK_08_DELIVERY.md)；规定汇总 [bm25_baseline.json](bm25_baseline.json)，原始结果retrieval/bm25_b0/development及test。35项完整门禁、74项当前专项、8项复现保护，公开副本五组复算；原任务四/六/七回归分别通过。
+
+初次失败保留dev/body/failure.json，该目录即使有summary也不计成功。原74项是65e7516唯一正式测试前的回执；当前74项与恢复dev另列。segmentation-dev是测试后仅开发集补充实验，准确模式正式B0及唯一test不变；INTEGRITY_SCOPE解释共享哈希I/O边界。

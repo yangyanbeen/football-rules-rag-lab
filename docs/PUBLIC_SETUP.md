@@ -69,7 +69,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 
 提交前暂存明确文件，运行 `python scripts/manage_delivery_manifest.py` 和 `--verify`，再暂存清单。原规范与冻结语料不改；完整回答、凭据、数据库、依赖、缓存不公开。
 
-任务一至七已按原标准交付，当前状态见 [DELIVERY_STATUS](DELIVERY_STATUS.md)。16 条开发题已经用于调试，通过数不代表独立测试集准确率或 Recall/MRR/nDCG；正式检索基线来自任务七的独立锁定测试记录。
+任务一至八已按原标准交付，当前状态见 [DELIVERY_STATUS](DELIVERY_STATUS.md)。16 条开发题已经用于调试，通过数不代表独立测试集准确率或 Recall/MRR/nDCG；正式检索基线来自任务七/八的独立锁定测试记录。
 
 重复验收会写入新的 reports/rechecks/fresh-时间戳目录，拒绝覆盖旧报告。指定本次应用的私有错误日志，避免拿旧日志证明当前启动：
 
@@ -85,3 +85,7 @@ UiCapture 必须来自已完成的真实浏览器操作；也可传历史采集�
 先按EMBEDDING_AND_INDEX.md恢复本机原语料并准备任务五正式99段索引、两个固定Ollama模型和独立.venv。执行`.venv/Scripts/python.exe scripts/query_rag_b0.py --check`后，用`powershell -NoProfile -ExecutionPolicy Bypass -File frontend/start_rag_b0.ps1`启动7863。若已在运行直接访问，不重复占用端口。
 
 当前代码不需要新增包或付费Key；公开仓库不包含完整语料、模型和索引，不能仅克隆就假定这些本机输入存在。完整运行、日志、拒答/重试和验收说明见RAG_B0.md。
+
+## 任务八BM25离线实验
+
+原语料恢复后执行 `.venv/Scripts/python.exe scripts/install_bm25_runtime.py`，再按 [BM25_RETRIEVAL](BM25_RETRIEVAL.md) 构建三个本地索引。jieba从固定官方包隔离安装到.runtime/bm25，原应用262包保持不变，BM25实验不需要Ollama。已有目录/原正式测试拒绝覆盖或重复运行；使用新dev路径。公开结果复算可用python -S，无需语料、jieba或实际索引。现有UI仍沿用原Dense入口，混合召回按任务九推进。
