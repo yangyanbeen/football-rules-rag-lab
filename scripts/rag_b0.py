@@ -335,14 +335,19 @@ def validate_worker_result(result, question):
             raise ValueError('Worker offered evidence or messages differ')
     elif result['context'] or attempts or result.get('generation') is not None:
         raise ValueError('Worker asserted evidence without retrieval')
-    if result['status']=='answered':
+    def completed_generation():
         generation=result.get('generation')
-        if (not isinstance(generation,dict) or not result['context'] or not attempts
+        if (not isinstance(generation,dict) or not result['context'] or not attempts or not result['generation_attempted']
                 or attempts[-1].get('generation')!=generation or attempts[-1].get('validation_error') is not None
-                or result.get('error') or result.get('refusal_reason') is not None
-                or generation.get('model_digest')!=cfg['llm']['digest']):
-            raise ValueError('Invalid answered worker trace')
-        validate_model_response(generation.get('raw_response'),cfg)
+                or result.get('error')):
+            raise ValueError('Invalid completed worker generation')
+        packet=validate_model_response(generation.get('raw_response'),cfg)
+        if any(generation.get(k)!=v for k,v in generation_record(packet,cfg).items()):
+            raise ValueError('Worker generation summary differs from original response')
+        return generation
+    if result['status']=='answered':
+        generation=completed_generation()
+        if result.get('refusal_reason') is not None:raise ValueError('Answered worker has a refusal reason')
         payload=parse_generated_text(generation.get('raw_content'),result['context'],cfg)
         statements=validate_payload(payload,result['context'],cfg)
         if (not statements or generation.get('parsed_payload')!=payload or generation.get('validated_statements')!=statements):
@@ -358,9 +363,7 @@ def validate_worker_result(result, question):
             if result['answer']!=OFFICIAL_REFUSAL or retrieval is not None:raise ValueError('Invalid official-version refusal')
         elif result['answer']!=REFUSAL:raise ValueError('Invalid refusal text')
         elif reason=='model_found_no_direct_support':
-            generation=result.get('generation')
-            if not isinstance(generation,dict):raise ValueError('Missing refusal generation')
-            validate_model_response(generation.get('raw_response'),cfg)
+            generation=completed_generation()
             payload=parse_generated_text(generation.get('raw_content'),result['context'],cfg)
             if validate_payload(payload,result['context'],cfg) or generation.get('parsed_payload')!=payload:
                 raise ValueError('Refusal asserts a generated answer')

@@ -75,7 +75,10 @@ def main():
     mutations=[('missing_timing',lambda r:r.pop('timing')),('wrong_status',lambda r:r.update(status='invented')),
         ('forged_url',lambda r:r['citations'][0].update(source_url='https://invalid.example/invented')),
         ('forged_answer',lambda r:r.update(answer='这是伪造的答案。')),('stale_config',lambda r:r.update(config_sha256='0'*64)),
-        ('bad_messages',lambda r:r.update(messages=[None])),('forged_body',lambda r:r['context'][0].update(content_zh='伪造原文。'))]
+        ('bad_messages',lambda r:r.update(messages=[None])),('forged_body',lambda r:r['context'][0].update(content_zh='伪造原文。')),
+        ('raw_response_mismatch',lambda r:r['generation']['raw_response']['message'].update(content='ANSWER: 伪造的另一条内容。')),
+        ('summary_token_mismatch',lambda r:r['generation'].update(eval_count=999)),
+        ('missing_generation_flag',lambda r:r.update(generation_attempted=False))]
     for name,mutate in mutations:
         changed=copy.deepcopy(sample);mutate(changed);result=worker_result(changed)
         record('worker_reject_'+name,result['status']=='refused' and result['refusal_reason']=='isolated_worker_failed' and not result['citations'])
@@ -118,6 +121,7 @@ def main():
     # Gate reports are intentionally under reports; this is a current recheck,
     # using old real captures as a regression fixture, not new browser evidence.
     gate=report.parent/'task6_portability_regression.json'
+    if gate.exists():raise ValueError('Portable gate report already exists; use a new report directory')
     proc=subprocess.run([sys.executable,'-B','scripts/verify_rag_b0.py','--report',str(gate),'--ui-captures',str(cap),
         '--ui-journal',str(log),'--reference-commit',args.reference_commit],cwd=ROOT,capture_output=True,text=True,encoding='utf-8',timeout=90)
     record('task6_gate_runs_without_hardcoded_private_trace',proc.returncode==0 and json.loads(gate.read_text('utf-8'))['status']=='PASS')

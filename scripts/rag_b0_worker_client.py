@@ -41,7 +41,7 @@ def call_worker(question=None, check=False):
             return ready
         result=json.loads(trace.read_text('utf-8'))
         validate_worker_result(result,question)
-    except (OSError,ValueError,TypeError,KeyError,RuntimeError,subprocess.TimeoutExpired) as exc:
+    except (OSError,ValueError,TypeError,KeyError,AttributeError,IndexError,OverflowError,RuntimeError,subprocess.TimeoutExpired) as exc:
         if check:raise
         result={'trace_id':uuid.uuid4().hex,'captured_at':datetime.now(timezone.utc).isoformat(),
             'question':question if isinstance(question,str) else None,'status':'refused','answer':'现有资料不足以可靠回答这个问题，无法据此给出确定结论。',
