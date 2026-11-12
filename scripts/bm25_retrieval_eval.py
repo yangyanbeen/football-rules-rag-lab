@@ -133,6 +133,21 @@ def require_inputs(items,current_sources=False):
     if any(items[p]!=record(ROOT/p) for p in names):raise ValueError('Frozen data/resources/code changed')
 
 
+def validate_index_manifest(index,template,inputs):
+    public=json.loads((ROOT/'data/manifests/bm25_indexes.json').read_text('utf-8'))['indexes'][template]
+    if not isinstance(index,dict) or set(index)!=set(public):raise ValueError('Index metadata fields differ')
+    # Rebuilding from a later clean commit changes producer provenance, while the
+    # deterministic postings/source-map bytes must retain the original identity.
+    identity=set(public)-{'source_commit','sources'}
+    if any(canonical(index[k])!=canonical(public[k]) for k in identity):raise ValueError('Index payload or resource identity differs')
+    if index['inputs']!={p:inputs[p] for p in RESOURCES} or set(index['sources'])!=set(SOURCES):raise ValueError('Incomplete index source coverage')
+    from bm25_index import committed
+    committed((),index['source_commit'])
+    for name,entry in index['sources'].items():
+        raw=subprocess.check_output(['git','show',index['source_commit']+':'+name],cwd=ROOT)
+        if entry!={'path':name,'size_bytes':len(raw),'sha256':digest(raw)}:raise ValueError('Rebuilt index producer differs from Git')
+
+
 def replay(directory):
     directory=Path(directory).resolve()
     if (directory/'failure.json').exists():raise ValueError('Failed run evidence cannot be accepted as COMPLETE')
@@ -183,9 +198,7 @@ def replay(directory):
     measured=sum(e['total_seconds'] for e in requests)+sum(e['timing']['total_seconds'] for e in m['warmups'])+m['load_seconds']
     if m['wall_seconds']+1e-6<measured or (end-start).total_seconds()+.1<m['wall_seconds']:raise ValueError('Wall timing omits work')
     index=m['index_manifest']
-    public_indexes=json.loads((ROOT/'data/manifests/bm25_indexes.json').read_text('utf-8'))
-    if (index!=public_indexes['indexes'][template] or index['status']!='COMPLETE' or index['records']!=99 or index['template']!=template
-        or index['corpus']['sha256']!=config()['corpus_sha256'] or index['inputs']!={p:m['inputs'][p] for p in RESOURCES}):raise ValueError('Index provenance differs')
+    validate_index_manifest(index,template,m['inputs'])
     result=summary(questions,predictions,template,split,run_id)
     if canonical(result)!=canonical(json.loads((directory/'summary.json').read_text('utf-8'))):raise ValueError('Saved metrics/latency differ from raw records')
     if canonical(error_analysis(questions,predictions,split))!=canonical(json.loads((directory/'error_analysis.json').read_text('utf-8'))):raise ValueError('Error analysis differs')

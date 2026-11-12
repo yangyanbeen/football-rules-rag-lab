@@ -82,7 +82,9 @@ def evaluate(args):
     try:
         write_new(output/'run_started.json',start)
         if split=='test':append(LEDGER,{**usage,'event':'STARTED','recorded_at':now()})
-        began=time.perf_counter();index=Bm25Index(ROOT/'data/indexes/bm25'/template);load_seconds=time.perf_counter()-began
+        index_path=Path(args.index).resolve() if getattr(args,'index',None) else ROOT/'data/indexes/bm25'/template
+        began=time.perf_counter();index=Bm25Index(index_path);load_seconds=time.perf_counter()-began
+        if index.manifest['template']!=template:raise ValueError('Index template differs from requested run')
         write_new(output/'source_map.json',index.sources)
         warmups=[]
         for rep in range(1,4):
@@ -106,7 +108,7 @@ def evaluate(args):
         write_new(output/'summary.json',summary(labelled,predictions,template,split,run_id))
         write_new(output/'error_analysis.json',error_analysis(labelled,predictions,split))
         require_inputs(inputs,current_sources=True)
-        if index.manifest!=Bm25Index(ROOT/'data/indexes/bm25'/template).manifest:raise ValueError('Index changed during run')
+        if index.manifest!=Bm25Index(index_path).manifest:raise ValueError('Index changed during run')
         manifest={**start,'status':'COMPLETE','used_for_parameter_selection':split=='dev','completed_at':now(),
                   'wall_seconds':time.perf_counter()-wall,'load_seconds':load_seconds,'warmups':warmups,
                   'index_manifest':index.manifest,
@@ -133,7 +135,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('mode',choices=('dev','select','prepare-test','test'));p.add_argument('--template',choices=TEMPLATES)
     p.add_argument('--run-dir');p.add_argument('--development-root');p.add_argument('--selection');p.add_argument('--verification')
-    p.add_argument('--authorization');p.add_argument('--output');a=p.parse_args()
+    p.add_argument('--authorization');p.add_argument('--output');p.add_argument('--index',type=Path);a=p.parse_args()
     if a.mode=='select':
         selection=choose(a.development_root);write_new(report_path(a.output),selection)
         print(json.dumps({'status':'SELECTED_ON_DEV','selected_template':selection['selected_template']}))
