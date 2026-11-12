@@ -14,3 +14,8 @@ Wikipedia 文本及 AI 中文整理不是 IFAB 官方赛季规则。保留原来
 任务四数据在[eval/](eval/README.md)，只公开自拟问题、标注要点、ID/来源哈希和负例理由，不复制正文。已完成90/90人工核对及测试冻结，原完整验收26/26通过；不是裁判专家或现行官方规则认证。
 
 任务五正式独立索引在本机被忽略的indexes/dense/，99条1024维BGE-M3向量及Chroma数据库不公开。无正文配置/制品哈希清单为manifests/dense_index_manifest.json，99个原ID/位置/哈希映射为dense_chunk_ids.json。构建、查询及从空目录重建见docs/EMBEDDING_AND_INDEX.md，当前验收24/24通过，不代表检索质量评测。
+
+
+## 任务八BM25索引
+
+固定99段数据生成data/indexes/bm25/{body,title_body,path_body}的词频/长度与来源映射，均只在本机；公开bm25_indexes.json仅含身份、配置和制品哈希。规则全文和可重建词频不上传。独立搜索模式开发对照位于data/indexes/bm25-search-dev，同样忽略。恢复步骤见docs/BM25_RETRIEVAL.md；新producer合法变化须维持payload字节及来源可核对，原公开元数据只验证不回写。

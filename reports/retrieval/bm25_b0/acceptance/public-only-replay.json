@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "passed": 9,
+  "total": 9,
+  "checks": {
+    "public_copy_has_no_.runtime": true,
+    "public_copy_has_no_data_processed": true,
+    "public_copy_has_no_data_indexes": true,
+    "public_copy_has_no_.venv": true,
+    "no_site_packages_replay_body": true,
+    "no_site_packages_replay_title_body": true,
+    "no_site_packages_replay_path_body": true,
+    "no_site_packages_replay_test": true,
+    "search_mode_replay_without_jieba": true
+  },
+  "worktree_commit": "26004cee8c206ef6007ac3a6f6a4004d724cd6be",
+  "results": [
+    {
+      "name": "body",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"split\": \"dev\", \"template\": \"body\", \"metrics\": {\"Recall@5\": 0.9375, \"Recall@10\": 0.96875, \"MRR@10\": 0.8888888888888888, \"all_gold_coverage@5\": 0.9375}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "title_body",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"split\": \"dev\", \"template\": \"title_body\", \"metrics\": {\"Recall@5\": 0.96875, \"Recall@10\": 0.96875, \"MRR@10\": 0.8932291666666666, \"all_gold_coverage@5\": 0.96875}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "path_body",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"split\": \"dev\", \"template\": \"path_body\", \"metrics\": {\"Recall@5\": 0.9375, \"Recall@10\": 0.96875, \"MRR@10\": 0.8898809523809523, \"all_gold_coverage@5\": 0.9375}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "test",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"split\": \"test\", \"template\": \"title_body\", \"metrics\": {\"Recall@5\": 0.975, \"Recall@10\": 1.0, \"MRR@10\": 0.95, \"all_gold_coverage@5\": 0.95625}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "search_mode",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"metrics\": {\"Recall@5\": 0.96875, \"Recall@10\": 0.96875, \"MRR@10\": 0.9010416666666667, \"all_gold_coverage@5\": 0.96875}}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "Five saved-result replays in a public Git worktree; Python -S; no corpus, private indexes, jieba installation, model requests or new test inference."
+}

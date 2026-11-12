@@ -1,0 +1,149 @@
+{
+  "HMM": false,
+  "artifacts": {
+    "comparison.json": {
+      "path": "reports/retrieval/bm25_b0/segmentation-dev/comparison.json",
+      "sha256": "a8ec21fb70fdf4a54d043b4a23beeb1a702cd53c92ea20d6d4b1a89af43ba948",
+      "size_bytes": 963
+    },
+    "predictions.jsonl": {
+      "path": "reports/retrieval/bm25_b0/segmentation-dev/predictions.jsonl",
+      "sha256": "1c466fb64878e66ba7651fc704904837775b6d91c3daddcc97b4358953360ce9",
+      "size_bytes": 218086
+    },
+    "summary.json": {
+      "path": "reports/retrieval/bm25_b0/segmentation-dev/summary.json",
+      "sha256": "bc619f94da89b222ae46eb579c93bb9d1cca0f9eaa1695201e15289cd44a3ec7",
+      "size_bytes": 12340
+    }
+  },
+  "completed_at": "2026-11-12T13:08:10.525066+00:00",
+  "index": {
+    "path": "data/indexes/bm25-search-dev/title_body/index.json",
+    "sha256": "8501998af76c56c6ff1744c4e31ffa0fab964cf287d8b930f3af64a9c0662d7a",
+    "size_bytes": 207889
+  },
+  "inputs": {
+    "config/bm25_b0.json": {
+      "path": "config/bm25_b0.json",
+      "sha256": "a54ed9a2cef6cdb02f1798075ddcb9c48d0a8d47873eac9964cd03274c3097dc",
+      "size_bytes": 903
+    },
+    "config/bm25_dependency.json": {
+      "path": "config/bm25_dependency.json",
+      "sha256": "89a1ab9e2ac2a79cfe16b190ce00a7f6ec4d98b76d0910e73566a88418eb0b1e",
+      "size_bytes": 369
+    },
+    "config/bm25_stopwords.txt": {
+      "path": "config/bm25_stopwords.txt",
+      "sha256": "9846c49af0e318a52b851e981620f99a8d33008cbe84903b92351aa24d059bb7",
+      "size_bytes": 69
+    },
+    "config/bm25_userdict.txt": {
+      "path": "config/bm25_userdict.txt",
+      "sha256": "afaf13e44438d41f552a93c48d3c1d1c4862aea63ef487d170908d96b3c5c255",
+      "size_bytes": 411
+    },
+    "data/eval/retrieval_dev.jsonl": {
+      "path": "data/eval/retrieval_dev.jsonl",
+      "sha256": "b24b2dc9c1483495623407c472ca1ff3b0b0a6846b4894892f8d85e9ffb34e04",
+      "size_bytes": 60024
+    }
+  },
+  "mode": "search",
+  "new_test_runs": 0,
+  "run_id": "7b3c005b203443aaaa09753925cb49bd",
+  "source_commit": "48b5f43a1e0e15cd66d84176e632ddeabc16d29f",
+  "sources": {
+    "scripts/bm25_index.py": {
+      "path": "scripts/bm25_index.py",
+      "sha256": "1428b38df11e11f32a075ed4d93720fdcb30bc9009c7dddb5add118c2ee8dc68",
+      "size_bytes": 12301
+    },
+    "scripts/bm25_retrieval_eval.py": {
+      "path": "scripts/bm25_retrieval_eval.py",
+      "sha256": "ec313e46bd6d8d34986d5ba8c464ffa9fda9d5b37a0800a9d6fd0f0783c894fe",
+      "size_bytes": 18328
+    },
+    "scripts/build_bm25_index.py": {
+      "path": "scripts/build_bm25_index.py",
+      "sha256": "5b9f349735e5b336ef9f274f4a2d03be75cf1fa4fcc7405c433f6fe6294d5b14",
+      "size_bytes": 515
+    },
+    "scripts/compare_bm25_segmentation.py": {
+      "path": "scripts/compare_bm25_segmentation.py",
+      "sha256": "8e94edd203a05df2324f05d48616625310f8e4d588226ad8e6e0d740b2b8353b",
+      "size_bytes": 6861
+    },
+    "scripts/eval_dataset.py": {
+      "path": "scripts/eval_dataset.py",
+      "sha256": "48d47343ce008457d031c54a40019ae8bc3a9c76bdaf2d9cbbc274628e3785c1",
+      "size_bytes": 3147
+    },
+    "scripts/install_bm25_runtime.py": {
+      "path": "scripts/install_bm25_runtime.py",
+      "sha256": "66bd5d9a57a035cad059af266b641c1a142872c82a1315e407743bd093c1d319",
+      "size_bytes": 4313
+    },
+    "scripts/recompute_bm25_retrieval.py": {
+      "path": "scripts/recompute_bm25_retrieval.py",
+      "sha256": "e355f1ea2d53294da1ea69c25cc905a8402370d5573dd2648281fdd2c74d9272",
+      "size_bytes": 756
+    },
+    "scripts/retrieval_metrics.py": {
+      "path": "scripts/retrieval_metrics.py",
+      "sha256": "350759f655b78e43f4d0c4114a4a2c7d03b87c7281ac0cae40678bae15341168",
+      "size_bytes": 3079
+    },
+    "scripts/run_bm25_retrieval.py": {
+      "path": "scripts/run_bm25_retrieval.py",
+      "sha256": "e00212fc353f605307d11cd0ba56056c66f70d89d3d6366e8f9be080cfebe1fd",
+      "size_bytes": 9929
+    },
+    "scripts/run_retrieval_metrics.py": {
+      "path": "scripts/run_retrieval_metrics.py",
+      "sha256": "11021dfc06a8c6e3e765c051c594f598b6c2bea220ee78f7a96ce08d0d56eae5",
+      "size_bytes": 4121
+    },
+    "scripts/validate_eval_dataset.py": {
+      "path": "scripts/validate_eval_dataset.py",
+      "sha256": "f943adc5eeab93296434b7b05edb1706272033a2913dbb2ea20ccb71fc5fdff5",
+      "size_bytes": 10738
+    },
+    "scripts/validate_eval_receipt.py": {
+      "path": "scripts/validate_eval_receipt.py",
+      "sha256": "d22500345f20487b4f712fdad149c74bdcd7d64386606f9bc16365d3ce696b85",
+      "size_bytes": 5914
+    },
+    "scripts/verify_bm25_contract.py": {
+      "path": "scripts/verify_bm25_contract.py",
+      "sha256": "205c50bdb3b16cc6468402f4aafac102a02ae6d53ff8e561685cc62641d731c4",
+      "size_bytes": 10301
+    }
+  },
+  "split": "dev",
+  "started_at": "2026-11-12T13:08:07.789752+00:00",
+  "test_questions_read": false,
+  "version": "bm25-segmentation-dev-1.0",
+  "wall_seconds": 2.7345831999991788,
+  "warmups": [
+    {
+      "normalization_seconds": 1.05e-05,
+      "scoring_seconds": 0.0002065,
+      "tokenization_seconds": 7.83e-05,
+      "total_seconds": 0.0002953
+    },
+    {
+      "normalization_seconds": 3.6e-06,
+      "scoring_seconds": 0.0001499,
+      "tokenization_seconds": 3.85e-05,
+      "total_seconds": 0.000192
+    },
+    {
+      "normalization_seconds": 3.1e-06,
+      "scoring_seconds": 0.0001448,
+      "tokenization_seconds": 3.35e-05,
+      "total_seconds": 0.0001814
+    }
+  ]
+}

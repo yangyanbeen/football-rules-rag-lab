@@ -1890,7 +1890,513 @@
           "sha256": "8560b23c8c6edb439585e36f66d5d257dd7120712c9edbf02d10aaea0c751e06"
         }
       ]
+    },
+    {
+      "id": "TASK-008-BM25",
+      "objective": "Deliver original task8 reproducible Chinese BM25 baseline",
+      "baseline": "8b21522b28f04afdb6ad5cf8a4412ec2713503a3; original corpus/evaluation/Dense artifacts preserved",
+      "main_variable": "Lexical BM25 baseline with development-only comparison of three document templates; fixed accurate segmentation and k1/b",
+      "dataset_version": "corpus-b0-rag-adapter-1.0.0",
+      "evaluation_version": "football-eval-0.1.0; human reviewed and locked; one formal BM25 test",
+      "code_commit": "65e751648d7a108cdb8e1acde2710f313639414a",
+      "measurement_source_sha256": {
+        "scripts/bm25_index.py": "1428b38df11e11f32a075ed4d93720fdcb30bc9009c7dddb5add118c2ee8dc68",
+        "scripts/bm25_retrieval_eval.py": "ec313e46bd6d8d34986d5ba8c464ffa9fda9d5b37a0800a9d6fd0f0783c894fe",
+        "scripts/build_bm25_index.py": "5b9f349735e5b336ef9f274f4a2d03be75cf1fa4fcc7405c433f6fe6294d5b14",
+        "scripts/eval_dataset.py": "48d47343ce008457d031c54a40019ae8bc3a9c76bdaf2d9cbbc274628e3785c1",
+        "scripts/install_bm25_runtime.py": "66bd5d9a57a035cad059af266b641c1a142872c82a1315e407743bd093c1d319",
+        "scripts/recompute_bm25_retrieval.py": "e355f1ea2d53294da1ea69c25cc905a8402370d5573dd2648281fdd2c74d9272",
+        "scripts/retrieval_metrics.py": "350759f655b78e43f4d0c4114a4a2c7d03b87c7281ac0cae40678bae15341168",
+        "scripts/run_bm25_retrieval.py": "e00212fc353f605307d11cd0ba56056c66f70d89d3d6366e8f9be080cfebe1fd",
+        "scripts/run_retrieval_metrics.py": "11021dfc06a8c6e3e765c051c594f598b6c2bea220ee78f7a96ce08d0d56eae5",
+        "scripts/validate_eval_dataset.py": "f943adc5eeab93296434b7b05edb1706272033a2913dbb2ea20ccb71fc5fdff5",
+        "scripts/validate_eval_receipt.py": "d22500345f20487b4f712fdad149c74bdcd7d64386606f9bc16365d3ce696b85",
+        "scripts/verify_bm25_contract.py": "205c50bdb3b16cc6468402f4aafac102a02ae6d53ff8e561685cc62641d731c4"
+      },
+      "validation_code_commit": "26004ce; restore fix352ccfd; exact current source SHA in acceptance receipts",
+      "model": "No neural model/Embedding/answer LLM requests; jieba0.42.1 archive/default dictionary pinned",
+      "parameters": {
+        "k1": 1.5,
+        "b": 0.75,
+        "mode": "accurate",
+        "HMM": false,
+        "template": "title_body",
+        "repetitions": 3,
+        "warmups": 3,
+        "concurrency": 1,
+        "positive_scores_only": true
+      },
+      "environment": {
+        "concurrency": 1,
+        "implementation": "CPython",
+        "logical_cpu_count": 20,
+        "machine": "AMD64",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "python": "3.10.22",
+        "system": "Windows"
+      },
+      "commands": [
+        "install_bm25_runtime.py; build_bm25_index.py x3",
+        "run_bm25_retrieval.py dev/select/prepare-test/test",
+        "verify_bm25_contract.py",
+        "verify_bm25_delivery.py",
+        "python -S recompute_bm25_retrieval.py; verify_bm25_portability.py"
+      ],
+      "result": {
+        "test_metrics": {
+          "MRR@10": 0.95,
+          "Recall@10": 1.0,
+          "Recall@5": 0.975,
+          "all_gold_coverage@5": 0.95625
+        },
+        "test_latency": {
+          "P50_ms": 0.26535000000000003,
+          "P95_ms": 0.3775349999999999,
+          "mean_ms": 0.27653733333333336,
+          "samples": 150
+        },
+        "formal_test_experiments": 1,
+        "delivery": "35/35",
+        "contract_before_test": "74/74",
+        "current_contract": "74/74",
+        "portability": "8/8",
+        "public_only_saved_replay_sets": 5
+      },
+      "limitations": [
+        "99 fixed Wikipedia chunks; not referee expert certification or generated answer accuracy",
+        "Warm lexical timing excludes loading; not a production QPS or end-to-end speedup claim",
+        "Initial failed development folder retained; historical test code/result not rewritten after restore fix"
+      ],
+      "artifacts": [
+        {
+          "path": "data/manifests/bm25_indexes.json",
+          "size_bytes": 8439,
+          "sha256": "b4ec2c6bdd2713c53e020f68f364a9973933b7ccc45c9513dad5154c844b2fa6"
+        },
+        {
+          "path": "docs/BM25_RETRIEVAL.md",
+          "size_bytes": 8520,
+          "sha256": "bbf4d0117512c39791e5f2ab9049b739a5ed617a65b7b158146c0f5923357c95"
+        },
+        {
+          "path": "docs/TASK_08_SCOPE.md",
+          "size_bytes": 2854,
+          "sha256": "125e87c1c0328d3f6abaa1d7f7ded3a30c62263209d3d0e06414900c039f3758"
+        },
+        {
+          "path": "reports/bm25_baseline.json",
+          "size_bytes": 61459,
+          "sha256": "616a11bca252523a86852ffee495975676f87795d50695e74dc9f737f9da5f04"
+        },
+        {
+          "path": "reports/retrieval/bm25-restored-dev-86181f76f0e341ca9bf22dfbf6a99bed/error_analysis.json",
+          "size_bytes": 26416,
+          "sha256": "40c31fb9e3159660e84719a68f91c963b31ecdbab161c83ba2aa4420488a396a"
+        },
+        {
+          "path": "reports/retrieval/bm25-restored-dev-86181f76f0e341ca9bf22dfbf6a99bed/predictions.jsonl",
+          "size_bytes": 217691,
+          "sha256": "86bc88676cc359136095fbd47fa6395e53b705d2741f8751b112c72f30e53576"
+        },
+        {
+          "path": "reports/retrieval/bm25-restored-dev-86181f76f0e341ca9bf22dfbf6a99bed/requests.jsonl",
+          "size_bytes": 85675,
+          "sha256": "7f2a486bf2f5957649dc8ff8e577cac08c6097d34502f76a9868865927e63db9"
+        },
+        {
+          "path": "reports/retrieval/bm25-restored-dev-86181f76f0e341ca9bf22dfbf6a99bed/run_manifest.json",
+          "size_bytes": 9847,
+          "sha256": "e4a75fd7d096048c2813da53f7d946d1e1117ec582039c6b4077a7a6c2eff287"
+        },
+        {
+          "path": "reports/retrieval/bm25-restored-dev-86181f76f0e341ca9bf22dfbf6a99bed/run_started.json",
+          "size_bytes": 4993,
+          "sha256": "54fb8bf2f3346f58423fc9e86e9165509aa8ec6f0b671028cbf7a884d31465b9"
+        },
+        {
+          "path": "reports/retrieval/bm25-restored-dev-86181f76f0e341ca9bf22dfbf6a99bed/source_map.json",
+          "size_bytes": 36576,
+          "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863"
+        },
+        {
+          "path": "reports/retrieval/bm25-restored-dev-86181f76f0e341ca9bf22dfbf6a99bed/summary.json",
+          "size_bytes": 12279,
+          "sha256": "3d02f2a2728d4a1b37245be56327f8b2aecf5d67e0cf5bbf99010964d84007e4"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/acceptance/contract-before-dev-v2.json",
+          "size_bytes": 3875,
+          "sha256": "bdf2b99ad02b52d51dc58abef6750d817ff50f4f4c0435b9304b4ae2b027127e"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/acceptance/contract-before-dev.json",
+          "size_bytes": 3815,
+          "sha256": "68962847bfd06ce590efc77309198fa86daa5f1de90168aff1f411ac0373e90d"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/acceptance/contract-current.json",
+          "size_bytes": 4711,
+          "sha256": "f9654050fe03950605cb559ca68fc0305f039434e9e15d01fb96e58dcefbb06f"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/acceptance/contract-final.json",
+          "size_bytes": 4711,
+          "sha256": "72910a00fe1f2a0f834d5bfcb391bd47d0319ee867bd1b5327a42d9edbb78a43"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/acceptance/portability.json",
+          "size_bytes": 1514,
+          "sha256": "ff2636f5d868f45a36c57e6ae9b0409b8a68047d0f752c8e5aeb73cd0ff2b4a6"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/acceptance/previous-task4.json",
+          "size_bytes": 5103,
+          "sha256": "f1d5bdecca5d4c537358560f2a396302db7c3c32e43b79ae02c4bad0dd9f79a7"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/acceptance/previous-task6.json",
+          "size_bytes": 4342,
+          "sha256": "c76e1c4fb464ca388b4c11a6255008c36a839791c09336258e07668b679fb5c9"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/acceptance/previous-task7.json",
+          "size_bytes": 12915,
+          "sha256": "5f15f2c4eed15bd578a7731485838b18da422f24b8e7114f5f88e7132937bfb4"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/acceptance/public-only-replay.json",
+          "size_bytes": 2191,
+          "sha256": "1a127ceed83a25ef172ecd6f5dab823af3f339081a825fdb9ab57fc200cbb7f6"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/acceptance/task8_delivery_final.json",
+          "size_bytes": 2926,
+          "sha256": "599b437883cebc55c071accc5f81126e09bae3d7145fba5ef86b34f0ceac1160"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/acceptance/task8_delivery_gate.json",
+          "size_bytes": 2925,
+          "sha256": "4f1b439df3c26754b5a285ac0ed4b6b81b42de73ba803b1fa5c65eed4e6c4ffa"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/dev/body/error_analysis.json",
+          "size_bytes": 26411,
+          "sha256": "a769a533370a1ba34af26661af5ebcce12811f501d385c86d11078d62d4cfff1"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/dev/body/failure.json",
+          "size_bytes": 236,
+          "sha256": "defa07cd4f5f655e202d790c22e8faa14b72408575dc23667257416bf9813929"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/dev/body/predictions.jsonl",
+          "size_bytes": 217335,
+          "sha256": "4665c25eab8ddad4776e1cda196fa27bf4c73d9d0237e1ea24071e4c264a28b5"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/dev/body/requests.jsonl",
+          "size_bytes": 84935,
+          "sha256": "750a2f9805b2b06be2b2ac6c3a497ba02fee88e317df61c156947a1aeafdc794"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/dev/body/run_manifest.json",
+          "size_bytes": 9837,
+          "sha256": "bc33d21377169730a795a9dffe2fced666ed10029da803a619b6b41cdb110860"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/dev/body/run_started.json",
+          "size_bytes": 4986,
+          "sha256": "77a108341a7c266c0c16067b49b3b16892436e8c598b1f6c83e2a336e968fb25"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/dev/body/source_map.json",
+          "size_bytes": 36576,
+          "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/dev/body/summary.json",
+          "size_bytes": 12319,
+          "sha256": "92b80c6e1e2a65a2abff0860b427e6bbde08300ab06b40d4c3da9343719140ad"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/body/error_analysis.json",
+          "size_bytes": 26411,
+          "sha256": "a769a533370a1ba34af26661af5ebcce12811f501d385c86d11078d62d4cfff1"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/body/predictions.jsonl",
+          "size_bytes": 217323,
+          "sha256": "29146e31980bb204d3405239d95483efe62074ad803a43f11cf0211c8354bddc"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/body/requests.jsonl",
+          "size_bytes": 84923,
+          "sha256": "8a4edc3def84d14937e07f0d3fec9b791797c551a2d75aae2eb91bf734a462dc"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/body/run_manifest.json",
+          "size_bytes": 9832,
+          "sha256": "dda280602f0d6a490413380aa19ffeff5e765052f110ff4904d9101f3062daa3"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/body/run_started.json",
+          "size_bytes": 4986,
+          "sha256": "de34127e8f85b213a37c55de16e4747468b37769d31e5973b1f0a474513a5094"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/body/source_map.json",
+          "size_bytes": 36576,
+          "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/body/summary.json",
+          "size_bytes": 12297,
+          "sha256": "25123bc5e06c861f8d601d5fbfa85c5052e1e57b8a61993523a55c1ed3ad32af"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/path_body/error_analysis.json",
+          "size_bytes": 26415,
+          "sha256": "e26163e42fbf2aa0ea14d8a874ce51ee5bc63405c67a44b0fafd400cda0a7fc1"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/path_body/predictions.jsonl",
+          "size_bytes": 217591,
+          "sha256": "b639f6c8dbc42290fa381478afaf6c9334bd50cc703c2a8539c52f4fdc4feef7"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/path_body/requests.jsonl",
+          "size_bytes": 85566,
+          "sha256": "b189d975c401b2e1381b8c90b3df420fa6297a8edb0c3a496e602ca1db7e8414"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/path_body/run_manifest.json",
+          "size_bytes": 9844,
+          "sha256": "dd820996294f7fbde66e7e3e8b8381a23a3cdc3d68444f44544305a3103f75a3"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/path_body/run_started.json",
+          "size_bytes": 4991,
+          "sha256": "b0def9201920014f3de106a64eaca22708ea726f11ff781435c77ab3ed906627"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/path_body/source_map.json",
+          "size_bytes": 36576,
+          "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/path_body/summary.json",
+          "size_bytes": 12344,
+          "sha256": "d41ae73b7f712968e8b4114fc712c757d6f3036375755ce1f466c6b20f79231c"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/title_body/error_analysis.json",
+          "size_bytes": 26416,
+          "sha256": "40c31fb9e3159660e84719a68f91c963b31ecdbab161c83ba2aa4420488a396a"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/title_body/predictions.jsonl",
+          "size_bytes": 217700,
+          "sha256": "ca1e60f4abad3b5f1c1a5f2c9a7eb66cca41621342f67cbaf2aef1e70a70f275"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/title_body/requests.jsonl",
+          "size_bytes": 85684,
+          "sha256": "766c505911624061a352632bd077a5fc61823e5437689093996648047854acac"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/title_body/run_manifest.json",
+          "size_bytes": 9845,
+          "sha256": "3e26c7e1520866ff3e283998abed4a9ce28f70f1cf0ec6edd098401d5ce4f7b5"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/title_body/run_started.json",
+          "size_bytes": 4992,
+          "sha256": "4eae5e1313e0a84649aeafec55dab186f0bd9d86710fb4c93c72a060ac81a8b7"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/title_body/source_map.json",
+          "size_bytes": 36576,
+          "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development/title_body/summary.json",
+          "size_bytes": 12375,
+          "sha256": "7dfb3e352cbf9d4cdfa6e507073f55db3b84f4d06030ceb0cb9abbbb88b3b929"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/development_probes.json",
+          "size_bytes": 16288,
+          "sha256": "f640a50e6c82a8dc8367c627a130df84ce738cb5b1b503b7badcf57feea2a914"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/selection.json",
+          "size_bytes": 2225,
+          "sha256": "df40dc4208e7ab6d3a4f02ec4a649a643dab4eb4b1071e759ed57dad8f676e96"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/test/error_analysis.json",
+          "size_bytes": 892,
+          "sha256": "b41e19ec3f5883ac1f1fd924d388eb3f37c469fdb574d00153d83f6b0cbb8d79"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/test/predictions.jsonl",
+          "size_bytes": 274576,
+          "sha256": "28620e62678211791b8d276085145c718b6105c9444ab44fc30a03c142f58a9a"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/test/requests.jsonl",
+          "size_bytes": 107158,
+          "sha256": "166e8e8f7d0b8878b85e45cdb2314c1c14399ca58b94bb157888b18ef00fb091"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/test/run_manifest.json",
+          "size_bytes": 10017,
+          "sha256": "2b636be74e79b0543d6a1dd0c503d6f7cceba0bf998a28d37636aab36bea0764"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/test/run_started.json",
+          "size_bytes": 5165,
+          "sha256": "ae30c6fb8dc4c638f4836c1050c7ca712ecb9a207ba90d132abf4664b1f91994"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/test/source_map.json",
+          "size_bytes": 36576,
+          "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/test/summary.json",
+          "size_bytes": 14595,
+          "sha256": "40b465d0b47df1c6f74476d27fe65f7e16b1a386fca3d49d6b7dcef86e40eb26"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/test_authorization.json",
+          "size_bytes": 5528,
+          "sha256": "7c3f51a32994f25d29ae1cfad26463c41a19ef33e11372ae13cc204a80cdc4d1"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/test_usage.jsonl",
+          "size_bytes": 1213,
+          "sha256": "0f81dcbea93839c4bcfabb051bb72878f2564d441422d994d70c1114c55ff141"
+        },
+        {
+          "path": "reports/TASK_08_DELIVERY.md",
+          "size_bytes": 5126,
+          "sha256": "d53f7f74388ede5a91d060f21df82a303542e8c35395defc57a0a9de5c7153ab"
+        }
+      ]
+    },
+    {
+      "id": "TASK-008-SEGMENTATION-DEV",
+      "objective": "Complete original technical5.1 segmentation comparison as explicitly late dev-only exploration",
+      "baseline": "Frozen accurate/title_body BM25 B0; formal test already complete",
+      "main_variable": "Accurate to search segmentation only; HMM=False; same title_body corpus/dev/lexicon/k1/b",
+      "dataset_version": "corpus-b0-rag-adapter-1.0.0 unchanged",
+      "evaluation_version": "40 development questions only; no test retrieval or test-score input",
+      "code_commit": "48b5f43a1e0e15cd66d84176e632ddeabc16d29f",
+      "model": "jieba0.42.1 fixed archive; no neural models",
+      "parameters": {
+        "mode": "search",
+        "HMM": false,
+        "k1": 1.5,
+        "b": 0.75,
+        "template": "title_body",
+        "repetitions": 3
+      },
+      "environment": {
+        "concurrency": 1,
+        "implementation": "CPython",
+        "logical_cpu_count": 20,
+        "machine": "AMD64",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "python": "3.10.22",
+        "system": "Windows"
+      },
+      "commands": [
+        "compare_bm25_segmentation.py --output-dir reports/retrieval/bm25_b0/segmentation-dev",
+        "compare_bm25_segmentation.py --replay-only"
+      ],
+      "result": {
+        "accurate": {
+          "latency": {
+            "P50_ms": 0.26659999999999995,
+            "P95_ms": 0.34293499999999993,
+            "mean_ms": 0.25732749999999993,
+            "samples": 120
+          },
+          "metrics": {
+            "MRR@10": 0.8932291666666666,
+            "Recall@10": 0.96875,
+            "Recall@5": 0.96875,
+            "all_gold_coverage@5": 0.96875
+          }
+        },
+        "formal_b0_and_test_unchanged": true,
+        "formal_b0_mode": "accurate",
+        "new_test_runs": 0,
+        "numeric_rule_and_term_checks": {
+          "decimal": true,
+          "mode_is_distinct": true,
+          "rule": true
+        },
+        "scope": "Exploratory development-only comparison performed after the B0 test; not prior selection evidence",
+        "search": {
+          "latency": {
+            "P50_ms": 0.23920000000000002,
+            "P95_ms": 0.334935,
+            "mean_ms": 0.23054999999999995,
+            "samples": 120
+          },
+          "metrics": {
+            "MRR@10": 0.9010416666666667,
+            "Recall@10": 0.96875,
+            "Recall@5": 0.96875,
+            "all_gold_coverage@5": 0.96875
+          }
+        }
+      },
+      "limitations": [
+        "This is after-test development exploration, not retrospective prior selection evidence",
+        "Formal B0 remains accurate; no search-mode test score",
+        "Shared dev replay hashes test-file bytes for integrity; no zero-file-I/O claim"
+      ],
+      "artifacts": [
+        {
+          "path": "docs/TASK_08_SEGMENTATION_SUPPLEMENT.md",
+          "size_bytes": 1256,
+          "sha256": "67197bf9c0762a1b0b4dcd70bdd1bc24d33273a21f0936a5843f4fb8d8d958d5"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/segmentation-dev/comparison.json",
+          "size_bytes": 963,
+          "sha256": "a8ec21fb70fdf4a54d043b4a23beeb1a702cd53c92ea20d6d4b1a89af43ba948"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/segmentation-dev/INTEGRITY_SCOPE.json",
+          "size_bytes": 525,
+          "sha256": "1f8c7b3a7a952e1385f6bbc8b2b56eeb5cd44d559f58e9b6a335a8807933c18d"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/segmentation-dev/manifest.json",
+          "size_bytes": 5425,
+          "sha256": "96131af9848d4772ae14bd40f54a5181f42ee9eeeb9584726542bb16f6dab1d9"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/segmentation-dev/predictions.jsonl",
+          "size_bytes": 218086,
+          "sha256": "1c466fb64878e66ba7651fc704904837775b6d91c3daddcc97b4358953360ce9"
+        },
+        {
+          "path": "reports/retrieval/bm25_b0/segmentation-dev/summary.json",
+          "size_bytes": 12340,
+          "sha256": "bc619f94da89b222ae46eb579c93bb9d1cca0f9eaa1695201e15289cd44a3ec7"
+        },
+        {
+          "path": "scripts/compare_bm25_segmentation.py",
+          "size_bytes": 6861,
+          "sha256": "8e94edd203a05df2324f05d48616625310f8e4d588226ad8e6e0d740b2b8353b"
+        }
+      ]
     }
   ],
-  "last_updated_at": "2026-11-12T12:20:50.631368+00:00"
+  "last_updated_at": "2026-11-12T13:22:32.698649+00:00"
 }
