@@ -52,6 +52,7 @@ def main():
     p.add_argument('--reference-commit',default='93687ce5a73853a63782d2204225b046697c7028');a=p.parse_args()
     report=a.report.resolve()
     if report.exists() or report.suffix!='.json' or not report.is_relative_to(ROOT/'reports'):raise ValueError('Use a new reports JSON')
+    a.reference_commit=subprocess.check_output(['git','rev-parse','--verify',a.reference_commit+'^{commit}'],cwd=ROOT,text=True).strip()
     base=ROOT/'reports/retrieval/bm25_b0';checks={};errors=[];context={}
     def check(name,callback):
         try:checks[name]=bool(callback())
