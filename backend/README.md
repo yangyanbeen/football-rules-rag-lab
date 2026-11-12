@@ -22,3 +22,7 @@
 当前配置固定Top5召回、最多1个完整生成证据块、最多1次无效输出重试。回答来源由程序绑定已提供块；数值/格式/重复/残句不通过则拒绝，不能当作完整语义验证。详情及故障记录见docs/RAG_B0.md、reports/TASK_06_DELIVERY.md。
 
 2026-11-12补审：严格校验配置、模型原包和token计数，失败按尝试保存阶段/原响应；UI独立核对worker包的原文、配置、原响应摘要、引用和呈现。拒答只显示固定文案。DenseIndex构建/加载前检查公开人工回执语义；不改变原评测或索引制品。见reports/TASK_04_06_SUPPLEMENT.md。
+
+## 任务七：离线Dense检索测量
+
+run_dense_retrieval.py复用原索引，只把question_id/question交给检索循环；固定Top10、3次预热/测量。dense_retrieval_eval.py负责严格schema、指标/分阶段延迟与独立复算，recompute_dense_retrieval.py不依赖模型/语料/向量。测试需开发证据和已提交源码绑定的运行凭证，使用另存台账。结果和时序见reports/TASK_07_DELIVERY.md；原在线问答配置不变。

@@ -997,7 +997,360 @@
           "sha256": "9ea5d0403acb9ccaae8185623cf3cd66f834f555f7d839fa12cdbc8f60b2d557"
         }
       ]
+    },
+    {
+      "id": "TASK-007-DENSE-RETRIEVAL",
+      "objective": "Measure original Dense Retrieval B0 with independently replayable ranks and latency",
+      "baseline": "59e3ba042411be4400101a630397e5c298e26cee; existing unchanged 99-chunk model/index",
+      "main_variable": "Measurement and traceability only; no retrieval-parameter optimization",
+      "dataset_version": "corpus-b0-rag-adapter-1.0.0",
+      "dataset_content_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+      "evaluation_version": "football-eval-0.1.0",
+      "test_question_sha256": "269d49e7d65c4ad3a97b588f34093a65bbc483c7382f78b0e9cf466eaa759a62",
+      "code_commit": "fb8e9d824b7fd6addd857823c99846441487145d",
+      "development_code_commit": "79513e86e7df19248920dbc406faabb16ae1d3b3",
+      "code_version_method": "Committed source before each real run plus SHA-256 input/config/producer snapshots",
+      "model": {
+        "name": "bge-m3:latest",
+        "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+        "architecture": "bert",
+        "dimensions": 1024,
+        "context_length": 8192,
+        "quantization": "F16",
+        "ollama_version": "0.40.16"
+      },
+      "parameters": {
+        "evaluation_version": "dense-retrieval-b0-1.0.0",
+        "dense_config": "config/dense_index.json",
+        "dense_index": "data/indexes/dense",
+        "rag_config": "config/rag_b0.json",
+        "top_k": 10,
+        "query_normalization": "NFKC then trim and collapse whitespace",
+        "quality_repetition": 1,
+        "measured_repetitions": 3,
+        "warmup_repetitions": 3,
+        "warmup_query": "足球比赛场地的边线如何判断球出界？",
+        "concurrency": 1,
+        "cache": false,
+        "percentile_method": "linear interpolation at q * (n - 1)",
+        "latency_unit": "seconds in raw rows; milliseconds in summary",
+        "test_purpose": "final_report",
+        "used_for_parameter_selection": false
+      },
+      "environment": {
+        "python": "3.10.22",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "logical_cpus": 20,
+        "packages": {
+          "numpy": "1.26.4",
+          "chromadb": "0.5.16",
+          "chroma-hnswlib": "0.7.6"
+        }
+      },
+      "index_manifest_sha256": "f0c52d56e86d5b3a3d660e13a98870684b254b039ae77b2267a698e9814d0e4e",
+      "index_vector_fingerprint": "1f709033daf4df83416da434f2b0f4b15181273c9465780e53977a050346fa07",
+      "commands": [
+        "verify_dense_metric_arithmetic.py",
+        "verify_dense_retrieval_contract.py",
+        "run_dense_retrieval.py --mode dev",
+        "verify_dense_retrieval_replay.py",
+        "run_dense_retrieval.py --mode prepare-test",
+        "run_dense_retrieval.py --mode test",
+        "recompute_dense_retrieval.py dev/test",
+        "verify_task7_delivery.py",
+        "python -S public-only dev/test replay"
+      ],
+      "result": {
+        "development": {
+          "questions": 40,
+          "answerable": 32,
+          "unanswerable": 8,
+          "metrics": {
+            "Recall@5": 0.96875,
+            "Recall@10": 0.96875,
+            "MRR@10": 0.890625,
+            "all_gold_coverage@5": 0.953125
+          },
+          "latency": {
+            "questions": 40,
+            "samples": 120,
+            "unit": "milliseconds",
+            "percentile_method": "linear interpolation at q * (n - 1)",
+            "stages": {
+              "normalization_seconds": {
+                "mean": 0.018187500000000002,
+                "p50": 0.0174,
+                "p95": 0.025014999999999992,
+                "min": 0.012700000000000001,
+                "max": 0.030000000000000002
+              },
+              "query_embedding_seconds": {
+                "mean": 259.6552916666951,
+                "p50": 258.82869999804825,
+                "p95": 307.62312000042584,
+                "min": 180.27460000303108,
+                "max": 320.533100002649
+              },
+              "vector_search_seconds": {
+                "mean": 5.579720833369113,
+                "p50": 5.360150000342401,
+                "p95": 7.589679999000509,
+                "min": 4.2437999982212204,
+                "max": 7.907799998065457
+              },
+              "total_seconds": {
+                "mean": 265.27032750000006,
+                "p50": 264.67600000000004,
+                "p95": 312.11546,
+                "min": 186.0328,
+                "max": 325.5446
+              }
+            }
+          }
+        },
+        "locked_test": {
+          "questions": 50,
+          "answerable": 40,
+          "unanswerable": 10,
+          "metrics": {
+            "Recall@5": 0.95,
+            "Recall@10": 0.95,
+            "MRR@10": 0.8604166666666668,
+            "all_gold_coverage@5": 0.93125
+          },
+          "latency": {
+            "questions": 50,
+            "samples": 150,
+            "unit": "milliseconds",
+            "percentile_method": "linear interpolation at q * (n - 1)",
+            "stages": {
+              "normalization_seconds": {
+                "mean": 0.019073999999999987,
+                "p50": 0.018099999999999998,
+                "p95": 0.024764999999999995,
+                "min": 0.014199999999999999,
+                "max": 0.0597
+              },
+              "query_embedding_seconds": {
+                "mean": 266.6391206665867,
+                "p50": 265.6552999997075,
+                "p95": 307.32607999925676,
+                "min": 182.4570999997377,
+                "max": 341.7480999996769
+              },
+              "vector_search_seconds": {
+                "mean": 5.4644519998206915,
+                "p50": 5.269649998808745,
+                "p95": 7.513320001089595,
+                "min": 4.140400000324007,
+                "max": 8.210100000724196
+              },
+              "total_seconds": {
+                "mean": 272.1381806666667,
+                "p50": 270.1763,
+                "p95": 312.82121,
+                "min": 188.52949999999998,
+                "max": 347.2816
+              }
+            }
+          }
+        },
+        "verification": {
+          "delivery": "43/43",
+          "arithmetic": "54/54",
+          "contract": "110/110",
+          "development_replay": "113/113",
+          "public_only_replay": "PASS"
+        },
+        "measured_embedding_requests": 270,
+        "warmup_embedding_requests": 6,
+        "answer_llm_requests": 0,
+        "document_reencodings": 0,
+        "formal_test_experiments": 1,
+        "answer_accuracy": "not measured",
+        "optimization_gain": "not measured"
+      },
+      "decision": "Accept initial measured retrieval baseline; keep original data/index and proceed to task8 by original plan",
+      "limitations": [
+        "Small self-authored fixed-snapshot evaluation",
+        "Any-support Recall is not all-condition or answer accuracy",
+        "Warm serial workstation latency is not production throughput",
+        "Community AI translation remains nonofficial and not expert-reviewed"
+      ],
+      "artifacts": [
+        {
+          "path": "reports/retrieval/dense_b0/acceptance/arithmetic-final.json",
+          "size_bytes": 9266,
+          "sha256": "3f2dd54cb70a9c892c9840c0cf8aec5e486304da592f192c32f5a32800774901"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/acceptance/arithmetic.json",
+          "size_bytes": 9036,
+          "sha256": "90ad8744717254603c9aeae3fd20efe222b4e7cf7ef4706e802fe1645c3eb0cf"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/acceptance/contract-before-fix.json",
+          "size_bytes": 4936,
+          "sha256": "82dce7d7a02990894629ecbd014e6391f4c17aab9ecd684b42a22cf1fff2fa4c"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/acceptance/contract-final.json",
+          "size_bytes": 5365,
+          "sha256": "c509c10ffe2f0e641f229d208e490122ec4fd8cf5df9b3bb1d5e9a1193793b82"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/acceptance/development-recomputed.json",
+          "size_bytes": 15449,
+          "sha256": "6c022b9d98f039ea5396f3346c361a784391e64b5b0d3f1b00e35f3e4ee2aa02"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/acceptance/previous-boundaries/regressions.json",
+          "size_bytes": 4109,
+          "sha256": "c5cb132627de86660f367f19fca021ff31436033a375f0991e9b0c705076425e"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/acceptance/previous-boundaries/task6_portability_regression.json",
+          "size_bytes": 4342,
+          "sha256": "06e812e8255f94c8d4b3d1644e4cca189323dc2f816b79d57dc56bc1269dcc3a"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/acceptance/previous-task4.json",
+          "size_bytes": 5103,
+          "sha256": "9f1081deacd5a28c2c690e4913af6f26ee599583e16109eebb60010b7390e62d"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/acceptance/previous-task6.json",
+          "size_bytes": 4342,
+          "sha256": "4e4bd99abdc1fba46227623e1914d8866b2aac91202e95915f93fd6068f22fb9"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/acceptance/public-only-replay.json",
+          "size_bytes": 1769,
+          "sha256": "36e5e9cb6aed6223f908c3078ec8e5d8b8deb50886ad4e2dfe41b30f4ab038f8"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/acceptance/replay-contract.json",
+          "size_bytes": 6957,
+          "sha256": "1025ccaaac455f7781b909fd5228f537acdefc37f26675271c39f36a7fffd660"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/acceptance/task7_delivery_final.json",
+          "size_bytes": 12808,
+          "sha256": "c05b57eaee911f1ebf2a2710959e85f0c03f086bf12197bcb5f5f776e7978e07"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/acceptance/task7_delivery_gate.json",
+          "size_bytes": 12808,
+          "sha256": "9976437d2b832c939a0e5219c706a1788a235d5c189135663a8a92fcf15bc570"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/acceptance/test-recomputed.json",
+          "size_bytes": 16848,
+          "sha256": "c35bfba2aca06337677e0f0f52b86bd75ef0d93fb7ebe94a98066295ca505d34"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/dev/error_analysis.json",
+          "size_bytes": 1812,
+          "sha256": "5b9c1812e8ff8c7eb7790b05c1bfd4ce83f0598ba002ddf27f0b76122a04d974"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/dev/predictions.jsonl",
+          "size_bytes": 275720,
+          "sha256": "8ce2930adfa919ecf04caf8497c96c416257d8673d80492e4ac7d0461c1c4a4e"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/dev/requests.jsonl",
+          "size_bytes": 130309,
+          "sha256": "e7210f3c3574b14786bb3ec2d8c972ab78d3f888fd7547be3df92e53863fe155"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/dev/run_manifest.json",
+          "size_bytes": 10565,
+          "sha256": "e3defbf783b916186763ab38545d56f828d8044d55c47db1183a1f0768019c8c"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/dev/run_started.json",
+          "size_bytes": 5390,
+          "sha256": "25c728d779deb909ce2e610e24a6aaaf21b9180892a91a0900e64b35151092dd"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/dev/source_map.json",
+          "size_bytes": 36576,
+          "sha256": "6017c8e14f6f956b00e409262a2dc861cd3fe4eceb8901d7b88b343d64613013"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/dev/summary.json",
+          "size_bytes": 15449,
+          "sha256": "6c022b9d98f039ea5396f3346c361a784391e64b5b0d3f1b00e35f3e4ee2aa02"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/test/error_analysis.json",
+          "size_bytes": 949,
+          "sha256": "fb2ac006907b5e57b13b7f0bc265f3055891e68bcfac17185a7611fb0de74973"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/test/predictions.jsonl",
+          "size_bytes": 346594,
+          "sha256": "9b147f272c886f747bba3d82da6b5bd74bea83d3b998a08774c9c11fcb90c64d"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/test/requests.jsonl",
+          "size_bytes": 164733,
+          "sha256": "3917d8d3459b64d76095047705364ecd7c2d4cab8984acdfb93a5dbff0880542"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/test/run_manifest.json",
+          "size_bytes": 10749,
+          "sha256": "fad0435cd11b50ef6c3156fa1f7905a206368b068e31076c8b3ba51901e5f329"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/test/run_started.json",
+          "size_bytes": 5563,
+          "sha256": "4496883735af42a37b6cc9ba39b63dc48e6c1d388017e7c1669b8e8644394bca"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/test/source_map.json",
+          "size_bytes": 36576,
+          "sha256": "6017c8e14f6f956b00e409262a2dc861cd3fe4eceb8901d7b88b343d64613013"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/test/summary.json",
+          "size_bytes": 16848,
+          "sha256": "c35bfba2aca06337677e0f0f52b86bd75ef0d93fb7ebe94a98066295ca505d34"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/test_authorization.json",
+          "size_bytes": 7454,
+          "sha256": "a1dbc830de7a7a6c08898ef225c9146457c2a0d81c47f8927b065c287e49d782"
+        },
+        {
+          "path": "reports/retrieval/dense_b0/test_usage.jsonl",
+          "size_bytes": 1502,
+          "sha256": "8c6a8278da08e3b851cb2874fe9d379bfcfea2336422d600434d0399a0f6169d"
+        },
+        {
+          "path": "docs/TASK_07_SCOPE.md",
+          "size_bytes": 3903,
+          "sha256": "972f9802639ccd00328182b1a0ba0007e637a03287f65f74a0f166f3e6be60c3"
+        },
+        {
+          "path": "docs/DENSE_RETRIEVAL.md",
+          "size_bytes": 7309,
+          "sha256": "d26d2f5c74d3d4eb264bcf71395fe384d1d9082faf5b3030fdd05da1894dc5ba"
+        },
+        {
+          "path": "reports/TASK_07_DELIVERY.md",
+          "size_bytes": 10813,
+          "sha256": "f4eab83f599bcfaea6b4bd57ca114f9a4a3eaba9b8e570c57f39e660413462f5"
+        },
+        {
+          "path": "config/dense_retrieval_b0.json",
+          "size_bytes": 656,
+          "sha256": "1317815c1c1025d42561a1e0614ddbed4264a7d2fdfc484536ddc9359bb5d5eb"
+        }
+      ]
     }
   ],
-  "last_updated_at": "2026-11-12T08:14:16.577941+00:00"
+  "last_updated_at": "2026-11-12T09:50:05.938317+00:00"
 }

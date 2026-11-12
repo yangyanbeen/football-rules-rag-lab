@@ -1,0 +1,51 @@
+{
+  "captured_at": "2026-11-12T09:42:39.546928+00:00",
+  "status": "PASS",
+  "kind": "actual_separate_git_worktree_replay_with_site_packages_disabled",
+  "copy_commit": "71a182778fb4eb152d09920dd22ef8d797468ee2",
+  "python_site_disabled": true,
+  "third_party_imports_unavailable": {
+    "numpy": true,
+    "chromadb": true
+  },
+  "private_paths_absent": {
+    "data/raw": true,
+    "data/processed": true,
+    "data/indexes": true,
+    "third_party": true,
+    ".venv": true,
+    ".models": true,
+    ".runtime": true
+  },
+  "model_requests": 0,
+  "runs": {
+    "dev": {
+      "status": "PASS",
+      "matches_original_summary": true,
+      "recomputed_sha256": "6c022b9d98f039ea5396f3346c361a784391e64b5b0d3f1b00e35f3e4ee2aa02",
+      "original_sha256": "6c022b9d98f039ea5396f3346c361a784391e64b5b0d3f1b00e35f3e4ee2aa02",
+      "quality": {
+        "Recall@5": 0.96875,
+        "Recall@10": 0.96875,
+        "MRR@10": 0.890625,
+        "all_gold_coverage@5": 0.953125
+      },
+      "latency_samples": 120
+    },
+    "test": {
+      "status": "PASS",
+      "matches_original_summary": true,
+      "recomputed_sha256": "c35bfba2aca06337677e0f0f52b86bd75ef0d93fb7ebe94a98066295ca505d34",
+      "original_sha256": "c35bfba2aca06337677e0f0f52b86bd75ef0d93fb7ebe94a98066295ca505d34",
+      "quality": {
+        "Recall@5": 0.95,
+        "Recall@10": 0.95,
+        "MRR@10": 0.8604166666666668,
+        "all_gold_coverage@5": 0.93125
+      },
+      "latency_samples": 150
+    }
+  },
+  "command_template": "python -S scripts/recompute_dense_retrieval.py --run-dir reports/retrieval/dense_b0/{dev|test} --output reports/retrieval/dense_b0/acceptance/NEW.json",
+  "scope": "Saved predictions independently recomputed; no new retrieval/model runtime or answer-quality claim"
+}

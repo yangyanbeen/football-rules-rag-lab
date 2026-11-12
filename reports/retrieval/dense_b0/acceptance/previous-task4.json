@@ -1,0 +1,276 @@
+{
+  "captured_at": "2026-11-12T09:46:05.523099+00:00",
+  "phase": "delivery",
+  "status": "PASS",
+  "passed": 26,
+  "total": 26,
+  "errors": [],
+  "checks": [
+    {
+      "check": "corpus_has_99_unique_units",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "corpus_matches_manifest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "annotation_input_matches_manifest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "file_integrity_retrieval_dev.jsonl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "file_integrity_retrieval_test.jsonl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "file_integrity_answer_eval.jsonl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "file_integrity_hard_negatives.jsonl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "pilot_development_30_to_50",
+      "passed": true,
+      "detail": {
+        "count": 40,
+        "suggested_not_original_mandatory_threshold": true
+      }
+    },
+    {
+      "check": "first_test_candidate_at_least_50",
+      "passed": true,
+      "detail": {
+        "count": 50,
+        "suggested_not_original_mandatory_threshold": true
+      }
+    },
+    {
+      "check": "unique_question_ids",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "questions_nonempty_and_no_exact_duplicates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "dev_test_distinct_intent_groups",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_question_labels_and_provenance_valid",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "split_membership",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "answer_eval_one_to_one_aligned",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "hard_negative_ids_reasons_and_sources",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "each_question_has_a_traceable_hard_negative",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "dev_covers_rules_1_to_17",
+      "passed": true,
+      "detail": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "check": "dev_covers_required_question_types",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "test_covers_rules_1_to_17",
+      "passed": true,
+      "detail": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "check": "test_covers_required_question_types",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "test_does_not_reuse_16_tuned_questions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_questions_actually_human_reviewed",
+      "passed": true,
+      "detail": {
+        "approved": 90,
+        "total": 90,
+        "not_approved": []
+      }
+    },
+    {
+      "check": "test_frozen_after_review",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "release_status_matches_human_review",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "frozen_review_ledger_integrity",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "coverage": {
+    "dev": {
+      "questions": 40,
+      "answerable": 32,
+      "unanswerable": 8,
+      "laws": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "categories": {
+        "term": 9,
+        "number": 8,
+        "exception": 9,
+        "condition": 20,
+        "version": 6,
+        "cross_chunk": 3,
+        "out_of_scope": 4,
+        "unanswerable": 4
+      },
+      "difficulty": {
+        "easy": 17,
+        "medium": 14,
+        "hard": 9
+      }
+    },
+    "test": {
+      "questions": 50,
+      "answerable": 40,
+      "unanswerable": 10,
+      "laws": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "categories": {
+        "number": 6,
+        "term": 15,
+        "condition": 23,
+        "exception": 16,
+        "version": 7,
+        "cross_chunk": 2,
+        "out_of_scope": 6,
+        "unanswerable": 5
+      },
+      "difficulty": {
+        "easy": 13,
+        "medium": 26,
+        "hard": 11
+      }
+    }
+  },
+  "human_review": {
+    "approved": 90,
+    "total": 90
+  },
+  "does_not_prove": [
+    "AI labels are factually correct",
+    "human review happened without matching real records",
+    "expert or official rule validation",
+    "retrieval or answer accuracy"
+  ]
+}
