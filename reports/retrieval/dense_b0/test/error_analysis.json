@@ -1,0 +1,42 @@
+{
+  "miss_top5": 2,
+  "miss_top10": 2,
+  "not_all_gold_in_top5": 4,
+  "multi_gold_questions": 5,
+  "multi_gold_all_covered_top5": 3,
+  "category_groups_overlap": true,
+  "by_category": {
+    "condition": {
+      "answerable_questions": 23,
+      "miss_top5": 1,
+      "miss_top10": 1
+    },
+    "cross_chunk": {
+      "answerable_questions": 2,
+      "miss_top5": 0,
+      "miss_top10": 0
+    },
+    "exception": {
+      "answerable_questions": 16,
+      "miss_top5": 0,
+      "miss_top10": 0
+    },
+    "number": {
+      "answerable_questions": 6,
+      "miss_top5": 0,
+      "miss_top10": 0
+    },
+    "term": {
+      "answerable_questions": 15,
+      "miss_top5": 1,
+      "miss_top10": 1
+    },
+    "version": {
+      "answerable_questions": 3,
+      "miss_top5": 0,
+      "miss_top10": 0
+    }
+  },
+  "labels_may_not_be_exhaustive": true,
+  "unanswerable_retrieval_is_not_refusal": "Dense always retrieves; refusal quality belongs to task12"
+}

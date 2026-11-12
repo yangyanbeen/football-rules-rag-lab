@@ -1,0 +1,277 @@
+{
+  "manifest_version": "dense-retrieval-run-1.0",
+  "status": "COMPLETE",
+  "run_id": "5ae308ea8f7544deb2cdaa8586cb7cd7",
+  "split": "test",
+  "purpose": "final_report",
+  "used_for_parameter_selection": false,
+  "started_at": "2026-11-12T09:39:49.467088+00:00",
+  "completed_at": "2026-11-12T09:40:32.973285+00:00",
+  "source_commit": "fb8e9d824b7fd6addd857823c99846441487145d",
+  "config": {
+    "evaluation_version": "dense-retrieval-b0-1.0.0",
+    "dense_config": "config/dense_index.json",
+    "dense_index": "data/indexes/dense",
+    "rag_config": "config/rag_b0.json",
+    "top_k": 10,
+    "query_normalization": "NFKC then trim and collapse whitespace",
+    "quality_repetition": 1,
+    "measured_repetitions": 3,
+    "warmup_repetitions": 3,
+    "warmup_query": "足球比赛场地的边线如何判断球出界？",
+    "concurrency": 1,
+    "cache": false,
+    "percentile_method": "linear interpolation at q * (n - 1)",
+    "latency_unit": "seconds in raw rows; milliseconds in summary",
+    "test_purpose": "final_report",
+    "used_for_parameter_selection": false
+  },
+  "input_snapshots": {
+    "config/dense_retrieval_b0.json": {
+      "path": "config/dense_retrieval_b0.json",
+      "size_bytes": 656,
+      "sha256": "1317815c1c1025d42561a1e0614ddbed4264a7d2fdfc484536ddc9359bb5d5eb"
+    },
+    "config/dense_index.json": {
+      "path": "config/dense_index.json",
+      "size_bytes": 1613,
+      "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988"
+    },
+    "config/rag_b0.json": {
+      "path": "config/rag_b0.json",
+      "size_bytes": 1075,
+      "sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7"
+    },
+    "data/eval/dataset_manifest.json": {
+      "path": "data/eval/dataset_manifest.json",
+      "size_bytes": 2189,
+      "sha256": "778ffc31872d379dbd714cd4e085e075b0a308b7a67d1306e459e978f70a6c66"
+    },
+    "data/eval/retrieval_dev.jsonl": {
+      "path": "data/eval/retrieval_dev.jsonl",
+      "size_bytes": 60024,
+      "sha256": "b24b2dc9c1483495623407c472ca1ff3b0b0a6846b4894892f8d85e9ffb34e04"
+    },
+    "data/eval/retrieval_test.jsonl": {
+      "path": "data/eval/retrieval_test.jsonl",
+      "size_bytes": 78040,
+      "sha256": "269d49e7d65c4ad3a97b588f34093a65bbc483c7382f78b0e9cf466eaa759a62"
+    },
+    "data/eval/answer_eval.jsonl": {
+      "path": "data/eval/answer_eval.jsonl",
+      "size_bytes": 149749,
+      "sha256": "640480e1e203f67f6aaac090d75369a00eab1448dc19271fa19de56eb066de1b"
+    },
+    "data/eval/hard_negatives.jsonl": {
+      "path": "data/eval/hard_negatives.jsonl",
+      "size_bytes": 91683,
+      "sha256": "179c2abbb804b55d1b6e36c3514ba5c9f353fb2e727573fe396229bee9f55ca2"
+    },
+    "data/eval/human_review_receipt.json": {
+      "path": "data/eval/human_review_receipt.json",
+      "size_bytes": 23411,
+      "sha256": "69cf9f772528476c4a3da31a006edc498cfb1b411e56dfd573d033dad6460ec3"
+    },
+    "data/manifests/dense_index_manifest.json": {
+      "path": "data/manifests/dense_index_manifest.json",
+      "size_bytes": 11745,
+      "sha256": "9ea5d0403acb9ccaae8185623cf3cd66f834f555f7d839fa12cdbc8f60b2d557"
+    },
+    "data/manifests/dense_chunk_ids.json": {
+      "path": "data/manifests/dense_chunk_ids.json",
+      "size_bytes": 32967,
+      "sha256": "0bdff8a39d7a458d586fecb921582224ad7a854cc3bf6fa589e04a1150b95b61"
+    },
+    "data/manifests/rag_dataset_manifest.json": {
+      "path": "data/manifests/rag_dataset_manifest.json",
+      "size_bytes": 13868,
+      "sha256": "529596d1fae73186065fc70d39749f000ffc2f4fa960252cba6285ddd538c39c"
+    },
+    "docs/TECHNICAL_DESIGN.md": {
+      "path": "docs/TECHNICAL_DESIGN.md",
+      "size_bytes": 17821,
+      "sha256": "aa320f48dbfb27a7c55b2c3d599dd48fab23509d85aa73ba470cbc9bb61778b9"
+    },
+    "docs/DEVELOPMENT_PLAN_AND_REPORT.md": {
+      "path": "docs/DEVELOPMENT_PLAN_AND_REPORT.md",
+      "size_bytes": 22690,
+      "sha256": "acb3bb80dd4401b751476ce36437657e2d3a3dc59db4d3d25106b81d11c9bd96"
+    },
+    "scripts/dense_retrieval_eval.py": {
+      "path": "scripts/dense_retrieval_eval.py",
+      "size_bytes": 19569,
+      "sha256": "559297b468097d481f2fcc957dd481a5f6b8bb2e8d835103d8d4399521e50e18"
+    },
+    "scripts/run_dense_retrieval.py": {
+      "path": "scripts/run_dense_retrieval.py",
+      "size_bytes": 14416,
+      "sha256": "4e126e4aa31c83aa528c863c6e89b35d7f11f936eab3de2af26e86fd08e5ac2c"
+    },
+    "scripts/recompute_dense_retrieval.py": {
+      "path": "scripts/recompute_dense_retrieval.py",
+      "size_bytes": 1000,
+      "sha256": "0d7dade40a54e7c1d567cd3c669b888f0234ad4dcf72173211c0d15bd8b910a3"
+    },
+    "scripts/retrieval_metrics.py": {
+      "path": "scripts/retrieval_metrics.py",
+      "size_bytes": 3079,
+      "sha256": "350759f655b78e43f4d0c4114a4a2c7d03b87c7281ac0cae40678bae15341168"
+    },
+    "scripts/verify_dense_metric_arithmetic.py": {
+      "path": "scripts/verify_dense_metric_arithmetic.py",
+      "size_bytes": 9843,
+      "sha256": "5e5a548389cadd21b1f92b4c51c02c2cd770edd260421b7a9210de66eb0abb49"
+    },
+    "scripts/verify_dense_retrieval_contract.py": {
+      "path": "scripts/verify_dense_retrieval_contract.py",
+      "size_bytes": 15659,
+      "sha256": "20f0bdcabb4c3921903e60412cc1fbca0ecff6f9fbd2ccbe62539748152972ef"
+    },
+    "scripts/dense_index.py": {
+      "path": "scripts/dense_index.py",
+      "size_bytes": 22904,
+      "sha256": "9e991910367987021e1ace250c5796c213ad53f14072ecbc4fe1539352f3d875"
+    },
+    "scripts/dense_telemetry.py": {
+      "path": "scripts/dense_telemetry.py",
+      "size_bytes": 489,
+      "sha256": "a4feda38a98504a437e614b55d9cb15a79be3fd0ca77444be7ad67277537d179"
+    },
+    "scripts/eval_dataset.py": {
+      "path": "scripts/eval_dataset.py",
+      "size_bytes": 3147,
+      "sha256": "48d47343ce008457d031c54a40019ae8bc3a9c76bdaf2d9cbbc274628e3785c1"
+    },
+    "scripts/validate_eval_dataset.py": {
+      "path": "scripts/validate_eval_dataset.py",
+      "size_bytes": 10738,
+      "sha256": "f943adc5eeab93296434b7b05edb1706272033a2913dbb2ea20ccb71fc5fdff5"
+    },
+    "scripts/validate_eval_receipt.py": {
+      "path": "scripts/validate_eval_receipt.py",
+      "size_bytes": 5790,
+      "sha256": "80e6126c8e2f27af44fe11850a56842a711b0995b6cfbab4f67eb239e2427f95"
+    }
+  },
+  "dataset_version": "football-eval-0.1.0",
+  "corpus_version": "corpus-b0-rag-adapter-1.0.0",
+  "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+  "index_manifest_sha256": "f0c52d56e86d5b3a3d660e13a98870684b254b039ae77b2267a698e9814d0e4e",
+  "index_version": "dense-b0-1.0.0",
+  "index_vector_fingerprint": "1f709033daf4df83416da434f2b0f4b15181273c9465780e53977a050346fa07",
+  "index_producer_implementation_sha256": {
+    "dense_index.py": "2feae6d25eba812338ebebab85ba78ed9d38673ef850bcd0fb48fddcd5ac84f6",
+    "dense_telemetry.py": "a4feda38a98504a437e614b55d9cb15a79be3fd0ca77444be7ad67277537d179",
+    "build_dense_index.py": "3905c09ddad3ee1a8b5f5db2ad8adf215601fc4abb7eebe9c457e5efb57158c3"
+  },
+  "model_artifact": {
+    "name": "bge-m3:latest",
+    "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+    "architecture": "bert",
+    "dimensions": 1024,
+    "context_length": 8192,
+    "quantization": "F16",
+    "ollama_version": "0.40.16"
+  },
+  "model_runtime_before": {
+    "name": "bge-m3:latest",
+    "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+    "size": 1244166879,
+    "size_vram": 0,
+    "context_length": 8192,
+    "runner": "llamacpp"
+  },
+  "model_runtime_after": {
+    "name": "bge-m3:latest",
+    "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+    "size": 1244166879,
+    "size_vram": 0,
+    "context_length": 8192,
+    "runner": "llamacpp"
+  },
+  "environment": {
+    "python": "3.10.22",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "logical_cpus": 20,
+    "packages": {
+      "numpy": "1.26.4",
+      "chromadb": "0.5.16",
+      "chroma-hnswlib": "0.7.6"
+    }
+  },
+  "startup_loading_seconds": 1.547969800001738,
+  "warmups": [
+    {
+      "repetition": 1,
+      "query": "足球比赛场地的边线如何判断球出界？",
+      "timing": {
+        "query_embedding_seconds": 0.28351679999832413,
+        "vector_search_seconds": 0.008350799998879666
+      },
+      "total_seconds": 0.2919133
+    },
+    {
+      "repetition": 2,
+      "query": "足球比赛场地的边线如何判断球出界？",
+      "timing": {
+        "query_embedding_seconds": 0.29873199999929057,
+        "vector_search_seconds": 0.005287799998768605
+      },
+      "total_seconds": 0.3040626
+    },
+    {
+      "repetition": 3,
+      "query": "足球比赛场地的边线如何判断球出界？",
+      "timing": {
+        "query_embedding_seconds": 0.2257322999976168,
+        "vector_search_seconds": 0.004190999999991618
+      },
+      "total_seconds": 0.2299524
+    }
+  ],
+  "whole_run_wall_seconds": 43.531259799998224,
+  "query_request_count": 150,
+  "warmup_request_count": 3,
+  "llm_generation_requests": 0,
+  "gold_passed_to_retrieval": false,
+  "formal_index_artifacts_unchanged": true,
+  "authorization": {
+    "path": "reports/retrieval/dense_b0/test_authorization.json",
+    "size_bytes": 7454,
+    "sha256": "a1dbc830de7a7a6c08898ef225c9146457c2a0d81c47f8927b065c287e49d782"
+  },
+  "artifacts": {
+    "predictions.jsonl": {
+      "path": "reports/retrieval/dense_b0/test/predictions.jsonl",
+      "size_bytes": 346594,
+      "sha256": "9b147f272c886f747bba3d82da6b5bd74bea83d3b998a08774c9c11fcb90c64d"
+    },
+    "requests.jsonl": {
+      "path": "reports/retrieval/dense_b0/test/requests.jsonl",
+      "size_bytes": 164733,
+      "sha256": "3917d8d3459b64d76095047705364ecd7c2d4cab8984acdfb93a5dbff0880542"
+    },
+    "run_started.json": {
+      "path": "reports/retrieval/dense_b0/test/run_started.json",
+      "size_bytes": 5563,
+      "sha256": "4496883735af42a37b6cc9ba39b63dc48e6c1d388017e7c1669b8e8644394bca"
+    },
+    "source_map.json": {
+      "path": "reports/retrieval/dense_b0/test/source_map.json",
+      "size_bytes": 36576,
+      "sha256": "6017c8e14f6f956b00e409262a2dc861cd3fe4eceb8901d7b88b343d64613013"
+    },
+    "summary.json": {
+      "path": "reports/retrieval/dense_b0/test/summary.json",
+      "size_bytes": 16848,
+      "sha256": "c35bfba2aca06337677e0f0f52b86bd75ef0d93fb7ebe94a98066295ca505d34"
+    },
+    "error_analysis.json": {
+      "path": "reports/retrieval/dense_b0/test/error_analysis.json",
+      "size_bytes": 949,
+      "sha256": "fb2ac006907b5e57b13b7f0bc265f3055891e68bcfac17185a7611fb0de74973"
+    }
+  },
+  "scope": "Real fixed dense retrieval only; public predictions contain no corpus bodies/vectors/answers"
+}
