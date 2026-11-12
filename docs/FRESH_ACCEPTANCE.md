@@ -1,6 +1,6 @@
 # 独立环境与新 UI 三问复核
 
-日期：2026-11-11。此补充流程不改变原任务一至三要求。当前权威结果是 reports/acceptance/fresh_delivery.json，旧环境和历史 UI 回执保留原日期。
+初次独立安装日期：2026-11-11。此补充流程不改变原任务一至三要求。初次结果是 reports/acceptance/fresh_delivery.json，旧环境和历史 UI 回执保留原日期。2026-11-12综合复审见 [TASK_01_07_AUDIT_DELIVERY](../reports/TASK_01_07_AUDIT_DELIVERY.md)。
 
 ## 已实际完成
 
@@ -26,7 +26,7 @@
 执行 `saveFootballCapture()`，将下载的 ui-three-dom.json 放到本仓库 .runtime/，全文不提交 Git。每次重新粘贴会清空本次采集数组；重新验收需新建空会话并从 Q1 开始。
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delivery.ps1 -UiCapture .runtime/ui-three-dom.json -AppUrl http://127.0.0.1:7861/
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delivery.ps1 -UiCapture .runtime/ui-three-dom.json -AppUrl http://127.0.0.1:7861/ -StderrLog .runtime/my-run/app.stderr.log
 ```
 
 本机本轮原始采集是 .runtime/fresh-runtime-20261111/ui-three-dom.json，不是公开下载文件。可直接用这个路径重验已有证据。重验不会冒充“又提交了一次三问”。可另加 `-OriginalRoot <原工程目录> -OriginalSnapshot <变更前静态哈希JSON>` 复查原工程保全；须是变更前真实记录，不能临时补造。
@@ -39,4 +39,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 
 本轮启动仍有 Chroma 候选容量提示（请求 100，实际 50，自动收敛）；没有远程 tokenizer 重试、未安装图依赖错误或应用 traceback。首次安装的网络/缓存失败也保留本机，不删除失败历史。
 
-专家审校、历史正文独立回取、正式质量测试及任务四至十四继续按原计划，不用开发题通过数代替这些工作。
+任务一至七已交付，任务八至十四继续按原计划。专家审校、历史正文独立回取及正式答案质量评测仍未完成，不用开发题通过数代替这些工作。
+
+## 重验保护
+
+每次创建新的报告目录；可用 -ReportDir 指定，已有目录直接拒绝。子工具的 --report/--output 也拒绝覆盖旧回执。UI按问题、十分钟时窗和完整可见回答匹配唯一日志；后续同题交互不会使历史回执失效，附加或删减回答会被拒绝。当前只规范化本项目渲染器实际输出的链接、粗体、引用前缀、HTML实体和排版空白。
+
+19项引用检查绑定实际开发回归文件SHA；任务三回执须包含18项校验、8项suite及16个坏例全部通过。日志、依赖报告、原始采集的SHA随新回执保存；HTTP检查只证明检查时服务响应，不冒充新UI三问。
