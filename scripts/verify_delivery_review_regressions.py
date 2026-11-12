@@ -48,6 +48,17 @@ def main():
                        capture_output=True, text=True, encoding='utf-8', timeout=40)
     check('fresh_gate_refuses_shared_reports_before_reading_inputs', p.returncode != 0 and 'new subdirectory' in p.stderr)
     check('prior_receipt_bytes_preserved', hashlib.sha256(prior.read_bytes()).hexdigest() == checksum)
+    for script in ('verify_task4_workflow.py','verify_task4_human_release.py','verify_task45_regressions.py','validate_eval_receipt.py'):
+        p = subprocess.run([sys.executable,'-B',str(ROOT/'scripts'/script),'--report',str(prior)],cwd=ROOT,
+                           capture_output=True,text=True,encoding='utf-8',timeout=40)
+        check(script + '_refuses_existing_receipt',p.returncode != 0 and 'Refusing to overwrite' in p.stderr)
+    p = subprocess.run([sys.executable,'-B',str(ROOT/'scripts/verify_task5_delivery.py'),'--report-dir',str(ROOT/'reports')],
+                       cwd=ROOT,capture_output=True,text=True,encoding='utf-8',timeout=40)
+    check('task5_does_not_overwrite_report_even_in_exception_handler',p.returncode != 0 and 'Refusing to overwrite' in p.stdout)
+    p = subprocess.run([sys.executable,'-B',str(ROOT/'scripts/verify_task3_delivery.py')],cwd=ROOT,
+                       capture_output=True,text=True,encoding='utf-8',timeout=40)
+    check('task3_direct_suite_redirects_to_safe_isolated_entry',p.returncode != 0 and 'verify_task3_isolated.py' in p.stderr)
+    check('all_refused_commands_preserve_prior_receipt',hashlib.sha256(prior.read_bytes()).hexdigest()==checksum)
     answer = '**规则**\n\n> 完整条件 &gt; 1\n\n来源：[L01-01](https://example.org/rule)'
     event = {'question': 'q', 'captured_at': '2026-11-11T00:00:00+00:00', 'answer': answer, 'upstream_retrieved': []}
     capture = {'captured_at': '2026-11-11T00:01:00Z', 'bot': [{'text': '规则\n完整条件 > 1\n来源：L01-01'}]}
@@ -83,7 +94,9 @@ def main():
               'scope':'Synthetic formatting/path/receipt cases and preserved Task3 receipt. No model or formal test requests.',
               'source_sha256':{n:hashlib.sha256((ROOT/'scripts'/n).read_bytes()).hexdigest() for n in (
                   'delivery_review_io.py','verify_delivery_review_regressions.py','verify_fresh_delivery.py',
-                  'verify_task3_isolated.py','verify_answer_quality.py','recheck_fresh_delivery.ps1')}}
+                  'verify_task3_isolated.py','verify_task3_delivery.py','verify_answer_quality.py','recheck_fresh_delivery.ps1',
+                  'verify_task4_workflow.py','verify_task4_human_release.py','verify_task45_regressions.py',
+                  'validate_eval_receipt.py','verify_task5_delivery.py','recheck_task45.ps1')}}
     report.parent.mkdir(parents=True, exist_ok=True)
     with report.open('x', encoding='utf-8') as h: h.write(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k:result[k] for k in ('status','passed','total')}))

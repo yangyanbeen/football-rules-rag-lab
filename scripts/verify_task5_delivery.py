@@ -34,6 +34,8 @@ def main():
     report_root=args.report_dir.resolve()
     if not any(report_root.is_relative_to(ROOT/name) for name in ('reports','.tmp')):
         raise ValueError('Use a report directory under reports/ or ignored .tmp/')
+    if any((report_root/name).exists() for name in ('acceptance/task5_delivery_gate.json','evidence/task5_dense_smoke.json')):
+        raise ValueError('Refusing to overwrite an existing report; choose a new --report-dir')
     ACTIVE_REPORT_ROOT=report_root
     if bool(args.original_root) != bool(args.original_snapshot):
         raise ValueError('Provide original root and prior snapshot together')

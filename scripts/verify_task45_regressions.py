@@ -28,6 +28,7 @@ def main():
     parser.add_argument('--report',type=Path,required=True)
     args=parser.parse_args()
     report=args.report.resolve()
+    if report.exists():raise ValueError('Refusing to overwrite an existing report')
     if not report.is_relative_to(ROOT/'reports') or report.suffix!='.json':
         raise ValueError('Use a report JSON under reports/')
     folder=ROOT/'.tmp'/('task45-regression-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%f'))
