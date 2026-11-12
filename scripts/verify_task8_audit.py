@@ -89,7 +89,7 @@ def main():
         with patch.object(runner,'ROOT',root),patch.object(runner,'require_release'),patch.object(runner,'committed',return_value=BASE),patch.object(runner,'snapshots',return_value={}),patch.object(runner,'load_jsonl',return_value=[]),patch.object(Path,'mkdir',mkdir):
             try:runner.evaluate(args)
             except OSError as exc:
-                return str(exc)=='synthetic directory failure' and (out/'failure.json').exists()
+                return str(exc)=='synthetic directory failure' and any((root/'.runtime/bm25-failures').glob('*.json'))
         return False
     cases['directory_failure_has_evidence']=mkdir_failure
     # Reproduction expects these protections to be absent in the baseline.

@@ -30,6 +30,21 @@ def append(path,value):
     with path.open('a',encoding='utf-8',newline='\n') as f:f.write(json.dumps(value,ensure_ascii=False,allow_nan=False)+'\n');f.flush()
 
 
+def reserve_test_usage(path,value):
+    """Exclusive creation prevents two authorized processes starting one test."""
+    path.parent.mkdir(parents=True,exist_ok=True)
+    with path.open('x',encoding='utf-8',newline='\n') as f:
+        f.write(json.dumps(value,ensure_ascii=False,allow_nan=False)+'\n');f.flush();os.fsync(f.fileno())
+
+
+def finish_test_usage(path,value):
+    rows=load_jsonl(path)
+    identity=('run_id','template','authorization','run_directory','test_sha256','source_commit')
+    if (len(rows)!=1 or rows[0].get('event')!='STARTED' or value.get('event') not in ('COMPLETED','FAILED')
+        or any(rows[0].get(k)!=value.get(k) for k in identity)):raise ValueError('Only the reserved run may finish once')
+    append(path,value)
+
+
 def prepare(args):
     release=require_release();commit=committed(V1_EXECUTION_FILES+RESOURCES)
     selection=Path(args.selection).resolve();verification=Path(args.verification).resolve()
@@ -68,29 +83,34 @@ def evaluate(args):
     template=grant['template'] if grant else args.template
     if template not in TEMPLATES:raise ValueError('Development requires one declared template')
     if grant and args.template and args.template!=template:raise ValueError('Cannot change selected test template')
-    labelled=load_jsonl(EVAL/f'retrieval_{split}.jsonl')
-    # Labels remain outside the retrieval loop.
-    queries=[{k:q[k] for k in ('question_id','question')} for q in labelled]
     run_id=uuid.uuid4().hex;started=now();wall=time.perf_counter();index=None
     start={'version':'bm25-run-1.0','run_id':run_id,'split':split,'template':template,
            'purpose':'development' if split=='dev' else 'final_report','source_commit':commit,
            'inputs':inputs,'started_at':started,'authorization':auth}
     usage={'run_id':run_id,'template':template,'authorization':auth,'run_directory':output.relative_to(ROOT).as_posix(),
            'test_sha256':grant['test_sha256'] if grant else None,'source_commit':commit}
-    output.mkdir(parents=True,exist_ok=False)
-    current=None
+    current=None;rep=None;phase='reserve_test';reserved=False;owns_output=False
     try:
+        if split=='test':
+            reserve_test_usage(LEDGER,{**usage,'event':'STARTED','recorded_at':now()});reserved=True
+        phase='create_directory';output.mkdir(parents=True,exist_ok=False);owns_output=True
+        phase='write_start'
         write_new(output/'run_started.json',start)
-        if split=='test':append(LEDGER,{**usage,'event':'STARTED','recorded_at':now()})
+        phase='load_questions';labelled=load_jsonl(EVAL/f'retrieval_{split}.jsonl')
+        # Labels remain outside the retrieval loop.
+        queries=[{k:q[k] for k in ('question_id','question')} for q in labelled]
+        phase='load_index'
         index_path=Path(args.index).resolve() if getattr(args,'index',None) else ROOT/'data/indexes/bm25'/template
         began=time.perf_counter();index=Bm25Index(index_path);load_seconds=time.perf_counter()-began
         if index.manifest['template']!=template:raise ValueError('Index template differs from requested run')
         write_new(output/'source_map.json',index.sources)
         warmups=[]
+        phase='warmup'
         for rep in range(1,4):
             sample=index.query(cfg['warmup_query'])
             warmups.append({'repetition':rep,'query':cfg['warmup_query'],'timing':sample['timing']})
         predictions=[]
+        phase='retrieve'
         with (output/'predictions.jsonl').open('x',encoding='utf-8',newline='\n') as predfile:
             for question in queries:
                 current=question['question_id'];measures=[];first=None
@@ -105,7 +125,7 @@ def evaluate(args):
                      'query_tokens':first['tokens'],'run_id':run_id,'split':split,'template':template,
                      'results':first['results'],'measurements':measures}
                 predfile.write(json.dumps(row,ensure_ascii=False,allow_nan=False)+'\n');predfile.flush();predictions.append(row)
-        write_new(output/'summary.json',summary(labelled,predictions,template,split,run_id))
+        phase='summarize';write_new(output/'summary.json',summary(labelled,predictions,template,split,run_id))
         write_new(output/'error_analysis.json',error_analysis(labelled,predictions,split))
         require_inputs(inputs,current_sources=True)
         if index.manifest!=Bm25Index(index_path).manifest:raise ValueError('Index changed during run')
@@ -117,15 +137,17 @@ def evaluate(args):
                                  'logical_cpu_count':os.cpu_count(),'concurrency':1},
                   'artifacts':{n:{k:v for k,v in record(output/n).items() if k!='path'} for n in (
                       'predictions.jsonl','requests.jsonl','source_map.json','summary.json','error_analysis.json','run_started.json')}}
-        write_new(output/'run_manifest.json',manifest)
+        phase='replay';write_new(output/'run_manifest.json',manifest)
         checked=replay(output)
-        if split=='test':append(LEDGER,{**usage,'event':'COMPLETED','recorded_at':now(),'run_manifest':record(output/'run_manifest.json')})
+        if split=='test':finish_test_usage(LEDGER,{**usage,'event':'COMPLETED','recorded_at':now(),'run_manifest':record(output/'run_manifest.json')})
         print(json.dumps({'status':'COMPLETE','split':split,'template':template,'metrics':checked['quality']['metrics'],
                           'latency_total':checked['latency']['all']['total_seconds']},ensure_ascii=False))
     except BaseException as exc:
         failure={'status':'FAILED','run_id':run_id,'split':split,'question_id':current,'recorded_at':now(),
+                 'phase':phase,'repetition':rep,'run_directory':output.relative_to(ROOT).as_posix(),
                  'error_type':type(exc).__name__,'error':str(exc)}
-        for action in ([lambda:write_new(output/'failure.json',failure)]+([lambda:append(LEDGER,{**usage,**failure,'event':'FAILED'})] if split=='test' else [])):
+        failure_path=output/'failure.json' if owns_output else ROOT/'.runtime/bm25-failures'/(run_id+'.json')
+        for action in ([lambda:write_new(failure_path,failure)]+([lambda:finish_test_usage(LEDGER,{**usage,**failure,'event':'FAILED'})] if reserved else [])):
             try:action()
             except Exception as secondary:print('Failure evidence write unavailable: '+type(secondary).__name__,file=sys.stderr)
         raise
