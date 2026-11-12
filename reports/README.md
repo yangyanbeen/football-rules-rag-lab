@@ -1,5 +1,7 @@
 # 报告阅读说明
 
+任务四至六最新补审：[TASK_04_06_SUPPLEMENT](TASK_04_06_SUPPLEMENT.md)。修复前18个检查中16个为隔离实际复现、2个为代码判断问题；不冒充线上故障。新证据在rechecks/task456-20261112：original/为任务四五原验收，final/为最终58项边界回归与新smoke/真实UI。acceptance/regressions-first.json为先前55项历史结果，不能当作最终代码证明；final/acceptance/task6_portability_regression.json重放旧记录验证工具可移植性，不能代替新页面。原任务交付报告与旧证据不覆盖。
+
 任务四、五最新补审：[TASK_04_05_SUPPLEMENT](TASK_04_05_SUPPLEMENT.md)。修复前6组复现保留在acceptance/task45_before_fixes.json；全部新验收在rechecks/task45-20261111，不覆盖旧交付/评测记录。39项新回归与原26项/24项门禁分别记录。只读audit_remote_delivery.py检查远程文件树和公开清单哈希。
 
 任务五当前交付见[TASK_05_DELIVERY](TASK_05_DELIVERY.md)：acceptance/task5_delivery_gate.json为24/24 PASS、18种错误拒绝；evidence/task5_dense_smoke.json只含非评测示例ID/分数和来源摘要，task5_hardware.json记录真实CPU环境。task5_before_runtime_fix.json保留首轮兼容失败；没有正式Recall/MRR或模型回答成绩。

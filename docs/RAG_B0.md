@@ -97,3 +97,29 @@ UI确实使用固定上游App/ChatPage，通过新增BaseReasoning和只读BaseI
 ```
 
 原Task4开发/测试题和标签不用于本任务参数选择或正式计分。没有新增BM25/RRF、Reranker、缓存、父子切分，也没有Recall/MRR/nDCG、P95/QPS或效果提升数字。
+
+## 7. 2026-11-12边界补审与独立重验
+
+当前配置/提示词字节仍与原B0一致。新增严格字段、布尔/整数区分、范围和总预算校验；模型响应必须是固定模型的assistant消息，done=true、stop且实际token计数有效。模型在请求后改变时保留收到的完整原包，记录post_generation_model_identity失败，不重试。网络失败按尝试记错；后一次失败不沿用前一次generation。
+
+REFUSE:后面的模型文本不再直接呈现：其中可能混入没有引用的断言。用户只看到固定“现有资料不足以可靠回答这个问题，无法据此给出确定结论。”；原理由仍在私有trace。官方版本拒答沿用原固定文案。
+
+UI检查子进程返回结构、query/trace、配置/索引/提示词哈希、Top5原正文/来源、预算内证据/messages、原模型包与派生摘要、答案/引用一致性。非法包统一拒答。只读取原语料JSONL和manifest，不在UI中创建DenseIndex，保持已验证的原生组件隔离。此检查不能抵御整个本地执行环境被修改，也不等于语义蕴含或检索质量证明。
+
+新的交付可使用新路径，不再依赖某个旧私有trace ID或最初原型失败日志。原报告、完整smoke和旧UI快照保留。代码基线必须显式指定获授权的源代码提交；本轮为477784420a1f27b8e2a4b688dae548b35c22cf96，因为dense_index.py已获授权修复公开回执入口。冻结10文件/4历史前缀、61语料、原正式索引/私有人工日志和原工程178文件仍独立检查，不能用新代码基线重签它们。
+
+```powershell
+# 以下路径为新一轮示例；已存在就换新目录，不覆盖历史。
+.\.venv\Scripts\python.exe scripts/smoke_rag_b0.py --output .runtime/rag-b0/my-audit/smoke.jsonl --summary reports/rechecks/my-audit/evidence/smoke.json
+# 用真实浏览器提交同样四问，将DOM/最后回答/链接/面板数/trace保存到下列本机文件。
+# 后端mock或重放旧DOM不能称为新的UI证据。
+.\.venv\Scripts\python.exe scripts/summarize_rag_b0_ui.py --captures .runtime/rag-b0/my-audit/ui-captures.jsonl --journal .runtime/rag-b0/ui-events.jsonl --output reports/rechecks/my-audit/evidence/ui.json
+# summarizer输出不可变journal_snapshot路径；下项使用该路径，不使用后续仍追加的live journal。
+.\.venv\Scripts\python.exe scripts/validate_rag_b0_receipts.py --smoke-manifest reports/rechecks/my-audit/evidence/smoke.json --ui-manifest reports/rechecks/my-audit/evidence/ui.json
+# --private额外核对本机完整记录/原文；公开模式只需代码、配置及公开ID清单/回执。
+.\.venv\Scripts\python.exe scripts/validate_rag_b0_receipts.py --smoke-manifest reports/rechecks/my-audit/evidence/smoke.json --ui-manifest reports/rechecks/my-audit/evidence/ui.json --private
+```
+
+完整门禁verify_rag_b0.py增加--smoke-file、--smoke-manifest、--ui-captures、--ui-journal与--reference-commit；具体本轮已执行命令、路径和结果见reports/TASK_04_06_SUPPLEMENT.md。公开回执检查不需要模型/私有语料/原型日志，也不能证明私人真实执行或答案正确。
+
+任务六原发布标签v0.6.0-rag-b0固定在f97c0df；后续审计检查其为新main祖先，不移动旧标签。补交付使用新PR和v0.6.1-task456-audit。

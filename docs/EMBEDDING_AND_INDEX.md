@@ -78,3 +78,9 @@ $env:PYTHONDONTWRITEBYTECODE='1'
 两次构建比较ID与向量数值，不要求Chroma SQLite/HNSW文件字节相同；集合UUID、创建时间和存储布局可变化。向量比较使用明确的float32容差，不预设不同硬件或软件版本位级一致。构建耗时包含接口与写盘开销，单次查询smoke耗时不是P95或性能优化结论。
 
 任务五不解析或计分锁定测试问题，仅读其文件字节做哈希保全；不训练模型、不混BM25/RRF/Reranker/缓存、不测Recall/MRR。公开结果只证明索引可用。硬件存在GPU不代表本轮使用了GPU。
+
+## 5. 2026-11-12输入门禁补审
+
+上段记录原任务五实现。本轮修复snapshot_inputs仅接受哈希/状态的问题：现在先运行validate_eval_receipt.require_receipt，解析公开问题/标注与回执元数据仅用于完整性、decision和锁定一致性检查；不将评测题/答案用于Embedding、生成、调参或计分。伪造decision后重算哈希仍被拒绝。
+
+原producer代码哈希、正式索引和两个公开dense manifest不改写；新reader代码版本及本轮真实空目录重建证据独立保存于reports/rechecks/task456-20261112/original。原24/24和18类错误拒绝继续通过，补缺检查单独记录。

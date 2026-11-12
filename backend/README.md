@@ -20,3 +20,5 @@
 新入口使用rag_b0.py接通任务五DenseIndex和本机Qwen中文生成；rag_b0_worker_client.py提供进程边界，避免本机完整UI导入后的HNSW原生异常。每条UI请求启动独立Python问答进程，串行调度；没有新增REST服务。原证据摘录链路和旧应用未改。
 
 当前配置固定Top5召回、最多1个完整生成证据块、最多1次无效输出重试。回答来源由程序绑定已提供块；数值/格式/重复/残句不通过则拒绝，不能当作完整语义验证。详情及故障记录见docs/RAG_B0.md、reports/TASK_06_DELIVERY.md。
+
+2026-11-12补审：严格校验配置、模型原包和token计数，失败按尝试保存阶段/原响应；UI独立核对worker包的原文、配置、原响应摘要、引用和呈现。拒答只显示固定文案。DenseIndex构建/加载前检查公开人工回执语义；不改变原评测或索引制品。见reports/TASK_04_06_SUPPLEMENT.md。
