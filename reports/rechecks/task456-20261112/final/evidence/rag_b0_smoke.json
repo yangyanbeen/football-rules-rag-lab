@@ -1,0 +1,256 @@
+{
+  "captured_at": "2026-11-12T08:07:52.609658+00:00",
+  "kind": "ad_hoc_chain_smoke_not_accuracy",
+  "raw_path": ".runtime/rag-b0/task456/final/smoke.jsonl",
+  "raw_sha256": "80d585a86b0f68eb3736c16ba83e49152bb0af8c34cdc011327b60c8b071cf33",
+  "raw_public": false,
+  "formal_eval_questions_read": false,
+  "status": "PASS",
+  "rows": [
+    {
+      "smoke_id": "boundary",
+      "trace_id": "b7faf9592e0140a486e5324303986f7e",
+      "question": "足球场的边界线属于场内还是场外？",
+      "status": "answered",
+      "expected_status": "answered",
+      "config_sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7",
+      "prompt_version": "grounded-text-v7",
+      "prompt_sha256": "e6a52c31c56ce94d8d5e1ca096d4474124e2167ce9275da26e567e3ad59dbfea",
+      "index_manifest_sha256": "f0c52d56e86d5b3a3d660e13a98870684b254b039ae77b2267a698e9814d0e4e",
+      "generation_attempted": true,
+      "timing": {
+        "generation_seconds": 6.419060899999749,
+        "total_seconds": 6.817218199998024
+      },
+      "answer_sha256": "61fb4cb18d9ef0ad56876b74bd0f1e963c83ae9e263a1e29ffd0d12cde5d9a9f",
+      "retrieved_ids": [
+        "L01-01",
+        "L01-02",
+        "L01-07",
+        "L15-02",
+        "L01-05"
+      ],
+      "context_ids": [
+        "L01-01"
+      ],
+      "prompt_utf8_bytes": 3042,
+      "generation_attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "validation_error": null,
+          "prompt_eval_count": 520,
+          "eval_count": 68,
+          "generation_seconds": 6.419060899999749
+        }
+      ],
+      "citations": [
+        {
+          "chunk_id": "L01-01",
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+          "law_number": 1,
+          "source_lines": [
+            167,
+            171
+          ],
+          "content_zh_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+          "needs_rule_review": false,
+          "source_revision_verified": false,
+          "expert_reviewed": false,
+          "official_translation": false
+        }
+      ],
+      "generation": {
+        "model": "qwen2.5:3b",
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 520,
+        "eval_count": 68,
+        "load_duration": 13371300,
+        "total_duration": 6269454500,
+        "model_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b"
+      },
+      "error": null
+    },
+    {
+      "smoke_id": "goal",
+      "trace_id": "a0c93fe383194a1c8f11533014c9cd0f",
+      "question": "球门两根门柱之间的距离和横梁高度各是多少？",
+      "status": "answered",
+      "expected_status": "answered",
+      "config_sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7",
+      "prompt_version": "grounded-text-v7",
+      "prompt_sha256": "e6a52c31c56ce94d8d5e1ca096d4474124e2167ce9275da26e567e3ad59dbfea",
+      "index_manifest_sha256": "f0c52d56e86d5b3a3d660e13a98870684b254b039ae77b2267a698e9814d0e4e",
+      "generation_attempted": true,
+      "timing": {
+        "generation_seconds": 5.108987200001138,
+        "total_seconds": 5.514928900000086
+      },
+      "answer_sha256": "68d34a5b8132e94fb83d014e3bec4e8184b65c441b056677b05f9cec5d8fef9e",
+      "retrieved_ids": [
+        "L01-03",
+        "L01-05",
+        "L01-02",
+        "L01-06",
+        "L01-07"
+      ],
+      "context_ids": [
+        "L01-03"
+      ],
+      "prompt_utf8_bytes": 2674,
+      "generation_attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "validation_error": null,
+          "prompt_eval_count": 456,
+          "eval_count": 36,
+          "generation_seconds": 5.108987200001138
+        }
+      ],
+      "citations": [
+        {
+          "chunk_id": "L01-03",
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+          "law_number": 1,
+          "source_lines": [
+            187,
+            189
+          ],
+          "content_zh_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+          "needs_rule_review": false,
+          "source_revision_verified": false,
+          "expert_reviewed": false,
+          "official_translation": false
+        }
+      ],
+      "generation": {
+        "model": "qwen2.5:3b",
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 456,
+        "eval_count": 36,
+        "load_duration": 12311000,
+        "total_duration": 4893435700,
+        "model_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b"
+      },
+      "error": null
+    },
+    {
+      "smoke_id": "throw_in",
+      "trace_id": "5b950eaf50fd4eda89e7d03448fe85e1",
+      "question": "队员掷界外球时双脚和双手应满足什么要求？",
+      "status": "answered",
+      "expected_status": "answered",
+      "config_sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7",
+      "prompt_version": "grounded-text-v7",
+      "prompt_sha256": "e6a52c31c56ce94d8d5e1ca096d4474124e2167ce9275da26e567e3ad59dbfea",
+      "index_manifest_sha256": "f0c52d56e86d5b3a3d660e13a98870684b254b039ae77b2267a698e9814d0e4e",
+      "generation_attempted": true,
+      "timing": {
+        "generation_seconds": 5.748263900000893,
+        "total_seconds": 6.162750400002551
+      },
+      "answer_sha256": "5a97985432984400a9670d09ce7a6e993772f83e7ea3354d4cf9416306d479b7",
+      "retrieved_ids": [
+        "L15-02",
+        "L15-05",
+        "L15-04",
+        "L15-01",
+        "L15-03"
+      ],
+      "context_ids": [
+        "L15-02"
+      ],
+      "prompt_utf8_bytes": 2576,
+      "generation_attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "validation_error": null,
+          "prompt_eval_count": 414,
+          "eval_count": 41,
+          "generation_seconds": 5.748263900000893
+        }
+      ],
+      "citations": [
+        {
+          "chunk_id": "L15-02",
+          "source_url": "https://en.wikipedia.org/wiki/Throw-in",
+          "law_number": 15,
+          "source_lines": [
+            171,
+            174
+          ],
+          "content_zh_sha256": "522683d4cac4594f5ef89620c2ca75303c70e871839c25bbc823d4b83a76a18e",
+          "needs_rule_review": false,
+          "source_revision_verified": false,
+          "expert_reviewed": false,
+          "official_translation": false
+        }
+      ],
+      "generation": {
+        "model": "qwen2.5:3b",
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 414,
+        "eval_count": 41,
+        "load_duration": 22248100,
+        "total_duration": 5540644000,
+        "model_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b"
+      },
+      "error": null
+    },
+    {
+      "smoke_id": "outside",
+      "trace_id": "02f24f4425924c398242d0fe08579986",
+      "question": "火星明天的天气怎么样？",
+      "status": "refused",
+      "expected_status": "refused",
+      "config_sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7",
+      "prompt_version": "grounded-text-v7",
+      "prompt_sha256": "e6a52c31c56ce94d8d5e1ca096d4474124e2167ce9275da26e567e3ad59dbfea",
+      "index_manifest_sha256": "f0c52d56e86d5b3a3d660e13a98870684b254b039ae77b2267a698e9814d0e4e",
+      "generation_attempted": true,
+      "timing": {
+        "generation_seconds": 3.7121426000012434,
+        "total_seconds": 4.111254999999801
+      },
+      "answer_sha256": "c2486305a0bfe2520a8724a2b7714ca8e61c141cc0f07583f03a8a3080973d6f",
+      "retrieved_ids": [
+        "L07-02",
+        "L17-02",
+        "L04-05",
+        "L06-01",
+        "L16-05"
+      ],
+      "context_ids": [
+        "L07-02"
+      ],
+      "prompt_utf8_bytes": 2717,
+      "generation_attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "validation_error": null,
+          "prompt_eval_count": 445,
+          "eval_count": 15,
+          "generation_seconds": 3.7121426000012434
+        }
+      ],
+      "citations": [],
+      "generation": {
+        "model": "qwen2.5:3b",
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 445,
+        "eval_count": 15,
+        "load_duration": 26475000,
+        "total_duration": 3507842800,
+        "model_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b"
+      },
+      "error": null
+    }
+  ]
+}

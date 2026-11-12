@@ -1,0 +1,119 @@
+{
+  "captured_at": "2026-11-12T08:11:05.840406+00:00",
+  "kind": "real_browser_submission",
+  "raw_captures_path": ".runtime/rag-b0/task456/final/ui-captures.jsonl",
+  "raw_captures_sha256": "25019bce9d00a4c446f917d59237b574d75485e6708cd587392cc070282f25c6",
+  "private_ui_journal_snapshot_path": ".runtime/rag-b0/task456/final/ui-journal-2c770abd2bfd697ca904.jsonl",
+  "private_ui_journal_snapshot_sha256": "2c770abd2bfd697ca9048ed89b88e8ce51ee2b8f8591e0437b66947cf58c47d4",
+  "raw_public": false,
+  "questions": 4,
+  "answered": 3,
+  "refused": 1,
+  "rows": [
+    {
+      "trace_id": "dfcb4b5e071043e4802b7de571c11829",
+      "question": "足球场的边界线属于场内还是场外？",
+      "status": "answered",
+      "page_url": "http://127.0.0.1:7863/",
+      "captured_at": "2026-11-12T08:09:40.886Z",
+      "answer_sha256": "61fb4cb18d9ef0ad56876b74bd0f1e963c83ae9e263a1e29ffd0d12cde5d9a9f",
+      "rendered_last_answer_sha256": "14c745a21547b2b9e61e8f2ee957cf8d5f26503f8f001e52f5e3d7c6e2cff1cf",
+      "citations": [
+        {
+          "chunk_id": "L01-01",
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+          "law_number": 1,
+          "source_lines": [
+            167,
+            171
+          ],
+          "needs_rule_review": false
+        }
+      ],
+      "evidence_count": 1,
+      "config_sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7",
+      "timing": {
+        "generation_seconds": 6.0288964999999735,
+        "total_seconds": 6.400215400000889,
+        "worker_wall_seconds": 8.598339700001816
+      },
+      "error": null
+    },
+    {
+      "trace_id": "c91fc424cf3243f5a8b15c7f9b35ef03",
+      "question": "球门两根门柱之间的距离和横梁高度各是多少？",
+      "status": "answered",
+      "page_url": "http://127.0.0.1:7863/",
+      "captured_at": "2026-11-12T08:10:06.270Z",
+      "answer_sha256": "68d34a5b8132e94fb83d014e3bec4e8184b65c441b056677b05f9cec5d8fef9e",
+      "rendered_last_answer_sha256": "0d367d873a5a7b567336a891ae38e82ed6a2000975603b1cfab68c14c02b6812",
+      "citations": [
+        {
+          "chunk_id": "L01-03",
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+          "law_number": 1,
+          "source_lines": [
+            187,
+            189
+          ],
+          "needs_rule_review": false
+        }
+      ],
+      "evidence_count": 1,
+      "config_sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7",
+      "timing": {
+        "generation_seconds": 3.79819939999652,
+        "total_seconds": 4.1802109999989625,
+        "worker_wall_seconds": 6.522546500000317
+      },
+      "error": null
+    },
+    {
+      "trace_id": "6f75bcc69a1d4ecf81eaa7a251024730",
+      "question": "队员掷界外球时双脚和双手应满足什么要求？",
+      "status": "answered",
+      "page_url": "http://127.0.0.1:7863/",
+      "captured_at": "2026-11-12T08:10:41.180Z",
+      "answer_sha256": "5a97985432984400a9670d09ce7a6e993772f83e7ea3354d4cf9416306d479b7",
+      "rendered_last_answer_sha256": "d94796c16a3894032b5bb14bcafea1a62e252de3c7b36b93edf9b58b56949976",
+      "citations": [
+        {
+          "chunk_id": "L15-02",
+          "source_url": "https://en.wikipedia.org/wiki/Throw-in",
+          "law_number": 15,
+          "source_lines": [
+            171,
+            174
+          ],
+          "needs_rule_review": false
+        }
+      ],
+      "evidence_count": 1,
+      "config_sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7",
+      "timing": {
+        "generation_seconds": 3.6745504999998957,
+        "total_seconds": 4.074576099999831,
+        "worker_wall_seconds": 6.4289358999994874
+      },
+      "error": null
+    },
+    {
+      "trace_id": "a33e40e35eec4e9680301c947646bb56",
+      "question": "火星明天的天气怎么样？",
+      "status": "refused",
+      "page_url": "http://127.0.0.1:7863/",
+      "captured_at": "2026-11-12T08:11:02.754Z",
+      "answer_sha256": "c2486305a0bfe2520a8724a2b7714ca8e61c141cc0f07583f03a8a3080973d6f",
+      "rendered_last_answer_sha256": "c2486305a0bfe2520a8724a2b7714ca8e61c141cc0f07583f03a8a3080973d6f",
+      "citations": [],
+      "evidence_count": 0,
+      "config_sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7",
+      "timing": {
+        "generation_seconds": 2.7096519000006083,
+        "total_seconds": 3.066809599997214,
+        "worker_wall_seconds": 5.432082899998932
+      },
+      "error": null
+    }
+  ]
+}

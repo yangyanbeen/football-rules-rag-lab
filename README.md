@@ -6,6 +6,8 @@
 
 ## 先看什么
 
+任务四至六本轮补审入口：[补交付报告](reports/TASK_04_06_SUPPLEMENT.md)。修复8组边界问题；原交付数据和历史报告保留，新的真实运行证据统一在reports/rechecks/task456-20261112。新增回归58/58与原任务验收分别记录。
+
 任务四、五最新补缺见[仓库审计与补交付](reports/TASK_04_05_SUPPLEMENT.md)：原上传文件完整，6组边界问题已修复，新增39项回归通过；原交付数据、人工记录和索引不变。统一复核入口为scripts/recheck_task45.ps1，公开凭证可单独用python scripts/validate_eval_receipt.py检查。
 
 1. [当前进度与交付基线](docs/DELIVERY_STATUS.md)：哪些已完成，哪些未做。

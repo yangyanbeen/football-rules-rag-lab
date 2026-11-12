@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import html
 import json
+import math
 import re
 import threading
 import time
@@ -20,10 +21,38 @@ from eval_dataset import ROOT, canonical, digest
 CONFIG=ROOT/'config/rag_b0.json'
 REFUSAL='现有资料不足以可靠回答这个问题，无法据此给出确定结论。'
 BOUNDARY='资料为固定Wikipedia快照的AI中文整理，非官方赛季规则，未经过裁判专家审校。'
+OFFICIAL_REFUSAL='现有资料未核验为指定赛季的IFAB官方规则，无法确认其现行适用性。'
+RETRY_INSTRUCTION='\n上次输出未通过格式、完整性或事实数值检查。请从头重新简短回答，以ANSWER:或REFUSE:开头，以完整句号结束；不写编号，不重复句子，不补充资料外事实。'
 
 
 def load_config(path=CONFIG):
-    config=json.loads(Path(path).read_text('utf-8'))
+    try:config=json.loads(Path(path).read_text('utf-8'))
+    except (OSError,ValueError) as exc:raise ValueError('Invalid B0 configuration file') from exc
+    top={'version','dense_config','dense_index','top_k','query_normalization','max_query_utf8_bytes',
+         'prompt_version','prompt_file','input_utf8_byte_budget','chat_template_token_reserve','max_statements',
+         'max_statement_characters','max_context_chunks','max_generation_attempts','minimum_quote_characters','llm','ui'}
+    llm={'name','digest','ollama_version','num_ctx','num_predict','num_gpu','num_thread','temperature','seed','keep_alive','timeout_seconds'}
+    ui={'host','port','share','scope','app_data'}
+    if (not isinstance(config,dict) or set(config)!=top or not isinstance(config['llm'],dict)
+            or set(config['llm'])!=llm or not isinstance(config['ui'],dict) or set(config['ui'])!=ui):
+        raise ValueError('Unsupported or missing B0 configuration fields')
+    def integer(value,minimum,maximum):return type(value) is int and minimum<=value<=maximum
+    for key,minimum,maximum in (('top_k',1,99),('max_query_utf8_bytes',1,4096),
+        ('input_utf8_byte_budget',128,32768),('chat_template_token_reserve',1,4096),
+        ('max_statements',1,1),('max_statement_characters',4,320),('max_context_chunks',1,1),
+        ('max_generation_attempts',1,2),('minimum_quote_characters',1,320)):
+        if not integer(config[key],minimum,maximum):raise ValueError('Invalid integer configuration: '+key)
+    for key,minimum,maximum in (('num_ctx',1,32768),('num_predict',1,8192),('num_gpu',0,0),
+        ('num_thread',1,128),('seed',0,2**32-1),('timeout_seconds',1,180)):
+        if not integer(config['llm'][key],minimum,maximum):raise ValueError('Invalid LLM integer: '+key)
+    if (not integer(config['ui']['port'],1024,65535)
+            or type(config['llm']['temperature']) not in (int,float) or config['llm']['temperature']!=0
+            or not isinstance(config['llm']['digest'],str) or not re.fullmatch('[0-9a-f]{64}',config['llm']['digest'])
+            or not isinstance(config['llm']['keep_alive'],str) or not re.fullmatch(r'(?:0|[1-9]\d*(?:ms|s|m|h))',config['llm']['keep_alive'])):
+        raise ValueError('Invalid B0 model, port or sampling configuration')
+    for value in [config[key] for key in ('version','dense_config','dense_index','prompt_version','prompt_file')]+[
+            config['llm']['name'],config['llm']['ollama_version'],config['ui']['scope'],config['ui']['app_data']]:
+        if not isinstance(value,str) or not value.strip():raise ValueError('Configuration text must be nonblank')
     if (config['query_normalization']!='NFKC then trim and collapse whitespace'
             or type(config['top_k']) is not int or not 1<=config['top_k']<=99
             or config['llm']['num_gpu']!=0 or config['llm']['temperature']!=0
@@ -35,6 +64,8 @@ def load_config(path=CONFIG):
     for name in ('dense_config','dense_index','prompt_file'):
         path=(ROOT/config[name]).resolve()
         if not path.is_relative_to(ROOT):raise ValueError('B0 paths must remain inside this checkout')
+    if not (ROOT/config['ui']['app_data']).resolve().is_relative_to(ROOT/'.runtime/rag-b0'):
+        raise ValueError('UI data must remain in the isolated Task 6 runtime')
     return config
 
 
@@ -112,7 +143,7 @@ def validate_payload(payload, offered, config):
         raise ValueError('Invalid answer schema')
     statements=payload['statements']
     if not payload['answerable']:
-        if statements or not isinstance(payload['refusal_reason'],str) or not payload['refusal_reason'].strip():
+        if statements or not isinstance(payload['refusal_reason'],str) or not 1<=len(payload['refusal_reason'].strip())<=config['max_statement_characters']:
             raise ValueError('Refusal must have a reason and no asserted evidence')
         if re.search(r'https?://|<[^>]+>',payload['refusal_reason']):raise ValueError('Invalid refusal content')
         return []
@@ -182,15 +213,35 @@ def render_panel(result):
 
 
 class GenerationRejected(ValueError):
-    def __init__(self,message,response):
+    def __init__(self,message,response,stage='response_validation',retryable=True):
         super().__init__(message)
-        self.response=response
+        self.response=response;self.stage=stage;self.retryable=retryable
 
 
 def generation_record(response, config):
-    result={key:response.get(key) for key in ('model','done','done_reason','prompt_eval_count','eval_count','load_duration','total_duration')}
-    result.update(raw_content=response.get('message',{}).get('content'),raw_response=response,model_digest=config['llm']['digest'])
+    packet=response if isinstance(response,dict) else {}
+    message=packet.get('message') if isinstance(packet.get('message'),dict) else {}
+    result={key:packet.get(key) for key in ('model','done','done_reason','prompt_eval_count','eval_count','load_duration','total_duration')}
+    result.update(raw_content=message.get('content'),raw_response=response,model_digest=config['llm']['digest'])
     return result
+
+
+def validate_model_response(response, config):
+    cfg=config['llm']
+    if not isinstance(response,dict):raise GenerationRejected('Model response must be an object',response)
+    if response.get('model')!=cfg['name']:raise GenerationRejected('Response model differs from pinned model',response,retryable=False)
+    message=response.get('message')
+    if not isinstance(message,dict) or message.get('role')!='assistant' or not isinstance(message.get('content'),str) or not message['content'].strip():
+        raise GenerationRejected('Invalid assistant message',response)
+    if response.get('done') is not True or response.get('done_reason')!='stop':
+        raise GenerationRejected('Model response was incomplete or truncated',response)
+    if any(type(response.get(k)) is not int or response[k]<1 for k in ('prompt_eval_count','eval_count')):
+        raise GenerationRejected('Missing or invalid actual token counts',response)
+    if response['eval_count']>cfg['num_predict']:
+        raise GenerationRejected('Completion exceeded prediction policy',response)
+    if response['prompt_eval_count']+cfg['num_predict']+config['chat_template_token_reserve']>cfg['num_ctx']:
+        raise GenerationRejected('Actual model input exceeded context policy',response)
+    return response
 
 
 class PinnedChat:
@@ -218,11 +269,108 @@ class PinnedChat:
         response=self.request('/api/chat',{'model':cfg['name'],'messages':messages,'stream':False,
             'keep_alive':cfg['keep_alive'],'options':{key:cfg[key] for key in
                 ('num_ctx','num_predict','num_gpu','num_thread','temperature','seed')}})
-        self.verify_model()
-        if response.get('done') is not True or response.get('done_reason')!='stop':raise GenerationRejected('Model response was incomplete or truncated',response)
-        if response.get('prompt_eval_count',0)+cfg['num_predict']+self.config['chat_template_token_reserve']>cfg['num_ctx']:
-            raise GenerationRejected('Actual model input exceeded context policy',response)
-        return response
+        try:self.verify_model()
+        except (ValueError,KeyError,TypeError,OSError,RuntimeError) as exc:
+            raise GenerationRejected('Post-generation model verification failed: '+str(exc),response,
+                                     stage='post_generation_model_identity',retryable=False) from exc
+        return validate_model_response(response,self.config)
+
+
+def validate_worker_result(result, question):
+    """Check the worker protocol and provenance without opening Chroma in UI.
+
+    This verifies data/citation consistency, not semantic answer correctness.
+    """
+    cfg=load_config();query=normalize_query(question,cfg)
+    if not isinstance(result,dict) or result.get('question')!=question:
+        raise ValueError('Invalid worker object or question')
+    if result.get('normalized_query')!=query or result.get('status') not in ('answered','refused'):
+        raise ValueError('Worker query/status mismatch')
+    if not isinstance(result.get('trace_id'),str) or not re.fullmatch('[0-9a-f]{32}',result['trace_id']):
+        raise ValueError('Invalid worker trace ID')
+    prompt=(ROOT/cfg['prompt_file']).read_text('utf-8')
+    index_sha=digest((ROOT/cfg['dense_index']/'index_manifest.json').read_bytes())
+    if (result.get('config_sha256')!=digest(CONFIG.read_bytes()) or result.get('prompt_sha256')!=digest(prompt.encode())
+            or result.get('index_manifest_sha256')!=index_sha or result.get('prompt_version')!=cfg['prompt_version']):
+        raise ValueError('Worker configuration, prompt or index differs')
+    def duration(value):return type(value) in (int,float) and math.isfinite(value) and value>=0
+    if not isinstance(result.get('timing'),dict) or not duration(result['timing'].get('total_seconds')):
+        raise ValueError('Invalid worker timing')
+    if not isinstance(result.get('context'),list) or not isinstance(result.get('citations'),list) or not isinstance(result.get('attempts'),list):
+        raise ValueError('Invalid worker evidence/attempt collections')
+    attempts=result['attempts']
+    if len(attempts)>cfg['max_generation_attempts'] or type(result.get('generation_attempted')) is not bool:
+        raise ValueError('Invalid worker attempt count')
+    for i,attempt in enumerate(attempts,1):
+        if (not isinstance(attempt,dict) or type(attempt.get('attempt')) is not int or attempt['attempt']!=i
+                or not duration(attempt.get('generation_seconds'))):
+            raise ValueError('Invalid worker attempt record')
+    retrieval=result.get('retrieval')
+    if retrieval is not None:
+        if not isinstance(retrieval,dict) or retrieval.get('query')!=query or not isinstance(retrieval.get('results'),list):
+            raise ValueError('Invalid worker retrieval')
+        matches=retrieval['results']
+        if len(matches)!=cfg['top_k'] or len({m['chunk_id'] for m in matches})!=len(matches):
+            raise ValueError('Worker retrieval count/IDs differ')
+        dense=json.loads((ROOT/cfg['dense_config']).read_text('utf-8'))
+        corpus_path=ROOT/'data/processed/rag_chunks_zh.jsonl';raw=corpus_path.read_bytes()
+        if digest(raw)!=dense['corpus_sha256']:raise ValueError('Worker source corpus differs')
+        corpus={r['chunk_id']:r for r in map(json.loads,raw.decode('utf-8').splitlines()) if r}
+        for rank,match in enumerate(matches,1):
+            original=corpus.get(match['chunk_id'])
+            if (not original or match.get('content_zh')!=original['content_zh']
+                    or match.get('metadata')!={k:v for k,v in original.items() if k!='content_zh'}
+                    or type(match.get('rank')) is not int or match['rank']!=rank):
+                raise ValueError('Worker original body/source metadata differs')
+            distance,score=match.get('distance'),match.get('score')
+            if (type(distance) not in (float,int) or type(score) not in (float,int)
+                    or not math.isfinite(distance) or not math.isfinite(score)
+                    or not -1e-5<=distance<=2+1e-5 or abs(score-(1-distance))>1e-6):
+                raise ValueError('Invalid worker retrieval score')
+        messages=result.get('messages')
+        if not isinstance(messages,list) or not messages or not isinstance(messages[0],dict) or messages[0].get('content') not in (prompt,prompt+RETRY_INSTRUCTION):
+            raise ValueError('Worker prompt differs')
+        selected,expected_messages,_,size=pack_context(query,matches,cfg,messages[0]['content'])
+        if result['context']!=selected or messages!=expected_messages or result.get('prompt_utf8_bytes')!=size:
+            raise ValueError('Worker offered evidence or messages differ')
+    elif result['context'] or attempts or result.get('generation') is not None:
+        raise ValueError('Worker asserted evidence without retrieval')
+    def completed_generation():
+        generation=result.get('generation')
+        if (not isinstance(generation,dict) or not result['context'] or not attempts or not result['generation_attempted']
+                or attempts[-1].get('generation')!=generation or attempts[-1].get('validation_error') is not None
+                or result.get('error')):
+            raise ValueError('Invalid completed worker generation')
+        packet=validate_model_response(generation.get('raw_response'),cfg)
+        if any(generation.get(k)!=v for k,v in generation_record(packet,cfg).items()):
+            raise ValueError('Worker generation summary differs from original response')
+        return generation
+    if result['status']=='answered':
+        generation=completed_generation()
+        if result.get('refusal_reason') is not None:raise ValueError('Answered worker has a refusal reason')
+        payload=parse_generated_text(generation.get('raw_content'),result['context'],cfg)
+        statements=validate_payload(payload,result['context'],cfg)
+        if (not statements or generation.get('parsed_payload')!=payload or generation.get('validated_statements')!=statements):
+            raise ValueError('Worker generated statements differ')
+        citations=citations_for(statements,result['context'])
+        if result['citations']!=citations or result.get('answer')!=render_answer(statements,citations):
+            raise ValueError('Worker rendered answer or citations differ')
+    else:
+        if result['citations'] or result.get('answer') not in (REFUSAL,OFFICIAL_REFUSAL):
+            raise ValueError('Worker refusal must display only controlled text')
+        reason=result.get('refusal_reason')
+        if reason=='official_version_not_verified':
+            if result['answer']!=OFFICIAL_REFUSAL or retrieval is not None:raise ValueError('Invalid official-version refusal')
+        elif result['answer']!=REFUSAL:raise ValueError('Invalid refusal text')
+        elif reason=='model_found_no_direct_support':
+            generation=completed_generation()
+            payload=parse_generated_text(generation.get('raw_content'),result['context'],cfg)
+            if validate_payload(payload,result['context'],cfg) or generation.get('parsed_payload')!=payload:
+                raise ValueError('Refusal asserts a generated answer')
+        elif reason=='generation_or_evidence_validation_failed':
+            if not isinstance(result.get('error'),str) or not result['error']:raise ValueError('Missing worker failure error')
+        elif reason!='no_whole_evidence_within_budget':raise ValueError('Unknown worker refusal reason')
+    return result
 
 
 class RagB0Engine:
@@ -250,37 +398,45 @@ class RagB0Engine:
                 query=normalize_query(question,self.config);result['normalized_query']=query
                 if re.search(r'官方|现行|最新|IFAB',query,re.I) and re.search(r'赛季|20\d{2}|规则',query):
                     result['refusal_reason']='official_version_not_verified'
-                    result['answer']='现有资料未核验为指定赛季的IFAB官方规则，无法确认其现行适用性。'
+                    result['answer']=OFFICIAL_REFUSAL
                     return result
                 retrieval=self.index.query(query,self.config['top_k']);result['retrieval']=retrieval
                 for number in range(self.config['max_generation_attempts']):
-                    prompt=self.prompt+('' if number==0 else '\n上次输出未通过格式、完整性或事实数值检查。请从头重新简短回答，以ANSWER:或REFUSE:开头，以完整句号结束；不写编号，不重复句子，不补充资料外事实。')
+                    prompt=self.prompt+('' if number==0 else RETRY_INSTRUCTION)
                     context,messages,schema,byte_count=pack_context(query,retrieval['results'],self.config,prompt)
                     result.update(context=context,messages=messages,application_response_schema=schema,prompt_utf8_bytes=byte_count)
                     if not context:
                         result['refusal_reason']='no_whole_evidence_within_budget';return result
                     attempt={'attempt':number+1,'messages':messages,'application_response_schema':schema,'prompt_utf8_bytes':byte_count,
                         'effective_prompt_sha256':digest(prompt.encode()),'context_ids':[m['chunk_id'] for m in context],
-                        'generation':None,'validation_error':None}
+                        'generation':None,'validation_error':None,'error_stage':None,'stage':'model_request'}
+                    result['generation']=None
                     generation_started=time.perf_counter();result['generation_attempted']=True
                     try:
                         response=self.chat.generate(messages)
+                        attempt['stage']='output_validation'
                         result['generation']=attempt['generation']=generation_record(response,self.config)
                         payload=parse_generated_text(response['message']['content'],context,self.config);result['generation']['parsed_payload']=payload
                         statements=validate_payload(payload,context,self.config)
                         result['generation']['validated_statements']=statements
                         if not statements:
                             result['refusal_reason']='model_found_no_direct_support'
-                            result['answer']=REFUSAL+'\n\n原因：'+html.escape(payload['refusal_reason'])
+                            # Untrusted model refusal text may itself assert facts.
+                            # Preserve it in the trace; the user sees fixed text.
+                            result['answer']=REFUSAL
+                            attempt['stage']='complete'
                             return result
                         result['citations']=citations_for(statements,context)
                         result['answer']=render_answer(statements,result['citations']);result['status']='answered'
+                        attempt['stage']='complete'
                         break
-                    except (ValueError,KeyError,TypeError) as exc:
+                    except (ValueError,KeyError,TypeError,OSError,RuntimeError) as exc:
                         if isinstance(exc,GenerationRejected):
                             result['generation']=attempt['generation']=generation_record(exc.response,self.config)
                         attempt['validation_error']=type(exc).__name__+': '+str(exc)
-                        if number+1==self.config['max_generation_attempts']:raise
+                        attempt['error_stage']=getattr(exc,'stage',attempt['stage']);attempt['stage']='failed'
+                        retryable=isinstance(exc,(ValueError,KeyError,TypeError)) and getattr(exc,'retryable',True)
+                        if not retryable or number+1==self.config['max_generation_attempts']:raise
                     finally:
                         attempt['generation_seconds']=time.perf_counter()-generation_started
                         result['attempts'].append(attempt)

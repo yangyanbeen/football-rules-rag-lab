@@ -14,6 +14,12 @@ QUESTIONS=[
 ]
 
 
+def smoke_passed(rows):
+    return len(rows)>=4 and all(r['status']==r['expected_status'] and not r.get('error')
+        and r.get('generation_attempted') is True and isinstance(r.get('generation'),dict)
+        and r['generation'].get('done') is True and r['generation'].get('done_reason')=='stop' for r in rows)
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,default=ROOT/'reports/rag_b0_smoke.jsonl')
@@ -38,7 +44,7 @@ def main():
     public={'captured_at':datetime.now(timezone.utc).isoformat(),'kind':'ad_hoc_chain_smoke_not_accuracy',
         'raw_path':str(output.relative_to(ROOT)).replace('\\','/'),'raw_sha256':digest(output.read_bytes()),
         'raw_public':False,'formal_eval_questions_read':False,
-        'status':'PASS' if all(r['status']==r['expected_status'] for r in rows) else 'FAIL',
+        'status':'PASS' if smoke_passed(rows) else 'FAIL',
         'rows':[]}
     for r in rows:
         public['rows'].append({k:r[k] for k in ('smoke_id','trace_id','question','status','expected_status',

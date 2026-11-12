@@ -12,6 +12,12 @@ from pathlib import Path
 from eval_dataset import ROOT, write_json
 
 REPO='yangyanbeen/football-rules-rag-lab'
+TASK6_RELEASE='f97c0df32566a62f9a2106367a048a5cd77da1f5'
+
+
+def release_is_ancestor(tag,head):
+    return tag==TASK6_RELEASE and subprocess.run(['git','merge-base','--is-ancestor',tag,head],
+        cwd=ROOT,capture_output=True).returncode==0
 
 
 def main():
@@ -65,7 +71,7 @@ def main():
         required.update(task6)
         record('required_task6_public_deliverables_present',task6<=set(remote))
         tag=api('git/ref/tags/v0.6.0-rag-b0')['object']['sha']
-        record('task6_release_tag_matches_remote_main',tag==head)
+        record('task6_original_release_tag_is_ancestor_of_main',release_is_ancestor(tag,head))
     record('no_private_runtime_corpus_or_index_uploaded',not any(name.startswith(('.runtime/','.venv/','.models/',
         '.cache/','data/raw/','data/processed/','data/indexes/')) for name in remote))
     manifest=json.loads(run(['git','show',head+':data/manifests/project_file_manifest.json']))

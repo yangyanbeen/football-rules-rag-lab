@@ -1,0 +1,24 @@
+{
+  "captured_at": "2026-11-12T08:14:16.577941+00:00",
+  "status": "PASS",
+  "url": "http://127.0.0.1:7863/",
+  "http_status": 200,
+  "readiness": {
+    "status": "READY",
+    "records": 99,
+    "config_sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7"
+  },
+  "source_commit": "477784420a1f27b8e2a4b688dae548b35c22cf96",
+  "source_sha256": {
+    "scripts/dense_index.py": "9e991910367987021e1ace250c5796c213ad53f14072ecbc4fe1539352f3d875",
+    "scripts/rag_b0.py": "b95f1cf7136f3ee3d489fd4dcbc9afd9d675b415186f7ccb3cdef9131b815c42",
+    "scripts/rag_b0_worker_client.py": "60ba8ca48f512972ed00d049576bfe0782b7d73e090e68bd357c31c5b6d1e306",
+    "scripts/verify_rag_b0.py": "d99ce5966bd6ea153d5d7d4df9e10511eb3022a533d4b5e89e7517534ae4ec3e",
+    "scripts/validate_rag_b0_receipts.py": "02314459bd2fdee85c607379ce13cbad007579977e2357f984f939a268d8a7fe",
+    "scripts/verify_task456_regressions.py": "3e4b8749ee9a25aa72ae0f76370e388a3d62518176272d816b463016b7555188",
+    "scripts/smoke_rag_b0.py": "f50888e7dcabb0f3a564e09b980e3e837bf418167830da32988b544f1ba51a6a",
+    "scripts/summarize_rag_b0_ui.py": "98250b11a869ec679b070aa3ea8dd5b11848cf15e3c1df492ef641cd3277ee30",
+    "scripts/audit_remote_delivery.py": "b143c0149c0ffc0cfb240dd542e2cbcbef01a2fac6982a9bdb7df1108c7f77e5"
+  },
+  "old_task_services_current_status_not_checked": true
+}

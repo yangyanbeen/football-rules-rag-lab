@@ -838,7 +838,166 @@
           "sha256": "b2ece7af184544259e356feb3d72de5b39d6b7fcb2ffea65d2aa10015f92b1ea"
         }
       ]
+    },
+    {
+      "id": "TASK-004-006-SUPPLEMENT",
+      "objective": "Audit and repair task4-6 delivery boundaries under original criteria",
+      "baseline": "f97c0df32566a62f9a2106367a048a5cd77da1f5",
+      "main_variable": "Receipt model worker trace validation and portable independent rechecks",
+      "dataset_version": "corpus-b0-rag-adapter-1.0.0 unchanged",
+      "evaluation_version": "football-eval-0.1.0 unchanged; no scoring",
+      "code_commit": "477784420a1f27b8e2a4b688dae548b35c22cf96",
+      "model": "Existing pinned BGE-M3 and Qwen2.5:3b CPU; config unchanged",
+      "commands": [
+        "recheck_task45.ps1",
+        "verify_task456_regressions.py",
+        "smoke_rag_b0.py",
+        "real browser submissions",
+        "summarize_rag_b0_ui.py",
+        "verify_rag_b0.py with explicit reference commit",
+        "validate_rag_b0_receipts.py public and private"
+      ],
+      "result": {
+        "task4": "26/26",
+        "task5": "24/24",
+        "task45_regressions": "39/39",
+        "task6": "62/62",
+        "new_boundary_regressions": "58/58",
+        "public_receipts": "15/15",
+        "private_receipts": "20/20",
+        "real_backend_and_ui": "each 3 answers + 1 refusal",
+        "rebuild_max_vector_difference": 0.0,
+        "formal_quality_metrics": "not measured"
+      },
+      "decision": "Eight defect groups closed; tasks7-14 remain pending",
+      "artifacts": [
+        {
+          "path": "reports/TASK_04_06_SUPPLEMENT.md",
+          "size_bytes": 9362,
+          "sha256": "4c18fdea627e3e08465134e3cf9855a3e9cde00862ebdf5929bb934924db5bd2"
+        },
+        {
+          "path": "docs/TASK_04_06_SUPPLEMENT_SCOPE.md",
+          "size_bytes": 3792,
+          "sha256": "eaf041b40ce298950b6f0e394a59d40f48846e78d8f0ba6faab4c7de50420e26"
+        },
+        {
+          "path": "reports/acceptance/task456_before_fixes.json",
+          "size_bytes": 2681,
+          "sha256": "07eae9e1a503b9c6826b475c25bca65576418a3327f8c9793a9c606d9c88f7da"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/acceptance/regressions-first.json",
+          "size_bytes": 3959,
+          "sha256": "919632824f06391e9e037c1591998f88c8c0f299097d3d504bfe1ad71c9675d8"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/acceptance/task6_portability_regression.json",
+          "size_bytes": 4342,
+          "sha256": "4feedbd0cc6adbf24d2d542ca5b2b4d265b1d13b47fb1d9b8166fddbfdf93a50"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/evidence/github_before.json",
+          "size_bytes": 2055,
+          "sha256": "9d559dd14da2cfbc8facdc471814873cf97640e3f5f4ea77dae125bb34a3b2b7"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/evidence/rag_b0_smoke.json",
+          "size_bytes": 8668,
+          "sha256": "1afebe5cae64e93feaa99c8e8023ecbca07eebade2f7f422c4de7a8b996ad613"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/final/acceptance/preservation.json",
+          "size_bytes": 660,
+          "sha256": "7489e1ec28cfab412aab745a4b5fea7e08cf6b00ebc73cc5fca3dd0a2f0dbec5"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/final/acceptance/private_receipts.json",
+          "size_bytes": 1421,
+          "sha256": "8d17285b4cf5f9f0c09a89858f7d08f1c4082b9c703bb78dd0eeda03fd27241b"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/final/acceptance/public_receipts.json",
+          "size_bytes": 1144,
+          "sha256": "adb0da2ca4289fbd06af3ad7a4838f3bd82916dee7fd410b09d26be325e61f12"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/final/acceptance/regressions.json",
+          "size_bytes": 4109,
+          "sha256": "40c21db38d763d873ff107618f19964d043a5df253a933de023efacdcdb1b7ec"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/final/acceptance/task6_delivery_gate.json",
+          "size_bytes": 4342,
+          "sha256": "f5b01b2afc9a5caa83775327f4d137a64e76d5ae70ac8e6f402b82b7deb2d36b"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/final/acceptance/task6_portability_regression.json",
+          "size_bytes": 4342,
+          "sha256": "ce1b48cd75a6b8bca1797a1c977ae3c9bfbdffb60376cbe6ec5441ce1cba9b6f"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/final/evidence/live_runtime.json",
+          "size_bytes": 1364,
+          "sha256": "0679d3c8771075cc8404149a5cc8a895f293d38c0e58e17623db10fce4113d7b"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/final/evidence/rag_b0_smoke.json",
+          "size_bytes": 8670,
+          "sha256": "fd60667fd9fb457dd9dcd098803653961c5d9741abe447d027d33230109c77eb"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/final/evidence/rag_b0_ui.json",
+          "size_bytes": 4520,
+          "sha256": "e39bb6b3ca83041c85078905b1f6c629a8093c825d4ffd0c609d81aa79a4e175"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/original/acceptance/task45_regressions.json",
+          "size_bytes": 4474,
+          "sha256": "9a7142143abb63af1f98e199b18bc620a33a680501ac3d04cde79b81d1237d1e"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/original/acceptance/task4_delivery_gate.json",
+          "size_bytes": 5103,
+          "sha256": "763766c31d7cc3ab51e6cd2a0d6a97fd2f34ec6d66bf9039990d4dfa74d4124a"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/original/acceptance/task4_human_release_verification.json",
+          "size_bytes": 1975,
+          "sha256": "8b26d863ea9abf08158499abd69b2582773cfb8843989a9423160385615725fd"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/original/acceptance/task4_public_receipt.json",
+          "size_bytes": 1469,
+          "sha256": "2cc4586a1472de5cc8861f4d39c153219c667000d0130d81b776bd9946f01383"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/original/acceptance/task4_workflow_verification.json",
+          "size_bytes": 11958,
+          "sha256": "251350ea982cd8eede0eb9b02a3830cbae741a66b675e4c73e09889b08e77610"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/original/acceptance/task5_delivery_gate.json",
+          "size_bytes": 17143,
+          "sha256": "b2ec1462eac7cdf0a0153b012d9f986e02bed473ec19b6e5d53f4fb7408cadee"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/original/evidence/task5_dense_smoke.json",
+          "size_bytes": 5880,
+          "sha256": "31a8e3619774b0284462cf60cfabcf9c56cf8f587141189a4744365cd7b66d3f"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/original/manifests/dense_chunk_ids.json",
+          "size_bytes": 32967,
+          "sha256": "0bdff8a39d7a458d586fecb921582224ad7a854cc3bf6fa589e04a1150b95b61"
+        },
+        {
+          "path": "reports/rechecks/task456-20261112/original/manifests/dense_index_manifest.json",
+          "size_bytes": 11745,
+          "sha256": "9ea5d0403acb9ccaae8185623cf3cd66f834f555f7d839fa12cdbc8f60b2d557"
+        }
+      ]
     }
   ],
-  "last_updated_at": "2026-11-11T16:18:01.806077+00:00"
+  "last_updated_at": "2026-11-12T08:14:16.577941+00:00"
 }

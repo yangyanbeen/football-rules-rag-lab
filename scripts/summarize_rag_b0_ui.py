@@ -1,16 +1,34 @@
 """Publish metadata-only receipts for actual private browser captures and failures."""
+import argparse
 import json
+from pathlib import Path
 from datetime import datetime, timezone
 from eval_dataset import ROOT, digest, load_jsonl, write_json
 
 
 def main():
-    captures=ROOT/'.runtime/rag-b0/ui-captures.jsonl'
-    journal=ROOT/'.runtime/rag-b0/ui-events.jsonl'
-    values=load_jsonl(captures);events={r['trace_id']:r for r in load_jsonl(journal)}
-    output=ROOT/'reports/evidence/rag_b0_ui_manifest.json'
-    failures=ROOT/'reports/evidence/rag_b0_failures.json'
-    if output.exists() or failures.exists():raise ValueError('Existing receipts must be preserved')
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--captures',type=Path,default=ROOT/'.runtime/rag-b0/ui-captures.jsonl')
+    parser.add_argument('--journal',type=Path,default=ROOT/'.runtime/rag-b0/ui-events.jsonl')
+    parser.add_argument('--output',type=Path,default=ROOT/'reports/evidence/rag_b0_ui_manifest.json')
+    parser.add_argument('--legacy-failures-output',type=Path,
+        help='Optional original prototype archive; not needed for a new UI delivery')
+    args=parser.parse_args()
+    captures=args.captures.resolve();journal=args.journal.resolve();output=args.output.resolve()
+    failures=args.legacy_failures_output.resolve() if args.legacy_failures_output else None
+    if not captures.is_relative_to(ROOT/'.runtime') or not journal.is_relative_to(ROOT/'.runtime'):
+        raise ValueError('Full UI captures and journals must stay in ignored runtime')
+    if not any(output.is_relative_to(ROOT/base) for base in ('reports','.tmp')) or (failures and not failures.is_relative_to(ROOT/'reports')):
+        raise ValueError('Use reports/ for receipts or ignored .tmp/ for test fixtures')
+    if output.exists() or (failures and failures.exists()):raise ValueError('Existing receipts must be preserved')
+    capture_bytes=captures.read_bytes();journal_bytes=journal.read_bytes()
+    values=[json.loads(line) for line in capture_bytes.decode('utf-8').splitlines() if line.strip()]
+    events={r['trace_id']:r for r in (json.loads(line) for line in journal_bytes.decode('utf-8').splitlines() if line.strip())}
+    snapshot=captures.parent/('ui-journal-'+digest(journal_bytes)[:20]+'.jsonl')
+    if snapshot.exists():
+        if snapshot.read_bytes()!=journal_bytes:raise ValueError('Snapshot collision')
+    else:
+        with snapshot.open('xb') as handle:handle.write(journal_bytes)
     rows=[]
     for capture in values:
         event=events[capture['trace_id']]
@@ -21,9 +39,15 @@ def main():
             'evidence_count':capture['evidence_count'],'config_sha256':event['config_sha256'],
             'timing':event['timing'],'error':event.get('error')})
     write_json(output,{'captured_at':datetime.now(timezone.utc).isoformat(),'kind':'real_browser_submission',
-        'raw_captures_sha256':digest(captures.read_bytes()),'private_ui_journal_snapshot_sha256':digest(journal.read_bytes()),
+        'raw_captures_path':captures.relative_to(ROOT).as_posix(),'raw_captures_sha256':digest(capture_bytes),
+        'private_ui_journal_snapshot_path':snapshot.relative_to(ROOT).as_posix(),
+        'private_ui_journal_snapshot_sha256':digest(journal_bytes),
         'raw_public':False,'questions':len(rows),'answered':sum(r['status']=='answered' for r in rows),
         'refused':sum(r['status']=='refused' for r in rows),'rows':rows})
+    if failures is None:
+        print(json.dumps({'ui_rows':len(rows),'answered':sum(r['status']=='answered' for r in rows),
+                          'journal_snapshot':snapshot.relative_to(ROOT).as_posix()}))
+        return
     observations=[
         ('probe-first.json','False refusal despite direct retrieved support; prompt clarified general knowledge vs verified official version.'),
         ('attempt1-smoke.jsonl','Out-of-scope model payload mixed a false flag and asserted statements; validator refused it.'),
