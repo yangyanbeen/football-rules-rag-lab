@@ -1,5 +1,7 @@
 # BM25 中文检索基线（任务八）
 
+当前修复与完整验证见 [TASK_08_SUPPLEMENT](../reports/TASK_08_SUPPLEMENT.md)。原基线不变；分词对照复算现在严格校验覆盖范围并重算 comparison 指标，每次开发使用独立索引目录。运行器独占预约正式测试，失败保留阶段与原异常；未取得输出目录所有权时诊断写入私有 `.runtime/bm25-failures`。完整门禁支持 `--index-root` 验证新恢复索引，且核对专项回执检查项和 Git 来源。新回执需配套传 `--contract-report`、`--portability-report`、`--reference-commit`；默认核对历史回执。
+
 原要求：TECHNICAL_DESIGN第5.1节、DEVELOPMENT_PLAN_AND_REPORT任务八，原件不改。汇总在 [bm25_baseline.json](../reports/bm25_baseline.json)，交付在 [TASK_08_DELIVERY](../reports/TASK_08_DELIVERY.md)。
 
 ## 1. 数据、实现与固定参数

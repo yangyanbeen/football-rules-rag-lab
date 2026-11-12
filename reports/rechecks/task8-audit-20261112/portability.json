@@ -1,0 +1,32 @@
+{
+  "actual_development_directory": "reports/retrieval/bm25-restored-dev-3f4a3d54c8324fd5a3ef9b17584cbecc",
+  "captured_at": "2026-11-12T13:41:38.363530+00:00",
+  "checks": {
+    "changed_payload_still_rejected": true,
+    "equivalent_rebuild_accepted": true,
+    "export_verifies_without_rewriting_original_metadata": true,
+    "forged_producer_still_rejected": true,
+    "index_and_source_map_bytes_identical": true,
+    "legitimate_producer_commit_changed": true,
+    "restored_index_actual_development_run_completed": true,
+    "restored_index_development_metrics_unchanged": true
+  },
+  "failure_stderr": null,
+  "new_locked_test_requests": 0,
+  "passed": 8,
+  "rebuilt_index_manifest": {
+    "path": ".tmp/bm25-restored-2a6229402cdc403f9e0392c52f090fbd/title_body/index_manifest.json",
+    "sha256": "fff97d617ab5b8ab997a6b74117e42983a80cdf3660a6232d49a4149d2fad33a",
+    "size_bytes": 2485
+  },
+  "scope": "New dev run with equivalent restored postings; original B0 test/source files unchanged",
+  "source_sha256": {
+    "bm25_retrieval_eval.py": "e4d21c8ed57ed7ddacd2aa1bab8f3773adf32d83c1064f8191ecf27b2daa3d49",
+    "export_bm25_manifests.py": "d2019e9517d9cb348f13bf0eb85ce841e574d0f36d16c3106bda7b976eefc0d8",
+    "run_bm25_retrieval.py": "d39c9e4cd0b12833239e3005f99e6398b8dab5e593794742cb11eecf16111011",
+    "verify_bm25_portability.py": "5aa7242cb903db7f6be58eade0b084bf2288b81f47c4ea6afc9694e2385576f8"
+  },
+  "status": "PASS",
+  "stderr_has_known_jieba_deprecation_warning": true,
+  "total": 8
+}

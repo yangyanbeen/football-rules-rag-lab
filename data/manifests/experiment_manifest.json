@@ -2396,7 +2396,237 @@
           "sha256": "8e94edd203a05df2324f05d48616625310f8e4d588226ad8e6e0d740b2b8353b"
         }
       ]
+    },
+    {
+      "id": "TASK-008-AUDIT",
+      "task": "8 supplement",
+      "date": "2026-11-12",
+      "baseline": "93687ce5a73853a63782d2204225b046697c7028",
+      "scope": "Four delivery reliability defect groups; original acceptance unchanged; dev-only new execution",
+      "result": {
+        "regressions": "32/32",
+        "contract": "74/74",
+        "restored_delivery": "35/35",
+        "portability": "8/8",
+        "public_replay": "13/13 across 8 sets",
+        "preservation": "18/18",
+        "previous_task4": "26/26",
+        "previous_task6": "62/62",
+        "previous_task7": "43/43",
+        "new_development_runs": 3,
+        "new_development_measurements": 360,
+        "new_locked_test_retrievals": 0
+      },
+      "original_test_unchanged": {
+        "Recall@5": 0.975,
+        "Recall@10": 1.0,
+        "MRR@10": 0.95,
+        "source_commit": "65e751648d7a108cdb8e1acde2710f313639414a"
+      },
+      "limitations": [
+        "No new locked-test retrieval or parameter selection",
+        "Synthetic corrupt copies demonstrate validator gaps, not original data corruption",
+        "No answer accuracy, QPS or speed optimization claim",
+        "Private snapshot/corpus/index required for local preservation gate"
+      ],
+      "artifacts": [
+        {
+          "path": "docs/BM25_RETRIEVAL.md",
+          "size_bytes": 9117,
+          "sha256": "12ab338fe51f1e6203ff738ca7e60b6b873649562bc90fdd9c63d4d82b6028d4"
+        },
+        {
+          "path": "docs/TASK_08_AUDIT_SCOPE.md",
+          "size_bytes": 1873,
+          "sha256": "ebf9e89222aff64cc7d290314896f1ba0c7e7cff44636a46bf3bf72949cbb126"
+        },
+        {
+          "path": "reports/TASK_08_SUPPLEMENT.md",
+          "size_bytes": 7945,
+          "sha256": "4bc84b0c8ad7544f6127e497d86ac2ff2a95d270764ef82bb75abcf8d2d44918"
+        },
+        {
+          "path": "reports/rechecks/task8-audit-20261112/before-fixes.json",
+          "size_bytes": 1134,
+          "sha256": "048eb08fbb9621399c369af6859a52ae3f24c8e46df8ccb83d40e4dd3d3bf0ed"
+        },
+        {
+          "path": "reports/rechecks/task8-audit-20261112/contract.json",
+          "size_bytes": 4711,
+          "sha256": "f0bbb9ffe3a1b0488c281ca97043640eb357d3f97dd5713670030b5e46d99297"
+        },
+        {
+          "path": "reports/rechecks/task8-audit-20261112/delivery-restored-current.json",
+          "size_bytes": 3482,
+          "sha256": "6558b0aee2e9d5bfe57eae12c1a4de0fd044fb455da126802a40ccf049c12eed"
+        },
+        {
+          "path": "reports/rechecks/task8-audit-20261112/delivery-restored.json",
+          "size_bytes": 3753,
+          "sha256": "c4eab82ddefd718481de16035a6db409ae621a8f202f2f7386ea219abc739919"
+        },
+        {
+          "path": "reports/rechecks/task8-audit-20261112/portability.json",
+          "size_bytes": 1514,
+          "sha256": "98de10bab7f1036383c126dd6a76b1477acad173b68c511e81aef42c7bf91634"
+        },
+        {
+          "path": "reports/rechecks/task8-audit-20261112/preservation.json",
+          "size_bytes": 1395,
+          "sha256": "ae9708a62d5212cf03d198f46a97e5d4b0d01a40ebb5ec71b76c2fc44a5b7bce"
+        },
+        {
+          "path": "reports/rechecks/task8-audit-20261112/previous-task4.json",
+          "size_bytes": 5103,
+          "sha256": "258f3af9d9634c666de67a32541d641d4badcefef4044f26ec252b4a839f2698"
+        },
+        {
+          "path": "reports/rechecks/task8-audit-20261112/previous-task6.json",
+          "size_bytes": 4342,
+          "sha256": "bb5e8d68183ea4b9e7e0b3918e237f80a01f928c0b449989eb65df1b3591f6a7"
+        },
+        {
+          "path": "reports/rechecks/task8-audit-20261112/previous-task7.json",
+          "size_bytes": 12915,
+          "sha256": "5777661d5fc48fda3b4bf731d6ea33a8bd9aa841d7a8ce86be103ef1a7265d69"
+        },
+        {
+          "path": "reports/rechecks/task8-audit-20261112/public-only-replay.json",
+          "size_bytes": 2013,
+          "sha256": "ab66f0f4608088eadba3b56fabc8441f31b17706e326de8c84768e0053ca3545"
+        },
+        {
+          "path": "reports/rechecks/task8-audit-20261112/regressions-current.json",
+          "size_bytes": 2001,
+          "sha256": "c9528d8395078f32b144041428f063da2f0a33510a0a08e7efb0c588af341cd3"
+        },
+        {
+          "path": "reports/rechecks/task8-audit-20261112/regressions-final.json",
+          "size_bytes": 2334,
+          "sha256": "ab357373fba65f903f8d01bfb0f843eaba583e7fe8a6c22a1fc34b28277e43a1"
+        },
+        {
+          "path": "reports/rechecks/task8-audit-20261112/regressions-v1.json",
+          "size_bytes": 1608,
+          "sha256": "594bd2a03babdbf422ff8963b8c6caa7c4d162c9069a6c61a7e1ef9d3393b372"
+        },
+        {
+          "path": "reports/rechecks/task8-audit-20261112/regressions-v2.json",
+          "size_bytes": 1311,
+          "sha256": "039356e132c966c6be57ca0d155b51548709728995940eed98206133d20ea7a8"
+        },
+        {
+          "path": "reports/rechecks/task8-audit-20261112/restored-index-proof.json",
+          "size_bytes": 1461,
+          "sha256": "0af1d2449b8aabf383b5ad21ba1298551369ca86486eb98230844063ea465644"
+        },
+        {
+          "path": "reports/retrieval/bm25-restored-dev-3f4a3d54c8324fd5a3ef9b17584cbecc/error_analysis.json",
+          "size_bytes": 26416,
+          "sha256": "40c31fb9e3159660e84719a68f91c963b31ecdbab161c83ba2aa4420488a396a"
+        },
+        {
+          "path": "reports/retrieval/bm25-restored-dev-3f4a3d54c8324fd5a3ef9b17584cbecc/predictions.jsonl",
+          "size_bytes": 217714,
+          "sha256": "9b1397278232e7837c8ab4b9814228ccd919f7ed2e09111081968a98e0f65bf6"
+        },
+        {
+          "path": "reports/retrieval/bm25-restored-dev-3f4a3d54c8324fd5a3ef9b17584cbecc/requests.jsonl",
+          "size_bytes": 85698,
+          "sha256": "f49a9dc082635dc5e94cd3b8d0fc188d2c8c9dceeaf8a7c1b342c5e8c084c640"
+        },
+        {
+          "path": "reports/retrieval/bm25-restored-dev-3f4a3d54c8324fd5a3ef9b17584cbecc/run_manifest.json",
+          "size_bytes": 9843,
+          "sha256": "c6f6f793551bffc1962cec9ba843373b2c7eced20d351b733584826143574107"
+        },
+        {
+          "path": "reports/retrieval/bm25-restored-dev-3f4a3d54c8324fd5a3ef9b17584cbecc/run_started.json",
+          "size_bytes": 4993,
+          "sha256": "7584ba29a9b8b4643fc77e311f70754aa2338714fe55ca2682888930f2414d2c"
+        },
+        {
+          "path": "reports/retrieval/bm25-restored-dev-3f4a3d54c8324fd5a3ef9b17584cbecc/source_map.json",
+          "size_bytes": 36576,
+          "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863"
+        },
+        {
+          "path": "reports/retrieval/bm25-restored-dev-3f4a3d54c8324fd5a3ef9b17584cbecc/summary.json",
+          "size_bytes": 12312,
+          "sha256": "d56bd88595bab3480d281794ea56497c48b18727a786b0022c97c1d08bde2c1b"
+        },
+        {
+          "path": "reports/retrieval/task8-audit-20261112/segmentation-dev-1/comparison.json",
+          "size_bytes": 961,
+          "sha256": "0a2e69c19cf8c62ad98f81ef1871c6f61d3d42c8b8b4987f5365ff85f8413d58"
+        },
+        {
+          "path": "reports/retrieval/task8-audit-20261112/segmentation-dev-1/manifest.json",
+          "size_bytes": 5503,
+          "sha256": "324c25ee74b6b80a4d3844e334e93aa273761caf855530c13952a596aeb5fffe"
+        },
+        {
+          "path": "reports/retrieval/task8-audit-20261112/segmentation-dev-1/predictions.jsonl",
+          "size_bytes": 218059,
+          "sha256": "10ba96f9b747db9341164ce0f5c0f76427305bf49a7a563683c31bb8f500c08e"
+        },
+        {
+          "path": "reports/retrieval/task8-audit-20261112/segmentation-dev-1/summary.json",
+          "size_bytes": 12345,
+          "sha256": "f1a2e83c0d601f5fd0068d93eea04383fb8d26314dc31940ee85dfa2335cacce"
+        },
+        {
+          "path": "reports/retrieval/task8-audit-20261112/segmentation-dev-2/comparison.json",
+          "size_bytes": 960,
+          "sha256": "8103993dd061e7ff6083e6523ef12e71a46677be9b63486d5cebe406fb7342d9"
+        },
+        {
+          "path": "reports/retrieval/task8-audit-20261112/segmentation-dev-2/manifest.json",
+          "size_bytes": 5505,
+          "sha256": "9e94212eaafb0178801c6ddf14f0f896c71b6c6ccc41a754c9adb11589234c27"
+        },
+        {
+          "path": "reports/retrieval/task8-audit-20261112/segmentation-dev-2/predictions.jsonl",
+          "size_bytes": 218091,
+          "sha256": "7028ded41e1f508b54a51a002aaa3652516859d434aa9e851556c21f4b5beab3"
+        },
+        {
+          "path": "reports/retrieval/task8-audit-20261112/segmentation-dev-2/summary.json",
+          "size_bytes": 12349,
+          "sha256": "c7d9ecef17051985ae4bcb612d7f500e3d3952dff3c859018771564803de1800"
+        },
+        {
+          "path": "scripts/bm25_retrieval_eval.py",
+          "size_bytes": 20471,
+          "sha256": "e4d21c8ed57ed7ddacd2aa1bab8f3773adf32d83c1064f8191ecf27b2daa3d49"
+        },
+        {
+          "path": "scripts/compare_bm25_segmentation.py",
+          "size_bytes": 9725,
+          "sha256": "0c8ac42c4353a0e05f1fa1659f754d0f796dcc22f6b62de35c14ad39be64e271"
+        },
+        {
+          "path": "scripts/run_bm25_retrieval.py",
+          "size_bytes": 11431,
+          "sha256": "d39c9e4cd0b12833239e3005f99e6398b8dab5e593794742cb11eecf16111011"
+        },
+        {
+          "path": "scripts/verify_bm25_delivery.py",
+          "size_bytes": 14411,
+          "sha256": "10fe745e1968458ed1393ea6a061533b15e11c0c34c038e38179172f98806c35"
+        },
+        {
+          "path": "scripts/verify_task8_audit.py",
+          "size_bytes": 12944,
+          "sha256": "cbda5d3b4b1cbb0c66092055d8ea7dbd7d2fd6045f1564b998fb34d804be43fa"
+        },
+        {
+          "path": "scripts/verify_task8_preservation.py",
+          "size_bytes": 6398,
+          "sha256": "f62849c87bcca45bd56645469fee5b4873b80c5af3bf391e5ce0d3998c727282"
+        }
+      ]
     }
   ],
-  "last_updated_at": "2026-11-12T13:22:32.698649+00:00"
+  "last_updated_at": "2026-11-12T13:47:49.652792+00:00"
 }

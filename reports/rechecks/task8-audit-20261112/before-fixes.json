@@ -1,0 +1,28 @@
+{
+  "baseline": "93687ce5a73853a63782d2204225b046697c7028",
+  "captured_at": "2026-11-12T13:36:09.920085+00:00",
+  "checks": {
+    "directory_failure_has_evidence": true,
+    "exclusive_test_reservation": true,
+    "reject_index_producer_after_run": true,
+    "reject_resigned_wrong_comparison": true,
+    "reject_segmentation_boolean_test_count": true,
+    "reject_segmentation_hmm_change": true,
+    "reject_segmentation_missing_artifacts": true,
+    "reject_segmentation_missing_inputs": true,
+    "reject_segmentation_missing_sources": true,
+    "reject_segmentation_missing_warmups": true,
+    "reject_segmentation_negative_wall": true,
+    "reject_segmentation_wrong_mode": true,
+    "reject_source_commit_after_run": true,
+    "reject_uncommitted_grant_receipts": true
+  },
+  "errors": [],
+  "new_locked_test_retrievals": 0,
+  "passed": 14,
+  "scope": "Isolated modified copies and synthetic failure/ledger operations; no original evidence changed",
+  "source_sha256": "6f4ac2adb9a625da24a50750f70261ddcc8f8621112e15580b30716b35669d80",
+  "status": "GAPS_REPRODUCED",
+  "total": 14,
+  "version": "task8-audit-regression-1.0"
+}

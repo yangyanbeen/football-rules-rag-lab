@@ -88,4 +88,6 @@ UiCapture 必须来自已完成的真实浏览器操作；也可传历史采集�
 
 ## 任务八BM25离线实验
 
+任务八最新补充见 [TASK_08_SUPPLEMENT](../reports/TASK_08_SUPPLEMENT.md)。来源时间与授权、分词对照复算、测试预约、失败证据和完整索引恢复门禁已修复；原测试成绩和所有历史结果保留。分词开发可使用不同输出目录重复执行，会创建独立的私有索引；原索引不会被覆盖。
+
 原语料恢复后执行 `.venv/Scripts/python.exe scripts/install_bm25_runtime.py`，再按 [BM25_RETRIEVAL](BM25_RETRIEVAL.md) 构建三个本地索引。jieba从固定官方包隔离安装到.runtime/bm25，原应用262包保持不变，BM25实验不需要Ollama。已有目录/原正式测试拒绝覆盖或重复运行；使用新dev路径。公开结果复算可用python -S，无需语料、jieba或实际索引。现有UI仍沿用原Dense入口，混合召回按任务九推进。

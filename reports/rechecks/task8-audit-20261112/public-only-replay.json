@@ -1,0 +1,75 @@
+{
+  "captured_at": "2026-11-12T13:45:12.566800+00:00",
+  "checkout_commit": "6ac7a9c59a3ac7292175062501312170ecd5d458",
+  "checks": {
+    "new-segmentation-1": true,
+    "new-segmentation-2": true,
+    "no_corpus": true,
+    "no_indexes": true,
+    "no_jieba_under_python_S": true,
+    "no_runtime": true,
+    "no_venv": true,
+    "original-dev-body": true,
+    "original-dev-path_body": true,
+    "original-dev-title_body": true,
+    "original-segmentation": true,
+    "original-test": true,
+    "restored-dev": true
+  },
+  "new_locked_test_retrievals": 0,
+  "passed": 13,
+  "replayed_sets": 8,
+  "results": [
+    {
+      "error": null,
+      "label": "original-dev-body",
+      "passed": true,
+      "path": "reports/retrieval/bm25_b0/development/body"
+    },
+    {
+      "error": null,
+      "label": "original-dev-title_body",
+      "passed": true,
+      "path": "reports/retrieval/bm25_b0/development/title_body"
+    },
+    {
+      "error": null,
+      "label": "original-dev-path_body",
+      "passed": true,
+      "path": "reports/retrieval/bm25_b0/development/path_body"
+    },
+    {
+      "error": null,
+      "label": "original-test",
+      "passed": true,
+      "path": "reports/retrieval/bm25_b0/test"
+    },
+    {
+      "error": null,
+      "label": "original-segmentation",
+      "passed": true,
+      "path": "reports/retrieval/bm25_b0/segmentation-dev"
+    },
+    {
+      "error": null,
+      "label": "restored-dev",
+      "passed": true,
+      "path": "reports/retrieval/bm25-restored-dev-3f4a3d54c8324fd5a3ef9b17584cbecc"
+    },
+    {
+      "error": null,
+      "label": "new-segmentation-1",
+      "passed": true,
+      "path": "reports/retrieval/task8-audit-20261112/segmentation-dev-1"
+    },
+    {
+      "error": null,
+      "label": "new-segmentation-2",
+      "passed": true,
+      "path": "reports/retrieval/task8-audit-20261112/segmentation-dev-2"
+    }
+  ],
+  "scope": "Detached public-only checkout; python -S; saved test predictions replay only",
+  "status": "PASS",
+  "total": 13
+}

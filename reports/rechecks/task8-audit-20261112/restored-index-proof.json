@@ -1,0 +1,41 @@
+{
+  "captured_at": "2026-11-12T13:43:01.949021+00:00",
+  "cases": [
+    {
+      "index_manifest": {
+        "path": ".tmp/task8-audit-restored/body/index_manifest.json",
+        "sha256": "74427afbc05b9644e6428416db631de220b1a3912051f0db99d3886bef2b7fb4",
+        "size_bytes": 2479
+      },
+      "original_full_manifest_equality": false,
+      "payload_and_source_map_identical": true,
+      "semantic_validation_passed": true,
+      "template": "body"
+    },
+    {
+      "index_manifest": {
+        "path": ".tmp/task8-audit-restored/title_body/index_manifest.json",
+        "sha256": "fff97d617ab5b8ab997a6b74117e42983a80cdf3660a6232d49a4149d2fad33a",
+        "size_bytes": 2485
+      },
+      "original_full_manifest_equality": false,
+      "payload_and_source_map_identical": true,
+      "semantic_validation_passed": true,
+      "template": "title_body"
+    },
+    {
+      "index_manifest": {
+        "path": ".tmp/task8-audit-restored/path_body/index_manifest.json",
+        "sha256": "fb0395b1f3d5cae4fe8e02f3145ce1b26251d006b53344e115f2c67de1060b60",
+        "size_bytes": 2484
+      },
+      "original_full_manifest_equality": false,
+      "payload_and_source_map_identical": true,
+      "semantic_validation_passed": true,
+      "template": "path_body"
+    }
+  ],
+  "new_locked_test_retrievals": 0,
+  "scope": "Original full-equality predicate rejects all three actual byte-equivalent rebuilds; semantic identity accepts them",
+  "status": "PASS"
+}

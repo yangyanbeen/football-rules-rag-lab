@@ -29,7 +29,22 @@ def instant(value):
     return dt
 
 
-def finite(value):return type(value) in (int,float) and math.isfinite(value) and value>=0
+def finite(value):
+    try:return type(value) in (int,float) and math.isfinite(value) and value>=0
+    except OverflowError:return False
+
+
+def producer_before(commit,timestamp):
+    """Historical producers must exist before the measurement/authorization."""
+    from bm25_index import committed
+    committed((),commit)
+    created=subprocess.check_output(['git','show','-s','--format=%cI',commit],cwd=ROOT,text=True).strip()
+    if instant(created)>instant(timestamp):raise ValueError('Producer commit postdates recorded work')
+
+
+def validate_identity(split,template,run_id):
+    if (split not in ('dev','test') or template not in TEMPLATES or not isinstance(run_id,str)
+        or not re.fullmatch('[0-9a-f]{32}',run_id)):raise ValueError('Invalid run identity')
 
 
 def valid_source(row):
@@ -87,7 +102,7 @@ def error_analysis(questions,predictions,split):
 
 
 def validate_predictions(questions,predictions,sources,split,template,run_id):
-    if split not in ('dev','test') or template not in TEMPLATES or not re.fullmatch('[0-9a-f]{32}',run_id):raise ValueError('Invalid run identity')
+    validate_identity(split,template,run_id)
     known={r['chunk_id']:r for r in sources}
     if len(sources)!=99 or len(known)!=99 or any(set(r)!=set(SOURCE_FIELDS) or not valid_source(r) for r in sources):raise ValueError('Invalid source mapping')
     # The canonical source map is already bound to the frozen corpus by the producer
@@ -156,6 +171,8 @@ def replay(directory):
               'started_at','completed_at','wall_seconds','load_seconds','warmups','index_manifest','environment','artifacts','authorization'}
     if set(manifest)!=required or manifest['version']!='bm25-run-1.0' or manifest['status']!='COMPLETE':raise ValueError('Incomplete/versioned run manifest')
     m=manifest;require_inputs(m['inputs'])
+    validate_identity(m['split'],m['template'],m['run_id'])
+    producer_before(m['source_commit'],m['started_at'])
     from bm25_index import committed
     committed((),m['source_commit'])
     for name in V1_EXECUTION_FILES:
@@ -199,6 +216,7 @@ def replay(directory):
     if m['wall_seconds']+1e-6<measured or (end-start).total_seconds()+.1<m['wall_seconds']:raise ValueError('Wall timing omits work')
     index=m['index_manifest']
     validate_index_manifest(index,template,m['inputs'])
+    producer_before(index['source_commit'],m['started_at'])
     result=summary(questions,predictions,template,split,run_id)
     if canonical(result)!=canonical(json.loads((directory/'summary.json').read_text('utf-8'))):raise ValueError('Saved metrics/latency differ from raw records')
     if canonical(error_analysis(questions,predictions,split))!=canonical(json.loads((directory/'error_analysis.json').read_text('utf-8'))):raise ValueError('Error analysis differs')
@@ -228,20 +246,27 @@ def validate_grant(grant,directory,current=False):
             'prepared_at','selection','verification','allowed_run_directory','template'}
     if set(grant)!=fields or grant['version']!='bm25-final-report-1.0' or grant['purpose']!='final_report' or grant['used_for_parameter_selection'] is not False:raise ValueError('Invalid test authorization')
     if not re.fullmatch('[0-9a-f]{40}',grant['source_commit']):raise ValueError('Invalid authorization commit')
+    producer_before(grant['source_commit'],grant['prepared_at'])
     release=json.loads((EVAL/'dataset_manifest.json').read_text('utf-8'))
     if grant['dataset_version']!=release['dataset_version'] or grant['test_sha256']!=release['test_lock']['sha256'] or release['test_lock']['state']!='locked':raise ValueError('Test lock mismatch')
     if (ROOT/grant['allowed_run_directory']).resolve()!=Path(directory).resolve() or not Path(directory).resolve().is_relative_to(ROOT/'reports/retrieval'):raise ValueError('Unauthorized test directory')
     require_inputs(grant['inputs'],current_sources=current)
     chosen=ROOT/grant['selection']['path'];verification=ROOT/grant['verification']['path']
     if record(chosen)!=grant['selection'] or record(verification)!=grant['verification']:raise ValueError('Selection/verification receipt changed')
+    for path in (chosen,verification):
+        name=path.resolve().relative_to(ROOT).as_posix()
+        raw=subprocess.run(['git','show',grant['source_commit']+':'+name],cwd=ROOT,capture_output=True)
+        if raw.returncode or raw.stdout!=path.read_bytes():raise ValueError('Grant receipt was not frozen in the authorized commit')
     selection=json.loads(chosen.read_text('utf-8'))
     root=(ROOT/selection['development_runs'][0]['run_manifest']['path']).parent.parent
     if selection!=choose(root) or grant['template']!=selection['selected_template']:raise ValueError('Selection not derived from all three development runs')
     for run in selection['development_runs']:
         if instant(json.loads((ROOT/run['run_manifest']['path']).read_text('utf-8'))['completed_at'])>instant(grant['prepared_at']):raise ValueError('Development postdates grant')
     receipt=json.loads(verification.read_text('utf-8'))
-    if (receipt.get('status')!='PASS' or type(receipt.get('total')) is not int or receipt['total']<30
-        or receipt.get('passed')!=receipt['total'] or len(receipt['checks'])!=receipt['total']
+    if (receipt.get('version')!='bm25-contract-1.0' or receipt.get('status')!='PASS'
+        or type(receipt.get('total')) is not int or receipt['total']<30
+        or type(receipt.get('passed')) is not int or receipt['passed']!=receipt['total'] or len(receipt['checks'])!=receipt['total']
         or not all(v is True for v in receipt['checks'].values()) or receipt.get('development_replay_checked') is not True):raise ValueError('Incomplete development verification')
+    if set(receipt['source_sha256'])!=set(V1_EXECUTION_FILES):raise ValueError('Incomplete verification source coverage')
     if any(receipt['source_sha256'].get(p)!=grant['inputs'][p]['sha256'] for p in V1_EXECUTION_FILES):raise ValueError('Verification source binding differs')
     if instant(receipt['captured_at'])>instant(grant['prepared_at']):raise ValueError('Verification postdates grant')
