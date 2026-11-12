@@ -18,7 +18,7 @@ def fixtures(cfg):
     """All IDs, questions, sources and observations below are invented fixtures."""
     run_id='a'*32
     sources=[dict(zip(SOURCE_FIELDS,(
-        f'S{i:02d}',f'https://example.invalid/synthetic/{i}',[[i*10,i*10+5]],
+        f'S{i:02d}',f'https://example.invalid/synthetic/{i}',[i*10,i*10+5],
         i,digest(f'record-{i}'.encode()),digest(f'content-{i}'.encode()))))
         for i in range(1,13)]
     questions=[

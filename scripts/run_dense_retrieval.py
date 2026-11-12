@@ -1,6 +1,6 @@
 """Measure fixed dense retrieval; develop first and authorize locked-test reporting."""
 from __future__ import annotations
-import argparse, importlib.metadata, json, os, platform, subprocess, time, uuid
+import argparse, importlib.metadata, json, os, platform, subprocess, sys, time, uuid
 from datetime import datetime,timezone
 from pathlib import Path
 from eval_dataset import ROOT,EVAL,CORPUS,digest,load_jsonl,write_json
@@ -9,6 +9,7 @@ from dense_retrieval_eval import (CONFIG,SOURCES,SOURCE_FIELDS,load_config,norma
 from run_retrieval_metrics import authorize_test
 from validate_eval_dataset import validate
 from validate_eval_receipt import require_receipt
+import dense_retrieval_contracts as contracts
 
 
 def now():return datetime.now(timezone.utc).isoformat()
@@ -52,6 +53,7 @@ def prepare_test(args):
             raise ValueError('Verification report producer/source hash differs')
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     require_committed_sources(commit)
+    list(contracts.verification_receipts(gates,commit,file_record))
     output=new_report(args.authorization)
     run_dir=Path(args.run_dir).resolve()
     if not run_dir.is_relative_to(ROOT/'reports/retrieval') or run_dir.exists():raise ValueError('Test run must use a new reports/retrieval directory')
@@ -74,6 +76,18 @@ def append_usage(path,event):
         handle.write(json.dumps(event,ensure_ascii=False,allow_nan=False)+'\n')
 
 
+def persist_failure(output,ledger,usage,split,run_id,request,exc):
+    failure={'status':'FAILED','run_id':run_id,'split':split,'recorded_at':now(),'request':request,
+             'error':type(exc).__name__+': '+str(exc)}
+    # A disk/permission failure may affect one channel; attempt both without
+    # replacing the original exception. Never claim durable recording if both fail.
+    actions=[lambda:write_json(output/'failure.json',failure)]
+    if split=='test':actions.append(lambda:append_usage(ledger,{**usage,'event':'FAILED',**failure}))
+    for action in actions:
+        try:action()
+        except Exception as secondary:print('Failure evidence channel unavailable: '+type(secondary).__name__,file=sys.stderr)
+
+
 def evaluate(args):
     cfg=load_config();release=require_original_release();split=args.mode
     output=Path(args.run_dir).resolve()
@@ -85,12 +99,21 @@ def evaluate(args):
     if split=='test':
         if not args.authorization:raise ValueError('Locked test requires a preregistered authorization')
         ticket=json.loads(Path(args.authorization).read_text('utf-8'))
+        contracts.grant_metadata(ticket,release,cfg,digest(CONFIG.read_bytes()),output.relative_to(ROOT).as_posix())
         authorize_test(release,'final_report',ticket,CONFIG.read_bytes())
         require_matching_snapshots(ticket['input_snapshots']);require_committed_sources(ticket['source_commit'])
         if ticket['config']!=cfg or ticket['allowed_run_directory']!=output.relative_to(ROOT).as_posix():
             raise ValueError('Authorized configuration/run directory differs')
         for record in [ticket['development_manifest'],ticket['development_summary']]+ticket['development_verification']:
             if file_record(ROOT/record['path'])!=record:raise ValueError('Development evidence changed since test authorization')
+        devdir=(ROOT/ticket['development_manifest']['path']).resolve().parent
+        if replay(devdir)['split']!='dev':raise ValueError('Authorized development run is invalid')
+        devmanifest=json.loads((devdir/'run_manifest.json').read_text('utf-8'))
+        if contracts.instant(devmanifest['completed_at'])>contracts.instant(ticket['prepared_at']):raise ValueError('Development postdates authorization')
+        for receipt in contracts.verification_receipts(ticket['development_verification'],ticket['source_commit'],file_record):
+            stamp=next((receipt[k] for k in ('generated_at','checked_at','captured_at') if k in receipt),None)
+            if contracts.instant(stamp)>contracts.instant(ticket['prepared_at']):raise ValueError('Verification postdates authorization')
+        commit=ticket['source_commit']
     # Only these two fields cross into the retrieval loop. Gold is scored later.
     labelled=load_jsonl(EVAL/f'retrieval_{split}.jsonl')
     queries=[{'question_id':q['question_id'],'question':q['question']} for q in labelled]
@@ -101,13 +124,13 @@ def evaluate(args):
     usage={'run_id':run_id,'run_directory':output.relative_to(ROOT).as_posix(),'split':split,'purpose':'final_report',
       'used_for_parameter_selection':False,'source_commit':commit,'config_sha256':digest(CONFIG.read_bytes()),
       'test_sha256':release['test_lock']['sha256']}
-    if split=='test':
-        usage['authorization']=file_record(args.authorization)
-        append_usage(ledger,{**usage,'event':'STARTED','recorded_at':now()})
-    write_json(output/'run_started.json',{'run_id':run_id,'started_at':started_at,'split':split,
-      'source_commit':commit,'input_snapshots':before,'authorization':file_record(args.authorization) if ticket else None})
     index=None;current_request=None
     try:
+        if split=='test':
+            usage['authorization']=file_record(args.authorization)
+            append_usage(ledger,{**usage,'event':'STARTED','recorded_at':now()})
+        write_json(output/'run_started.json',{'run_id':run_id,'started_at':started_at,'split':split,
+          'source_commit':commit,'input_snapshots':before,'authorization':file_record(args.authorization) if ticket else None})
         from dense_index import DenseIndex,PinnedEmbedder,inventory
         original_artifacts={**inventory(ROOT/cfg['dense_index']),
                             'index_manifest.json':file_record(ROOT/cfg['dense_index']/'index_manifest.json')}
@@ -175,13 +198,18 @@ def evaluate(args):
         print(json.dumps({'status':'COMPLETE','split':split,'questions':len(predictions),
           'metrics':summary['quality']['metrics'],'latency_samples':summary['latency']['samples'],
           'latency_total_ms':summary['latency']['stages']['total_seconds']},ensure_ascii=False))
-    except Exception as exc:
-        failure={'status':'FAILED','run_id':run_id,'split':split,'recorded_at':now(),'request':current_request,'error':type(exc).__name__+': '+str(exc)}
-        write_json(output/'failure.json',failure)
-        if split=='test':append_usage(ledger,{**usage,'event':'FAILED',**failure})
+    except BaseException as exc:
+        persist_failure(output,ledger,usage,split,run_id,current_request,exc)
         raise
     finally:
-        if index is not None:index.close()
+        if index is not None:
+            primary_active=sys.exc_info()[0] is not None
+            try:index.close()
+            except Exception as cleanup:
+                if primary_active:print('Index cleanup also failed: '+type(cleanup).__name__,file=sys.stderr)
+                else:
+                    persist_failure(output,ledger,usage,split,run_id,current_request,cleanup)
+                    raise
 
 
 def main():
