@@ -8,8 +8,8 @@ from bm25_retrieval_eval import (replay,choose,validate_grant,instant,now,valida
 from eval_dataset import digest,load_jsonl
 from validate_eval_dataset import validate
 
-PORTABILITY_SOURCES=tuple('scripts/'+p for p in ('verify_bm25_portability.py','bm25_retrieval_eval.py',
-                                              'run_bm25_retrieval.py','export_bm25_manifests.py'))
+PORTABILITY_SOURCES=('verify_bm25_portability.py','bm25_retrieval_eval.py',
+                     'run_bm25_retrieval.py','export_bm25_manifests.py')
 
 
 def validate_receipt(receipt,total,sources,reference):
@@ -18,10 +18,16 @@ def validate_receipt(receipt,total,sources,reference):
         or not isinstance(receipt.get('checks'),dict) or len(receipt['checks'])!=total
         or any(v is not True for v in receipt['checks'].values())
         or set(receipt.get('source_sha256',{}))!=set(sources)):raise ValueError('Incomplete or failed acceptance receipt')
-    producer_before(reference,receipt['captured_at'])
+    from bm25_index import committed
+    committed((),reference)
     for path in sources:
-        raw=subprocess.check_output(['git','show',reference+':'+path],cwd=ROOT)
+        name=path if '/' in path else 'scripts/'+path
+        raw=subprocess.check_output(['git','show',reference+':'+name],cwd=ROOT)
         if receipt['source_sha256'][path]!=digest(raw):raise ValueError('Acceptance receipt source binding differs')
+        # A later release may contain the same code; the last code change, not
+        # that release's timestamp, must predate the historical measurement.
+        changed=subprocess.check_output(['git','log','-1','--format=%cI',reference,'--',name],cwd=ROOT,text=True).strip()
+        if instant(changed)>instant(receipt['captured_at']):raise ValueError('Receipt predates its code')
     return True
 
 
