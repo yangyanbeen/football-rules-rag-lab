@@ -1,0 +1,219 @@
+{
+  "indexes": {
+    "body": {
+      "artifacts": {
+        "index.json": {
+          "sha256": "53686404b8c8425e49fbe94f2fdf812a375568ef8b7be6a9cf3408d6ab59a427",
+          "size_bytes": 191224
+        },
+        "source_map.json": {
+          "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863",
+          "size_bytes": 36576
+        }
+      },
+      "corpus": {
+        "path": "data/processed/rag_chunks_zh.jsonl",
+        "sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "size_bytes": 302368
+      },
+      "corpus_body_or_vectors_public": false,
+      "dependency": {
+        "archive_sha256": "055ca12f62674fafed09427f176506079bc135638a14e23e25be909131928db2",
+        "default_dictionary_sha256": "7197c3211ddd98962b036cdf40324d1ea2bfaa12bd028e68faa70111a88e12a8"
+      },
+      "inputs": {
+        "config/bm25_b0.json": {
+          "path": "config/bm25_b0.json",
+          "sha256": "a54ed9a2cef6cdb02f1798075ddcb9c48d0a8d47873eac9964cd03274c3097dc",
+          "size_bytes": 903
+        },
+        "config/bm25_dependency.json": {
+          "path": "config/bm25_dependency.json",
+          "sha256": "89a1ab9e2ac2a79cfe16b190ce00a7f6ec4d98b76d0910e73566a88418eb0b1e",
+          "size_bytes": 369
+        },
+        "config/bm25_stopwords.txt": {
+          "path": "config/bm25_stopwords.txt",
+          "sha256": "9846c49af0e318a52b851e981620f99a8d33008cbe84903b92351aa24d059bb7",
+          "size_bytes": 69
+        },
+        "config/bm25_userdict.txt": {
+          "path": "config/bm25_userdict.txt",
+          "sha256": "afaf13e44438d41f552a93c48d3c1d1c4862aea63ef487d170908d96b3c5c255",
+          "size_bytes": 411
+        }
+      },
+      "records": 99,
+      "source_commit": "1f83fadc484390a5eaaa84b36915c1e4ddd6823c",
+      "sources": {
+        "scripts/bm25_index.py": {
+          "path": "scripts/bm25_index.py",
+          "sha256": "1428b38df11e11f32a075ed4d93720fdcb30bc9009c7dddb5add118c2ee8dc68",
+          "size_bytes": 12301
+        },
+        "scripts/build_bm25_index.py": {
+          "path": "scripts/build_bm25_index.py",
+          "sha256": "5b9f349735e5b336ef9f274f4a2d03be75cf1fa4fcc7405c433f6fe6294d5b14",
+          "size_bytes": 515
+        },
+        "scripts/eval_dataset.py": {
+          "path": "scripts/eval_dataset.py",
+          "sha256": "48d47343ce008457d031c54a40019ae8bc3a9c76bdaf2d9cbbc274628e3785c1",
+          "size_bytes": 3147
+        },
+        "scripts/install_bm25_runtime.py": {
+          "path": "scripts/install_bm25_runtime.py",
+          "sha256": "fac6dc784c4b5b1244fefcb9e30782e4ff790a11a689cb703a7ea962f6ec5a1b",
+          "size_bytes": 3537
+        }
+      },
+      "status": "COMPLETE",
+      "template": "body",
+      "version": "bm25-index-manifest-1.0"
+    },
+    "path_body": {
+      "artifacts": {
+        "index.json": {
+          "sha256": "bcb81ef0b6928ebf6cf21a7a906c8e0eadfcd20a22a2650becef133984dd45cb",
+          "size_bytes": 212855
+        },
+        "source_map.json": {
+          "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863",
+          "size_bytes": 36576
+        }
+      },
+      "corpus": {
+        "path": "data/processed/rag_chunks_zh.jsonl",
+        "sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "size_bytes": 302368
+      },
+      "corpus_body_or_vectors_public": false,
+      "dependency": {
+        "archive_sha256": "055ca12f62674fafed09427f176506079bc135638a14e23e25be909131928db2",
+        "default_dictionary_sha256": "7197c3211ddd98962b036cdf40324d1ea2bfaa12bd028e68faa70111a88e12a8"
+      },
+      "inputs": {
+        "config/bm25_b0.json": {
+          "path": "config/bm25_b0.json",
+          "sha256": "a54ed9a2cef6cdb02f1798075ddcb9c48d0a8d47873eac9964cd03274c3097dc",
+          "size_bytes": 903
+        },
+        "config/bm25_dependency.json": {
+          "path": "config/bm25_dependency.json",
+          "sha256": "89a1ab9e2ac2a79cfe16b190ce00a7f6ec4d98b76d0910e73566a88418eb0b1e",
+          "size_bytes": 369
+        },
+        "config/bm25_stopwords.txt": {
+          "path": "config/bm25_stopwords.txt",
+          "sha256": "9846c49af0e318a52b851e981620f99a8d33008cbe84903b92351aa24d059bb7",
+          "size_bytes": 69
+        },
+        "config/bm25_userdict.txt": {
+          "path": "config/bm25_userdict.txt",
+          "sha256": "afaf13e44438d41f552a93c48d3c1d1c4862aea63ef487d170908d96b3c5c255",
+          "size_bytes": 411
+        }
+      },
+      "records": 99,
+      "source_commit": "1f83fadc484390a5eaaa84b36915c1e4ddd6823c",
+      "sources": {
+        "scripts/bm25_index.py": {
+          "path": "scripts/bm25_index.py",
+          "sha256": "1428b38df11e11f32a075ed4d93720fdcb30bc9009c7dddb5add118c2ee8dc68",
+          "size_bytes": 12301
+        },
+        "scripts/build_bm25_index.py": {
+          "path": "scripts/build_bm25_index.py",
+          "sha256": "5b9f349735e5b336ef9f274f4a2d03be75cf1fa4fcc7405c433f6fe6294d5b14",
+          "size_bytes": 515
+        },
+        "scripts/eval_dataset.py": {
+          "path": "scripts/eval_dataset.py",
+          "sha256": "48d47343ce008457d031c54a40019ae8bc3a9c76bdaf2d9cbbc274628e3785c1",
+          "size_bytes": 3147
+        },
+        "scripts/install_bm25_runtime.py": {
+          "path": "scripts/install_bm25_runtime.py",
+          "sha256": "fac6dc784c4b5b1244fefcb9e30782e4ff790a11a689cb703a7ea962f6ec5a1b",
+          "size_bytes": 3537
+        }
+      },
+      "status": "COMPLETE",
+      "template": "path_body",
+      "version": "bm25-index-manifest-1.0"
+    },
+    "title_body": {
+      "artifacts": {
+        "index.json": {
+          "sha256": "d7882cb8521198086ef9c80d1e50723d043d586125a6b6e89078cf91e38b92c1",
+          "size_bytes": 194351
+        },
+        "source_map.json": {
+          "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863",
+          "size_bytes": 36576
+        }
+      },
+      "corpus": {
+        "path": "data/processed/rag_chunks_zh.jsonl",
+        "sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "size_bytes": 302368
+      },
+      "corpus_body_or_vectors_public": false,
+      "dependency": {
+        "archive_sha256": "055ca12f62674fafed09427f176506079bc135638a14e23e25be909131928db2",
+        "default_dictionary_sha256": "7197c3211ddd98962b036cdf40324d1ea2bfaa12bd028e68faa70111a88e12a8"
+      },
+      "inputs": {
+        "config/bm25_b0.json": {
+          "path": "config/bm25_b0.json",
+          "sha256": "a54ed9a2cef6cdb02f1798075ddcb9c48d0a8d47873eac9964cd03274c3097dc",
+          "size_bytes": 903
+        },
+        "config/bm25_dependency.json": {
+          "path": "config/bm25_dependency.json",
+          "sha256": "89a1ab9e2ac2a79cfe16b190ce00a7f6ec4d98b76d0910e73566a88418eb0b1e",
+          "size_bytes": 369
+        },
+        "config/bm25_stopwords.txt": {
+          "path": "config/bm25_stopwords.txt",
+          "sha256": "9846c49af0e318a52b851e981620f99a8d33008cbe84903b92351aa24d059bb7",
+          "size_bytes": 69
+        },
+        "config/bm25_userdict.txt": {
+          "path": "config/bm25_userdict.txt",
+          "sha256": "afaf13e44438d41f552a93c48d3c1d1c4862aea63ef487d170908d96b3c5c255",
+          "size_bytes": 411
+        }
+      },
+      "records": 99,
+      "source_commit": "1f83fadc484390a5eaaa84b36915c1e4ddd6823c",
+      "sources": {
+        "scripts/bm25_index.py": {
+          "path": "scripts/bm25_index.py",
+          "sha256": "1428b38df11e11f32a075ed4d93720fdcb30bc9009c7dddb5add118c2ee8dc68",
+          "size_bytes": 12301
+        },
+        "scripts/build_bm25_index.py": {
+          "path": "scripts/build_bm25_index.py",
+          "sha256": "5b9f349735e5b336ef9f274f4a2d03be75cf1fa4fcc7405c433f6fe6294d5b14",
+          "size_bytes": 515
+        },
+        "scripts/eval_dataset.py": {
+          "path": "scripts/eval_dataset.py",
+          "sha256": "48d47343ce008457d031c54a40019ae8bc3a9c76bdaf2d9cbbc274628e3785c1",
+          "size_bytes": 3147
+        },
+        "scripts/install_bm25_runtime.py": {
+          "path": "scripts/install_bm25_runtime.py",
+          "sha256": "fac6dc784c4b5b1244fefcb9e30782e4ff790a11a689cb703a7ea962f6ec5a1b",
+          "size_bytes": 3537
+        }
+      },
+      "status": "COMPLETE",
+      "template": "title_body",
+      "version": "bm25-index-manifest-1.0"
+    }
+  },
+  "postings_and_tokens_public": false,
+  "version": "bm25-public-indexes-1.0"
+}

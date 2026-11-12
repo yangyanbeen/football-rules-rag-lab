@@ -20,6 +20,16 @@ def verify():
     actual={p.relative_to(HOME).as_posix():sha(p.read_bytes()) for p in (HOME/'site-packages').rglob('*')
             if p.is_file() and '__pycache__' not in p.parts and p.suffix not in ('.pyc','.pyo')}
     if actual!=known:raise ValueError('Isolated jieba files differ from verified archive')
+    raw=(HOME/'jieba-0.42.1.tar.gz').read_bytes()
+    if len(raw)!=lock['size_bytes'] or sha(raw)!=lock['sha256']:raise ValueError('Dependency archive differs from lock')
+    expected={}
+    with tarfile.open(fileobj=io.BytesIO(raw),mode='r:gz') as tar:
+        for member in tar.getmembers():
+            parts=PurePosixPath(member.name).parts
+            if member.isfile() and len(parts)>1 and parts[0]=='jieba-0.42.1' and (parts[1]=='jieba' or parts[1:] == ('LICENSE',)):
+                expected['site-packages/'+str(PurePosixPath(*parts[1:]))]=sha(tar.extractfile(member).read())
+    if actual!=expected or receipt['default_dictionary_sha256']!=actual['site-packages/jieba/dict.txt']:
+        raise ValueError('Installed receipt cannot override official archive bytes')
     return receipt
 
 
