@@ -1,0 +1,56 @@
+{
+  "scope": "Fresh ordinary-account browser UI submission; private DOM and full outputs excluded.",
+  "url": "http://127.0.0.1:7861/",
+  "private_capture_sha256": "c6781e64c79d4c316628eef89a623009647257a3880b2b27709cb2a1bbc8a9aa",
+  "qa": [
+    {
+      "question_id": "Q1",
+      "question": "越位位置本身是否就是越位犯规？裁判还需要判断哪些参与比赛的行为？请给出规则来源。",
+      "captured_at": "2026-11-11T10:03:15.743Z",
+      "passed": true,
+      "citation_chunk_ids": [
+        "L11-01",
+        "L11-02",
+        "L11-03"
+      ],
+      "answer_sha256": "7e820e959d2caf92a73fec53eef078081740d66a735f6f7700c59363fb057354",
+      "visible_answer_sha256": "18a4ad405cd6f792aafcb3dcded8608c139ff581b16bfb950783395060f147e9",
+      "citation_urls": [
+        "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "question": "哪些行为可以判直接任意球？请从规则资料中列举三项，并分别给出引用。",
+      "captured_at": "2026-11-11T10:03:47.501Z",
+      "passed": true,
+      "citation_chunk_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "answer_sha256": "b957c867d2fb2d7258a36629a48bf375ad9d16c439a82bc83926c6a468e057f1",
+      "visible_answer_sha256": "b95f32f478e1c473d288dd3107aa253c8b8d12f9b3404d5e74b0872338b39009",
+      "citation_urls": [
+        "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "question": "球门球开出后，球在什么条件下才算进入比赛？请说明触球或进球相关条件，并给出引用。",
+      "captured_at": "2026-11-11T10:04:22.801Z",
+      "passed": true,
+      "citation_chunk_ids": [
+        "L16-01",
+        "L16-02",
+        "L16-03",
+        "L16-04"
+      ],
+      "answer_sha256": "7466e799bf080e598713f9386bf84558f5c6dd77ef94e2b4e142feb5e7bcdee4",
+      "visible_answer_sha256": "0e18003a5d688d6435da4c25a20ce70c2bc9940d2bff82c76529d1e3bce26197",
+      "citation_urls": [
+        "https://en.wikipedia.org/wiki/Goal_kick"
+      ]
+    }
+  ]
+}

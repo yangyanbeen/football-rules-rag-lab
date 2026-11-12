@@ -1,0 +1,18 @@
+{
+  "captured_at": "2026-11-12T12:13:57.750563+00:00",
+  "status": "PASS",
+  "checks": {
+    "http_7861": true,
+    "http_7862": true,
+    "http_7863": true,
+    "review_is_locked_read_only": true,
+    "human_review_count_still_90": true
+  },
+  "scope": "Read-only current HTTP health; no review events, dataset edits or browser questions submitted.",
+  "private_startup_logs": {
+    "kotaemon.stdout.log": "c543d2d89650254973449bbeebdb44e19d5b68c46fcbac1fa88494cc65b889e1",
+    "kotaemon.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "review.stdout.log": "caf4f35b9161e2a56d549339a10c15323fb9254f2f6d1e8b64bb27a233693058",
+    "review.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

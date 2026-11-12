@@ -1,0 +1,170 @@
+{
+  "captured_at": "2026-11-12T12:06:52.188037+00:00",
+  "passed": 19,
+  "total": 19,
+  "checks": [
+    {
+      "check": "invalid_evidence_payload_1_rejected",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "invalid_evidence_payload_2_rejected",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "invalid_evidence_payload_3_rejected",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "invalid_evidence_payload_4_rejected",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "invalid_evidence_payload_5_rejected",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "invalid_evidence_payload_6_rejected",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "invalid_evidence_payload_7_rejected",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "invalid_evidence_payload_8_rejected",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "valid_evidence_is_preserved",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "valid_refusal_has_no_citations",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "modified_quote_cannot_be_rendered",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "all_99_units_roundtrip_without_quote_or_URL_rewriting",
+      "passed": true,
+      "details": {
+        "units": 99
+      }
+    },
+    {
+      "check": "empty_selected_file_scope_refuses_without_using_global_corpus",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "unverified_official_version_refused",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "fabricated_rule_request_refused",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "oversized_question_refused_without_truncation",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "saved_16_regressions_have_real_corpus_quotes_and_citations",
+      "passed": true,
+      "details": [
+        {
+          "id": "Q1",
+          "errors": []
+        },
+        {
+          "id": "Q2",
+          "errors": []
+        },
+        {
+          "id": "Q3",
+          "errors": []
+        },
+        {
+          "id": "R04",
+          "errors": []
+        },
+        {
+          "id": "R05",
+          "errors": []
+        },
+        {
+          "id": "R06",
+          "errors": []
+        },
+        {
+          "id": "R07",
+          "errors": []
+        },
+        {
+          "id": "R08",
+          "errors": []
+        },
+        {
+          "id": "R09",
+          "errors": []
+        },
+        {
+          "id": "R10",
+          "errors": []
+        },
+        {
+          "id": "R11",
+          "errors": []
+        },
+        {
+          "id": "R12",
+          "errors": []
+        },
+        {
+          "id": "R13",
+          "errors": []
+        },
+        {
+          "id": "R14",
+          "errors": []
+        },
+        {
+          "id": "R15",
+          "errors": []
+        },
+        {
+          "id": "R16",
+          "errors": []
+        }
+      ]
+    },
+    {
+      "check": "comparison_requires_both_rules",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "runtime_context_exceeds_budget_plus_output",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "regression_sha256": "32e1d27324d3fecfd69e75a3c15e1c5d42f94a0d140db6e4bc6bd36756564b41"
+}
