@@ -1,0 +1,33 @@
+{
+  "baseline": "93687ce5a73853a63782d2204225b046697c7028",
+  "captured_at": "2026-11-12T13:46:03.430577+00:00",
+  "checks": {
+    "13_original_experiment_objects_preserved": true,
+    "20_original_private_index_files_unchanged": true,
+    "61_local_corpus_files_unchanged": true,
+    "actual_restored_dev_40_questions_same_quality": true,
+    "all_original_files_outside_declared_changes_unchanged": true,
+    "all_original_files_present": true,
+    "all_original_reports_and_evaluation_bytes_unchanged": true,
+    "all_original_task8_scope_and_resources_unchanged": true,
+    "authority_documents_and_original_validator_unchanged": true,
+    "contract.json": true,
+    "delivery-restored-current.json": true,
+    "no_private_indexes_dependencies_or_corpus_tracked": true,
+    "original_experiment_log_prefix_preserved": true,
+    "original_test_ledger_two_events_and_exact_bytes": true,
+    "portability.json": true,
+    "private_human_review_ledger_unchanged": true,
+    "regressions-current.json": true,
+    "two_repeatable_segmentation_dev_runs_same_quality_distinct_indexes": true
+  },
+  "errors": [],
+  "new_development_measurements": 360,
+  "new_development_runs": 3,
+  "new_locked_test_retrievals": 0,
+  "passed": 18,
+  "source_sha256": "f62849c87bcca45bd56645469fee5b4873b80c5af3bf391e5ce0d3998c727282",
+  "status": "PASS",
+  "total": 18,
+  "version": "task8-audit-preservation-1.0"
+}

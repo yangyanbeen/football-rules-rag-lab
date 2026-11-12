@@ -70,6 +70,8 @@
 
 ## 任务八BM25中文基线
 
+最新 [TASK_08_SUPPLEMENT.md](TASK_08_SUPPLEMENT.md)：四组缺陷修复、新回归32/32、原专项74/74、完整恢复门禁35/35、恢复8/8及八组公开副本复算13/13通过。证据在 rechecks/task8-audit-20261112；中间失败报告保留，最终使用 regressions-current 和 delivery-restored-current。原正式测试及旧交付报告保持原字节。
+
 最新 [TASK_08_DELIVERY.md](TASK_08_DELIVERY.md)；规定汇总 [bm25_baseline.json](bm25_baseline.json)，原始结果retrieval/bm25_b0/development及test。35项完整门禁、74项当前专项、8项复现保护，公开副本五组复算；原任务四/六/七回归分别通过。
 
 初次失败保留dev/body/failure.json，该目录即使有summary也不计成功。原74项是65e7516唯一正式测试前的回执；当前74项与恢复dev另列。segmentation-dev是测试后仅开发集补充实验，准确模式正式B0及唯一test不变；INTEGRITY_SCOPE解释共享哈希I/O边界。
