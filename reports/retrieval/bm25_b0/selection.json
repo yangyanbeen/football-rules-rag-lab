@@ -1,0 +1,71 @@
+{
+  "development_only": true,
+  "development_runs": [
+    {
+      "metrics": {
+        "MRR@10": 0.8888888888888888,
+        "Recall@10": 0.96875,
+        "Recall@5": 0.9375,
+        "all_gold_coverage@5": 0.9375
+      },
+      "run_manifest": {
+        "path": "reports/retrieval/bm25_b0/development/body/run_manifest.json",
+        "sha256": "dda280602f0d6a490413380aa19ffeff5e765052f110ff4904d9101f3062daa3",
+        "size_bytes": 9832
+      },
+      "summary": {
+        "path": "reports/retrieval/bm25_b0/development/body/summary.json",
+        "sha256": "25123bc5e06c861f8d601d5fbfa85c5052e1e57b8a61993523a55c1ed3ad32af",
+        "size_bytes": 12297
+      },
+      "template": "body"
+    },
+    {
+      "metrics": {
+        "MRR@10": 0.8932291666666666,
+        "Recall@10": 0.96875,
+        "Recall@5": 0.96875,
+        "all_gold_coverage@5": 0.96875
+      },
+      "run_manifest": {
+        "path": "reports/retrieval/bm25_b0/development/title_body/run_manifest.json",
+        "sha256": "3e26c7e1520866ff3e283998abed4a9ce28f70f1cf0ec6edd098401d5ce4f7b5",
+        "size_bytes": 9845
+      },
+      "summary": {
+        "path": "reports/retrieval/bm25_b0/development/title_body/summary.json",
+        "sha256": "7dfb3e352cbf9d4cdfa6e507073f55db3b84f4d06030ceb0cb9abbbb88b3b929",
+        "size_bytes": 12375
+      },
+      "template": "title_body"
+    },
+    {
+      "metrics": {
+        "MRR@10": 0.8898809523809523,
+        "Recall@10": 0.96875,
+        "Recall@5": 0.9375,
+        "all_gold_coverage@5": 0.9375
+      },
+      "run_manifest": {
+        "path": "reports/retrieval/bm25_b0/development/path_body/run_manifest.json",
+        "sha256": "dd820996294f7fbde66e7e3e8b8381a23a3cdc3d68444f44544305a3103f75a3",
+        "size_bytes": 9844
+      },
+      "summary": {
+        "path": "reports/retrieval/bm25_b0/development/path_body/summary.json",
+        "sha256": "d41ae73b7f712968e8b4114fc712c757d6f3036375755ce1f466c6b20f79231c",
+        "size_bytes": 12344
+      },
+      "template": "path_body"
+    }
+  ],
+  "policy": [
+    "MRR@10",
+    "Recall@5",
+    "Recall@10",
+    "template order"
+  ],
+  "selected_template": "title_body",
+  "test_scores_read_for_selection": false,
+  "version": "bm25-selection-1.0"
+}
