@@ -28,6 +28,10 @@ def main():
     check('new_execution_still_requires_current_committed_source',rejects(lambda:e.require_committed_sources(manifest['source_commit'])))
     check('authorization_dependency_now_in_source_policy','scripts/run_retrieval_metrics.py' in e.SOURCES)
     check('new_contract_module_in_source_policy','scripts/dense_retrieval_contracts.py' in e.SOURCES)
+    check('future_added_helper_does_not_expand_historical_policy',len(c.recorded_sources(manifest['source_commit'],e.SOURCES+('scripts/future_helper.py',)))==11)
+    malicious=tuple(c.recorded_sources(manifest['source_commit'],e.SOURCES))+('scripts/../.env',)
+    with patch.object(c,'git_blob',return_value=('SOURCES='+repr(malicious)).encode()):
+        check('historical_policy_rejects_non_source_paths',rejects(lambda:c.recorded_sources(manifest['source_commit'],e.SOURCES)))
     current=e.snapshots();actual=e.file_record
     def changed(path):
         r=actual(path)

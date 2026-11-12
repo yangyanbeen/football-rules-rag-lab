@@ -49,8 +49,14 @@ def recorded_sources(commit,current_sources):
             and any(isinstance(t,ast.Name) and t.id=='SOURCES' for t in n.targets)]
     if len(values)!=1 or not isinstance(values[0],tuple):raise ValueError('Missing committed source policy')
     names=values[0]
-    legacy=set(current_sources)-{'scripts/dense_retrieval_contracts.py','scripts/run_retrieval_metrics.py'}
-    if len(names)!=len(set(names)) or set(names) not in (legacy,set(current_sources)):
+    legacy={'scripts/dense_retrieval_eval.py','scripts/run_dense_retrieval.py','scripts/recompute_dense_retrieval.py',
+      'scripts/retrieval_metrics.py','scripts/verify_dense_metric_arithmetic.py','scripts/verify_dense_retrieval_contract.py',
+      'scripts/dense_index.py','scripts/dense_telemetry.py','scripts/eval_dataset.py',
+      'scripts/validate_eval_dataset.py','scripts/validate_eval_receipt.py'}
+    # Read the producer's committed policy. Adding a later helper must not
+    # retroactively expand the expected keys of an old immutable snapshot.
+    if (any(not isinstance(p,str) or not re.fullmatch(r'scripts/[A-Za-z_0-9]+\.py',p) for p in names)
+        or len(names)!=len(set(names)) or not legacy<=set(names)):
         raise ValueError('Unknown committed source snapshot policy')
     return names
 
