@@ -8,6 +8,8 @@
 
 ## 先看什么
 
+任务七最新[缺陷补齐与重新交付](reports/TASK_07_SUPPLEMENT.md)：7组问题已关闭，新增回归61/61、完整门禁43/43；修复后开发入口真实通过，原dev/test及新dev在公开副本复算一致。原95%测试基线和原始记录不变，没有重新检索锁定测试。
+
 任务四至六本轮补审入口：[补交付报告](reports/TASK_04_06_SUPPLEMENT.md)。修复8组边界问题；原交付数据和历史报告保留，新的真实运行证据统一在reports/rechecks/task456-20261112。新增回归58/58与原任务验收分别记录。
 
 任务四、五最新补缺见[仓库审计与补交付](reports/TASK_04_05_SUPPLEMENT.md)：原上传文件完整，6组边界问题已修复，新增39项回归通过；原交付数据、人工记录和索引不变。统一复核入口为scripts/recheck_task45.ps1，公开凭证可单独用python scripts/validate_eval_receipt.py检查。

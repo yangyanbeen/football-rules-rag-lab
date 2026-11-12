@@ -15,3 +15,5 @@
 | D7-07 | 门禁写死239个文件和整个使用台账仅2条 | 基线按提交文件覆盖和实际哈希核验；按run_id选择对应开始/完成事件，保留其他合法运行/失败记录 |
 
 本轮新增报告统一在reports/rechecks/task7-audit-20261112；破坏样例在忽略.tmp/.runtime隔离目录。验收包含原算术54项、合同/复算回归、新缺陷回归、任务七原要求的完整门禁，以及无模型/语料/向量的公开副本复算。维护当前说明和任务14归档，小提交/PR/新标签，仅写football-rules-rag-lab。
+
+真实开发运行遵守原runner的新目录限制，保存在reports/retrieval/task7-audit-20261112/dev，其复算回执仍在上述统一复核目录。原reports/retrieval/dense_b0不覆盖。
