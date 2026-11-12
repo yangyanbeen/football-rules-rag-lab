@@ -1,0 +1,274 @@
+{
+  "artifacts": {
+    "error_analysis.json": {
+      "sha256": "b41e19ec3f5883ac1f1fd924d388eb3f37c469fdb574d00153d83f6b0cbb8d79",
+      "size_bytes": 892
+    },
+    "predictions.jsonl": {
+      "sha256": "28620e62678211791b8d276085145c718b6105c9444ab44fc30a03c142f58a9a",
+      "size_bytes": 274576
+    },
+    "requests.jsonl": {
+      "sha256": "166e8e8f7d0b8878b85e45cdb2314c1c14399ca58b94bb157888b18ef00fb091",
+      "size_bytes": 107158
+    },
+    "run_started.json": {
+      "sha256": "ae30c6fb8dc4c638f4836c1050c7ca712ecb9a207ba90d132abf4664b1f91994",
+      "size_bytes": 5165
+    },
+    "source_map.json": {
+      "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863",
+      "size_bytes": 36576
+    },
+    "summary.json": {
+      "sha256": "40b465d0b47df1c6f74476d27fe65f7e16b1a386fca3d49d6b7dcef86e40eb26",
+      "size_bytes": 14595
+    }
+  },
+  "authorization": {
+    "path": "reports/retrieval/bm25_b0/test_authorization.json",
+    "sha256": "7c3f51a32994f25d29ae1cfad26463c41a19ef33e11372ae13cc204a80cdc4d1",
+    "size_bytes": 5528
+  },
+  "completed_at": "2026-11-12T13:01:56.670258+00:00",
+  "environment": {
+    "concurrency": 1,
+    "implementation": "CPython",
+    "logical_cpu_count": 20,
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "python": "3.10.22",
+    "system": "Windows"
+  },
+  "index_manifest": {
+    "artifacts": {
+      "index.json": {
+        "sha256": "d7882cb8521198086ef9c80d1e50723d043d586125a6b6e89078cf91e38b92c1",
+        "size_bytes": 194351
+      },
+      "source_map.json": {
+        "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863",
+        "size_bytes": 36576
+      }
+    },
+    "corpus": {
+      "path": "data/processed/rag_chunks_zh.jsonl",
+      "sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+      "size_bytes": 302368
+    },
+    "corpus_body_or_vectors_public": false,
+    "dependency": {
+      "archive_sha256": "055ca12f62674fafed09427f176506079bc135638a14e23e25be909131928db2",
+      "default_dictionary_sha256": "7197c3211ddd98962b036cdf40324d1ea2bfaa12bd028e68faa70111a88e12a8"
+    },
+    "inputs": {
+      "config/bm25_b0.json": {
+        "path": "config/bm25_b0.json",
+        "sha256": "a54ed9a2cef6cdb02f1798075ddcb9c48d0a8d47873eac9964cd03274c3097dc",
+        "size_bytes": 903
+      },
+      "config/bm25_dependency.json": {
+        "path": "config/bm25_dependency.json",
+        "sha256": "89a1ab9e2ac2a79cfe16b190ce00a7f6ec4d98b76d0910e73566a88418eb0b1e",
+        "size_bytes": 369
+      },
+      "config/bm25_stopwords.txt": {
+        "path": "config/bm25_stopwords.txt",
+        "sha256": "9846c49af0e318a52b851e981620f99a8d33008cbe84903b92351aa24d059bb7",
+        "size_bytes": 69
+      },
+      "config/bm25_userdict.txt": {
+        "path": "config/bm25_userdict.txt",
+        "sha256": "afaf13e44438d41f552a93c48d3c1d1c4862aea63ef487d170908d96b3c5c255",
+        "size_bytes": 411
+      }
+    },
+    "records": 99,
+    "source_commit": "1f83fadc484390a5eaaa84b36915c1e4ddd6823c",
+    "sources": {
+      "scripts/bm25_index.py": {
+        "path": "scripts/bm25_index.py",
+        "sha256": "1428b38df11e11f32a075ed4d93720fdcb30bc9009c7dddb5add118c2ee8dc68",
+        "size_bytes": 12301
+      },
+      "scripts/build_bm25_index.py": {
+        "path": "scripts/build_bm25_index.py",
+        "sha256": "5b9f349735e5b336ef9f274f4a2d03be75cf1fa4fcc7405c433f6fe6294d5b14",
+        "size_bytes": 515
+      },
+      "scripts/eval_dataset.py": {
+        "path": "scripts/eval_dataset.py",
+        "sha256": "48d47343ce008457d031c54a40019ae8bc3a9c76bdaf2d9cbbc274628e3785c1",
+        "size_bytes": 3147
+      },
+      "scripts/install_bm25_runtime.py": {
+        "path": "scripts/install_bm25_runtime.py",
+        "sha256": "fac6dc784c4b5b1244fefcb9e30782e4ff790a11a689cb703a7ea962f6ec5a1b",
+        "size_bytes": 3537
+      }
+    },
+    "status": "COMPLETE",
+    "template": "title_body",
+    "version": "bm25-index-manifest-1.0"
+  },
+  "inputs": {
+    "config/bm25_b0.json": {
+      "path": "config/bm25_b0.json",
+      "sha256": "a54ed9a2cef6cdb02f1798075ddcb9c48d0a8d47873eac9964cd03274c3097dc",
+      "size_bytes": 903
+    },
+    "config/bm25_dependency.json": {
+      "path": "config/bm25_dependency.json",
+      "sha256": "89a1ab9e2ac2a79cfe16b190ce00a7f6ec4d98b76d0910e73566a88418eb0b1e",
+      "size_bytes": 369
+    },
+    "config/bm25_stopwords.txt": {
+      "path": "config/bm25_stopwords.txt",
+      "sha256": "9846c49af0e318a52b851e981620f99a8d33008cbe84903b92351aa24d059bb7",
+      "size_bytes": 69
+    },
+    "config/bm25_userdict.txt": {
+      "path": "config/bm25_userdict.txt",
+      "sha256": "afaf13e44438d41f552a93c48d3c1d1c4862aea63ef487d170908d96b3c5c255",
+      "size_bytes": 411
+    },
+    "data/eval/dataset_manifest.json": {
+      "path": "data/eval/dataset_manifest.json",
+      "sha256": "778ffc31872d379dbd714cd4e085e075b0a308b7a67d1306e459e978f70a6c66",
+      "size_bytes": 2189
+    },
+    "data/eval/human_review_receipt.json": {
+      "path": "data/eval/human_review_receipt.json",
+      "sha256": "69cf9f772528476c4a3da31a006edc498cfb1b411e56dfd573d033dad6460ec3",
+      "size_bytes": 23411
+    },
+    "data/eval/retrieval_dev.jsonl": {
+      "path": "data/eval/retrieval_dev.jsonl",
+      "sha256": "b24b2dc9c1483495623407c472ca1ff3b0b0a6846b4894892f8d85e9ffb34e04",
+      "size_bytes": 60024
+    },
+    "data/eval/retrieval_test.jsonl": {
+      "path": "data/eval/retrieval_test.jsonl",
+      "sha256": "269d49e7d65c4ad3a97b588f34093a65bbc483c7382f78b0e9cf466eaa759a62",
+      "size_bytes": 78040
+    },
+    "data/manifests/bm25_indexes.json": {
+      "path": "data/manifests/bm25_indexes.json",
+      "sha256": "b4ec2c6bdd2713c53e020f68f364a9973933b7ccc45c9513dad5154c844b2fa6",
+      "size_bytes": 8439
+    },
+    "data/manifests/dense_index_manifest.json": {
+      "path": "data/manifests/dense_index_manifest.json",
+      "sha256": "9ea5d0403acb9ccaae8185623cf3cd66f834f555f7d839fa12cdbc8f60b2d557",
+      "size_bytes": 11745
+    },
+    "data/manifests/rag_dataset_manifest.json": {
+      "path": "data/manifests/rag_dataset_manifest.json",
+      "sha256": "529596d1fae73186065fc70d39749f000ffc2f4fa960252cba6285ddd538c39c",
+      "size_bytes": 13868
+    },
+    "scripts/bm25_index.py": {
+      "path": "scripts/bm25_index.py",
+      "sha256": "1428b38df11e11f32a075ed4d93720fdcb30bc9009c7dddb5add118c2ee8dc68",
+      "size_bytes": 12301
+    },
+    "scripts/bm25_retrieval_eval.py": {
+      "path": "scripts/bm25_retrieval_eval.py",
+      "sha256": "ec313e46bd6d8d34986d5ba8c464ffa9fda9d5b37a0800a9d6fd0f0783c894fe",
+      "size_bytes": 18328
+    },
+    "scripts/build_bm25_index.py": {
+      "path": "scripts/build_bm25_index.py",
+      "sha256": "5b9f349735e5b336ef9f274f4a2d03be75cf1fa4fcc7405c433f6fe6294d5b14",
+      "size_bytes": 515
+    },
+    "scripts/eval_dataset.py": {
+      "path": "scripts/eval_dataset.py",
+      "sha256": "48d47343ce008457d031c54a40019ae8bc3a9c76bdaf2d9cbbc274628e3785c1",
+      "size_bytes": 3147
+    },
+    "scripts/install_bm25_runtime.py": {
+      "path": "scripts/install_bm25_runtime.py",
+      "sha256": "66bd5d9a57a035cad059af266b641c1a142872c82a1315e407743bd093c1d319",
+      "size_bytes": 4313
+    },
+    "scripts/recompute_bm25_retrieval.py": {
+      "path": "scripts/recompute_bm25_retrieval.py",
+      "sha256": "e355f1ea2d53294da1ea69c25cc905a8402370d5573dd2648281fdd2c74d9272",
+      "size_bytes": 756
+    },
+    "scripts/retrieval_metrics.py": {
+      "path": "scripts/retrieval_metrics.py",
+      "sha256": "350759f655b78e43f4d0c4114a4a2c7d03b87c7281ac0cae40678bae15341168",
+      "size_bytes": 3079
+    },
+    "scripts/run_bm25_retrieval.py": {
+      "path": "scripts/run_bm25_retrieval.py",
+      "sha256": "e00212fc353f605307d11cd0ba56056c66f70d89d3d6366e8f9be080cfebe1fd",
+      "size_bytes": 9929
+    },
+    "scripts/run_retrieval_metrics.py": {
+      "path": "scripts/run_retrieval_metrics.py",
+      "sha256": "11021dfc06a8c6e3e765c051c594f598b6c2bea220ee78f7a96ce08d0d56eae5",
+      "size_bytes": 4121
+    },
+    "scripts/validate_eval_dataset.py": {
+      "path": "scripts/validate_eval_dataset.py",
+      "sha256": "f943adc5eeab93296434b7b05edb1706272033a2913dbb2ea20ccb71fc5fdff5",
+      "size_bytes": 10738
+    },
+    "scripts/validate_eval_receipt.py": {
+      "path": "scripts/validate_eval_receipt.py",
+      "sha256": "d22500345f20487b4f712fdad149c74bdcd7d64386606f9bc16365d3ce696b85",
+      "size_bytes": 5914
+    },
+    "scripts/verify_bm25_contract.py": {
+      "path": "scripts/verify_bm25_contract.py",
+      "sha256": "205c50bdb3b16cc6468402f4aafac102a02ae6d53ff8e561685cc62641d731c4",
+      "size_bytes": 10301
+    }
+  },
+  "load_seconds": 1.542749800006277,
+  "purpose": "final_report",
+  "run_id": "1fca7619a2194a1ebfbd69ca3b943235",
+  "source_commit": "65e751648d7a108cdb8e1acde2710f313639414a",
+  "split": "test",
+  "started_at": "2026-11-12T13:01:53.938754+00:00",
+  "status": "COMPLETE",
+  "template": "title_body",
+  "used_for_parameter_selection": false,
+  "version": "bm25-run-1.0",
+  "wall_seconds": 2.7313539999959175,
+  "warmups": [
+    {
+      "query": "足球比赛场地的边线如何判断球出界？",
+      "repetition": 1,
+      "timing": {
+        "normalization_seconds": 8.4e-06,
+        "scoring_seconds": 0.0001605,
+        "tokenization_seconds": 6.76e-05,
+        "total_seconds": 0.0002365
+      }
+    },
+    {
+      "query": "足球比赛场地的边线如何判断球出界？",
+      "repetition": 2,
+      "timing": {
+        "normalization_seconds": 4.4e-06,
+        "scoring_seconds": 0.0001051,
+        "tokenization_seconds": 3.68e-05,
+        "total_seconds": 0.0001463
+      }
+    },
+    {
+      "query": "足球比赛场地的边线如何判断球出界？",
+      "repetition": 3,
+      "timing": {
+        "normalization_seconds": 2.8e-06,
+        "scoring_seconds": 9.87e-05,
+        "tokenization_seconds": 3.1e-05,
+        "total_seconds": 0.0001325
+      }
+    }
+  ]
+}
