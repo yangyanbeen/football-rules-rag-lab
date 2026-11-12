@@ -1,0 +1,38 @@
+{
+  "baseline": "93687ce5a73853a63782d2204225b046697c7028",
+  "captured_at": "2026-11-12T13:38:13.955896+00:00",
+  "checks": {
+    "directory_failure_has_evidence": true,
+    "exclusive_test_reservation": true,
+    "finite_huge_integer_rejected": true,
+    "invalid_split_rejected_before_dataset_read": true,
+    "original_segmentation_replay": true,
+    "original_three_dev_and_test_replay": true,
+    "reject_index_producer_after_run": true,
+    "reject_resigned_wrong_comparison": true,
+    "reject_segmentation_boolean_test_count": true,
+    "reject_segmentation_hmm_change": true,
+    "reject_segmentation_missing_artifacts": true,
+    "reject_segmentation_missing_inputs": true,
+    "reject_segmentation_missing_sources": true,
+    "reject_segmentation_missing_warmups": true,
+    "reject_segmentation_negative_wall": true,
+    "reject_segmentation_wrong_mode": true,
+    "reject_source_commit_after_run": true,
+    "reject_uncommitted_grant_receipts": false
+  },
+  "errors": [
+    {
+      "check": "reject_uncommitted_grant_receipts",
+      "error": "Command '['git', 'show', '65e751648d7a108cdb8e1acde2710f313639414a:.tmp/task8-audit-d96983e5e40f4aa9a57fa6432157409a/selection.json']' returned non-zero exit status 128.",
+      "error_type": "CalledProcessError"
+    }
+  ],
+  "new_locked_test_retrievals": 0,
+  "passed": 17,
+  "scope": "Isolated modified copies and synthetic failure/ledger operations; no original evidence changed",
+  "source_sha256": "cccf9deda2dbe380cf3d5a4025b0e68d3ca87cb7da8593b0b867dd390610f4c0",
+  "status": "FAIL",
+  "total": 18,
+  "version": "task8-audit-regression-1.0"
+}

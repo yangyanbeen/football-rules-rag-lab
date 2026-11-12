@@ -253,8 +253,10 @@ def validate_grant(grant,directory,current=False):
     require_inputs(grant['inputs'],current_sources=current)
     chosen=ROOT/grant['selection']['path'];verification=ROOT/grant['verification']['path']
     if record(chosen)!=grant['selection'] or record(verification)!=grant['verification']:raise ValueError('Selection/verification receipt changed')
-    from bm25_index import committed
-    committed([p.resolve().relative_to(ROOT).as_posix() for p in (chosen,verification)],grant['source_commit'])
+    for path in (chosen,verification):
+        name=path.resolve().relative_to(ROOT).as_posix()
+        raw=subprocess.run(['git','show',grant['source_commit']+':'+name],cwd=ROOT,capture_output=True)
+        if raw.returncode or raw.stdout!=path.read_bytes():raise ValueError('Grant receipt was not frozen in the authorized commit')
     selection=json.loads(chosen.read_text('utf-8'))
     root=(ROOT/selection['development_runs'][0]['run_manifest']['path']).parent.parent
     if selection!=choose(root) or grant['template']!=selection['selected_template']:raise ValueError('Selection not derived from all three development runs')

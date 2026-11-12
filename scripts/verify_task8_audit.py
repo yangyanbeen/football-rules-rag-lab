@@ -1,6 +1,7 @@
 """Isolated Task8 defect reproductions and regression checks; no locked-test requests."""
 from __future__ import annotations
 import argparse,copy,json,shutil,subprocess,uuid
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
@@ -103,6 +104,71 @@ def main():
             with patch.object(ev,'load_jsonl',side_effect=AssertionError('Dataset read before identity validation')):
                 return main_case('invalid-split',mutate)
         check('invalid_split_rejected_before_dataset_read',invalid_identity_before_dataset_read)
+        from verify_bm25_delivery import validate_receipt,validate_usage,PORTABILITY_SOURCES
+        contract=json.loads((base/'acceptance/contract-current.json').read_text('utf-8'))
+        port=json.loads((base/'acceptance/portability.json').read_text('utf-8'))
+        check('historical_contract_source_binding_valid',lambda:validate_receipt(contract,74,ev.V1_EXECUTION_FILES,BASE))
+        check('historical_portability_source_binding_valid',lambda:validate_receipt(port,8,PORTABILITY_SOURCES,BASE))
+        def corrupt_receipt(mutate):
+            value=copy.deepcopy(contract);mutate(value)
+            return rejects(lambda:validate_receipt(value,74,ev.V1_EXECUTION_FILES,BASE))
+        check('receipt_rejects_false_check',lambda:corrupt_receipt(lambda r:r['checks'].__setitem__(next(iter(r['checks'])),False)))
+        check('receipt_rejects_wrong_source',lambda:corrupt_receipt(lambda r:r['source_sha256'].__setitem__(ev.V1_EXECUTION_FILES[0],'0'*64)))
+        check('receipt_rejects_missing_checks',lambda:corrupt_receipt(lambda r:r.update(checks={})))
+        usage=ev.load_jsonl(base/'test_usage.jsonl');manifest=json.loads((base/'test/run_manifest.json').read_text('utf-8'))
+        grant=json.loads((base/'test_authorization.json').read_text('utf-8'))
+        check('original_usage_full_identity_and_time_valid',lambda:validate_usage(usage,manifest,grant,base))
+        def bad_usage(field,value):
+            rows=copy.deepcopy(usage);rows[0][field]=value
+            return rejects(lambda:validate_usage(rows,manifest,grant,base))
+        for field,value in [('template','body'),('source_commit','0'*40),('run_directory','wrong'),('recorded_at','2099-01-01T00:00:00+00:00')]:
+            check('usage_rejects_wrong_'+field,lambda field=field,value=value:bad_usage(field,value))
+        def concurrent_reservation():
+            path=temp/'concurrent-ledger.jsonl'
+            def reserve(n):
+                try:runner.reserve_test_usage(path,{'run_id':str(n),'event':'STARTED'});return True
+                except FileExistsError:return False
+            with ThreadPoolExecutor(max_workers=2) as pool:results=list(pool.map(reserve,(1,2)))
+            return sum(results)==1 and len(ev.load_jsonl(path))==1
+        check('concurrent_reservation_has_exactly_one_winner',concurrent_reservation)
+        def owner_and_terminal():
+            path=temp/'owner-ledger.jsonl';start={**usage[0],'run_id':'synthetic-owner'}
+            runner.reserve_test_usage(path,start)
+            end={**start,'event':'FAILED'}
+            if not rejects(lambda:runner.finish_test_usage(path,{**end,'run_id':'other'})):return False
+            runner.finish_test_usage(path,end)
+            return rejects(lambda:runner.finish_test_usage(path,end)) and len(ev.load_jsonl(path))==2
+        check('only_owner_can_finish_once',owner_and_terminal)
+        def failed_synthetic_run(query_failure):
+            root=temp/('query-failure' if query_failure else 'load-failure');out=root/'reports/retrieval/run'
+            auth=root/'reports/grant.json';write_new(auth,{'synthetic':True});ledger=root/'ledger.jsonl'
+            fakegrant={'source_commit':BASE,'template':'title_body','test_sha256':'0'*64}
+            args=SimpleNamespace(mode='test',run_dir=out,template=None,authorization=auth,index=None)
+            class Index:
+                manifest={'template':'title_body'};sources=[]
+                def __init__(self,path):
+                    self.calls=0
+                    if not query_failure:raise RuntimeError('synthetic index failure')
+                def query(self,text):
+                    self.calls+=1
+                    if self.calls==4:raise RuntimeError('synthetic query failure')
+                    return {'timing':dict.fromkeys(ev.TIMINGS,0)}
+            actual_load=runner.load_jsonl
+            def load(path):
+                return actual_load(path) if path==ledger else [{'question_id':'SYNTHETIC-001','question':'synthetic question'}]
+            with patch.object(runner,'ROOT',root),patch.object(runner,'LEDGER',ledger),patch.object(runner,'require_release'),patch.object(runner,'committed',return_value=BASE),patch.object(runner,'snapshots',return_value={}),patch.object(runner,'validate_grant'),patch.object(runner,'load_jsonl',side_effect=load),patch.object(runner,'Bm25Index',Index):
+                # Authorization is synthetic; the actual frozen grant and ledger are never opened.
+                save(auth,fakegrant)
+                try:runner.evaluate(args)
+                except RuntimeError as exc:
+                    failure=json.loads((out/'failure.json').read_text('utf-8'));rows=actual_load(ledger)
+                    return (str(exc)==('synthetic query failure' if query_failure else 'synthetic index failure')
+                            and [r['event'] for r in rows]==['STARTED','FAILED']
+                            and failure['phase']==('retrieve' if query_failure else 'load_index')
+                            and not (out/'run_manifest.json').exists())
+            return False
+        check('index_load_failure_records_failed_reserved_run',lambda:failed_synthetic_run(False))
+        check('query_failure_records_failed_reserved_run',lambda:failed_synthetic_run(True))
     result={'version':'task8-audit-regression-1.0','captured_at':ev.now(),
             'status':('GAPS_REPRODUCED' if a.expect_gaps else 'PASS') if all(checks.values()) else 'FAIL',
             'baseline':BASE,'passed':sum(checks.values()),'total':len(checks),'checks':checks,'errors':errors,

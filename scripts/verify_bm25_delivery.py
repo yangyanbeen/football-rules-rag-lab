@@ -3,13 +3,47 @@ from __future__ import annotations
 import argparse,json,subprocess,uuid
 from pathlib import Path
 from bm25_index import ROOT,TEMPLATES,Bm25Index,build,record,write_new
-from bm25_retrieval_eval import replay,choose,validate_grant,instant,now
+from bm25_retrieval_eval import (replay,choose,validate_grant,instant,now,validate_index_manifest,
+                                 snapshots,V1_EXECUTION_FILES,producer_before)
 from eval_dataset import digest,load_jsonl
 from validate_eval_dataset import validate
 
+PORTABILITY_SOURCES=tuple('scripts/'+p for p in ('verify_bm25_portability.py','bm25_retrieval_eval.py',
+                                              'run_bm25_retrieval.py','export_bm25_manifests.py'))
+
+
+def validate_receipt(receipt,total,sources,reference):
+    if (receipt.get('status')!='PASS' or type(receipt.get('passed')) is not int
+        or type(receipt.get('total')) is not int or receipt['passed']!=total or receipt['total']!=total
+        or not isinstance(receipt.get('checks'),dict) or len(receipt['checks'])!=total
+        or any(v is not True for v in receipt['checks'].values())
+        or set(receipt.get('source_sha256',{}))!=set(sources)):raise ValueError('Incomplete or failed acceptance receipt')
+    producer_before(reference,receipt['captured_at'])
+    for path in sources:
+        raw=subprocess.check_output(['git','show',reference+':'+path],cwd=ROOT)
+        if receipt['source_sha256'][path]!=digest(raw):raise ValueError('Acceptance receipt source binding differs')
+    return True
+
+
+def validate_usage(ledger,manifest,grant,base):
+    common={'run_id':manifest['run_id'],'template':manifest['template'],'authorization':record(base/'test_authorization.json'),
+            'run_directory':(base/'test').relative_to(ROOT).as_posix(),'test_sha256':grant['test_sha256'],
+            'source_commit':manifest['source_commit']}
+    if len(ledger)!=2:raise ValueError('One test reservation and one completion required')
+    for row,event in zip(ledger,('STARTED','COMPLETED')):
+        fields=set(common)|{'event','recorded_at'}|({'run_manifest'} if event=='COMPLETED' else set())
+        if set(row)!=fields or row['event']!=event or any(row[k]!=v for k,v in common.items()):raise ValueError('Usage ledger identity differs')
+    if not instant(manifest['started_at'])<=instant(ledger[0]['recorded_at'])<=instant(manifest['completed_at'])<=instant(ledger[1]['recorded_at']):raise ValueError('Usage ledger chronology differs')
+    if ledger[-1]['run_manifest']!=record(base/'test/run_manifest.json'):raise ValueError('Usage completion manifest differs')
+    return True
+
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--report',type=Path,required=True);a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--report',type=Path,required=True)
+    p.add_argument('--index-root',type=Path,default=ROOT/'data/indexes/bm25')
+    p.add_argument('--contract-report',type=Path,default=ROOT/'reports/retrieval/bm25_b0/acceptance/contract-current.json')
+    p.add_argument('--portability-report',type=Path,default=ROOT/'reports/retrieval/bm25_b0/acceptance/portability.json')
+    p.add_argument('--reference-commit',default='93687ce5a73853a63782d2204225b046697c7028');a=p.parse_args()
     report=a.report.resolve()
     if report.exists() or report.suffix!='.json' or not report.is_relative_to(ROOT/'reports'):raise ValueError('Use a new reports JSON')
     base=ROOT/'reports/retrieval/bm25_b0';checks={};errors=[];context={}
@@ -35,16 +69,22 @@ def main():
           instant(subprocess.check_output(['git','show','-s','--format=%cI',grant['source_commit']],cwd=ROOT,text=True).strip())<=instant(grant['prepared_at']))
     check('development_and_contract_predate_authorization',lambda:all(instant(json.loads((ROOT/r['run_manifest']['path']).read_text('utf-8'))['completed_at'])<=instant(grant['prepared_at']) for r in selection['development_runs']) and instant(json.loads((ROOT/grant['verification']['path']).read_text('utf-8'))['captured_at'])<=instant(grant['prepared_at']))
     ledger=load_jsonl(base/'test_usage.jsonl');test_manifest=json.loads((base/'test/run_manifest.json').read_text('utf-8'))
-    check('one_formal_test_with_started_completed_events',lambda:len(ledger)==2 and [r['event'] for r in ledger]==['STARTED','COMPLETED'] and all(r['run_id']==test_manifest['run_id'] and r['authorization']==record(base/'test_authorization.json') and r['test_sha256']==grant['test_sha256'] for r in ledger))
+    check('one_formal_test_with_started_completed_events',lambda:validate_usage(ledger,test_manifest,grant,base))
     check('test_completion_binds_exact_original_run_manifest',lambda:ledger[-1]['run_manifest']==record(base/'test/run_manifest.json'))
     check('all_510_successful_measurements_present',lambda:sum(v['latency']['all']['total_seconds']['samples'] for v in context['dev'].values())==360 and context['test']['latency']['all']['total_seconds']['samples']==150)
     check('74_contract_checks_passed_before_test',lambda:(lambda r:r['status']=='PASS' and r['passed']==r['total']==74 and all(r['checks'].values()) and r['development_replay_checked'] is True)(json.loads((base/'acceptance/contract-final.json').read_text('utf-8'))))
-    check('current_contract_checks_pass',lambda:(lambda r:r['status']=='PASS' and r['passed']==r['total']==74)(json.loads((base/'acceptance/contract-current.json').read_text('utf-8'))))
-    check('restored_index_eight_regressions_and_actual_dev_pass',lambda:(lambda r:r['status']=='PASS' and r['passed']==r['total']==8 and r['new_locked_test_requests']==0)(json.loads((base/'acceptance/portability.json').read_text('utf-8'))))
+    contract=json.loads(a.contract_report.read_text('utf-8'));portability=json.loads(a.portability_report.read_text('utf-8'))
+    check('current_contract_checks_pass',lambda:contract.get('version')=='bm25-contract-1.0' and contract.get('development_replay_checked') is True and validate_receipt(contract,74,V1_EXECUTION_FILES,a.reference_commit))
+    check('restored_index_eight_regressions_and_actual_dev_pass',lambda:type(portability.get('new_locked_test_requests')) is int and portability['new_locked_test_requests']==0 and validate_receipt(portability,8,PORTABILITY_SOURCES,a.reference_commit) and replay(ROOT/portability['actual_development_directory'])['quality']['metrics']==context['dev']['title_body']['quality']['metrics'])
     check('failed_initial_development_run_still_rejected',lambda:(base/'dev/body/failure.json').exists() and rejects(lambda:replay(base/'dev/body')))
     public=json.loads((ROOT/'data/manifests/bm25_indexes.json').read_text('utf-8'))
-    indexes={t:Bm25Index(ROOT/'data/indexes/bm25'/t) for t in TEMPLATES}
-    check('all_three_persisted_indexes_validate_99_original_units',lambda:all(len(v.sources)==99 and v.manifest==public['indexes'][t] for t,v in indexes.items()))
+    indexes={t:Bm25Index(a.index_root.resolve()/t) for t in TEMPLATES}
+    def equivalent_indexes():
+        for template,index in indexes.items():
+            if len(index.sources)!=99:return False
+            validate_index_manifest(index.manifest,template,snapshots())
+        return True
+    check('all_three_persisted_indexes_validate_99_original_units',equivalent_indexes)
     fixture=ROOT/'.tmp'/('task8-rebuild-'+uuid.uuid4().hex)
     def rebuild():
         rebuilt=[]
@@ -89,6 +129,9 @@ def main():
             'new_locked_test_retrievals_in_this_gate':0,'test_individual_results_exposed_by_gate':False,
             'scope':'Original Task8 acceptance plus independent saved-result replay, private index rebuild and preservation. Test retrieval is not rerun.',
             'source_sha256':record(Path(__file__))['sha256']}
+    result['acceptance_inputs']={'index_root':a.index_root.resolve().relative_to(ROOT).as_posix(),
+                                'contract':record(a.contract_report),'portability':record(a.portability_report),
+                                'reference_commit':a.reference_commit}
     write_new(report,result);print(json.dumps({k:result[k] for k in ('status','passed','total','errors')}))
     return 0 if result['status']=='PASS' else 1
 
