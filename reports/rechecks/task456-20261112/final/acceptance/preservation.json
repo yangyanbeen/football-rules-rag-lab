@@ -1,0 +1,20 @@
+{
+  "captured_at": "2026-11-12T08:14:16.577941+00:00",
+  "status": "PASS",
+  "passed": 10,
+  "total": 10,
+  "checks": {
+    "frozen_10_unchanged": true,
+    "append_only_4_prefixes": true,
+    "local_corpus_61_unchanged": true,
+    "original_static_178_unchanged": true,
+    "original_project_has_no_root_git": true,
+    "formal_dense_index_all_files_unchanged": true,
+    "real_human_ledger_unchanged": true,
+    "historical_reports_and_eval_unchanged": true,
+    "original_human_validator_unchanged": true,
+    "old_ui_snapshot_and_original_smoke_preserved": true
+  },
+  "historical_public_reports_and_eval_files": 89,
+  "new_human_reviews_created": false
+}

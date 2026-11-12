@@ -1,0 +1,32 @@
+{
+  "status": "PASS_PRIVATE_RECEIPTS",
+  "passed": 20,
+  "total": 20,
+  "checks": {
+    "private_full_text_not_declared_public": true,
+    "no_formal_accuracy_claim": true,
+    "successful_smoke_unique_three_plus_one": true,
+    "successful_ui_unique_three_plus_one": true,
+    "ui_and_smoke_question_status_pairs_match": true,
+    "separate_backend_and_browser_trace_ids": true,
+    "all_receipts_bind_current_configuration": true,
+    "smoke_prompt_and_model_are_pinned": true,
+    "actual_integer_token_counts_and_context_budget": true,
+    "smoke_retrieved_and_offered_ids_are_separate": true,
+    "cited_ids_and_urls_are_known_format": true,
+    "smoke_citations_bound_to_offered_body_hash": true,
+    "answers_have_citations_and_refusals_have_none": true,
+    "ui_loopback_and_evidence_counts": true,
+    "private_hashes_and_answer_hashes_well_formed": true,
+    "private_smoke_snapshot_sha": true,
+    "private_smoke_rows_and_answers_match_receipt": true,
+    "private_ui_captures_and_snapshot_hashes": true,
+    "private_actual_browser_answer_panel_trace_match": true,
+    "private_original_bodies_and_citation_metadata_match": true
+  },
+  "errors": [],
+  "private_records_checked": true,
+  "semantic_answer_accuracy_proven": false,
+  "scope": "Receipt/provenance consistency; public metadata alone does not prove private UI execution or answer correctness",
+  "captured_at": "2026-11-12T08:11:19.800409+00:00"
+}
