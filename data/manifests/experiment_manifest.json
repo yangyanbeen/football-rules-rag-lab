@@ -1558,7 +1558,339 @@
           "sha256": "8444fa29ba4faac19ff5efd405f39bcd68aa853c3d4017961cfe828192e82a48"
         }
       ]
+    },
+    {
+      "id": "TASK-001-007-AUDIT",
+      "objective": "Review original tasks 1-7 and close repeatability and provenance defects",
+      "baseline": "24d8cabccbeeb17db096733c48a96eed60f6a304; original data/reports preserved",
+      "main_variable": "Review input/output guards and full browser evidence binding; retrieval and generation configuration unchanged",
+      "dataset_version": "corpus-b0-rag-adapter-1.0.0 unchanged",
+      "evaluation_version": "football-eval-0.1.0 unchanged; saved-test replay only",
+      "code_commit": "e7d5a3eb88a6114089e179783f93a173b7eb98e3",
+      "code_version_method": "Final production guards at 423ea06; aggregate source and all scripts SHA recorded separately",
+      "source_sha256": {
+        "delivery_review_io.py": "a7fea99871795d43ba2d58e29f902743f1e592ce595b0c72fa0cb9e8fffaf7cb",
+        "verify_tasks_01_07_delivery.py": "e08a58dec8c1abcacc0cf85fa909f6df2ee269f8330762487ca0f3d97e5faeb8",
+        "verify_delivery_review_regressions.py": "84c361b18d7ea0b8dff9582ff84aa013ff35e7ef19fd92eaf97b3b1f5fe79591",
+        "verify_fresh_delivery.py": "2a053f2fdf8c3f33c588da0d6376a5167f897e105b46302fdd09fd1d9930734b",
+        "verify_answer_quality.py": "2639fef7245d6da4a669da5505f9118728ee04c5d7c5a5b993b6a64322fba052",
+        "verify_task3_isolated.py": "3bbdaebbd3c2bd9b836434c8037c5e03d9417b53817299b61364f3791048f239",
+        "verify_task3_delivery.py": "bde0c10c273d6a5cc22233d41cd79777e10d926477c059d24dbf409c7025edfb",
+        "verify_task4_workflow.py": "d05c551f6dfcd5b20d4a206f97aa74aab7a24aa1618542e9a3ee292790a1f3ab",
+        "verify_task4_human_release.py": "27eb6a3b7c9cea4f31354a1ed1eaba7e518bb110e1672f76a151eee7110d79f8",
+        "verify_task45_regressions.py": "5ecfbba9318491685dc0899a14d34a638795811f17e039721fa0d0dcbd26ee33",
+        "validate_eval_receipt.py": "d22500345f20487b4f712fdad149c74bdcd7d64386606f9bc16365d3ce696b85",
+        "verify_task5_delivery.py": "98bba3364b0850319993189fd4b6135f4b97a70db65baeae5d0e7ed15ff3895b",
+        "recheck_fresh_delivery.ps1": "467f20eaab3613596a18a4de6946f416e348328bb7c705c03b373a7618e0a3fa",
+        "recheck_task45.ps1": "02f368019a8562f21a288dd04e2762979d67de00346efc0edeb4600285d8204a"
+      },
+      "model": "Existing pinned BGE-M3 CPU8 and Qwen2.5:3b CPU8",
+      "environment": {
+        "python": "3.10.22",
+        "dependencies": "Original locked 260 plus two workspace packages; unchanged"
+      },
+      "commands": [
+        "recheck_fresh_delivery.ps1 with new report directory and actual stderr",
+        "recheck_task45.ps1 with new report directory",
+        "verify_rag_b0.py with fresh backend smoke and preserved UI",
+        "verify_task7_delivery.py saved artifacts",
+        "verify_tasks_01_07_delivery.py"
+      ],
+      "result": {
+        "defect_groups_closed": 4,
+        "new_tool_regressions": "37/37",
+        "wrapper_rerun_guards": "4/4",
+        "aggregate": "29/29",
+        "tasks1_3": "33/33 plus original 18/8/16",
+        "task4": "26/26 with existing 90 human approvals",
+        "task5": "24/24; corrupt18/18; real rebuild99; vector max difference0",
+        "task6": "62/62; current backend3+1; private20/20; actual historical UI replayed",
+        "task7": "43/43; original54/110/113 and61 checks pass",
+        "new_formal_test_experiments": 0
+      },
+      "limitations": [
+        "Engineering acceptance only; no answer accuracy or optimization claim",
+        "Original reports including intermediate FAIL and original test metrics retained",
+        "Full corpus/model/answer/DOM evidence remains private"
+      ],
+      "artifacts": [
+        {
+          "path": "docs/TASK_01_07_AUDIT_SCOPE.md",
+          "size_bytes": 1466,
+          "sha256": "da87d62d8a8b2517ea867a4400e8737dfc623211ba65b94c16697ff5ec78f6a5"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/answer-contract.json",
+          "size_bytes": 3633,
+          "sha256": "95e727d93280a13486786331c6059de7f7ce0ac08ac7e24826efeab01c1fae2c"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/review-tools-final.json",
+          "size_bytes": 3520,
+          "sha256": "dba83e849e484157a06c5084f33b8127159d1f61a99b61be8dcfe96f496fb80a"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/review-tools.json",
+          "size_bytes": 2349,
+          "sha256": "6402968cb6d34971110faa11a24486fd6509451d515a5772e4b3e783a56775c0"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task3-before.json",
+          "size_bytes": 30985,
+          "sha256": "4f4ed42af03882b37dc3bebe0cb8abcc8846e9e7e002f17f24abdb4ee1ec8b4f"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task3-final.json",
+          "size_bytes": 30985,
+          "sha256": "0d7688d731a7d0e7e442329d08eb14b5c03627e691bc94f3a374d96706b59981"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task4-human.json",
+          "size_bytes": 1975,
+          "sha256": "e149759c04a1c96819cc1475ebca4cc71df438df2ae548ebf603c51e4f1f4151"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task4-public.json",
+          "size_bytes": 1469,
+          "sha256": "2cc4586a1472de5cc8861f4d39c153219c667000d0130d81b776bd9946f01383"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task4-workflow.json",
+          "size_bytes": 11958,
+          "sha256": "e95da544efb9a6d9644e4e4c398b337e41af1eae2c2d7d380ffa7379f7a7f3ad"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task4.json",
+          "size_bytes": 5103,
+          "sha256": "54e2caf04f92c2107e930097eeb1a76477855984836c6e54a4bbd15a287e7c3f"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task45.json",
+          "size_bytes": 4474,
+          "sha256": "aa751b901af028732752af6f6f6a4ac34b6d8cd4bcf4c47422d20338a1f0f42c"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task456.json",
+          "size_bytes": 4109,
+          "sha256": "1c3bf7eb3612e227ddc8c5114a034339af1181950b6ccddb9a7e0d0e9484b745"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task6-public.json",
+          "size_bytes": 1144,
+          "sha256": "dd61d617035059fbae43017fdd616286bd8ad101fd1354605fd2a8552b42e00e"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task6.json",
+          "size_bytes": 4342,
+          "sha256": "9d7489f65ef851d6c9424ca42f37b1d4ca01aa57ceff671a5025e21acc721ced"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task6_portability_regression.json",
+          "size_bytes": 4342,
+          "sha256": "49190c73c9043529c9b46b50d527c80b6ab487bd3e5bcb5da099467b02940e8f"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task7-arithmetic.json",
+          "size_bytes": 9266,
+          "sha256": "fbf1f49ef1d21692f7e326ef7c3e8b25f1e3aa7bcb6e9f3a627e603fdd309197"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task7-contract.json",
+          "size_bytes": 5365,
+          "sha256": "10836d6594b48b6bbe13dc8541afbbcce95f1cc04dd7b9981967ce90d0421c71"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task7-replay.json",
+          "size_bytes": 6957,
+          "sha256": "65f2af48aeb54f87a93e41f51392f05f92238ef481caa00937f2aee66900911c"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task7-supplement.json",
+          "size_bytes": 3752,
+          "sha256": "d8ed4f62ac4c67f1fdae4c3b010316b0f0962b4608130188fa70e49a6621fea1"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/acceptance/task7.json",
+          "size_bytes": 12915,
+          "sha256": "17f91e10f9dd5fb2c1645d92944d76c55267cd3a918cde0e6db431e8b3af63b9"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/before-fixes-correction.json",
+          "size_bytes": 533,
+          "sha256": "1c95e35144283895bbd5d5361523bb0d342ee0a35b5fa239b528f7da43b485fd"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/before-fixes.json",
+          "size_bytes": 630,
+          "sha256": "81da1867d7d2a2a156e0fde71df8e163c48483a61093b9f8f7e63a2d77d0284b"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/evidence/runtime-health.json",
+          "size_bytes": 779,
+          "sha256": "ee890e7576ab35c6cf5d99cc5c70fd2b6f6e9f4d49f57ce059d6bae35392df07"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/evidence/task6-live-smoke.json",
+          "size_bytes": 8670,
+          "sha256": "0584c1babd6b91eec263abde29d0ef97df34a6e972c2e2fc4054464eb66c0b51"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/aggregate-final.json",
+          "size_bytes": 4283,
+          "sha256": "0a116f9be32d9d38efc15a8169548d381fdb0ce25912dd629bb43d6c04f0c13f"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/aggregate.json",
+          "size_bytes": 4254,
+          "sha256": "19ca2ebfbd9f4c48380ed309c96aac6656e19d25f2cfbef63d2f39dae7db2807"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/fresh-delivery/fresh_delivery.json",
+          "size_bytes": 6813,
+          "sha256": "d679a342bb5f33b8344ca074d03bc72c16127799cab47384b23bba87f0cf4a08"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/fresh-delivery/fresh_ui_three_questions.json",
+          "size_bytes": 2217,
+          "sha256": "3d99d8203b3963dee1833009e1249a7bc5ab4e2f8feb34a74cc857e3c0e88e9f"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task3.json",
+          "size_bytes": 30985,
+          "sha256": "c34ec5223d65c025a3cc02a63b2400c1c9ff149eda11521669c2e5ffa88000e9"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task45/acceptance/task45_regressions.json",
+          "size_bytes": 4474,
+          "sha256": "51fe523f9d1f977c1d61c82888537fa90758dbe7d632b43ca873770f0a8efcde"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task45/acceptance/task4_delivery_gate.json",
+          "size_bytes": 5103,
+          "sha256": "a39ef2aa97d7ebaf3b90c09a768d76a20d4459bec1f0e72f7b287fd9041761d5"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task45/acceptance/task4_human_release_verification.json",
+          "size_bytes": 1975,
+          "sha256": "f616316d5d9b445d644379738e3908fd33b48b86a090d345d1230519067e442f"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task45/acceptance/task4_public_receipt.json",
+          "size_bytes": 1469,
+          "sha256": "2cc4586a1472de5cc8861f4d39c153219c667000d0130d81b776bd9946f01383"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task45/acceptance/task4_workflow_verification.json",
+          "size_bytes": 11958,
+          "sha256": "8510adf6feec33c0bdc47cc0cf931840181937c86cf97ae39306f4bd6dc60cab"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task45/acceptance/task5_delivery_gate.json",
+          "size_bytes": 17140,
+          "sha256": "029e31420fd7097c088e01cffe3a32f6a0bb074833bf26483de87b46ab2dfad4"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task45/evidence/task5_dense_smoke.json",
+          "size_bytes": 5883,
+          "sha256": "cdc6b628ca7178d04ae7085a4e7cf927177b40d9d54080a76ba88bc24e3f4b89"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task45/manifests/dense_chunk_ids.json",
+          "size_bytes": 32967,
+          "sha256": "0bdff8a39d7a458d586fecb921582224ad7a854cc3bf6fa589e04a1150b95b61"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task45/manifests/dense_index_manifest.json",
+          "size_bytes": 11745,
+          "sha256": "9ea5d0403acb9ccaae8185623cf3cd66f834f555f7d839fa12cdbc8f60b2d557"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task456.json",
+          "size_bytes": 4109,
+          "sha256": "2fa04b1806d95d9062fff3874c4ff69beb961e2b69aac490a286640a7190c9cd"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task6-private.json",
+          "size_bytes": 1421,
+          "sha256": "608ebb2dcb3bd9eef3dd8eab598e75deeca2dcf28fb4d7c555c3f2832b219cb0"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task6.json",
+          "size_bytes": 4342,
+          "sha256": "1fd2f78b572555540ad0e21f77e45958e687f99b5463d883773132c31084b8f3"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task6_portability_regression.json",
+          "size_bytes": 4342,
+          "sha256": "900b236b5d1a649a40b2bb8170b3d48efb56f0c136fc1b396ba3a089f9440751"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task7-replay.json",
+          "size_bytes": 6957,
+          "sha256": "5b033d957414ac187d7299828baca70b7f42b96450f50dc78734abee7f3b34f4"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task7-supplement.json",
+          "size_bytes": 3752,
+          "sha256": "f72196a8c9d867000596f3338e7f18b54b140cef676cd582b345eeb85fd3dad1"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/task7.json",
+          "size_bytes": 12915,
+          "sha256": "b2c514501aeb5353e25aae2566304de877ec9edbb0136155c9c4779d7248e12a"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/unified-fresh/answer_contract.json",
+          "size_bytes": 3633,
+          "sha256": "fbf94140a4ac54fc52057081034207fa0fb87a5d56a905f2925b68cb9980a78c"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/unified-fresh/delivery/fresh_delivery.json",
+          "size_bytes": 6836,
+          "sha256": "3ef62c743270b897c0551fbb8e12143960985320a243c5af66876abf4d9161dd"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/unified-fresh/delivery/fresh_ui_three_questions.json",
+          "size_bytes": 2217,
+          "sha256": "3d99d8203b3963dee1833009e1249a7bc5ab4e2f8feb34a74cc857e3c0e88e9f"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/unified-fresh/task3.json",
+          "size_bytes": 30985,
+          "sha256": "71eaa4ed9a90b0f8b15decaadefa62b3a5bcd08b5610ea7a794f57d1f2f1ac8c"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/final/wrapper-rerun.json",
+          "size_bytes": 365,
+          "sha256": "fcf685e8ffe8de5fbf5d4973c4cd9ee440be4369f80dc5663e389b9a726717ac"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/fresh-delivery/fresh_delivery.json",
+          "size_bytes": 6824,
+          "sha256": "457b56dd5a813d23d88651b45419d5fcbec2760b111d0bc447243cd4eb196ce7"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/fresh-delivery/fresh_ui_three_questions.json",
+          "size_bytes": 2217,
+          "sha256": "3d99d8203b3963dee1833009e1249a7bc5ab4e2f8feb34a74cc857e3c0e88e9f"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/task5/acceptance/task5_delivery_gate.json",
+          "size_bytes": 17137,
+          "sha256": "7d535a0289ef77877223b832ec592d9c286575fba6aa9cf4c3a09237799709d7"
+        },
+        {
+          "path": "reports/rechecks/task1-7-audit-20261112/task5/evidence/task5_dense_smoke.json",
+          "size_bytes": 5879,
+          "sha256": "56ea0e863b3b8149f5ebeeba738a0b537b819fd7badcb4c4df8367bc9b578d82"
+        },
+        {
+          "path": "reports/TASK_01_07_AUDIT_DELIVERY.md",
+          "size_bytes": 9412,
+          "sha256": "8560b23c8c6edb439585e36f66d5d257dd7120712c9edbf02d10aaea0c751e06"
+        }
+      ]
     }
   ],
-  "last_updated_at": "2026-11-12T11:30:05.609619+00:00"
+  "last_updated_at": "2026-11-12T12:20:50.631368+00:00"
 }

@@ -33,6 +33,8 @@ def hash_file(path):
 
 
 def main():
+    if (ROOT / 'reports/task3_delivery_verification.json').exists():
+        raise ValueError('Refusing to overwrite historical reports; use verify_task3_isolated.py --report <new JSON>')
     assert LAB.resolve().is_relative_to((ROOT / ".tmp").resolve())
     LAB.mkdir(parents=True, exist_ok=True)
     checks, executions = [], []

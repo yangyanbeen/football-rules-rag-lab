@@ -69,7 +69,15 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 
 提交前暂存明确文件，运行 `python scripts/manage_delivery_manifest.py` 和 `--verify`，再暂存清单。原规范与冻结语料不改；完整回答、凭据、数据库、依赖、缓存不公开。
 
-任务四至十四未完成；16 条开发题已经用于调试，通过数不代表独立测试集准确率或 Recall/MRR/nDCG。
+任务一至七已按原标准交付，当前状态见 [DELIVERY_STATUS](DELIVERY_STATUS.md)。16 条开发题已经用于调试，通过数不代表独立测试集准确率或 Recall/MRR/nDCG；正式检索基线来自任务七的独立锁定测试记录。
+
+重复验收会写入新的 reports/rechecks/fresh-时间戳目录，拒绝覆盖旧报告。指定本次应用的私有错误日志，避免拿旧日志证明当前启动：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delivery.ps1 -UiCapture .runtime/ui-three-dom.json -StderrLog .runtime/my-run/app.stderr.log -ReportDir reports/rechecks/my-new-review
+```
+
+UiCapture 必须来自已完成的真实浏览器操作；也可传历史采集重验历史记录，报告明确标记重放。历史 recheck_tasks_01_03.ps1 用于阅读旧环境流程，当前复验使用本节入口。完整七项复验及证据映射见 [综合复审报告](../reports/TASK_01_07_AUDIT_DELIVERY.md)。
 
 
 ## 任务六RAG B0

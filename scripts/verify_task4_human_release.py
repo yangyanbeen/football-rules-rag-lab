@@ -18,6 +18,7 @@ def main():
     parser.add_argument('--report',type=Path,default=ROOT/'reports/acceptance/task4_human_release_verification.json')
     args=parser.parse_args()
     report=args.report.resolve()
+    if report.exists():raise ValueError('Refusing to overwrite an existing report')
     if not any(report.is_relative_to(ROOT/name) for name in ('reports','.tmp')) or report.suffix!='.json':
         raise ValueError('Use a JSON report under reports/ or .tmp/')
     before = {p.name: digest(p.read_bytes()) for p in EVAL.iterdir() if p.is_file()}

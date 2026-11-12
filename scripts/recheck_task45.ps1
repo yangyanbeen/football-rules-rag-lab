@@ -7,6 +7,7 @@ $env:PYTHONIOENCODING = 'utf-8'
 $env:PYTHONDONTWRITEBYTECODE = '1'
 if (-not $ReportDir) { $ReportDir = 'reports/rechecks/task45-' + (Get-Date).ToUniversalTime().ToString('yyyyMMddTHHmmssfffffff') }
 if (-not [System.IO.Path]::IsPathRooted($ReportDir)) { $ReportDir = Join-Path $ProjectRoot $ReportDir }
+if (Test-Path -LiteralPath $ReportDir) { throw 'Use a new report directory; historical evidence must be preserved.' }
 Push-Location $ProjectRoot
 try {
     & $PythonExe scripts/validate_eval_dataset.py --phase delivery --report (Join-Path $ReportDir 'acceptance/task4_delivery_gate.json')

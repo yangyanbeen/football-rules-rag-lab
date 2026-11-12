@@ -1,0 +1,14 @@
+{
+  "captured_at": "2026-11-12T11:44:21.550571+00:00",
+  "scope": "One synthetic execution of original AST; six source/document inspections, not production incidents",
+  "observations": {
+    "original_ast_selects_later_event_for_old_capture": true,
+    "only_quote_presence_checked_not_full_visible_answer": false,
+    "fresh_report_has_fixed_write_target": true,
+    "fresh_contract_receipt_not_bound_to_input_hash": true,
+    "fresh_log_hardcodes_previous_run": true,
+    "isolated_task3_report_write_has_no_exists_guard": true,
+    "current_public_setup_stale_task_status": true
+  },
+  "all_reproduced": false
+}

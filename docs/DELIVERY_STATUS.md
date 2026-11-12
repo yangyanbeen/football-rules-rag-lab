@@ -2,6 +2,8 @@
 
 日期：2026-11-12。原设计/执行文档是冻结的历史基线，其中的历史进度、未初始化 Git 等描述不改写；当前事实由本页及对应交付报告补充。
 
+任务一至七综合复审已补齐复验覆盖保护、完整UI关联、依赖回执绑定和当前文档说明，见[综合复审交付](../reports/TASK_01_07_AUDIT_DELIVERY.md)。新增37项专项回归通过；原门禁分别复验，保留原始报告、原测试成绩和人工账本。新证据在 reports/rechecks/task1-7-audit-20261112，后续重验必须使用新目录。
+
 任务七已重新交付，最新依据[缺陷补齐报告](../reports/TASK_07_SUPPLEMENT.md)：7组问题关闭、原交付门禁43/43、新回归61/61、合同110/110及复算113/113通过；原95%结果和正式测试记录保持原字节，未重测锁定集。新开发入口40题真实运行和无模型公开副本三组复算另有证据。
 
 最新任务七见[交付报告](../reports/TASK_07_DELIVERY.md)：固定Dense检索锁定测试Recall@5/10为95%（38/40）、MRR@10为0.86042，总检索P50/P95为270.18/312.82ms（150次），43/43交付通过。开发/测试逐题记录与独立公开复算已交付，未调参或测答案质量。任务八至十四继续原计划。
@@ -13,7 +15,7 @@
 | 任务 | 状态 | 原交付要求与已交付文件 | 证据 |
 | --- | --- | --- | --- |
 | 1 审计与冻结 | 已交付 | PROJECT_AUDIT、EXPERIMENT_LOG、原本机 project_file_manifest、基线锁 | TASK_01_02_DELIVERY、TASK_01_02_RECHECK、task1_task2_after-task3.json；32/32 为任务一二联合结果 |
-| 2 固定应用与本机运行 | 已交付 | UPSTREAM_VERSION、LOCAL_SETUP、启动脚本、KOTAEMON_BASELINE | 同上；质量修复见 ANSWER_QUALITY_FIX_2026-11-11.md；UI/引用检查 5/5 |
+| 2 固定应用与本机运行 | 已交付 | UPSTREAM_VERSION、LOCAL_SETUP、启动脚本、KOTAEMON_BASELINE | 同上；质量修复见 ANSWER_QUALITY_FIX.md；UI/引用检查 5/5 |
 | 3 统一数据结构 | 已交付 | RAG_DATA_SCHEMA、build/validate 脚本、两份派生 JSONL、数据 manifest | TASK_03_DELIVERY；主校验 18/18、交付 8/8、坏数据拒绝 16/16 |
 | 4 检索/答案评测集 | 已按原标准交付 | 40开发/50锁定测试、90对应答案标签和90对负例；90/90逐题人工通过 | 原完整门禁26/26、结构22/22、工作流27/27、封存专项15/15；TASK_04_DELIVERY、human_review_receipt.json |
 | 5 Embedding与可追溯向量索引 | 已按原标准交付 | 固定BGE-M3 1024维CPU、Chroma99段索引、ID/来源映射、空目录重建和查询适配层 | TASK_05_DELIVERY；完整24/24、18种错误拒绝；正式检索质量由任务七独立测量 |

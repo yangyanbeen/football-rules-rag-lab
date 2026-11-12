@@ -1,0 +1,341 @@
+{
+  "status": "PASS",
+  "captured_at": "2026-11-12T12:14:14.035410+00:00",
+  "passed": 43,
+  "total": 43,
+  "checks": {
+    "all_required_manifests_and_private_preservation_baseline_available": true,
+    "development_independently_replays_without_models": true,
+    "test_independently_replays_without_models": true,
+    "dev_fixed_question_counts": true,
+    "dev_all_questions_have_three_latency_samples": true,
+    "dev_original_metrics_and_separate_coverage_present": true,
+    "dev_four_separate_latency_stages_and_declared_percentiles": true,
+    "dev_public_prediction_and_request_schema_no_bodies_vectors_answers": true,
+    "dev_source_commit_is_committed_and_predates_measurement": true,
+    "dev_run_times_are_ordered": true,
+    "test_fixed_question_counts": true,
+    "test_all_questions_have_three_latency_samples": true,
+    "test_original_metrics_and_separate_coverage_present": true,
+    "test_four_separate_latency_stages_and_declared_percentiles": true,
+    "test_public_prediction_and_request_schema_no_bodies_vectors_answers": true,
+    "test_source_commit_is_committed_and_predates_measurement": true,
+    "test_run_times_are_ordered": true,
+    "both_splits_share_identical_preregistered_measurement_configuration": true,
+    "top10_three_measured_three_warmup_serial_no_cache_policy": true,
+    "same_model_index_corpus_and_all_public_input_snapshots": true,
+    "test_is_final_report_and_not_parameter_selection": true,
+    "authorization_hash_and_directory_bind_completed_test": true,
+    "development_completed_before_authorization_before_test_start": true,
+    "authorization_source_commit_preexists_prepare_and_matches_test_source": true,
+    "authorized_development_manifest_and_summary_are_this_run": true,
+    "both_authorized_synthetic_verifications_pass_and_predate_authorization": true,
+    "selected_test_run_two_events_bound_to_lock_config_authorization_manifest": true,
+    "original_dataset_manifest_and_formal_test_runs_not_rewritten": true,
+    "original_test_lock_remains_locked_with_identical_file_sha": true,
+    "both_99_source_maps_match_original_corpus_metadata_without_publishing_bodies": true,
+    "private_preservation_snapshot_covers_its_committed_baseline": true,
+    "formal_dense_index_all_artifact_bytes_and_manifest_unchanged": true,
+    "original_private_human_review_ledger_unchanged": true,
+    "private_ledger_hash_still_matches_public_human_receipt": true,
+    "all_original_eval_and_historical_report_bytes_unchanged": true,
+    "original_dense_manifests_and_application_configuration_unchanged": true,
+    "three_original_authority_documents_unchanged": true,
+    "ten_frozen_files_unchanged": true,
+    "four_append_only_historical_prefixes_unchanged": true,
+    "all_61_private_local_corpus_files_unchanged": true,
+    "original_project_178_static_files_unchanged": true,
+    "original_project_has_no_root_git": true,
+    "task7_measurement_policy_configuration_still_matches_before_snapshot": true
+  },
+  "failed_checks": [],
+  "errors": [],
+  "kind": "task7_local_preservation_and_saved_run_replay_gate",
+  "real_model_requests_in_this_script": 0,
+  "corpus_reencodings_in_this_script": 0,
+  "real_test_runs_started_by_this_script": 0,
+  "test_questions_or_individual_rankings_exposed_by_this_script": false,
+  "private_preservation_inputs_required": [
+    ".runtime/task7/before.json",
+    ".runtime/eval_review/reviews.jsonl",
+    "data/indexes/dense/",
+    "61 local corpus files",
+    "original project and its 178-file snapshot"
+  ],
+  "replay_scope": "Existing dev/test artifacts are validated and independently rescored; only aggregates are exposed.",
+  "private_scope": "Local hashes prove preservation against the saved snapshot; no new human review or expert rules certification is claimed.",
+  "summaries": {
+    "dev": {
+      "run_id": "479709cb65a4490bb0356980aa0bf4cc",
+      "purpose": "development",
+      "questions": 40,
+      "answerable_denominator": 32,
+      "unanswerable_excluded": 8,
+      "metrics": {
+        "Recall@5": 0.96875,
+        "Recall@10": 0.96875,
+        "MRR@10": 0.890625,
+        "all_gold_coverage@5": 0.953125
+      },
+      "latency": {
+        "questions": 40,
+        "samples": 120,
+        "unit": "milliseconds",
+        "percentile_method": "linear interpolation at q * (n - 1)",
+        "stages": {
+          "normalization_seconds": {
+            "mean": 0.018187500000000002,
+            "p50": 0.0174,
+            "p95": 0.025014999999999992,
+            "min": 0.012700000000000001,
+            "max": 0.030000000000000002
+          },
+          "query_embedding_seconds": {
+            "mean": 259.6552916666951,
+            "p50": 258.82869999804825,
+            "p95": 307.62312000042584,
+            "min": 180.27460000303108,
+            "max": 320.533100002649
+          },
+          "vector_search_seconds": {
+            "mean": 5.579720833369113,
+            "p50": 5.360150000342401,
+            "p95": 7.589679999000509,
+            "min": 4.2437999982212204,
+            "max": 7.907799998065457
+          },
+          "total_seconds": {
+            "mean": 265.27032750000006,
+            "p50": 264.67600000000004,
+            "p95": 312.11546,
+            "min": 186.0328,
+            "max": 325.5446
+          }
+        }
+      },
+      "latency_by_answerability": {
+        "true": {
+          "questions": 32,
+          "samples": 96,
+          "unit": "milliseconds",
+          "percentile_method": "linear interpolation at q * (n - 1)",
+          "stages": {
+            "normalization_seconds": {
+              "mean": 0.01835104166666667,
+              "p50": 0.017449999999999997,
+              "p95": 0.024425000000000002,
+              "min": 0.012700000000000001,
+              "max": 0.030000000000000002
+            },
+            "query_embedding_seconds": {
+              "mean": 260.6761645833255,
+              "p50": 260.045450000689,
+              "p95": 308.99597500138043,
+              "min": 180.27460000303108,
+              "max": 320.533100002649
+            },
+            "vector_search_seconds": {
+              "mean": 5.637704166815638,
+              "p50": 5.4311000003508525,
+              "p95": 7.6201999991099,
+              "min": 4.2437999982212204,
+              "max": 7.907799998065457
+            },
+            "total_seconds": {
+              "mean": 266.349228125,
+              "p50": 265.51565,
+              "p95": 313.5023,
+              "min": 186.0328,
+              "max": 325.5446
+            }
+          }
+        },
+        "false": {
+          "questions": 8,
+          "samples": 24,
+          "unit": "milliseconds",
+          "percentile_method": "linear interpolation at q * (n - 1)",
+          "stages": {
+            "normalization_seconds": {
+              "mean": 0.017533333333333335,
+              "p50": 0.0163,
+              "p95": 0.027194999999999993,
+              "min": 0.0133,
+              "max": 0.027800000000000002
+            },
+            "query_embedding_seconds": {
+              "mean": 255.57180000017374,
+              "p50": 252.5024000005942,
+              "p95": 295.61337499999354,
+              "min": 197.5497000021278,
+              "max": 298.38269999891054
+            },
+            "vector_search_seconds": {
+              "mean": 5.347787499583016,
+              "p50": 5.044949999501114,
+              "p95": 7.317389997842836,
+              "min": 4.365900000266265,
+              "max": 7.625400001415983
+            },
+            "total_seconds": {
+              "mean": 260.954725,
+              "p50": 259.1809,
+              "p95": 300.40837,
+              "min": 202.303,
+              "max": 303.4284
+            }
+          }
+        }
+      },
+      "summary": {
+        "path": "reports/retrieval/dense_b0/dev/summary.json",
+        "size_bytes": 15449,
+        "sha256": "6c022b9d98f039ea5396f3346c361a784391e64b5b0d3f1b00e35f3e4ee2aa02"
+      },
+      "run_manifest": {
+        "path": "reports/retrieval/dense_b0/dev/run_manifest.json",
+        "size_bytes": 10565,
+        "sha256": "e3defbf783b916186763ab38545d56f828d8044d55c47db1183a1f0768019c8c"
+      }
+    },
+    "test": {
+      "run_id": "5ae308ea8f7544deb2cdaa8586cb7cd7",
+      "purpose": "final_report",
+      "questions": 50,
+      "answerable_denominator": 40,
+      "unanswerable_excluded": 10,
+      "metrics": {
+        "Recall@5": 0.95,
+        "Recall@10": 0.95,
+        "MRR@10": 0.8604166666666668,
+        "all_gold_coverage@5": 0.93125
+      },
+      "latency": {
+        "questions": 50,
+        "samples": 150,
+        "unit": "milliseconds",
+        "percentile_method": "linear interpolation at q * (n - 1)",
+        "stages": {
+          "normalization_seconds": {
+            "mean": 0.019073999999999987,
+            "p50": 0.018099999999999998,
+            "p95": 0.024764999999999995,
+            "min": 0.014199999999999999,
+            "max": 0.0597
+          },
+          "query_embedding_seconds": {
+            "mean": 266.6391206665867,
+            "p50": 265.6552999997075,
+            "p95": 307.32607999925676,
+            "min": 182.4570999997377,
+            "max": 341.7480999996769
+          },
+          "vector_search_seconds": {
+            "mean": 5.4644519998206915,
+            "p50": 5.269649998808745,
+            "p95": 7.513320001089595,
+            "min": 4.140400000324007,
+            "max": 8.210100000724196
+          },
+          "total_seconds": {
+            "mean": 272.1381806666667,
+            "p50": 270.1763,
+            "p95": 312.82121,
+            "min": 188.52949999999998,
+            "max": 347.2816
+          }
+        }
+      },
+      "latency_by_answerability": {
+        "true": {
+          "questions": 40,
+          "samples": 120,
+          "unit": "milliseconds",
+          "percentile_method": "linear interpolation at q * (n - 1)",
+          "stages": {
+            "normalization_seconds": {
+              "mean": 0.019245833333333327,
+              "p50": 0.018000000000000002,
+              "p95": 0.024954999999999995,
+              "min": 0.0146,
+              "max": 0.0597
+            },
+            "query_embedding_seconds": {
+              "mean": 265.5474258332409,
+              "p50": 260.8178999998927,
+              "p95": 306.92527999963204,
+              "min": 182.4570999997377,
+              "max": 341.7480999996769
+            },
+            "vector_search_seconds": {
+              "mean": 5.437878333123081,
+              "p50": 5.229300000792136,
+              "p95": 7.489215001623961,
+              "min": 4.140400000324007,
+              "max": 8.134700001392048
+            },
+            "total_seconds": {
+              "mean": 271.01988416666666,
+              "p50": 266.45335000000006,
+              "p95": 312.65011,
+              "min": 188.52949999999998,
+              "max": 347.2816
+            }
+          }
+        },
+        "false": {
+          "questions": 10,
+          "samples": 30,
+          "unit": "milliseconds",
+          "percentile_method": "linear interpolation at q * (n - 1)",
+          "stages": {
+            "normalization_seconds": {
+              "mean": 0.018386666666666666,
+              "p50": 0.0182,
+              "p95": 0.023249999999999996,
+              "min": 0.014199999999999999,
+              "max": 0.026
+            },
+            "query_embedding_seconds": {
+              "mean": 271.0058999999698,
+              "p50": 272.75994999945397,
+              "p95": 307.5983550015735,
+              "min": 221.0510000004433,
+              "max": 324.38379999803146
+            },
+            "vector_search_seconds": {
+              "mean": 5.570746666611133,
+              "p50": 5.334299998139613,
+              "p95": 7.222305000141203,
+              "min": 4.436199997144286,
+              "max": 8.210100000724196
+            },
+            "total_seconds": {
+              "mean": 276.6113666666667,
+              "p50": 279.57175,
+              "p95": 313.24296000000004,
+              "min": 227.15789999999998,
+              "max": 329.5494
+            }
+          }
+        }
+      },
+      "summary": {
+        "path": "reports/retrieval/dense_b0/test/summary.json",
+        "size_bytes": 16848,
+        "sha256": "c35bfba2aca06337677e0f0f52b86bd75ef0d93fb7ebe94a98066295ca505d34"
+      },
+      "run_manifest": {
+        "path": "reports/retrieval/dense_b0/test/run_manifest.json",
+        "size_bytes": 10749,
+        "sha256": "fad0435cd11b50ef6c3156fa1f7905a206368b068e31076c8b3ba51901e5f329"
+      }
+    }
+  },
+  "source_sha256": {
+    "verify_task7_delivery.py": "e613460e74fc9de82edea865087dda4ea99e5391da7d1615883253da360ce971",
+    "dense_retrieval_eval.py": "7a1a522f35c2b8ed8ffb5712b3ec5371b4fbb0b41450c5ef89d03f1c2cb40fd0",
+    "dense_retrieval_contracts.py": "b20ab9bac37bbd1e973af8f11e2b889415f793e2678770d920d49153f20c5f3a",
+    "retrieval_metrics.py": "350759f655b78e43f4d0c4114a4a2c7d03b87c7281ac0cae40678bae15341168"
+  }
+}

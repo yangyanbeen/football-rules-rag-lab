@@ -88,6 +88,8 @@ def main():
     parser.add_argument('--data-dir',type=Path,default=EVAL)
     parser.add_argument('--report',type=Path)
     args=parser.parse_args()
+    if args.report and args.report.resolve().exists():
+        raise ValueError('Refusing to overwrite an existing report')
     result=validate_receipt(args.data_dir)
     if args.report:
         path=args.report.resolve()

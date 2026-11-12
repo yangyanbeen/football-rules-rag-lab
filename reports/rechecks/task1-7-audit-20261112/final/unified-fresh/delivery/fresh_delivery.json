@@ -1,0 +1,224 @@
+{
+  "captured_at": "2026-11-12T12:15:10.673407+00:00",
+  "status": "PASS",
+  "scope": "New checkout core Ollama runtime, fresh browser acceptance and unchanged tasks 1-3; not a locked quality benchmark.",
+  "passed": 33,
+  "total": 33,
+  "checks": [
+    {
+      "check": "project_virtualenv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "standalone_python_inside_new_checkout",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "python_3_10_22",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "pinned_official_clean_upstream",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "own_verified_tokenizer_cache",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "own_real_nltk_resources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_exported_locked_runtime_versions",
+      "passed": true,
+      "detail": {
+        "active_requirements": 260,
+        "installed_distributions": 262,
+        "mismatches": [],
+        "export_sha256": "416de02fcd85e9df3be6e906d85dfeab57f27be7cfa4069f910ddd8ec74916a6",
+        "upstream_uv_lock_sha256": "cead56f491c1c35464ae7fdd4898dc8d5bd4f2a2e848d55627507d49c85b919f"
+      }
+    },
+    {
+      "check": "all_package_locations_inside_new_checkout",
+      "passed": true,
+      "detail": {
+        "foreign_packages": []
+      }
+    },
+    {
+      "check": "editable_sources_inside_pinned_new_checkout",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "ten_frozen_specification_and_corpus_files",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "four_historical_report_prefixes_preserved",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "all_61_local_corpus_files_preserved",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "ordinary_account_is_not_admin",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "five_files_owned_by_ordinary_account",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "admin_private_files_not_transferred",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "five_uploaded_markdown_files_match_frozen_bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "temporary_ui_index_has_50_chunks",
+      "passed": true,
+      "detail": {
+        "chunks": 50,
+        "formal_RAG_B0": false
+      }
+    },
+    {
+      "check": "fresh_database_started_empty",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "local_model_registries_only",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "single_private_file_collection",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fresh_browser_Q1",
+      "passed": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "check": "fresh_browser_Q2",
+      "passed": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "check": "fresh_browser_Q3",
+      "passed": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "check": "exactly_three_new_browser_questions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fresh_16_development_regressions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fresh_19_evidence_contracts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "task3_unchanged_original_suite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_runtime_failure_or_optional_remote_tokenizer_retry",
+      "passed": true,
+      "detail": {
+        "errors": [],
+        "informational_warning": "Chroma clamps requested 100 candidates to the actual 50 stored chunks."
+      }
+    },
+    {
+      "check": "stderr_contains_only_known_chroma_capacity_notice",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "live_independent_application_http_200",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "original_ollama_model_digests",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "original_178_static_files_unchanged",
+      "passed": true,
+      "detail": {
+        "files": 178,
+        "changed": []
+      }
+    },
+    {
+      "check": "original_project_has_no_root_git",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "runtime_code_sha256": {
+    "scripts/run_kotaemon_local.py": "68041b2eb4dc1bb49bc6e8b6faa627e7bb3f21a15191b4ab96ffb93ccede847e",
+    "scripts/kotaemon_runtime_env.py": "27d14d27222f179b4d2bcbed0bc44f48925dac3861ae8b23808ebc9a88603858",
+    "scripts/kotaemon_local_retrieval.py": "0f055d313fc994144967e107f1cd513eb8fc5c85d485f167f2314dbc58df7fcf",
+    "scripts/football_quality_pipeline.py": "9f07b2b65ca48a28f54bbb99f51d99c060e47617410249d73d85a9b336bdb53b",
+    "scripts/football_evidence.py": "0d650f28eaa13e0f92f88b165eb350e19d5843792f1124e74d93e13049a4e846",
+    "config/answer_quality.json": "3d52167eee2c49ad3d8752e6e6e0cf5b5f618c24d496ee21dd5c1959812983d5",
+    "scripts/install_local_runtime.ps1": "317ce13f89718b5682117b47925396d505910c036e1e76ea7c154228176dd4b3",
+    "scripts/run_baseline_check.ps1": "9861213771ce4236e2878cbbadfcde813602ed49d518706b31275f285b89642a",
+    "scripts/prepare_kotaemon_assets.py": "a45f39b7b381133a9c02f769b25ea98d9769108369fd48cd44f43f2f9fccc863"
+  },
+  "private_regression_sha256": "abea3ce569717218b48a00d83bea78ae4922cafe07943426b1aaf5551c6cc3b9",
+  "input_receipts": {
+    "reports/rechecks/task1-7-audit-20261112/final/unified-fresh/answer_contract.json": "fbf94140a4ac54fc52057081034207fa0fb87a5d56a905f2925b68cb9980a78c",
+    "reports/rechecks/task1-7-audit-20261112/final/unified-fresh/task3.json": "71eaa4ed9a90b0f8b15decaadefa62b3a5bcd08b5610ea7a794f57d1f2f1ac8c"
+  },
+  "private_stderr": {
+    "path": ".runtime/task1-7-audit/kotaemon.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "ui_evidence_scope": "Replay of supplied browser capture and its unique matching event; HTTP checks are current. No browser submissions are made by this verifier.",
+  "limitations": [
+    "Core runtime from original lock; optional advanced torch/graph/dev extras not installed.",
+    "Ollama model service is reused explicitly; no old virtualenv or account/index database used.",
+    "Development question checks do not measure expert accuracy, Recall, MRR or nDCG.",
+    "Wikipedia/translation/version review qualifications remain unchanged; this gate covers tasks 1-3 only."
+  ]
+}

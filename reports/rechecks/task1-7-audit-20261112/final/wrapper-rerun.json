@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "passed": 4,
+  "total": 4,
+  "checks": {
+    "fresh_rejects_existing_directory": true,
+    "fresh_all_evidence_bytes_preserved": true,
+    "task45_rejects_existing_directory": true,
+    "task45_all_evidence_bytes_preserved": true
+  },
+  "scope": "Actual PowerShell wrapper rerun protection; rejected before runtime/model work"
+}

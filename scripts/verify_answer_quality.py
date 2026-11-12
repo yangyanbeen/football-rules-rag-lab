@@ -1,6 +1,7 @@
 """Read-only evidence contract checks; writes a separate verification receipt."""
 
 import argparse
+import hashlib
 import json
 from datetime import datetime, timezone
 
@@ -10,6 +11,7 @@ configure_local_runtime()
 
 from football_evidence import ROOT, get_engine, paragraphs, render_answer, topic_scope, validate_selection
 from run_answer_quality_regression import structural_checks
+from delivery_review_io import new_report
 
 
 def main():
@@ -18,7 +20,7 @@ def main():
     parser.add_argument('--output', default='reports/answer-quality-contract-verification-2026-11-11.json')
     args = parser.parse_args()
     input_path = (ROOT / args.regression_report).resolve()
-    output_path = (ROOT / args.output).resolve()
+    output_path = new_report(ROOT, args.output)
     if not input_path.is_relative_to(ROOT) or not output_path.is_relative_to(ROOT):
         raise ValueError('Reports must remain inside this checkout')
     if output_path == input_path or output_path.suffix != '.json' or not any(output_path.is_relative_to(ROOT / folder) for folder in ('reports', '.tmp')):
@@ -78,10 +80,12 @@ def main():
     route = topic_scope("球门球与角球在直接进球方面有哪些相同点？", engine.config)
     record("comparison_requires_both_rules", set(route["required_laws"]) == required)
     record("runtime_context_exceeds_budget_plus_output", engine.config["num_ctx"] > engine.config["input_token_budget"] + engine.config["output_tokens"])
-    result = {"captured_at": datetime.now(timezone.utc).isoformat(), "passed": sum(item["passed"] for item in checks), "total": len(checks), "checks": checks}
+    result = {"captured_at": datetime.now(timezone.utc).isoformat(), "passed": sum(item["passed"] for item in checks), "total": len(checks), "checks": checks,
+              "regression_sha256": hashlib.sha256(input_path.read_bytes()).hexdigest()}
     path = output_path
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    with path.open('x', encoding='utf-8') as handle:
+        handle.write(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
     print(f"Evidence contracts: {result['passed']}/{result['total']}")
     return 0 if result["passed"] == result["total"] else 1
 

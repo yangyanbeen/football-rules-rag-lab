@@ -10,6 +10,7 @@ import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from delivery_review_io import new_report
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -22,9 +23,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--report', default='reports/acceptance/task3_recheck.json')
     args = parser.parse_args()
-    output = (ROOT / args.report).resolve()
-    if output.suffix != '.json' or not any(output.is_relative_to(ROOT / p) for p in ('reports', '.tmp')):
-        raise ValueError('Use a JSON receipt under reports/ or .tmp/')
+    output = new_report(ROOT, args.report)
     stamp = datetime.now(timezone(timedelta(hours=8))).strftime('%Y%m%d-%H%M%S-%f')
     fixture = ROOT / '.tmp' / f'task3-isolated-{stamp}'
     fixture.mkdir(parents=True, exist_ok=False)
@@ -69,7 +68,8 @@ def main():
         'status': 'PASS' if process.returncode == 0 and unchanged and suite and suite['status'] == 'PASS' else 'FAIL',
     }
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', 'utf-8')
+    with output.open('x', encoding='utf-8') as handle:
+        handle.write(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
     print(f"Task 3 isolated review: {result['status']}; inputs unchanged={unchanged}")
     if suite:
         print(f"Original suite: {suite['positive_checks_passed']}/{suite['positive_checks_total']}; corrupt cases rejected: {suite['negative_cases_rejected']}/{suite['negative_cases_total']}")

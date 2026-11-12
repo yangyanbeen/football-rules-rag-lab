@@ -1,0 +1,821 @@
+{
+  "generated_at": "2026-11-12T20:14:53+08:00",
+  "criteria": "Original task 3, unchanged",
+  "execution": {
+    "python_version": "3.10.22",
+    "python_scope": "This checkout virtualenv",
+    "fixture": ".tmp/task3-isolated-20261112-201445-044905",
+    "exit_code": 0,
+    "stdout": "Negative case: duplicate_id: REJECTED\nNegative case: missing_record: REJECTED\nNegative case: changed_source_id: REJECTED\nNegative case: forged_source_URL: REJECTED\nNegative case: invalid_source_lines: REJECTED\nNegative case: invented_parent: REJECTED\nNegative case: overstated_revision_verification: REJECTED\nNegative case: overstated_expert_review: REJECTED\nNegative case: removed_review_notes: REJECTED\nNegative case: rewritten_Chinese: REJECTED\nNegative case: rewritten_English: REJECTED\nNegative case: truncated_table: REJECTED\nNegative case: table_mislabeled_as_paragraph: REJECTED\nNegative case: boolean_source_line_numbers: REJECTED\nNegative case: missing_required_field: REJECTED\nNegative case: forged_provenance: REJECTED\nTask 3 delivery: PASS; checks 8/8; corrupt cases rejected 16/16\n",
+    "stderr": ""
+  },
+  "input_files_unchanged": true,
+  "canonical_validation": {
+    "task": 3,
+    "criteria": "Unchanged task 3 in docs/DEVELOPMENT_PLAN_AND_REPORT.md",
+    "generated_at": "2026-11-12T20:14:53+08:00",
+    "command": ".venv/Scripts/python.exe scripts/validate_rag_dataset.py --data-dir data/processed --report reports/task3_dataset_validation.json",
+    "summary": {
+      "documents": 5,
+      "chinese_records": 99,
+      "parallel_records": 99,
+      "unique_ids": 99,
+      "available_source_pages": 18,
+      "referenced_source_pages": 17,
+      "null_parent_ids": 99,
+      "chunk_types": {
+        "paragraph": 98,
+        "table": 1,
+        "unknown": 0
+      },
+      "needs_rule_review": 28,
+      "expert_reviewed": 0
+    },
+    "manifest": "data/manifests/rag_dataset_manifest.json",
+    "dataset_content_id": "77aea70e0e19e08b4bf3f041e22af8d5c979416cc43b7670a6ef702ee26edce0",
+    "checks": [
+      {
+        "check": "original_technical_task_and_Corpus_B0_files_unchanged",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "existing_report_prefixes_preserved",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "frozen_inputs_have_99_unique_aligned_IDs_and_18_sources",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "both_outputs_preserve_all_99_original_IDs_in_order",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "required_fields_and_types",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "stable_chunk_and_source_IDs",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "Chinese_and_English_content_match_input_by_ID",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "all_original_metadata_preserved",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "source_URL_lines_and_version",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "license_attribution_and_acquisition",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "translation_review_status_and_notes",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "hashes_match_actual_text_and_records",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "parent_IDs_and_structure_types",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "provenance_paths",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "Chinese_and_parallel_shared_fields_match_by_ID",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "dataset_manifest_hashes_versions_and_99_ID_mapping",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "summary_matches_actual_records_and_manifest",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "check": "table_headers_rows_conditions_and_review_notes_preserved_whole",
+        "passed": true,
+        "errors": []
+      }
+    ],
+    "passed_checks": 18,
+    "total_checks": 18,
+    "status": "PASS"
+  },
+  "original_delivery_suite": {
+    "task": 3,
+    "generated_at": "2026-11-12T20:14:53+08:00",
+    "criteria": "Original task 3 unchanged",
+    "checks": [
+      {
+        "check": "canonical_dataset_independent_validation",
+        "passed": true,
+        "details": null
+      },
+      {
+        "check": "canonical_rebuild_is_byte_identical_including_manifest",
+        "passed": true,
+        "details": {
+          "data/processed/rag_chunks_zh.jsonl": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+          "data/processed/rag_chunks_parallel.jsonl": "3e3167bd3590c66c58d617796e5495440ac219cd9599245aee02ca810dd36467",
+          "data/manifests/rag_dataset_manifest.json": "529596d1fae73186065fc70d39749f000ffc2f4fa960252cba6285ddd538c39c"
+        }
+      },
+      {
+        "check": "fresh_directory_rebuild_preserves_both_JSONL_bytes",
+        "passed": true,
+        "details": null
+      },
+      {
+        "check": "fresh_directory_passes_independent_validation",
+        "passed": true,
+        "details": null
+      },
+      {
+        "check": "in_memory_reversed_English_input_is_joined_by_ID_not_zip_order",
+        "passed": true,
+        "details": null
+      },
+      {
+        "check": "frozen_input_directory_cannot_be_used_as_output_even_with_overwrite",
+        "passed": true,
+        "details": null
+      },
+      {
+        "check": "all_16_corrupt_derived_datasets_rejected_after_rehashing",
+        "passed": true,
+        "details": null
+      },
+      {
+        "check": "canonical_data_and_frozen_inputs_still_pass_after_fault_injection",
+        "passed": true,
+        "details": null
+      }
+    ],
+    "positive_checks_passed": 8,
+    "positive_checks_total": 8,
+    "negative_cases_rejected": 16,
+    "negative_cases_total": 16,
+    "negative_cases": [
+      {
+        "case": "duplicate_id",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "both_outputs_preserve_all_99_original_IDs_in_order",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl: count, uniqueness or deterministic input order changed",
+              "rag_chunks_parallel.jsonl: count, uniqueness or deterministic input order changed"
+            ]
+          },
+          {
+            "check": "Chinese_and_English_content_match_input_by_ID",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: Chinese body/title differs from original",
+              "rag_chunks_parallel.jsonl:L01-01: Chinese body/title differs from original",
+              "rag_chunks_parallel.jsonl:L01-01: English excerpt differs from original"
+            ]
+          },
+          {
+            "check": "all_original_metadata_preserved",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: changed original metadata: section_path",
+              "rag_chunks_zh.jsonl:L01-01: changed original metadata: source_lines",
+              "rag_chunks_zh.jsonl:L01-01: changed original metadata: needs_rule_review",
+              "rag_chunks_zh.jsonl:L01-01: changed original metadata: review_notes",
+              "rag_chunks_zh.jsonl:L01-01: changed original metadata: source_text_sha256",
+              "rag_chunks_zh.jsonl:L01-01: changed original metadata: translated_body_sha256",
+              "rag_chunks_parallel.jsonl:L01-01: changed original metadata: section_path",
+              "rag_chunks_parallel.jsonl:L01-01: changed original metadata: source_lines",
+              "rag_chunks_parallel.jsonl:L01-01: changed original metadata: needs_rule_review",
+              "rag_chunks_parallel.jsonl:L01-01: changed original metadata: review_notes",
+              "rag_chunks_parallel.jsonl:L01-01: changed original metadata: source_text_sha256",
+              "rag_chunks_parallel.jsonl:L01-01: changed original metadata: translated_body_sha256"
+            ]
+          },
+          {
+            "check": "hashes_match_actual_text_and_records",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: hash aliases differ from original excerpt hashes",
+              "rag_chunks_parallel.jsonl:L01-01: hash aliases differ from original excerpt hashes"
+            ]
+          },
+          {
+            "check": "summary_matches_actual_records_and_manifest",
+            "passed": false,
+            "errors": [
+              "manifest summary mismatch"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/duplicate_id",
+          "--report",
+          ".tmp/task3-verification/duplicate_id/validation.json"
+        ]
+      },
+      {
+        "case": "missing_record",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "both_outputs_preserve_all_99_original_IDs_in_order",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl: count, uniqueness or deterministic input order changed",
+              "rag_chunks_parallel.jsonl: count, uniqueness or deterministic input order changed"
+            ]
+          },
+          {
+            "check": "dataset_manifest_hashes_versions_and_99_ID_mapping",
+            "passed": false,
+            "errors": [
+              "wrong output paths/counts"
+            ]
+          },
+          {
+            "check": "summary_matches_actual_records_and_manifest",
+            "passed": false,
+            "errors": [
+              "manifest summary mismatch"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/missing_record",
+          "--report",
+          ".tmp/task3-verification/missing_record/validation.json"
+        ]
+      },
+      {
+        "case": "changed_source_id",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "stable_chunk_and_source_IDs",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: changed chunk_id or source_id",
+              "rag_chunks_parallel.jsonl:L01-01: changed chunk_id or source_id"
+            ]
+          },
+          {
+            "check": "all_original_metadata_preserved",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: changed original metadata: source_id",
+              "rag_chunks_parallel.jsonl:L01-01: changed original metadata: source_id"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/changed_source_id",
+          "--report",
+          ".tmp/task3-verification/changed_source_id/validation.json"
+        ]
+      },
+      {
+        "case": "forged_source_URL",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "all_original_metadata_preserved",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: changed original metadata: source_url",
+              "rag_chunks_parallel.jsonl:L01-01: changed original metadata: source_url"
+            ]
+          },
+          {
+            "check": "source_URL_lines_and_version",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: source mismatch or overstated verification: source_url",
+              "rag_chunks_parallel.jsonl:L01-01: source mismatch or overstated verification: source_url"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/forged_source_URL",
+          "--report",
+          ".tmp/task3-verification/forged_source_URL/validation.json"
+        ]
+      },
+      {
+        "case": "invalid_source_lines",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "all_original_metadata_preserved",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: changed original metadata: source_lines",
+              "rag_chunks_parallel.jsonl:L01-01: changed original metadata: source_lines"
+            ]
+          },
+          {
+            "check": "source_URL_lines_and_version",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: invalid source_lines",
+              "rag_chunks_parallel.jsonl:L01-01: invalid source_lines"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/invalid_source_lines",
+          "--report",
+          ".tmp/task3-verification/invalid_source_lines/validation.json"
+        ]
+      },
+      {
+        "case": "invented_parent",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "parent_IDs_and_structure_types",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: invented parent or incorrect structure type",
+              "rag_chunks_parallel.jsonl:L01-01: invented parent or incorrect structure type"
+            ]
+          },
+          {
+            "check": "summary_matches_actual_records_and_manifest",
+            "passed": false,
+            "errors": [
+              "manifest summary mismatch"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/invented_parent",
+          "--report",
+          ".tmp/task3-verification/invented_parent/validation.json"
+        ]
+      },
+      {
+        "case": "overstated_revision_verification",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "source_URL_lines_and_version",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: source mismatch or overstated verification: source_revision_verified",
+              "rag_chunks_zh.jsonl:L01-01: source mismatch or overstated verification: source_revision_timestamp",
+              "rag_chunks_parallel.jsonl:L01-01: source mismatch or overstated verification: source_revision_verified",
+              "rag_chunks_parallel.jsonl:L01-01: source mismatch or overstated verification: source_revision_timestamp"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/overstated_revision_verification",
+          "--report",
+          ".tmp/task3-verification/overstated_revision_verification/validation.json"
+        ]
+      },
+      {
+        "case": "overstated_expert_review",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "all_original_metadata_preserved",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: changed original metadata: expert_reviewed",
+              "rag_chunks_parallel.jsonl:L01-01: changed original metadata: expert_reviewed"
+            ]
+          },
+          {
+            "check": "translation_review_status_and_notes",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: translation falsely upgraded",
+              "rag_chunks_parallel.jsonl:L01-01: translation falsely upgraded"
+            ]
+          },
+          {
+            "check": "summary_matches_actual_records_and_manifest",
+            "passed": false,
+            "errors": [
+              "manifest summary mismatch"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/overstated_expert_review",
+          "--report",
+          ".tmp/task3-verification/overstated_expert_review/validation.json"
+        ]
+      },
+      {
+        "case": "removed_review_notes",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "all_original_metadata_preserved",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-02: changed original metadata: review_notes",
+              "rag_chunks_parallel.jsonl:L01-02: changed original metadata: review_notes"
+            ]
+          },
+          {
+            "check": "translation_review_status_and_notes",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-02: review flag without original notes",
+              "rag_chunks_parallel.jsonl:L01-02: review flag without original notes"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/removed_review_notes",
+          "--report",
+          ".tmp/task3-verification/removed_review_notes/validation.json"
+        ]
+      },
+      {
+        "case": "rewritten_Chinese",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "Chinese_and_English_content_match_input_by_ID",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: Chinese body/title differs from original",
+              "rag_chunks_parallel.jsonl:L01-01: Chinese body/title differs from original"
+            ]
+          },
+          {
+            "check": "hashes_match_actual_text_and_records",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: hash aliases differ from original excerpt hashes",
+              "rag_chunks_parallel.jsonl:L01-01: hash aliases differ from original excerpt hashes"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/rewritten_Chinese",
+          "--report",
+          ".tmp/task3-verification/rewritten_Chinese/validation.json"
+        ]
+      },
+      {
+        "case": "rewritten_English",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "Chinese_and_English_content_match_input_by_ID",
+            "passed": false,
+            "errors": [
+              "rag_chunks_parallel.jsonl:L01-01: English excerpt differs from original"
+            ]
+          },
+          {
+            "check": "hashes_match_actual_text_and_records",
+            "passed": false,
+            "errors": [
+              "rag_chunks_parallel.jsonl:L01-01: hash aliases differ from original excerpt hashes"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/rewritten_English",
+          "--report",
+          ".tmp/task3-verification/rewritten_English/validation.json"
+        ]
+      },
+      {
+        "case": "truncated_table",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "Chinese_and_English_content_match_input_by_ID",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L14-04: Chinese body/title differs from original",
+              "rag_chunks_parallel.jsonl:L14-04: Chinese body/title differs from original"
+            ]
+          },
+          {
+            "check": "hashes_match_actual_text_and_records",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L14-04: hash aliases differ from original excerpt hashes",
+              "rag_chunks_parallel.jsonl:L14-04: hash aliases differ from original excerpt hashes"
+            ]
+          },
+          {
+            "check": "table_headers_rows_conditions_and_review_notes_preserved_whole",
+            "passed": false,
+            "errors": [
+              "penalty table unit is missing, split, retyped or modified"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/truncated_table",
+          "--report",
+          ".tmp/task3-verification/truncated_table/validation.json"
+        ]
+      },
+      {
+        "case": "table_mislabeled_as_paragraph",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "parent_IDs_and_structure_types",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L14-04: invented parent or incorrect structure type",
+              "rag_chunks_parallel.jsonl:L14-04: invented parent or incorrect structure type"
+            ]
+          },
+          {
+            "check": "summary_matches_actual_records_and_manifest",
+            "passed": false,
+            "errors": [
+              "manifest summary mismatch"
+            ]
+          },
+          {
+            "check": "table_headers_rows_conditions_and_review_notes_preserved_whole",
+            "passed": false,
+            "errors": [
+              "penalty table unit is missing, split, retyped or modified"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/table_mislabeled_as_paragraph",
+          "--report",
+          ".tmp/task3-verification/table_mislabeled_as_paragraph/validation.json"
+        ]
+      },
+      {
+        "case": "boolean_source_line_numbers",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "all_original_metadata_preserved",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: changed original metadata: source_lines",
+              "rag_chunks_parallel.jsonl:L01-01: changed original metadata: source_lines"
+            ]
+          },
+          {
+            "check": "source_URL_lines_and_version",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: invalid source_lines",
+              "rag_chunks_parallel.jsonl:L01-01: invalid source_lines"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/boolean_source_line_numbers",
+          "--report",
+          ".tmp/task3-verification/boolean_source_line_numbers/validation.json"
+        ]
+      },
+      {
+        "case": "missing_required_field",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "required_fields_and_types",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: missing=['source_url'], extra=[]",
+              "rag_chunks_zh.jsonl:L01-01: required nonempty string is missing or has wrong type",
+              "rag_chunks_parallel.jsonl:L01-01: missing=['source_url'], extra=[]",
+              "rag_chunks_parallel.jsonl:L01-01: required nonempty string is missing or has wrong type"
+            ]
+          },
+          {
+            "check": "all_original_metadata_preserved",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: changed original metadata: source_url",
+              "rag_chunks_parallel.jsonl:L01-01: changed original metadata: source_url"
+            ]
+          },
+          {
+            "check": "source_URL_lines_and_version",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: source mismatch or overstated verification: source_url",
+              "rag_chunks_parallel.jsonl:L01-01: source mismatch or overstated verification: source_url"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/missing_required_field",
+          "--report",
+          ".tmp/task3-verification/missing_required_field/validation.json"
+        ]
+      },
+      {
+        "case": "forged_provenance",
+        "passed": true,
+        "expected_exit_code": 1,
+        "actual_exit_code": 1,
+        "failed_validation_checks": [
+          {
+            "check": "provenance_paths",
+            "passed": false,
+            "errors": [
+              "rag_chunks_zh.jsonl:L01-01: incorrect input references",
+              "rag_chunks_parallel.jsonl:L01-01: incorrect input references"
+            ]
+          }
+        ],
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/forged_provenance",
+          "--report",
+          ".tmp/task3-verification/forged_provenance/validation.json"
+        ]
+      }
+    ],
+    "executions": [
+      {
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py"
+        ],
+        "exit_code": 0,
+        "stdout": "Task 3 dataset: PASS; checks: 18/18\n{\"documents\": 5, \"chinese_records\": 99, \"parallel_records\": 99, \"unique_ids\": 99, \"available_source_pages\": 18, \"referenced_source_pages\": 17, \"null_parent_ids\": 99, \"chunk_types\": {\"paragraph\": 98, \"table\": 1, \"unknown\": 0}, \"needs_rule_review\": 28, \"expert_reviewed\": 0}",
+        "stderr": ""
+      },
+      {
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/build_rag_dataset.py"
+        ],
+        "exit_code": 0,
+        "stdout": "{\"status\": \"PASS\", \"summary\": {\"documents\": 5, \"chinese_records\": 99, \"parallel_records\": 99, \"unique_ids\": 99, \"available_source_pages\": 18, \"referenced_source_pages\": 17, \"null_parent_ids\": 99, \"chunk_types\": {\"paragraph\": 98, \"table\": 1, \"unknown\": 0}, \"needs_rule_review\": 28, \"expert_reviewed\": 0}, \"manifest\": \"data/manifests/rag_dataset_manifest.json\"}",
+        "stderr": ""
+      },
+      {
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/build_rag_dataset.py",
+          "--output-dir",
+          ".tmp/task3-verification/fresh"
+        ],
+        "exit_code": 0,
+        "stdout": "{\"status\": \"PASS\", \"summary\": {\"documents\": 5, \"chinese_records\": 99, \"parallel_records\": 99, \"unique_ids\": 99, \"available_source_pages\": 18, \"referenced_source_pages\": 17, \"null_parent_ids\": 99, \"chunk_types\": {\"paragraph\": 98, \"table\": 1, \"unknown\": 0}, \"needs_rule_review\": 28, \"expert_reviewed\": 0}, \"manifest\": \".tmp/task3-verification/fresh/rag_dataset_manifest.json\"}",
+        "stderr": ""
+      },
+      {
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py",
+          "--data-dir",
+          ".tmp/task3-verification/fresh",
+          "--report",
+          ".tmp/task3-verification/fresh/validation.json"
+        ],
+        "exit_code": 0,
+        "stdout": "Task 3 dataset: PASS; checks: 18/18\n{\"documents\": 5, \"chinese_records\": 99, \"parallel_records\": 99, \"unique_ids\": 99, \"available_source_pages\": 18, \"referenced_source_pages\": 17, \"null_parent_ids\": 99, \"chunk_types\": {\"paragraph\": 98, \"table\": 1, \"unknown\": 0}, \"needs_rule_review\": 28, \"expert_reviewed\": 0}",
+        "stderr": ""
+      },
+      {
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/build_rag_dataset.py",
+          "--output-dir",
+          "data/processed/wikipedia_zh_2026-11-10",
+          "--overwrite"
+        ],
+        "exit_code": 1,
+        "stdout": "{\"status\": \"FAIL\", \"error\": \"ValueError: Cannot write into the frozen source directories\"}",
+        "stderr": ""
+      },
+      {
+        "command": [
+          ".venv/Scripts/python.exe",
+          "scripts/validate_rag_dataset.py"
+        ],
+        "exit_code": 0,
+        "stdout": "Task 3 dataset: PASS; checks: 18/18\n{\"documents\": 5, \"chinese_records\": 99, \"parallel_records\": 99, \"unique_ids\": 99, \"available_source_pages\": 18, \"referenced_source_pages\": 17, \"null_parent_ids\": 99, \"chunk_types\": {\"paragraph\": 98, \"table\": 1, \"unknown\": 0}, \"needs_rule_review\": 28, \"expert_reviewed\": 0}",
+        "stderr": ""
+      }
+    ],
+    "status": "PASS"
+  },
+  "status": "PASS"
+}
