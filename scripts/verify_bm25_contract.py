@@ -6,7 +6,7 @@ from types import SimpleNamespace
 from unittest.mock import patch
 from bm25_index import (ROOT,TEMPLATES,SOURCE_FIELDS,Tokenizer,Bm25Index,rank,normalize,
                         build,record,write_new)
-from bm25_retrieval_eval import V1_EXECUTION_FILES,replay,choose,now,validate_grant
+from bm25_retrieval_eval import V1_EXECUTION_FILES,replay,choose,now,validate_grant,valid_source
 from eval_dataset import digest,load_jsonl
 import run_bm25_retrieval as runner
 
@@ -54,6 +54,7 @@ def main():
     check('normalization_matches_query_policy',normalize('  ＡＢＣ\n  足球 ')=='abc 足球')
     for name,value in [('empty',' '),('nontext',None),('oversize','中'*401)]:check('invalid_query_'+name,rejects(lambda value=value:normalize(value)))
     indexes={t:Bm25Index(ROOT/'data/indexes/bm25'/t) for t in TEMPLATES}
+    check('all_99_original_ids_and_source_types_supported',all(valid_source(r) for r in indexes['body'].sources))
     for template,index in indexes.items():
         check(template+'_99_ids',len(index.sources)==99 and len(index.payload['documents'])==99)
         a=index.query('第11条越位位置如何判定？');b=index.query('第11条越位位置如何判定？')

@@ -33,7 +33,7 @@ def finite(value):return type(value) in (int,float) and math.isfinite(value) and
 
 
 def valid_source(row):
-    return (isinstance(row.get('chunk_id'),str) and re.fullmatch(r'L\d{2}-\d{2}',row['chunk_id'])
+    return (isinstance(row.get('chunk_id'),str) and re.fullmatch(r'[0-9A-Za-z_-]+',row['chunk_id'])
             and type(row.get('law_number')) is int and 1<=row['law_number']<=17
             and isinstance(row.get('source_url'),str) and row['source_url'].startswith('https://en.wikipedia.org/wiki/')
             and isinstance(row.get('source_lines'),list) and len(row['source_lines'])==2
@@ -134,7 +134,9 @@ def require_inputs(items,current_sources=False):
 
 
 def replay(directory):
-    directory=Path(directory).resolve();manifest=json.loads((directory/'run_manifest.json').read_text('utf-8'))
+    directory=Path(directory).resolve()
+    if (directory/'failure.json').exists():raise ValueError('Failed run evidence cannot be accepted as COMPLETE')
+    manifest=json.loads((directory/'run_manifest.json').read_text('utf-8'))
     required={'version','status','run_id','split','template','purpose','used_for_parameter_selection','source_commit','inputs',
               'started_at','completed_at','wall_seconds','load_seconds','warmups','index_manifest','environment','artifacts','authorization'}
     if set(manifest)!=required or manifest['version']!='bm25-run-1.0' or manifest['status']!='COMPLETE':raise ValueError('Incomplete/versioned run manifest')

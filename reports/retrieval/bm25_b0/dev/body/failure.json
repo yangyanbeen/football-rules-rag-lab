@@ -1,0 +1,9 @@
+{
+  "error": "Invalid source mapping",
+  "error_type": "ValueError",
+  "question_id": "D040",
+  "recorded_at": "2026-11-12T12:55:55.067895+00:00",
+  "run_id": "7a1125a9103b4958a9ddca6e36aeb49b",
+  "split": "dev",
+  "status": "FAILED"
+}
