@@ -80,7 +80,10 @@ def main():
         ('summary_token_mismatch',lambda r:r['generation'].update(eval_count=999)),
         ('missing_generation_flag',lambda r:r.update(generation_attempted=False))]
     for name,mutate in mutations:
-        changed=copy.deepcopy(sample);mutate(changed);result=worker_result(changed)
+        changed=copy.deepcopy(sample);mutate(changed)
+        if name in ('raw_response_mismatch','summary_token_mismatch'):
+            changed['attempts'][-1]['generation']=copy.deepcopy(changed['generation'])
+        result=worker_result(changed)
         record('worker_reject_'+name,result['status']=='refused' and result['refusal_reason']=='isolated_worker_failed' and not result['citations'])
     record('malformed_worker_does_not_crash',worker_result({'question':sample['question']})['status']=='refused')
     record('nontext_worker_input_fails_closed',call_worker(None)['status']=='refused')
