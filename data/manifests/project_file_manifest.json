@@ -3,7 +3,7 @@
   "scope": "New public checkout: tracked files plus hash-only local corpus inventory; original local project manifest is preserved separately.",
   "self_hash_policy": "This manifest excludes itself to avoid recursion.",
   "runtime_policy": "External runtime, credentials, databases, caches, live logs and temporary fixtures are excluded.",
-  "file_count": 421,
+  "file_count": 506,
   "files": [
     {
       "path": ".env.example",
@@ -49,8 +49,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 8141,
-      "sha256": "24b08717672458234e8b9e62684ead39419451a428856d533f2f8438a4a60a70",
+      "size_bytes": 8624,
+      "sha256": "88bd6acb4f4ec0f3c1e7405234586a047cc6030de2bdfffeea847ecf2ef35370",
       "purpose": "仓库入口、许可证或 Git 配置",
       "distribution": "public-git"
     },
@@ -65,6 +65,34 @@
       "path": "config/answer_quality.json",
       "size_bytes": 656,
       "sha256": "3d52167eee2c49ad3d8752e6e6e0cf5b5f618c24d496ee21dd5c1959812983d5",
+      "purpose": "非敏感应用配置",
+      "distribution": "public-git"
+    },
+    {
+      "path": "config/bm25_b0.json",
+      "size_bytes": 903,
+      "sha256": "a54ed9a2cef6cdb02f1798075ddcb9c48d0a8d47873eac9964cd03274c3097dc",
+      "purpose": "非敏感应用配置",
+      "distribution": "public-git"
+    },
+    {
+      "path": "config/bm25_dependency.json",
+      "size_bytes": 369,
+      "sha256": "89a1ab9e2ac2a79cfe16b190ce00a7f6ec4d98b76d0910e73566a88418eb0b1e",
+      "purpose": "非敏感应用配置",
+      "distribution": "public-git"
+    },
+    {
+      "path": "config/bm25_stopwords.txt",
+      "size_bytes": 69,
+      "sha256": "9846c49af0e318a52b851e981620f99a8d33008cbe84903b92351aa24d059bb7",
+      "purpose": "非敏感应用配置",
+      "distribution": "public-git"
+    },
+    {
+      "path": "config/bm25_userdict.txt",
+      "size_bytes": 411,
+      "sha256": "afaf13e44438d41f552a93c48d3c1d1c4862aea63ef487d170908d96b3c5c255",
       "purpose": "非敏感应用配置",
       "distribution": "public-git"
     },
@@ -98,8 +126,8 @@
     },
     {
       "path": "data/README.md",
-      "size_bytes": 1732,
-      "sha256": "08fb6ca18e0fbe06ae78da832b69f8252fdac74db6c69d860ebb69c2ed7b5c15",
+      "size_bytes": 2210,
+      "sha256": "4902cb729940246eee9303a1d3a5b614f92b828336dae9fe8bea9deba3d99709",
       "purpose": "数据格式、来源或版本清单",
       "distribution": "public-git"
     },
@@ -167,6 +195,13 @@
       "distribution": "public-git"
     },
     {
+      "path": "data/manifests/bm25_indexes.json",
+      "size_bytes": 8439,
+      "sha256": "b4ec2c6bdd2713c53e020f68f364a9973933b7ccc45c9513dad5154c844b2fa6",
+      "purpose": "数据格式、来源或版本清单",
+      "distribution": "public-git"
+    },
+    {
       "path": "data/manifests/dense_chunk_ids.json",
       "size_bytes": 32967,
       "sha256": "0bdff8a39d7a458d586fecb921582224ad7a854cc3bf6fa589e04a1150b95b61",
@@ -182,8 +217,8 @@
     },
     {
       "path": "data/manifests/experiment_manifest.json",
-      "size_bytes": 83012,
-      "sha256": "648c72677648332c16f489311f8860ec7f6f5d59a462f52e789d58f3c8db63d5",
+      "size_bytes": 105532,
+      "sha256": "7f571514ec095a0c5162fcaaf97287b9127b673ea564f548a22b405a136987bc",
       "purpose": "数据格式、来源或版本清单",
       "distribution": "public-git"
     },
@@ -664,6 +699,13 @@
       "distribution": "public-git"
     },
     {
+      "path": "docs/BM25_RETRIEVAL.md",
+      "size_bytes": 8520,
+      "sha256": "bbf4d0117512c39791e5f2ab9049b739a5ed617a65b7b158146c0f5923357c95",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
       "path": "docs/COLLECTION_LOG.md",
       "size_bytes": 2433,
       "sha256": "0220c38b56b842f715c86fbbbe04ec91d2e0c1cf3886ca99c2772a7f746c6527",
@@ -686,8 +728,8 @@
     },
     {
       "path": "docs/DELIVERY_STATUS.md",
-      "size_bytes": 7231,
-      "sha256": "433047e4d1113f2fb28a46bb0b346645419fed2e0f080b8f7e187dacffac30e7",
+      "size_bytes": 7919,
+      "sha256": "5f7f816ddbdf90334d9090712917a56f5ac5b03cad8daa1c2865099a9e1c5afb",
       "purpose": "技术、执行或当前交付文档",
       "distribution": "public-git"
     },
@@ -721,15 +763,15 @@
     },
     {
       "path": "docs/EXPERIMENT_LOG.md",
-      "size_bytes": 45539,
-      "sha256": "f8c93b07e72998caefcb42c1b0ea69c509492ff5118375d9dbb923a2b35f6665",
+      "size_bytes": 48490,
+      "sha256": "77bfe7cfddf55528ff5b0f1dd12cc9fe7f540809e7b04b49182a99697db93629",
       "purpose": "技术、执行或当前交付文档",
       "distribution": "public-git"
     },
     {
       "path": "docs/FRESH_ACCEPTANCE.md",
       "size_bytes": 4833,
-      "sha256": "ebe9f65d1514f0b63ca4f89166dbfadd937f3833c2e2bc9229b5274ebcc726cc",
+      "sha256": "451ef97559a7ea7a8ecd8b40a2419bf891c973360c24223843f5e5250854febd",
       "purpose": "技术、执行或当前交付文档",
       "distribution": "public-git"
     },
@@ -777,8 +819,8 @@
     },
     {
       "path": "docs/PUBLIC_SETUP.md",
-      "size_bytes": 6571,
-      "sha256": "b82dc9332fff61f000603444fd006ca7187fe553533b9dd13ca2f362b883248c",
+      "size_bytes": 7095,
+      "sha256": "8034b21ec325daea198b10a76b2ebe549ac93a9446171527633e7089cb56ba85",
       "purpose": "技术、执行或当前交付文档",
       "distribution": "public-git"
     },
@@ -867,6 +909,20 @@
       "distribution": "public-git"
     },
     {
+      "path": "docs/TASK_08_SCOPE.md",
+      "size_bytes": 2854,
+      "sha256": "125e87c1c0328d3f6abaa1d7f7ded3a30c62263209d3d0e06414900c039f3758",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
+      "path": "docs/TASK_08_SEGMENTATION_SUPPLEMENT.md",
+      "size_bytes": 1256,
+      "sha256": "67197bf9c0762a1b0b4dcd70bdd1bc24d33273a21f0936a5843f4fb8d8d958d5",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
       "path": "docs/TECHNICAL_DESIGN.md",
       "size_bytes": 17821,
       "sha256": "aa320f48dbfb27a7c55b2c3d599dd48fab23509d85aa73ba470cbc9bb61778b9",
@@ -938,8 +994,8 @@
     },
     {
       "path": "reports/README.md",
-      "size_bytes": 8160,
-      "sha256": "146c6a314dd49cc85256222d5af020ee409650d266983a4d4ee6cc8ea7a9e15b",
+      "size_bytes": 8791,
+      "sha256": "00827ce110644ec8ea0337c0bc5917abb0ab753bd97ca99b38a0514f63fca29a",
       "purpose": "历史证据或本次补交付验收结果",
       "distribution": "public-git"
     },
@@ -1024,6 +1080,13 @@
       "path": "reports/TASK_07_SUPPLEMENT.md",
       "size_bytes": 7942,
       "sha256": "8444fa29ba4faac19ff5efd405f39bcd68aa853c3d4017961cfe828192e82a48",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/TASK_08_DELIVERY.md",
+      "size_bytes": 5126,
+      "sha256": "d53f7f74388ede5a91d060f21df82a303542e8c35395defc57a0a9de5c7153ab",
       "purpose": "历史证据或本次补交付验收结果",
       "distribution": "public-git"
     },
@@ -1218,8 +1281,8 @@
     },
     {
       "path": "reports/all_experiments_summary.csv",
-      "size_bytes": 8625,
-      "sha256": "7aa2a3bcd8175e96e00183e491b3ee47eb8fc15b954f3d761071cad629d66b06",
+      "size_bytes": 10023,
+      "sha256": "b4abefe7c7852a39de2dd9bb237028f610298610c7d67cb13f32e1c6f3e99dbe",
       "purpose": "历史证据或本次补交付验收结果",
       "distribution": "public-git"
     },
@@ -1234,6 +1297,13 @@
       "path": "reports/answer-quality-ui-verification-2026-11-11.json",
       "size_bytes": 2597,
       "sha256": "9e378f8f04658494aa54d66d0c58077c793939f67851176b44708a650c7075c9",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/bm25_baseline.json",
+      "size_bytes": 61459,
+      "sha256": "616a11bca252523a86852ffee495975676f87795d50695e74dc9f737f9da5f04",
       "purpose": "历史证据或本次补交付验收结果",
       "distribution": "public-git"
     },
@@ -2170,8 +2240,449 @@
     },
     {
       "path": "reports/resume_evidence.md",
-      "size_bytes": 7807,
-      "sha256": "55c9bdc6dd8163655f8e7eebe6f957b0a72d3a3537d0512517e49f19f7c796ee",
+      "size_bytes": 8853,
+      "sha256": "66cb6846d44fd7ac71e3d54d7409616a5562c64b1f2b03d2a50b0905f5948798",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25-restored-dev-86181f76f0e341ca9bf22dfbf6a99bed/error_analysis.json",
+      "size_bytes": 26416,
+      "sha256": "40c31fb9e3159660e84719a68f91c963b31ecdbab161c83ba2aa4420488a396a",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25-restored-dev-86181f76f0e341ca9bf22dfbf6a99bed/predictions.jsonl",
+      "size_bytes": 217691,
+      "sha256": "86bc88676cc359136095fbd47fa6395e53b705d2741f8751b112c72f30e53576",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25-restored-dev-86181f76f0e341ca9bf22dfbf6a99bed/requests.jsonl",
+      "size_bytes": 85675,
+      "sha256": "7f2a486bf2f5957649dc8ff8e577cac08c6097d34502f76a9868865927e63db9",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25-restored-dev-86181f76f0e341ca9bf22dfbf6a99bed/run_manifest.json",
+      "size_bytes": 9847,
+      "sha256": "e4a75fd7d096048c2813da53f7d946d1e1117ec582039c6b4077a7a6c2eff287",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25-restored-dev-86181f76f0e341ca9bf22dfbf6a99bed/run_started.json",
+      "size_bytes": 4993,
+      "sha256": "54fb8bf2f3346f58423fc9e86e9165509aa8ec6f0b671028cbf7a884d31465b9",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25-restored-dev-86181f76f0e341ca9bf22dfbf6a99bed/source_map.json",
+      "size_bytes": 36576,
+      "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25-restored-dev-86181f76f0e341ca9bf22dfbf6a99bed/summary.json",
+      "size_bytes": 12279,
+      "sha256": "3d02f2a2728d4a1b37245be56327f8b2aecf5d67e0cf5bbf99010964d84007e4",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/acceptance/contract-before-dev-v2.json",
+      "size_bytes": 3875,
+      "sha256": "bdf2b99ad02b52d51dc58abef6750d817ff50f4f4c0435b9304b4ae2b027127e",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/acceptance/contract-before-dev.json",
+      "size_bytes": 3815,
+      "sha256": "68962847bfd06ce590efc77309198fa86daa5f1de90168aff1f411ac0373e90d",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/acceptance/contract-current.json",
+      "size_bytes": 4711,
+      "sha256": "f9654050fe03950605cb559ca68fc0305f039434e9e15d01fb96e58dcefbb06f",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/acceptance/contract-final.json",
+      "size_bytes": 4711,
+      "sha256": "72910a00fe1f2a0f834d5bfcb391bd47d0319ee867bd1b5327a42d9edbb78a43",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/acceptance/portability.json",
+      "size_bytes": 1514,
+      "sha256": "ff2636f5d868f45a36c57e6ae9b0409b8a68047d0f752c8e5aeb73cd0ff2b4a6",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/acceptance/previous-task4.json",
+      "size_bytes": 5103,
+      "sha256": "f1d5bdecca5d4c537358560f2a396302db7c3c32e43b79ae02c4bad0dd9f79a7",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/acceptance/previous-task6.json",
+      "size_bytes": 4342,
+      "sha256": "c76e1c4fb464ca388b4c11a6255008c36a839791c09336258e07668b679fb5c9",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/acceptance/previous-task7.json",
+      "size_bytes": 12915,
+      "sha256": "5f15f2c4eed15bd578a7731485838b18da422f24b8e7114f5f88e7132937bfb4",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/acceptance/public-only-replay.json",
+      "size_bytes": 2191,
+      "sha256": "1a127ceed83a25ef172ecd6f5dab823af3f339081a825fdb9ab57fc200cbb7f6",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/acceptance/task8_delivery_final.json",
+      "size_bytes": 2926,
+      "sha256": "599b437883cebc55c071accc5f81126e09bae3d7145fba5ef86b34f0ceac1160",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/acceptance/task8_delivery_gate.json",
+      "size_bytes": 2925,
+      "sha256": "4f1b439df3c26754b5a285ac0ed4b6b81b42de73ba803b1fa5c65eed4e6c4ffa",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/dev/body/error_analysis.json",
+      "size_bytes": 26411,
+      "sha256": "a769a533370a1ba34af26661af5ebcce12811f501d385c86d11078d62d4cfff1",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/dev/body/failure.json",
+      "size_bytes": 236,
+      "sha256": "defa07cd4f5f655e202d790c22e8faa14b72408575dc23667257416bf9813929",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/dev/body/predictions.jsonl",
+      "size_bytes": 217335,
+      "sha256": "4665c25eab8ddad4776e1cda196fa27bf4c73d9d0237e1ea24071e4c264a28b5",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/dev/body/requests.jsonl",
+      "size_bytes": 84935,
+      "sha256": "750a2f9805b2b06be2b2ac6c3a497ba02fee88e317df61c156947a1aeafdc794",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/dev/body/run_manifest.json",
+      "size_bytes": 9837,
+      "sha256": "bc33d21377169730a795a9dffe2fced666ed10029da803a619b6b41cdb110860",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/dev/body/run_started.json",
+      "size_bytes": 4986,
+      "sha256": "77a108341a7c266c0c16067b49b3b16892436e8c598b1f6c83e2a336e968fb25",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/dev/body/source_map.json",
+      "size_bytes": 36576,
+      "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/dev/body/summary.json",
+      "size_bytes": 12319,
+      "sha256": "92b80c6e1e2a65a2abff0860b427e6bbde08300ab06b40d4c3da9343719140ad",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/body/error_analysis.json",
+      "size_bytes": 26411,
+      "sha256": "a769a533370a1ba34af26661af5ebcce12811f501d385c86d11078d62d4cfff1",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/body/predictions.jsonl",
+      "size_bytes": 217323,
+      "sha256": "29146e31980bb204d3405239d95483efe62074ad803a43f11cf0211c8354bddc",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/body/requests.jsonl",
+      "size_bytes": 84923,
+      "sha256": "8a4edc3def84d14937e07f0d3fec9b791797c551a2d75aae2eb91bf734a462dc",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/body/run_manifest.json",
+      "size_bytes": 9832,
+      "sha256": "dda280602f0d6a490413380aa19ffeff5e765052f110ff4904d9101f3062daa3",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/body/run_started.json",
+      "size_bytes": 4986,
+      "sha256": "de34127e8f85b213a37c55de16e4747468b37769d31e5973b1f0a474513a5094",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/body/source_map.json",
+      "size_bytes": 36576,
+      "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/body/summary.json",
+      "size_bytes": 12297,
+      "sha256": "25123bc5e06c861f8d601d5fbfa85c5052e1e57b8a61993523a55c1ed3ad32af",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/path_body/error_analysis.json",
+      "size_bytes": 26415,
+      "sha256": "e26163e42fbf2aa0ea14d8a874ce51ee5bc63405c67a44b0fafd400cda0a7fc1",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/path_body/predictions.jsonl",
+      "size_bytes": 217591,
+      "sha256": "b639f6c8dbc42290fa381478afaf6c9334bd50cc703c2a8539c52f4fdc4feef7",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/path_body/requests.jsonl",
+      "size_bytes": 85566,
+      "sha256": "b189d975c401b2e1381b8c90b3df420fa6297a8edb0c3a496e602ca1db7e8414",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/path_body/run_manifest.json",
+      "size_bytes": 9844,
+      "sha256": "dd820996294f7fbde66e7e3e8b8381a23a3cdc3d68444f44544305a3103f75a3",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/path_body/run_started.json",
+      "size_bytes": 4991,
+      "sha256": "b0def9201920014f3de106a64eaca22708ea726f11ff781435c77ab3ed906627",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/path_body/source_map.json",
+      "size_bytes": 36576,
+      "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/path_body/summary.json",
+      "size_bytes": 12344,
+      "sha256": "d41ae73b7f712968e8b4114fc712c757d6f3036375755ce1f466c6b20f79231c",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/title_body/error_analysis.json",
+      "size_bytes": 26416,
+      "sha256": "40c31fb9e3159660e84719a68f91c963b31ecdbab161c83ba2aa4420488a396a",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/title_body/predictions.jsonl",
+      "size_bytes": 217700,
+      "sha256": "ca1e60f4abad3b5f1c1a5f2c9a7eb66cca41621342f67cbaf2aef1e70a70f275",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/title_body/requests.jsonl",
+      "size_bytes": 85684,
+      "sha256": "766c505911624061a352632bd077a5fc61823e5437689093996648047854acac",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/title_body/run_manifest.json",
+      "size_bytes": 9845,
+      "sha256": "3e26c7e1520866ff3e283998abed4a9ce28f70f1cf0ec6edd098401d5ce4f7b5",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/title_body/run_started.json",
+      "size_bytes": 4992,
+      "sha256": "4eae5e1313e0a84649aeafec55dab186f0bd9d86710fb4c93c72a060ac81a8b7",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/title_body/source_map.json",
+      "size_bytes": 36576,
+      "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development/title_body/summary.json",
+      "size_bytes": 12375,
+      "sha256": "7dfb3e352cbf9d4cdfa6e507073f55db3b84f4d06030ceb0cb9abbbb88b3b929",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/development_probes.json",
+      "size_bytes": 16288,
+      "sha256": "f640a50e6c82a8dc8367c627a130df84ce738cb5b1b503b7badcf57feea2a914",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/segmentation-dev/INTEGRITY_SCOPE.json",
+      "size_bytes": 525,
+      "sha256": "1f8c7b3a7a952e1385f6bbc8b2b56eeb5cd44d559f58e9b6a335a8807933c18d",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/segmentation-dev/comparison.json",
+      "size_bytes": 963,
+      "sha256": "a8ec21fb70fdf4a54d043b4a23beeb1a702cd53c92ea20d6d4b1a89af43ba948",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/segmentation-dev/manifest.json",
+      "size_bytes": 5425,
+      "sha256": "96131af9848d4772ae14bd40f54a5181f42ee9eeeb9584726542bb16f6dab1d9",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/segmentation-dev/predictions.jsonl",
+      "size_bytes": 218086,
+      "sha256": "1c466fb64878e66ba7651fc704904837775b6d91c3daddcc97b4358953360ce9",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/segmentation-dev/summary.json",
+      "size_bytes": 12340,
+      "sha256": "bc619f94da89b222ae46eb579c93bb9d1cca0f9eaa1695201e15289cd44a3ec7",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/selection.json",
+      "size_bytes": 2225,
+      "sha256": "df40dc4208e7ab6d3a4f02ec4a649a643dab4eb4b1071e759ed57dad8f676e96",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/test/error_analysis.json",
+      "size_bytes": 892,
+      "sha256": "b41e19ec3f5883ac1f1fd924d388eb3f37c469fdb574d00153d83f6b0cbb8d79",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/test/predictions.jsonl",
+      "size_bytes": 274576,
+      "sha256": "28620e62678211791b8d276085145c718b6105c9444ab44fc30a03c142f58a9a",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/test/requests.jsonl",
+      "size_bytes": 107158,
+      "sha256": "166e8e8f7d0b8878b85e45cdb2314c1c14399ca58b94bb157888b18ef00fb091",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/test/run_manifest.json",
+      "size_bytes": 10017,
+      "sha256": "2b636be74e79b0543d6a1dd0c503d6f7cceba0bf998a28d37636aab36bea0764",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/test/run_started.json",
+      "size_bytes": 5165,
+      "sha256": "ae30c6fb8dc4c638f4836c1050c7ca712ecb9a207ba90d132abf4664b1f91994",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/test/source_map.json",
+      "size_bytes": 36576,
+      "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/test/summary.json",
+      "size_bytes": 14595,
+      "sha256": "40b465d0b47df1c6f74476d27fe65f7e16b1a386fca3d49d6b7dcef86e40eb26",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/test_authorization.json",
+      "size_bytes": 5528,
+      "sha256": "7c3f51a32994f25d29ae1cfad26463c41a19ef33e11372ae13cc204a80cdc4d1",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/bm25_b0/test_usage.jsonl",
+      "size_bytes": 1213,
+      "sha256": "0f81dcbea93839c4bcfabb051bb72878f2564d441422d994d70c1114c55ff141",
       "purpose": "历史证据或本次补交付验收结果",
       "distribution": "public-git"
     },
@@ -2470,6 +2981,27 @@
       "distribution": "public-git"
     },
     {
+      "path": "scripts/bm25_index.py",
+      "size_bytes": 12301,
+      "sha256": "1428b38df11e11f32a075ed4d93720fdcb30bc9009c7dddb5add118c2ee8dc68",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/bm25_retrieval_eval.py",
+      "size_bytes": 19110,
+      "sha256": "3d2a1b4f3899f1df7f4324f36ae04fe676931c68d769dd8a56e553b234081544",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/build_bm25_index.py",
+      "size_bytes": 515,
+      "sha256": "5b9f349735e5b336ef9f274f4a2d03be75cf1fa4fcc7405c433f6fe6294d5b14",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
       "path": "scripts/build_chinese_rules.py",
       "size_bytes": 13733,
       "sha256": "affeb34ce0bb1a63f694bc11a88a7e522791bb890fb4585b4dc83cdeef3c5616",
@@ -2526,6 +3058,13 @@
       "distribution": "public-git"
     },
     {
+      "path": "scripts/compare_bm25_segmentation.py",
+      "size_bytes": 6861,
+      "sha256": "8e94edd203a05df2324f05d48616625310f8e4d588226ad8e6e0d740b2b8353b",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
       "path": "scripts/delivery_review_io.py",
       "size_bytes": 3477,
       "sha256": "a7fea99871795d43ba2d58e29f902743f1e592ce595b0c72fa0cb9e8fffaf7cb",
@@ -2568,6 +3107,13 @@
       "distribution": "public-git"
     },
     {
+      "path": "scripts/export_bm25_manifests.py",
+      "size_bytes": 838,
+      "sha256": "d2019e9517d9cb348f13bf0eb85ce841e574d0f36d16c3106bda7b976eefc0d8",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
       "path": "scripts/export_dense_manifest.py",
       "size_bytes": 1354,
       "sha256": "ac0547fc77cbc063ca00a10f823802b6bc1ed322cbc08f79e5c8780695e9dcbc",
@@ -2599,6 +3145,13 @@
       "path": "scripts/import_local_corpus.py",
       "size_bytes": 2427,
       "sha256": "207d4cfe32d7b866698dfbaf102a23e83304742500f2f002030ef06ca7aea7a4",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/install_bm25_runtime.py",
+      "size_bytes": 4313,
+      "sha256": "66bd5d9a57a035cad059af266b641c1a142872c82a1315e407743bd093c1d319",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
@@ -2722,6 +3275,13 @@
       "distribution": "public-git"
     },
     {
+      "path": "scripts/recompute_bm25_retrieval.py",
+      "size_bytes": 756,
+      "sha256": "e355f1ea2d53294da1ea69c25cc905a8402370d5573dd2648281fdd2c74d9272",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
       "path": "scripts/recompute_dense_retrieval.py",
       "size_bytes": 1000,
       "sha256": "0d7dade40a54e7c1d567cd3c669b888f0234ad4dcf72173211c0d15bd8b910a3",
@@ -2746,6 +3306,13 @@
       "path": "scripts/run_baseline_check.ps1",
       "size_bytes": 5663,
       "sha256": "9861213771ce4236e2878cbbadfcde813602ed49d518706b31275f285b89642a",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/run_bm25_retrieval.py",
+      "size_bytes": 10144,
+      "sha256": "7f668a8579d6b4908add37eed654ef8c397f465797b618b2075873fa0ef070cd",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
@@ -2788,6 +3355,13 @@
       "path": "scripts/smoke_rag_b0.py",
       "size_bytes": 4359,
       "sha256": "f50888e7dcabb0f3a564e09b980e3e837bf418167830da32988b544f1ba51a6a",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/summarize_bm25_baseline.py",
+      "size_bytes": 3493,
+      "sha256": "5cf3187c1e1ff7d5b415faa003f1048e184c1e1e06f9452df5a5791518721058",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
@@ -2837,6 +3411,27 @@
       "path": "scripts/verify_answer_quality.py",
       "size_bytes": 5423,
       "sha256": "2639fef7245d6da4a669da5505f9118728ee04c5d7c5a5b993b6a64322fba052",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/verify_bm25_contract.py",
+      "size_bytes": 10301,
+      "sha256": "205c50bdb3b16cc6468402f4aafac102a02ae6d53ff8e561685cc62641d731c4",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/verify_bm25_delivery.py",
+      "size_bytes": 10725,
+      "sha256": "09e6b3d89a3c1a692983a68edb42f80a3b48e9a793242f7a297e3359dec8c130",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/verify_bm25_portability.py",
+      "size_bytes": 3757,
+      "sha256": "5aa7242cb903db7f6be58eade0b084bf2288b81f47c4ea6afc9694e2385576f8",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
