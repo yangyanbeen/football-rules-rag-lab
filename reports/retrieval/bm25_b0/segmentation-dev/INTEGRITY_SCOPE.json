@@ -1,0 +1,8 @@
+{
+  "scope": "Clarification of the original test_questions_read:false field; original producer manifest unchanged",
+  "test_questions_loaded_for_supplemental_retrieval": false,
+  "test_scores_used_in_supplement": false,
+  "new_test_experiments": 0,
+  "test_file_bytes_hashed_by_shared_development_replay": true,
+  "interpretation": "The original flag means no test questions supplied to the supplemental retriever. Shared dev replay hashes frozen test bytes for integrity, so it does not claim zero test-file I/O."
+}

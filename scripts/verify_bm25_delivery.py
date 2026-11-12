@@ -39,6 +39,8 @@ def main():
     check('test_completion_binds_exact_original_run_manifest',lambda:ledger[-1]['run_manifest']==record(base/'test/run_manifest.json'))
     check('all_510_successful_measurements_present',lambda:sum(v['latency']['all']['total_seconds']['samples'] for v in context['dev'].values())==360 and context['test']['latency']['all']['total_seconds']['samples']==150)
     check('74_contract_checks_passed_before_test',lambda:(lambda r:r['status']=='PASS' and r['passed']==r['total']==74 and all(r['checks'].values()) and r['development_replay_checked'] is True)(json.loads((base/'acceptance/contract-final.json').read_text('utf-8'))))
+    check('current_contract_checks_pass',lambda:(lambda r:r['status']=='PASS' and r['passed']==r['total']==74)(json.loads((base/'acceptance/contract-current.json').read_text('utf-8'))))
+    check('restored_index_eight_regressions_and_actual_dev_pass',lambda:(lambda r:r['status']=='PASS' and r['passed']==r['total']==8 and r['new_locked_test_requests']==0)(json.loads((base/'acceptance/portability.json').read_text('utf-8'))))
     check('failed_initial_development_run_still_rejected',lambda:(base/'dev/body/failure.json').exists() and rejects(lambda:replay(base/'dev/body')))
     public=json.loads((ROOT/'data/manifests/bm25_indexes.json').read_text('utf-8'))
     indexes={t:Bm25Index(ROOT/'data/indexes/bm25'/t) for t in TEMPLATES}
@@ -58,6 +60,13 @@ def main():
     probes=json.loads((base/'development_probes.json').read_text('utf-8'))
     check('rule_decimal_terminology_diagnostics_present',lambda:{r['kind'] for r in probes['probes']}=={'rule_number','decimal','term'})
     check('rule_number_and_decimals_preserved_in_probes',lambda:'rule:11' in probes['probes'][0]['tokens'] and all(v in probes['probes'][1]['tokens'] for v in ('7.32','2.44')))
+    def segmentation():
+        from compare_bm25_segmentation import replay_comparison
+        s=replay_comparison(base/'segmentation-dev')
+        return s['quality']['questions']==40 and s['quality']['answerable_denominator']==32 and s['latency']['all']['total_seconds']['samples']==120
+    check('accurate_search_mode_dev_comparison_replays',segmentation)
+    check('supplement_timestamp_after_original_test_declared',lambda:instant(json.loads((base/'segmentation-dev/manifest.json').read_text('utf-8'))['started_at'])>instant(test_manifest['completed_at']))
+    check('supplement_did_not_rewrite_original_test_or_usage_ledger',lambda:all(record(ROOT/report_data['artifacts'][n]['path'])==report_data['artifacts'][n] for n in ('authorization','test_usage')) and record(base/'test/run_manifest.json')==report_data['test']['manifest'])
     check('required_original_task8_files_delivered',lambda:all((ROOT/p).is_file() for p in ('scripts/build_bm25_index.py','scripts/run_bm25_retrieval.py','reports/bm25_baseline.json','docs/BM25_RETRIEVAL.md','reports/TASK_08_DELIVERY.md')))
     check('original_task4_human_delivery_unchanged',lambda:(lambda r:r['status']=='PASS' and r['human_review']['approved']==90)(validate(phase='delivery')))
     before=json.loads((ROOT/'.runtime/task8/before.json').read_text('utf-8'))
