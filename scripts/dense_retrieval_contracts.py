@@ -85,6 +85,7 @@ def measurement_timing(m):
 
 def manifest_metadata(m,cfg,original):
     fields(m,MANIFEST_FIELDS,'run manifest')
+    if json.dumps(m['config'],sort_keys=True)!=json.dumps(cfg,sort_keys=True):raise ValueError('Run configuration types differ')
     start,end=instant(m['started_at']),instant(m['completed_at'])
     if not committed_at(m['source_commit'])<=start<=end<=datetime.now(timezone.utc):raise ValueError('Invalid run time order')
     for runtime in (m['model_runtime_before'],m['model_runtime_after']):
@@ -119,7 +120,7 @@ def grant_metadata(g,release,cfg,config_sha,run_path,source_commit=None,start=No
     if (g['authorization_version']!='dense-final-report-1.0' or g['purpose']!='final_report'
         or g['used_for_parameter_selection'] is not False or g['original_dataset_manifest_not_modified'] is not True
         or g['dataset_version']!=release['dataset_version'] or g['test_sha256']!=release['test_lock']['sha256']
-        or g['test_locked_at']!=release['test_lock'].get('locked_at') or g['config']!=cfg
+        or g['test_locked_at']!=release['test_lock'].get('locked_at') or json.dumps(g['config'],sort_keys=True)!=json.dumps(cfg,sort_keys=True)
         or g['config_sha256']!=config_sha or g['allowed_run_directory']!=run_path):raise ValueError('Invalid test authorization binding')
     if not committed_at(g['source_commit'])<=prepared<=datetime.now(timezone.utc):raise ValueError('Invalid authorization time')
     if source_commit is not None and source_commit!=g['source_commit']:raise ValueError('Authorized code commit differs')
