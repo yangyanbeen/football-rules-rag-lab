@@ -1,0 +1,21 @@
+{
+  "new_execution_source_count": 13,
+  "dependency": "scripts/run_retrieval_metrics.py",
+  "current_dependency_sha256": "11021dfc06a8c6e3e765c051c594f598b6c2bea220ee78f7a96ce08d0d56eae5",
+  "historical_runs": [
+    {
+      "split": "dev",
+      "source_commit": "79513e86e7df19248920dbc406faabb16ae1d3b3",
+      "dependency_git_sha256": "11021dfc06a8c6e3e765c051c594f598b6c2bea220ee78f7a96ce08d0d56eae5",
+      "dependency_was_in_original_snapshot": false
+    },
+    {
+      "split": "test",
+      "source_commit": "fb8e9d824b7fd6addd857823c99846441487145d",
+      "dependency_git_sha256": "11021dfc06a8c6e3e765c051c594f598b6c2bea220ee78f7a96ce08d0d56eae5",
+      "dependency_was_in_original_snapshot": false
+    }
+  ],
+  "current_dependency_matches_both_committed_versions": true,
+  "scope": "Supplemental committed-source verification; original manifests not re-signed; no retrospective new runtime signature"
+}

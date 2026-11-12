@@ -16,6 +16,7 @@ import subprocess
 from dense_retrieval_eval import (CONFIG, SOURCES, SOURCE_FIELDS, TIMINGS,
                                   file_record, replay, require_committed_sources)
 from eval_dataset import ROOT, CORPUS, digest, load_jsonl
+import dense_retrieval_contracts as contracts
 
 
 DEFAULT_BASE = ROOT / "reports/retrieval/dense_b0"
@@ -81,7 +82,7 @@ def source_map_matches_corpus(directory, corpus):
                 {row["chunk_id"]: {field: row[field] for field in SOURCE_FIELDS} for row in corpus})
 
 
-def verify(dev_dir, test_dir, authorization_path, usage_path):
+def verify(dev_dir, test_dir, authorization_path, usage_path, preservation_snapshot=ROOT/'.runtime/task7/before.json'):
     checks, errors, context = {}, [], {}
 
     def check(name, operation):
@@ -98,7 +99,7 @@ def verify(dev_dir, test_dir, authorization_path, usage_path):
                        test_manifest=read_json(test_dir / "run_manifest.json"),
                        grant=read_json(authorization_path),
                        release=read_json(ROOT / "data/eval/dataset_manifest.json"),
-                       before=read_json(ROOT / ".runtime/task7/before.json"),
+                       before=read_json(preservation_snapshot),
                        lock=read_json(ROOT / "data/manifests/task1_task2_baseline_lock.json"),
                        local=read_json(ROOT / "data/manifests/local_data_files.json")["files"])
         return True
@@ -134,7 +135,7 @@ def verify(dev_dir, test_dir, authorization_path, usage_path):
         check(split + "_public_prediction_and_request_schema_no_bodies_vectors_answers", lambda s=split:
               s in context and context[s]["generation_model_requests"] == 0)
         check(split + "_source_commit_is_committed_and_predates_measurement", lambda s=split:
-              require_committed_sources(context[s + "_manifest"]["source_commit"]) is None
+              require_committed_sources(context[s + "_manifest"]["source_commit"],current=False) is None
               and commit_time(context[s + "_manifest"]["source_commit"]) <=
                     timestamp(context[s + "_manifest"]["started_at"]))
         check(split + "_run_times_are_ordered", lambda s=split:
@@ -167,7 +168,7 @@ def verify(dev_dir, test_dir, authorization_path, usage_path):
           timestamp(context["dev_manifest"]["completed_at"]) <= timestamp(context["grant"]["prepared_at"])
           <= timestamp(context["test_manifest"]["started_at"]))
     check("authorization_source_commit_preexists_prepare_and_matches_test_source", lambda:
-          require_committed_sources(context["grant"]["source_commit"]) is None
+          require_committed_sources(context["grant"]["source_commit"],current=False) is None
           and context["grant"]["source_commit"] == context["test_manifest"]["source_commit"]
           and ancestor(context["dev_manifest"]["source_commit"], context["grant"]["source_commit"])
           and commit_time(context["grant"]["source_commit"]) <= timestamp(context["grant"]["prepared_at"]))
@@ -191,7 +192,7 @@ def verify(dev_dir, test_dir, authorization_path, usage_path):
             seen.update(producers)
             if (file_record(path) != record or not verification_passed(value)
                     or verification_time(value) > timestamp(context["grant"]["prepared_at"])
-                    or not hashes or any(digest((ROOT / "scripts" / name).read_bytes()) != sha
+                    or not hashes or any(digest(contracts.git_blob(context['grant']['source_commit'],'scripts/'+name)) != sha
                                          for name, sha in hashes.items())):
                 return False
         return seen == expected_producers
@@ -201,8 +202,11 @@ def verify(dev_dir, test_dir, authorization_path, usage_path):
     def usage_is_valid():
         events = load_jsonl(usage_path)
         manifest = context["test_manifest"]
-        if len(events) != 2 or [event.get("event") for event in events] != ["STARTED", "COMPLETED"]:
+        selected=contracts.usage_matches(events,manifest,test_dir.relative_to(ROOT).as_posix(),
+                                          file_record(authorization_path),context['release'])
+        if not selected:
             return False
+        events=selected
         expected = {"run_id": manifest["run_id"], "run_directory": test_dir.relative_to(ROOT).as_posix(),
                     "split": "test", "purpose": "final_report", "used_for_parameter_selection": False,
                     "source_commit": manifest["source_commit"], "config_sha256": digest(CONFIG.read_bytes()),
@@ -213,7 +217,7 @@ def verify(dev_dir, test_dir, authorization_path, usage_path):
                 and timestamp(manifest["started_at"]) <= timestamp(events[0]["recorded_at"])
                 <= timestamp(manifest["completed_at"]) <= timestamp(events[1]["recorded_at"]))
 
-    check("separate_test_usage_two_events_bound_to_run_lock_config_authorization_manifest", usage_is_valid)
+    check("selected_test_run_two_events_bound_to_lock_config_authorization_manifest", usage_is_valid)
     check("original_dataset_manifest_and_formal_test_runs_not_rewritten", lambda:
           digest((ROOT / "data/eval/dataset_manifest.json").read_bytes()) ==
           context["before"]["tracked"]["data/eval/dataset_manifest.json"]
@@ -227,8 +231,14 @@ def verify(dev_dir, test_dir, authorization_path, usage_path):
         return source_map_matches_corpus(dev_dir, corpus) and source_map_matches_corpus(test_dir, corpus)
 
     check("both_99_source_maps_match_original_corpus_metadata_without_publishing_bodies", matching_corpus_metadata)
-    check("private_preservation_snapshot_has_239_file_records", lambda:
-          len(context["before"]["tracked"]) == 239)
+    def snapshot_covers_commit():
+        before=context['before'];commit=before['base_commit'];contracts.ancestor(commit)
+        names=subprocess.check_output(['git','ls-tree','-r','--name-only',commit],cwd=ROOT,text=True).splitlines()
+        records=before['tracked']
+        return (isinstance(records,dict) and set(names)<=set(records)
+          and all(isinstance(sha,str) and len(sha)==64 and (ROOT/name).resolve().is_relative_to(ROOT) for name,sha in records.items())
+          and all(digest(contracts.git_blob(commit,name))==records[name] for name in names))
+    check("private_preservation_snapshot_covers_its_committed_baseline",snapshot_covers_commit)
     check("formal_dense_index_all_artifact_bytes_and_manifest_unchanged", lambda:
           context["before"]["index"] ==
           {**index_inventory(ROOT / "data/indexes/dense"), "index_manifest.json":
@@ -291,14 +301,14 @@ def verify(dev_dir, test_dir, authorization_path, usage_path):
             "real_model_requests_in_this_script": 0, "corpus_reencodings_in_this_script": 0,
             "real_test_runs_started_by_this_script": 0,
             "test_questions_or_individual_rankings_exposed_by_this_script": False,
-            "private_preservation_inputs_required": [".runtime/task7/before.json",
+            "private_preservation_inputs_required": [str(Path(preservation_snapshot).relative_to(ROOT)).replace('\\','/'),
                 ".runtime/eval_review/reviews.jsonl", "data/indexes/dense/",
                 "61 local corpus files", "original project and its 178-file snapshot"],
             "replay_scope": "Existing dev/test artifacts are validated and independently rescored; only aggregates are exposed.",
             "private_scope": "Local hashes prove preservation against the saved snapshot; no new human review or expert rules certification is claimed.",
             "summaries": summaries,
             "source_sha256": {name: digest((ROOT / "scripts" / name).read_bytes()) for name in
-                ("verify_task7_delivery.py", "dense_retrieval_eval.py", "retrieval_metrics.py")}}
+                ("verify_task7_delivery.py", "dense_retrieval_eval.py", "dense_retrieval_contracts.py","retrieval_metrics.py")}}
 
 
 def main():
@@ -308,6 +318,7 @@ def main():
     parser.add_argument("--test-dir", type=Path, default=DEFAULT_BASE / "test")
     parser.add_argument("--authorization", type=Path, default=DEFAULT_BASE / "test_authorization.json")
     parser.add_argument("--test-usage", type=Path, default=DEFAULT_BASE / "test_usage.jsonl")
+    parser.add_argument('--preservation-snapshot',type=Path,default=ROOT/'.runtime/task7/before.json')
     args = parser.parse_args()
     report = (ROOT / args.report).resolve()
     if report.suffix != ".json" or not report.is_relative_to(ROOT / "reports"):
@@ -318,7 +329,9 @@ def main():
              (args.dev_dir, args.test_dir, args.authorization, args.test_usage)]
     if any(not path.is_relative_to(ROOT / "reports") for path in paths):
         parser.error("Run evidence and authorization must stay under reports/")
-    result = verify(*paths)
+    preservation=(ROOT/args.preservation_snapshot).resolve()
+    if not preservation.is_relative_to(ROOT/'.runtime'):parser.error('Private preservation snapshot must stay under .runtime/')
+    result = verify(*paths,preservation_snapshot=preservation)
     report.parent.mkdir(parents=True, exist_ok=True)
     with report.open("x", encoding="utf-8", newline="\n") as handle:
         json.dump(result, handle, ensure_ascii=False, indent=2, allow_nan=False)

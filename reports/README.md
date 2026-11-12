@@ -1,5 +1,7 @@
 # 报告阅读说明
 
+任务七最新重新交付见[TASK_07_SUPPLEMENT](TASK_07_SUPPLEMENT.md)：7组缺陷修复，新证据rechecks/task7-audit-20261112，真实开发记录retrieval/task7-audit-20261112/dev。原任务七所有证据维持原字节。最终依据acceptance/task7-delivery-final.json（43/43）、supplement-final-v2.json（61/61）、contract-final.json（110/110）、replay-final.json（113/113）、public-only-replay.json（三组无模型复算）。中间55/59/112等结果保留其当时范围；v2仅澄清底层会重放原测试记录但不发新请求，不把字段read混同为exposed。
+
 任务七当前交付：[TASK_07_DELIVERY](TASK_07_DELIVERY.md)。retrieval/dense_b0/dev与test保存真实逐题Top10、3次计时、run manifest、汇总和错误分析；acceptance/task7_delivery_gate.json为43/43。54项算术、110项合同与113项开发期回归均为程序验证，不能当成绩样本。test_authorization.json与test_usage.jsonl绑定开发完成→代码/配置冻结→一次正式测试；旧测试锁清单未改。
 
 锁定测试可回答40/50，Recall@5/10=38/40=95%，MRR@10=0.8604167；延迟150次，P50/P95=270.18/312.82ms。public-only-replay.json记录无私有语料/模型/索引、Python -S禁用第三方包的真实独立复算。contract-before-fix.json为开发期100/101 FAIL（曾允许额外全文字段），修复后的110/110和实际预测均不含全文；arithmetic.json保留最初无producer SHA的旧合成回执，正式凭证绑定arithmetic-final.json。

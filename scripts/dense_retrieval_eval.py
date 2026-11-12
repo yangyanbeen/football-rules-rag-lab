@@ -4,13 +4,15 @@ import json, math, re, subprocess, unicodedata
 from pathlib import Path
 from eval_dataset import ROOT, digest, load_jsonl
 from retrieval_metrics import compute_metrics
+import dense_retrieval_contracts as contracts
 
 CONFIG=ROOT/'config/dense_retrieval_b0.json'
 SOURCES=('scripts/dense_retrieval_eval.py','scripts/run_dense_retrieval.py',
  'scripts/recompute_dense_retrieval.py','scripts/retrieval_metrics.py',
  'scripts/verify_dense_metric_arithmetic.py','scripts/verify_dense_retrieval_contract.py',
  'scripts/dense_index.py','scripts/dense_telemetry.py','scripts/eval_dataset.py',
- 'scripts/validate_eval_dataset.py','scripts/validate_eval_receipt.py')
+ 'scripts/validate_eval_dataset.py','scripts/validate_eval_receipt.py',
+ 'scripts/run_retrieval_metrics.py','scripts/dense_retrieval_contracts.py')
 SOURCE_FIELDS=('chunk_id','source_url','source_lines','law_number','record_sha256','content_zh_sha256')
 TIMINGS=('normalization_seconds','query_embedding_seconds','vector_search_seconds','total_seconds')
 
@@ -62,10 +64,11 @@ def require_matching_snapshots(items):
     if any(file_record(ROOT/p)!=r for p,r in items.items()):raise ValueError('Public data/code/config changed')
 
 
-def require_committed_sources(commit):
+def require_committed_sources(commit,current=True):
     if not isinstance(commit,str) or not re.fullmatch('[0-9a-f]{40}',commit):raise ValueError('Invalid code commit')
     if subprocess.run(['git','merge-base','--is-ancestor',commit,'HEAD'],cwd=ROOT,capture_output=True).returncode:
         raise ValueError('Source commit is not an ancestor of this checkout')
+    if not current:return
     for p in list(SOURCES)+['config/dense_retrieval_b0.json']:
         if subprocess.check_output(['git','show',commit+':'+p],cwd=ROOT)!=(ROOT/p).read_bytes():
             raise ValueError('Source/config differs from preregistered commit: '+p)
@@ -92,6 +95,7 @@ def validate_predictions(questions,predictions,cfg,source_map,split,run_id):
     if len(known)!=len(source_map) or len(known)<cfg['top_k']:raise ValueError('Incomplete or duplicate source map')
     for source in source_map:
         if set(source)!=set(SOURCE_FIELDS) or not isinstance(source['chunk_id'],str):raise ValueError('Invalid public source record')
+        contracts.source_record(source)
     qs={}
     for q in questions:
         qid=q['question_id'];gold=q['expected_chunk_ids']
@@ -115,6 +119,7 @@ def validate_predictions(questions,predictions,cfg,source_map,split,run_id):
         ids=[];distances=[];scores=[]
         for rank,r in enumerate(results,1):
             if not isinstance(r,dict) or set(r)!=set(SOURCE_FIELDS)|{'rank','distance','score'}:raise ValueError('Invalid result fields')
+            contracts.source_record(r)
             cid=r['chunk_id']
             if not isinstance(cid,str) or cid not in known or cid in ids or type(r['rank']) is not int or r['rank']!=rank:
                 raise ValueError('Invalid result ID/rank')
@@ -144,6 +149,7 @@ def validate_predictions(questions,predictions,cfg,source_map,split,run_id):
                 or not finite(observation.get('elapsed_seconds'),True)
                 or any(type(observation.get(k)) is not int or observation[k]<0 for k in ('server_total_duration_ns','server_load_duration_ns'))):
                 raise ValueError('Missing actual embedding request observation')
+            contracts.measurement_timing(m)
     if seen!=set(qs):raise ValueError('Missing questions')
     return True
 
@@ -195,9 +201,11 @@ def replay(directory):
     """Recompute from public raw results; no corpus, model, vector or network needed."""
     directory=Path(directory).resolve();manifest=json.loads((directory/'run_manifest.json').read_text('utf-8'))
     if manifest.get('status')!='COMPLETE' or manifest.get('manifest_version')!='dense-retrieval-run-1.0':raise ValueError('Run is not complete')
-    cfg=load_config();require_matching_snapshots(manifest['input_snapshots'])
+    cfg=load_config()
+    contracts.provenance(manifest['input_snapshots'],manifest['source_commit'],SOURCES,public_input_paths(),file_record)
     if manifest['config']!=cfg:raise ValueError('Run config differs')
-    require_committed_sources(manifest['source_commit'])
+    require_committed_sources(manifest['source_commit'],current=False)
+    if (directory/'failure.json').exists():raise ValueError('Run has a recorded failure')
     split=manifest['split']
     if split not in ('dev','test') or manifest.get('purpose')!=('development' if split=='dev' else 'final_report'):
         raise ValueError('Run split/purpose differs')
@@ -207,6 +215,7 @@ def replay(directory):
         or manifest.get('formal_index_artifacts_unchanged') is not True or manifest.get('query_request_count')!=count*cfg['measured_repetitions']
         or manifest.get('warmup_request_count')!=cfg['warmup_repetitions']):raise ValueError('Incorrect run scope or request counts')
     original=json.loads((ROOT/'data/manifests/dense_index_manifest.json').read_text('utf-8'))
+    contracts.manifest_metadata(manifest,cfg,original)
     release=json.loads((ROOT/'data/eval/dataset_manifest.json').read_text('utf-8'))
     if (manifest['model_artifact']!=original['model_artifact'] or manifest['index_version']!=original['index_version']
         or manifest['index_manifest_sha256']!=original['local_manifest_sha256']
@@ -232,19 +241,29 @@ def replay(directory):
     for name in required:
         if file_record(directory/name)!=manifest['artifacts'][name]:raise ValueError('Run artifact hash differs: '+name)
     started=json.loads((directory/'run_started.json').read_text('utf-8'))
+    contracts.fields(started,contracts.START_FIELDS,'started record')
     if any(started[k]!=manifest[k] for k in ('run_id','split','source_commit','input_snapshots','started_at','authorization')):
         raise ValueError('Started record differs from completed manifest')
     if split=='test':
         auth=manifest['authorization']
         if not isinstance(auth,dict) or file_record(ROOT/auth['path'])!=auth:raise ValueError('Test authorization changed')
         grant=json.loads((ROOT/auth['path']).read_text('utf-8'))
+        contracts.grant_metadata(grant,release,cfg,digest(CONFIG.read_bytes()),directory.relative_to(ROOT).as_posix(),
+                                 manifest['source_commit'],manifest['started_at'])
         if (grant.get('purpose')!='final_report' or grant.get('used_for_parameter_selection') is not False
             or grant.get('test_sha256')!=release['test_lock']['sha256'] or grant.get('config_sha256')!=digest(CONFIG.read_bytes())
             or grant.get('input_snapshots')!=manifest['input_snapshots']
             or grant.get('allowed_run_directory')!=directory.relative_to(ROOT).as_posix()):raise ValueError('Test grant/data/config mismatch')
-        require_committed_sources(grant['source_commit'])
+        require_committed_sources(grant['source_commit'],current=False)
         for record in [grant['development_manifest'],grant['development_summary']]+grant['development_verification']:
             if file_record(ROOT/record['path'])!=record:raise ValueError('Authorized development evidence changed')
+        devpath=(ROOT/grant['development_manifest']['path']).resolve().parent
+        if replay(devpath)['split']!='dev':raise ValueError('Authorization must bind a complete development run')
+        devmanifest=json.loads((devpath/'run_manifest.json').read_text('utf-8'))
+        if contracts.instant(devmanifest['completed_at'])>contracts.instant(grant['prepared_at']):raise ValueError('Development postdates authorization')
+        for receipt in contracts.verification_receipts(grant['development_verification'],grant['source_commit'],file_record):
+            time=next((receipt[k] for k in ('generated_at','checked_at','captured_at') if k in receipt),None)
+            if contracts.instant(time)>contracts.instant(grant['prepared_at']):raise ValueError('Verification postdates authorization')
     elif manifest['authorization'] is not None:raise ValueError('Development run claims test authorization')
     source_map=json.loads((directory/'source_map.json').read_text('utf-8'))
     public_ids=json.loads((ROOT/'data/manifests/dense_chunk_ids.json').read_text('utf-8'))
@@ -252,6 +271,7 @@ def replay(directory):
         !={r['chunk_id']:(r['record_sha256'],r['content_zh_sha256']) for r in public_ids}):raise ValueError('Source map not bound to original corpus IDs/hashes')
     questions=load_jsonl(ROOT/f'data/eval/retrieval_{split}.jsonl');predictions=load_jsonl(directory/'predictions.jsonl')
     result=summarize(questions,predictions,cfg,source_map,split,manifest['run_id'])
+    contracts.whole_timing(manifest,predictions)
     requests=load_jsonl(directory/'requests.jsonl')
     expected_requests=[{'question_id':r['question_id'],'query':r['query'],'run_id':r['run_id'],'split':split,'measurement':m}
                        for r in predictions for m in r['measurements']]

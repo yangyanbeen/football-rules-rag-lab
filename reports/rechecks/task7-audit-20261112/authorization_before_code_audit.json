@@ -1,0 +1,14 @@
+{
+  "kind": "source_inspection_not_live_test_failure",
+  "source_commit": "1694b563cb29e0468e75f7c53f5f117e7affa967",
+  "missing_grant_fields": [
+    "authorization_version",
+    "config",
+    "dataset_version",
+    "prepared_at",
+    "test_locked_at"
+  ],
+  "source_sha256": "559297b468097d481f2fcc957dd481a5f6b8bb2e8d835103d8d4399521e50e18",
+  "actual_model_requests": 0,
+  "actual_locked_test_predictions_read": false
+}

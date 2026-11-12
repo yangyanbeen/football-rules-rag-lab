@@ -1,0 +1,144 @@
+{
+  "run_id": "baf3c1a397db49f6b0113e0ac23dbb46",
+  "started_at": "2026-11-12T11:18:18.327451+00:00",
+  "split": "dev",
+  "source_commit": "dd4ff10da7398b5c5ca559ecd63b0ad277ba1187",
+  "input_snapshots": {
+    "config/dense_retrieval_b0.json": {
+      "path": "config/dense_retrieval_b0.json",
+      "size_bytes": 656,
+      "sha256": "1317815c1c1025d42561a1e0614ddbed4264a7d2fdfc484536ddc9359bb5d5eb"
+    },
+    "config/dense_index.json": {
+      "path": "config/dense_index.json",
+      "size_bytes": 1613,
+      "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988"
+    },
+    "config/rag_b0.json": {
+      "path": "config/rag_b0.json",
+      "size_bytes": 1075,
+      "sha256": "4b92d7e0ab8160999afadc16060552532837cffdc07e59f09e1e3c626f2f34b7"
+    },
+    "data/eval/dataset_manifest.json": {
+      "path": "data/eval/dataset_manifest.json",
+      "size_bytes": 2189,
+      "sha256": "778ffc31872d379dbd714cd4e085e075b0a308b7a67d1306e459e978f70a6c66"
+    },
+    "data/eval/retrieval_dev.jsonl": {
+      "path": "data/eval/retrieval_dev.jsonl",
+      "size_bytes": 60024,
+      "sha256": "b24b2dc9c1483495623407c472ca1ff3b0b0a6846b4894892f8d85e9ffb34e04"
+    },
+    "data/eval/retrieval_test.jsonl": {
+      "path": "data/eval/retrieval_test.jsonl",
+      "size_bytes": 78040,
+      "sha256": "269d49e7d65c4ad3a97b588f34093a65bbc483c7382f78b0e9cf466eaa759a62"
+    },
+    "data/eval/answer_eval.jsonl": {
+      "path": "data/eval/answer_eval.jsonl",
+      "size_bytes": 149749,
+      "sha256": "640480e1e203f67f6aaac090d75369a00eab1448dc19271fa19de56eb066de1b"
+    },
+    "data/eval/hard_negatives.jsonl": {
+      "path": "data/eval/hard_negatives.jsonl",
+      "size_bytes": 91683,
+      "sha256": "179c2abbb804b55d1b6e36c3514ba5c9f353fb2e727573fe396229bee9f55ca2"
+    },
+    "data/eval/human_review_receipt.json": {
+      "path": "data/eval/human_review_receipt.json",
+      "size_bytes": 23411,
+      "sha256": "69cf9f772528476c4a3da31a006edc498cfb1b411e56dfd573d033dad6460ec3"
+    },
+    "data/manifests/dense_index_manifest.json": {
+      "path": "data/manifests/dense_index_manifest.json",
+      "size_bytes": 11745,
+      "sha256": "9ea5d0403acb9ccaae8185623cf3cd66f834f555f7d839fa12cdbc8f60b2d557"
+    },
+    "data/manifests/dense_chunk_ids.json": {
+      "path": "data/manifests/dense_chunk_ids.json",
+      "size_bytes": 32967,
+      "sha256": "0bdff8a39d7a458d586fecb921582224ad7a854cc3bf6fa589e04a1150b95b61"
+    },
+    "data/manifests/rag_dataset_manifest.json": {
+      "path": "data/manifests/rag_dataset_manifest.json",
+      "size_bytes": 13868,
+      "sha256": "529596d1fae73186065fc70d39749f000ffc2f4fa960252cba6285ddd538c39c"
+    },
+    "docs/TECHNICAL_DESIGN.md": {
+      "path": "docs/TECHNICAL_DESIGN.md",
+      "size_bytes": 17821,
+      "sha256": "aa320f48dbfb27a7c55b2c3d599dd48fab23509d85aa73ba470cbc9bb61778b9"
+    },
+    "docs/DEVELOPMENT_PLAN_AND_REPORT.md": {
+      "path": "docs/DEVELOPMENT_PLAN_AND_REPORT.md",
+      "size_bytes": 22690,
+      "sha256": "acb3bb80dd4401b751476ce36437657e2d3a3dc59db4d3d25106b81d11c9bd96"
+    },
+    "scripts/dense_retrieval_eval.py": {
+      "path": "scripts/dense_retrieval_eval.py",
+      "size_bytes": 21211,
+      "sha256": "7a1a522f35c2b8ed8ffb5712b3ec5371b4fbb0b41450c5ef89d03f1c2cb40fd0"
+    },
+    "scripts/run_dense_retrieval.py": {
+      "path": "scripts/run_dense_retrieval.py",
+      "size_bytes": 16517,
+      "sha256": "5148e5ec0bc6aee74fc6fa58984d87502224349c433414b544199aec14a2ead9"
+    },
+    "scripts/recompute_dense_retrieval.py": {
+      "path": "scripts/recompute_dense_retrieval.py",
+      "size_bytes": 1000,
+      "sha256": "0d7dade40a54e7c1d567cd3c669b888f0234ad4dcf72173211c0d15bd8b910a3"
+    },
+    "scripts/retrieval_metrics.py": {
+      "path": "scripts/retrieval_metrics.py",
+      "size_bytes": 3079,
+      "sha256": "350759f655b78e43f4d0c4114a4a2c7d03b87c7281ac0cae40678bae15341168"
+    },
+    "scripts/verify_dense_metric_arithmetic.py": {
+      "path": "scripts/verify_dense_metric_arithmetic.py",
+      "size_bytes": 9843,
+      "sha256": "5e5a548389cadd21b1f92b4c51c02c2cd770edd260421b7a9210de66eb0abb49"
+    },
+    "scripts/verify_dense_retrieval_contract.py": {
+      "path": "scripts/verify_dense_retrieval_contract.py",
+      "size_bytes": 15657,
+      "sha256": "13e7e4f0d4e378bb4abfda2ee77467366dfd35305ce701554b0f0c9cc385df10"
+    },
+    "scripts/dense_index.py": {
+      "path": "scripts/dense_index.py",
+      "size_bytes": 22904,
+      "sha256": "9e991910367987021e1ace250c5796c213ad53f14072ecbc4fe1539352f3d875"
+    },
+    "scripts/dense_telemetry.py": {
+      "path": "scripts/dense_telemetry.py",
+      "size_bytes": 489,
+      "sha256": "a4feda38a98504a437e614b55d9cb15a79be3fd0ca77444be7ad67277537d179"
+    },
+    "scripts/eval_dataset.py": {
+      "path": "scripts/eval_dataset.py",
+      "size_bytes": 3147,
+      "sha256": "48d47343ce008457d031c54a40019ae8bc3a9c76bdaf2d9cbbc274628e3785c1"
+    },
+    "scripts/validate_eval_dataset.py": {
+      "path": "scripts/validate_eval_dataset.py",
+      "size_bytes": 10738,
+      "sha256": "f943adc5eeab93296434b7b05edb1706272033a2913dbb2ea20ccb71fc5fdff5"
+    },
+    "scripts/validate_eval_receipt.py": {
+      "path": "scripts/validate_eval_receipt.py",
+      "size_bytes": 5790,
+      "sha256": "80e6126c8e2f27af44fe11850a56842a711b0995b6cfbab4f67eb239e2427f95"
+    },
+    "scripts/run_retrieval_metrics.py": {
+      "path": "scripts/run_retrieval_metrics.py",
+      "size_bytes": 4121,
+      "sha256": "11021dfc06a8c6e3e765c051c594f598b6c2bea220ee78f7a96ce08d0d56eae5"
+    },
+    "scripts/dense_retrieval_contracts.py": {
+      "path": "scripts/dense_retrieval_contracts.py",
+      "size_bytes": 12276,
+      "sha256": "cbe5efb568fbe2122b25d86a3615b39647262d914e26c314aa3f2fa7930cd895"
+    }
+  },
+  "authorization": null
+}

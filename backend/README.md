@@ -26,3 +26,5 @@
 ## 任务七：离线Dense检索测量
 
 run_dense_retrieval.py复用原索引，只把question_id/question交给检索循环；固定Top10、3次预热/测量。dense_retrieval_eval.py负责严格schema、指标/分阶段延迟与独立复算，recompute_dense_retrieval.py不依赖模型/语料/向量。测试需开发证据和已提交源码绑定的运行凭证，使用另存台账。结果和时序见reports/TASK_07_DELIVERY.md；原在线问答配置不变。
+
+任务七补审新增dense_retrieval_contracts.py，集中校验历史Git来源、元数据/计时/凭证合同。新执行仍严格冻结当前13个源码依赖；历史复算按原提交声明的清单验哈希，新增后续helper不会使旧结果失效。异常记录与清理保留原错误，门禁按run_id核对台账，详见reports/TASK_07_SUPPLEMENT.md。

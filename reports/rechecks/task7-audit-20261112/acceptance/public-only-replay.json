@@ -1,0 +1,43 @@
+{
+  "captured_at": "2026-11-12T11:24:30.957618+00:00",
+  "status": "PASS",
+  "kind": "separate_public_worktree_actual_replay",
+  "copy_commit": "6710f8ff07e8331744b8d0757bdd327bfa432e98",
+  "python_site_disabled": true,
+  "third_party_imports_unavailable": {
+    "numpy": true,
+    "chromadb": true
+  },
+  "private_paths_absent": {
+    "data/raw": true,
+    "data/processed": true,
+    "data/indexes": true,
+    ".runtime": true,
+    ".models": true,
+    ".venv": true,
+    "third_party": true
+  },
+  "runs": {
+    "original_dev": {
+      "status": "PASS",
+      "summary_identical": true,
+      "recomputed_sha256": "6c022b9d98f039ea5396f3346c361a784391e64b5b0d3f1b00e35f3e4ee2aa02",
+      "original_sha256": "6c022b9d98f039ea5396f3346c361a784391e64b5b0d3f1b00e35f3e4ee2aa02"
+    },
+    "original_test": {
+      "status": "PASS",
+      "summary_identical": true,
+      "recomputed_sha256": "c35bfba2aca06337677e0f0f52b86bd75ef0d93fb7ebe94a98066295ca505d34",
+      "original_sha256": "c35bfba2aca06337677e0f0f52b86bd75ef0d93fb7ebe94a98066295ca505d34"
+    },
+    "fixed_live_dev": {
+      "status": "PASS",
+      "summary_identical": true,
+      "recomputed_sha256": "1e9d74d4f83db245effd739e4c2414805c9bbe8ace8e3c6b9b4f87c711435052",
+      "original_sha256": "1e9d74d4f83db245effd739e4c2414805c9bbe8ace8e3c6b9b4f87c711435052"
+    }
+  },
+  "actual_model_requests": 0,
+  "new_formal_test_experiments": 0,
+  "scope": "Historical original dev/test and fixed-code development results replayed with current reader; not new test retrieval or new accuracy"
+}
