@@ -28,7 +28,8 @@ def fields(value,names,what):
 
 
 def number(v,positive=False):
-    return type(v) in (int,float) and math.isfinite(v) and (v>0 if positive else v>=0)
+    try:return type(v) in (int,float) and math.isfinite(v) and (v>0 if positive else v>=0)
+    except OverflowError:return False
 
 
 def sha(v):return isinstance(v,str) and re.fullmatch('[a-f0-9]{64}',v) is not None
@@ -201,10 +202,41 @@ def validate_grant(grant,out,current=False):
     dev=replay(ROOT/grant['development_manifest']['path'].rsplit('/',1)[0])
     if dev['selected_on_this_split']!=grant['selected_method']:raise ValueError('Selection differs from dev')
     verification=json.loads((ROOT/grant['verification']['path']).read_text('utf-8'))
-    if verification['status']!='PASS' or verification['passed']!=verification['total'] or not all(v is True for v in verification['checks'].values()):raise ValueError('Development verification failed')
+    fields(verification,('version','captured_at','status','passed','total','checks','errors','development_manifest','source_sha256','scope'),'development verification')
+    if (verification['version']!='reranker-contract-1.0' or verification['status']!='PASS' or verification['errors']
+        or type(verification['total']) is not int or type(verification['passed']) is not int
+        or verification['passed']!=verification['total'] or verification['total']!=len(verification['checks'])
+        or verification['total']<72 or not all(v is True for v in verification['checks'].values())):raise ValueError('Development verification failed')
+    fields(verification['source_sha256'],NATIVE,'verification source coverage')
+    if any(verification['source_sha256'][p]!=grant['inputs'][p]['sha256'] for p in NATIVE):raise ValueError('Verification source not frozen')
     if verification['development_manifest']!=grant['development_manifest']:raise ValueError('Verification is for another development run')
-    if instant(grant['prepared_at'])<=instant(json.loads((ROOT/grant['development_manifest']['path']).read_text('utf-8'))['completed_at']):raise ValueError('Authorization predates development')
+    dev_completed=json.loads((ROOT/grant['development_manifest']['path']).read_text('utf-8'))['completed_at']
+    if not instant(dev_completed)<instant(verification['captured_at'])<instant(grant['prepared_at']):raise ValueError('Development verification/authorization chronology differs')
     return grant
+
+
+def validate_runtime_snapshot(manifest):
+    """Bind equal before/after copies to the original published artifacts as well."""
+    snapshots=manifest['index_snapshots'];fields(snapshots,('before','after'),'index snapshots')
+    if snapshots['before']!=snapshots['after']:raise ValueError('Index changed')
+    dense=json.loads((ROOT/'data/manifests/dense_index_manifest.json').read_text('utf-8'))
+    bm=json.loads((ROOT/'data/manifests/bm25_indexes.json').read_text('utf-8'))['indexes']['title_body']
+    expected={**{'data/indexes/dense/'+p:v for p,v in dense['artifact_files'].items()},
+              **{'data/indexes/bm25/title_body/'+p:v for p,v in bm['artifacts'].items()},
+              'data/indexes/dense/index_manifest.json':{'sha256':dense['local_manifest_sha256']},
+              'data/indexes/bm25/title_body/index_manifest.json':{'sha256':digest((json.dumps(bm,ensure_ascii=False,sort_keys=True,indent=2)+'\n').encode())}}
+    if set(snapshots['before'])!=set(expected):raise ValueError('Original index paths differ')
+    for p,item in snapshots['before'].items():
+        fields(item,('path','size_bytes','sha256'),'index file identity')
+        if item['path']!=p or type(item['size_bytes']) is not int or item['size_bytes']<1 or not sha(item['sha256']):raise ValueError('Invalid index identity')
+        if any(item[k]!=v for k,v in expected[p].items()):raise ValueError('Index not original pinned artifact')
+    env=manifest['environment'];runtime=env['embedding_runtime'];cfg=json.loads((ROOT/'config/dense_index.json').read_text('utf-8'))
+    fields(runtime,('name','digest','size','size_vram','context_length','runner'),'embedding runtime')
+    if (runtime['name']!=cfg['model']['name'] or runtime['digest']!=cfg['model']['digest'] or runtime['runner']!='llamacpp'
+        or type(runtime['size']) is not int or runtime['size']<1 or type(runtime['size_vram']) is not int or runtime['size_vram']!=0
+        or type(runtime['context_length']) is not int or runtime['context_length']!=8192):raise ValueError('Embedding runtime/device differs')
+    if env['python']!='3.10.22' or type(env['logical_cpus']) is not int or env['logical_cpus']<1 or type(env['physical_memory_bytes']) is not int or env['physical_memory_bytes']<1:raise ValueError('Invalid host observation')
+    return True
 
 
 def replay(directory):
@@ -255,6 +287,7 @@ def replay(directory):
         for packet in packets:validate_packet(packet,cfg['warmup_question'],method,known,cfg);total+=packet['timing']['total_seconds']
     snapshots=manifest['index_snapshots'];fields(snapshots,('before','after'),'read-only indexes')
     if snapshots['before']!=snapshots['after'] or len(snapshots['before'])!=13:raise ValueError('Index changed')
+    validate_runtime_snapshot(manifest)
     if manifest['wall_seconds']+.1<total or (instant(manifest['completed_at'])-instant(manifest['started_at'])).total_seconds()+.2<total:raise ValueError('Wall clock omits measured work')
     if not number(manifest['load_seconds'],True):raise ValueError('Load clock invalid')
     environment=manifest['environment']

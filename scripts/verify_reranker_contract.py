@@ -119,6 +119,8 @@ def main():
     check('hand_mrr_quarter',lambda:metrics['metrics']['MRR@10']==.25)
     check('unanswerable_not_quality_denominator',lambda:metrics['answerable_denominator']==2 and metrics['unanswerable_excluded']==1)
     check('ndcg_null_without_graded_labels',lambda:metrics['nDCG@10'] is None)
+    check('overflowing_counter_rejected',lambda:ev.number(10**1000) is False)
+    check('warmup_is_not_dev_or_test_question',lambda:not any(digest(q['question'].encode())==digest(cfg['warmup_question'].encode()) for split in ('dev','test') for q in load_jsonl(EVAL/('retrieval_'+split+'.jsonl'))))
     check('linear_p50_p95',lambda:statistics([1.,2.,3.,4.])['P50_ms']==2500. and abs(statistics([1.,2.,3.,4.])['P95_ms']-3850.)<1e-8)
     # Support at rank30 is lost only by20; rank70 only by20/40; rank90 outside80.
     def truncation():

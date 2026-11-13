@@ -109,7 +109,7 @@ def main():
         if a.output:write_new(new_report(a.output),{'status':'PASS','captured_at':now(),'run_manifest':record(a.run_dir/'run_manifest.json'),'summary':result,'new_model_requests':0})
         print(json.dumps({'status':'PASS','split':result['split']}))
     elif a.mode=='query':
-        output=new_report(a.output) if a.output else None;normalize=None
+        output=new_report(a.output) if a.output else None
         from dense_retrieval_eval import normalize_query
         normalize_query(a.question)
         from reranker_live import RerankerRetriever
