@@ -1,0 +1,20 @@
+{
+  "captured_at": "2026-11-13T02:51:22.604715+00:00",
+  "checkout_commit": "d81a1fd220569f9cd929387f39a54af672a774b3",
+  "checks": {
+    "dev_saved_fusion_replay": true,
+    "no_corpus": true,
+    "no_indexes": true,
+    "no_runtime": true,
+    "no_venv": true,
+    "test_saved_fusion_replay": true,
+    "third_party_packages_unavailable_under_python_S": true
+  },
+  "errors": [],
+  "new_channel_retrieval_requests": 0,
+  "passed": 7,
+  "scope": "Detached public checkout, stdlib only, saved original channels and new fusion ranks revalidated",
+  "status": "PASS",
+  "total": 7,
+  "version": "hybrid-public-replay-1.0"
+}

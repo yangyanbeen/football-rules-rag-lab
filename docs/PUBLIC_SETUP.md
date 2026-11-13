@@ -69,7 +69,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 
 提交前暂存明确文件，运行 `python scripts/manage_delivery_manifest.py` 和 `--verify`，再暂存清单。原规范与冻结语料不改；完整回答、凭据、数据库、依赖、缓存不公开。
 
-任务一至八已按原标准交付，当前状态见 [DELIVERY_STATUS](DELIVERY_STATUS.md)。16 条开发题已经用于调试，通过数不代表独立测试集准确率或 Recall/MRR/nDCG；正式检索基线来自任务七/八的独立锁定测试记录。
+任务一至九已按原标准交付，当前状态见 [DELIVERY_STATUS](DELIVERY_STATUS.md)。16 条开发题已经用于调试，通过数不代表独立测试集准确率或 Recall/MRR/nDCG；检索基线来自任务七/八，任务九在原双路排名上完成冻结的融合对照。
 
 重复验收会写入新的 reports/rechecks/fresh-时间戳目录，拒绝覆盖旧报告。指定本次应用的私有错误日志，避免拿旧日志证明当前启动：
 
@@ -90,4 +90,8 @@ UiCapture 必须来自已完成的真实浏览器操作；也可传历史采集�
 
 任务八最新补充见 [TASK_08_SUPPLEMENT](../reports/TASK_08_SUPPLEMENT.md)。来源时间与授权、分词对照复算、测试预约、失败证据和完整索引恢复门禁已修复；原测试成绩和所有历史结果保留。分词开发可使用不同输出目录重复执行，会创建独立的私有索引；原索引不会被覆盖。
 
-原语料恢复后执行 `.venv/Scripts/python.exe scripts/install_bm25_runtime.py`，再按 [BM25_RETRIEVAL](BM25_RETRIEVAL.md) 构建三个本地索引。jieba从固定官方包隔离安装到.runtime/bm25，原应用262包保持不变，BM25实验不需要Ollama。已有目录/原正式测试拒绝覆盖或重复运行；使用新dev路径。公开结果复算可用python -S，无需语料、jieba或实际索引。现有UI仍沿用原Dense入口，混合召回按任务九推进。
+原语料恢复后执行 `.venv/Scripts/python.exe scripts/install_bm25_runtime.py`，再按 [BM25_RETRIEVAL](BM25_RETRIEVAL.md) 构建三个本地索引。jieba从固定官方包隔离安装到.runtime/bm25，原应用262包保持不变，BM25实验不需要Ollama。已有目录/原正式测试拒绝覆盖或重复运行；使用新dev路径。公开结果复算可用python -S，无需语料、jieba或实际索引。现有UI仍沿用原Dense入口，任务九混合检索使用独立脚本。
+
+## 任务九混合召回与RRF
+
+见[RRF_EXPERIMENT](RRF_EXPERIMENT.md)。公开克隆无需模型和语料即可执行`python -S scripts/run_hybrid_retrieval.py replay --run-dir reports/retrieval/hybrid_rrf_b0/test --output reports/rechecks/my-rrf-replay.json`核验已有结果。运行新的dev仍要求原人工审核账本；实际query须恢复原Dense/BM25索引、固定依赖与本机Ollama/BGE-M3，不调用答案模型。四方法保持相同Top10输出上限，完整并集覆盖另列；RRF在本集MRR低于BM25，不能称全面提升。
