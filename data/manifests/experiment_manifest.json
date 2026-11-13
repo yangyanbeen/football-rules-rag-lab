@@ -2881,6 +2881,11 @@
           "sha256": "f610936122125b7ef9420067d2ab730dbfb458d1f48f7fd1fe19585c984c02de"
         },
         {
+          "path": "reports/retrieval/hybrid_rrf_b0/acceptance/task9-delivery-final.json",
+          "size_bytes": 2366,
+          "sha256": "d9d25cb0cc2e15d615c0541b747fd10334f045b1f1869437ddfd35e7d5ee50d9"
+        },
+        {
           "path": "reports/retrieval/hybrid_rrf_b0/acceptance/task9-delivery-gate.json",
           "size_bytes": 2366,
           "sha256": "76a50a052d1fabfbc41e8ed7a17c3c739d8a632f120a029695574d6d276144fb"

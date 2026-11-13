@@ -3,7 +3,7 @@
   "scope": "New public checkout: tracked files plus hash-only local corpus inventory; original local project manifest is preserved separately.",
   "self_hash_policy": "This manifest excludes itself to avoid recursion.",
   "runtime_policy": "External runtime, credentials, databases, caches, live logs and temporary fixtures are excluded.",
-  "file_count": 573,
+  "file_count": 574,
   "files": [
     {
       "path": ".env.example",
@@ -224,8 +224,8 @@
     },
     {
       "path": "data/manifests/experiment_manifest.json",
-      "size_bytes": 132729,
-      "sha256": "0aadaa5b6fb88546d5439ee716a9a14030df453ea6cd3fad5adf604a159e8620",
+      "size_bytes": 132962,
+      "sha256": "e39073916dc60c9383503bc9eaab8481ee91731366f41c350cde17b7e89fde65",
       "purpose": "数据格式、来源或版本清单",
       "distribution": "public-git"
     },
@@ -3138,6 +3138,13 @@
       "path": "reports/retrieval/hybrid_rrf_b0/acceptance/public-only-replay.json",
       "size_bytes": 622,
       "sha256": "f610936122125b7ef9420067d2ab730dbfb458d1f48f7fd1fe19585c984c02de",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/hybrid_rrf_b0/acceptance/task9-delivery-final.json",
+      "size_bytes": 2366,
+      "sha256": "d9d25cb0cc2e15d615c0541b747fd10334f045b1f1869437ddfd35e7d5ee50d9",
       "purpose": "历史证据或本次补交付验收结果",
       "distribution": "public-git"
     },
