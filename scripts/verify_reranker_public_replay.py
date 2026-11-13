@@ -24,6 +24,13 @@ if '--test' in sys.argv:
  check('test_original_index_and_device_metadata_recompute',lambda:strong_manifest(ev.DIRECTORY/'test'))
  from verify_reranker_delivery import validate_ledger
  check('test_single_owned_start_completed_ledger',validate_ledger)
+ from verify_reranker_cold_start import validate as validate_cold
+ check('physical_isolated_cold_start_receipt_recomputes',lambda:len(validate_cold(json.loads((ev.DIRECTORY/'acceptance/cold-start-actual.json').read_text('utf-8'))))==8)
+ def current_receipt(name,count,source):
+  r=json.loads((ev.DIRECTORY/'acceptance'/name).read_text('utf-8'))
+  return r['status']=='PASS' and r['passed']==r['total']==len(r['checks'])==count and all(v is True for v in r['checks'].values()) and all(r['source_sha256'][p]==digest((root/p).read_bytes()) for p in source)
+ check('current_cold_start_and_output_regressions12_pass',lambda:current_receipt('cold-start-regressions.json',12,('scripts/run_reranker_experiment.py','scripts/verify_reranker_lifecycle.py','scripts/reranker_live.py')))
+ check('current_contract74_binds_delivered_native_code',lambda:current_receipt('contract-current.json',74,ev.NATIVE))
 files={n:(directory/n).read_bytes() for n in (*ev.ARTIFACTS,'run_manifest.json')}
 original=json.loads(files['run_manifest.json'])
 def wrong(name,mutate,rehash=True):

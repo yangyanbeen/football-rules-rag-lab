@@ -112,10 +112,24 @@ def verify(report,public_only=False,complete=False):
             check(name+'_delivered',lambda name=name:(ROOT/name).is_file() and (ROOT/name).stat().st_size>100)
         check('17th_experiment_registered',lambda:len(current['experiments'])==17 and current['experiments'][-1]['id']=='TASK-010-BGE-RERANKER')
         check('registered_artifact_hashes_match',lambda:all(record(ROOT/r['path'])==r for r in current['experiments'][-1]['artifacts']))
+        def registered_code():
+            c=current['experiments'][-1]['code']
+            return (c['formal_test_source_commit']==final['source_commit']
+                    and c['formal_test_source_sha256']=={p:digest(git_bytes(c['formal_test_source_commit'],p)) for p in ev.NATIVE}
+                    and c['delivery_source_sha256']=={p:record(ROOT/p)['sha256'] for p in ev.NATIVE}
+                    and c['delivery_source_sha256']=={p:digest(git_bytes(c['delivery_source_commit'],p)) for p in ev.NATIVE})
+        check('formal_and_delivered_source_identities_separate_and_bound',registered_code)
         def public_receipt():
             r=json.loads((ev.DIRECTORY/'acceptance/public-final.json').read_text('utf-8'))
-            return r['status']=='PASS' and r['passed']==r['total']==32 and len(r['checks'])==32 and all(v is True for v in r['checks'].values()) and r['includes_test'] is True and r['new_model_requests']==0 and r['source_sha256']==record(ROOT/'scripts/verify_reranker_public_replay.py')['sha256']
+            return r['status']=='PASS' and r['passed']==r['total']==35 and len(r['checks'])==35 and all(v is True for v in r['checks'].values()) and r['includes_test'] is True and r['new_model_requests']==0 and r['source_sha256']==record(ROOT/'scripts/verify_reranker_public_replay.py')['sha256']
         check('independent_public_replay_and25_bad_copies_rejected',public_receipt)
+        def current_receipt(name,total,names):
+            r=json.loads((ev.DIRECTORY/'acceptance'/name).read_text('utf-8'))
+            return r['status']=='PASS' and r['passed']==r['total']==len(r['checks'])==total and all(v is True for v in r['checks'].values()) and all(r['source_sha256'][p]==record(ROOT/p)['sha256'] for p in names)
+        check('current74_contract_checks_bind_delivered_native_code',lambda:current_receipt('contract-current.json',74,ev.NATIVE))
+        check('current12_cold_start_and_output_regressions_pass',lambda:current_receipt('cold-start-regressions.json',12,('scripts/run_reranker_experiment.py','scripts/verify_reranker_lifecycle.py','scripts/reranker_live.py')))
+        from verify_reranker_cold_start import validate as validate_cold
+        check('actual8_isolated_cold_start_checks_recompute',lambda:len(validate_cold(json.loads((ev.DIRECTORY/'acceptance/cold-start-actual.json').read_text('utf-8'))))==8)
     result={'version':'reranker-delivery-1.0','captured_at':now(),'status':'PASS' if all(checks.values()) else 'FAIL',
             'passed':sum(checks.values()),'total':len(checks),'checks':checks,'errors':errors,'public_only':public_only,
             'complete_delivery':complete,'new_model_requests':0,'source_sha256':record(__file__)['sha256']}

@@ -39,7 +39,7 @@ class RerankerRetriever:
             results=[{k:r[k] for k in ('chunk_id','rank','score')} for r in reranker['results'][:10]]
             end=time.perf_counter_ns();rerank_seconds=(end-d)/1e9;fusion_seconds=(d-c)/1e9
         else:
-            reranker=None;results=before[:10];end=time.perf_counter_ns();rerank_seconds=0.;fusion_seconds=(end-c)/1e9
+            reranker=None;results=[dict(r) for r in before[:10]];end=time.perf_counter_ns();rerank_seconds=0.;fusion_seconds=(end-c)/1e9
         return {'method':method,'query':query,'channels':raw,'before':before,'reranker':reranker,'results':results,
                 'timing':{'normalization_seconds':(a-start)/1e9,'dense_seconds':(b-a)/1e9,'bm25_seconds':(c-b)/1e9,
                           'fusion_seconds':fusion_seconds,'rerank_seconds':rerank_seconds,'total_seconds':(end-start)/1e9},

@@ -61,12 +61,13 @@ def evaluate(args):
         from hybrid_live import index_files
         phase='load_models';loading=time.perf_counter()
         with RerankerRetriever(cfg) as engine:
-            load_seconds=time.perf_counter()-loading;environment=engine.environment();before=engine.before
+            load_seconds=time.perf_counter()-loading;before=engine.before
             source_map=json.loads((ROOT/'reports/retrieval/dense_b0/dev/source_map.json').read_text('utf-8'))
             write_new(out/'source_map.json',source_map)
             warmups={m:[] for m in METHODS};phase='warmup'
             for m in METHODS:
                 for _ in range(cfg['warmup_repetitions']):warmups[m].append(engine.query(cfg['warmup_question'],m))
+            phase='capture_environment';environment=engine.environment()
             rows=[];phase='measure'
             with (out/'predictions.jsonl').open('x',encoding='utf-8',newline='\n') as f:
                 for i,q in enumerate(queries):
