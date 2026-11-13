@@ -1,0 +1,1435 @@
+{
+  "actual_embedding_queries": 1,
+  "actual_locked_test_queries": 0,
+  "actual_reranker_pairs": 0,
+  "answer_llm_requests": 0,
+  "before_loaded_models": [],
+  "checks": {
+    "actual_ad_hoc_deep_retrieval_packet_recomputes": true,
+    "cpu_runtime_captured_after_query_and_original_indexes_preserved": true,
+    "expected_original_residency_dependency_observed": true,
+    "fixed_ollama_version": true,
+    "fresh_owned_service_no_loaded_models": true,
+    "no_locked_test_queries": true,
+    "one_actual_embedding_no_rerank_or_answer_requests": true,
+    "only_owned_isolated_service_stopped": true
+  },
+  "completed_at": "2026-11-13T08:57:33.958668+00:00",
+  "config_sha256": "9b77781e8f32d886c5b15a6af852acd4ac95d534196406fde641bce079144062",
+  "environment": {
+    "captured_at": "2026-11-13T08:57:33.444134+00:00",
+    "embedding_runtime": {
+      "context_length": 8192,
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+      "name": "bge-m3:latest",
+      "runner": "llamacpp",
+      "size": 1244166879,
+      "size_vram": 0
+    },
+    "logical_cpus": 20,
+    "machine": "AMD64",
+    "model_inputs": [
+      "input_ids",
+      "attention_mask"
+    ],
+    "packages": {
+      "numpy": "1.26.4",
+      "onnxruntime": "1.19.2",
+      "tokenizers": "0.22.1"
+    },
+    "physical_memory_bytes": 16858472448,
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "python": "3.10.22",
+    "system": "Windows-10-10.0.26200-SP0"
+  },
+  "environment_before_warmup_rejected": true,
+  "index_snapshots": {
+    "after": {
+      "data/indexes/bm25/title_body/index.json": {
+        "path": "data/indexes/bm25/title_body/index.json",
+        "sha256": "d7882cb8521198086ef9c80d1e50723d043d586125a6b6e89078cf91e38b92c1",
+        "size_bytes": 194351
+      },
+      "data/indexes/bm25/title_body/index_manifest.json": {
+        "path": "data/indexes/bm25/title_body/index_manifest.json",
+        "sha256": "685d12d02cd25731e4c120621093f579b50d85eb89377a0d49b192f1d0af8257",
+        "size_bytes": 2485
+      },
+      "data/indexes/bm25/title_body/source_map.json": {
+        "path": "data/indexes/bm25/title_body/source_map.json",
+        "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863",
+        "size_bytes": 36576
+      },
+      "data/indexes/dense/chroma/chroma.sqlite3": {
+        "path": "data/indexes/dense/chroma/chroma.sqlite3",
+        "sha256": "69631545227256d46ce5d1a22582b149a3911e37b13e8f4441f0e443fc266b64",
+        "size_bytes": 442368
+      },
+      "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/data_level0.bin": {
+        "path": "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/data_level0.bin",
+        "sha256": "2143523c931b45a16ed487b768b59e7ae95e04ce351b150f931902f1a3f5f126",
+        "size_bytes": 4236000
+      },
+      "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/header.bin": {
+        "path": "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/header.bin",
+        "sha256": "61820b86cd922f37bc34b8e974f8a51b5595f3af58fdb6c1de3fe791cedcd30f",
+        "size_bytes": 100
+      },
+      "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/index_metadata.pickle": {
+        "path": "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/index_metadata.pickle",
+        "sha256": "aca72c25199a1a480d7eae2cc7f672fa6b3672f15fa378063b14f42fc70a17ec",
+        "size_bytes": 2023
+      },
+      "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/length.bin": {
+        "path": "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/length.bin",
+        "sha256": "905c4160bcf60ea5afa4ca1152823f2970bcdd8785ecbbcf7d3c94c2140d48da",
+        "size_bytes": 4000
+      },
+      "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/link_lists.bin": {
+        "path": "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/link_lists.bin",
+        "sha256": "b44a188d9e635b3faa8169810caa6e7316562901bf33b7cd80ab607b8d78989d",
+        "size_bytes": 928
+      },
+      "data/indexes/dense/embeddings.npy": {
+        "path": "data/indexes/dense/embeddings.npy",
+        "sha256": "d9d44255bc652ca71a05ee42c9156f8afa324d3e5caaf24fd8a875da8651353c",
+        "size_bytes": 405632
+      },
+      "data/indexes/dense/id_mapping.json": {
+        "path": "data/indexes/dense/id_mapping.json",
+        "sha256": "0bdff8a39d7a458d586fecb921582224ad7a854cc3bf6fa589e04a1150b95b61",
+        "size_bytes": 32967
+      },
+      "data/indexes/dense/index_manifest.json": {
+        "path": "data/indexes/dense/index_manifest.json",
+        "sha256": "f0c52d56e86d5b3a3d660e13a98870684b254b039ae77b2267a698e9814d0e4e",
+        "size_bytes": 11511
+      },
+      "data/indexes/dense/records.jsonl": {
+        "path": "data/indexes/dense/records.jsonl",
+        "sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "size_bytes": 302368
+      }
+    },
+    "before": {
+      "data/indexes/bm25/title_body/index.json": {
+        "path": "data/indexes/bm25/title_body/index.json",
+        "sha256": "d7882cb8521198086ef9c80d1e50723d043d586125a6b6e89078cf91e38b92c1",
+        "size_bytes": 194351
+      },
+      "data/indexes/bm25/title_body/index_manifest.json": {
+        "path": "data/indexes/bm25/title_body/index_manifest.json",
+        "sha256": "685d12d02cd25731e4c120621093f579b50d85eb89377a0d49b192f1d0af8257",
+        "size_bytes": 2485
+      },
+      "data/indexes/bm25/title_body/source_map.json": {
+        "path": "data/indexes/bm25/title_body/source_map.json",
+        "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863",
+        "size_bytes": 36576
+      },
+      "data/indexes/dense/chroma/chroma.sqlite3": {
+        "path": "data/indexes/dense/chroma/chroma.sqlite3",
+        "sha256": "69631545227256d46ce5d1a22582b149a3911e37b13e8f4441f0e443fc266b64",
+        "size_bytes": 442368
+      },
+      "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/data_level0.bin": {
+        "path": "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/data_level0.bin",
+        "sha256": "2143523c931b45a16ed487b768b59e7ae95e04ce351b150f931902f1a3f5f126",
+        "size_bytes": 4236000
+      },
+      "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/header.bin": {
+        "path": "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/header.bin",
+        "sha256": "61820b86cd922f37bc34b8e974f8a51b5595f3af58fdb6c1de3fe791cedcd30f",
+        "size_bytes": 100
+      },
+      "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/index_metadata.pickle": {
+        "path": "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/index_metadata.pickle",
+        "sha256": "aca72c25199a1a480d7eae2cc7f672fa6b3672f15fa378063b14f42fc70a17ec",
+        "size_bytes": 2023
+      },
+      "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/length.bin": {
+        "path": "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/length.bin",
+        "sha256": "905c4160bcf60ea5afa4ca1152823f2970bcdd8785ecbbcf7d3c94c2140d48da",
+        "size_bytes": 4000
+      },
+      "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/link_lists.bin": {
+        "path": "data/indexes/dense/chroma/d8367c3b-a80d-4e64-9707-dcc2c42a1b05/link_lists.bin",
+        "sha256": "b44a188d9e635b3faa8169810caa6e7316562901bf33b7cd80ab607b8d78989d",
+        "size_bytes": 928
+      },
+      "data/indexes/dense/embeddings.npy": {
+        "path": "data/indexes/dense/embeddings.npy",
+        "sha256": "d9d44255bc652ca71a05ee42c9156f8afa324d3e5caaf24fd8a875da8651353c",
+        "size_bytes": 405632
+      },
+      "data/indexes/dense/id_mapping.json": {
+        "path": "data/indexes/dense/id_mapping.json",
+        "sha256": "0bdff8a39d7a458d586fecb921582224ad7a854cc3bf6fa589e04a1150b95b61",
+        "size_bytes": 32967
+      },
+      "data/indexes/dense/index_manifest.json": {
+        "path": "data/indexes/dense/index_manifest.json",
+        "sha256": "f0c52d56e86d5b3a3d660e13a98870684b254b039ae77b2267a698e9814d0e4e",
+        "size_bytes": 11511
+      },
+      "data/indexes/dense/records.jsonl": {
+        "path": "data/indexes/dense/records.jsonl",
+        "sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "size_bytes": 302368
+      }
+    }
+  },
+  "ollama_version": "0.40.16",
+  "owned_service_stopped": true,
+  "packet": {
+    "before": [
+      {
+        "chunk_id": "L01-02",
+        "rank": 1,
+        "score": 0.03252247488101533
+      },
+      {
+        "chunk_id": "L01-01",
+        "rank": 2,
+        "score": 0.03030998851894374
+      },
+      {
+        "chunk_id": "L01-04",
+        "rank": 3,
+        "score": 0.03021353930031804
+      },
+      {
+        "chunk_id": "L02-02",
+        "rank": 4,
+        "score": 0.030117753623188404
+      },
+      {
+        "chunk_id": "L01-03",
+        "rank": 5,
+        "score": 0.029906956136464335
+      },
+      {
+        "chunk_id": "L04-03",
+        "rank": 6,
+        "score": 0.029857397504456328
+      },
+      {
+        "chunk_id": "L16-02",
+        "rank": 7,
+        "score": 0.028404512489927477
+      },
+      {
+        "chunk_id": "L01-05",
+        "rank": 8,
+        "score": 0.02792120864410021
+      },
+      {
+        "chunk_id": "L01-06",
+        "rank": 9,
+        "score": 0.026262626262626262
+      },
+      {
+        "chunk_id": "L17-06",
+        "rank": 10,
+        "score": 0.026041666666666668
+      },
+      {
+        "chunk_id": "L16-01",
+        "rank": 11,
+        "score": 0.025728708679368183
+      },
+      {
+        "chunk_id": "L04-01",
+        "rank": 12,
+        "score": 0.025712414018997706
+      },
+      {
+        "chunk_id": "L16-03",
+        "rank": 13,
+        "score": 0.025353016688061617
+      },
+      {
+        "chunk_id": "L15-03",
+        "rank": 14,
+        "score": 0.024725274725274724
+      },
+      {
+        "chunk_id": "L16-05",
+        "rank": 15,
+        "score": 0.02470238095238095
+      },
+      {
+        "chunk_id": "L12-09",
+        "rank": 16,
+        "score": 0.023873015873015872
+      },
+      {
+        "chunk_id": "L01-07",
+        "rank": 17,
+        "score": 0.023853944562899788
+      },
+      {
+        "chunk_id": "L17-02",
+        "rank": 18,
+        "score": 0.02369281045751634
+      },
+      {
+        "chunk_id": "L17-01",
+        "rank": 19,
+        "score": 0.02351332877648667
+      },
+      {
+        "chunk_id": "L08A-02",
+        "rank": 20,
+        "score": 0.023252688172043012
+      },
+      {
+        "chunk_id": "L08A-01",
+        "rank": 21,
+        "score": 0.023222439660795825
+      },
+      {
+        "chunk_id": "L13-06",
+        "rank": 22,
+        "score": 0.023215244229736982
+      },
+      {
+        "chunk_id": "L14-01",
+        "rank": 23,
+        "score": 0.02286386203292396
+      },
+      {
+        "chunk_id": "L09-01",
+        "rank": 24,
+        "score": 0.022679127725856698
+      },
+      {
+        "chunk_id": "L17-04",
+        "rank": 25,
+        "score": 0.0226010101010101
+      },
+      {
+        "chunk_id": "L03-01",
+        "rank": 26,
+        "score": 0.02254976064499874
+      },
+      {
+        "chunk_id": "L09-03",
+        "rank": 27,
+        "score": 0.02224694104560623
+      },
+      {
+        "chunk_id": "L14-04",
+        "rank": 28,
+        "score": 0.021968787515006003
+      },
+      {
+        "chunk_id": "L13-05",
+        "rank": 29,
+        "score": 0.021929824561403508
+      },
+      {
+        "chunk_id": "L15-01",
+        "rank": 30,
+        "score": 0.021805752003771807
+      },
+      {
+        "chunk_id": "L17-05",
+        "rank": 31,
+        "score": 0.021637426900584796
+      },
+      {
+        "chunk_id": "L08B-04",
+        "rank": 32,
+        "score": 0.021586799276672695
+      },
+      {
+        "chunk_id": "L11-09",
+        "rank": 33,
+        "score": 0.021241830065359478
+      },
+      {
+        "chunk_id": "L14-02",
+        "rank": 34,
+        "score": 0.021202990737640887
+      },
+      {
+        "chunk_id": "L04-02",
+        "rank": 35,
+        "score": 0.020638297872340425
+      },
+      {
+        "chunk_id": "L14-05",
+        "rank": 36,
+        "score": 0.019696969696969695
+      },
+      {
+        "chunk_id": "L08A-03",
+        "rank": 37,
+        "score": 0.019334952363160844
+      },
+      {
+        "chunk_id": "L13-08",
+        "rank": 38,
+        "score": 0.01925925925925926
+      },
+      {
+        "chunk_id": "L13-01",
+        "rank": 39,
+        "score": 0.01880607315389924
+      },
+      {
+        "chunk_id": "L08B-03",
+        "rank": 40,
+        "score": 0.018768379173153434
+      },
+      {
+        "chunk_id": "L06-06",
+        "rank": 41,
+        "score": 0.018504371445547917
+      },
+      {
+        "chunk_id": "L12-02",
+        "rank": 42,
+        "score": 0.01818181818181818
+      },
+      {
+        "chunk_id": "L08B-02",
+        "rank": 43,
+        "score": 0.01789280293953191
+      },
+      {
+        "chunk_id": "L07-01",
+        "rank": 44,
+        "score": 0.01748358528019545
+      },
+      {
+        "chunk_id": "L11-01",
+        "rank": 45,
+        "score": 0.017048327674637
+      },
+      {
+        "chunk_id": "L08B-01",
+        "rank": 46,
+        "score": 0.016986496090973704
+      },
+      {
+        "chunk_id": "L05-04",
+        "rank": 47,
+        "score": 0.016809629219701163
+      },
+      {
+        "chunk_id": "L06-01",
+        "rank": 48,
+        "score": 0.015384615384615385
+      },
+      {
+        "chunk_id": "L06-04",
+        "rank": 49,
+        "score": 0.014285714285714285
+      },
+      {
+        "chunk_id": "L02-01",
+        "rank": 50,
+        "score": 0.013513513513513514
+      },
+      {
+        "chunk_id": "L15-02",
+        "rank": 51,
+        "score": 0.013333333333333334
+      },
+      {
+        "chunk_id": "L04-04",
+        "rank": 52,
+        "score": 0.012987012987012988
+      },
+      {
+        "chunk_id": "L16-04",
+        "rank": 53,
+        "score": 0.01282051282051282
+      },
+      {
+        "chunk_id": "L17-03",
+        "rank": 54,
+        "score": 0.012658227848101266
+      },
+      {
+        "chunk_id": "L13-04",
+        "rank": 55,
+        "score": 0.012195121951219513
+      },
+      {
+        "chunk_id": "L03-04",
+        "rank": 56,
+        "score": 0.012048192771084338
+      },
+      {
+        "chunk_id": "L15-04",
+        "rank": 57,
+        "score": 0.011764705882352941
+      },
+      {
+        "chunk_id": "L03-02",
+        "rank": 58,
+        "score": 0.011363636363636364
+      },
+      {
+        "chunk_id": "L05-01",
+        "rank": 59,
+        "score": 0.01098901098901099
+      },
+      {
+        "chunk_id": "L13-03",
+        "rank": 60,
+        "score": 0.01098901098901099
+      },
+      {
+        "chunk_id": "L12-07",
+        "rank": 61,
+        "score": 0.010309278350515464
+      },
+      {
+        "chunk_id": "L15-05",
+        "rank": 62,
+        "score": 0.010309278350515464
+      },
+      {
+        "chunk_id": "L12-04",
+        "rank": 63,
+        "score": 0.00980392156862745
+      },
+      {
+        "chunk_id": "L04-05",
+        "rank": 64,
+        "score": 0.009708737864077669
+      },
+      {
+        "chunk_id": "L12-05",
+        "rank": 65,
+        "score": 0.009615384615384616
+      },
+      {
+        "chunk_id": "L11-03",
+        "rank": 66,
+        "score": 0.009433962264150943
+      },
+      {
+        "chunk_id": "L14-06",
+        "rank": 67,
+        "score": 0.009259259259259259
+      },
+      {
+        "chunk_id": "L09-02",
+        "rank": 68,
+        "score": 0.009174311926605505
+      },
+      {
+        "chunk_id": "L13-07",
+        "rank": 69,
+        "score": 0.009009009009009009
+      },
+      {
+        "chunk_id": "L10-01",
+        "rank": 70,
+        "score": 0.008849557522123894
+      },
+      {
+        "chunk_id": "L12-11",
+        "rank": 71,
+        "score": 0.008695652173913044
+      },
+      {
+        "chunk_id": "L12-01",
+        "rank": 72,
+        "score": 0.008620689655172414
+      },
+      {
+        "chunk_id": "L12-14",
+        "rank": 73,
+        "score": 0.008264462809917356
+      },
+      {
+        "chunk_id": "L12-03",
+        "rank": 74,
+        "score": 0.00819672131147541
+      },
+      {
+        "chunk_id": "L13-02",
+        "rank": 75,
+        "score": 0.008064516129032258
+      },
+      {
+        "chunk_id": "L07-03",
+        "rank": 76,
+        "score": 0.0078125
+      },
+      {
+        "chunk_id": "L14-03",
+        "rank": 77,
+        "score": 0.007751937984496124
+      },
+      {
+        "chunk_id": "L11-05",
+        "rank": 78,
+        "score": 0.007692307692307693
+      },
+      {
+        "chunk_id": "L12-06",
+        "rank": 79,
+        "score": 0.007633587786259542
+      },
+      {
+        "chunk_id": "L10-02",
+        "rank": 80,
+        "score": 0.007575757575757576
+      }
+    ],
+    "channel_timing": {
+      "bm25": {
+        "normalization_seconds": 1.1e-05,
+        "scoring_seconds": 0.0001832,
+        "tokenization_seconds": 8.75e-05,
+        "total_seconds": 0.0002817
+      },
+      "dense": {
+        "query_embedding_seconds": 2.6728144000007887,
+        "vector_search_seconds": 0.011785999999119667
+      }
+    },
+    "channels": {
+      "bm25": [
+        {
+          "chunk_id": "L01-02",
+          "rank": 1,
+          "score": 7.036048977231334
+        },
+        {
+          "chunk_id": "L01-04",
+          "rank": 2,
+          "score": 5.70751610364069
+        },
+        {
+          "chunk_id": "L12-09",
+          "rank": 3,
+          "score": 5.569456384814657
+        },
+        {
+          "chunk_id": "L17-06",
+          "rank": 4,
+          "score": 5.465630748232071
+        },
+        {
+          "chunk_id": "L06-01",
+          "rank": 5,
+          "score": 4.483571378202712
+        },
+        {
+          "chunk_id": "L04-03",
+          "rank": 6,
+          "score": 4.364299799385147
+        },
+        {
+          "chunk_id": "L01-01",
+          "rank": 7,
+          "score": 4.351197839286421
+        },
+        {
+          "chunk_id": "L16-02",
+          "rank": 8,
+          "score": 4.14073692446214
+        },
+        {
+          "chunk_id": "L02-02",
+          "rank": 9,
+          "score": 3.7643301222217036
+        },
+        {
+          "chunk_id": "L06-04",
+          "rank": 10,
+          "score": 3.580244049997008
+        },
+        {
+          "chunk_id": "L04-01",
+          "rank": 11,
+          "score": 3.54075588382224
+        },
+        {
+          "chunk_id": "L11-09",
+          "rank": 12,
+          "score": 3.3390839329218807
+        },
+        {
+          "chunk_id": "L08A-01",
+          "rank": 13,
+          "score": 2.8054623608701084
+        },
+        {
+          "chunk_id": "L01-03",
+          "rank": 14,
+          "score": 2.540669248155233
+        },
+        {
+          "chunk_id": "L09-01",
+          "rank": 15,
+          "score": 2.539240607988556
+        },
+        {
+          "chunk_id": "L13-05",
+          "rank": 16,
+          "score": 2.410831960235742
+        },
+        {
+          "chunk_id": "L17-01",
+          "rank": 17,
+          "score": 2.3177670962582453
+        },
+        {
+          "chunk_id": "L15-03",
+          "rank": 18,
+          "score": 2.2269206181011345
+        },
+        {
+          "chunk_id": "L08B-04",
+          "rank": 19,
+          "score": 2.170256710553363
+        },
+        {
+          "chunk_id": "L17-04",
+          "rank": 20,
+          "score": 2.086233608750431
+        },
+        {
+          "chunk_id": "L13-06",
+          "rank": 21,
+          "score": 1.9585821810646191
+        },
+        {
+          "chunk_id": "L16-03",
+          "rank": 22,
+          "score": 1.939219984030063
+        },
+        {
+          "chunk_id": "L01-05",
+          "rank": 23,
+          "score": 1.8096042817172615
+        },
+        {
+          "chunk_id": "L15-01",
+          "rank": 24,
+          "score": 1.7938829089416266
+        },
+        {
+          "chunk_id": "L14-04",
+          "rank": 25,
+          "score": 1.777434789153677
+        },
+        {
+          "chunk_id": "L14-01",
+          "rank": 26,
+          "score": 1.7480365022214648
+        },
+        {
+          "chunk_id": "L09-03",
+          "rank": 27,
+          "score": 1.7209019703697346
+        },
+        {
+          "chunk_id": "L14-05",
+          "rank": 28,
+          "score": 1.6953104750999466
+        },
+        {
+          "chunk_id": "L16-01",
+          "rank": 29,
+          "score": 1.6780947299462576
+        },
+        {
+          "chunk_id": "L01-06",
+          "rank": 30,
+          "score": 1.6037205202345979
+        },
+        {
+          "chunk_id": "L05-01",
+          "rank": 31,
+          "score": 1.59243988520138
+        },
+        {
+          "chunk_id": "L13-01",
+          "rank": 32,
+          "score": 1.588293721096898
+        },
+        {
+          "chunk_id": "L08A-02",
+          "rank": 33,
+          "score": 1.558313693969872
+        },
+        {
+          "chunk_id": "L08B-03",
+          "rank": 34,
+          "score": 1.481416402137398
+        },
+        {
+          "chunk_id": "L17-05",
+          "rank": 35,
+          "score": 1.4791868729958262
+        },
+        {
+          "chunk_id": "L16-05",
+          "rank": 36,
+          "score": 1.4722067310376168
+        },
+        {
+          "chunk_id": "L12-07",
+          "rank": 37,
+          "score": 1.4652921569210655
+        },
+        {
+          "chunk_id": "L03-01",
+          "rank": 38,
+          "score": 1.45844223109948
+        },
+        {
+          "chunk_id": "L06-06",
+          "rank": 39,
+          "score": 1.4553022065828543
+        },
+        {
+          "chunk_id": "L04-02",
+          "rank": 40,
+          "score": 1.444932731331734
+        },
+        {
+          "chunk_id": "L08A-03",
+          "rank": 41,
+          "score": 1.412229157162216
+        },
+        {
+          "chunk_id": "L17-02",
+          "rank": 42,
+          "score": 1.3058303295918094
+        },
+        {
+          "chunk_id": "L14-02",
+          "rank": 43,
+          "score": 1.285365428015034
+        },
+        {
+          "chunk_id": "L05-04",
+          "rank": 44,
+          "score": 1.2686594978794465
+        },
+        {
+          "chunk_id": "L08B-01",
+          "rank": 45,
+          "score": 1.2635214269130348
+        },
+        {
+          "chunk_id": "L11-03",
+          "rank": 46,
+          "score": 1.1631279974341375
+        },
+        {
+          "chunk_id": "L08B-02",
+          "rank": 47,
+          "score": 1.159045608674619
+        },
+        {
+          "chunk_id": "L13-08",
+          "rank": 48,
+          "score": 1.1348315312673205
+        },
+        {
+          "chunk_id": "L11-01",
+          "rank": 49,
+          "score": 1.1122018526816155
+        },
+        {
+          "chunk_id": "L12-02",
+          "rank": 50,
+          "score": 1.1047602245577754
+        },
+        {
+          "chunk_id": "L07-01",
+          "rank": 51,
+          "score": 1.0724167602385288
+        },
+        {
+          "chunk_id": "L01-07",
+          "rank": 52,
+          "score": 0.9906863940042613
+        }
+      ],
+      "dense": [
+        {
+          "chunk_id": "L01-03",
+          "distance": 0.24640685319900513,
+          "rank": 1,
+          "score": 0.7535931468009949
+        },
+        {
+          "chunk_id": "L01-02",
+          "distance": 0.2670089602470398,
+          "rank": 2,
+          "score": 0.7329910397529602
+        },
+        {
+          "chunk_id": "L01-05",
+          "distance": 0.26846837997436523,
+          "rank": 3,
+          "score": 0.7315316200256348
+        },
+        {
+          "chunk_id": "L02-02",
+          "distance": 0.3070823550224304,
+          "rank": 4,
+          "score": 0.6929176449775696
+        },
+        {
+          "chunk_id": "L01-01",
+          "distance": 0.3301492929458618,
+          "rank": 5,
+          "score": 0.6698507070541382
+        },
+        {
+          "chunk_id": "L01-06",
+          "distance": 0.33584630489349365,
+          "rank": 6,
+          "score": 0.6641536951065063
+        },
+        {
+          "chunk_id": "L01-07",
+          "distance": 0.3503710627555847,
+          "rank": 7,
+          "score": 0.6496289372444153
+        },
+        {
+          "chunk_id": "L04-03",
+          "distance": 0.35531526803970337,
+          "rank": 8,
+          "score": 0.6446847319602966
+        },
+        {
+          "chunk_id": "L16-01",
+          "distance": 0.36433398723602295,
+          "rank": 9,
+          "score": 0.635666012763977
+        },
+        {
+          "chunk_id": "L16-05",
+          "distance": 0.3685309886932373,
+          "rank": 10,
+          "score": 0.6314690113067627
+        },
+        {
+          "chunk_id": "L01-04",
+          "distance": 0.3744316101074219,
+          "rank": 11,
+          "score": 0.6255683898925781
+        },
+        {
+          "chunk_id": "L17-02",
+          "distance": 0.378726065158844,
+          "rank": 12,
+          "score": 0.621273934841156
+        },
+        {
+          "chunk_id": "L16-02",
+          "distance": 0.38378286361694336,
+          "rank": 13,
+          "score": 0.6162171363830566
+        },
+        {
+          "chunk_id": "L02-01",
+          "distance": 0.38475513458251953,
+          "rank": 14,
+          "score": 0.6152448654174805
+        },
+        {
+          "chunk_id": "L15-02",
+          "distance": 0.3854401111602783,
+          "rank": 15,
+          "score": 0.6145598888397217
+        },
+        {
+          "chunk_id": "L16-03",
+          "distance": 0.39168763160705566,
+          "rank": 16,
+          "score": 0.6083123683929443
+        },
+        {
+          "chunk_id": "L04-04",
+          "distance": 0.3930523991584778,
+          "rank": 17,
+          "score": 0.6069476008415222
+        },
+        {
+          "chunk_id": "L16-04",
+          "distance": 0.3970441222190857,
+          "rank": 18,
+          "score": 0.6029558777809143
+        },
+        {
+          "chunk_id": "L17-03",
+          "distance": 0.40358227491378784,
+          "rank": 19,
+          "score": 0.5964177250862122
+        },
+        {
+          "chunk_id": "L08A-02",
+          "distance": 0.4037676453590393,
+          "rank": 20,
+          "score": 0.5962323546409607
+        },
+        {
+          "chunk_id": "L03-01",
+          "distance": 0.4071246385574341,
+          "rank": 21,
+          "score": 0.5928753614425659
+        },
+        {
+          "chunk_id": "L13-04",
+          "distance": 0.4073725938796997,
+          "rank": 22,
+          "score": 0.5926274061203003
+        },
+        {
+          "chunk_id": "L03-04",
+          "distance": 0.40890324115753174,
+          "rank": 23,
+          "score": 0.5910967588424683
+        },
+        {
+          "chunk_id": "L15-03",
+          "distance": 0.4093209505081177,
+          "rank": 24,
+          "score": 0.5906790494918823
+        },
+        {
+          "chunk_id": "L15-04",
+          "distance": 0.4106442928314209,
+          "rank": 25,
+          "score": 0.5893557071685791
+        },
+        {
+          "chunk_id": "L04-01",
+          "distance": 0.4109744429588318,
+          "rank": 26,
+          "score": 0.5890255570411682
+        },
+        {
+          "chunk_id": "L14-02",
+          "distance": 0.41259944438934326,
+          "rank": 27,
+          "score": 0.5874005556106567
+        },
+        {
+          "chunk_id": "L03-02",
+          "distance": 0.41319113969802856,
+          "rank": 28,
+          "score": 0.5868088603019714
+        },
+        {
+          "chunk_id": "L14-01",
+          "distance": 0.4139166474342346,
+          "rank": 29,
+          "score": 0.5860833525657654
+        },
+        {
+          "chunk_id": "L17-05",
+          "distance": 0.41550605094079973,
+          "rank": 30,
+          "score": 0.5844939490592003
+        },
+        {
+          "chunk_id": "L13-03",
+          "distance": 0.4178892970085144,
+          "rank": 31,
+          "score": 0.5821107029914856
+        },
+        {
+          "chunk_id": "L13-06",
+          "distance": 0.41971927881240845,
+          "rank": 32,
+          "score": 0.5802807211875916
+        },
+        {
+          "chunk_id": "L09-03",
+          "distance": 0.42153769731521606,
+          "rank": 33,
+          "score": 0.5784623026847839
+        },
+        {
+          "chunk_id": "L04-02",
+          "distance": 0.4217224717140198,
+          "rank": 34,
+          "score": 0.5782775282859802
+        },
+        {
+          "chunk_id": "L17-01",
+          "distance": 0.4232572913169861,
+          "rank": 35,
+          "score": 0.5767427086830139
+        },
+        {
+          "chunk_id": "L17-06",
+          "distance": 0.4236775977776269,
+          "rank": 36,
+          "score": 0.5763224022223731
+        },
+        {
+          "chunk_id": "L15-05",
+          "distance": 0.42485278844833374,
+          "rank": 37,
+          "score": 0.5751472115516663
+        },
+        {
+          "chunk_id": "L14-04",
+          "distance": 0.42695391178131104,
+          "rank": 38,
+          "score": 0.573046088218689
+        },
+        {
+          "chunk_id": "L17-04",
+          "distance": 0.42772218003168283,
+          "rank": 39,
+          "score": 0.5722778199683172
+        },
+        {
+          "chunk_id": "L13-08",
+          "distance": 0.42850959300994873,
+          "rank": 40,
+          "score": 0.5714904069900513
+        },
+        {
+          "chunk_id": "L15-01",
+          "distance": 0.430141806602478,
+          "rank": 41,
+          "score": 0.569858193397522
+        },
+        {
+          "chunk_id": "L12-04",
+          "distance": 0.43197745084762573,
+          "rank": 42,
+          "score": 0.5680225491523743
+        },
+        {
+          "chunk_id": "L04-05",
+          "distance": 0.43895602226257324,
+          "rank": 43,
+          "score": 0.5610439777374268
+        },
+        {
+          "chunk_id": "L12-05",
+          "distance": 0.44028687477111816,
+          "rank": 44,
+          "score": 0.5597131252288818
+        },
+        {
+          "chunk_id": "L08A-01",
+          "distance": 0.4412386417388916,
+          "rank": 45,
+          "score": 0.5587613582611084
+        },
+        {
+          "chunk_id": "L08A-03",
+          "distance": 0.4453558325767517,
+          "rank": 46,
+          "score": 0.5546441674232483
+        },
+        {
+          "chunk_id": "L09-01",
+          "distance": 0.4458683729171753,
+          "rank": 47,
+          "score": 0.5541316270828247
+        },
+        {
+          "chunk_id": "L14-06",
+          "distance": 0.4461749792098999,
+          "rank": 48,
+          "score": 0.5538250207901001
+        },
+        {
+          "chunk_id": "L09-02",
+          "distance": 0.4465380907058716,
+          "rank": 49,
+          "score": 0.5534619092941284
+        },
+        {
+          "chunk_id": "L12-02",
+          "distance": 0.4467998147010803,
+          "rank": 50,
+          "score": 0.5532001852989197
+        },
+        {
+          "chunk_id": "L13-07",
+          "distance": 0.44704651832580566,
+          "rank": 51,
+          "score": 0.5529534816741943
+        },
+        {
+          "chunk_id": "L08B-04",
+          "distance": 0.44827181100845337,
+          "rank": 52,
+          "score": 0.5517281889915466
+        },
+        {
+          "chunk_id": "L10-01",
+          "distance": 0.4483436346054077,
+          "rank": 53,
+          "score": 0.5516563653945923
+        },
+        {
+          "chunk_id": "L13-05",
+          "distance": 0.45069563388824463,
+          "rank": 54,
+          "score": 0.5493043661117554
+        },
+        {
+          "chunk_id": "L12-11",
+          "distance": 0.4512917995452881,
+          "rank": 55,
+          "score": 0.5487082004547119
+        },
+        {
+          "chunk_id": "L12-01",
+          "distance": 0.45445871353149414,
+          "rank": 56,
+          "score": 0.5455412864685059
+        },
+        {
+          "chunk_id": "L08B-02",
+          "distance": 0.45505839586257935,
+          "rank": 57,
+          "score": 0.5449416041374207
+        },
+        {
+          "chunk_id": "L07-01",
+          "distance": 0.4551318883895874,
+          "rank": 58,
+          "score": 0.5448681116104126
+        },
+        {
+          "chunk_id": "L06-06",
+          "distance": 0.4561125636100769,
+          "rank": 59,
+          "score": 0.5438874363899231
+        },
+        {
+          "chunk_id": "L14-05",
+          "distance": 0.4572979211807251,
+          "rank": 60,
+          "score": 0.5427020788192749
+        },
+        {
+          "chunk_id": "L12-14",
+          "distance": 0.45856618881225586,
+          "rank": 61,
+          "score": 0.5414338111877441
+        },
+        {
+          "chunk_id": "L12-03",
+          "distance": 0.46151793003082275,
+          "rank": 62,
+          "score": 0.5384820699691772
+        },
+        {
+          "chunk_id": "L08B-03",
+          "distance": 0.4616328477859497,
+          "rank": 63,
+          "score": 0.5383671522140503
+        },
+        {
+          "chunk_id": "L13-02",
+          "distance": 0.4618806838989258,
+          "rank": 64,
+          "score": 0.5381193161010742
+        },
+        {
+          "chunk_id": "L12-09",
+          "distance": 0.46501004695892334,
+          "rank": 65,
+          "score": 0.5349899530410767
+        },
+        {
+          "chunk_id": "L13-01",
+          "distance": 0.4680980443954468,
+          "rank": 66,
+          "score": 0.5319019556045532
+        },
+        {
+          "chunk_id": "L11-01",
+          "distance": 0.4698945879936218,
+          "rank": 67,
+          "score": 0.5301054120063782
+        },
+        {
+          "chunk_id": "L07-03",
+          "distance": 0.4702865481376648,
+          "rank": 68,
+          "score": 0.5297134518623352
+        },
+        {
+          "chunk_id": "L14-03",
+          "distance": 0.47202086448669434,
+          "rank": 69,
+          "score": 0.5279791355133057
+        },
+        {
+          "chunk_id": "L11-05",
+          "distance": 0.4724110960960388,
+          "rank": 70,
+          "score": 0.5275889039039612
+        },
+        {
+          "chunk_id": "L12-06",
+          "distance": 0.4745083451271057,
+          "rank": 71,
+          "score": 0.5254916548728943
+        },
+        {
+          "chunk_id": "L10-02",
+          "distance": 0.4747393727302551,
+          "rank": 72,
+          "score": 0.5252606272697449
+        },
+        {
+          "chunk_id": "L12-10",
+          "distance": 0.4753578305244446,
+          "rank": 73,
+          "score": 0.5246421694755554
+        },
+        {
+          "chunk_id": "L08B-01",
+          "distance": 0.4755546450614929,
+          "rank": 74,
+          "score": 0.5244453549385071
+        },
+        {
+          "chunk_id": "L07-02",
+          "distance": 0.47620874643325806,
+          "rank": 75,
+          "score": 0.5237912535667419
+        },
+        {
+          "chunk_id": "L11-09",
+          "distance": 0.4765359163284302,
+          "rank": 76,
+          "score": 0.5234640836715698
+        },
+        {
+          "chunk_id": "L03-03",
+          "distance": 0.4773867726325989,
+          "rank": 77,
+          "score": 0.5226132273674011
+        },
+        {
+          "chunk_id": "L12-15",
+          "distance": 0.4777105450630188,
+          "rank": 78,
+          "score": 0.5222894549369812
+        },
+        {
+          "chunk_id": "L05-04",
+          "distance": 0.4790806770324707,
+          "rank": 79,
+          "score": 0.5209193229675293
+        },
+        {
+          "chunk_id": "L06-03",
+          "distance": 0.4792107939720154,
+          "rank": 80,
+          "score": 0.5207892060279846
+        }
+      ]
+    },
+    "embedding_observation": {
+      "elapsed_seconds": 2.597084500001074,
+      "inputs": 1,
+      "prompt_eval_count": 13,
+      "server_load_duration_ns": 2448793700,
+      "server_total_duration_ns": 2486717300
+    },
+    "method": "no_rerank",
+    "query": "请查找球场球门的规定尺寸资料。",
+    "reranker": null,
+    "results": [
+      {
+        "chunk_id": "L01-02",
+        "rank": 1,
+        "score": 0.03252247488101533
+      },
+      {
+        "chunk_id": "L01-01",
+        "rank": 2,
+        "score": 0.03030998851894374
+      },
+      {
+        "chunk_id": "L01-04",
+        "rank": 3,
+        "score": 0.03021353930031804
+      },
+      {
+        "chunk_id": "L02-02",
+        "rank": 4,
+        "score": 0.030117753623188404
+      },
+      {
+        "chunk_id": "L01-03",
+        "rank": 5,
+        "score": 0.029906956136464335
+      },
+      {
+        "chunk_id": "L04-03",
+        "rank": 6,
+        "score": 0.029857397504456328
+      },
+      {
+        "chunk_id": "L16-02",
+        "rank": 7,
+        "score": 0.028404512489927477
+      },
+      {
+        "chunk_id": "L01-05",
+        "rank": 8,
+        "score": 0.02792120864410021
+      },
+      {
+        "chunk_id": "L01-06",
+        "rank": 9,
+        "score": 0.026262626262626262
+      },
+      {
+        "chunk_id": "L17-06",
+        "rank": 10,
+        "score": 0.026041666666666668
+      }
+    ],
+    "timing": {
+      "bm25_seconds": 0.0002891,
+      "dense_seconds": 2.6846168,
+      "fusion_seconds": 0.0058783,
+      "normalization_seconds": 9.8e-06,
+      "rerank_seconds": 0.0,
+      "total_seconds": 2.690794
+    }
+  },
+  "passed": 8,
+  "question": "请查找球场球门的规定尺寸资料。",
+  "scope": "Fresh isolated local Ollama process, original read-only model store; physical residency dependency, one non-evaluation warmup query then CPU environment. Runner sequencing is separately verified with lifecycle mocks.",
+  "source_commit": "9c2bfadbfb2e48f22301846ec3eae0de73591fb2",
+  "source_sha256": {
+    "scripts/bge_reranker.py": "2654cace523109b1cfe595c1a9eb8bdec9013011325f907dd1ebc7c35bc62946",
+    "scripts/reranker_eval.py": "8e7faa675315915a1b3bbc769fdc62fb0aba708eea283fdf8b80e8e3172f7a0d",
+    "scripts/reranker_live.py": "21824b2e6eada7ca50366f1870596025bad042889eb75538c221321dc85e0c25",
+    "scripts/run_reranker_experiment.py": "efd194aa2421ffc1ed2daf1c2c368eb652288ea3a1790c01db47e2400cda3088",
+    "scripts/verify_reranker_cold_start.py": "58b9226acb47ce9caf5d0ba73e3118b647df4d4e4cc82b0f07272605a054acb8",
+    "scripts/verify_reranker_contract.py": "ce074815f93ca62573454f5c8fc828b7d1361449655897da24643615ad59e935"
+  },
+  "started_at": "2026-11-13T08:57:19.802499+00:00",
+  "status": "PASS",
+  "total": 8,
+  "version": "reranker-cold-start-1.0"
+}
