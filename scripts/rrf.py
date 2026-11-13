@@ -1,6 +1,6 @@
 """Deterministic two-channel rank fusion; standard library, no labels/models."""
 from __future__ import annotations
-import math,re
+import math,re,copy
 from fractions import Fraction
 from itertools import zip_longest
 
@@ -58,4 +58,6 @@ def fuse(channels,k=60,top_k=10):
         if method=='rrf':return float(scores[cid])
         if method=='union':return None
         return found[cid]['sources'][method]['score']
-    return {method:[{**found[cid],'rank':rank,'score':score(method,cid)} for rank,cid in enumerate(ids[:top_k],1)] for method,ids in orders.items()}
+    # Each output owns its nested metadata. Callers may annotate one ranking
+    # without changing the input packet or another method's provenance.
+    return {method:[{**copy.deepcopy(found[cid]),'rank':rank,'score':score(method,cid)} for rank,cid in enumerate(ids[:top_k],1)] for method,ids in orders.items()}

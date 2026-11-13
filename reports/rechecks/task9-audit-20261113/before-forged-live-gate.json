@@ -1,0 +1,15 @@
+{
+  "baseline": "8553f390107fc9f38cdefb927fa4f016b996f4bc",
+  "captured_at": "2026-11-13T03:26:17.488920+00:00",
+  "mutated_copy": "RRF score set to zero while old PASS flags retained; original file untouched",
+  "new_test_fusion_runs": 0,
+  "new_test_queries": 0,
+  "original_gate_result": {
+    "errors": [],
+    "passed": 30,
+    "status": "PASS",
+    "total": 30
+  },
+  "producer_sha256": "e1363246352e0416c500e08bd83a98e5e8fd673be2ded3b7deb2f6f8c4de9c9d",
+  "status": "GAP_REPRODUCED"
+}

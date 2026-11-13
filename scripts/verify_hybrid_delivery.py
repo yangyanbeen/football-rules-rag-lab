@@ -8,10 +8,12 @@ from bm25_retrieval_eval import now,instant
 from hybrid_retrieval_eval import BASE_DIR,BASE,SOURCES,replay,validate_grant
 from summarize_hybrid_rrf import report_payload
 from rrf import METHODS,CHANNELS
+from hybrid_live import validate_live_smoke
 
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--report',type=Path,required=True);a=p.parse_args();out=a.report.resolve()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--report',type=Path,required=True)
+    p.add_argument('--live-report',type=Path,default=BASE_DIR/'acceptance/live-smoke.json');a=p.parse_args();out=a.report.resolve()
     if out.exists() or not out.is_relative_to(ROOT/'reports'):raise ValueError('Use a new report')
     checks={};errors=[];context={}
     def check(name,fn):
@@ -61,8 +63,8 @@ def main():
     check('unranked_union_coverage_separate_from_top10_MRR',lambda:all(context[s]['full_union_diagnostic']['MRR'] is None and context[s]['full_union_diagnostic']['ranked'] is False for s in ('dev','test')))
     receipt=json.loads((BASE_DIR/'acceptance/contract-development.json').read_text('utf-8'))
     check('56_development_contract_checks_pass',lambda:receipt['status']=='PASS' and receipt['passed']==receipt['total']==56 and len(receipt['checks'])==56 and all(v is True for v in receipt['checks'].values()))
-    smoke=json.loads((BASE_DIR/'acceptance/live-smoke.json').read_text('utf-8'))
-    check('17_actual_query_checks_pass_and_native_sources_match_freeze',lambda:smoke['status']=='PASS' and smoke['passed']==smoke['total']==17 and len(smoke['checks'])==17 and all(v is True for v in smoke['checks'].values()) and all(smoke['source_sha256'][p]==grant['inputs'][p]['sha256'] for p in SOURCES))
+    smoke=json.loads(a.live_report.read_text('utf-8'))
+    check('17_actual_query_checks_recompute_and_sources_match_producer',lambda:len(validate_live_smoke(smoke))==17)
     check('four_actual_embedding_queries_zero_original_test_queries_zero_answer_calls',lambda:smoke['actual_embedding_queries']==4 and smoke['new_locked_test_queries']==smoke['answer_llm_requests']==0 and smoke['is_accuracy_evaluation'] is False)
     check('actual_query_sources_and_timing_fields_present',lambda:len(smoke['queries'])==4 and all(set(r['channels'])==set(CHANNELS) and set(r['results'])==set(METHODS) and r['timing']['total_seconds']>0 for r in smoke['queries']))
     public=json.loads((BASE_DIR/'acceptance/public-only-replay.json').read_text('utf-8'))
