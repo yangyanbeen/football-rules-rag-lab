@@ -3,7 +3,7 @@
   "scope": "New public checkout: tracked files plus hash-only local corpus inventory; original local project manifest is preserved separately.",
   "self_hash_policy": "This manifest excludes itself to avoid recursion.",
   "runtime_policy": "External runtime, credentials, databases, caches, live logs and temporary fixtures are excluded.",
-  "file_count": 662,
+  "file_count": 663,
   "files": [
     {
       "path": ".env.example",
@@ -1976,6 +1976,13 @@
       "path": "reports/rechecks/task10-audit-20261113/live-current.json",
       "size_bytes": 226445,
       "sha256": "b8ea5611555a809cd6ed29dfa79bcfd766f618e564863fd481b99086b5680f96",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/rechecks/task10-audit-20261113/public-complete.json",
+      "size_bytes": 2758,
+      "sha256": "b6863f017e0cc70131d73be5cb780d79213abf51c5de24e05d76754eb7321cfd",
       "purpose": "历史证据或本次补交付验收结果",
       "distribution": "public-git"
     },
