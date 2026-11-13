@@ -1,0 +1,15 @@
+{
+  "version": "hybrid-rrf-1.0",
+  "k": 60,
+  "channel_top_k": 10,
+  "output_top_k": 10,
+  "channels": ["dense", "bm25"],
+  "bm25_template": "title_body",
+  "union_order": "round robin dense first; skip repeated chunk_id",
+  "rrf_ties": "exact rational score then chunk_id ascending",
+  "warmup_repetitions": 3,
+  "measured_repetitions": 3,
+  "concurrency": 1,
+  "cache": false,
+  "test_purpose": "final_report"
+}
