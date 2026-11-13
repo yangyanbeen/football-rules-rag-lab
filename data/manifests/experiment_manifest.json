@@ -3759,7 +3759,239 @@
         }
       ],
       "artifact_policy": "Original17 objects immutable. Audit complete gate and inventory exclude themselves to avoid a hash cycle."
+    },
+    {
+      "id": "TASK-011-STRUCTURE-PARENT-CHILD",
+      "objective": "Controlled structure and parent context comparison; preserve lossless provenance and report all negative results",
+      "baseline_commit": "b9acb61a807bdc21b717711f3733ed238227e4a4",
+      "formal_test_source_commit": "025eb965163566d2ad20087cfdf66fc91ee8c6f6",
+      "delivery_source_commit": "9fe0d0f42734a72a9d0906a4e70b38c9d9bda9b5",
+      "source_sha256": {
+        "scripts/structure_aware_chunking.py": "cb0c9826191cca1fbc31b1f077527ebfdfdf76421d9fc636f10cbe89f6ede7bf",
+        "scripts/structure_retrieval_eval.py": "8bd7b9049a6324258eb4d32480ce54b282f1947df131e50ce40e4ec4e1a30038",
+        "scripts/structure_retrieval_live.py": "2d975fa9f5da6510d25d577a077fdd77cc31f17eef93f3ef7708f6debb7edfc5",
+        "scripts/run_structure_comparison.py": "161f32ceff6a5600573e1b0a3fac8b07e313c76d5e8d824aa1865d9ea8c688d0",
+        "scripts/verify_structure_contract.py": "e99c810591dbd7fdf2453ca6efb265b8f92517823092f3bf07790d6ebefa273f",
+        "scripts/verify_structure_delivery.py": "75d1e2dd58060b6383a5949eda65398d9f338b29813f5fae423693f8c8313256"
+      },
+      "dataset": {
+        "path": "data/processed/rag_chunks_parent_child.jsonl",
+        "sha256": "ae67d879deb43e87be6f53e8f7c8748ccb5f29aed5fcf0620366d546bb1166b2",
+        "size_bytes": 339480
+      },
+      "evaluation_version": "football-eval-0.1.0; reused locked test50",
+      "model": "Same pinned BGE-M3 CPU; pinned BGE-reranker tokenizer only; no reranker inference",
+      "parameters": {
+        "child_body_tokens": 256,
+        "context_token_budget": 4096,
+        "channel_depth": 80,
+        "rrf_k": 60,
+        "output_top_k": 10,
+        "base_backend": "exact cosine float32",
+        "child_backend": "exact cosine float32"
+      },
+      "selected_on_dev": "parent_child",
+      "originals": 99,
+      "children": 102,
+      "parents": 18,
+      "test_metrics": {
+        "base": {
+          "MRR@10": 0.9364583333333334,
+          "Recall@10": 1.0,
+          "Recall@5": 0.975,
+          "all_gold_coverage@5": 0.975,
+          "full_gold_coverage@10": 1.0
+        },
+        "child": {
+          "MRR@10": 0.9239583333333334,
+          "Recall@10": 0.975,
+          "Recall@5": 0.95,
+          "all_gold_coverage@5": 0.9375,
+          "full_gold_coverage@10": 0.9625
+        },
+        "parent_child": {
+          "MRR@10": 0.9458333333333334,
+          "Recall@10": 0.975,
+          "Recall@5": 0.975,
+          "all_gold_coverage@5": 0.975,
+          "full_gold_coverage@10": 0.975
+        }
+      },
+      "answer_llm_requests": 0,
+      "artifacts": [
+        {
+          "path": "config/structure_parent_child.json",
+          "size_bytes": 1858,
+          "sha256": "e1f0180232768679a409a65c058d2f2dcb6df2337b8d17a49723428c697ebd96"
+        },
+        {
+          "path": "docs/TASK_11_SCOPE.md",
+          "size_bytes": 4419,
+          "sha256": "637019cad97245cb6e7efbebe53a0339b8bb1b4f911a0b4925e8662dd992e584"
+        },
+        {
+          "path": "docs/CHUNKING_STRATEGY.md",
+          "size_bytes": 9175,
+          "sha256": "01a4add661717ae1e74588dd294564f62ebf8831665db9258049d2d100daed54"
+        },
+        {
+          "path": "reports/TASK_11_DELIVERY.md",
+          "size_bytes": 4108,
+          "sha256": "8109ccbabaa1252f350df4d2110d18d289ced410f90f6a1718a399bbd726516d"
+        },
+        {
+          "path": "data/manifests/structure_parent_child.json",
+          "size_bytes": 274238,
+          "sha256": "acd6c17c3766439c41c83b4153230601a61cabe34eaceba1faa511b76f1dfe44"
+        },
+        {
+          "path": "data/manifests/structure_index_manifest.json",
+          "size_bytes": 8533,
+          "sha256": "d44dfbc8ba1587672efdf868e10b5bd326ec5cd44303f52f03edfca40ebf8951"
+        },
+        {
+          "path": "reports/chunking_structure.json",
+          "size_bytes": 2130,
+          "sha256": "516cf22da16db484606a7149920d3178b094310a6233d2701401fcf0d34b0dfd"
+        },
+        {
+          "path": "reports/structure_preservation.json",
+          "size_bytes": 71428,
+          "sha256": "1b1765a03fd327cdb0e95aa395b9d71a6548b006b17619c5c10f626f19b632f0"
+        },
+        {
+          "path": "reports/chunking_comparison.json",
+          "size_bytes": 917138,
+          "sha256": "fc657596d332fb0d09f1eb77dc50cc6b279a7c44ad4bbc932955d8a96f66b285"
+        },
+        {
+          "path": "scripts/structure_aware_chunking.py",
+          "size_bytes": 9260,
+          "sha256": "cb0c9826191cca1fbc31b1f077527ebfdfdf76421d9fc636f10cbe89f6ede7bf"
+        },
+        {
+          "path": "scripts/structure_retrieval_eval.py",
+          "size_bytes": 20473,
+          "sha256": "8bd7b9049a6324258eb4d32480ce54b282f1947df131e50ce40e4ec4e1a30038"
+        },
+        {
+          "path": "scripts/structure_retrieval_live.py",
+          "size_bytes": 7816,
+          "sha256": "2d975fa9f5da6510d25d577a077fdd77cc31f17eef93f3ef7708f6debb7edfc5"
+        },
+        {
+          "path": "scripts/run_structure_comparison.py",
+          "size_bytes": 7410,
+          "sha256": "161f32ceff6a5600573e1b0a3fac8b07e313c76d5e8d824aa1865d9ea8c688d0"
+        },
+        {
+          "path": "scripts/verify_structure_contract.py",
+          "size_bytes": 8258,
+          "sha256": "e99c810591dbd7fdf2453ca6efb265b8f92517823092f3bf07790d6ebefa273f"
+        },
+        {
+          "path": "scripts/verify_structure_delivery.py",
+          "size_bytes": 9119,
+          "sha256": "75d1e2dd58060b6383a5949eda65398d9f338b29813f5fae423693f8c8313256"
+        },
+        {
+          "path": "scripts/verify_structure_public.py",
+          "size_bytes": 5378,
+          "sha256": "7b9edd9290cd1fa1de5da84772aac22ef6460d6292ace82f441e3fa94827958e"
+        },
+        {
+          "path": "scripts/summarize_chunking_comparison.py",
+          "size_bytes": 2296,
+          "sha256": "d96005d7afd671c62504453df78a69ad1abdb2ed8c4e1dd684794352ceeb83b4"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/acceptance/actual-query.json",
+          "size_bytes": 44484,
+          "sha256": "83f1a1a917c0535123b84aed49effa2823d7ca21baf9d52d51690fff58235056"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/acceptance/contract-final.json",
+          "size_bytes": 2991,
+          "sha256": "a68dd0afe757a5af009ff704ab2cc7ee13f22ffe44c6a61a1789c3e563042cae"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/acceptance/contract-initial.json",
+          "size_bytes": 2884,
+          "sha256": "cae465fab37617ed74d88705c2549418d3c2d467a41888c373ba044db1ef4ac8"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/acceptance/delivery-initial.json",
+          "size_bytes": 1796,
+          "sha256": "0e5a76a74ab849d45355dc142aeb1417562c33f5fbf05a0d8915949b63d81803"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/acceptance/public-initial.json",
+          "size_bytes": 1415,
+          "sha256": "f174de250fccef20a81b00765c88c74777d1b9c6acb87af05bea7dbd0c5b2f48"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/dev/error_analysis.json",
+          "size_bytes": 969,
+          "sha256": "18b90e9ed014b4aa5644fde94112287343abff96d9d85e339089ee932081cfa1"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/dev/predictions.jsonl",
+          "size_bytes": 1102611,
+          "sha256": "a0947c7af58272a1bcab61829ad30b75ee286a62c7f003fc448e5f8c539b1149"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/dev/run_manifest.json",
+          "size_bytes": 173944,
+          "sha256": "1a9699c335434c7ea24003905cf4d4373452d3993ae8dbab8c0baca6a9f5c7e5"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/dev/run_started.json",
+          "size_bytes": 8609,
+          "sha256": "694da4759ae75a2d55a01d2091d3cf86868d07ecae0ee790ef599857f6dbedf2"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/dev/summary.json",
+          "size_bytes": 380688,
+          "sha256": "9e92d77d35ce7e39f7c1c7edb78743e27a2c35dd56366868207149069c58cefb"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/test/error_analysis.json",
+          "size_bytes": 1954,
+          "sha256": "ee23e39eb8f73df116210427fa20be7c45c098abb543680e53f85c4bc66f185d"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/test/predictions.jsonl",
+          "size_bytes": 1403733,
+          "sha256": "19a9af2ece61e8c9f6f6f0ae6807f2b38a39a7a7002eaefabdc2f82a05c932fb"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/test/run_manifest.json",
+          "size_bytes": 174124,
+          "sha256": "71cb8c4ba44e65d2d37a3499737af3c1a0274d29807a8de13e47b6b3f09ee2ba"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/test/run_started.json",
+          "size_bytes": 8790,
+          "sha256": "23892064cbf8f7de53665d9208221f8675cde597cc4b0da7235b58e50c633add"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/test/summary.json",
+          "size_bytes": 472408,
+          "sha256": "dd31bdad54e1b6041dcfdfb6ece23cf20b2f7262d15d1b121bdec4c2609573c5"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/test_authorization.json",
+          "size_bytes": 7393,
+          "sha256": "55bd6d1562e610c91d3aa85ed21194775673528b227b81771133c5a710528609"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/test_usage.jsonl",
+          "size_bytes": 1302,
+          "sha256": "6fef4c3aa1b5e2c299256578ff848adb080f1f454442155b636a00d18515d8cb"
+        }
+      ],
+      "artifact_policy": "Only new Task11 artifacts; final gate and final public receipt excluded to avoid recursive hashes. Original18 entries immutable."
     }
   ],
-  "last_updated_at": "2026-11-13T09:05:25.324959+00:00"
+  "last_updated_at": "2026-11-13T09:54:46.731343+00:00"
 }
