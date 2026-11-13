@@ -1,0 +1,606 @@
+{
+  "actual_new_embedding_queries": 0,
+  "answer_llm_requests": 0,
+  "checks": {
+    "actual_parent_bodies_and_member_sources_match": true,
+    "all_context_tokens_within4096": true,
+    "at_least_one_real_parent_materialized": true,
+    "parent_ids_unique": true,
+    "private_output_not_tracked": true
+  },
+  "completed_at": "2026-11-13T09:57:35.392047+00:00",
+  "context_tokens": 4074,
+  "input_query_receipt": {
+    "path": "reports/retrieval/structure_pc_b0/acceptance/actual-query.json",
+    "sha256": "83f1a1a917c0535123b84aed49effa2823d7ca21baf9d52d51690fff58235056",
+    "size_bytes": 44484
+  },
+  "passed": 5,
+  "private_output": {
+    "path": ".runtime/task11/actual-parent-context.json",
+    "sha256": "86de73d36bbbd698586d4f24591e216254111d03e18e09e65d79a569fafa2893",
+    "size_bytes": 40645
+  },
+  "results_without_bodies": [
+    {
+      "content_sha256": "40172cb82d485d8cbaed17c409fd6a8c69f2de892ed8d94a775eb8bc4df6cba2",
+      "context_id": "P14-7a7de0e2890e",
+      "context_tokens": 1149,
+      "original_ids": [
+        "L14-01",
+        "L14-02",
+        "L14-03",
+        "L14-04",
+        "L14-05",
+        "L14-06"
+      ],
+      "rank": 1,
+      "section_path": [
+        "足球规则中文资料（四）：任意球与罚球点球",
+        "第14条：罚球点球"
+      ],
+      "seed_rank": 1,
+      "source_refs": [
+        {
+          "chunk_id": "L14-01",
+          "content_zh_sha256": "106324acbf25de268323ebb6ed33e3dbffc5cbcbf1e728b817d90e9dc0fd1d21",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-14",
+          "source_lines": [
+            192,
+            193
+          ],
+          "source_revision_id": "1384120223",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+        },
+        {
+          "chunk_id": "L14-02",
+          "content_zh_sha256": "b600377f16217e927b6cd3490608b43f46ad52568ab3b5a780862418520981d5",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-14",
+          "source_lines": [
+            197,
+            199
+          ],
+          "source_revision_id": "1384120223",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+        },
+        {
+          "chunk_id": "L14-03",
+          "content_zh_sha256": "6ff6fd0984862f0f469e51d9fd8e1caddc72b01ac7796c44315f2b9975a975d0",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-14",
+          "source_lines": [
+            200,
+            201
+          ],
+          "source_revision_id": "1384120223",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+        },
+        {
+          "chunk_id": "L14-04",
+          "content_zh_sha256": "4c1c5a093e08a763d8ccca3f04000e9197c9a5cc66574177bb864dbfc1cecb61",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "这是原 Wikipedia 页面的概括表，未完整表示不同类型违例的优先级、提前进入是否影响比赛以及现行规则的全部条件。保留它用于来源对照，不能不加条件地用作裁判判罚矩阵。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-14",
+          "source_lines": [
+            206,
+            214
+          ],
+          "source_revision_id": "1384120223",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+        },
+        {
+          "chunk_id": "L14-05",
+          "content_zh_sha256": "a69b78c030e22f5236081b4fc124e42068e4de344af0f79530a658ca563a2849",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "原文对2025年意外双触球的概括没有完整写出“球是否进入球门”等条件，本段忠实记录来源说法，但必须进一步核对正式澄清文件，不能推断所有意外双触球都一律重罚。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-14",
+          "source_lines": [
+            215,
+            220
+          ],
+          "source_revision_id": "1384120223",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+        },
+        {
+          "chunk_id": "L14-06",
+          "content_zh_sha256": "120fccc83cbb0ea6ca43a96859c61c28c607621e6d8301954fb7eb0abbfa9733",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "外部干扰的正式规则可能还包含未影响防守等例外；本段不是包含全部例外的完整官方条文。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-14",
+          "source_lines": [
+            221,
+            223
+          ],
+          "source_revision_id": "1384120223",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+        }
+      ]
+    },
+    {
+      "content_sha256": "b66d4d5d74784772589efad3803679ccfc0bba0eb885b2253a84654eb0c9215a",
+      "context_id": "P12-7e66f26420a7",
+      "context_tokens": 2630,
+      "original_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03",
+        "L12-04",
+        "L12-05",
+        "L12-06",
+        "L12-07",
+        "L12-08",
+        "L12-09",
+        "L12-10",
+        "L12-11",
+        "L12-12",
+        "L12-13",
+        "L12-14",
+        "L12-15",
+        "L12-16"
+      ],
+      "rank": 2,
+      "section_path": [
+        "足球规则中文资料（三）：越位、犯规与纪律",
+        "第12条：犯规与不当行为"
+      ],
+      "seed_rank": 4,
+      "source_refs": [
+        {
+          "chunk_id": "L12-01",
+          "content_zh_sha256": "8d52183d297d6cbf3a288a74ac88379af0344ddf7c6aed6e62eb44dc87088414",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            170,
+            177
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "chunk_id": "L12-02",
+          "content_zh_sha256": "64205bfa70529fd27a893b9c692e47c4dca0caf6021ba2fd6389d6ed297f3172",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "本段是来源概述，不包含正式规则关于全部手球判罚、进球关联和纪律处罚的完整条件。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            178,
+            180
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "chunk_id": "L12-03",
+          "content_zh_sha256": "051557c1d4fe00cf623f3b62088ea9302fffff84bf1f6d023b9c47a36f32893b",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            181,
+            181
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "chunk_id": "L12-04",
+          "content_zh_sha256": "39034a61c197ec7a75a05519792465ee4b05795bdc5e6e350637d4744baa1f19",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            186,
+            192
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "chunk_id": "L12-05",
+          "content_zh_sha256": "88ea24aedb7b67f8cc817c2538ac3a09745488b468c1758825058a836a465456",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            193,
+            199
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "chunk_id": "L12-06",
+          "content_zh_sha256": "9d036805a65fba31f575b223fd0235f7a1a49b7b0794fb11d367527f3327d230",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            204,
+            211
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "chunk_id": "L12-07",
+          "content_zh_sha256": "fb1c390b66a431f3caf800e53dd882e1723e18f73cf865c8bde2b6416576b3da",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            217,
+            224
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "chunk_id": "L12-08",
+          "content_zh_sha256": "b8c9b44578a368f77f2b07391d39108aff09f8839d7591b190c0aa9b279790c9",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "阻止有希望进攻与破坏明显得分机会存在不同条件及部分罚球区内例外，不能仅凭结果机械决定牌色。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            226,
+            231
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "chunk_id": "L12-09",
+          "content_zh_sha256": "c2ede674f54d2108d6942440c7d192d8820f3f2295445e382b94f532883756d4",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "欧冠例子未给出具体赛季和完整计数条件；临时罚下的适用赛事及方案也需核对。此段保留为来源资料，不用作当前任意赛事的自动处罚依据。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            232,
+            235
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "chunk_id": "L12-10",
+          "content_zh_sha256": "751789949da226baa64768e383281fb0329113d42fba6fef838a11ad081a764c",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            243,
+            244
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "chunk_id": "L12-11",
+          "content_zh_sha256": "2a02f0cd29c0c79b2ff930537e88774bc9bac52cbf69a92b95df67b7157b793d",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "手球相关项目在原条目中有重复和不完整条件，应以正式规则核对；本译文说明了重叠，未将其擅自改写成一套新的正式条文。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            245,
+            254
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "chunk_id": "L12-12",
+          "content_zh_sha256": "98d72e83f3612e2e98ffd20dc3faced42001ce464ad64ecc8d83e4a4bede184b",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            255,
+            258
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "chunk_id": "L12-13",
+          "content_zh_sha256": "64110a27fb2d2e3a8b64e3263426a208228afbf088c167d798fe92119f1f47c0",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "这是具有明确2020年背景的来源记载，不作为未经核对的当前赛季独立条款。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            259,
+            259
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "chunk_id": "L12-14",
+          "content_zh_sha256": "5c8af8e055a09ea1f935348ddfd3ccfdb217e1af21f8205a527a984fe83f0ac9",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            283,
+            291
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "chunk_id": "L12-15",
+          "content_zh_sha256": "c49201212c5b1e5a46193f3cc5e50338d9884fe127a3247960065d12d9e4c596",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "最后一种概述未穷尽针对比赛官员、场外人员或不同地点的所有例外，实际问题仍需进一步核对规则。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            296,
+            301
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        },
+        {
+          "chunk_id": "L12-16",
+          "content_zh_sha256": "1fcd4228ad41ddea7aa254de01ed0d294eac254718d38141e253f992df40b5cf",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-12",
+          "source_lines": [
+            307,
+            309
+          ],
+          "source_revision_id": "1383054660",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+        }
+      ]
+    },
+    {
+      "content_sha256": "5b37df9a2288a14bf82c1a5e5c76a3b5bf18a1d7793b3937e6e8da465981ff46",
+      "context_id": "P10-b866656ef7a7",
+      "context_tokens": 295,
+      "original_ids": [
+        "L10-01",
+        "L10-02"
+      ],
+      "rank": 3,
+      "section_path": [
+        "足球规则中文资料（二）：裁判、比赛流程与结果",
+        "第10条：比赛结果"
+      ],
+      "seed_rank": 5,
+      "source_refs": [
+        {
+          "chunk_id": "L10-01",
+          "content_zh_sha256": "467643aff52a118adb26aa2226541208bcbc750a71d48d455f369f4678b0505d",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-10",
+          "source_lines": [
+            125,
+            131
+          ],
+          "source_revision_id": "1363296017",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Determining_the_Outcome_of_a_Match_%28association_football%29"
+        },
+        {
+          "chunk_id": "L10-02",
+          "content_zh_sha256": "f2545ceae4c82efac0706b3506b9ea2cef52d68365eabe3ad7cad387f5c2d8b1",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "本段列的是原条目描述的可选程序；是否使用客场进球或加时，应按具体赛事和赛季判断。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-10",
+          "source_lines": [
+            136,
+            144
+          ],
+          "source_revision_id": "1363296017",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Determining_the_Outcome_of_a_Match_%28association_football%29"
+        }
+      ]
+    }
+  ],
+  "scope": "Actual local parent body lookup from new query or recorded non-evaluation seed; replay is not new model inference.",
+  "skipped_ids": [
+    "P07-332e2f050172",
+    "P05-1c770a5c84d5"
+  ],
+  "source_commit": "b9aa1543c78405276b55d6393de3aa84e04c77b9",
+  "source_sha256": "5ff952f57b05d9741dbdfb5ce75cd17206dbf82e74a1452281ef445858344b0c",
+  "started_at": "2026-11-13T09:57:35.298562+00:00",
+  "status": "PASS",
+  "total": 5,
+  "version": "task11-actual-parent-context-1.0"
+}

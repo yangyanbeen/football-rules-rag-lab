@@ -79,3 +79,13 @@
 原标准要求的代码/独立JSONL/映射/分布/同锁集三组对照/错误/文档齐备，46/46专项、18/18公开初验、完整门禁31/31及最终公开19/19分别归档。开发与测试共96次查询Embedding（含6次非评测预热），另1次实际冒烟；建索引另6条输入/2次请求，合计99次Embedding请求、103条输入；答案LLM为0。公开重放为0新模型请求。
 
 本轮保留原默认RAG和任务十重排结果；parent_child是开发选中实验方案，其测试覆盖/成本权衡如实保留，不据测试重新选参数。后续任务12进行回答、引用、条件与拒答的真实评测；本轮不提前填写答案正确率或生产性能收益。
+
+## 8. 本机完整父块查询入口
+
+`query_parent_child.py` 会实际从独立JSONL读取完整父块并校验正文哈希、逐成员来源、父ID去重和4096预算；正文只写入忽略的.runtime/task11目录。示例：
+
+```powershell
+.venv/Scripts/python.exe -B scripts/query_parent_child.py --question "请查找点球罚则的完整表格及条件。" --private-output .runtime/task11/next-context.json --receipt reports/rechecks/task11-next-context.json
+```
+
+本轮actual-parent-context.json以已保存的真实非评测查询种子实际读取父正文，5/5检查通过；本次装配0次新Embedding、0答案请求，不能再算一次模型检索或新质量样本。其private_output只公开文件哈希，不公开正文。

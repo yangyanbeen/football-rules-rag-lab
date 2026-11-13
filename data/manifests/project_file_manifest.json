@@ -3,7 +3,7 @@
   "scope": "New public checkout: tracked files plus hash-only local corpus inventory; original local project manifest is preserved separately.",
   "self_hash_policy": "This manifest excludes itself to avoid recursion.",
   "runtime_policy": "External runtime, credentials, databases, caches, live logs and temporary fixtures are excluded.",
-  "file_count": 698,
+  "file_count": 702,
   "files": [
     {
       "path": ".env.example",
@@ -238,8 +238,8 @@
     },
     {
       "path": "data/manifests/experiment_manifest.json",
-      "size_bytes": 177526,
-      "sha256": "25c6f24750134b92c9809c4a689b64c81f3323f0b459f42426bfd12cfe0f311f",
+      "size_bytes": 178007,
+      "sha256": "7e8c5c0fc4cfe16f7656671a9f5bc41305fee50e462755e09989c2e3e0364352",
       "purpose": "数据格式、来源或版本清单",
       "distribution": "public-git"
     },
@@ -742,8 +742,8 @@
     },
     {
       "path": "docs/CHUNKING_STRATEGY.md",
-      "size_bytes": 9175,
-      "sha256": "01a4add661717ae1e74588dd294564f62ebf8831665db9258049d2d100daed54",
+      "size_bytes": 9923,
+      "sha256": "425fd3bda335173b2e1470121ba052bb2d5b44fe6fb3de3fcad8395a18b48137",
       "purpose": "技术、执行或当前交付文档",
       "distribution": "public-git"
     },
@@ -1232,8 +1232,8 @@
     },
     {
       "path": "reports/TASK_11_DELIVERY.md",
-      "size_bytes": 4108,
-      "sha256": "8109ccbabaa1252f350df4d2110d18d289ced410f90f6a1718a399bbd726516d",
+      "size_bytes": 4330,
+      "sha256": "e9f28c0db8e1ba98bafe83a7965c6718263f8f26acdd294455a08928bd2934c6",
       "purpose": "历史证据或本次补交付验收结果",
       "distribution": "public-git"
     },
@@ -3758,6 +3758,13 @@
       "distribution": "public-git"
     },
     {
+      "path": "reports/retrieval/structure_pc_b0/acceptance/actual-parent-context.json",
+      "size_bytes": 25654,
+      "sha256": "c1fb6f8a1f8934ec56aa7eacabd6e83abfa9d3851023be997599ebf01bca0aad",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
       "path": "reports/retrieval/structure_pc_b0/acceptance/actual-query.json",
       "size_bytes": 44484,
       "sha256": "83f1a1a917c0535123b84aed49effa2823d7ca21baf9d52d51690fff58235056",
@@ -3779,6 +3786,13 @@
       "distribution": "public-git"
     },
     {
+      "path": "reports/retrieval/structure_pc_b0/acceptance/delivery-complete.json",
+      "size_bytes": 2055,
+      "sha256": "6b07d0236c001c049bb8628dbd95f8cbdf2b50398946f1ddd4c79044d3e365e5",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
       "path": "reports/retrieval/structure_pc_b0/acceptance/delivery-final.json",
       "size_bytes": 2055,
       "sha256": "b6f67560ee145634ed0b64ad91b82cc9950ab15a83b1e570fa61e7e13dbd9275",
@@ -3789,6 +3803,13 @@
       "path": "reports/retrieval/structure_pc_b0/acceptance/delivery-initial.json",
       "size_bytes": 1796,
       "sha256": "0e5a76a74ab849d45355dc142aeb1417562c33f5fbf05a0d8915949b63d81803",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/retrieval/structure_pc_b0/acceptance/public-final.json",
+      "size_bytes": 3248,
+      "sha256": "36f333020f2e09598d2100928434e5f5db87ec85ebb6b77705337604a3dedf6e",
       "purpose": "历史证据或本次补交付验收结果",
       "distribution": "public-git"
     },
@@ -4328,6 +4349,13 @@
       "path": "scripts/query_dense_index.py",
       "size_bytes": 927,
       "sha256": "82995c42d2d61e96a2204de73bd5314a3d54499655a4989b25136a2e19ea5b59",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/query_parent_child.py",
+      "size_bytes": 4695,
+      "sha256": "5ff952f57b05d9741dbdfb5ce75cd17206dbf82e74a1452281ef445858344b0c",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },

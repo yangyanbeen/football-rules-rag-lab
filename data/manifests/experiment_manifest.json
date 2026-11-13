@@ -3831,13 +3831,13 @@
         },
         {
           "path": "docs/CHUNKING_STRATEGY.md",
-          "size_bytes": 9175,
-          "sha256": "01a4add661717ae1e74588dd294564f62ebf8831665db9258049d2d100daed54"
+          "size_bytes": 9923,
+          "sha256": "425fd3bda335173b2e1470121ba052bb2d5b44fe6fb3de3fcad8395a18b48137"
         },
         {
           "path": "reports/TASK_11_DELIVERY.md",
-          "size_bytes": 4108,
-          "sha256": "8109ccbabaa1252f350df4d2110d18d289ced410f90f6a1718a399bbd726516d"
+          "size_bytes": 4330,
+          "sha256": "e9f28c0db8e1ba98bafe83a7965c6718263f8f26acdd294455a08928bd2934c6"
         },
         {
           "path": "data/manifests/structure_parent_child.json",
@@ -3988,9 +3988,20 @@
           "path": "reports/retrieval/structure_pc_b0/test_usage.jsonl",
           "size_bytes": 1302,
           "sha256": "6fef4c3aa1b5e2c299256578ff848adb080f1f454442155b636a00d18515d8cb"
+        },
+        {
+          "path": "scripts/query_parent_child.py",
+          "size_bytes": 4695,
+          "sha256": "5ff952f57b05d9741dbdfb5ce75cd17206dbf82e74a1452281ef445858344b0c"
+        },
+        {
+          "path": "reports/retrieval/structure_pc_b0/acceptance/actual-parent-context.json",
+          "size_bytes": 25654,
+          "sha256": "c1fb6f8a1f8934ec56aa7eacabd6e83abfa9d3851023be997599ebf01bca0aad"
         }
       ],
-      "artifact_policy": "Only new Task11 artifacts; final gate and final public receipt excluded to avoid recursive hashes. Original18 entries immutable."
+      "artifact_policy": "Only new Task11 artifacts; final gate and final public receipt excluded to avoid recursive hashes. Original18 entries immutable.",
+      "actual_parent_materialization_checks": 5
     }
   ],
   "last_updated_at": "2026-11-13T09:54:46.731343+00:00"
