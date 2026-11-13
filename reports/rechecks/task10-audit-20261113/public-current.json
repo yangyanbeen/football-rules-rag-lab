@@ -1,0 +1,61 @@
+{
+  "captured_at": "2026-11-13T08:54:52.255129+00:00",
+  "checkout_commit": "57563e9dd35a3502fa378bd5e8920a15c358f9e0",
+  "checks": {
+    "dev_original_rank_quality_and_timing_replay": true,
+    "dev_partial_support_supplement_recomputes": true,
+    "original_bytes_restored_after_every_mutation": true,
+    "original_formal_test_ledger_still_completed_once": true,
+    "reject_boolean_concurrency_config": true,
+    "reject_boolean_top10_rank": true,
+    "reject_cross_budget_input_ids_identity": true,
+    "reject_cross_budget_passage_identity": true,
+    "reject_future_complete_time": true,
+    "reject_unsupported_new_schema_from_old_source": true,
+    "reject_wall_duration_differs_from_utc": true,
+    "stdlib_only_without_corpus_index_models_packages": true,
+    "test_original_rank_quality_and_timing_replay": true,
+    "test_partial_support_supplement_recomputes": true
+  },
+  "errors": [],
+  "historical_release": false,
+  "new_locked_test_queries": 0,
+  "new_model_requests": 0,
+  "observed": {
+    "boolean_concurrency_config": {
+      "current_rejected": true,
+      "original_accepted": true
+    },
+    "boolean_top10_rank": {
+      "current_rejected": true,
+      "original_accepted": true
+    },
+    "cross_budget_input_ids_identity": {
+      "current_rejected": true,
+      "original_accepted": true
+    },
+    "cross_budget_passage_identity": {
+      "current_rejected": true,
+      "original_accepted": true
+    },
+    "future_complete_time": {
+      "current_rejected": true,
+      "original_accepted": true
+    },
+    "unsupported_new_schema_from_old_source": {
+      "current_rejected": true,
+      "original_accepted": false
+    },
+    "wall_duration_differs_from_utc": {
+      "current_rejected": true,
+      "original_accepted": true
+    }
+  },
+  "passed": 14,
+  "scope": "Current independent public replay and controlled mutations; original files restored",
+  "site_packages_disabled": true,
+  "source_sha256": "10b07bae7441422889e788cd295ac97049b2c91582060b4655269603e94ec2ec",
+  "status": "PASS",
+  "total": 14,
+  "version": "task10-audit-public-1.0"
+}

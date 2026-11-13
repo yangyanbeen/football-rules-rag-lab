@@ -1,0 +1,31 @@
+{
+  "actual_locked_test_queries": 0,
+  "actual_model_requests": 0,
+  "captured_at": "2026-11-13T08:52:20.114011+00:00",
+  "checks": {
+    "all12_warmups_and4_measured_calls_executed": true,
+    "cold_engine_closed_even_on_failure": true,
+    "cold_lifecycle_completes_after_warmup": true,
+    "environment_after_all12_warmups_before_measurements": true,
+    "load_failure_phase_and_type_recorded": true,
+    "only_declared_synthetic_or_ad_hoc_text_reaches_query_api": true,
+    "primary_load_exception_preserved": true,
+    "primary_query_exception_preserved": true,
+    "query_engine_closed_on_failure": true,
+    "query_failure_question_and_phase_recorded": true,
+    "real_test_ledger_untouched": true,
+    "top10_output_cannot_mutate_before80_ranking": true
+  },
+  "errors": [],
+  "expected_original_gap": false,
+  "passed": 12,
+  "scope": "In-process mocked lifecycle, not an actual cold model execution or retrieval quality sample.",
+  "source_sha256": {
+    "scripts/reranker_live.py": "21824b2e6eada7ca50366f1870596025bad042889eb75538c221321dc85e0c25",
+    "scripts/run_reranker_experiment.py": "efd194aa2421ffc1ed2daf1c2c368eb652288ea3a1790c01db47e2400cda3088",
+    "scripts/verify_reranker_lifecycle.py": "e7703a469a0be1f8d52efbb14512eca0ec487bf3a5fc87dba1e9add96137cb57"
+  },
+  "status": "PASS",
+  "total": 12,
+  "version": "reranker-lifecycle-1.0"
+}

@@ -47,7 +47,7 @@ def evaluate(args):
     require_release();cfg=config();source=committed(SOURCES+INPUTS);inputs=snapshots()
     if grant and source!=grant['source_commit']:raise ValueError('Test must execute its frozen source commit')
     run_id=uuid.uuid4().hex;started=now();wall=time.perf_counter();owned=False;reserved=False;phase='reserve';current=None
-    start={'version':'reranker-run-1.0','run_id':run_id,'split':split,'purpose':'development' if split=='dev' else 'final_report',
+    start={'version':'reranker-run-1.1','run_id':run_id,'split':split,'purpose':'development' if split=='dev' else 'final_report',
            'source_commit':source,'inputs':inputs,'config':cfg,'started_at':started,'authorization':auth}
     usage={'run_id':run_id,'run_directory':out.relative_to(ROOT).as_posix(),'template':'bge-top20-40-80-matrix',
            'source_commit':source,'authorization':auth,'test_sha256':grant['test_sha256'] if grant else None}
@@ -79,7 +79,7 @@ def evaluate(args):
                     print(json.dumps({'progress':i+1,'total':len(queries),'question_id':current,
                                       'chain_seconds':{m:round(packets[m]['timing']['total_seconds'],3) for m in METHODS}}),flush=True)
         after=index_files();phase='summarize'
-        write_new(out/'summary.json',summarize(questions,rows,split));write_new(out/'error_analysis.json',errors_for(questions,rows,split))
+        write_new(out/'summary.json',summarize(questions,rows,split));write_new(out/'error_analysis.json',errors_for(questions,rows,split,include_partial=True))
         validate_inputs(inputs,source,True)
         manifest={**start,'status':'COMPLETE','completed_at':now(),'wall_seconds':time.perf_counter()-wall,
                   'environment':environment,'load_seconds':load_seconds,'warmups':warmups,
@@ -106,8 +106,9 @@ def main():
     p.add_argument('--output',type=Path);p.add_argument('--question');p.add_argument('--method',choices=METHODS,default='top20');a=p.parse_args()
     if a.mode=='prepare-test':prepare(a)
     elif a.mode=='replay':
+        output=new_report(a.output) if a.output else None
         result=replay(a.run_dir)
-        if a.output:write_new(new_report(a.output),{'status':'PASS','captured_at':now(),'run_manifest':record(a.run_dir/'run_manifest.json'),'summary':result,'new_model_requests':0})
+        if output:write_new(output,{'status':'PASS','captured_at':now(),'run_manifest':record(a.run_dir/'run_manifest.json'),'summary':result,'new_model_requests':0})
         print(json.dumps({'status':'PASS','split':result['split']}))
     elif a.mode=='query':
         output=new_report(a.output) if a.output else None

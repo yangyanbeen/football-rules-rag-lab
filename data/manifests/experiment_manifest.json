@@ -3610,7 +3610,156 @@
           "sha256": "44169d3b28fed9519a5bfd538f716e52896b507101c9dab2358d7bdd37c433ba"
         }
       ]
+    },
+    {
+      "id": "TASK-010-AUDIT",
+      "objective": "Repair Task10 replay and adapter gaps and add complete support diagnostics without rewriting history",
+      "baseline_commit": "e24e5c1b37585fe91047a6c6f64c6bdaf7273291",
+      "main_variable": "Validation and compatible diagnostic schema1.1; no model/data/parameter change",
+      "code": {
+        "source_commit": "3353c5ba3fe42b822a18be0d5b5743537b843a30",
+        "source_sha256": {
+          "scripts/bge_reranker.py": "2654cace523109b1cfe595c1a9eb8bdec9013011325f907dd1ebc7c35bc62946",
+          "scripts/reranker_live.py": "21824b2e6eada7ca50366f1870596025bad042889eb75538c221321dc85e0c25",
+          "scripts/reranker_eval.py": "8e7faa675315915a1b3bbc769fdc62fb0aba708eea283fdf8b80e8e3172f7a0d",
+          "scripts/run_reranker_experiment.py": "efd194aa2421ffc1ed2daf1c2c368eb652288ea3a1790c01db47e2400cda3088",
+          "scripts/verify_reranker_contract.py": "ce074815f93ca62573454f5c8fc828b7d1361449655897da24643615ad59e935",
+          "scripts/verify_task10_audit_delivery.py": "b215a1f55a0ec662c0eaac08f4bc8e0c5dc8c347acd3c411c4fb4f5607f1ce88"
+        }
+      },
+      "quality": "Original saved ranks/metrics unchanged; no new locked test retrieval or answer quality measurement",
+      "evidence_counts": {
+        "regressions": 27,
+        "contract": 74,
+        "lifecycle": 12,
+        "current_public": 14,
+        "historical_public": 35,
+        "actual_live": 8,
+        "actual_cold": 8
+      },
+      "new_locked_test_queries": 0,
+      "actual_ad_hoc_embedding_queries": 5,
+      "actual_ad_hoc_reranker_pairs": 140,
+      "answer_llm_requests": 0,
+      "artifacts": [
+        {
+          "path": "docs/TASK_10_AUDIT_SCOPE.md",
+          "size_bytes": 2051,
+          "sha256": "7d9e5cc33211161a76be95f98489b713ae49d4ca5003ddc15eae128631e7cf3d"
+        },
+        {
+          "path": "docs/TASK_10_AUDIT.md",
+          "size_bytes": 5103,
+          "sha256": "a25f365c0c038942e4d0664736c253c8b1e0fce2b7879d2feeb96faeb2f17b43"
+        },
+        {
+          "path": "reports/TASK_10_SUPPLEMENT.md",
+          "size_bytes": 4322,
+          "sha256": "7226bf745fcb621adc16b34b87b7352ac93f71cc58059ec08bb0810a3474dde7"
+        },
+        {
+          "path": "scripts/analyze_reranker_support.py",
+          "size_bytes": 1849,
+          "sha256": "813b72483278f3c0b1650b39764dba88c22a6dd01fc44b046d9a28b3aabf06a6"
+        },
+        {
+          "path": "scripts/verify_task10_audit.py",
+          "size_bytes": 9335,
+          "sha256": "0ecf93287d6dcf7fe4d0917b5f43a9522dc115c7b9cdee85607b809d56cb636e"
+        },
+        {
+          "path": "scripts/verify_task10_public_audit.py",
+          "size_bytes": 6352,
+          "sha256": "10b07bae7441422889e788cd295ac97049b2c91582060b4655269603e94ec2ec"
+        },
+        {
+          "path": "scripts/verify_task10_live_audit.py",
+          "size_bytes": 5305,
+          "sha256": "2298b342be1391d4e748d71f3b1ab34243db381e2222724f2a085bb843ad2b9c"
+        },
+        {
+          "path": "scripts/verify_task10_audit_delivery.py",
+          "size_bytes": 8987,
+          "sha256": "b215a1f55a0ec662c0eaac08f4bc8e0c5dc8c347acd3c411c4fb4f5607f1ce88"
+        },
+        {
+          "path": "reports/rechecks/task10-audit-20261113/cold-current.json",
+          "size_bytes": 38390,
+          "sha256": "1fffdad648a1bc8698948c70801c42586263f1a1fb3f39761dabf59f9575a3ba"
+        },
+        {
+          "path": "reports/rechecks/task10-audit-20261113/contract-current.json",
+          "size_bytes": 3857,
+          "sha256": "3a72f3ce727ce85190588c1201c1cca341975218cce2b23b88f9cd6995b44e34"
+        },
+        {
+          "path": "reports/rechecks/task10-audit-20261113/contract-final.json",
+          "size_bytes": 3857,
+          "sha256": "353ae8e7a7fbacafff4056d5131fb97bf2b0f200c31a7d4684770fbe5efe7712"
+        },
+        {
+          "path": "reports/rechecks/task10-audit-20261113/delivery-preliminary.json",
+          "size_bytes": 2156,
+          "sha256": "9d9adc0d77ae19e5499534c987a6a3951d7a379334ccab98708856111f165cf9"
+        },
+        {
+          "path": "reports/rechecks/task10-audit-20261113/dev_support_diagnostics.json",
+          "size_bytes": 9405,
+          "sha256": "ce0ef37aa4f3a6d5e04d5ecc25540194d8ed60f6eed9472960837e5ac174fd54"
+        },
+        {
+          "path": "reports/rechecks/task10-audit-20261113/historical-release-gate.json",
+          "size_bytes": 2538,
+          "sha256": "feb527afc77984efd7245a21131bca873ce1a753680ba38221d22b3bf90cb51c"
+        },
+        {
+          "path": "reports/rechecks/task10-audit-20261113/lifecycle-current.json",
+          "size_bytes": 1362,
+          "sha256": "164cf4bfa9fc2e7a0eb20079d8fef3c4b12a6a3d01c19f0f28719e8c771029ea"
+        },
+        {
+          "path": "reports/rechecks/task10-audit-20261113/lifecycle-final.json",
+          "size_bytes": 1362,
+          "sha256": "0093608e7c9d9a9822f88dc170396efec77df58323f21acc3ae21090de10ec2a"
+        },
+        {
+          "path": "reports/rechecks/task10-audit-20261113/live-current.json",
+          "size_bytes": 226445,
+          "sha256": "b8ea5611555a809cd6ed29dfa79bcfd766f618e564863fd481b99086b5680f96"
+        },
+        {
+          "path": "reports/rechecks/task10-audit-20261113/public-current.json",
+          "size_bytes": 2082,
+          "sha256": "d1405425ad363849ebdb46b80b57298d8eedee024eb4550e02f59e54ccaadd0d"
+        },
+        {
+          "path": "reports/rechecks/task10-audit-20261113/regressions-final.json",
+          "size_bytes": 4303,
+          "sha256": "f8adac3a523e85255d2d620d0d373a5517dcb7b7b5d7ed7de15d7c085d6ff536"
+        },
+        {
+          "path": "reports/rechecks/task10-audit-20261113/regressions-first.json",
+          "size_bytes": 3837,
+          "sha256": "0aa9f9b9376390deddd64e648a1ea2c4359637d5a82161354ab279228d36159f"
+        },
+        {
+          "path": "reports/rechecks/task10-audit-20261113/reproduction-final.json",
+          "size_bytes": 3836,
+          "sha256": "6ae03a94affa6c2102cf19d5f5aca6ddb85dc69f20af8553f383a8d17f72b643"
+        },
+        {
+          "path": "reports/rechecks/task10-audit-20261113/reproduction.json",
+          "size_bytes": 3836,
+          "sha256": "898efd2cb5d94fb1aeaa2b363380acb174275e11ede3d32b6d0ac266e244b078"
+        },
+        {
+          "path": "reports/rechecks/task10-audit-20261113/test_support_diagnostics.json",
+          "size_bytes": 12435,
+          "sha256": "4228b5bf80d44422e10211b2c17f5fdca03890d8ef905f65eb06cc9a1bb96854"
+        }
+      ],
+      "artifact_policy": "Original17 objects immutable. Audit complete gate and inventory exclude themselves to avoid a hash cycle."
     }
   ],
-  "last_updated_at": "2026-11-13T05:04:58.677184+00:00"
+  "last_updated_at": "2026-11-13T09:05:25.324959+00:00"
 }

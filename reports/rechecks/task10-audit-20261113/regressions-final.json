@@ -1,0 +1,108 @@
+{
+  "actual_model_requests": 0,
+  "baseline": "e24e5c1b37585fe91047a6c6f64c6bdaf7273291",
+  "captured_at": "2026-11-13T08:49:05.602766+00:00",
+  "checks": {
+    "consistent_cross_budget_model_inputs_pass": true,
+    "constructor_keeps_primary_error_when_cleanup_fails": true,
+    "grant_summary_bound_to_development_manifest": true,
+    "legacy_error_schema_recomputes_byte_equivalent_values": true,
+    "new_error_schema1_1_declared": true,
+    "partial_coverage_incomplete_top5_reported": true,
+    "partial_prefix_support_loss_not_omitted": true,
+    "reject_boolean_control_rank": true,
+    "reject_boolean_top10_rank": true,
+    "reject_changed_official_config.json": true,
+    "reject_changed_official_special_tokens_map.json": true,
+    "reject_changed_official_tokenizer.json": true,
+    "reject_changed_official_tokenizer_config.json": true,
+    "reject_cross_budget_input_ids_sha256": true,
+    "reject_cross_budget_passage_sha256": true,
+    "reject_cross_budget_query_sha256": true,
+    "reject_nonfinite_channel_distance": true,
+    "reject_truncation_below_max_length": true,
+    "reject_unsorted_bm25_scores": true,
+    "reject_unsorted_dense_scores": true,
+    "replay_output_checked_before_loading_data": true,
+    "returned_embedding_observation_is_independent": true,
+    "tiny_negative_cosine_roundoff_not_rejected": true,
+    "valid_packet_no_rerank": true,
+    "valid_packet_top20": true,
+    "valid_packet_top40": true,
+    "valid_packet_top80": true
+  },
+  "errors": [],
+  "expected_original_gaps": false,
+  "new_locked_test_queries": 0,
+  "observed": {
+    "constructor_keeps_primary_error_when_cleanup_fails": {
+      "expected_original_gap": false,
+      "fixed_behavior_observed": true
+    },
+    "grant_summary_bound_to_development_manifest": {
+      "expected_original_gap": false,
+      "fixed_behavior_observed": true
+    },
+    "partial_prefix_support_loss_not_omitted": {
+      "expected_original_gap": false,
+      "fixed_behavior_observed": true
+    },
+    "reject_boolean_control_rank": {
+      "expected_original_gap": false,
+      "fixed_behavior_observed": true
+    },
+    "reject_boolean_top10_rank": {
+      "expected_original_gap": false,
+      "fixed_behavior_observed": true
+    },
+    "reject_changed_official_config.json": {
+      "expected_original_gap": false,
+      "fixed_behavior_observed": true
+    },
+    "reject_changed_official_special_tokens_map.json": {
+      "expected_original_gap": false,
+      "fixed_behavior_observed": true
+    },
+    "reject_changed_official_tokenizer.json": {
+      "expected_original_gap": false,
+      "fixed_behavior_observed": true
+    },
+    "reject_changed_official_tokenizer_config.json": {
+      "expected_original_gap": false,
+      "fixed_behavior_observed": true
+    },
+    "reject_truncation_below_max_length": {
+      "expected_original_gap": false,
+      "fixed_behavior_observed": true
+    },
+    "reject_unsorted_bm25_scores": {
+      "expected_original_gap": false,
+      "fixed_behavior_observed": true
+    },
+    "reject_unsorted_dense_scores": {
+      "expected_original_gap": false,
+      "fixed_behavior_observed": true
+    },
+    "replay_output_checked_before_loading_data": {
+      "expected_original_gap": false,
+      "fixed_behavior_observed": true
+    },
+    "returned_embedding_observation_is_independent": {
+      "expected_original_gap": false,
+      "fixed_behavior_observed": true
+    }
+  },
+  "passed": 27,
+  "scope": "Historic/current module behavior on synthetic packets and in-memory grant copies; no saved evidence modified and no model inference.",
+  "source_sha256": {
+    "scripts/bge_reranker.py": "2654cace523109b1cfe595c1a9eb8bdec9013011325f907dd1ebc7c35bc62946",
+    "scripts/reranker_eval.py": "8e7faa675315915a1b3bbc769fdc62fb0aba708eea283fdf8b80e8e3172f7a0d",
+    "scripts/reranker_live.py": "21824b2e6eada7ca50366f1870596025bad042889eb75538c221321dc85e0c25",
+    "scripts/run_reranker_experiment.py": "efd194aa2421ffc1ed2daf1c2c368eb652288ea3a1790c01db47e2400cda3088",
+    "scripts/verify_reranker_contract.py": "ce074815f93ca62573454f5c8fc828b7d1361449655897da24643615ad59e935",
+    "scripts/verify_task10_audit.py": "0ecf93287d6dcf7fe4d0917b5f43a9522dc115c7b9cdee85607b809d56cb636e"
+  },
+  "status": "PASS",
+  "total": 27,
+  "version": "task10-audit-regressions-1.0"
+}

@@ -102,3 +102,8 @@ UiCapture 必须来自已完成的真实浏览器操作；也可传历史采集�
 ## 任务十：官方BGE-Reranker实验
 
 复用现有262项核心依赖与原Dense/BM25索引，执行`.venv/Scripts/python.exe -B scripts/install_reranker_model.py --download`将固定约1.1GB官方ONNX与分词配置写入被忽略的.models，再用`run_reranker_experiment.py query --question "请查找球场球门的规定尺寸资料。" --method top40`。参数、CPU耗时、完整命令和公开无模型复算见[RERANKER_EXPERIMENT](RERANKER_EXPERIMENT.md)。公开仓库没有全文和权重；原测试账本已消耗，不能直接重复正式test或删除旧证据。
+
+
+## 任务十缺陷补交付的复验入口
+
+当前版本另用 `scripts/verify_task10_audit_delivery.py --complete --public-only --report reports/rechecks/task10-recheck/delivery.json`，可由系统Python以 `-S -B` 执行，无须模型或全文；保留Git历史以校验生产提交。原 `verify_reranker_delivery.py` 在原标签 `v0.10.0-bge-reranker` 使用，不能要求它把后续代码当作当时交付源码。见 [TASK_10_AUDIT](TASK_10_AUDIT.md)。新运行输出1.1诊断，旧1.0结果不改写，不重跑锁定test。
