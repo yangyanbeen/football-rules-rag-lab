@@ -52,7 +52,7 @@ def child(complete):
         from verify_structure_delivery import verify
         value=verify(ROOT/'reports/rechecks/task11-public-inner.json',True,True)
         check('complete_public_delivery_gate',lambda:value['status']=='PASS' and value['passed']==value['total'])
-    return {'status':'PASS' if all(checks.values()) else 'FAIL','passed':sum(checks.values()),'total':len(checks),'checks':checks,'errors':errors}
+    return {'status':'PASS' if all(checks.values()) else 'FAIL','passed':sum(checks.values()),'total':len(checks),'checks':checks,'errors':errors,'delivery_gate':value if complete else None}
 
 
 def main():
