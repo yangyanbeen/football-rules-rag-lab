@@ -1,5 +1,7 @@
 # 报告阅读说明
 
+任务十最新修复见[TASK_10_SUPPLEMENT](TASK_10_SUPPLEMENT.md)，新证据rechecks/task10-audit-20261113。当前27/27、74/74、12/12、公开14/14、真实四预算8/8、冷启动8/8及补交付31/31；历史35/35在e24e5c1原提交复验。当前验收使用verify_task10_audit_delivery.py，原门禁绑定其历史发布代码。新增诊断不是重跑test，原Recall/MRR保持，T022/T034的证据不完整如实列出。
+
 任务十最新交付见[TASK_10_DELIVERY](TASK_10_DELIVERY.md)、[reranker_results.json](reranker_results.json)。四个实际候选预算、前后排名、逐批次计时、截断/负收益案例在retrieval/bge_reranker_b0。当前专项74/74、独立公开35/35，冷启动模拟12/12及实际8/8；完整门禁delivery-final.json。旧任务报告保持历史字节。
 
 任务九最新缺陷补齐见[TASK_09_SUPPLEMENT](TASK_09_SUPPLEMENT.md)，新证据rechecks/task9-audit-20261113。29/29新增回归、56/56原专项、30/30完整、17/17真实、10/10公开复算通过。expected-invalid-live-gate.json的29/30 FAIL是故意改错证据的正确拒绝，negative-case-proof.json确认反例通过，不是有效交付失败；所有原任务九报告和测试保持原字节。
