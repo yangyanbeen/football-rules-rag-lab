@@ -5,7 +5,7 @@ from eval_dataset import ROOT,canonical,digest,load_jsonl
 from bm25_index import record,write_new,committed
 from bm25_retrieval_eval import now,producer_before
 from structure_aware_chunking import DATA,MAP
-from structure_retrieval_eval import mapping,contexts,budget_contexts,context_entry,fuse
+from structure_retrieval_eval import mapping,contexts,budget_contexts,context_entry,fuse,validate_saved_query,SOURCES,INPUTS
 
 
 def materialize(packet):
@@ -33,16 +33,14 @@ def main():
     from run_structure_comparison import output_path
     receipt=output_path(a.receipt);private=a.private_output.resolve()
     if not private.is_relative_to(ROOT/'.runtime/task11') or private.exists() or private.suffix!='.json':raise ValueError('Use a new private .runtime/task11 JSON')
-    source=committed(('scripts/query_parent_child.py',MAP));start=now();input_ref=None
+    source=committed(SOURCES+INPUTS+('scripts/query_parent_child.py',));start=now();input_ref=None;query_receipt=None
     if a.replay_packet:
-        stored=json.loads(a.replay_packet.read_text('utf-8'));packet=stored['packet'];input_ref=record(a.replay_packet)
-        if stored.get('is_quality_evaluation') is not False or stored.get('actual_embedding_queries')!=1:raise ValueError('Replay an actual non-evaluation query receipt')
+        raw=a.replay_packet.read_bytes();stored=json.loads(raw);validate_saved_query(stored,raw)
+        packet=stored['packet'];input_ref=record(a.replay_packet)
         requests=0
     else:
-        from structure_retrieval_live import Retriever
-        from dense_retrieval_eval import normalize_query
-        normalize_query(a.question)
-        with Retriever() as engine:packet=engine.query(a.question,'ad-hoc')
+        from run_structure_comparison import capture_query
+        query_receipt=capture_query(a.question);packet=query_receipt['packet']
         requests=1
     evidence=materialize(packet);write_new(private,evidence)
     checks={'at_least_one_real_parent_materialized':len(evidence['results'])>0,
@@ -51,8 +49,9 @@ def main():
             'all_context_tokens_within4096':evidence['context_tokens']<=4096,
             'private_output_not_tracked':subprocess.run(['git','check-ignore','--quiet',str(private)],cwd=ROOT).returncode==0}
     safe=[{k:v for k,v in row.items() if k!='content_zh'} for row in evidence['results']]
-    report={'version':'task11-actual-parent-context-1.0','started_at':start,'completed_at':now(),'source_commit':source,
+    report={'version':'task11-actual-parent-context-1.1','started_at':start,'completed_at':now(),'source_commit':source,
             'source_sha256':record(__file__)['sha256'],'input_query_receipt':input_ref,'private_output':record(private),
+            'query_receipt':query_receipt,'source_records':{p:record(ROOT/p) for p in SOURCES+('scripts/query_parent_child.py',)},
             'results_without_bodies':safe,'context_tokens':evidence['context_tokens'],'skipped_ids':evidence['skipped_ids'],
             'actual_new_embedding_queries':requests,'answer_llm_requests':0,'scope':'Actual local parent body lookup from new query or recorded non-evaluation seed; replay is not new model inference.',
             'checks':checks,'status':'PASS' if all(checks.values()) else 'FAIL','passed':sum(checks.values()),'total':len(checks)}

@@ -1,0 +1,185 @@
+{
+  "baseline": "e542340ebab150bc4a37a478f9f5e7d05027f52e",
+  "captured_at": "2026-11-13T10:22:54.799514+00:00",
+  "checks": {
+    "actual_lexical_payload_recomputed_before_model_access": true,
+    "budget_rejects_boolean_context_tokens": true,
+    "budget_rejects_boolean_seed_rank": true,
+    "budget_rejects_duplicate_context": true,
+    "cleanup_preserves_primary_query_error": true,
+    "contexts_reject_duplicate_seeds": true,
+    "coverage_rejects_out_of_body_span": true,
+    "empty_coverage_remains_zero": true,
+    "exact_legacy_query_receipt_still_valid": true,
+    "historical_replay_survives_later_installed_code": true,
+    "index_rejects_boolean_reuse_count": true,
+    "legacy_query_with_extra_whitespace_rejected": true,
+    "original_index_layout_still_valid": true,
+    "parent_query_preflights_all_execution_sources": true,
+    "quality_rejects_duplicate_question_ids": true,
+    "quality_rejects_silently_truncated_zip": true,
+    "reject_body_hash_different_from_source": true,
+    "reject_boolean_answer_request_count": true,
+    "reject_changed_bm25_k1": true,
+    "reject_changed_tokenizer_model": true,
+    "reject_empty_run_started": true,
+    "reject_float_context_length": true,
+    "reject_float_embedding_request_count": true,
+    "reject_forged_source_line_range": true,
+    "reject_original_span_outside_body": true,
+    "reject_saved_query_without_producer_and_boolean_count": true,
+    "reject_serial_wall_omits_query_duration": true,
+    "reject_swapped_child_vector_id_order": true,
+    "reject_unknown_manifest_body_field": true,
+    "valid_budget_boundary_preserved": true,
+    "valid_original_mapping_still_passes": true,
+    "valid_original_query_ranking_still_passes": true
+  },
+  "errors": [],
+  "expected_original_gaps": false,
+  "new_model_requests": 0,
+  "new_test_queries": 0,
+  "observed": {
+    "actual_lexical_payload_recomputed_before_model_access": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "budget_rejects_boolean_context_tokens": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "budget_rejects_boolean_seed_rank": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "budget_rejects_duplicate_context": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "cleanup_preserves_primary_query_error": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "contexts_reject_duplicate_seeds": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "coverage_rejects_out_of_body_span": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "empty_coverage_remains_zero": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "exact_legacy_query_receipt_still_valid": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "historical_replay_survives_later_installed_code": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "index_rejects_boolean_reuse_count": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "legacy_query_with_extra_whitespace_rejected": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "original_index_layout_still_valid": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "parent_query_preflights_all_execution_sources": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "quality_rejects_duplicate_question_ids": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "quality_rejects_silently_truncated_zip": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "reject_body_hash_different_from_source": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "reject_boolean_answer_request_count": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "reject_changed_bm25_k1": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "reject_changed_tokenizer_model": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "reject_empty_run_started": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "reject_float_context_length": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "reject_float_embedding_request_count": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "reject_forged_source_line_range": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "reject_original_span_outside_body": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "reject_saved_query_without_producer_and_boolean_count": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "reject_serial_wall_omits_query_duration": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "reject_swapped_child_vector_id_order": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "reject_unknown_manifest_body_field": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "valid_budget_boundary_preserved": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "valid_original_mapping_still_passes": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    },
+    "valid_original_query_ranking_still_passes": {
+      "expected_original_gap": false,
+      "fixed_behavior": true
+    }
+  },
+  "passed": 32,
+  "scope": "Synthetic inputs, in-memory index/config mutations and rehashed temporary dev copies; mocked service, no model inference or changed original evidence.",
+  "source_sha256": {
+    "scripts/query_parent_child.py": "5100316da6bc0863736c4ac72ccb91e6f952171cc34d044638dadd516d40ce3d",
+    "scripts/run_structure_comparison.py": "3226ac0e242caaec1aafd37c09988c08c4d12ecfbd090543568c2431e7f7db8d",
+    "scripts/structure_aware_chunking.py": "f8b3b1e9796d12d767dd6f33922fd6c28c8e456fbdd502356b05ecbefa2be37e",
+    "scripts/structure_retrieval_eval.py": "19a68590aa76c195e2f49c8a1e07d7ff9a9211a6928b6071cd60b8cd60b67c2e",
+    "scripts/structure_retrieval_live.py": "b4b7b9ef76a23ef1dc81f56086b0f337c1a3f9bc3cb40ff7696b543d0bf9a9c8",
+    "scripts/verify_task11_audit.py": "b0e29c892d5e4c698a75522b733fd441ee42a38809871e7f4556e39f1a232c2b"
+  },
+  "status": "PASS",
+  "total": 32,
+  "version": "task11-audit-regressions-1.0"
+}

@@ -1,5 +1,5 @@
 """Task11 context assembly, conservative span metrics and model-free replay."""
-import json,math,subprocess
+import json,math,re,subprocess
 from datetime import datetime,timezone
 from fractions import Fraction
 from pathlib import Path
@@ -46,6 +46,8 @@ def validate_mapping(value):
     seen=[]
     for cid,row in original.items():
         if row['chunk_id']!=cid or row['source']['content_zh_sha256']!=reference[cid]['content_zh_sha256'] or row['source']['source_url']!=reference[cid]['source_url'] or row['law_number']!=reference[cid]['law_number']:raise ValueError('Original source differs')
+        if (row['source']['source_lines']!=reference[cid]['source_lines'] or row['content_sha256']!=row['source']['content_zh_sha256']
+            or not equal(row['spans'],[{'original_id':cid,'start':0,'end':row['characters']}] )):raise ValueError('Original source interval/hash differs')
         pieces=sorted((c['spans'][0]['start'],c['spans'][0]['end']) for c in children.values() if c['original_id']==cid)
         pos=0
         for a,b in pieces:
@@ -67,8 +69,17 @@ def validate_mapping(value):
     if sorted(seen)!=sorted(original):raise ValueError('Parents must partition originals')
     for group in (original,children,parents):
         for row in group.values():
+            if not integer(row['law_number'],1) or row['law_number']>17:raise ValueError('Invalid rule number')
+            validate_spans(row['spans'],value)
             if not all(integer(row[k],1) for k in ('characters','body_tokens','context_tokens')) or any(not isinstance(row[k],str) or len(row[k])!=64 or any(c not in '0123456789abcdef' for c in row[k]) for k in ('content_sha256','passage_sha256')):raise ValueError('Invalid length/hash')
     return True
+
+
+def validate_spans(spans,m):
+    if not isinstance(spans,list) or not spans:raise ValueError('Nonempty source intervals required')
+    for s in spans:
+        fields(s,('original_id','start','end'))
+        if s['original_id'] not in m['originals'] or not integer(s['start']) or not integer(s['end'],1) or not s['start']<s['end']<=m['originals'][s['original_id']]['characters']:raise ValueError('Invalid source interval bounds/types')
 
 
 def fuse(channels,known):
@@ -94,6 +105,7 @@ def fuse(channels,known):
 
 def contexts(seed_ids,method,m):
     if method not in METHODS:raise ValueError('Unknown context method')
+    if not isinstance(seed_ids,list) or len(seed_ids)>10 or len(seed_ids)!=len(set(seed_ids)):raise ValueError('At most ten unique seeds required')
     known=m['originals'] if method=='base' else m['children'];out=[];seen=set()
     for i,cid in enumerate(seed_ids,1):
         source=known[cid];target=cid if method!='parent_child' else source['parent_id']
@@ -110,9 +122,13 @@ def context_entry(cid,m):
 
 def budget_contexts(rows,m,budget=4096):
     if not integer(budget,1):raise ValueError('Invalid context budget')
-    selected=[];skipped=[];used=0
+    selected=[];skipped=[];used=0;seen=set();previous=0
     for row in rows:
+        fields(row,('context_id','seed_rank'))
+        if row['context_id'] in seen or not integer(row['seed_rank'],1) or row['seed_rank']<=previous:raise ValueError('Duplicate context or invalid seed order')
+        seen.add(row['context_id']);previous=row['seed_rank']
         tokens=context_entry(row['context_id'],m)['context_tokens']
+        if not integer(tokens,1):raise ValueError('Invalid context token count')
         if used+tokens>budget:skipped.append(row['context_id']);continue
         selected.append(dict(row));used+=tokens
     return {'contexts':selected,'skipped_ids':skipped,'context_tokens':used}
@@ -121,7 +137,8 @@ def budget_contexts(rows,m,budget=4096):
 def coverage(rows,m):
     spans={};total=0
     for row in rows:
-        for s in context_entry(row['context_id'],m)['spans']:
+        entry=context_entry(row['context_id'],m);validate_spans(entry['spans'],m)
+        for s in entry['spans']:
             spans.setdefault(s['original_id'],[]).append((s['start'],s['end']));total+=s['end']-s['start']
     covered={};unique=0
     for cid,values in spans.items():
@@ -136,6 +153,9 @@ def coverage(rows,m):
 
 
 def quality(questions,packets,method,m,budgeted=True):
+    if len(questions)!=len(packets) or len({q['question_id'] for q in questions})!=len(questions):raise ValueError('Complete unique query/prediction pairs required')
+    for q,p in zip(questions,packets):
+        if type(q['answerable']) is not bool or q['answerable']!=bool(q['expected_chunk_ids']) or any(cid not in m['originals'] for cid in q['expected_chunk_ids']):raise ValueError('Invalid original support labels')
     per=[];context_stats=[]
     for q,p in zip(questions,packets):
         seed=p['rankings']['base' if method=='base' else 'child'];raw=contexts([r['chunk_id'] for r in seed],method,m)
@@ -197,6 +217,46 @@ def errors(summary):
             'definition':'Every incomplete support case retained, even if any-hit Recall remains one; no new child relevance judgements inferred.'}
 
 
+def validate_saved_query(value,raw=None):
+    legacy='e542340ebab150bc4a37a478f9f5e7d05027f52e'
+    if value.get('version') is None:
+        original=subprocess.check_output(['git','show',legacy+':reports/retrieval/structure_pc_b0/acceptance/actual-query.json'],cwd=ROOT)
+        if raw!=original:raise ValueError('Unversioned query must be the exact published legacy receipt')
+        question=value['packet']['query']
+    else:
+        fields(value,('version','started_at','completed_at','source_commit','inputs','question','packet','environment','index_snapshots','actual_embedding_queries','answer_llm_requests','is_quality_evaluation'))
+        if value['version']!='structure-query-1.1':raise ValueError('Unknown query receipt format')
+        producer_before(value['source_commit'],value['started_at'])
+        if not instant(value['started_at'])<instant(value['completed_at'])<=datetime.now(timezone.utc):raise ValueError('Invalid query receipt chronology')
+        fields(value['inputs'],SOURCES+INPUTS)
+        for p,r in value['inputs'].items():
+            blob=subprocess.check_output(['git','show',value['source_commit']+':'+p],cwd=ROOT)
+            if r!={'path':p,'size_bytes':len(blob),'sha256':digest(blob)} or (p in INPUTS and r!=record(ROOT/p)):raise ValueError('Query producer/input differs')
+        validate_environment(value['environment'])
+        index=json.loads((ROOT/INDEX).read_text('utf-8'))
+        before=value['index_snapshots']['before'];after=value['index_snapshots']['after']
+        expected={**index['artifact_files'],'data/indexes/structure_pc_b0/index_manifest.json':{'path':'data/indexes/structure_pc_b0/index_manifest.json',**{k:v for k,v in record(ROOT/INDEX).items() if k!='path'}}}
+        if not equal(before,after) or not equal(before,expected):raise ValueError('Actual query index snapshot differs')
+        if (instant(value['completed_at'])-instant(value['started_at'])).total_seconds()+1e-5<value['packet']['timing']['total_seconds']:raise ValueError('Query receipt duration omits execution')
+        question=value['question']
+    if type(value['actual_embedding_queries']) is not int or value['actual_embedding_queries']!=1 or type(value['answer_llm_requests']) is not int or value['answer_llm_requests']!=0 or value['is_quality_evaluation'] is not False:raise ValueError('Wrong query request scope/counters')
+    if value['packet']['question_id']!='ad-hoc':raise ValueError('Not a non-evaluation query packet')
+    m=mapping();q={'question_id':'ad-hoc','question':question,'answerable':True,'expected_chunk_ids':[next(iter(m['originals']))]}
+    summarize([q],[value['packet']],'dev',m)
+    return True
+
+
+def validate_environment(environment):
+    fields(environment,('python','system','logical_cpus','packages','embedding_runtime'))
+    runtime=environment['embedding_runtime'];fields(runtime,('name','digest','size','size_vram','context_length','runner'))
+    dense_cfg=json.loads((ROOT/'config/dense_index.json').read_text('utf-8'))
+    if (environment['python']!='3.10.22' or environment['packages']!={'numpy':'1.26.4','tokenizers':'0.22.1'}
+        or not integer(environment['logical_cpus'],1) or runtime['name']!=dense_cfg['model']['name']
+        or runtime['digest']!=dense_cfg['model']['digest'] or type(runtime['size_vram']) is not int or runtime['size_vram']!=0
+        or type(runtime['context_length']) is not int or runtime['context_length']!=8192 or not integer(runtime['size'],1) or runtime['runner']!='llamacpp'):raise ValueError('Pinned runtime/environment differs')
+    return True
+
+
 def validate_grant(g,directory,current=False):
     fields(g,('version','purpose','prepared_at','source_commit','inputs','development_manifest','development_summary','verification','selected_method','allowed_run_directory','test_sha256'))
     if g['version']!='structure-test-grant-1.0' or g['purpose']!='final_report' or g['allowed_run_directory']!=directory.relative_to(ROOT).as_posix() or directory!=DIRECTORY/'test':raise ValueError('Wrong test grant scope')
@@ -207,7 +267,8 @@ def validate_grant(g,directory,current=False):
     s=replay(dev.parent)
     if s['split']!='dev' or s['selected_on_this_split']!=g['selected_method']:raise ValueError('Grant selection differs')
     proof=ROOT/g['verification']['path'];v=json.loads(proof.read_text('utf-8'))
-    if g['verification']!=record(proof) or v['status']!='PASS' or v['passed']!=v['total'] or v['total']<30 or not all(x is True for x in v['checks'].values()):raise ValueError('Verification not complete')
+    if (g['verification']!=record(proof) or v['status']!='PASS' or not integer(v['passed'],30) or not integer(v['total'],30)
+        or v['passed']!=v['total'] or v['total']!=len(v['checks']) or v['errors']!=[] or not all(x is True for x in v['checks'].values())):raise ValueError('Verification not complete')
     if not instant(json.loads(dev.read_text('utf-8'))['completed_at'])<=instant(v['captured_at'])<=instant(g['prepared_at']):raise ValueError('Development must precede verification/grant')
     if v['source_sha256']!={p:g['inputs'][p]['sha256'] for p in NATIVE}:raise ValueError('Verification source identity differs')
     for r in (g['development_manifest'],g['development_summary'],g['verification']):
@@ -218,29 +279,33 @@ def validate_grant(g,directory,current=False):
 
 def replay(directory):
     directory=Path(directory).resolve();manifest=json.loads((directory/'run_manifest.json').read_text('utf-8'));split=manifest['split']
+    start_fields=('version','split','run_id','source_commit','inputs','config','started_at','authorization','purpose')
+    fields(manifest,start_fields+('status','completed_at','wall_seconds','environment','warmups','index_snapshots','actual_embedding_queries','answer_llm_requests','artifacts'))
+    if not isinstance(manifest['run_id'],str) or not re.fullmatch('[0-9a-f]{32}',manifest['run_id']) or manifest['purpose']!=('development' if split=='dev' else 'final_report') or (split=='dev' and manifest['authorization'] is not None):raise ValueError('Invalid run identity/purpose')
     if directory.parent!=DIRECTORY or (directory.name!='test' if split=='test' else not directory.name.startswith('dev')) or split not in ('dev','test') or manifest['version']!='structure-run-1.0' or manifest['status']!='COMPLETE':raise ValueError('Wrong run directory/state')
     producer_before(manifest['source_commit'],manifest['started_at'])
     if not instant(manifest['started_at'])<instant(manifest['completed_at'])<=datetime.now(timezone.utc):raise ValueError('Invalid run chronology')
     if not number(manifest['wall_seconds']) or abs(manifest['wall_seconds']-(instant(manifest['completed_at'])-instant(manifest['started_at'])).total_seconds())>.5:raise ValueError('Clock disagreement')
-    if manifest['inputs']!=snapshots() or not equal(manifest['config'],config()):raise ValueError('Run inputs changed')
+    fields(manifest['inputs'],SOURCES+INPUTS)
+    if any(manifest['inputs'][p]!=record(ROOT/p) for p in INPUTS) or not equal(manifest['config'],config()):raise ValueError('Frozen data/config changed')
     for p in SOURCES+INPUTS:
-        if digest(subprocess.check_output(['git','show',manifest['source_commit']+':'+p],cwd=ROOT))!=manifest['inputs'][p]['sha256']:raise ValueError('Producer source/input mismatch')
+        raw=subprocess.check_output(['git','show',manifest['source_commit']+':'+p],cwd=ROOT)
+        if manifest['inputs'][p]!={'path':p,'size_bytes':len(raw),'sha256':digest(raw)}:raise ValueError('Producer source/input mismatch')
+    fields(manifest['artifacts'],ARTIFACTS)
     for name in ARTIFACTS:
         if manifest['artifacts'][name]!=record(directory/name):raise ValueError('Run artifact changed')
     start=json.loads((directory/'run_started.json').read_text('utf-8'))
+    fields(start,start_fields)
     if not equal(start,{k:manifest[k] for k in start}):raise ValueError('Run start differs')
-    if manifest['actual_embedding_queries']!=len(load_jsonl(directory/'predictions.jsonl'))+3 or manifest['answer_llm_requests']!=0 or len(manifest['warmups'])!=3:raise ValueError('Actual query counter differs')
-    environment=manifest['environment'];runtime=environment['embedding_runtime'];dense_cfg=json.loads((ROOT/'config/dense_index.json').read_text('utf-8'))
-    if (environment['python']!='3.10.22' or environment['packages']!={'numpy':'1.26.4','tokenizers':'0.22.1'}
-        or not integer(environment['logical_cpus'],1) or runtime['name']!=dense_cfg['model']['name']
-        or runtime['digest']!=dense_cfg['model']['digest'] or type(runtime['size_vram']) is not int or runtime['size_vram']!=0
-        or runtime['context_length']!=8192 or runtime['runner']!='llamacpp'):raise ValueError('Pinned runtime/environment differs')
+    if not integer(manifest['actual_embedding_queries']) or manifest['actual_embedding_queries']!=len(load_jsonl(directory/'predictions.jsonl'))+3 or type(manifest['answer_llm_requests']) is not int or manifest['answer_llm_requests']!=0 or len(manifest['warmups'])!=3:raise ValueError('Actual query counter differs')
+    validate_environment(manifest['environment'])
     index=json.loads((ROOT/INDEX).read_text('utf-8'));before=manifest['index_snapshots']['before'];after=manifest['index_snapshots']['after']
     if not equal(before,after) or any(before.get(p)!=r for p,r in index['artifact_files'].items()) or len(before)!=len(index['artifact_files'])+1:raise ValueError('Independent index changed/incomplete snapshot')
     if before.get('data/indexes/structure_pc_b0/index_manifest.json')!={'path':'data/indexes/structure_pc_b0/index_manifest.json',**{k:v for k,v in record(ROOT/INDEX).items() if k!='path'}}:raise ValueError('Independent index manifest snapshot differs')
     m=mapping();warm=[{'question_id':'warmup','question':config()['warmup_question'],'answerable':True,'expected_chunk_ids':[next(iter(m['originals']))]}]
     for packet in manifest['warmups']:summarize(warm,[packet],'dev',m)
     questions=load_jsonl(EVAL/('retrieval_'+split+'.jsonl'));rows=load_jsonl(directory/'predictions.jsonl');result=summarize(questions,rows,split,m)
+    if manifest['wall_seconds']+1e-5<sum(r['timing']['total_seconds'] for r in rows+manifest['warmups']):raise ValueError('Serial wall duration omits query execution')
     if not equal(result,json.loads((directory/'summary.json').read_text('utf-8'))) or not equal(errors(result),json.loads((directory/'error_analysis.json').read_text('utf-8'))):raise ValueError('Saved summary/errors differ')
     if split=='test':
         g=json.loads((ROOT/manifest['authorization']['path']).read_text('utf-8'))

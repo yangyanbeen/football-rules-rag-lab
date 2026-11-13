@@ -84,6 +84,19 @@ def evaluate(args):
         raise
 
 
+def capture_query(question):
+    from dense_retrieval_eval import normalize_query
+    normalize_query(question);source=committed(SOURCES+INPUTS);started=now()
+    from structure_retrieval_live import Retriever,files
+    with Retriever() as engine:
+        before=files();packet=engine.query(question,'ad-hoc');environment=engine.environment()
+    value={'version':'structure-query-1.1','source_commit':source,'inputs':snapshots(),'started_at':started,'completed_at':now(),
+           'question':question,'packet':packet,'environment':environment,'index_snapshots':{'before':before,'after':files()},
+           'actual_embedding_queries':1,'answer_llm_requests':0,'is_quality_evaluation':False}
+    from structure_retrieval_eval import validate_saved_query
+    validate_saved_query(value);return value
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('mode',choices=('dev','prepare-test','test','replay','query'))
     p.add_argument('--run-dir',type=Path);p.add_argument('--authorization',type=Path);p.add_argument('--verification',type=Path);p.add_argument('--output',type=Path);p.add_argument('--question');a=p.parse_args()
@@ -94,12 +107,7 @@ def main():
         print(json.dumps({'status':'PASS','split':s['split']}))
     elif a.mode=='query':
         out=output_path(a.output)
-        source=committed(SOURCES+INPUTS)
-        from dense_retrieval_eval import normalize_query
-        normalize_query(a.question)
-        from structure_retrieval_live import Retriever
-        with Retriever() as engine:packet=engine.query(a.question,'ad-hoc')
-        write_new(out,{'source_commit':source,'packet':packet,'actual_embedding_queries':1,'answer_llm_requests':0,'is_quality_evaluation':False})
+        write_new(out,capture_query(a.question))
     else:evaluate(a)
 
 

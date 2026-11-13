@@ -84,7 +84,7 @@ def main():
         for name,raw in saved.items():(fixture/name).write_bytes(raw)
         (fixture/'run_started.json').write_bytes(canonical(start)+b'\n');(fixture/'predictions.jsonl').write_bytes(b''.join(canonical(r)+b'\n' for r in rows))
         manifest['artifacts']={n:record(fixture/n) for n in ev.ARTIFACTS};(fixture/'run_manifest.json').write_bytes(canonical(manifest)+b'\n')
-        with patch.object(target,'DIRECTORY',fixture.parent):return rejects(lambda:target.replay(fixture))
+        with patch.object(target,'DIRECTORY',fixture.parent),patch.object(target,'snapshots',return_value=manifest['inputs']):return rejects(lambda:target.replay(fixture))
     cases={
       'empty_run_started':lambda m,s,r:s.clear(),
       'boolean_answer_request_count':lambda m,s,r:m.update(answer_llm_requests=False),
@@ -103,6 +103,39 @@ def main():
     check('valid_original_query_ranking_still_passes',lambda:bool(target.summarize(questions[:1],packets[:1],'dev',m)))
     check('valid_budget_boundary_preserved',lambda:target.budget_contexts([row],m,m['originals'][first]['context_tokens'])['contexts']==[row])
     check('empty_coverage_remains_zero',lambda:target.coverage([],m)[1]['redundancy_rate']==0)
+    if not a.expect_gaps:
+        def bad_coverage():
+            value=copy.deepcopy(m);value['originals'][first]['spans'][0]['end']+=1
+            return rejects(lambda:ev.coverage([row],value))
+        check('coverage_rejects_out_of_body_span',bad_coverage)
+        def bad_tokens():
+            value=copy.deepcopy(m);value['originals'][first]['context_tokens']=True
+            return rejects(lambda:ev.budget_contexts([row],value))
+        check('budget_rejects_boolean_context_tokens',bad_tokens)
+        check('budget_rejects_boolean_seed_rank',lambda:rejects(lambda:ev.budget_contexts([{**row,'seed_rank':True}],m)))
+        child=next(iter(m['children']))
+        check('contexts_reject_duplicate_seeds',lambda:rejects(lambda:ev.contexts([child,child],'child',m)))
+        check('quality_rejects_duplicate_question_ids',lambda:rejects(lambda:ev.quality([questions[0],questions[0]],[packets[0],packets[0]],'base',m)))
+        raw=(ev.DIRECTORY/'acceptance/actual-query.json').read_bytes()
+        check('exact_legacy_query_receipt_still_valid',lambda:ev.validate_saved_query(json.loads(raw),raw))
+        check('legacy_query_with_extra_whitespace_rejected',lambda:rejects(lambda:ev.validate_saved_query(json.loads(raw),raw+b'\n')))
+        idx=json.loads((ROOT/ev.INDEX).read_text('utf-8'))
+        check('original_index_layout_still_valid',lambda:live.validate_layout(idx,m,idx['base_ids']) is None)
+        def wrong_reuse():
+            value=copy.deepcopy(idx);value['reused_unchanged_child_vectors']=True
+            return rejects(lambda:live.validate_layout(value,m,idx['base_ids']))
+        check('index_rejects_boolean_reuse_count',wrong_reuse)
+        def wrong_lexical():
+            path=live.HOME/'lexical.json';read=Path.read_text;payload=json.loads(read(path,'utf-8'));payload['child']['avgdl']+=1
+            def text(p,*args,**kwargs):return json.dumps(payload) if p==path else read(p,*args,**kwargs)
+            with patch.object(Path,'read_text',text),patch('dense_index.PinnedEmbedder',lambda *_:None):return rejects(live.Retriever)
+        check('actual_lexical_payload_recomputed_before_model_access',wrong_lexical)
+        def all_sources_preflight():
+            names=[]
+            def reject_source(values):names.extend(values);raise ValueError('SYNTHETIC_UNCOMMITTED')
+            with patch.object(sys,'argv',['parent','--question','Synthetic preflight','--private-output',str(ROOT/'.runtime/task11'/('preflight-'+uuid.uuid4().hex+'.json')),'--receipt',str(temp/'none.json')]),patch('run_structure_comparison.output_path',return_value=temp/'none.json'),patch.object(parent,'committed',side_effect=reject_source):
+                return rejects(parent.main) and set(ev.SOURCES+ev.INPUTS+('scripts/query_parent_child.py',))<=set(names)
+        check('parent_query_preflights_all_execution_sources',all_sources_preflight)
     value={'version':'task11-audit-regressions-1.0','captured_at':now(),'baseline':BASE,'expected_original_gaps':a.expect_gaps,
            'status':'PASS' if all(checks.values()) else 'FAIL','passed':sum(checks.values()),'total':len(checks),'checks':checks,'errors':errors,'observed':observed,
            'source_sha256':{p:record(ROOT/p)['sha256'] for p in NAMES+('scripts/verify_task11_audit.py',)},
