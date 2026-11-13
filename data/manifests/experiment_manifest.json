@@ -3170,7 +3170,447 @@
           "sha256": "d4402da9b885d35f96acfe9beb7627ea3f5345912b186f4a27d8bfd51d9912a5"
         }
       ]
+    },
+    {
+      "id": "TASK-010-BGE-RERANKER",
+      "task": 10,
+      "date": "2026-11-13",
+      "baseline_commit": "73d5b88bede56dbf83df1c960c9c7e4861e2ef31",
+      "goal": "Real pinned BGE cross encoder, candidate truncation and descriptive full-chain timing",
+      "control": "Original99corpus, same dev40/test50, original Dense/BM25 configs/RRF k60; new80-depth no-rerank control",
+      "main_variable": "Cross encoder off vs first20/40/80 of actual RRF80",
+      "data_version": "corpus-b0-rag-adapter-1.0.0",
+      "evaluation_version": "football-eval-0.1.0; previously used locked test",
+      "code": {
+        "formal_test_source_commit": "f6be8bd5252da48eb5c9253de7ddde7108e88643",
+        "formal_test_source_sha256": {
+          "scripts/bge_reranker.py": "2654cace523109b1cfe595c1a9eb8bdec9013011325f907dd1ebc7c35bc62946",
+          "scripts/reranker_live.py": "1fa43cd4e2c7e94285ed8179c26344db1d0a42770eb0a9bccdf4760dba81ad08",
+          "scripts/reranker_eval.py": "ff43e22e4d73666eb4831450cf6f28eb95787be7648d9ed47de04c83d6df3b2c",
+          "scripts/run_reranker_experiment.py": "eb43edc563a4fedd53abbe4b2000da8248530a8fedcd40e4b32b61c0afca169e",
+          "scripts/verify_reranker_contract.py": "ce074815f93ca62573454f5c8fc828b7d1361449655897da24643615ad59e935"
+        },
+        "delivery_source_commit": "c6bd37d671937b3c3db0347dc1ce1209437478e5",
+        "delivery_source_sha256": {
+          "scripts/bge_reranker.py": "2654cace523109b1cfe595c1a9eb8bdec9013011325f907dd1ebc7c35bc62946",
+          "scripts/reranker_live.py": "446a310127cd33ebf9cab66f9fc1d70cb187e93f247718cfdc2c20cd14a9737f",
+          "scripts/reranker_eval.py": "ff43e22e4d73666eb4831450cf6f28eb95787be7648d9ed47de04c83d6df3b2c",
+          "scripts/run_reranker_experiment.py": "ceb7ca2ee9d4d4634b91eb588dd57dd381c318c87e250e66831347f3d1a364ab",
+          "scripts/verify_reranker_contract.py": "ce074815f93ca62573454f5c8fc828b7d1361449655897da24643615ad59e935"
+        }
+      },
+      "model": {
+        "id": "BAAI/bge-reranker-base",
+        "revision": "2cfc18c9415c912f9d8155881c133215df768a70",
+        "files": {
+          "config.json": {
+            "sha256": "289adf7ada1eb6b4afa7589a48a032d45a076cf2e46dcdb3b4cabc33be14f708",
+            "size_bytes": 799
+          },
+          "onnx/model.onnx": {
+            "sha256": "15b9a8c3da82eddf263df571281166e00e9308fe19d077084b642ebfcaf06d2b",
+            "size_bytes": 1112459588
+          },
+          "special_tokens_map.json": {
+            "sha256": "d5469a60db23249c7f8945013d78df30b44b6bf686c6bb4740f4223f77b1b535",
+            "size_bytes": 279
+          },
+          "tokenizer.json": {
+            "sha256": "9eb652ac4e40cc093272bbbe0f55d521cf67570060227109b5cdc20945a4489e",
+            "size_bytes": 17098107
+          },
+          "tokenizer_config.json": {
+            "sha256": "a1d6bc8734a6f635dc158508bef000f8e2e5a759c7d92f984b2c86e5ff53425b",
+            "size_bytes": 443
+          }
+        }
+      },
+      "parameters": {
+        "batch_size": 8,
+        "bm25_template": "title_body",
+        "cache": false,
+        "channel_top_k": 80,
+        "concurrency": 1,
+        "download": {
+          "official": "https://huggingface.co/BAAI/bge-reranker-base/tree/2cfc18c9415c912f9d8155881c133215df768a70",
+          "transport": "hf-mirror.com pinned revision for ONNX/tokenizer; BAAI ModelScope 313e6ba57eab108a5b2e9e3c6810840755528349 for small configs; upstream LFS SHA256 and Git blob OIDs verified",
+          "upstream_tree": "https://hf-mirror.com/api/models/BAAI/bge-reranker-base/tree/2cfc18c9415c912f9d8155881c133215df768a70?recursive=true&expand=false"
+        },
+        "files": {
+          "config.json": {
+            "sha256": "289adf7ada1eb6b4afa7589a48a032d45a076cf2e46dcdb3b4cabc33be14f708",
+            "size_bytes": 799
+          },
+          "onnx/model.onnx": {
+            "sha256": "15b9a8c3da82eddf263df571281166e00e9308fe19d077084b642ebfcaf06d2b",
+            "size_bytes": 1112459588
+          },
+          "special_tokens_map.json": {
+            "sha256": "d5469a60db23249c7f8945013d78df30b44b6bf686c6bb4740f4223f77b1b535",
+            "size_bytes": 279
+          },
+          "tokenizer.json": {
+            "sha256": "9eb652ac4e40cc093272bbbe0f55d521cf67570060227109b5cdc20945a4489e",
+            "size_bytes": 17098107
+          },
+          "tokenizer_config.json": {
+            "sha256": "a1d6bc8734a6f635dc158508bef000f8e2e5a759c7d92f984b2c86e5ff53425b",
+            "size_bytes": 443
+          }
+        },
+        "fused_top_k": 80,
+        "max_length": 512,
+        "measured_repetitions": 1,
+        "methods": [
+          "no_rerank",
+          "top20",
+          "top40",
+          "top80"
+        ],
+        "model_id": "BAAI/bge-reranker-base",
+        "output_top_k": 10,
+        "packages": {
+          "numpy": "1.26.4",
+          "onnxruntime": "1.19.2",
+          "tokenizers": "0.22.1"
+        },
+        "passage": "section_path joined by space/slash/space + two newlines + original content_zh",
+        "percentile_method": "linear interpolation at q*(n-1)",
+        "precision": "official FP32 ONNX, no quantization",
+        "provider": "CPUExecutionProvider",
+        "revision": "2cfc18c9415c912f9d8155881c133215df768a70",
+        "rrf_k": 60,
+        "selection": "dev MRR@10 descending, Recall@5 descending, Recall@10 descending, total P50 ascending, method order",
+        "threads": 8,
+        "tokenization": "query/passage pair; longest_first; right truncation; dynamic batch right padding; pad_id=1",
+        "variant_order": "rotate methods left by query index modulo four",
+        "version": "bge-reranker-b0-1.0",
+        "warmup_question": "请查找球场球门的规定尺寸资料。",
+        "warmup_repetitions": 3
+      },
+      "environment": {
+        "captured_at": "2026-11-13T04:35:32.677640+00:00",
+        "embedding_runtime": {
+          "context_length": 8192,
+          "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+          "name": "bge-m3:latest",
+          "runner": "llamacpp",
+          "size": 1244166879,
+          "size_vram": 0
+        },
+        "logical_cpus": 20,
+        "machine": "AMD64",
+        "model_inputs": [
+          "input_ids",
+          "attention_mask"
+        ],
+        "packages": {
+          "numpy": "1.26.4",
+          "onnxruntime": "1.19.2",
+          "tokenizers": "0.22.1"
+        },
+        "physical_memory_bytes": 16858472448,
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "providers": [
+          "CPUExecutionProvider"
+        ],
+        "python": "3.10.22",
+        "system": "Windows-10-10.0.26200-SP0"
+      },
+      "commands": [
+        "scripts/install_reranker_model.py --download",
+        "scripts/run_reranker_experiment.py dev --run-dir reports/retrieval/bge_reranker_b0/dev",
+        "scripts/verify_reranker_contract.py --development-run reports/retrieval/bge_reranker_b0/dev --report reports/retrieval/bge_reranker_b0/acceptance/contract-development.json",
+        "scripts/run_reranker_experiment.py prepare-test --run-dir reports/retrieval/bge_reranker_b0/dev --verification reports/retrieval/bge_reranker_b0/acceptance/contract-development.json --output reports/retrieval/bge_reranker_b0/test_authorization.json",
+        "scripts/run_reranker_experiment.py test --run-dir reports/retrieval/bge_reranker_b0/test --authorization reports/retrieval/bge_reranker_b0/test_authorization.json"
+      ],
+      "result": {
+        "dev": {
+          "no_rerank": {
+            "MRR@10": 0.9166666666666666,
+            "Recall@10": 0.96875,
+            "Recall@5": 0.96875,
+            "all_gold_coverage@5": 0.96875
+          },
+          "top20": {
+            "MRR@10": 0.9166666666666666,
+            "Recall@10": 0.96875,
+            "Recall@5": 0.96875,
+            "all_gold_coverage@5": 0.96875
+          },
+          "top40": {
+            "MRR@10": 0.9479166666666666,
+            "Recall@10": 1.0,
+            "Recall@5": 1.0,
+            "all_gold_coverage@5": 1.0
+          },
+          "top80": {
+            "MRR@10": 0.9479166666666666,
+            "Recall@10": 1.0,
+            "Recall@5": 1.0,
+            "all_gold_coverage@5": 1.0
+          }
+        },
+        "test": {
+          "no_rerank": {
+            "MRR@10": 0.9364583333333334,
+            "Recall@10": 1.0,
+            "Recall@5": 0.975,
+            "all_gold_coverage@5": 0.975
+          },
+          "top20": {
+            "MRR@10": 0.975,
+            "Recall@10": 1.0,
+            "Recall@5": 1.0,
+            "all_gold_coverage@5": 0.98125
+          },
+          "top40": {
+            "MRR@10": 0.975,
+            "Recall@10": 1.0,
+            "Recall@5": 1.0,
+            "all_gold_coverage@5": 0.98125
+          },
+          "top80": {
+            "MRR@10": 0.975,
+            "Recall@10": 1.0,
+            "Recall@5": 1.0,
+            "all_gold_coverage@5": 0.98125
+          }
+        },
+        "selected_on_dev": "top40",
+        "contract": "74/74",
+        "public_replay": "35/35",
+        "measured_reranker_pairs": 12600,
+        "new_formal_test_matrices": 1
+      },
+      "decision": "Freeze the development-selected method top40 for this experiment. Test is report-only; retain the unchanged Task6 application until a separately authorized integration task.",
+      "limitations": [
+        "99 fixed Wikipedia-derived Chinese chunks; source/version qualifications remain; not authoritative football advice.",
+        "40dev/50test; retrieval quality uses32/40 answerable questions. No answer, citation, refusal accuracy or QPS measured.",
+        "This locked test was previously used in Tasks7–9; it is not a new unseen holdout.",
+        "One actual measurement per query per method after3warmups per method, rotating order; ordinary desktop CPU, no confidence intervals or isolated production load.",
+        "Original Task9 Top10/channel scores are historical context only; Task10 equal-condition control uses new actual Top80/channel.",
+        "No graded relevance labels; nDCG is null. Cross-encoder logits are not probabilities.",
+        "Public replay recomputes fusion, sorting, metrics, errors and timing; it cannot rederive model logits or private passage tokenization without separately restored pinned model/corpus."
+      ],
+      "artifacts": [
+        {
+          "path": "config/reranker_experiment.json",
+          "size_bytes": 2468,
+          "sha256": "9b77781e8f32d886c5b15a6af852acd4ac95d534196406fde641bce079144062"
+        },
+        {
+          "path": "docs/RERANKER_EXPERIMENT.md",
+          "size_bytes": 9696,
+          "sha256": "801d1011132afaba045c8a54e1f6b75effd0ceb2089a32802d70c20ca6819f28"
+        },
+        {
+          "path": "docs/TASK_10_SCOPE.md",
+          "size_bytes": 4841,
+          "sha256": "45652148e2be114a3a2231d800963633f663093eb4527f367a3a76409fedd774"
+        },
+        {
+          "path": "reports/TASK_10_DELIVERY.md",
+          "size_bytes": 5254,
+          "sha256": "e353d209f2e026fb170521903415839a074221f92a2b3ff7e31f0ba0fcd74f07"
+        },
+        {
+          "path": "reports/reranker_results.json",
+          "size_bytes": 121752,
+          "sha256": "afd173210e6516f40c5e3cb403c0d103338571a6d15b4138742e4e7b029434e0"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/acceptance/actual-pilot.json",
+          "size_bytes": 37071,
+          "sha256": "2ea2fcefd7c2187c01dcfd80f5836554357323d6754a7a96e80f4a5b2faed4ca"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/acceptance/cold-and-output-gap-reproduction.json",
+          "size_bytes": 1308,
+          "sha256": "3f0a02f604ec27823b94b7a563f5d941cf23eb2ace9efbbc442392cdfb3731df"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/acceptance/cold-gap-reproduction.json",
+          "size_bytes": 1163,
+          "sha256": "fc8fdedc682890b3e8b3636e07f57d4582d663ff7a0b74ba54a0fe643f092ac1"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/acceptance/cold-start-actual.json",
+          "size_bytes": 38392,
+          "sha256": "3623b8d76d1e2445cf9b06a028be06ea6e39f061491e6672e7050f32093fd48e"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/acceptance/cold-start-regressions.json",
+          "size_bytes": 1362,
+          "sha256": "388c92817b74560c68fcf11b78586dcbb8062a2cee2fad95540c65ee40a75b27"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/acceptance/contract-before-dev.json",
+          "size_bytes": 3428,
+          "sha256": "b48efd1cf6bd1eb26d7be1007e4cb8091e5d2ef4f6bcfffa03ad73a6c1488e08"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/acceptance/contract-current.json",
+          "size_bytes": 3857,
+          "sha256": "5e13abb7b4d1da7045d206db2685c6394d9d34f3da721a6c0988d8d7eccbd1c5"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/acceptance/contract-development.json",
+          "size_bytes": 3857,
+          "sha256": "3d81b0b24af4f3b50307d19ab47ac3e1c5310ea3696c362382fe4b2845bd0850"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/acceptance/previous-task9.json",
+          "size_bytes": 2366,
+          "sha256": "3d3e84f2c903720573adc59d5f4921b30c36ad0cfd2fd44498b5c5228eb88470"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/acceptance/public-development.json",
+          "size_bytes": 1751,
+          "sha256": "bae9fb04ccf5e805f8a087017dfd3b56c8b11b00b54f7a5a1efee271c0ceeb4e"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/acceptance/public-final.json",
+          "size_bytes": 2102,
+          "sha256": "0170c4f364ab8bb402b6f65ee026f7cb791ad025b8e25b87971b0e5e41d55367"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/dev/error_analysis.json",
+          "size_bytes": 5358,
+          "sha256": "f4b9617c7e3a02497d0611c9a6c772b05221167bcf68a0d0fdd577098244092e"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/dev/predictions.jsonl",
+          "size_bytes": 5492199,
+          "sha256": "ca6067865586178f628e66f35a426773226fd06753b33ed5cfc8fd8452c3af10"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/dev/rank_changes.json",
+          "size_bytes": 149015,
+          "sha256": "29870955d1591292225234c98146ba59b736c21cde81b3f984e43522b897ddea"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/dev/run_manifest.json",
+          "size_bytes": 688236,
+          "sha256": "559d70e4eb2644c4ef3115c42688d2f8407d8b31bef4d3e37d534ab4caa6eb1c"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/dev/run_started.json",
+          "size_bytes": 19898,
+          "sha256": "23d841f634e9207e9cfc16faaea78c9da1a53ddfebd6063e89c9165fa6ab4a37"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/dev/source_map.json",
+          "size_bytes": 36576,
+          "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/dev/summary.json",
+          "size_bytes": 48069,
+          "sha256": "66c5419b35f6f8a388aa7f07904f223fff61f2e238323f10edda5580554dec48"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/test/error_analysis.json",
+          "size_bytes": 4571,
+          "sha256": "aa5993dcf9e241cb1a0aba1386cde7dcb9c39a63ac2591a2636907c2a7878729"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/test/predictions.jsonl",
+          "size_bytes": 6915313,
+          "sha256": "3335bd23973d19284c4435f3e5628f489228a815a804c92d1b32c287ee62d74b"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/test/rank_changes.json",
+          "size_bytes": 187517,
+          "sha256": "128d5779b04b8fd09babb6859a0b02c6932b46d95ee9071c8e5b8dd82b3401a4"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/test/run_manifest.json",
+          "size_bytes": 688471,
+          "sha256": "c1be965162341e400c3aaa2a5af20ebd0c1415e361634af8a99c0e1f05b2b88a"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/test/run_started.json",
+          "size_bytes": 20080,
+          "sha256": "e87548662686d76e09f1236304b1dce326169dd8ea2320adfb43dd90bf3e8af9"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/test/source_map.json",
+          "size_bytes": 36576,
+          "sha256": "156423c04c40452c3c1a9388e424cd9af388a3eacb6e8ee925e24b1bd4251863"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/test/summary.json",
+          "size_bytes": 58499,
+          "sha256": "f52820a9316ef5b50ce5423c423917502c8123c08dadeaa570db6f1692c3cda5"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/test_authorization.json",
+          "size_bytes": 20674,
+          "sha256": "23342559d5132d4107fc5f5d3b7ec786cdb9b458dbcae66eaa6442d05d4fb753"
+        },
+        {
+          "path": "reports/retrieval/bge_reranker_b0/test_usage.jsonl",
+          "size_bytes": 1280,
+          "sha256": "252a1109b849bc4d7723a6220cdb62a1b4395bf8c8c94493d5b85e1c55200f45"
+        },
+        {
+          "path": "scripts/bge_reranker.py",
+          "size_bytes": 4770,
+          "sha256": "2654cace523109b1cfe595c1a9eb8bdec9013011325f907dd1ebc7c35bc62946"
+        },
+        {
+          "path": "scripts/install_reranker_model.py",
+          "size_bytes": 2338,
+          "sha256": "e5fb0f137c3b5f93a2bd910e25bda99129a8ed973f8a97024212da35d8eb201d"
+        },
+        {
+          "path": "scripts/reranker_eval.py",
+          "size_bytes": 25600,
+          "sha256": "ff43e22e4d73666eb4831450cf6f28eb95787be7648d9ed47de04c83d6df3b2c"
+        },
+        {
+          "path": "scripts/reranker_live.py",
+          "size_bytes": 4595,
+          "sha256": "446a310127cd33ebf9cab66f9fc1d70cb187e93f247718cfdc2c20cd14a9737f"
+        },
+        {
+          "path": "scripts/run_reranker_experiment.py",
+          "size_bytes": 8437,
+          "sha256": "ceb7ca2ee9d4d4634b91eb588dd57dd381c318c87e250e66831347f3d1a364ab"
+        },
+        {
+          "path": "scripts/summarize_reranker_experiment.py",
+          "size_bytes": 4786,
+          "sha256": "c44967b0783f9e22176c6efac11eda0459716175150b708f4540aa4fc87225f9"
+        },
+        {
+          "path": "scripts/verify_reranker_cold_start.py",
+          "size_bytes": 8568,
+          "sha256": "58b9226acb47ce9caf5d0ba73e3118b647df4d4e4cc82b0f07272605a054acb8"
+        },
+        {
+          "path": "scripts/verify_reranker_contract.py",
+          "size_bytes": 13025,
+          "sha256": "ce074815f93ca62573454f5c8fc828b7d1361449655897da24643615ad59e935"
+        },
+        {
+          "path": "scripts/verify_reranker_delivery.py",
+          "size_bytes": 13642,
+          "sha256": "866b6af6ed215efe001124b1ab7b1e3d41329c0f51795f6cad4a1b41f5a46ee4"
+        },
+        {
+          "path": "scripts/verify_reranker_lifecycle.py",
+          "size_bytes": 7068,
+          "sha256": "e7703a469a0be1f8d52efbb14512eca0ec487bf3a5fc87dba1e9add96137cb57"
+        },
+        {
+          "path": "scripts/verify_reranker_public_replay.py",
+          "size_bytes": 8258,
+          "sha256": "44169d3b28fed9519a5bfd538f716e52896b507101c9dab2358d7bdd37c433ba"
+        }
+      ]
     }
   ],
-  "last_updated_at": "2026-11-13T03:38:18.925247+00:00"
+  "last_updated_at": "2026-11-13T05:04:58.677184+00:00"
 }
