@@ -1,0 +1,99 @@
+{
+  "actual_model_requests": 0,
+  "baseline": "e24e5c1b37585fe91047a6c6f64c6bdaf7273291",
+  "captured_at": "2026-11-13T08:44:33.143647+00:00",
+  "checks": {
+    "constructor_keeps_primary_error_when_cleanup_fails": true,
+    "grant_summary_bound_to_development_manifest": true,
+    "partial_prefix_support_loss_not_omitted": true,
+    "reject_boolean_control_rank": true,
+    "reject_boolean_top10_rank": true,
+    "reject_changed_official_config.json": true,
+    "reject_changed_official_special_tokens_map.json": true,
+    "reject_changed_official_tokenizer.json": true,
+    "reject_changed_official_tokenizer_config.json": true,
+    "reject_truncation_below_max_length": true,
+    "reject_unsorted_bm25_scores": true,
+    "reject_unsorted_dense_scores": true,
+    "replay_output_checked_before_loading_data": true,
+    "returned_embedding_observation_is_independent": true,
+    "valid_packet_no_rerank": true,
+    "valid_packet_top20": true,
+    "valid_packet_top40": true,
+    "valid_packet_top80": true
+  },
+  "errors": [],
+  "expected_original_gaps": true,
+  "new_locked_test_queries": 0,
+  "observed": {
+    "constructor_keeps_primary_error_when_cleanup_fails": {
+      "expected_original_gap": true,
+      "fixed_behavior_observed": false
+    },
+    "grant_summary_bound_to_development_manifest": {
+      "expected_original_gap": true,
+      "fixed_behavior_observed": false
+    },
+    "partial_prefix_support_loss_not_omitted": {
+      "expected_original_gap": true,
+      "fixed_behavior_observed": false
+    },
+    "reject_boolean_control_rank": {
+      "expected_original_gap": true,
+      "fixed_behavior_observed": false
+    },
+    "reject_boolean_top10_rank": {
+      "expected_original_gap": true,
+      "fixed_behavior_observed": false
+    },
+    "reject_changed_official_config.json": {
+      "expected_original_gap": true,
+      "fixed_behavior_observed": false
+    },
+    "reject_changed_official_special_tokens_map.json": {
+      "expected_original_gap": true,
+      "fixed_behavior_observed": false
+    },
+    "reject_changed_official_tokenizer.json": {
+      "expected_original_gap": true,
+      "fixed_behavior_observed": false
+    },
+    "reject_changed_official_tokenizer_config.json": {
+      "expected_original_gap": true,
+      "fixed_behavior_observed": false
+    },
+    "reject_truncation_below_max_length": {
+      "expected_original_gap": true,
+      "fixed_behavior_observed": false
+    },
+    "reject_unsorted_bm25_scores": {
+      "expected_original_gap": true,
+      "fixed_behavior_observed": false
+    },
+    "reject_unsorted_dense_scores": {
+      "expected_original_gap": true,
+      "fixed_behavior_observed": false
+    },
+    "replay_output_checked_before_loading_data": {
+      "expected_original_gap": true,
+      "fixed_behavior_observed": false
+    },
+    "returned_embedding_observation_is_independent": {
+      "expected_original_gap": true,
+      "fixed_behavior_observed": false
+    }
+  },
+  "passed": 18,
+  "scope": "Historic/current module behavior on synthetic packets and in-memory grant copies; no saved evidence modified and no model inference.",
+  "source_sha256": {
+    "scripts/bge_reranker.py": "2654cace523109b1cfe595c1a9eb8bdec9013011325f907dd1ebc7c35bc62946",
+    "scripts/reranker_eval.py": "ff43e22e4d73666eb4831450cf6f28eb95787be7648d9ed47de04c83d6df3b2c",
+    "scripts/reranker_live.py": "446a310127cd33ebf9cab66f9fc1d70cb187e93f247718cfdc2c20cd14a9737f",
+    "scripts/run_reranker_experiment.py": "ceb7ca2ee9d4d4634b91eb588dd57dd381c318c87e250e66831347f3d1a364ab",
+    "scripts/verify_reranker_contract.py": "ce074815f93ca62573454f5c8fc828b7d1361449655897da24643615ad59e935",
+    "scripts/verify_task10_audit.py": "fac6f72eece7b7d12160a34a0e789d3d2fd0b63ea32543e114bb76d0decf1e12"
+  },
+  "status": "PASS",
+  "total": 18,
+  "version": "task10-audit-regressions-1.0"
+}
