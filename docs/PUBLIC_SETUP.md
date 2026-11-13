@@ -94,4 +94,6 @@ UiCapture 必须来自已完成的真实浏览器操作；也可传历史采集�
 
 ## 任务九混合召回与RRF
 
+任务九修复补充在[TASK_09_SUPPLEMENT](../reports/TASK_09_SUPPLEMENT.md)。新真实查询检查生成绑定生产提交与索引前后哈希的1.1回执；完整门禁可传`--live-report`，原回执保留并按历史源码验证。无效输出和空问题会在初始化模型前拒绝。
+
 见[RRF_EXPERIMENT](RRF_EXPERIMENT.md)。公开克隆无需模型和语料即可执行`python -S scripts/run_hybrid_retrieval.py replay --run-dir reports/retrieval/hybrid_rrf_b0/test --output reports/rechecks/my-rrf-replay.json`核验已有结果。运行新的dev仍要求原人工审核账本；实际query须恢复原Dense/BM25索引、固定依赖与本机Ollama/BGE-M3，不调用答案模型。四方法保持相同Top10输出上限，完整并集覆盖另列；RRF在本集MRR低于BM25，不能称全面提升。

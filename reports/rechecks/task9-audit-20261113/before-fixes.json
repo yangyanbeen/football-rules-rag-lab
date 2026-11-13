@@ -1,0 +1,20 @@
+{
+  "baseline": "8553f390107fc9f38cdefb927fa4f016b996f4bc",
+  "captured_at": "2026-11-13T03:25:21.603845+00:00",
+  "checks": {
+    "blank_query_rejected_before_engine": true,
+    "cleanup_preserves_first_exception": true,
+    "different_methods_have_independent_sources": true,
+    "existing_query_output_rejected_before_engine": true,
+    "invalid_query_output_rejected_before_engine": true,
+    "returned_metadata_does_not_alias_input": true
+  },
+  "errors": [],
+  "new_locked_test_queries": 0,
+  "new_test_fusion_runs": 0,
+  "passed": 6,
+  "source_sha256": "34a42ad2b430b14ff0e57d5a190b465dd755c2129cf2cdffebe3b0a43b526d6c",
+  "status": "GAPS_REPRODUCED",
+  "total": 6,
+  "version": "task9-audit-regression-1.0"
+}

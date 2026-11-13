@@ -2996,7 +2996,181 @@
           "sha256": "20949fe811ed8ffbb212f2d9eb14c76c793d3c1fe8c3345e05784f0828e83ea6"
         }
       ]
+    },
+    {
+      "id": "TASK-009-AUDIT",
+      "task": "9 supplement",
+      "date": "2026-11-13",
+      "baseline_commit": "8553f390107fc9f38cdefb927fa4f016b996f4bc",
+      "goal": "Repair aliasing, command preflight, cleanup exception preservation and live evidence acceptance",
+      "control": "Original Task9 fixed k60 and all original experiment results retained",
+      "main_variable": "Engineering reliability only; no ranking policy tuning",
+      "code": "2b8522d reproductions;3777911 core fixes;429ba59 strict index binding; exact artifact SHA and per-run producers recorded",
+      "data_version": "corpus-b0 and football-eval-0.1.0 unchanged; original test replay only",
+      "models": "Same pinned BGE-M3 CPU and accurate BM25; no answer LLM",
+      "parameters": "Original k60, per-channel10/output10 unchanged",
+      "environment": "Same Python3.10.22 Windows/core dependencies; new dev timing is functional evidence, not controlled benchmark",
+      "commands": [
+        "verify_task9_audit.py --live-report NEW --report NEW",
+        "verify_hybrid_contract.py --development-run NEW_DEV --report NEW",
+        "verify_hybrid_delivery.py --live-report NEW --report NEW",
+        "verify_hybrid_live.py --report NEW",
+        "run_hybrid_retrieval.py dev --run-dir NEW",
+        "verify_task9_preservation.py --report NEW"
+      ],
+      "result": {
+        "regressions": "29/29",
+        "original_contract": "56/56",
+        "original_delivery": "30/30",
+        "live_queries": "17/17",
+        "public_replay": "10/10",
+        "preservation": "17/17",
+        "new_development_fusion_measurements": 120,
+        "new_ad_hoc_embedding_queries": 4,
+        "new_locked_test_queries": 0,
+        "new_test_fusion_runs": 0,
+        "negative_case": "Forged live receipt now rejected by full gate; expected29/30 FAIL"
+      },
+      "decision": "Four defect groups closed; original RRF MRR .9175 vs BM25 .95 negative comparison unchanged",
+      "limitations": [
+        "Synthetic corrupted copies are not original evidence corruption",
+        "Original1.0 live receipt cannot acquire retrospective index snapshots",
+        "Historical producer hashes validated per actual Git commit; no resigning to the latest code",
+        "No answer accuracy/QPS/speedup claim"
+      ],
+      "artifacts": [
+        {
+          "path": "docs/RRF_EXPERIMENT.md",
+          "size_bytes": 9112,
+          "sha256": "391770d49962a8458e05bc7467b2c5baedbf6996ef26e665792f729dde04c913"
+        },
+        {
+          "path": "docs/TASK_09_AUDIT_SCOPE.md",
+          "size_bytes": 1374,
+          "sha256": "2938a89247388c5c4b62bec9e4a8f764587da6236447bbeb298f89bf8ae2c1ed"
+        },
+        {
+          "path": "reports/TASK_09_SUPPLEMENT.md",
+          "size_bytes": 6520,
+          "sha256": "c37ed8db21dd8778629df257093a795f92deb9363eab4914c542a4701751d3d5"
+        },
+        {
+          "path": "reports/rechecks/task9-audit-20261113/before-fixes.json",
+          "size_bytes": 717,
+          "sha256": "5f061286559b245028421759b2e872209b3982a909d489ae2cf7211201af15d4"
+        },
+        {
+          "path": "reports/rechecks/task9-audit-20261113/before-forged-live-gate.json",
+          "size_bytes": 492,
+          "sha256": "d981e1159597c855deb0137e452efcdfa23d6017b476ca52e6465578481b8c73"
+        },
+        {
+          "path": "reports/rechecks/task9-audit-20261113/contract-current.json",
+          "size_bytes": 5772,
+          "sha256": "7690d8bcd020e3767242a69e54eb91ccb583c69afdded49b4690f0417d6a3256"
+        },
+        {
+          "path": "reports/rechecks/task9-audit-20261113/delivery-current.json",
+          "size_bytes": 2366,
+          "sha256": "0ae3a320319282fbd0cabef41a2ca273ed4c67c7880b339b8f1a1edbec17bc1a"
+        },
+        {
+          "path": "reports/rechecks/task9-audit-20261113/expected-invalid-live-gate.json",
+          "size_bytes": 2563,
+          "sha256": "495e5856e3d848642f0334185ee7ffbbe7476dba71ee1e40a199ec53b1775e2f"
+        },
+        {
+          "path": "reports/rechecks/task9-audit-20261113/live-smoke.json",
+          "size_bytes": 171292,
+          "sha256": "36ed50aa6a9973d2d958895b5d2ed6b609192e805cf1dbf31152a17d800b6665"
+        },
+        {
+          "path": "reports/rechecks/task9-audit-20261113/negative-case-proof.json",
+          "size_bytes": 451,
+          "sha256": "b052d5e96ac80ac5a4356f75d0a0ba233c2ca10c5291f3e00d1386b3e085f41c"
+        },
+        {
+          "path": "reports/rechecks/task9-audit-20261113/preservation.json",
+          "size_bytes": 1387,
+          "sha256": "ad44287b1032f62e8ca025994a7dfcbf79053b0f989983be00345cf60525b866"
+        },
+        {
+          "path": "reports/rechecks/task9-audit-20261113/public-only-replay.json",
+          "size_bytes": 709,
+          "sha256": "3a235df0cfa0ea82575f45d3ebc4c0e0ba1d452bb4dea4b176e9073bae760c31"
+        },
+        {
+          "path": "reports/rechecks/task9-audit-20261113/regressions-final.json",
+          "size_bytes": 1812,
+          "sha256": "581ca3281c720832cc99479750245a77879cb9184c119ec448b55b51143c8546"
+        },
+        {
+          "path": "reports/rechecks/task9-audit-20261113/regressions-first.json",
+          "size_bytes": 1418,
+          "sha256": "b32f61851d19cff0c5c63973a02e4c0383cb7c926f4fed9c3dd98af83297e507"
+        },
+        {
+          "path": "reports/retrieval/task9-audit-20261113/dev/error_analysis.json",
+          "size_bytes": 37890,
+          "sha256": "790797433dc9ef7a41a79d0cfc2fffc268cfa2c143d5333ea63be50a3c136071"
+        },
+        {
+          "path": "reports/retrieval/task9-audit-20261113/dev/predictions.jsonl",
+          "size_bytes": 1267769,
+          "sha256": "b3c85792dbaaf1eb2011e778a71cc8fafe7a3d4753ad66154f8c8023a153cfed"
+        },
+        {
+          "path": "reports/retrieval/task9-audit-20261113/dev/run_manifest.json",
+          "size_bytes": 17272,
+          "sha256": "28154ac5d7f64d16949118100579b9292db48d5aa60e554576522e880eab756d"
+        },
+        {
+          "path": "reports/retrieval/task9-audit-20261113/dev/run_started.json",
+          "size_bytes": 16433,
+          "sha256": "6f05ad49064fa0814cc95b7adae1a47af51dcb5d51a0d1f1b83732821e91c4a2"
+        },
+        {
+          "path": "reports/retrieval/task9-audit-20261113/dev/summary.json",
+          "size_bytes": 5431,
+          "sha256": "91d42ea9a6f5881946a71712b4b1caf7d6fa044e0f95f9b450e21a99cc39f208"
+        },
+        {
+          "path": "scripts/hybrid_live.py",
+          "size_bytes": 12676,
+          "sha256": "4b4692823d329bf9c0925c68937c2d341a7ebdc39388c52c5f2f0d96a4a72a79"
+        },
+        {
+          "path": "scripts/rrf.py",
+          "size_bytes": 3923,
+          "sha256": "90f45af009f61644f6af9ef2275fb5b1d632a68ebf60761d8f730209727994bb"
+        },
+        {
+          "path": "scripts/run_hybrid_retrieval.py",
+          "size_bytes": 8688,
+          "sha256": "062cc510478899c7b44bb32958c4b7a44274f9793244530e46abfeeb6841b924"
+        },
+        {
+          "path": "scripts/verify_hybrid_delivery.py",
+          "size_bytes": 10790,
+          "sha256": "b95327fc2411ce37ed726134aff64ad9935e724426aa09752f4840ca482009be"
+        },
+        {
+          "path": "scripts/verify_hybrid_live.py",
+          "size_bytes": 3194,
+          "sha256": "2c6831c599c9ea7858a18858157671f58678f25e1d9c53b4c6e398495dbc69ad"
+        },
+        {
+          "path": "scripts/verify_task9_audit.py",
+          "size_bytes": 7861,
+          "sha256": "576b77c54d60ebaaf00e2862d36c91016b3b309d126ea1ebe5c368044c2b107d"
+        },
+        {
+          "path": "scripts/verify_task9_preservation.py",
+          "size_bytes": 5508,
+          "sha256": "d4402da9b885d35f96acfe9beb7627ea3f5345912b186f4a27d8bfd51d9912a5"
+        }
+      ]
     }
   ],
-  "last_updated_at": "2026-11-13T02:57:32.628525+00:00"
+  "last_updated_at": "2026-11-13T03:38:18.925247+00:00"
 }

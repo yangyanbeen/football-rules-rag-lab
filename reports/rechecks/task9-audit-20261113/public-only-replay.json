@@ -1,0 +1,24 @@
+{
+  "captured_at": "2026-11-13T03:35:54.134747+00:00",
+  "checkout_commit": "f35b631df2c8c2ccf9964828f55d76fc23beb164",
+  "checks": {
+    "new_dev_replays": true,
+    "new_live_validates": true,
+    "no_corpus": true,
+    "no_indexes": true,
+    "no_runtime": true,
+    "no_venv": true,
+    "old_dev_replays": true,
+    "old_live_validates": true,
+    "old_test_replays": true,
+    "third_party_unavailable": true
+  },
+  "errors": [],
+  "new_test_fusion_runs": 0,
+  "new_test_queries": 0,
+  "passed": 10,
+  "scope": "Saved original/new dev and original test replay, historical/current live receipt recomputation; stdlib only",
+  "status": "PASS",
+  "total": 10,
+  "version": "task9-audit-public-replay-1.0"
+}
