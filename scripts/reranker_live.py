@@ -20,7 +20,9 @@ class RerankerRetriever:
             self.embedder=PinnedEmbedder(json.loads((ROOT/'config/dense_index.json').read_text('utf-8')))
             self.dense=DenseIndex(embedder=self.embedder);self.reranker=BgeReranker(cfg)
         except BaseException:
-            if self.dense is not None:self.dense.close()
+            if self.dense is not None:
+                try:self.dense.close()
+                except BaseException as secondary:print('Constructor cleanup additionally failed: '+type(secondary).__name__,file=sys.stderr)
             raise
 
     def query(self,question,method):
@@ -43,7 +45,7 @@ class RerankerRetriever:
         return {'method':method,'query':query,'channels':raw,'before':before,'reranker':reranker,'results':results,
                 'timing':{'normalization_seconds':(a-start)/1e9,'dense_seconds':(b-a)/1e9,'bm25_seconds':(c-b)/1e9,
                           'fusion_seconds':fusion_seconds,'rerank_seconds':rerank_seconds,'total_seconds':(end-start)/1e9},
-                'channel_timing':{'dense':dense['timing'],'bm25':bm25['timing']},'embedding_observation':self.embedder.observations[-1]}
+                'channel_timing':{'dense':dense['timing'],'bm25':bm25['timing']},'embedding_observation':dict(self.embedder.observations[-1])}
 
     def environment(self):
         memory=None

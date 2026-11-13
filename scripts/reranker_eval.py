@@ -1,6 +1,7 @@
 """Task10 policy, metrics, truncation analysis and model-free evidence replay."""
 from __future__ import annotations
-import json,math,re,subprocess
+import ast,json,math,re,subprocess
+from datetime import datetime,timezone
 from pathlib import Path
 from eval_dataset import ROOT,EVAL,canonical,digest,load_jsonl
 from bm25_index import record,write_new,committed
@@ -21,6 +22,12 @@ NATIVE=('scripts/bge_reranker.py','scripts/reranker_live.py','scripts/reranker_e
 SOURCES=tuple(dict.fromkeys(NATIVE+OLD_SOURCES))
 INPUTS=tuple(dict.fromkeys((CONFIG,'docs/TASK_10_SCOPE.md')+OLD_INPUTS))
 ARTIFACTS=('run_started.json','source_map.json','predictions.jsonl','summary.json','error_analysis.json')
+MODEL_FILES={
+ 'onnx/model.onnx':{'size_bytes':1112459588,'sha256':'15b9a8c3da82eddf263df571281166e00e9308fe19d077084b642ebfcaf06d2b'},
+ 'tokenizer.json':{'size_bytes':17098107,'sha256':'9eb652ac4e40cc093272bbbe0f55d521cf67570060227109b5cdc20945a4489e'},
+ 'tokenizer_config.json':{'size_bytes':443,'sha256':'a1d6bc8734a6f635dc158508bef000f8e2e5a759c7d92f984b2c86e5ff53425b'},
+ 'special_tokens_map.json':{'size_bytes':279,'sha256':'d5469a60db23249c7f8945013d78df30b44b6bf686c6bb4740f4223f77b1b535'},
+ 'config.json':{'size_bytes':799,'sha256':'289adf7ada1eb6b4afa7589a48a032d45a076cf2e46dcdb3b4cabc33be14f708'}}
 
 
 def fields(value,names,what):
@@ -55,7 +62,7 @@ def config():
     for item in cfg['files'].values():
         fields(item,('size_bytes','sha256'),'model identity')
         if type(item['size_bytes']) is not int or item['size_bytes']<1 or not sha(item['sha256']):raise ValueError('Invalid model identity')
-    if cfg['files']['onnx/model.onnx']!={'size_bytes':1112459588,'sha256':'15b9a8c3da82eddf263df571281166e00e9308fe19d077084b642ebfcaf06d2b'}:raise ValueError('Not official pinned ONNX')
+    if canonical(cfg['files'])!=canonical(MODEL_FILES):raise ValueError('Not the complete official pinned model/tokenizer bundle')
     fields(cfg['download'],('official','transport','upstream_tree'),'model download source')
     if cfg['download']['official']!='https://huggingface.co/BAAI/bge-reranker-base/tree/'+cfg['revision']:raise ValueError('Wrong upstream')
     return cfg
@@ -86,6 +93,11 @@ def expanded(channels,known):
             fields(r,('chunk_id',)+extra,'channel result')
             if r['chunk_id'] not in known:raise ValueError('Unknown chunk')
             result[c].append({**known[r['chunk_id']],**{k:r[k] for k in extra}})
+        valid=(all(type(r['distance']) in (int,float) and -1e-5<=r['distance']<=2.00001 for r in rows)
+               if c=='dense' else all(number(r['score'],True) for r in rows))
+        if not valid:raise ValueError('Invalid channel score/distance')
+        key=(lambda r:(r['distance'],r['chunk_id'])) if c=='dense' else (lambda r:(-r['score'],r['chunk_id']))
+        if rows!=sorted(rows,key=key):raise ValueError('Raw channel rank does not follow score/tie order')
     return result
 
 
@@ -97,7 +109,7 @@ def validate_packet(packet,question,method,known,cfg):
     if canonical(before)!=canonical(packet['before']) or len(before)!=80:raise ValueError('RRF source ranks/scores not reproducible')
     rerank=packet['reranker'];budget=BUDGETS[method]
     if not budget:
-        if rerank is not None or packet['results']!=before[:10]:raise ValueError('Control unexpectedly reranked')
+        if rerank is not None or canonical(packet['results'])!=canonical(before[:10]):raise ValueError('Control unexpectedly reranked')
     else:
         fields(rerank,('results','batches','timing'),'reranker output');rows=rerank['results']
         if not isinstance(rows,list) or len(rows)!=budget:raise ValueError('Wrong rerank budget')
@@ -110,9 +122,10 @@ def validate_packet(packet,question,method,known,cfg):
             if r['query_sha256']!=digest(packet['query'].encode()) or not sha(r['passage_sha256']) or not sha(r['input_ids_sha256']):raise ValueError('Invalid model input hashes')
             if any(type(r[k]) is not int for k in ('original_tokens','used_tokens','truncated_tokens')):raise ValueError('Token counts not integer')
             if not 1<=r['used_tokens']<=512 or r['original_tokens']<r['used_tokens'] or r['truncated_tokens']!=r['original_tokens']-r['used_tokens']:raise ValueError('Token/truncation accounting differs')
+            if r['used_tokens']!=min(r['original_tokens'],cfg['max_length']):raise ValueError('Unexpected truncation below the fixed max_length')
         if rows!=sorted(rows,key=lambda r:(-r['score'],r['chunk_id'])):raise ValueError('Logit sort differs')
         expected=[{'chunk_id':r['chunk_id'],'rank':r['rank'],'score':r['score']} for r in rows[:10]]
-        if packet['results']!=expected:raise ValueError('Top10 differs from full reranking')
+        if canonical(packet['results'])!=canonical(expected):raise ValueError('Top10 differs from full reranking')
         batches=rerank['batches'];offsets=list(range(0,budget,8))
         if not isinstance(batches,list) or len(batches)!=len(offsets):raise ValueError('Missing inference batches')
         by_before={r['before_rank']:r for r in rows}
@@ -145,8 +158,23 @@ def validate_packet(packet,question,method,known,cfg):
     return packet
 
 
-def errors_for(questions,rows,split):
+def validate_variant_inputs(variants):
+    """Batch padding may change, but unpadded pair identity cannot change by budget."""
+    fields(variants,METHODS,'cross-variant packets');seen={}
+    keys=('query_sha256','passage_sha256','input_ids_sha256','original_tokens','used_tokens','truncated_tokens')
+    for method in METHODS:
+        packet=variants[method]
+        if not packet['reranker']:continue
+        for row in packet['reranker']['results']:
+            identity={k:row[k] for k in keys};old=seen.setdefault(row['chunk_id'],identity)
+            if canonical(old)!=canonical(identity):raise ValueError('Same query/chunk has inconsistent model input across budgets')
+    return True
+
+
+def errors_for(questions,rows,split,include_partial=False):
     cases=[];counts={m:{'miss_at_5':0,'miss_at_10':0,'no_gold_in_candidates':0,'gold_lost_vs_top80':0,'rerank_worsened_mrr':0} for m in METHODS}
+    if include_partial:
+        for count in counts.values():count.update(partial_prefix_support_loss=0,incomplete_gold_at_5=0,incomplete_gold_at_10=0)
     for q,row in zip(questions,rows):
         if not q['answerable']:continue
         gold=set(q['expected_chunk_ids']);variants=row['variants'];full={r['chunk_id'] for r in variants['top80']['before']};baseline=None
@@ -159,12 +187,20 @@ def errors_for(questions,rows,split):
                    'no_gold_in_candidates':not bool(gold&set(prefix)),
                    'gold_lost_vs_top80':bool(gold&full) and not bool(gold&set(prefix)),
                    'rerank_worsened_mrr':m!='no_rerank' and mrr<baseline}
+            if include_partial:
+                flags.update(partial_prefix_support_loss=bool(gold&set(prefix)) and bool((gold&full)-set(prefix)),
+                             incomplete_gold_at_5=not gold.issubset(ranked[:5]),incomplete_gold_at_10=not gold.issubset(ranked))
             for k,v in flags.items():counts[m][k]+=v
-            if any(flags.values()):cases.append({'question_id':q['question_id'],'method':m,'gold_chunk_ids':sorted(gold),
+            if any(flags.values()):
+                case={'question_id':q['question_id'],'method':m,'gold_chunk_ids':sorted(gold),
                 'candidate_budget':budget,'gold_in_candidates':sorted(gold&set(prefix)),
                 'gold_excluded_by_prefix':sorted((gold&full)-set(prefix)),'first_gold_rank':first,'flags':flags,
-                'before_top10':[r['chunk_id'] for r in packet['before'][:10]],'after_top10':ranked})
-    return {'split':split,'counts':counts,'cases':cases,'interpretation':'Truncation loss: no labelled support in prefix while at least one exists in full80. Missing some gold IDs is listed separately. Test is report-only, never used to retune.'}
+                      'before_top10':[r['chunk_id'] for r in packet['before'][:10]],'after_top10':ranked}
+                if include_partial:case.update(gold_absent_from80=sorted(gold-full),gold_missing_from_top5=sorted(gold-set(ranked[:5])),gold_missing_from_top10=sorted(gold-set(ranked)))
+                cases.append(case)
+    result={'split':split,'counts':counts,'cases':cases,'interpretation':'Truncation loss: no labelled support in prefix while at least one exists in full80. Missing some gold IDs is listed separately. Test is report-only, never used to retune.'}
+    if include_partial:result.update(version='reranker-errors-1.1',partial_support_scope='Partial prefix loss and incomplete Top5/10 support are counted even when Recall and MRR do not decline. Historical1.0 counts are preserved separately.')
+    return result
 
 
 def summarize(questions,rows,split):
@@ -193,6 +229,9 @@ def validate_grant(grant,out,current=False):
     if grant['version']!='reranker-final-report-1.0' or grant['purpose']!='final_report' or grant['used_for_parameter_selection'] is not False:raise ValueError('Wrong test purpose')
     if grant['config']!=config() or grant['allowed_run_directory']!=out.relative_to(ROOT).as_posix() or out!=DIRECTORY/'test':raise ValueError('Test config/directory differs')
     if grant['test_sha256']!=digest((EVAL/'retrieval_test.jsonl').read_bytes()):raise ValueError('Test lock differs')
+    dev_manifest=Path(grant['development_manifest']['path'])
+    if (dev_manifest.name!='run_manifest.json' or not (ROOT/dev_manifest).resolve().is_relative_to(ROOT/'reports/retrieval')
+        or grant['development_summary']['path']!=(dev_manifest.parent/'summary.json').as_posix()):raise ValueError('Development summary must belong to its manifest directory')
     producer_before(grant['source_commit'],grant['prepared_at']);validate_inputs(grant['inputs'],grant['source_commit'],current)
     for name in ('development_manifest','development_summary','verification'):
         item=grant[name];fields(item,('path','size_bytes','sha256'),'grant artifact')
@@ -200,7 +239,7 @@ def validate_grant(grant,out,current=False):
         raw=subprocess.check_output(['git','show',grant['source_commit']+':'+item['path']],cwd=ROOT)
         if digest(raw)!=item['sha256']:raise ValueError('Uncommitted grant artifact')
     dev=replay(ROOT/grant['development_manifest']['path'].rsplit('/',1)[0])
-    if dev['selected_on_this_split']!=grant['selected_method']:raise ValueError('Selection differs from dev')
+    if dev['split']!='dev' or dev['selected_on_this_split']!=grant['selected_method']:raise ValueError('Selection differs from dev')
     verification=json.loads((ROOT/grant['verification']['path']).read_text('utf-8'))
     fields(verification,('version','captured_at','status','passed','total','checks','errors','development_manifest','source_sha256','scope'),'development verification')
     if (verification['version']!='reranker-contract-1.0' or verification['status']!='PASS' or verification['errors']
@@ -245,18 +284,24 @@ def replay(directory):
     manifest=json.loads((directory/'run_manifest.json').read_text('utf-8'))
     fields(manifest,('version','run_id','split','purpose','source_commit','inputs','config','started_at','authorization',
                      'status','completed_at','wall_seconds','environment','load_seconds','warmups','index_snapshots','artifacts'),'run manifest')
-    if manifest['version']!='reranker-run-1.0' or manifest['status']!='COMPLETE' or manifest['split'] not in ('dev','test'):raise ValueError('Incomplete run')
+    if manifest['version'] not in ('reranker-run-1.0','reranker-run-1.1') or manifest['status']!='COMPLETE' or manifest['split'] not in ('dev','test'):raise ValueError('Incomplete run')
     split=manifest['split'];cfg=config()
-    if manifest['config']!=cfg or manifest['purpose']!=('development' if split=='dev' else 'final_report'):raise ValueError('Policy/purpose differs')
+    if canonical(manifest['config'])!=canonical(cfg) or manifest['purpose']!=('development' if split=='dev' else 'final_report'):raise ValueError('Policy/purpose differs')
     validate_inputs(manifest['inputs'],manifest['source_commit'])
+    producer=subprocess.check_output(['git','show',manifest['source_commit']+':scripts/run_reranker_experiment.py'],cwd=ROOT).decode('utf-8')
+    versions={n.value for n in ast.walk(ast.parse(producer)) if isinstance(n,ast.Constant) and isinstance(n.value,str) and n.value.startswith('reranker-run-')}
+    if versions!={manifest['version']}:raise ValueError('Run schema not declared by its producer source')
     producer_before(manifest['source_commit'],manifest['started_at'])
     if not instant(manifest['started_at'])<instant(manifest['completed_at']) or not number(manifest['wall_seconds'],True):raise ValueError('Invalid chronology')
+    duration=(instant(manifest['completed_at'])-instant(manifest['started_at'])).total_seconds()
+    if instant(manifest['completed_at'])>datetime.now(timezone.utc) or abs(manifest['wall_seconds']-duration)>.5:raise ValueError('Future run or inconsistent UTC/monotonic duration')
+    if not number(manifest['load_seconds'],True) or manifest['load_seconds']>=manifest['wall_seconds']:raise ValueError('Invalid model/index load interval')
     fields(manifest['artifacts'],ARTIFACTS,'run artifacts')
     for name,item in manifest['artifacts'].items():
         expected={k:v for k,v in record(directory/name).items() if k!='path'}
         if item!=expected:raise ValueError('Artifact hash mismatch: '+name)
     start=json.loads((directory/'run_started.json').read_text('utf-8'))
-    if start!={k:manifest[k] for k in ('version','run_id','split','purpose','source_commit','inputs','config','started_at','authorization')}:raise ValueError('Start identity differs')
+    if canonical(start)!=canonical({k:manifest[k] for k in ('version','run_id','split','purpose','source_commit','inputs','config','started_at','authorization')}):raise ValueError('Start identity differs')
     if split=='test':
         auth=manifest['authorization']
         if auth!=record(ROOT/auth['path']):raise ValueError('Authorization hash differs')
@@ -281,6 +326,7 @@ def replay(directory):
             ids=[r['chunk_id'] for r in packet['before']]
             if first is not None and ids!=first:raise ValueError('Unstable before candidates across variants')
             first=ids;total+=packet['timing']['total_seconds']
+        validate_variant_inputs(row['variants'])
     warm=manifest['warmups'];fields(warm,METHODS,'warmups')
     for method,packets in warm.items():
         if not isinstance(packets,list) or len(packets)!=3:raise ValueError('Missing actual warmups')
@@ -294,7 +340,7 @@ def replay(directory):
     fields(environment,('captured_at','python','system','machine','processor','logical_cpus','physical_memory_bytes','packages','providers','model_inputs','embedding_runtime'),'environment')
     if environment['packages']!=cfg['packages'] or environment['providers']!=['CPUExecutionProvider'] or environment['model_inputs']!=['input_ids','attention_mask']:raise ValueError('Runtime differs')
     if not instant(manifest['started_at'])<=instant(environment['captured_at'])<instant(manifest['completed_at']):raise ValueError('Environment not captured before measurements')
-    summary=summarize(questions,rows,split);errors=errors_for(questions,rows,split)
+    summary=summarize(questions,rows,split);errors=errors_for(questions,rows,split,include_partial=manifest['version']=='reranker-run-1.1')
     if canonical(summary)!=canonical(json.loads((directory/'summary.json').read_text('utf-8'))):raise ValueError('Summary not reproducible')
     if canonical(errors)!=canonical(json.loads((directory/'error_analysis.json').read_text('utf-8'))):raise ValueError('Error analysis differs')
     return summary
