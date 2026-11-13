@@ -1,0 +1,199 @@
+{
+  "authorization": null,
+  "config": {
+    "bm25_b": 0.75,
+    "bm25_k1": 1.5,
+    "bm25_template": "title_body",
+    "budget_accounting": "Sum of tokenizer counts of each serialized context with two trailing newlines; whole contexts only, skip over-budget contexts, no truncation",
+    "cache": false,
+    "channel_top_k": 80,
+    "child_max_body_tokens": 256,
+    "concurrency": 1,
+    "context_token_budget": 4096,
+    "dense_search": "Exact cosine over original normalized float32 vectors and independently encoded children; same backend for both controls; not a Chroma/HNSW performance comparison",
+    "embedding_config": "config/dense_index.json",
+    "methods": [
+      "base",
+      "child",
+      "parent_child"
+    ],
+    "output_top_k": 10,
+    "parent_policy": "Group originals by document_id and first two section_path levels; preserve member order and individual source references",
+    "quality_policy": "An original labelled unit counts as covered only when union of returned source character spans covers its entire body. No inferred child-level relevance labels. Expanded parent metrics must be accompanied by seed metrics and context size.",
+    "reranker": false,
+    "rrf_k": 60,
+    "selection": "Development conservative budgeted MRR@10, Recall@5, Recall@10 descending; mean context tokens ascending; method order",
+    "special_tokens": false,
+    "split_policy": "Only overlong original bodies; pack complete paragraphs; oversized tables or indivisible paragraphs remain atomic and explicitly flagged; no character cutting or overlap",
+    "tokenizer_json_sha256": "9eb652ac4e40cc093272bbbe0f55d521cf67570060227109b5cdc20945a4489e",
+    "tokenizer_model": "BAAI/bge-reranker-base",
+    "tokenizer_revision": "2cfc18c9415c912f9d8155881c133215df768a70",
+    "tokenizers_version": "0.22.1",
+    "version": "structure-parent-child-1.0",
+    "warmup_question": "请检索足球球门尺寸及场地边界相关资料。",
+    "warmup_repetitions": 3
+  },
+  "inputs": {
+    "config/bm25_b0.json": {
+      "path": "config/bm25_b0.json",
+      "sha256": "a54ed9a2cef6cdb02f1798075ddcb9c48d0a8d47873eac9964cd03274c3097dc",
+      "size_bytes": 903
+    },
+    "config/bm25_dependency.json": {
+      "path": "config/bm25_dependency.json",
+      "sha256": "89a1ab9e2ac2a79cfe16b190ce00a7f6ec4d98b76d0910e73566a88418eb0b1e",
+      "size_bytes": 369
+    },
+    "config/bm25_stopwords.txt": {
+      "path": "config/bm25_stopwords.txt",
+      "sha256": "9846c49af0e318a52b851e981620f99a8d33008cbe84903b92351aa24d059bb7",
+      "size_bytes": 69
+    },
+    "config/bm25_userdict.txt": {
+      "path": "config/bm25_userdict.txt",
+      "sha256": "afaf13e44438d41f552a93c48d3c1d1c4862aea63ef487d170908d96b3c5c255",
+      "size_bytes": 411
+    },
+    "config/dense_index.json": {
+      "path": "config/dense_index.json",
+      "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988",
+      "size_bytes": 1613
+    },
+    "config/structure_parent_child.json": {
+      "path": "config/structure_parent_child.json",
+      "sha256": "e1f0180232768679a409a65c058d2f2dcb6df2337b8d17a49723428c697ebd96",
+      "size_bytes": 1858
+    },
+    "data/eval/dataset_manifest.json": {
+      "path": "data/eval/dataset_manifest.json",
+      "sha256": "778ffc31872d379dbd714cd4e085e075b0a308b7a67d1306e459e978f70a6c66",
+      "size_bytes": 2189
+    },
+    "data/eval/human_review_receipt.json": {
+      "path": "data/eval/human_review_receipt.json",
+      "sha256": "69cf9f772528476c4a3da31a006edc498cfb1b411e56dfd573d033dad6460ec3",
+      "size_bytes": 23411
+    },
+    "data/eval/retrieval_dev.jsonl": {
+      "path": "data/eval/retrieval_dev.jsonl",
+      "sha256": "b24b2dc9c1483495623407c472ca1ff3b0b0a6846b4894892f8d85e9ffb34e04",
+      "size_bytes": 60024
+    },
+    "data/eval/retrieval_test.jsonl": {
+      "path": "data/eval/retrieval_test.jsonl",
+      "sha256": "269d49e7d65c4ad3a97b588f34093a65bbc483c7382f78b0e9cf466eaa759a62",
+      "size_bytes": 78040
+    },
+    "data/manifests/dense_index_manifest.json": {
+      "path": "data/manifests/dense_index_manifest.json",
+      "sha256": "9ea5d0403acb9ccaae8185623cf3cd66f834f555f7d839fa12cdbc8f60b2d557",
+      "size_bytes": 11745
+    },
+    "data/manifests/local_data_files.json": {
+      "path": "data/manifests/local_data_files.json",
+      "sha256": "f10c562de07cad7120ecd16593f2dd32df55fc88391dd74cb5a0d1c96bbee41b",
+      "size_bytes": 11934
+    },
+    "data/manifests/structure_index_manifest.json": {
+      "path": "data/manifests/structure_index_manifest.json",
+      "sha256": "d44dfbc8ba1587672efdf868e10b5bd326ec5cd44303f52f03edfca40ebf8951",
+      "size_bytes": 8533
+    },
+    "data/manifests/structure_parent_child.json": {
+      "path": "data/manifests/structure_parent_child.json",
+      "sha256": "acd6c17c3766439c41c83b4153230601a61cabe34eaceba1faa511b76f1dfe44",
+      "size_bytes": 274238
+    },
+    "docs/TASK_11_SCOPE.md": {
+      "path": "docs/TASK_11_SCOPE.md",
+      "sha256": "637019cad97245cb6e7efbebe53a0339b8bb1b4f911a0b4925e8662dd992e584",
+      "size_bytes": 4419
+    },
+    "reports/chunking_structure.json": {
+      "path": "reports/chunking_structure.json",
+      "sha256": "516cf22da16db484606a7149920d3178b094310a6233d2701401fcf0d34b0dfd",
+      "size_bytes": 2130
+    },
+    "reports/structure_preservation.json": {
+      "path": "reports/structure_preservation.json",
+      "sha256": "1b1765a03fd327cdb0e95aa395b9d71a6548b006b17619c5c10f626f19b632f0",
+      "size_bytes": 71428
+    },
+    "scripts/bge_reranker.py": {
+      "path": "scripts/bge_reranker.py",
+      "sha256": "2654cace523109b1cfe595c1a9eb8bdec9013011325f907dd1ebc7c35bc62946",
+      "size_bytes": 4770
+    },
+    "scripts/bm25_index.py": {
+      "path": "scripts/bm25_index.py",
+      "sha256": "1428b38df11e11f32a075ed4d93720fdcb30bc9009c7dddb5add118c2ee8dc68",
+      "size_bytes": 12301
+    },
+    "scripts/bm25_retrieval_eval.py": {
+      "path": "scripts/bm25_retrieval_eval.py",
+      "sha256": "e4d21c8ed57ed7ddacd2aa1bab8f3773adf32d83c1064f8191ecf27b2daa3d49",
+      "size_bytes": 20471
+    },
+    "scripts/dense_index.py": {
+      "path": "scripts/dense_index.py",
+      "sha256": "9e991910367987021e1ace250c5796c213ad53f14072ecbc4fe1539352f3d875",
+      "size_bytes": 22904
+    },
+    "scripts/dense_retrieval_eval.py": {
+      "path": "scripts/dense_retrieval_eval.py",
+      "sha256": "7a1a522f35c2b8ed8ffb5712b3ec5371b4fbb0b41450c5ef89d03f1c2cb40fd0",
+      "size_bytes": 21211
+    },
+    "scripts/eval_dataset.py": {
+      "path": "scripts/eval_dataset.py",
+      "sha256": "48d47343ce008457d031c54a40019ae8bc3a9c76bdaf2d9cbbc274628e3785c1",
+      "size_bytes": 3147
+    },
+    "scripts/install_bm25_runtime.py": {
+      "path": "scripts/install_bm25_runtime.py",
+      "sha256": "66bd5d9a57a035cad059af266b641c1a142872c82a1315e407743bd093c1d319",
+      "size_bytes": 4313
+    },
+    "scripts/run_bm25_retrieval.py": {
+      "path": "scripts/run_bm25_retrieval.py",
+      "sha256": "d39c9e4cd0b12833239e3005f99e6398b8dab5e593794742cb11eecf16111011",
+      "size_bytes": 11431
+    },
+    "scripts/run_structure_comparison.py": {
+      "path": "scripts/run_structure_comparison.py",
+      "sha256": "161f32ceff6a5600573e1b0a3fac8b07e313c76d5e8d824aa1865d9ea8c688d0",
+      "size_bytes": 7410
+    },
+    "scripts/structure_aware_chunking.py": {
+      "path": "scripts/structure_aware_chunking.py",
+      "sha256": "cb0c9826191cca1fbc31b1f077527ebfdfdf76421d9fc636f10cbe89f6ede7bf",
+      "size_bytes": 9260
+    },
+    "scripts/structure_retrieval_eval.py": {
+      "path": "scripts/structure_retrieval_eval.py",
+      "sha256": "8bd7b9049a6324258eb4d32480ce54b282f1947df131e50ce40e4ec4e1a30038",
+      "size_bytes": 20473
+    },
+    "scripts/structure_retrieval_live.py": {
+      "path": "scripts/structure_retrieval_live.py",
+      "sha256": "2d975fa9f5da6510d25d577a077fdd77cc31f17eef93f3ef7708f6debb7edfc5",
+      "size_bytes": 7816
+    },
+    "scripts/verify_structure_contract.py": {
+      "path": "scripts/verify_structure_contract.py",
+      "sha256": "e99c810591dbd7fdf2453ca6efb265b8f92517823092f3bf07790d6ebefa273f",
+      "size_bytes": 8258
+    },
+    "scripts/verify_structure_delivery.py": {
+      "path": "scripts/verify_structure_delivery.py",
+      "sha256": "75d1e2dd58060b6383a5949eda65398d9f338b29813f5fae423693f8c8313256",
+      "size_bytes": 9119
+    }
+  },
+  "purpose": "development",
+  "run_id": "c78ed2064ef04cccb85181d3f9a2b238",
+  "source_commit": "d5af36c3483148c5eb6e5c910df21fcf42710c70",
+  "split": "dev",
+  "started_at": "2026-11-13T09:45:21.191880+00:00",
+  "version": "structure-run-1.0"
+}

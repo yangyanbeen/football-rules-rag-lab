@@ -1,0 +1,42 @@
+{
+  "definition": "Every incomplete support case retained, even if any-hit Recall remains one; no new child relevance judgements inferred.",
+  "methods": {
+    "base": [
+      {
+        "MRR@10": 0.0,
+        "Recall@10": 0.0,
+        "Recall@5": 0.0,
+        "all_gold_coverage@5": 0.0,
+        "full_gold_coverage@10": 0.0,
+        "included": true,
+        "missing_gold_at_10": [
+          "L01-01"
+        ],
+        "missing_gold_at_5": [
+          "L01-01"
+        ],
+        "question_id": "D001"
+      }
+    ],
+    "child": [
+      {
+        "MRR@10": 0.0,
+        "Recall@10": 0.0,
+        "Recall@5": 0.0,
+        "all_gold_coverage@5": 0.0,
+        "full_gold_coverage@10": 0.0,
+        "included": true,
+        "missing_gold_at_10": [
+          "L01-01"
+        ],
+        "missing_gold_at_5": [
+          "L01-01"
+        ],
+        "question_id": "D001"
+      }
+    ],
+    "parent_child": []
+  },
+  "split": "dev",
+  "version": "structure-errors-1.0"
+}
