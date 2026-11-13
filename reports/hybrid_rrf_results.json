@@ -1,0 +1,411 @@
+{
+  "answer_llm_requests": 0,
+  "artifacts": {
+    "actual_query_smoke": {
+      "path": "reports/retrieval/hybrid_rrf_b0/acceptance/live-smoke.json",
+      "sha256": "3ba03f38d2d7d49a0b69c46a373f066ebe140556f6afc48207b7710eb80f64d4",
+      "size_bytes": 164357
+    },
+    "authorization": {
+      "path": "reports/retrieval/hybrid_rrf_b0/test_authorization.json",
+      "sha256": "8fd32966abab0d446519ae31c489d3eed23a9365ea7f8c3ecc9785fb58e54aa8",
+      "size_bytes": 17207
+    },
+    "development_manifest": {
+      "path": "reports/retrieval/hybrid_rrf_b0/dev/run_manifest.json",
+      "sha256": "4e9a08b2ea8815379d639cea98e2563909128d31e468bee4310fbd42cb2e33de",
+      "size_bytes": 17269
+    },
+    "test_manifest": {
+      "path": "reports/retrieval/hybrid_rrf_b0/test/run_manifest.json",
+      "sha256": "2d7d4eeb975b2bc50b3a6a9f87b0396f9719decb42cfd65a122bb841dd0f212c",
+      "size_bytes": 17440
+    },
+    "test_usage": {
+      "path": "reports/retrieval/hybrid_rrf_b0/test_usage.jsonl",
+      "sha256": "99a8957eec585a174713531f6cb88f1f25a311ac67bb96874358a7f77838d101",
+      "size_bytes": 1387
+    },
+    "verification": {
+      "path": "reports/retrieval/hybrid_rrf_b0/acceptance/contract-development.json",
+      "sha256": "eeddce506ca261699257cb4637eb36a3397cf69d688167ffa66487f67b2f9b95",
+      "size_bytes": 5765
+    }
+  },
+  "baseline_commit": "e5bdb700be09fae983f65ab2f7aae322a2789eda",
+  "config": {
+    "bm25_template": "title_body",
+    "cache": false,
+    "channel_top_k": 10,
+    "channels": [
+      "dense",
+      "bm25"
+    ],
+    "concurrency": 1,
+    "k": 60,
+    "measured_repetitions": 3,
+    "output_top_k": 10,
+    "rrf_ties": "exact rational score then chunk_id ascending",
+    "test_purpose": "final_report",
+    "union_order": "round robin dense first; skip repeated chunk_id",
+    "version": "hybrid-rrf-1.0",
+    "warmup_repetitions": 3
+  },
+  "data_records": 99,
+  "decision": "RRF improves over Dense but ties BM25 recall and lowers BM25 MRR on this fixed test. Keep as an explicit candidate-generation option, not the best single ranking baseline.",
+  "development": {
+    "config": {
+      "bm25_template": "title_body",
+      "cache": false,
+      "channel_top_k": 10,
+      "channels": [
+        "dense",
+        "bm25"
+      ],
+      "concurrency": 1,
+      "k": 60,
+      "measured_repetitions": 3,
+      "output_top_k": 10,
+      "rrf_ties": "exact rational score then chunk_id ascending",
+      "test_purpose": "final_report",
+      "union_order": "round robin dense first; skip repeated chunk_id",
+      "version": "hybrid-rrf-1.0",
+      "warmup_repetitions": 3
+    },
+    "full_union_diagnostic": {
+      "MRR": null,
+      "answerable_denominator": 32,
+      "any_support_coverage": 1.0,
+      "max_budget": 20,
+      "max_size": 20,
+      "mean_size": 15.8,
+      "min_size": 12,
+      "ranked": false,
+      "scope": "Unranked union coverage only; not an equal-Top10 quality comparison"
+    },
+    "latency": {
+      "fusion_only": {
+        "P50_ms": 0.22610000000000002,
+        "P95_ms": 0.265995,
+        "mean_ms": 0.23297666666666667,
+        "samples": 120
+      },
+      "original_channel_totals": {
+        "bm25": {
+          "P50_ms": 0.26659999999999995,
+          "P95_ms": 0.34293499999999993,
+          "mean_ms": 0.25732749999999993,
+          "samples": 120
+        },
+        "dense": {
+          "P50_ms": 264.67600000000004,
+          "P95_ms": 312.11546,
+          "mean_ms": 265.27032750000006,
+          "samples": 120
+        }
+      },
+      "scope": "Reused channel measurements and new fusion processing measured separately; no synthetic end-to-end sum"
+    },
+    "llm_requests": 0,
+    "methods": {
+      "bm25": {
+        "quality": {
+          "answerable_denominator": 32,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.8932291666666666,
+            "Recall@10": 0.96875,
+            "Recall@5": 0.96875,
+            "all_gold_coverage@5": 0.96875
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "questions": 40,
+          "unanswerable_excluded": 8
+        }
+      },
+      "dense": {
+        "quality": {
+          "answerable_denominator": 32,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.890625,
+            "Recall@10": 0.96875,
+            "Recall@5": 0.96875,
+            "all_gold_coverage@5": 0.953125
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "questions": 40,
+          "unanswerable_excluded": 8
+        }
+      },
+      "rrf": {
+        "quality": {
+          "answerable_denominator": 32,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.9296875,
+            "Recall@10": 1.0,
+            "Recall@5": 1.0,
+            "all_gold_coverage@5": 1.0
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "questions": 40,
+          "unanswerable_excluded": 8
+        }
+      },
+      "union": {
+        "quality": {
+          "answerable_denominator": 32,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.8958333333333333,
+            "Recall@10": 1.0,
+            "Recall@5": 1.0,
+            "all_gold_coverage@5": 1.0
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "questions": 40,
+          "unanswerable_excluded": 8
+        }
+      }
+    },
+    "nDCG_reason": "No graded relevance labels",
+    "new_channel_retrieval_requests": 0,
+    "rrf_vs_single_channels": {
+      "bm25": {
+        "difference": {
+          "MRR@10": 0.03645833333333337,
+          "Recall@10": 0.03125,
+          "Recall@5": 0.03125
+        },
+        "per_metric": {
+          "MRR@10": "higher",
+          "Recall@10": "higher",
+          "Recall@5": "higher"
+        },
+        "verdict": "superior"
+      },
+      "dense": {
+        "difference": {
+          "MRR@10": 0.0390625,
+          "Recall@10": 0.03125,
+          "Recall@5": 0.03125
+        },
+        "per_metric": {
+          "MRR@10": "higher",
+          "Recall@10": "higher",
+          "Recall@5": "higher"
+        },
+        "verdict": "superior"
+      }
+    },
+    "run_id": "b776f162c48a4530b27522eb77b734f0",
+    "split": "dev",
+    "version": "hybrid-summary-1.0"
+  },
+  "generated_at": "2026-11-13T02:49:39.536842+00:00",
+  "limitations": [
+    "The locked questions were previously reported in Task7/8; this is not a new unseen holdout.",
+    "Saved original Top10 per channel; no evidence about deeper Top20/40/80 candidates.",
+    "Four methods have the same Top10 output cap; unranked union of at most20 is a separate coverage diagnostic.",
+    "New fusion timings include validation/adapters and all four output constructions; historical channel timings are not added into a fake end-to-end measurement.",
+    "No graded relevance, answer accuracy, QPS, production SLA or universal fusion benefit claim.",
+    "Environment metadata collected after the two fusion runs on the same host; original channel environment remains in original manifests."
+  ],
+  "new_channel_test_retrieval_requests": 0,
+  "new_formal_offline_test_fusion_runs": 1,
+  "source_commit": "ae3c3b5ae2b06c1896e30ccda21fb079811ae8d6",
+  "status": "COMPLETE",
+  "test": {
+    "config": {
+      "bm25_template": "title_body",
+      "cache": false,
+      "channel_top_k": 10,
+      "channels": [
+        "dense",
+        "bm25"
+      ],
+      "concurrency": 1,
+      "k": 60,
+      "measured_repetitions": 3,
+      "output_top_k": 10,
+      "rrf_ties": "exact rational score then chunk_id ascending",
+      "test_purpose": "final_report",
+      "union_order": "round robin dense first; skip repeated chunk_id",
+      "version": "hybrid-rrf-1.0",
+      "warmup_repetitions": 3
+    },
+    "full_union_diagnostic": {
+      "MRR": null,
+      "answerable_denominator": 40,
+      "any_support_coverage": 1.0,
+      "max_budget": 20,
+      "max_size": 19,
+      "mean_size": 15.66,
+      "min_size": 13,
+      "ranked": false,
+      "scope": "Unranked union coverage only; not an equal-Top10 quality comparison"
+    },
+    "latency": {
+      "fusion_only": {
+        "P50_ms": 0.22390000000000002,
+        "P95_ms": 0.27956999999999993,
+        "mean_ms": 0.24649533333333343,
+        "samples": 150
+      },
+      "original_channel_totals": {
+        "bm25": {
+          "P50_ms": 0.26535000000000003,
+          "P95_ms": 0.3775349999999999,
+          "mean_ms": 0.27653733333333336,
+          "samples": 150
+        },
+        "dense": {
+          "P50_ms": 270.1763,
+          "P95_ms": 312.82121,
+          "mean_ms": 272.1381806666667,
+          "samples": 150
+        }
+      },
+      "scope": "Reused channel measurements and new fusion processing measured separately; no synthetic end-to-end sum"
+    },
+    "llm_requests": 0,
+    "methods": {
+      "bm25": {
+        "quality": {
+          "answerable_denominator": 40,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.95,
+            "Recall@10": 1.0,
+            "Recall@5": 0.975,
+            "all_gold_coverage@5": 0.95625
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "questions": 50,
+          "unanswerable_excluded": 10
+        }
+      },
+      "dense": {
+        "quality": {
+          "answerable_denominator": 40,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.8604166666666668,
+            "Recall@10": 0.95,
+            "Recall@5": 0.95,
+            "all_gold_coverage@5": 0.93125
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "questions": 50,
+          "unanswerable_excluded": 10
+        }
+      },
+      "rrf": {
+        "quality": {
+          "answerable_denominator": 40,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.9175000000000001,
+            "Recall@10": 1.0,
+            "Recall@5": 0.975,
+            "all_gold_coverage@5": 0.975
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "questions": 50,
+          "unanswerable_excluded": 10
+        }
+      },
+      "union": {
+        "quality": {
+          "answerable_denominator": 40,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.8862500000000001,
+            "Recall@10": 1.0,
+            "Recall@5": 1.0,
+            "all_gold_coverage@5": 0.99375
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "questions": 50,
+          "unanswerable_excluded": 10
+        }
+      }
+    },
+    "nDCG_reason": "No graded relevance labels",
+    "new_channel_retrieval_requests": 0,
+    "rrf_vs_single_channels": {
+      "bm25": {
+        "difference": {
+          "MRR@10": -0.03249999999999986,
+          "Recall@10": 0.0,
+          "Recall@5": 0.0
+        },
+        "per_metric": {
+          "MRR@10": "lower",
+          "Recall@10": "tied",
+          "Recall@5": "tied"
+        },
+        "verdict": "inferior"
+      },
+      "dense": {
+        "difference": {
+          "MRR@10": 0.057083333333333264,
+          "Recall@10": 0.050000000000000044,
+          "Recall@5": 0.025000000000000022
+        },
+        "per_metric": {
+          "MRR@10": "higher",
+          "Recall@10": "higher",
+          "Recall@5": "higher"
+        },
+        "verdict": "superior"
+      }
+    },
+    "run_id": "9b79750d5a1a458cae7faa4922fd206d",
+    "split": "test",
+    "version": "hybrid-summary-1.0"
+  },
+  "test_used_for_parameter_selection": false,
+  "version": "hybrid-rrf-results-1.0"
+}
