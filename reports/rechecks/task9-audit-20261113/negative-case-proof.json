@@ -1,0 +1,13 @@
+{
+  "captured_at": "2026-11-13T03:34:32.225507+00:00",
+  "expected_gate_status": "FAIL",
+  "expected_invalid_receipt_rejected": true,
+  "failed_checks": [
+    "17_actual_query_checks_recompute_and_sources_match_producer"
+  ],
+  "new_test_fusion_runs": 0,
+  "new_test_queries": 0,
+  "observed_gate_status": "FAIL",
+  "scope": "Deliberately wrong isolated live score. 29/30 is the expected rejection, not a failed valid delivery.",
+  "status": "PASS"
+}
