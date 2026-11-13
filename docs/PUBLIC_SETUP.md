@@ -97,3 +97,8 @@ UiCapture 必须来自已完成的真实浏览器操作；也可传历史采集�
 任务九修复补充在[TASK_09_SUPPLEMENT](../reports/TASK_09_SUPPLEMENT.md)。新真实查询检查生成绑定生产提交与索引前后哈希的1.1回执；完整门禁可传`--live-report`，原回执保留并按历史源码验证。无效输出和空问题会在初始化模型前拒绝。
 
 见[RRF_EXPERIMENT](RRF_EXPERIMENT.md)。公开克隆无需模型和语料即可执行`python -S scripts/run_hybrid_retrieval.py replay --run-dir reports/retrieval/hybrid_rrf_b0/test --output reports/rechecks/my-rrf-replay.json`核验已有结果。运行新的dev仍要求原人工审核账本；实际query须恢复原Dense/BM25索引、固定依赖与本机Ollama/BGE-M3，不调用答案模型。四方法保持相同Top10输出上限，完整并集覆盖另列；RRF在本集MRR低于BM25，不能称全面提升。
+
+
+## 任务十：官方BGE-Reranker实验
+
+复用现有262项核心依赖与原Dense/BM25索引，执行`.venv/Scripts/python.exe -B scripts/install_reranker_model.py --download`将固定约1.1GB官方ONNX与分词配置写入被忽略的.models，再用`run_reranker_experiment.py query --question "请查找球场球门的规定尺寸资料。" --method top40`。参数、CPU耗时、完整命令和公开无模型复算见[RERANKER_EXPERIMENT](RERANKER_EXPERIMENT.md)。公开仓库没有全文和权重；原测试账本已消耗，不能直接重复正式test或删除旧证据。

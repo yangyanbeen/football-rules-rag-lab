@@ -1,5 +1,7 @@
 # 报告阅读说明
 
+任务十最新交付见[TASK_10_DELIVERY](TASK_10_DELIVERY.md)、[reranker_results.json](reranker_results.json)。四个实际候选预算、前后排名、逐批次计时、截断/负收益案例在retrieval/bge_reranker_b0。当前专项74/74、独立公开35/35，冷启动模拟12/12及实际8/8；完整门禁delivery-final.json。旧任务报告保持历史字节。
+
 任务九最新缺陷补齐见[TASK_09_SUPPLEMENT](TASK_09_SUPPLEMENT.md)，新证据rechecks/task9-audit-20261113。29/29新增回归、56/56原专项、30/30完整、17/17真实、10/10公开复算通过。expected-invalid-live-gate.json的29/30 FAIL是故意改错证据的正确拒绝，negative-case-proof.json确认反例通过，不是有效交付失败；所有原任务九报告和测试保持原字节。
 
 最新任务九见[TASK_09_DELIVERY](TASK_09_DELIVERY.md)及[hybrid_rrf_results.json](hybrid_rrf_results.json)。retrieval/hybrid_rrf_b0保存双路原始排名/分数/计时、四方法输出、开发案例和测试聚合；完整30/30、专项56/56、实际双路17/17、公开副本7/7通过，原任务八35/35复验。正式RRF的Recall@5/10与BM25持平、MRR低0.0325；负收益保留，没有新检索原测试题或生成答案。

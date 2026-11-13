@@ -1,0 +1,218 @@
+{
+  "cases": [
+    {
+      "after_top10": [
+        "L16-04",
+        "L01-05",
+        "L13-03",
+        "L15-02",
+        "L09-02",
+        "L12-05",
+        "L14-02",
+        "L01-01",
+        "L11-05",
+        "L13-05"
+      ],
+      "before_top10": [
+        "L16-04",
+        "L01-05",
+        "L13-03",
+        "L15-02",
+        "L09-02",
+        "L12-05",
+        "L14-02",
+        "L01-01",
+        "L11-05",
+        "L13-05"
+      ],
+      "candidate_budget": 80,
+      "first_gold_rank": 8,
+      "flags": {
+        "gold_lost_vs_top80": false,
+        "miss_at_10": false,
+        "miss_at_5": true,
+        "no_gold_in_candidates": false,
+        "rerank_worsened_mrr": false
+      },
+      "gold_chunk_ids": [
+        "L01-01"
+      ],
+      "gold_excluded_by_prefix": [],
+      "gold_in_candidates": [
+        "L01-01"
+      ],
+      "method": "no_rerank",
+      "question_id": "T003"
+    },
+    {
+      "after_top10": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L10-02",
+        "L13-04",
+        "L14-01",
+        "L01-06",
+        "L13-01",
+        "L14-05"
+      ],
+      "before_top10": [
+        "L07-03",
+        "L10-02",
+        "L14-01",
+        "L13-01",
+        "L13-07",
+        "L14-03",
+        "L07-01",
+        "L01-06",
+        "L14-04",
+        "L03-04"
+      ],
+      "candidate_budget": 20,
+      "first_gold_rank": 2,
+      "flags": {
+        "gold_lost_vs_top80": false,
+        "miss_at_10": false,
+        "miss_at_5": false,
+        "no_gold_in_candidates": false,
+        "rerank_worsened_mrr": true
+      },
+      "gold_chunk_ids": [
+        "L07-03",
+        "L14-01"
+      ],
+      "gold_excluded_by_prefix": [],
+      "gold_in_candidates": [
+        "L07-03",
+        "L14-01"
+      ],
+      "method": "top20",
+      "question_id": "T034"
+    },
+    {
+      "after_top10": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L10-02",
+        "L13-05",
+        "L13-04",
+        "L14-01",
+        "L14-02",
+        "L01-06"
+      ],
+      "before_top10": [
+        "L07-03",
+        "L10-02",
+        "L14-01",
+        "L13-01",
+        "L13-07",
+        "L14-03",
+        "L07-01",
+        "L01-06",
+        "L14-04",
+        "L03-04"
+      ],
+      "candidate_budget": 40,
+      "first_gold_rank": 2,
+      "flags": {
+        "gold_lost_vs_top80": false,
+        "miss_at_10": false,
+        "miss_at_5": false,
+        "no_gold_in_candidates": false,
+        "rerank_worsened_mrr": true
+      },
+      "gold_chunk_ids": [
+        "L07-03",
+        "L14-01"
+      ],
+      "gold_excluded_by_prefix": [],
+      "gold_in_candidates": [
+        "L07-03",
+        "L14-01"
+      ],
+      "method": "top40",
+      "question_id": "T034"
+    },
+    {
+      "after_top10": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L10-02",
+        "L13-05",
+        "L13-04",
+        "L14-01",
+        "L14-02",
+        "L01-06"
+      ],
+      "before_top10": [
+        "L07-03",
+        "L10-02",
+        "L14-01",
+        "L13-01",
+        "L13-07",
+        "L14-03",
+        "L07-01",
+        "L01-06",
+        "L14-04",
+        "L03-04"
+      ],
+      "candidate_budget": 80,
+      "first_gold_rank": 2,
+      "flags": {
+        "gold_lost_vs_top80": false,
+        "miss_at_10": false,
+        "miss_at_5": false,
+        "no_gold_in_candidates": false,
+        "rerank_worsened_mrr": true
+      },
+      "gold_chunk_ids": [
+        "L07-03",
+        "L14-01"
+      ],
+      "gold_excluded_by_prefix": [],
+      "gold_in_candidates": [
+        "L07-03",
+        "L14-01"
+      ],
+      "method": "top80",
+      "question_id": "T034"
+    }
+  ],
+  "counts": {
+    "no_rerank": {
+      "gold_lost_vs_top80": 0,
+      "miss_at_10": 0,
+      "miss_at_5": 1,
+      "no_gold_in_candidates": 0,
+      "rerank_worsened_mrr": 0
+    },
+    "top20": {
+      "gold_lost_vs_top80": 0,
+      "miss_at_10": 0,
+      "miss_at_5": 0,
+      "no_gold_in_candidates": 0,
+      "rerank_worsened_mrr": 1
+    },
+    "top40": {
+      "gold_lost_vs_top80": 0,
+      "miss_at_10": 0,
+      "miss_at_5": 0,
+      "no_gold_in_candidates": 0,
+      "rerank_worsened_mrr": 1
+    },
+    "top80": {
+      "gold_lost_vs_top80": 0,
+      "miss_at_10": 0,
+      "miss_at_5": 0,
+      "no_gold_in_candidates": 0,
+      "rerank_worsened_mrr": 1
+    }
+  },
+  "interpretation": "Truncation loss: no labelled support in prefix while at least one exists in full80. Missing some gold IDs is listed separately. Test is report-only, never used to retune.",
+  "split": "test"
+}

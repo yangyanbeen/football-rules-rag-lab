@@ -1,0 +1,3558 @@
+{
+  "artifacts": {
+    "dev": {
+      "error_analysis.json": {
+        "path": "reports/retrieval/bge_reranker_b0/dev/error_analysis.json",
+        "sha256": "f4b9617c7e3a02497d0611c9a6c772b05221167bcf68a0d0fdd577098244092e",
+        "size_bytes": 5358
+      },
+      "predictions.jsonl": {
+        "path": "reports/retrieval/bge_reranker_b0/dev/predictions.jsonl",
+        "sha256": "ca6067865586178f628e66f35a426773226fd06753b33ed5cfc8fd8452c3af10",
+        "size_bytes": 5492199
+      },
+      "rank_changes.json": {
+        "path": "reports/retrieval/bge_reranker_b0/dev/rank_changes.json",
+        "sha256": "29870955d1591292225234c98146ba59b736c21cde81b3f984e43522b897ddea",
+        "size_bytes": 149015
+      },
+      "run_manifest.json": {
+        "path": "reports/retrieval/bge_reranker_b0/dev/run_manifest.json",
+        "sha256": "559d70e4eb2644c4ef3115c42688d2f8407d8b31bef4d3e37d534ab4caa6eb1c",
+        "size_bytes": 688236
+      },
+      "summary.json": {
+        "path": "reports/retrieval/bge_reranker_b0/dev/summary.json",
+        "sha256": "66c5419b35f6f8a388aa7f07904f223fff61f2e238323f10edda5580554dec48",
+        "size_bytes": 48069
+      }
+    },
+    "test": {
+      "error_analysis.json": {
+        "path": "reports/retrieval/bge_reranker_b0/test/error_analysis.json",
+        "sha256": "aa5993dcf9e241cb1a0aba1386cde7dcb9c39a63ac2591a2636907c2a7878729",
+        "size_bytes": 4571
+      },
+      "predictions.jsonl": {
+        "path": "reports/retrieval/bge_reranker_b0/test/predictions.jsonl",
+        "sha256": "3335bd23973d19284c4435f3e5628f489228a815a804c92d1b32c287ee62d74b",
+        "size_bytes": 6915313
+      },
+      "rank_changes.json": {
+        "path": "reports/retrieval/bge_reranker_b0/test/rank_changes.json",
+        "sha256": "128d5779b04b8fd09babb6859a0b02c6932b46d95ee9071c8e5b8dd82b3401a4",
+        "size_bytes": 187517
+      },
+      "run_manifest.json": {
+        "path": "reports/retrieval/bge_reranker_b0/test/run_manifest.json",
+        "sha256": "c1be965162341e400c3aaa2a5af20ebd0c1415e361634af8a99c0e1f05b2b88a",
+        "size_bytes": 688471
+      },
+      "summary.json": {
+        "path": "reports/retrieval/bge_reranker_b0/test/summary.json",
+        "sha256": "f52820a9316ef5b50ce5423c423917502c8123c08dadeaa570db6f1692c3cda5",
+        "size_bytes": 58499
+      }
+    }
+  },
+  "config": {
+    "batch_size": 8,
+    "bm25_template": "title_body",
+    "cache": false,
+    "channel_top_k": 80,
+    "concurrency": 1,
+    "download": {
+      "official": "https://huggingface.co/BAAI/bge-reranker-base/tree/2cfc18c9415c912f9d8155881c133215df768a70",
+      "transport": "hf-mirror.com pinned revision for ONNX/tokenizer; BAAI ModelScope 313e6ba57eab108a5b2e9e3c6810840755528349 for small configs; upstream LFS SHA256 and Git blob OIDs verified",
+      "upstream_tree": "https://hf-mirror.com/api/models/BAAI/bge-reranker-base/tree/2cfc18c9415c912f9d8155881c133215df768a70?recursive=true&expand=false"
+    },
+    "files": {
+      "config.json": {
+        "sha256": "289adf7ada1eb6b4afa7589a48a032d45a076cf2e46dcdb3b4cabc33be14f708",
+        "size_bytes": 799
+      },
+      "onnx/model.onnx": {
+        "sha256": "15b9a8c3da82eddf263df571281166e00e9308fe19d077084b642ebfcaf06d2b",
+        "size_bytes": 1112459588
+      },
+      "special_tokens_map.json": {
+        "sha256": "d5469a60db23249c7f8945013d78df30b44b6bf686c6bb4740f4223f77b1b535",
+        "size_bytes": 279
+      },
+      "tokenizer.json": {
+        "sha256": "9eb652ac4e40cc093272bbbe0f55d521cf67570060227109b5cdc20945a4489e",
+        "size_bytes": 17098107
+      },
+      "tokenizer_config.json": {
+        "sha256": "a1d6bc8734a6f635dc158508bef000f8e2e5a759c7d92f984b2c86e5ff53425b",
+        "size_bytes": 443
+      }
+    },
+    "fused_top_k": 80,
+    "max_length": 512,
+    "measured_repetitions": 1,
+    "methods": [
+      "no_rerank",
+      "top20",
+      "top40",
+      "top80"
+    ],
+    "model_id": "BAAI/bge-reranker-base",
+    "output_top_k": 10,
+    "packages": {
+      "numpy": "1.26.4",
+      "onnxruntime": "1.19.2",
+      "tokenizers": "0.22.1"
+    },
+    "passage": "section_path joined by space/slash/space + two newlines + original content_zh",
+    "percentile_method": "linear interpolation at q*(n-1)",
+    "precision": "official FP32 ONNX, no quantization",
+    "provider": "CPUExecutionProvider",
+    "revision": "2cfc18c9415c912f9d8155881c133215df768a70",
+    "rrf_k": 60,
+    "selection": "dev MRR@10 descending, Recall@5 descending, Recall@10 descending, total P50 ascending, method order",
+    "threads": 8,
+    "tokenization": "query/passage pair; longest_first; right truncation; dynamic batch right padding; pad_id=1",
+    "variant_order": "rotate methods left by query index modulo four",
+    "version": "bge-reranker-b0-1.0",
+    "warmup_question": "请查找球场球门的规定尺寸资料。",
+    "warmup_repetitions": 3
+  },
+  "decision": "Freeze the development-selected method top40 for this experiment. Test is report-only; retain the unchanged Task6 application until a separately authorized integration task.",
+  "development": {
+    "answer_llm_requests": 0,
+    "latency_scope": "One actual full chain per query per method, rotating order, serial CPU, no cache; model/index load and warmups excluded. All questions including unanswerable included. P50/P95 descriptive, not production SLA.",
+    "methods": {
+      "no_rerank": {
+        "candidate_budget": 80,
+        "latency": {
+          "rerank_seconds": {
+            "P50_ms": 0.0,
+            "P95_ms": 0.0,
+            "mean_ms": 0.0,
+            "samples": 40
+          },
+          "total_seconds": {
+            "P50_ms": 296.4958,
+            "P95_ms": 348.83186499999994,
+            "mean_ms": 297.8767475,
+            "samples": 40
+          }
+        },
+        "quality": {
+          "answerable_denominator": 32,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.9166666666666666,
+            "Recall@10": 0.96875,
+            "Recall@5": 0.96875,
+            "all_gold_coverage@5": 0.96875
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "per_question": [
+            {
+              "MRR@10": 0.0,
+              "Recall@10": 0.0,
+              "Recall@5": 0.0,
+              "all_gold_coverage@5": 0.0,
+              "first_relevant_rank_within_10": null,
+              "question_id": "D001",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D002",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D003",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D004",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D005",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D006",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D007",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D008",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D009",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D010",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D011",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D012",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D013",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D014",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D015",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D016",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D017",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "D018",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "D019",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.3333333333333333,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 3,
+              "question_id": "D020",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D021",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D022",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D023",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D024",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D025",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D026",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D027",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D028",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D029",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D030",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D031",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D032",
+              "retrieval_metric_included": true
+            },
+            {
+              "question_id": "D033",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D034",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D035",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D036",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D037",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D038",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D039",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D040",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            }
+          ],
+          "questions": 40,
+          "unanswerable_excluded": 8
+        },
+        "reranker_enabled": false,
+        "scored_pairs": 0,
+        "truncated_pairs": 0
+      },
+      "top20": {
+        "candidate_budget": 20,
+        "latency": {
+          "rerank_seconds": {
+            "P50_ms": 2602.9795999999997,
+            "P95_ms": 3201.452845,
+            "mean_ms": 2644.4912424999998,
+            "samples": 40
+          },
+          "total_seconds": {
+            "P50_ms": 2890.18665,
+            "P95_ms": 3517.836465,
+            "mean_ms": 2934.3195225000004,
+            "samples": 40
+          }
+        },
+        "quality": {
+          "answerable_denominator": 32,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.9166666666666666,
+            "Recall@10": 0.96875,
+            "Recall@5": 0.96875,
+            "all_gold_coverage@5": 0.96875
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "per_question": [
+            {
+              "MRR@10": 0.0,
+              "Recall@10": 0.0,
+              "Recall@5": 0.0,
+              "all_gold_coverage@5": 0.0,
+              "first_relevant_rank_within_10": null,
+              "question_id": "D001",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D002",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D003",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D004",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D005",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D006",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D007",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D008",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D009",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D010",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "D011",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D012",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D013",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D014",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D015",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D016",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D017",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "D018",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D019",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.3333333333333333,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 3,
+              "question_id": "D020",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D021",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D022",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D023",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D024",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D025",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D026",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D027",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D028",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D029",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D030",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D031",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D032",
+              "retrieval_metric_included": true
+            },
+            {
+              "question_id": "D033",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D034",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D035",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D036",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D037",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D038",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D039",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D040",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            }
+          ],
+          "questions": 40,
+          "unanswerable_excluded": 8
+        },
+        "reranker_enabled": true,
+        "scored_pairs": 800,
+        "truncated_pairs": 0
+      },
+      "top40": {
+        "candidate_budget": 40,
+        "latency": {
+          "rerank_seconds": {
+            "P50_ms": 5467.950350000001,
+            "P95_ms": 6020.48885,
+            "mean_ms": 5479.612970000001,
+            "samples": 40
+          },
+          "total_seconds": {
+            "P50_ms": 5782.4344,
+            "P95_ms": 6356.326725,
+            "mean_ms": 5779.154089999998,
+            "samples": 40
+          }
+        },
+        "quality": {
+          "answerable_denominator": 32,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.9479166666666666,
+            "Recall@10": 1.0,
+            "Recall@5": 1.0,
+            "all_gold_coverage@5": 1.0
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "per_question": [
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D001",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D002",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D003",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D004",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D005",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D006",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D007",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D008",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D009",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D010",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "D011",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D012",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D013",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D014",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D015",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D016",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D017",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "D018",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D019",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.3333333333333333,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 3,
+              "question_id": "D020",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D021",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D022",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D023",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D024",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D025",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D026",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D027",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D028",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D029",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D030",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D031",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D032",
+              "retrieval_metric_included": true
+            },
+            {
+              "question_id": "D033",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D034",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D035",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D036",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D037",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D038",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D039",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D040",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            }
+          ],
+          "questions": 40,
+          "unanswerable_excluded": 8
+        },
+        "reranker_enabled": true,
+        "scored_pairs": 1600,
+        "truncated_pairs": 0
+      },
+      "top80": {
+        "candidate_budget": 80,
+        "latency": {
+          "rerank_seconds": {
+            "P50_ms": 10503.3353,
+            "P95_ms": 11122.33771,
+            "mean_ms": 10470.420742499997,
+            "samples": 40
+          },
+          "total_seconds": {
+            "P50_ms": 10778.177849999998,
+            "P95_ms": 11503.376789999998,
+            "mean_ms": 10772.060117500001,
+            "samples": 40
+          }
+        },
+        "quality": {
+          "answerable_denominator": 32,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.9479166666666666,
+            "Recall@10": 1.0,
+            "Recall@5": 1.0,
+            "all_gold_coverage@5": 1.0
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "per_question": [
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D001",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D002",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D003",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D004",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D005",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D006",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D007",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D008",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D009",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D010",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "D011",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D012",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D013",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D014",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D015",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D016",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D017",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "D018",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D019",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.3333333333333333,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 3,
+              "question_id": "D020",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D021",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D022",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D023",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D024",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D025",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D026",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D027",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D028",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D029",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D030",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D031",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "D032",
+              "retrieval_metric_included": true
+            },
+            {
+              "question_id": "D033",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D034",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D035",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D036",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D037",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D038",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D039",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "D040",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            }
+          ],
+          "questions": 40,
+          "unanswerable_excluded": 8
+        },
+        "reranker_enabled": true,
+        "scored_pairs": 3200,
+        "truncated_pairs": 0
+      }
+    },
+    "nDCG@10": null,
+    "nDCG_reason": "No graded relevance labels; not computed.",
+    "new_embedding_queries": 160,
+    "new_reranker_pairs": 5600,
+    "selected_on_this_split": "top40",
+    "split": "dev",
+    "version": "reranker-summary-1.0",
+    "vs_no_rerank": {
+      "no_rerank": {
+        "MRR@10": 0.0,
+        "Recall@10": 0.0,
+        "Recall@5": 0.0
+      },
+      "top20": {
+        "MRR@10": 0.0,
+        "Recall@10": 0.0,
+        "Recall@5": 0.0
+      },
+      "top40": {
+        "MRR@10": 0.03125,
+        "Recall@10": 0.03125,
+        "Recall@5": 0.03125
+      },
+      "top80": {
+        "MRR@10": 0.03125,
+        "Recall@10": 0.03125,
+        "Recall@5": 0.03125
+      }
+    }
+  },
+  "generated_at": "2026-11-13T04:59:59.756963+00:00",
+  "limitations": [
+    "99 fixed Wikipedia-derived Chinese chunks; source/version qualifications remain; not authoritative football advice.",
+    "40dev/50test; retrieval quality uses32/40 answerable questions. No answer, citation, refusal accuracy or QPS measured.",
+    "This locked test was previously used in Tasks7–9; it is not a new unseen holdout.",
+    "One actual measurement per query per method after3warmups per method, rotating order; ordinary desktop CPU, no confidence intervals or isolated production load.",
+    "Original Task9 Top10/channel scores are historical context only; Task10 equal-condition control uses new actual Top80/channel.",
+    "No graded relevance labels; nDCG is null. Cross-encoder logits are not probabilities.",
+    "Public replay recomputes fusion, sorting, metrics, errors and timing; it cannot rederive model logits or private passage tokenization without separately restored pinned model/corpus."
+  ],
+  "observed_top40_vs_top80": {
+    "scope": "Descriptive paired-query sample across four independently executed methods; not a production speedup guarantee or automatic selection of40.",
+    "test_metric_difference": {
+      "MRR@10": 0.0,
+      "Recall@10": 0.0,
+      "Recall@5": 0.0
+    },
+    "test_rerank_P50_relative_reduction": 0.49257970271242046
+  },
+  "selected_method_on_dev": "top40",
+  "source_commit": "f6be8bd5252da48eb5c9253de7ddde7108e88643",
+  "test": {
+    "answer_llm_requests": 0,
+    "latency_scope": "One actual full chain per query per method, rotating order, serial CPU, no cache; model/index load and warmups excluded. All questions including unanswerable included. P50/P95 descriptive, not production SLA.",
+    "methods": {
+      "no_rerank": {
+        "candidate_budget": 80,
+        "latency": {
+          "rerank_seconds": {
+            "P50_ms": 0.0,
+            "P95_ms": 0.0,
+            "mean_ms": 0.0,
+            "samples": 50
+          },
+          "total_seconds": {
+            "P50_ms": 358.41985,
+            "P95_ms": 397.622415,
+            "mean_ms": 358.08822599999985,
+            "samples": 50
+          }
+        },
+        "quality": {
+          "answerable_denominator": 40,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.9364583333333334,
+            "Recall@10": 1.0,
+            "Recall@5": 0.975,
+            "all_gold_coverage@5": 0.975
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "per_question": [
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T001",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T002",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.125,
+              "Recall@10": 1.0,
+              "Recall@5": 0.0,
+              "all_gold_coverage@5": 0.0,
+              "first_relevant_rank_within_10": 8,
+              "question_id": "T003",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T004",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T005",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T006",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T007",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T008",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T009",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T010",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T011",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T012",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T013",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T014",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T015",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T016",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T017",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T018",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T019",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T020",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T021",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T022",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "T023",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T024",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T025",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T026",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T027",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T028",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T029",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T030",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T031",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T032",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T033",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T034",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T035",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "T036",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T037",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T038",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T039",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.3333333333333333,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 3,
+              "question_id": "T040",
+              "retrieval_metric_included": true
+            },
+            {
+              "question_id": "T041",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T042",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T043",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T044",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T045",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T046",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T047",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T048",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T049",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T050",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            }
+          ],
+          "questions": 50,
+          "unanswerable_excluded": 10
+        },
+        "reranker_enabled": false,
+        "scored_pairs": 0,
+        "truncated_pairs": 0
+      },
+      "top20": {
+        "candidate_budget": 20,
+        "latency": {
+          "rerank_seconds": {
+            "P50_ms": 3206.3267,
+            "P95_ms": 3942.7064600000003,
+            "mean_ms": 3223.9357379999997,
+            "samples": 50
+          },
+          "total_seconds": {
+            "P50_ms": 3566.05895,
+            "P95_ms": 4281.075215,
+            "mean_ms": 3571.2763279999995,
+            "samples": 50
+          }
+        },
+        "quality": {
+          "answerable_denominator": 40,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.975,
+            "Recall@10": 1.0,
+            "Recall@5": 1.0,
+            "all_gold_coverage@5": 0.98125
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "per_question": [
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T001",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T002",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T003",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T004",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T005",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T006",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T007",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T008",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T009",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T010",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T011",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T012",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T013",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T014",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T015",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T016",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T017",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T018",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T019",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T020",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T021",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 0.75,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T022",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T023",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T024",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T025",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T026",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T027",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T028",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T029",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T030",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T031",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T032",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T033",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 0.5,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "T034",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T035",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T036",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T037",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T038",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T039",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "T040",
+              "retrieval_metric_included": true
+            },
+            {
+              "question_id": "T041",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T042",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T043",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T044",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T045",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T046",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T047",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T048",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T049",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T050",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            }
+          ],
+          "questions": 50,
+          "unanswerable_excluded": 10
+        },
+        "reranker_enabled": true,
+        "scored_pairs": 1000,
+        "truncated_pairs": 0
+      },
+      "top40": {
+        "candidate_budget": 40,
+        "latency": {
+          "rerank_seconds": {
+            "P50_ms": 6607.1904,
+            "P95_ms": 7335.266849999999,
+            "mean_ms": 6586.537511999998,
+            "samples": 50
+          },
+          "total_seconds": {
+            "P50_ms": 6949.9119,
+            "P95_ms": 7696.757909999999,
+            "mean_ms": 6934.741133999998,
+            "samples": 50
+          }
+        },
+        "quality": {
+          "answerable_denominator": 40,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.975,
+            "Recall@10": 1.0,
+            "Recall@5": 1.0,
+            "all_gold_coverage@5": 0.98125
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "per_question": [
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T001",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T002",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T003",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T004",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T005",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T006",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T007",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T008",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T009",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T010",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T011",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T012",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T013",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T014",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T015",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T016",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T017",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T018",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T019",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T020",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T021",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 0.75,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T022",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T023",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T024",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T025",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T026",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T027",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T028",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T029",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T030",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T031",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T032",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T033",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 0.5,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "T034",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T035",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T036",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T037",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T038",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T039",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "T040",
+              "retrieval_metric_included": true
+            },
+            {
+              "question_id": "T041",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T042",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T043",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T044",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T045",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T046",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T047",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T048",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T049",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T050",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            }
+          ],
+          "questions": 50,
+          "unanswerable_excluded": 10
+        },
+        "reranker_enabled": true,
+        "scored_pairs": 2000,
+        "truncated_pairs": 0
+      },
+      "top80": {
+        "candidate_budget": 80,
+        "latency": {
+          "rerank_seconds": {
+            "P50_ms": 13021.13935,
+            "P95_ms": 13798.494165,
+            "mean_ms": 13037.246152,
+            "samples": 50
+          },
+          "total_seconds": {
+            "P50_ms": 13363.95215,
+            "P95_ms": 14163.505515,
+            "mean_ms": 13381.576442000005,
+            "samples": 50
+          }
+        },
+        "quality": {
+          "answerable_denominator": 40,
+          "definitions": {
+            "MRR@10": "Mean reciprocal rank of first labelled support, zero beyond rank 10.",
+            "Recall@K": "Fraction of answerable questions with at least one labelled supporting chunk in top K, per original technical design.",
+            "all_gold_coverage@5": "Separate mean fraction of labelled support IDs retrieved, not the plan Recall@5."
+          },
+          "metrics": {
+            "MRR@10": 0.975,
+            "Recall@10": 1.0,
+            "Recall@5": 1.0,
+            "all_gold_coverage@5": 0.98125
+          },
+          "nDCG@10": null,
+          "nDCG_reason": "No graded relevance labels; not reported.",
+          "per_question": [
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T001",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T002",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T003",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T004",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T005",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T006",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T007",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T008",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T009",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T010",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T011",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T012",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T013",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T014",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T015",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T016",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T017",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T018",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T019",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T020",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T021",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 0.75,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T022",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T023",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T024",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T025",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T026",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T027",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T028",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T029",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T030",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T031",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T032",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T033",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 0.5,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "T034",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T035",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T036",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T037",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T038",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 1.0,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 1,
+              "question_id": "T039",
+              "retrieval_metric_included": true
+            },
+            {
+              "MRR@10": 0.5,
+              "Recall@10": 1.0,
+              "Recall@5": 1.0,
+              "all_gold_coverage@5": 1.0,
+              "first_relevant_rank_within_10": 2,
+              "question_id": "T040",
+              "retrieval_metric_included": true
+            },
+            {
+              "question_id": "T041",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T042",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T043",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T044",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T045",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T046",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T047",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T048",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T049",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            },
+            {
+              "question_id": "T050",
+              "reason": "No gold evidence; report refusal separately in task 12",
+              "retrieval_metric_included": false
+            }
+          ],
+          "questions": 50,
+          "unanswerable_excluded": 10
+        },
+        "reranker_enabled": true,
+        "scored_pairs": 4000,
+        "truncated_pairs": 0
+      }
+    },
+    "nDCG@10": null,
+    "nDCG_reason": "No graded relevance labels; not computed.",
+    "new_embedding_queries": 200,
+    "new_reranker_pairs": 7000,
+    "selected_on_this_split": null,
+    "split": "test",
+    "version": "reranker-summary-1.0",
+    "vs_no_rerank": {
+      "no_rerank": {
+        "MRR@10": 0.0,
+        "Recall@10": 0.0,
+        "Recall@5": 0.0
+      },
+      "top20": {
+        "MRR@10": 0.038541666666666585,
+        "Recall@10": 0.0,
+        "Recall@5": 0.025000000000000022
+      },
+      "top40": {
+        "MRR@10": 0.038541666666666585,
+        "Recall@10": 0.0,
+        "Recall@5": 0.025000000000000022
+      },
+      "top80": {
+        "MRR@10": 0.038541666666666585,
+        "Recall@10": 0.0,
+        "Recall@5": 0.025000000000000022
+      }
+    }
+  },
+  "test_authorization": {
+    "path": "reports/retrieval/bge_reranker_b0/test_authorization.json",
+    "sha256": "23342559d5132d4107fc5f5d3b7ec786cdb9b458dbcae66eaa6442d05d4fb753",
+    "size_bytes": 20674
+  },
+  "test_usage": {
+    "path": "reports/retrieval/bge_reranker_b0/test_usage.jsonl",
+    "sha256": "252a1109b849bc4d7723a6220cdb62a1b4395bf8c8c94493d5b85e1c55200f45",
+    "size_bytes": 1280
+  },
+  "truncation_and_ranking_errors": {
+    "dev": {
+      "no_rerank": {
+        "gold_lost_vs_top80": 0,
+        "miss_at_10": 1,
+        "miss_at_5": 1,
+        "no_gold_in_candidates": 0,
+        "rerank_worsened_mrr": 0
+      },
+      "top20": {
+        "gold_lost_vs_top80": 1,
+        "miss_at_10": 1,
+        "miss_at_5": 1,
+        "no_gold_in_candidates": 1,
+        "rerank_worsened_mrr": 1
+      },
+      "top40": {
+        "gold_lost_vs_top80": 0,
+        "miss_at_10": 0,
+        "miss_at_5": 0,
+        "no_gold_in_candidates": 0,
+        "rerank_worsened_mrr": 1
+      },
+      "top80": {
+        "gold_lost_vs_top80": 0,
+        "miss_at_10": 0,
+        "miss_at_5": 0,
+        "no_gold_in_candidates": 0,
+        "rerank_worsened_mrr": 1
+      }
+    },
+    "test": {
+      "no_rerank": {
+        "gold_lost_vs_top80": 0,
+        "miss_at_10": 0,
+        "miss_at_5": 1,
+        "no_gold_in_candidates": 0,
+        "rerank_worsened_mrr": 0
+      },
+      "top20": {
+        "gold_lost_vs_top80": 0,
+        "miss_at_10": 0,
+        "miss_at_5": 0,
+        "no_gold_in_candidates": 0,
+        "rerank_worsened_mrr": 1
+      },
+      "top40": {
+        "gold_lost_vs_top80": 0,
+        "miss_at_10": 0,
+        "miss_at_5": 0,
+        "no_gold_in_candidates": 0,
+        "rerank_worsened_mrr": 1
+      },
+      "top80": {
+        "gold_lost_vs_top80": 0,
+        "miss_at_10": 0,
+        "miss_at_5": 0,
+        "no_gold_in_candidates": 0,
+        "rerank_worsened_mrr": 1
+      }
+    }
+  },
+  "version": "bge-reranker-report-1.0"
+}

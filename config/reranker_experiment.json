@@ -1,0 +1,63 @@
+{
+  "version": "bge-reranker-b0-1.0",
+  "model_id": "BAAI/bge-reranker-base",
+  "revision": "2cfc18c9415c912f9d8155881c133215df768a70",
+  "precision": "official FP32 ONNX, no quantization",
+  "provider": "CPUExecutionProvider",
+  "threads": 8,
+  "batch_size": 8,
+  "max_length": 512,
+  "tokenization": "query/passage pair; longest_first; right truncation; dynamic batch right padding; pad_id=1",
+  "passage": "section_path joined by space/slash/space + two newlines + original content_zh",
+  "channel_top_k": 80,
+  "fused_top_k": 80,
+  "rrf_k": 60,
+  "output_top_k": 10,
+  "bm25_template": "title_body",
+  "methods": [
+    "no_rerank",
+    "top20",
+    "top40",
+    "top80"
+  ],
+  "warmup_repetitions": 3,
+  "measured_repetitions": 1,
+  "concurrency": 1,
+  "cache": false,
+  "warmup_question": "请查找球场球门的规定尺寸资料。",
+  "variant_order": "rotate methods left by query index modulo four",
+  "selection": "dev MRR@10 descending, Recall@5 descending, Recall@10 descending, total P50 ascending, method order",
+  "percentile_method": "linear interpolation at q*(n-1)",
+  "packages": {
+    "numpy": "1.26.4",
+    "onnxruntime": "1.19.2",
+    "tokenizers": "0.22.1"
+  },
+  "files": {
+    "onnx/model.onnx": {
+      "size_bytes": 1112459588,
+      "sha256": "15b9a8c3da82eddf263df571281166e00e9308fe19d077084b642ebfcaf06d2b"
+    },
+    "tokenizer.json": {
+      "size_bytes": 17098107,
+      "sha256": "9eb652ac4e40cc093272bbbe0f55d521cf67570060227109b5cdc20945a4489e"
+    },
+    "tokenizer_config.json": {
+      "size_bytes": 443,
+      "sha256": "a1d6bc8734a6f635dc158508bef000f8e2e5a759c7d92f984b2c86e5ff53425b"
+    },
+    "special_tokens_map.json": {
+      "size_bytes": 279,
+      "sha256": "d5469a60db23249c7f8945013d78df30b44b6bf686c6bb4740f4223f77b1b535"
+    },
+    "config.json": {
+      "size_bytes": 799,
+      "sha256": "289adf7ada1eb6b4afa7589a48a032d45a076cf2e46dcdb3b4cabc33be14f708"
+    }
+  },
+  "download": {
+    "official": "https://huggingface.co/BAAI/bge-reranker-base/tree/2cfc18c9415c912f9d8155881c133215df768a70",
+    "transport": "hf-mirror.com pinned revision for ONNX/tokenizer; BAAI ModelScope 313e6ba57eab108a5b2e9e3c6810840755528349 for small configs; upstream LFS SHA256 and Git blob OIDs verified",
+    "upstream_tree": "https://hf-mirror.com/api/models/BAAI/bge-reranker-base/tree/2cfc18c9415c912f9d8155881c133215df768a70?recursive=true&expand=false"
+  }
+}
