@@ -1,0 +1,33 @@
+{
+  "captured_at": "2026-11-13T02:49:39.896221+00:00",
+  "dense_device": "CPU; num_gpu=0; num_thread=8",
+  "dense_model": {
+    "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+    "dimensions": 1024,
+    "distribution": "Ollama GGUF",
+    "document_prefix": "",
+    "license": "MIT",
+    "name": "bge-m3:latest",
+    "ollama_version": "0.40.16",
+    "quantization": "F16",
+    "query_prefix": "",
+    "source_id": "BAAI/bge-m3"
+  },
+  "fusion_device": "CPU; concurrency1",
+  "implementation": "CPython",
+  "logical_cpus": 20,
+  "machine": "AMD64",
+  "packages": {
+    "chroma-hnswlib": "0.7.6",
+    "chromadb": "0.5.16",
+    "numpy": "1.26.4"
+  },
+  "physical_memory_bytes": 16858472448,
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "producer_sha256": "483570564e234c70e8f51a90d9b144457061e2778813988b5fb467d0c70aaa62",
+  "python": "3.10.22",
+  "random_seed": "Not applicable: deterministic ranking over fixed saved lists; no stochastic selection",
+  "scope": "Observed after dev/test fusion on the same host; supplemental metadata, not a before-run capture or repeat benchmark",
+  "system": "Windows-10-10.0.26200-SP0",
+  "version": "hybrid-environment-1.0"
+}

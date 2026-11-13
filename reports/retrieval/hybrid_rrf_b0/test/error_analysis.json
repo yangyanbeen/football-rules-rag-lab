@@ -1,0 +1,22 @@
+{
+  "counts": {
+    "bm25": {
+      "miss_at_10": 0,
+      "miss_at_5": 1
+    },
+    "dense": {
+      "miss_at_10": 2,
+      "miss_at_5": 2
+    },
+    "rrf": {
+      "miss_at_10": 0,
+      "miss_at_5": 1
+    },
+    "union": {
+      "miss_at_10": 0,
+      "miss_at_5": 0
+    }
+  },
+  "development_cases": null,
+  "scope": "Locked test aggregate only; not used to tune parameters"
+}

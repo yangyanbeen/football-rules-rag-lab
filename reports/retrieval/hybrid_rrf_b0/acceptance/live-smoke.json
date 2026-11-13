@@ -1,0 +1,4487 @@
+{
+  "actual_embedding_queries": 4,
+  "answer_llm_requests": 0,
+  "captured_at": "2026-11-13T02:43:47.365754+00:00",
+  "checks": {
+    "all_four_queries_completed": true,
+    "oov_bm25_empty_no_zero_fill": true,
+    "oov_rrf_falls_to_dense_ranks": true,
+    "original_index_files_unchanged": true,
+    "pinned_embedding_cpu": true,
+    "query_1_fusion_recomputes": true,
+    "query_1_positive_total_and_stages": true,
+    "query_1_top10_budget_and_unique": true,
+    "query_2_fusion_recomputes": true,
+    "query_2_positive_total_and_stages": true,
+    "query_2_top10_budget_and_unique": true,
+    "query_3_fusion_recomputes": true,
+    "query_3_positive_total_and_stages": true,
+    "query_3_top10_budget_and_unique": true,
+    "query_4_fusion_recomputes": true,
+    "query_4_positive_total_and_stages": true,
+    "query_4_top10_budget_and_unique": true
+  },
+  "embedding_runtime": {
+    "context_length": 8192,
+    "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+    "name": "bge-m3:latest",
+    "runner": "llamacpp",
+    "size": 1244166879,
+    "size_vram": 0
+  },
+  "is_accuracy_evaluation": false,
+  "new_locked_test_queries": 0,
+  "passed": 17,
+  "queries": [
+    {
+      "channels": {
+        "bm25": {
+          "query": "请检索第十一条下关于越位的资料段落。",
+          "results": [
+            {
+              "chunk_id": "L12-09",
+              "content_zh_sha256": "c2ede674f54d2108d6942440c7d192d8820f3f2295445e382b94f532883756d4",
+              "law_number": 12,
+              "rank": 1,
+              "record_sha256": "670340957efd92b146e453bb991f5ae399475158befd4505c78107583c6dbaaa",
+              "score": 6.363142610945621,
+              "source_lines": [
+                232,
+                235
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+            },
+            {
+              "chunk_id": "L11-08",
+              "content_zh_sha256": "84338232c7dbad4b44c3059ad80f06ebf8e2da613caff49ddafd921eef973e38",
+              "law_number": 11,
+              "rank": 2,
+              "record_sha256": "c7bba4431695b03d81f3d8bdf0c955e37b93bde7189ce120d82d6579345e2240",
+              "score": 5.165732828225473,
+              "source_lines": [
+                266,
+                266
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L11-04",
+              "content_zh_sha256": "376f5869126fa03805575507e676a71485fe59951fc8700931ee0e73db2ae972",
+              "law_number": 11,
+              "rank": 3,
+              "record_sha256": "82f5cc426d66885c26c930a4333f39a5aa7b58d977c721bcce83dab3322ff82c",
+              "score": 5.117496750822323,
+              "source_lines": [
+                235,
+                238
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L15-03",
+              "content_zh_sha256": "aebb784845e2e93ba403a592107606cbc2737c04f09fcefa243e0f00dbb96636",
+              "law_number": 15,
+              "rank": 4,
+              "record_sha256": "d8e3b50ce1b9bb0f421d5f2a5801b32bd44499408ce19a0fd7adf465bd064272",
+              "score": 4.229791617117774,
+              "source_lines": [
+                175,
+                176
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Throw-in"
+            },
+            {
+              "chunk_id": "L12-02",
+              "content_zh_sha256": "64205bfa70529fd27a893b9c692e47c4dca0caf6021ba2fd6389d6ed297f3172",
+              "law_number": 12,
+              "rank": 5,
+              "record_sha256": "79b923d57a743b3c22c4e0903601eb276e2a26549cd54d77749e6179f705dc66",
+              "score": 4.031944804946537,
+              "source_lines": [
+                178,
+                180
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+            },
+            {
+              "chunk_id": "L08B-04",
+              "content_zh_sha256": "7657602642617681d2d8ac53f1f1c34696885ad1d5d020bb5061dd91102a4584",
+              "law_number": 8,
+              "rank": 6,
+              "record_sha256": "4501febec9164c58f0d8596a9aa37d66575679ef423fb1283f63f6205084767d",
+              "score": 3.4297349886372395,
+              "source_lines": [
+                163,
+                177
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Dropped-ball"
+            },
+            {
+              "chunk_id": "L11-03",
+              "content_zh_sha256": "b5992da7315efd1d1db4960317213f2782f2b8cc3727390a9d0a908357e11a22",
+              "law_number": 11,
+              "rank": 7,
+              "record_sha256": "0a86e76ae75bfc91063d2c82f724228bd7f2a3b682ef47013860242b092463b3",
+              "score": 3.359344600357348,
+              "source_lines": [
+                229,
+                234
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L11-09",
+              "content_zh_sha256": "1e9945f4ba1346f42da1a128be7e92c1cb8b889208cba5b3f9df3bd4ca2c1aee",
+              "law_number": 11,
+              "rank": 8,
+              "record_sha256": "a91810d4bbfe39baf1298527bd21ae7cdb9663b8f2169a4ffd95ef97f8105eda",
+              "score": 3.3518496572011514,
+              "source_lines": [
+                267,
+                267
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L11-01",
+              "content_zh_sha256": "1e1429d95561a392cdeeb44ff3b59854eccf4ac9863e190a9a2c9c8efcff2046",
+              "law_number": 11,
+              "rank": 9,
+              "record_sha256": "1eb8592408bc0560a9c8c1cff36674044ce34340202a571ac62bdec808fd34d6",
+              "score": 3.295457363087679,
+              "source_lines": [
+                208,
+                216
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L11-05",
+              "content_zh_sha256": "4d25211c6c320b43c5ac9552b0fe72a750cc561ed652325e8f7d0ab19d89d9b4",
+              "law_number": 11,
+              "rank": 10,
+              "record_sha256": "f7edc3e149b8f768e5e52a11cdb5e5398f51d46929ff2689ebfbba073bb4a2e2",
+              "score": 3.2816612411690347,
+              "source_lines": [
+                246,
+                246
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            }
+          ],
+          "timing": {
+            "normalization_seconds": 8.5e-06,
+            "scoring_seconds": 0.0001376,
+            "tokenization_seconds": 9.21e-05,
+            "total_seconds": 0.0002382
+          },
+          "tokens": [
+            "检索",
+            "第十一条",
+            "下",
+            "关于",
+            "越位",
+            "资料",
+            "段落"
+          ]
+        },
+        "dense": {
+          "query": "请检索第十一条下关于越位的资料段落。",
+          "results": [
+            {
+              "chunk_id": "L11-05",
+              "content_zh_sha256": "4d25211c6c320b43c5ac9552b0fe72a750cc561ed652325e8f7d0ab19d89d9b4",
+              "distance": 0.3378593921661377,
+              "law_number": 11,
+              "rank": 1,
+              "record_sha256": "f7edc3e149b8f768e5e52a11cdb5e5398f51d46929ff2689ebfbba073bb4a2e2",
+              "score": 0.6621406078338623,
+              "source_lines": [
+                246,
+                246
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L11-01",
+              "content_zh_sha256": "1e1429d95561a392cdeeb44ff3b59854eccf4ac9863e190a9a2c9c8efcff2046",
+              "distance": 0.38266217708587646,
+              "law_number": 11,
+              "rank": 2,
+              "record_sha256": "1eb8592408bc0560a9c8c1cff36674044ce34340202a571ac62bdec808fd34d6",
+              "score": 0.6173378229141235,
+              "source_lines": [
+                208,
+                216
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L11-03",
+              "content_zh_sha256": "b5992da7315efd1d1db4960317213f2782f2b8cc3727390a9d0a908357e11a22",
+              "distance": 0.38881605863571167,
+              "law_number": 11,
+              "rank": 3,
+              "record_sha256": "0a86e76ae75bfc91063d2c82f724228bd7f2a3b682ef47013860242b092463b3",
+              "score": 0.6111839413642883,
+              "source_lines": [
+                229,
+                234
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L11-04",
+              "content_zh_sha256": "376f5869126fa03805575507e676a71485fe59951fc8700931ee0e73db2ae972",
+              "distance": 0.3945445418357849,
+              "law_number": 11,
+              "rank": 4,
+              "record_sha256": "82f5cc426d66885c26c930a4333f39a5aa7b58d977c721bcce83dab3322ff82c",
+              "score": 0.6054554581642151,
+              "source_lines": [
+                235,
+                238
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L11-02",
+              "content_zh_sha256": "5df1e966b4b78568143b6060e652a824e2bc06bccaa2b0fd77c81d0a3e7478e3",
+              "distance": 0.3947300314903259,
+              "law_number": 11,
+              "rank": 5,
+              "record_sha256": "acc8fcd2ee028adee4539b71111493db9d5007ecd866e8a4ab881b2eb1114e1c",
+              "score": 0.6052699685096741,
+              "source_lines": [
+                221,
+                228
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L11-09",
+              "content_zh_sha256": "1e9945f4ba1346f42da1a128be7e92c1cb8b889208cba5b3f9df3bd4ca2c1aee",
+              "distance": 0.40334266424179077,
+              "law_number": 11,
+              "rank": 6,
+              "record_sha256": "a91810d4bbfe39baf1298527bd21ae7cdb9663b8f2169a4ffd95ef97f8105eda",
+              "score": 0.5966573357582092,
+              "source_lines": [
+                267,
+                267
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L11-07",
+              "content_zh_sha256": "a2f47802c6ffc710bcbc267c287f971633ca5d6be98bcab4e97a43369862bb12",
+              "distance": 0.406177282333374,
+              "law_number": 11,
+              "rank": 7,
+              "record_sha256": "ba0f0deb089cf0b4ca64b22b9202e415b72c503c525f24196f38381500aa2d4f",
+              "score": 0.593822717666626,
+              "source_lines": [
+                257,
+                259
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L11-08",
+              "content_zh_sha256": "84338232c7dbad4b44c3059ad80f06ebf8e2da613caff49ddafd921eef973e38",
+              "distance": 0.41008108854293823,
+              "law_number": 11,
+              "rank": 8,
+              "record_sha256": "c7bba4431695b03d81f3d8bdf0c955e37b93bde7189ce120d82d6579345e2240",
+              "score": 0.5899189114570618,
+              "source_lines": [
+                266,
+                266
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L11-06",
+              "content_zh_sha256": "ba4c6e29457c3c3496b60226087364eff0bb2f64dae6851be51323283de571b8",
+              "distance": 0.41174042224884033,
+              "law_number": 11,
+              "rank": 9,
+              "record_sha256": "16bfa8d3a1e3e1f9f6faf9b94b21da5b892d2f26644e95b01b4d8878abaafbb7",
+              "score": 0.5882595777511597,
+              "source_lines": [
+                252,
+                256
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L12-05",
+              "content_zh_sha256": "88ea24aedb7b67f8cc817c2538ac3a09745488b468c1758825058a836a465456",
+              "distance": 0.4306378960609436,
+              "law_number": 12,
+              "rank": 10,
+              "record_sha256": "8a31a0a33610c9d92a81739a381591aa86b4374937cdfb6a1641486e5db281f0",
+              "score": 0.5693621039390564,
+              "source_lines": [
+                193,
+                199
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+            }
+          ],
+          "timing": {
+            "query_embedding_seconds": 2.707887600000049,
+            "vector_search_seconds": 0.01016469999990477
+          }
+        }
+      },
+      "embedding_observation": {
+        "elapsed_seconds": 2.640769000000091,
+        "inputs": 1,
+        "prompt_eval_count": 17,
+        "server_load_duration_ns": 2481516400,
+        "server_total_duration_ns": 2529120600
+      },
+      "k": 60,
+      "llm_generation_requests": 0,
+      "quality_evaluation": false,
+      "question": "请检索第十一条下关于越位的资料段落。",
+      "results": {
+        "bm25": [
+          {
+            "chunk_id": "L12-09",
+            "content_zh_sha256": "c2ede674f54d2108d6942440c7d192d8820f3f2295445e382b94f532883756d4",
+            "law_number": 12,
+            "rank": 1,
+            "record_sha256": "670340957efd92b146e453bb991f5ae399475158befd4505c78107583c6dbaaa",
+            "score": 6.363142610945621,
+            "source_lines": [
+              232,
+              235
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 1,
+                "score": 6.363142610945621
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-08",
+            "content_zh_sha256": "84338232c7dbad4b44c3059ad80f06ebf8e2da613caff49ddafd921eef973e38",
+            "law_number": 11,
+            "rank": 2,
+            "record_sha256": "c7bba4431695b03d81f3d8bdf0c955e37b93bde7189ce120d82d6579345e2240",
+            "score": 5.165732828225473,
+            "source_lines": [
+              266,
+              266
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 2,
+                "score": 5.165732828225473
+              },
+              "dense": {
+                "distance": 0.41008108854293823,
+                "rank": 8,
+                "score": 0.5899189114570618
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-04",
+            "content_zh_sha256": "376f5869126fa03805575507e676a71485fe59951fc8700931ee0e73db2ae972",
+            "law_number": 11,
+            "rank": 3,
+            "record_sha256": "82f5cc426d66885c26c930a4333f39a5aa7b58d977c721bcce83dab3322ff82c",
+            "score": 5.117496750822323,
+            "source_lines": [
+              235,
+              238
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 3,
+                "score": 5.117496750822323
+              },
+              "dense": {
+                "distance": 0.3945445418357849,
+                "rank": 4,
+                "score": 0.6054554581642151
+              }
+            }
+          },
+          {
+            "chunk_id": "L15-03",
+            "content_zh_sha256": "aebb784845e2e93ba403a592107606cbc2737c04f09fcefa243e0f00dbb96636",
+            "law_number": 15,
+            "rank": 4,
+            "record_sha256": "d8e3b50ce1b9bb0f421d5f2a5801b32bd44499408ce19a0fd7adf465bd064272",
+            "score": 4.229791617117774,
+            "source_lines": [
+              175,
+              176
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Throw-in",
+            "sources": {
+              "bm25": {
+                "rank": 4,
+                "score": 4.229791617117774
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-02",
+            "content_zh_sha256": "64205bfa70529fd27a893b9c692e47c4dca0caf6021ba2fd6389d6ed297f3172",
+            "law_number": 12,
+            "rank": 5,
+            "record_sha256": "79b923d57a743b3c22c4e0903601eb276e2a26549cd54d77749e6179f705dc66",
+            "score": 4.031944804946537,
+            "source_lines": [
+              178,
+              180
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 5,
+                "score": 4.031944804946537
+              }
+            }
+          },
+          {
+            "chunk_id": "L08B-04",
+            "content_zh_sha256": "7657602642617681d2d8ac53f1f1c34696885ad1d5d020bb5061dd91102a4584",
+            "law_number": 8,
+            "rank": 6,
+            "record_sha256": "4501febec9164c58f0d8596a9aa37d66575679ef423fb1283f63f6205084767d",
+            "score": 3.4297349886372395,
+            "source_lines": [
+              163,
+              177
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Dropped-ball",
+            "sources": {
+              "bm25": {
+                "rank": 6,
+                "score": 3.4297349886372395
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-03",
+            "content_zh_sha256": "b5992da7315efd1d1db4960317213f2782f2b8cc3727390a9d0a908357e11a22",
+            "law_number": 11,
+            "rank": 7,
+            "record_sha256": "0a86e76ae75bfc91063d2c82f724228bd7f2a3b682ef47013860242b092463b3",
+            "score": 3.359344600357348,
+            "source_lines": [
+              229,
+              234
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 7,
+                "score": 3.359344600357348
+              },
+              "dense": {
+                "distance": 0.38881605863571167,
+                "rank": 3,
+                "score": 0.6111839413642883
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-09",
+            "content_zh_sha256": "1e9945f4ba1346f42da1a128be7e92c1cb8b889208cba5b3f9df3bd4ca2c1aee",
+            "law_number": 11,
+            "rank": 8,
+            "record_sha256": "a91810d4bbfe39baf1298527bd21ae7cdb9663b8f2169a4ffd95ef97f8105eda",
+            "score": 3.3518496572011514,
+            "source_lines": [
+              267,
+              267
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 8,
+                "score": 3.3518496572011514
+              },
+              "dense": {
+                "distance": 0.40334266424179077,
+                "rank": 6,
+                "score": 0.5966573357582092
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-01",
+            "content_zh_sha256": "1e1429d95561a392cdeeb44ff3b59854eccf4ac9863e190a9a2c9c8efcff2046",
+            "law_number": 11,
+            "rank": 9,
+            "record_sha256": "1eb8592408bc0560a9c8c1cff36674044ce34340202a571ac62bdec808fd34d6",
+            "score": 3.295457363087679,
+            "source_lines": [
+              208,
+              216
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 9,
+                "score": 3.295457363087679
+              },
+              "dense": {
+                "distance": 0.38266217708587646,
+                "rank": 2,
+                "score": 0.6173378229141235
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-05",
+            "content_zh_sha256": "4d25211c6c320b43c5ac9552b0fe72a750cc561ed652325e8f7d0ab19d89d9b4",
+            "law_number": 11,
+            "rank": 10,
+            "record_sha256": "f7edc3e149b8f768e5e52a11cdb5e5398f51d46929ff2689ebfbba073bb4a2e2",
+            "score": 3.2816612411690347,
+            "source_lines": [
+              246,
+              246
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 10,
+                "score": 3.2816612411690347
+              },
+              "dense": {
+                "distance": 0.3378593921661377,
+                "rank": 1,
+                "score": 0.6621406078338623
+              }
+            }
+          }
+        ],
+        "dense": [
+          {
+            "chunk_id": "L11-05",
+            "content_zh_sha256": "4d25211c6c320b43c5ac9552b0fe72a750cc561ed652325e8f7d0ab19d89d9b4",
+            "law_number": 11,
+            "rank": 1,
+            "record_sha256": "f7edc3e149b8f768e5e52a11cdb5e5398f51d46929ff2689ebfbba073bb4a2e2",
+            "score": 0.6621406078338623,
+            "source_lines": [
+              246,
+              246
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 10,
+                "score": 3.2816612411690347
+              },
+              "dense": {
+                "distance": 0.3378593921661377,
+                "rank": 1,
+                "score": 0.6621406078338623
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-01",
+            "content_zh_sha256": "1e1429d95561a392cdeeb44ff3b59854eccf4ac9863e190a9a2c9c8efcff2046",
+            "law_number": 11,
+            "rank": 2,
+            "record_sha256": "1eb8592408bc0560a9c8c1cff36674044ce34340202a571ac62bdec808fd34d6",
+            "score": 0.6173378229141235,
+            "source_lines": [
+              208,
+              216
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 9,
+                "score": 3.295457363087679
+              },
+              "dense": {
+                "distance": 0.38266217708587646,
+                "rank": 2,
+                "score": 0.6173378229141235
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-03",
+            "content_zh_sha256": "b5992da7315efd1d1db4960317213f2782f2b8cc3727390a9d0a908357e11a22",
+            "law_number": 11,
+            "rank": 3,
+            "record_sha256": "0a86e76ae75bfc91063d2c82f724228bd7f2a3b682ef47013860242b092463b3",
+            "score": 0.6111839413642883,
+            "source_lines": [
+              229,
+              234
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 7,
+                "score": 3.359344600357348
+              },
+              "dense": {
+                "distance": 0.38881605863571167,
+                "rank": 3,
+                "score": 0.6111839413642883
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-04",
+            "content_zh_sha256": "376f5869126fa03805575507e676a71485fe59951fc8700931ee0e73db2ae972",
+            "law_number": 11,
+            "rank": 4,
+            "record_sha256": "82f5cc426d66885c26c930a4333f39a5aa7b58d977c721bcce83dab3322ff82c",
+            "score": 0.6054554581642151,
+            "source_lines": [
+              235,
+              238
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 3,
+                "score": 5.117496750822323
+              },
+              "dense": {
+                "distance": 0.3945445418357849,
+                "rank": 4,
+                "score": 0.6054554581642151
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-02",
+            "content_zh_sha256": "5df1e966b4b78568143b6060e652a824e2bc06bccaa2b0fd77c81d0a3e7478e3",
+            "law_number": 11,
+            "rank": 5,
+            "record_sha256": "acc8fcd2ee028adee4539b71111493db9d5007ecd866e8a4ab881b2eb1114e1c",
+            "score": 0.6052699685096741,
+            "source_lines": [
+              221,
+              228
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.3947300314903259,
+                "rank": 5,
+                "score": 0.6052699685096741
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-09",
+            "content_zh_sha256": "1e9945f4ba1346f42da1a128be7e92c1cb8b889208cba5b3f9df3bd4ca2c1aee",
+            "law_number": 11,
+            "rank": 6,
+            "record_sha256": "a91810d4bbfe39baf1298527bd21ae7cdb9663b8f2169a4ffd95ef97f8105eda",
+            "score": 0.5966573357582092,
+            "source_lines": [
+              267,
+              267
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 8,
+                "score": 3.3518496572011514
+              },
+              "dense": {
+                "distance": 0.40334266424179077,
+                "rank": 6,
+                "score": 0.5966573357582092
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-07",
+            "content_zh_sha256": "a2f47802c6ffc710bcbc267c287f971633ca5d6be98bcab4e97a43369862bb12",
+            "law_number": 11,
+            "rank": 7,
+            "record_sha256": "ba0f0deb089cf0b4ca64b22b9202e415b72c503c525f24196f38381500aa2d4f",
+            "score": 0.593822717666626,
+            "source_lines": [
+              257,
+              259
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.406177282333374,
+                "rank": 7,
+                "score": 0.593822717666626
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-08",
+            "content_zh_sha256": "84338232c7dbad4b44c3059ad80f06ebf8e2da613caff49ddafd921eef973e38",
+            "law_number": 11,
+            "rank": 8,
+            "record_sha256": "c7bba4431695b03d81f3d8bdf0c955e37b93bde7189ce120d82d6579345e2240",
+            "score": 0.5899189114570618,
+            "source_lines": [
+              266,
+              266
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 2,
+                "score": 5.165732828225473
+              },
+              "dense": {
+                "distance": 0.41008108854293823,
+                "rank": 8,
+                "score": 0.5899189114570618
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-06",
+            "content_zh_sha256": "ba4c6e29457c3c3496b60226087364eff0bb2f64dae6851be51323283de571b8",
+            "law_number": 11,
+            "rank": 9,
+            "record_sha256": "16bfa8d3a1e3e1f9f6faf9b94b21da5b892d2f26644e95b01b4d8878abaafbb7",
+            "score": 0.5882595777511597,
+            "source_lines": [
+              252,
+              256
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.41174042224884033,
+                "rank": 9,
+                "score": 0.5882595777511597
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-05",
+            "content_zh_sha256": "88ea24aedb7b67f8cc817c2538ac3a09745488b468c1758825058a836a465456",
+            "law_number": 12,
+            "rank": 10,
+            "record_sha256": "8a31a0a33610c9d92a81739a381591aa86b4374937cdfb6a1641486e5db281f0",
+            "score": 0.5693621039390564,
+            "source_lines": [
+              193,
+              199
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.4306378960609436,
+                "rank": 10,
+                "score": 0.5693621039390564
+              }
+            }
+          }
+        ],
+        "rrf": [
+          {
+            "chunk_id": "L11-04",
+            "content_zh_sha256": "376f5869126fa03805575507e676a71485fe59951fc8700931ee0e73db2ae972",
+            "law_number": 11,
+            "rank": 1,
+            "record_sha256": "82f5cc426d66885c26c930a4333f39a5aa7b58d977c721bcce83dab3322ff82c",
+            "score": 0.03149801587301587,
+            "source_lines": [
+              235,
+              238
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 3,
+                "score": 5.117496750822323
+              },
+              "dense": {
+                "distance": 0.3945445418357849,
+                "rank": 4,
+                "score": 0.6054554581642151
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-08",
+            "content_zh_sha256": "84338232c7dbad4b44c3059ad80f06ebf8e2da613caff49ddafd921eef973e38",
+            "law_number": 11,
+            "rank": 2,
+            "record_sha256": "c7bba4431695b03d81f3d8bdf0c955e37b93bde7189ce120d82d6579345e2240",
+            "score": 0.030834914611005692,
+            "source_lines": [
+              266,
+              266
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 2,
+                "score": 5.165732828225473
+              },
+              "dense": {
+                "distance": 0.41008108854293823,
+                "rank": 8,
+                "score": 0.5899189114570618
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-03",
+            "content_zh_sha256": "b5992da7315efd1d1db4960317213f2782f2b8cc3727390a9d0a908357e11a22",
+            "law_number": 11,
+            "rank": 3,
+            "record_sha256": "0a86e76ae75bfc91063d2c82f724228bd7f2a3b682ef47013860242b092463b3",
+            "score": 0.030798389007344232,
+            "source_lines": [
+              229,
+              234
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 7,
+                "score": 3.359344600357348
+              },
+              "dense": {
+                "distance": 0.38881605863571167,
+                "rank": 3,
+                "score": 0.6111839413642883
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-05",
+            "content_zh_sha256": "4d25211c6c320b43c5ac9552b0fe72a750cc561ed652325e8f7d0ab19d89d9b4",
+            "law_number": 11,
+            "rank": 4,
+            "record_sha256": "f7edc3e149b8f768e5e52a11cdb5e5398f51d46929ff2689ebfbba073bb4a2e2",
+            "score": 0.030679156908665104,
+            "source_lines": [
+              246,
+              246
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 10,
+                "score": 3.2816612411690347
+              },
+              "dense": {
+                "distance": 0.3378593921661377,
+                "rank": 1,
+                "score": 0.6621406078338623
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-01",
+            "content_zh_sha256": "1e1429d95561a392cdeeb44ff3b59854eccf4ac9863e190a9a2c9c8efcff2046",
+            "law_number": 11,
+            "rank": 5,
+            "record_sha256": "1eb8592408bc0560a9c8c1cff36674044ce34340202a571ac62bdec808fd34d6",
+            "score": 0.030621785881252923,
+            "source_lines": [
+              208,
+              216
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 9,
+                "score": 3.295457363087679
+              },
+              "dense": {
+                "distance": 0.38266217708587646,
+                "rank": 2,
+                "score": 0.6173378229141235
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-09",
+            "content_zh_sha256": "1e9945f4ba1346f42da1a128be7e92c1cb8b889208cba5b3f9df3bd4ca2c1aee",
+            "law_number": 11,
+            "rank": 6,
+            "record_sha256": "a91810d4bbfe39baf1298527bd21ae7cdb9663b8f2169a4ffd95ef97f8105eda",
+            "score": 0.029857397504456328,
+            "source_lines": [
+              267,
+              267
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 8,
+                "score": 3.3518496572011514
+              },
+              "dense": {
+                "distance": 0.40334266424179077,
+                "rank": 6,
+                "score": 0.5966573357582092
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-09",
+            "content_zh_sha256": "c2ede674f54d2108d6942440c7d192d8820f3f2295445e382b94f532883756d4",
+            "law_number": 12,
+            "rank": 7,
+            "record_sha256": "670340957efd92b146e453bb991f5ae399475158befd4505c78107583c6dbaaa",
+            "score": 0.01639344262295082,
+            "source_lines": [
+              232,
+              235
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 1,
+                "score": 6.363142610945621
+              }
+            }
+          },
+          {
+            "chunk_id": "L15-03",
+            "content_zh_sha256": "aebb784845e2e93ba403a592107606cbc2737c04f09fcefa243e0f00dbb96636",
+            "law_number": 15,
+            "rank": 8,
+            "record_sha256": "d8e3b50ce1b9bb0f421d5f2a5801b32bd44499408ce19a0fd7adf465bd064272",
+            "score": 0.015625,
+            "source_lines": [
+              175,
+              176
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Throw-in",
+            "sources": {
+              "bm25": {
+                "rank": 4,
+                "score": 4.229791617117774
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-02",
+            "content_zh_sha256": "5df1e966b4b78568143b6060e652a824e2bc06bccaa2b0fd77c81d0a3e7478e3",
+            "law_number": 11,
+            "rank": 9,
+            "record_sha256": "acc8fcd2ee028adee4539b71111493db9d5007ecd866e8a4ab881b2eb1114e1c",
+            "score": 0.015384615384615385,
+            "source_lines": [
+              221,
+              228
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.3947300314903259,
+                "rank": 5,
+                "score": 0.6052699685096741
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-02",
+            "content_zh_sha256": "64205bfa70529fd27a893b9c692e47c4dca0caf6021ba2fd6389d6ed297f3172",
+            "law_number": 12,
+            "rank": 10,
+            "record_sha256": "79b923d57a743b3c22c4e0903601eb276e2a26549cd54d77749e6179f705dc66",
+            "score": 0.015384615384615385,
+            "source_lines": [
+              178,
+              180
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 5,
+                "score": 4.031944804946537
+              }
+            }
+          }
+        ],
+        "union": [
+          {
+            "chunk_id": "L11-05",
+            "content_zh_sha256": "4d25211c6c320b43c5ac9552b0fe72a750cc561ed652325e8f7d0ab19d89d9b4",
+            "law_number": 11,
+            "rank": 1,
+            "record_sha256": "f7edc3e149b8f768e5e52a11cdb5e5398f51d46929ff2689ebfbba073bb4a2e2",
+            "score": null,
+            "source_lines": [
+              246,
+              246
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 10,
+                "score": 3.2816612411690347
+              },
+              "dense": {
+                "distance": 0.3378593921661377,
+                "rank": 1,
+                "score": 0.6621406078338623
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-09",
+            "content_zh_sha256": "c2ede674f54d2108d6942440c7d192d8820f3f2295445e382b94f532883756d4",
+            "law_number": 12,
+            "rank": 2,
+            "record_sha256": "670340957efd92b146e453bb991f5ae399475158befd4505c78107583c6dbaaa",
+            "score": null,
+            "source_lines": [
+              232,
+              235
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 1,
+                "score": 6.363142610945621
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-01",
+            "content_zh_sha256": "1e1429d95561a392cdeeb44ff3b59854eccf4ac9863e190a9a2c9c8efcff2046",
+            "law_number": 11,
+            "rank": 3,
+            "record_sha256": "1eb8592408bc0560a9c8c1cff36674044ce34340202a571ac62bdec808fd34d6",
+            "score": null,
+            "source_lines": [
+              208,
+              216
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 9,
+                "score": 3.295457363087679
+              },
+              "dense": {
+                "distance": 0.38266217708587646,
+                "rank": 2,
+                "score": 0.6173378229141235
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-08",
+            "content_zh_sha256": "84338232c7dbad4b44c3059ad80f06ebf8e2da613caff49ddafd921eef973e38",
+            "law_number": 11,
+            "rank": 4,
+            "record_sha256": "c7bba4431695b03d81f3d8bdf0c955e37b93bde7189ce120d82d6579345e2240",
+            "score": null,
+            "source_lines": [
+              266,
+              266
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 2,
+                "score": 5.165732828225473
+              },
+              "dense": {
+                "distance": 0.41008108854293823,
+                "rank": 8,
+                "score": 0.5899189114570618
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-03",
+            "content_zh_sha256": "b5992da7315efd1d1db4960317213f2782f2b8cc3727390a9d0a908357e11a22",
+            "law_number": 11,
+            "rank": 5,
+            "record_sha256": "0a86e76ae75bfc91063d2c82f724228bd7f2a3b682ef47013860242b092463b3",
+            "score": null,
+            "source_lines": [
+              229,
+              234
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 7,
+                "score": 3.359344600357348
+              },
+              "dense": {
+                "distance": 0.38881605863571167,
+                "rank": 3,
+                "score": 0.6111839413642883
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-04",
+            "content_zh_sha256": "376f5869126fa03805575507e676a71485fe59951fc8700931ee0e73db2ae972",
+            "law_number": 11,
+            "rank": 6,
+            "record_sha256": "82f5cc426d66885c26c930a4333f39a5aa7b58d977c721bcce83dab3322ff82c",
+            "score": null,
+            "source_lines": [
+              235,
+              238
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 3,
+                "score": 5.117496750822323
+              },
+              "dense": {
+                "distance": 0.3945445418357849,
+                "rank": 4,
+                "score": 0.6054554581642151
+              }
+            }
+          },
+          {
+            "chunk_id": "L15-03",
+            "content_zh_sha256": "aebb784845e2e93ba403a592107606cbc2737c04f09fcefa243e0f00dbb96636",
+            "law_number": 15,
+            "rank": 7,
+            "record_sha256": "d8e3b50ce1b9bb0f421d5f2a5801b32bd44499408ce19a0fd7adf465bd064272",
+            "score": null,
+            "source_lines": [
+              175,
+              176
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Throw-in",
+            "sources": {
+              "bm25": {
+                "rank": 4,
+                "score": 4.229791617117774
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-02",
+            "content_zh_sha256": "5df1e966b4b78568143b6060e652a824e2bc06bccaa2b0fd77c81d0a3e7478e3",
+            "law_number": 11,
+            "rank": 8,
+            "record_sha256": "acc8fcd2ee028adee4539b71111493db9d5007ecd866e8a4ab881b2eb1114e1c",
+            "score": null,
+            "source_lines": [
+              221,
+              228
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.3947300314903259,
+                "rank": 5,
+                "score": 0.6052699685096741
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-02",
+            "content_zh_sha256": "64205bfa70529fd27a893b9c692e47c4dca0caf6021ba2fd6389d6ed297f3172",
+            "law_number": 12,
+            "rank": 9,
+            "record_sha256": "79b923d57a743b3c22c4e0903601eb276e2a26549cd54d77749e6179f705dc66",
+            "score": null,
+            "source_lines": [
+              178,
+              180
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 5,
+                "score": 4.031944804946537
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-09",
+            "content_zh_sha256": "1e9945f4ba1346f42da1a128be7e92c1cb8b889208cba5b3f9df3bd4ca2c1aee",
+            "law_number": 11,
+            "rank": 10,
+            "record_sha256": "a91810d4bbfe39baf1298527bd21ae7cdb9663b8f2169a4ffd95ef97f8105eda",
+            "score": null,
+            "source_lines": [
+              267,
+              267
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 8,
+                "score": 3.3518496572011514
+              },
+              "dense": {
+                "distance": 0.40334266424179077,
+                "rank": 6,
+                "score": 0.5966573357582092
+              }
+            }
+          }
+        ]
+      },
+      "timing": {
+        "bm25_seconds": 0.0002451,
+        "dense_seconds": 2.7180626,
+        "fusion_and_adapter_seconds": 0.0004452,
+        "normalization_seconds": 1.26e-05,
+        "total_seconds": 2.7187655
+      }
+    },
+    {
+      "channels": {
+        "bm25": {
+          "query": "请查找同时包含7.32米与2.44米的球门尺寸资料。",
+          "results": [
+            {
+              "chunk_id": "L01-03",
+              "content_zh_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+              "law_number": 1,
+              "rank": 1,
+              "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836",
+              "score": 14.546825751491623,
+              "source_lines": [
+                187,
+                189
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+            },
+            {
+              "chunk_id": "L01-02",
+              "content_zh_sha256": "8382e2e43132ae955f49fe74254a38dbd935f568686fefd26284d2bd21e42858",
+              "law_number": 1,
+              "rank": 2,
+              "record_sha256": "8ea46b78771615543a2b252558a8eb3c3ac6a37b21c182b49a22b13a0c2b24d5",
+              "score": 7.7600493295842625,
+              "source_lines": [
+                177,
+                179
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+            },
+            {
+              "chunk_id": "L01-04",
+              "content_zh_sha256": "bb23094e588d3f34b3db1956520c137bbfbd2ab2263b9b166bb37ef69797cb77",
+              "law_number": 1,
+              "rank": 3,
+              "record_sha256": "54c377f15097f4f617d98f658bff0e41bb77fb166cbcf887a21a545662d6c723",
+              "score": 6.134848271963494,
+              "source_lines": [
+                192,
+                194
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+            },
+            {
+              "chunk_id": "L14-06",
+              "content_zh_sha256": "120fccc83cbb0ea6ca43a96859c61c28c607621e6d8301954fb7eb0abbfa9733",
+              "law_number": 14,
+              "rank": 4,
+              "record_sha256": "5ed70e9b1fee85d0ec3125d35f808cf55a670c1af0ce5c691775c971ed303822",
+              "score": 5.823538817887199,
+              "source_lines": [
+                221,
+                223
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+            },
+            {
+              "chunk_id": "L01-05",
+              "content_zh_sha256": "57c7cb9485569ba65c3dc6429fc5e186037ee2cc5438e3f633df944280731900",
+              "law_number": 1,
+              "rank": 5,
+              "record_sha256": "2e2d1b22588e13defec584ed74ab6a4fd8d992718e0a503d55a8f4007fb56f81",
+              "score": 5.61375277057023,
+              "source_lines": [
+                203,
+                207
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+            },
+            {
+              "chunk_id": "L13-04",
+              "content_zh_sha256": "2ec53f2adf5066f0da831050feb0c0d9ad35aebb0000271ab38162b48bf240e5",
+              "law_number": 13,
+              "rank": 6,
+              "record_sha256": "68aef8a52472606f6cc777c0ff54b59a8847dc9fc98570273b6cf34f78fd4ae5",
+              "score": 5.31895441689878,
+              "source_lines": [
+                217,
+                220
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29"
+            },
+            {
+              "chunk_id": "L01-06",
+              "content_zh_sha256": "00d7714660f64f28374b8658030e569c1e83715e8351badb52a6f2f4296c5289",
+              "law_number": 1,
+              "rank": 7,
+              "record_sha256": "21747735bc996b04c025d5fb21308f4a5ec12a765a986a6b59ee908fde28d338",
+              "score": 5.258359460552889,
+              "source_lines": [
+                208,
+                210
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+            },
+            {
+              "chunk_id": "L14-01",
+              "content_zh_sha256": "106324acbf25de268323ebb6ed33e3dbffc5cbcbf1e728b817d90e9dc0fd1d21",
+              "law_number": 14,
+              "rank": 8,
+              "record_sha256": "d81370b870f2f4857025f264b2d5eccbf0e0839da9ff8c2722ece535992a923f",
+              "score": 4.674806901791902,
+              "source_lines": [
+                192,
+                193
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+            },
+            {
+              "chunk_id": "L12-02",
+              "content_zh_sha256": "64205bfa70529fd27a893b9c692e47c4dca0caf6021ba2fd6389d6ed297f3172",
+              "law_number": 12,
+              "rank": 9,
+              "record_sha256": "79b923d57a743b3c22c4e0903601eb276e2a26549cd54d77749e6179f705dc66",
+              "score": 4.531047977773997,
+              "source_lines": [
+                178,
+                180
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+            },
+            {
+              "chunk_id": "L14-04",
+              "content_zh_sha256": "4c1c5a093e08a763d8ccca3f04000e9197c9a5cc66574177bb864dbfc1cecb61",
+              "law_number": 14,
+              "rank": 10,
+              "record_sha256": "327c63e7722b5e3b35a8d7b18eb9a1546512900547c38c141bd61bf657bbe570",
+              "score": 4.481725030470731,
+              "source_lines": [
+                206,
+                214
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+            }
+          ],
+          "timing": {
+            "normalization_seconds": 8.1e-06,
+            "scoring_seconds": 0.0001844,
+            "tokenization_seconds": 9.71e-05,
+            "total_seconds": 0.0002896
+          },
+          "tokens": [
+            "查找",
+            "同时",
+            "包含",
+            "7.32",
+            "米",
+            "与",
+            "2.44",
+            "米",
+            "球门",
+            "尺寸",
+            "资料"
+          ]
+        },
+        "dense": {
+          "query": "请查找同时包含7.32米与2.44米的球门尺寸资料。",
+          "results": [
+            {
+              "chunk_id": "L01-03",
+              "content_zh_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+              "distance": 0.4103594422340393,
+              "law_number": 1,
+              "rank": 1,
+              "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836",
+              "score": 0.5896405577659607,
+              "source_lines": [
+                187,
+                189
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+            },
+            {
+              "chunk_id": "L01-05",
+              "content_zh_sha256": "57c7cb9485569ba65c3dc6429fc5e186037ee2cc5438e3f633df944280731900",
+              "distance": 0.42148125171661377,
+              "law_number": 1,
+              "rank": 2,
+              "record_sha256": "2e2d1b22588e13defec584ed74ab6a4fd8d992718e0a503d55a8f4007fb56f81",
+              "score": 0.5785187482833862,
+              "source_lines": [
+                203,
+                207
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+            },
+            {
+              "chunk_id": "L01-02",
+              "content_zh_sha256": "8382e2e43132ae955f49fe74254a38dbd935f568686fefd26284d2bd21e42858",
+              "distance": 0.43117767572402954,
+              "law_number": 1,
+              "rank": 3,
+              "record_sha256": "8ea46b78771615543a2b252558a8eb3c3ac6a37b21c182b49a22b13a0c2b24d5",
+              "score": 0.5688223242759705,
+              "source_lines": [
+                177,
+                179
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+            },
+            {
+              "chunk_id": "L02-02",
+              "content_zh_sha256": "aaf69e77f266fa144df20549ff0a7286853d7556d2f558dcd86e3d7039e23129",
+              "distance": 0.44850921630859375,
+              "law_number": 2,
+              "rank": 4,
+              "record_sha256": "6c65f30e691befa68a7ed4781c18b63ec23f02508c3d0d6e98856a875106f05e",
+              "score": 0.5514907836914062,
+              "source_lines": [
+                219,
+                220
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Ball_%28association_football%29"
+            },
+            {
+              "chunk_id": "L01-06",
+              "content_zh_sha256": "00d7714660f64f28374b8658030e569c1e83715e8351badb52a6f2f4296c5289",
+              "distance": 0.4865533113479614,
+              "law_number": 1,
+              "rank": 5,
+              "record_sha256": "21747735bc996b04c025d5fb21308f4a5ec12a765a986a6b59ee908fde28d338",
+              "score": 0.5134466886520386,
+              "source_lines": [
+                208,
+                210
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+            },
+            {
+              "chunk_id": "L01-07",
+              "content_zh_sha256": "a9b6a663ac2e01caf8dddee39764bfcfd1f463bd3d921f311f5e8dac9da106f8",
+              "distance": 0.5046395063400269,
+              "law_number": 1,
+              "rank": 6,
+              "record_sha256": "cbb1224a6411540428205c50bbb22b6a06e97bc87f1b0839b296b6cb654e9324",
+              "score": 0.49536049365997314,
+              "source_lines": [
+                217,
+                219
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+            },
+            {
+              "chunk_id": "L01-04",
+              "content_zh_sha256": "bb23094e588d3f34b3db1956520c137bbfbd2ab2263b9b166bb37ef69797cb77",
+              "distance": 0.5256173014640808,
+              "law_number": 1,
+              "rank": 7,
+              "record_sha256": "54c377f15097f4f617d98f658bff0e41bb77fb166cbcf887a21a545662d6c723",
+              "score": 0.4743826985359192,
+              "source_lines": [
+                192,
+                194
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+            },
+            {
+              "chunk_id": "L01-01",
+              "content_zh_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+              "distance": 0.5292446613311768,
+              "law_number": 1,
+              "rank": 8,
+              "record_sha256": "44f2b8c87a8ffe41304f8d45d35109eff500e629a07e6479af35062b57e57491",
+              "score": 0.47075533866882324,
+              "source_lines": [
+                167,
+                171
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+            },
+            {
+              "chunk_id": "L13-08",
+              "content_zh_sha256": "d7f3d5c900ea67e3c0215e4eaf809d5f71b6fe41e38e0f74b2e6b08de2c18f50",
+              "distance": 0.5311461091041565,
+              "law_number": 13,
+              "rank": 9,
+              "record_sha256": "33dfa893ee88601ede7cae3ccfa96a0cde6584fbfb877c37b75a7c4fde022df1",
+              "score": 0.4688538908958435,
+              "source_lines": [
+                248,
+                249
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29"
+            },
+            {
+              "chunk_id": "L13-04",
+              "content_zh_sha256": "2ec53f2adf5066f0da831050feb0c0d9ad35aebb0000271ab38162b48bf240e5",
+              "distance": 0.5399634838104248,
+              "law_number": 13,
+              "rank": 10,
+              "record_sha256": "68aef8a52472606f6cc777c0ff54b59a8847dc9fc98570273b6cf34f78fd4ae5",
+              "score": 0.4600365161895752,
+              "source_lines": [
+                217,
+                220
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29"
+            }
+          ],
+          "timing": {
+            "query_embedding_seconds": 0.24414469999987887,
+            "vector_search_seconds": 0.006105599999955302
+          }
+        }
+      },
+      "embedding_observation": {
+        "elapsed_seconds": 0.16529530000002524,
+        "inputs": 1,
+        "prompt_eval_count": 21,
+        "server_load_duration_ns": 9449900,
+        "server_total_duration_ns": 61395500
+      },
+      "k": 60,
+      "llm_generation_requests": 0,
+      "quality_evaluation": false,
+      "question": "请查找同时包含7.32米与2.44米的球门尺寸资料。",
+      "results": {
+        "bm25": [
+          {
+            "chunk_id": "L01-03",
+            "content_zh_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+            "law_number": 1,
+            "rank": 1,
+            "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836",
+            "score": 14.546825751491623,
+            "source_lines": [
+              187,
+              189
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 1,
+                "score": 14.546825751491623
+              },
+              "dense": {
+                "distance": 0.4103594422340393,
+                "rank": 1,
+                "score": 0.5896405577659607
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-02",
+            "content_zh_sha256": "8382e2e43132ae955f49fe74254a38dbd935f568686fefd26284d2bd21e42858",
+            "law_number": 1,
+            "rank": 2,
+            "record_sha256": "8ea46b78771615543a2b252558a8eb3c3ac6a37b21c182b49a22b13a0c2b24d5",
+            "score": 7.7600493295842625,
+            "source_lines": [
+              177,
+              179
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 2,
+                "score": 7.7600493295842625
+              },
+              "dense": {
+                "distance": 0.43117767572402954,
+                "rank": 3,
+                "score": 0.5688223242759705
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-04",
+            "content_zh_sha256": "bb23094e588d3f34b3db1956520c137bbfbd2ab2263b9b166bb37ef69797cb77",
+            "law_number": 1,
+            "rank": 3,
+            "record_sha256": "54c377f15097f4f617d98f658bff0e41bb77fb166cbcf887a21a545662d6c723",
+            "score": 6.134848271963494,
+            "source_lines": [
+              192,
+              194
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 3,
+                "score": 6.134848271963494
+              },
+              "dense": {
+                "distance": 0.5256173014640808,
+                "rank": 7,
+                "score": 0.4743826985359192
+              }
+            }
+          },
+          {
+            "chunk_id": "L14-06",
+            "content_zh_sha256": "120fccc83cbb0ea6ca43a96859c61c28c607621e6d8301954fb7eb0abbfa9733",
+            "law_number": 14,
+            "rank": 4,
+            "record_sha256": "5ed70e9b1fee85d0ec3125d35f808cf55a670c1af0ce5c691775c971ed303822",
+            "score": 5.823538817887199,
+            "source_lines": [
+              221,
+              223
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 4,
+                "score": 5.823538817887199
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-05",
+            "content_zh_sha256": "57c7cb9485569ba65c3dc6429fc5e186037ee2cc5438e3f633df944280731900",
+            "law_number": 1,
+            "rank": 5,
+            "record_sha256": "2e2d1b22588e13defec584ed74ab6a4fd8d992718e0a503d55a8f4007fb56f81",
+            "score": 5.61375277057023,
+            "source_lines": [
+              203,
+              207
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 5,
+                "score": 5.61375277057023
+              },
+              "dense": {
+                "distance": 0.42148125171661377,
+                "rank": 2,
+                "score": 0.5785187482833862
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-04",
+            "content_zh_sha256": "2ec53f2adf5066f0da831050feb0c0d9ad35aebb0000271ab38162b48bf240e5",
+            "law_number": 13,
+            "rank": 6,
+            "record_sha256": "68aef8a52472606f6cc777c0ff54b59a8847dc9fc98570273b6cf34f78fd4ae5",
+            "score": 5.31895441689878,
+            "source_lines": [
+              217,
+              220
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 6,
+                "score": 5.31895441689878
+              },
+              "dense": {
+                "distance": 0.5399634838104248,
+                "rank": 10,
+                "score": 0.4600365161895752
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-06",
+            "content_zh_sha256": "00d7714660f64f28374b8658030e569c1e83715e8351badb52a6f2f4296c5289",
+            "law_number": 1,
+            "rank": 7,
+            "record_sha256": "21747735bc996b04c025d5fb21308f4a5ec12a765a986a6b59ee908fde28d338",
+            "score": 5.258359460552889,
+            "source_lines": [
+              208,
+              210
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 7,
+                "score": 5.258359460552889
+              },
+              "dense": {
+                "distance": 0.4865533113479614,
+                "rank": 5,
+                "score": 0.5134466886520386
+              }
+            }
+          },
+          {
+            "chunk_id": "L14-01",
+            "content_zh_sha256": "106324acbf25de268323ebb6ed33e3dbffc5cbcbf1e728b817d90e9dc0fd1d21",
+            "law_number": 14,
+            "rank": 8,
+            "record_sha256": "d81370b870f2f4857025f264b2d5eccbf0e0839da9ff8c2722ece535992a923f",
+            "score": 4.674806901791902,
+            "source_lines": [
+              192,
+              193
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 8,
+                "score": 4.674806901791902
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-02",
+            "content_zh_sha256": "64205bfa70529fd27a893b9c692e47c4dca0caf6021ba2fd6389d6ed297f3172",
+            "law_number": 12,
+            "rank": 9,
+            "record_sha256": "79b923d57a743b3c22c4e0903601eb276e2a26549cd54d77749e6179f705dc66",
+            "score": 4.531047977773997,
+            "source_lines": [
+              178,
+              180
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 9,
+                "score": 4.531047977773997
+              }
+            }
+          },
+          {
+            "chunk_id": "L14-04",
+            "content_zh_sha256": "4c1c5a093e08a763d8ccca3f04000e9197c9a5cc66574177bb864dbfc1cecb61",
+            "law_number": 14,
+            "rank": 10,
+            "record_sha256": "327c63e7722b5e3b35a8d7b18eb9a1546512900547c38c141bd61bf657bbe570",
+            "score": 4.481725030470731,
+            "source_lines": [
+              206,
+              214
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 10,
+                "score": 4.481725030470731
+              }
+            }
+          }
+        ],
+        "dense": [
+          {
+            "chunk_id": "L01-03",
+            "content_zh_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+            "law_number": 1,
+            "rank": 1,
+            "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836",
+            "score": 0.5896405577659607,
+            "source_lines": [
+              187,
+              189
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 1,
+                "score": 14.546825751491623
+              },
+              "dense": {
+                "distance": 0.4103594422340393,
+                "rank": 1,
+                "score": 0.5896405577659607
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-05",
+            "content_zh_sha256": "57c7cb9485569ba65c3dc6429fc5e186037ee2cc5438e3f633df944280731900",
+            "law_number": 1,
+            "rank": 2,
+            "record_sha256": "2e2d1b22588e13defec584ed74ab6a4fd8d992718e0a503d55a8f4007fb56f81",
+            "score": 0.5785187482833862,
+            "source_lines": [
+              203,
+              207
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 5,
+                "score": 5.61375277057023
+              },
+              "dense": {
+                "distance": 0.42148125171661377,
+                "rank": 2,
+                "score": 0.5785187482833862
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-02",
+            "content_zh_sha256": "8382e2e43132ae955f49fe74254a38dbd935f568686fefd26284d2bd21e42858",
+            "law_number": 1,
+            "rank": 3,
+            "record_sha256": "8ea46b78771615543a2b252558a8eb3c3ac6a37b21c182b49a22b13a0c2b24d5",
+            "score": 0.5688223242759705,
+            "source_lines": [
+              177,
+              179
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 2,
+                "score": 7.7600493295842625
+              },
+              "dense": {
+                "distance": 0.43117767572402954,
+                "rank": 3,
+                "score": 0.5688223242759705
+              }
+            }
+          },
+          {
+            "chunk_id": "L02-02",
+            "content_zh_sha256": "aaf69e77f266fa144df20549ff0a7286853d7556d2f558dcd86e3d7039e23129",
+            "law_number": 2,
+            "rank": 4,
+            "record_sha256": "6c65f30e691befa68a7ed4781c18b63ec23f02508c3d0d6e98856a875106f05e",
+            "score": 0.5514907836914062,
+            "source_lines": [
+              219,
+              220
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Ball_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.44850921630859375,
+                "rank": 4,
+                "score": 0.5514907836914062
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-06",
+            "content_zh_sha256": "00d7714660f64f28374b8658030e569c1e83715e8351badb52a6f2f4296c5289",
+            "law_number": 1,
+            "rank": 5,
+            "record_sha256": "21747735bc996b04c025d5fb21308f4a5ec12a765a986a6b59ee908fde28d338",
+            "score": 0.5134466886520386,
+            "source_lines": [
+              208,
+              210
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 7,
+                "score": 5.258359460552889
+              },
+              "dense": {
+                "distance": 0.4865533113479614,
+                "rank": 5,
+                "score": 0.5134466886520386
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-07",
+            "content_zh_sha256": "a9b6a663ac2e01caf8dddee39764bfcfd1f463bd3d921f311f5e8dac9da106f8",
+            "law_number": 1,
+            "rank": 6,
+            "record_sha256": "cbb1224a6411540428205c50bbb22b6a06e97bc87f1b0839b296b6cb654e9324",
+            "score": 0.49536049365997314,
+            "source_lines": [
+              217,
+              219
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "dense": {
+                "distance": 0.5046395063400269,
+                "rank": 6,
+                "score": 0.49536049365997314
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-04",
+            "content_zh_sha256": "bb23094e588d3f34b3db1956520c137bbfbd2ab2263b9b166bb37ef69797cb77",
+            "law_number": 1,
+            "rank": 7,
+            "record_sha256": "54c377f15097f4f617d98f658bff0e41bb77fb166cbcf887a21a545662d6c723",
+            "score": 0.4743826985359192,
+            "source_lines": [
+              192,
+              194
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 3,
+                "score": 6.134848271963494
+              },
+              "dense": {
+                "distance": 0.5256173014640808,
+                "rank": 7,
+                "score": 0.4743826985359192
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-01",
+            "content_zh_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+            "law_number": 1,
+            "rank": 8,
+            "record_sha256": "44f2b8c87a8ffe41304f8d45d35109eff500e629a07e6479af35062b57e57491",
+            "score": 0.47075533866882324,
+            "source_lines": [
+              167,
+              171
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "dense": {
+                "distance": 0.5292446613311768,
+                "rank": 8,
+                "score": 0.47075533866882324
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-08",
+            "content_zh_sha256": "d7f3d5c900ea67e3c0215e4eaf809d5f71b6fe41e38e0f74b2e6b08de2c18f50",
+            "law_number": 13,
+            "rank": 9,
+            "record_sha256": "33dfa893ee88601ede7cae3ccfa96a0cde6584fbfb877c37b75a7c4fde022df1",
+            "score": 0.4688538908958435,
+            "source_lines": [
+              248,
+              249
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.5311461091041565,
+                "rank": 9,
+                "score": 0.4688538908958435
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-04",
+            "content_zh_sha256": "2ec53f2adf5066f0da831050feb0c0d9ad35aebb0000271ab38162b48bf240e5",
+            "law_number": 13,
+            "rank": 10,
+            "record_sha256": "68aef8a52472606f6cc777c0ff54b59a8847dc9fc98570273b6cf34f78fd4ae5",
+            "score": 0.4600365161895752,
+            "source_lines": [
+              217,
+              220
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 6,
+                "score": 5.31895441689878
+              },
+              "dense": {
+                "distance": 0.5399634838104248,
+                "rank": 10,
+                "score": 0.4600365161895752
+              }
+            }
+          }
+        ],
+        "rrf": [
+          {
+            "chunk_id": "L01-03",
+            "content_zh_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+            "law_number": 1,
+            "rank": 1,
+            "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836",
+            "score": 0.03278688524590164,
+            "source_lines": [
+              187,
+              189
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 1,
+                "score": 14.546825751491623
+              },
+              "dense": {
+                "distance": 0.4103594422340393,
+                "rank": 1,
+                "score": 0.5896405577659607
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-02",
+            "content_zh_sha256": "8382e2e43132ae955f49fe74254a38dbd935f568686fefd26284d2bd21e42858",
+            "law_number": 1,
+            "rank": 2,
+            "record_sha256": "8ea46b78771615543a2b252558a8eb3c3ac6a37b21c182b49a22b13a0c2b24d5",
+            "score": 0.03200204813108039,
+            "source_lines": [
+              177,
+              179
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 2,
+                "score": 7.7600493295842625
+              },
+              "dense": {
+                "distance": 0.43117767572402954,
+                "rank": 3,
+                "score": 0.5688223242759705
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-05",
+            "content_zh_sha256": "57c7cb9485569ba65c3dc6429fc5e186037ee2cc5438e3f633df944280731900",
+            "law_number": 1,
+            "rank": 3,
+            "record_sha256": "2e2d1b22588e13defec584ed74ab6a4fd8d992718e0a503d55a8f4007fb56f81",
+            "score": 0.0315136476426799,
+            "source_lines": [
+              203,
+              207
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 5,
+                "score": 5.61375277057023
+              },
+              "dense": {
+                "distance": 0.42148125171661377,
+                "rank": 2,
+                "score": 0.5785187482833862
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-04",
+            "content_zh_sha256": "bb23094e588d3f34b3db1956520c137bbfbd2ab2263b9b166bb37ef69797cb77",
+            "law_number": 1,
+            "rank": 4,
+            "record_sha256": "54c377f15097f4f617d98f658bff0e41bb77fb166cbcf887a21a545662d6c723",
+            "score": 0.030798389007344232,
+            "source_lines": [
+              192,
+              194
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 3,
+                "score": 6.134848271963494
+              },
+              "dense": {
+                "distance": 0.5256173014640808,
+                "rank": 7,
+                "score": 0.4743826985359192
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-06",
+            "content_zh_sha256": "00d7714660f64f28374b8658030e569c1e83715e8351badb52a6f2f4296c5289",
+            "law_number": 1,
+            "rank": 5,
+            "record_sha256": "21747735bc996b04c025d5fb21308f4a5ec12a765a986a6b59ee908fde28d338",
+            "score": 0.03030998851894374,
+            "source_lines": [
+              208,
+              210
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 7,
+                "score": 5.258359460552889
+              },
+              "dense": {
+                "distance": 0.4865533113479614,
+                "rank": 5,
+                "score": 0.5134466886520386
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-04",
+            "content_zh_sha256": "2ec53f2adf5066f0da831050feb0c0d9ad35aebb0000271ab38162b48bf240e5",
+            "law_number": 13,
+            "rank": 6,
+            "record_sha256": "68aef8a52472606f6cc777c0ff54b59a8847dc9fc98570273b6cf34f78fd4ae5",
+            "score": 0.02943722943722944,
+            "source_lines": [
+              217,
+              220
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 6,
+                "score": 5.31895441689878
+              },
+              "dense": {
+                "distance": 0.5399634838104248,
+                "rank": 10,
+                "score": 0.4600365161895752
+              }
+            }
+          },
+          {
+            "chunk_id": "L02-02",
+            "content_zh_sha256": "aaf69e77f266fa144df20549ff0a7286853d7556d2f558dcd86e3d7039e23129",
+            "law_number": 2,
+            "rank": 7,
+            "record_sha256": "6c65f30e691befa68a7ed4781c18b63ec23f02508c3d0d6e98856a875106f05e",
+            "score": 0.015625,
+            "source_lines": [
+              219,
+              220
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Ball_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.44850921630859375,
+                "rank": 4,
+                "score": 0.5514907836914062
+              }
+            }
+          },
+          {
+            "chunk_id": "L14-06",
+            "content_zh_sha256": "120fccc83cbb0ea6ca43a96859c61c28c607621e6d8301954fb7eb0abbfa9733",
+            "law_number": 14,
+            "rank": 8,
+            "record_sha256": "5ed70e9b1fee85d0ec3125d35f808cf55a670c1af0ce5c691775c971ed303822",
+            "score": 0.015625,
+            "source_lines": [
+              221,
+              223
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 4,
+                "score": 5.823538817887199
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-07",
+            "content_zh_sha256": "a9b6a663ac2e01caf8dddee39764bfcfd1f463bd3d921f311f5e8dac9da106f8",
+            "law_number": 1,
+            "rank": 9,
+            "record_sha256": "cbb1224a6411540428205c50bbb22b6a06e97bc87f1b0839b296b6cb654e9324",
+            "score": 0.015151515151515152,
+            "source_lines": [
+              217,
+              219
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "dense": {
+                "distance": 0.5046395063400269,
+                "rank": 6,
+                "score": 0.49536049365997314
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-01",
+            "content_zh_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+            "law_number": 1,
+            "rank": 10,
+            "record_sha256": "44f2b8c87a8ffe41304f8d45d35109eff500e629a07e6479af35062b57e57491",
+            "score": 0.014705882352941176,
+            "source_lines": [
+              167,
+              171
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "dense": {
+                "distance": 0.5292446613311768,
+                "rank": 8,
+                "score": 0.47075533866882324
+              }
+            }
+          }
+        ],
+        "union": [
+          {
+            "chunk_id": "L01-03",
+            "content_zh_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+            "law_number": 1,
+            "rank": 1,
+            "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836",
+            "score": null,
+            "source_lines": [
+              187,
+              189
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 1,
+                "score": 14.546825751491623
+              },
+              "dense": {
+                "distance": 0.4103594422340393,
+                "rank": 1,
+                "score": 0.5896405577659607
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-05",
+            "content_zh_sha256": "57c7cb9485569ba65c3dc6429fc5e186037ee2cc5438e3f633df944280731900",
+            "law_number": 1,
+            "rank": 2,
+            "record_sha256": "2e2d1b22588e13defec584ed74ab6a4fd8d992718e0a503d55a8f4007fb56f81",
+            "score": null,
+            "source_lines": [
+              203,
+              207
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 5,
+                "score": 5.61375277057023
+              },
+              "dense": {
+                "distance": 0.42148125171661377,
+                "rank": 2,
+                "score": 0.5785187482833862
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-02",
+            "content_zh_sha256": "8382e2e43132ae955f49fe74254a38dbd935f568686fefd26284d2bd21e42858",
+            "law_number": 1,
+            "rank": 3,
+            "record_sha256": "8ea46b78771615543a2b252558a8eb3c3ac6a37b21c182b49a22b13a0c2b24d5",
+            "score": null,
+            "source_lines": [
+              177,
+              179
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 2,
+                "score": 7.7600493295842625
+              },
+              "dense": {
+                "distance": 0.43117767572402954,
+                "rank": 3,
+                "score": 0.5688223242759705
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-04",
+            "content_zh_sha256": "bb23094e588d3f34b3db1956520c137bbfbd2ab2263b9b166bb37ef69797cb77",
+            "law_number": 1,
+            "rank": 4,
+            "record_sha256": "54c377f15097f4f617d98f658bff0e41bb77fb166cbcf887a21a545662d6c723",
+            "score": null,
+            "source_lines": [
+              192,
+              194
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 3,
+                "score": 6.134848271963494
+              },
+              "dense": {
+                "distance": 0.5256173014640808,
+                "rank": 7,
+                "score": 0.4743826985359192
+              }
+            }
+          },
+          {
+            "chunk_id": "L02-02",
+            "content_zh_sha256": "aaf69e77f266fa144df20549ff0a7286853d7556d2f558dcd86e3d7039e23129",
+            "law_number": 2,
+            "rank": 5,
+            "record_sha256": "6c65f30e691befa68a7ed4781c18b63ec23f02508c3d0d6e98856a875106f05e",
+            "score": null,
+            "source_lines": [
+              219,
+              220
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Ball_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.44850921630859375,
+                "rank": 4,
+                "score": 0.5514907836914062
+              }
+            }
+          },
+          {
+            "chunk_id": "L14-06",
+            "content_zh_sha256": "120fccc83cbb0ea6ca43a96859c61c28c607621e6d8301954fb7eb0abbfa9733",
+            "law_number": 14,
+            "rank": 6,
+            "record_sha256": "5ed70e9b1fee85d0ec3125d35f808cf55a670c1af0ce5c691775c971ed303822",
+            "score": null,
+            "source_lines": [
+              221,
+              223
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 4,
+                "score": 5.823538817887199
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-06",
+            "content_zh_sha256": "00d7714660f64f28374b8658030e569c1e83715e8351badb52a6f2f4296c5289",
+            "law_number": 1,
+            "rank": 7,
+            "record_sha256": "21747735bc996b04c025d5fb21308f4a5ec12a765a986a6b59ee908fde28d338",
+            "score": null,
+            "source_lines": [
+              208,
+              210
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "bm25": {
+                "rank": 7,
+                "score": 5.258359460552889
+              },
+              "dense": {
+                "distance": 0.4865533113479614,
+                "rank": 5,
+                "score": 0.5134466886520386
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-07",
+            "content_zh_sha256": "a9b6a663ac2e01caf8dddee39764bfcfd1f463bd3d921f311f5e8dac9da106f8",
+            "law_number": 1,
+            "rank": 8,
+            "record_sha256": "cbb1224a6411540428205c50bbb22b6a06e97bc87f1b0839b296b6cb654e9324",
+            "score": null,
+            "source_lines": [
+              217,
+              219
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "dense": {
+                "distance": 0.5046395063400269,
+                "rank": 6,
+                "score": 0.49536049365997314
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-04",
+            "content_zh_sha256": "2ec53f2adf5066f0da831050feb0c0d9ad35aebb0000271ab38162b48bf240e5",
+            "law_number": 13,
+            "rank": 9,
+            "record_sha256": "68aef8a52472606f6cc777c0ff54b59a8847dc9fc98570273b6cf34f78fd4ae5",
+            "score": null,
+            "source_lines": [
+              217,
+              220
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 6,
+                "score": 5.31895441689878
+              },
+              "dense": {
+                "distance": 0.5399634838104248,
+                "rank": 10,
+                "score": 0.4600365161895752
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-01",
+            "content_zh_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+            "law_number": 1,
+            "rank": 10,
+            "record_sha256": "44f2b8c87a8ffe41304f8d45d35109eff500e629a07e6479af35062b57e57491",
+            "score": null,
+            "source_lines": [
+              167,
+              171
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "dense": {
+                "distance": 0.5292446613311768,
+                "rank": 8,
+                "score": 0.47075533866882324
+              }
+            }
+          }
+        ]
+      },
+      "timing": {
+        "bm25_seconds": 0.0002942,
+        "dense_seconds": 0.2502624,
+        "fusion_and_adapter_seconds": 0.0002947,
+        "normalization_seconds": 8e-06,
+        "total_seconds": 0.2508593
+      }
+    },
+    {
+      "channels": {
+        "bm25": {
+          "query": "请检索和“间接任意球”有关的规则段落。",
+          "results": [
+            {
+              "chunk_id": "L13-03",
+              "content_zh_sha256": "626db8434afb207afbd5dd7d6227492efa534daa10d23d548d41cb261062f64c",
+              "law_number": 13,
+              "rank": 1,
+              "record_sha256": "2d0860e0d490d16919953606ee7cd80ecca5fa0e4cc745f06890119e3e703cc8",
+              "score": 4.886909407494938,
+              "source_lines": [
+                208,
+                212
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29"
+            },
+            {
+              "chunk_id": "L12-01",
+              "content_zh_sha256": "8d52183d297d6cbf3a288a74ac88379af0344ddf7c6aed6e62eb44dc87088414",
+              "law_number": 12,
+              "rank": 2,
+              "record_sha256": "b222b84e869da79fe5981bed0398a9bbe5e522bd6b69a07b36c7ffe446bb841d",
+              "score": 4.715450380937501,
+              "source_lines": [
+                170,
+                177
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+            },
+            {
+              "chunk_id": "L08B-04",
+              "content_zh_sha256": "7657602642617681d2d8ac53f1f1c34696885ad1d5d020bb5061dd91102a4584",
+              "law_number": 8,
+              "rank": 3,
+              "record_sha256": "4501febec9164c58f0d8596a9aa37d66575679ef423fb1283f63f6205084767d",
+              "score": 4.573311987050126,
+              "source_lines": [
+                163,
+                177
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Dropped-ball"
+            },
+            {
+              "chunk_id": "L17-02",
+              "content_zh_sha256": "98dfd94ebe3ce810d8b3135649a4b1e7db7e685c4ee229f2b19fae64cdb3b6d9",
+              "law_number": 17,
+              "rank": 4,
+              "record_sha256": "0aa3aa63ff5cbd8697ebfb7fb58797c82e7428de49317f2e412508700be5bbd8",
+              "score": 4.440979480002063,
+              "source_lines": [
+                205,
+                206
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Corner_kick"
+            },
+            {
+              "chunk_id": "L13-02",
+              "content_zh_sha256": "7e12c738a01a03c731d82a440e74b7c9703210cef5263d3a9f78284240cff010",
+              "law_number": 13,
+              "rank": 5,
+              "record_sha256": "dd029a62166618daa267c1d5811b4f3d8274fe5c43cca78031a3db89ab55cfa2",
+              "score": 4.395157111051262,
+              "source_lines": [
+                203,
+                203
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29"
+            },
+            {
+              "chunk_id": "L08B-01",
+              "content_zh_sha256": "c24d697ce2b63325ee6a6882e806c9416330612c7df476db2e0826b2f7262cf6",
+              "law_number": 8,
+              "rank": 6,
+              "record_sha256": "56f65d8d22bc3be9d6361e030ef8bd702cbdf127c5b29418e6082b1dbfa642e4",
+              "score": 4.32986086269292,
+              "source_lines": [
+                131,
+                138
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Dropped-ball"
+            },
+            {
+              "chunk_id": "L05-01",
+              "content_zh_sha256": "b4212657e684746031b02fbd37c183479f123c8c1b88de86e6d5bc752a78cf51",
+              "law_number": 5,
+              "rank": 7,
+              "record_sha256": "89ce64182ffa28d17a6adc7389693c355b77d6f230ed40c930232b4b9a8761de",
+              "score": 4.323399868036559,
+              "source_lines": [
+                186,
+                192
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Referee_%28association_football%29"
+            },
+            {
+              "chunk_id": "L11-05",
+              "content_zh_sha256": "4d25211c6c320b43c5ac9552b0fe72a750cc561ed652325e8f7d0ab19d89d9b4",
+              "law_number": 11,
+              "rank": 8,
+              "record_sha256": "f7edc3e149b8f768e5e52a11cdb5e5398f51d46929ff2689ebfbba073bb4a2e2",
+              "score": 4.148118233808078,
+              "source_lines": [
+                246,
+                246
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L13-01",
+              "content_zh_sha256": "881ea0b9c259521180b30f24440bbbcaf97a1ca0a1e1c38de5dee9fdfe91c2b2",
+              "law_number": 13,
+              "rank": 9,
+              "record_sha256": "a8f4525d7f200de27175a8872f85ee6fb6ab684b556e095ef79822033cba9950",
+              "score": 3.8300455021778985,
+              "source_lines": [
+                189,
+                192
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29"
+            },
+            {
+              "chunk_id": "L12-14",
+              "content_zh_sha256": "5c8af8e055a09ea1f935348ddfd3ccfdb217e1af21f8205a527a984fe83f0ac9",
+              "law_number": 12,
+              "rank": 10,
+              "record_sha256": "fac16b370fee4cabbdb4ba8950a6c6b2de81cfcaa82816e65956d4e19afc5a03",
+              "score": 3.5074064298117724,
+              "source_lines": [
+                283,
+                291
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+            }
+          ],
+          "timing": {
+            "normalization_seconds": 8.9e-06,
+            "scoring_seconds": 0.0001903,
+            "tokenization_seconds": 9.98e-05,
+            "total_seconds": 0.000299
+          },
+          "tokens": [
+            "检索",
+            "和",
+            "间接任意球",
+            "有关",
+            "规则",
+            "段落"
+          ]
+        },
+        "dense": {
+          "query": "请检索和“间接任意球”有关的规则段落。",
+          "results": [
+            {
+              "chunk_id": "L12-04",
+              "content_zh_sha256": "39034a61c197ec7a75a05519792465ee4b05795bdc5e6e350637d4744baa1f19",
+              "distance": 0.3298454284667969,
+              "law_number": 12,
+              "rank": 1,
+              "record_sha256": "e6321bcbc31161331ae7cbcbd7f6528dbc1a4f24d27bcdc3641716c5c53678aa",
+              "score": 0.6701545715332031,
+              "source_lines": [
+                186,
+                192
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+            },
+            {
+              "chunk_id": "L13-01",
+              "content_zh_sha256": "881ea0b9c259521180b30f24440bbbcaf97a1ca0a1e1c38de5dee9fdfe91c2b2",
+              "distance": 0.35343092679977417,
+              "law_number": 13,
+              "rank": 2,
+              "record_sha256": "a8f4525d7f200de27175a8872f85ee6fb6ab684b556e095ef79822033cba9950",
+              "score": 0.6465690732002258,
+              "source_lines": [
+                189,
+                192
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29"
+            },
+            {
+              "chunk_id": "L13-05",
+              "content_zh_sha256": "0123e05b7155f2ac685b0d88e4580abc10dad2509d842aa455fb67b4334701b7",
+              "distance": 0.3647878170013428,
+              "law_number": 13,
+              "rank": 3,
+              "record_sha256": "a1fdedb465191870b9ce26747a0e0d58d6497065f4eacf0c3c31eb7e5627c32b",
+              "score": 0.6352121829986572,
+              "source_lines": [
+                221,
+                233
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29"
+            },
+            {
+              "chunk_id": "L13-03",
+              "content_zh_sha256": "626db8434afb207afbd5dd7d6227492efa534daa10d23d548d41cb261062f64c",
+              "distance": 0.3668380379676819,
+              "law_number": 13,
+              "rank": 4,
+              "record_sha256": "2d0860e0d490d16919953606ee7cd80ecca5fa0e4cc745f06890119e3e703cc8",
+              "score": 0.6331619620323181,
+              "source_lines": [
+                208,
+                212
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29"
+            },
+            {
+              "chunk_id": "L12-01",
+              "content_zh_sha256": "8d52183d297d6cbf3a288a74ac88379af0344ddf7c6aed6e62eb44dc87088414",
+              "distance": 0.37624025344848633,
+              "law_number": 12,
+              "rank": 5,
+              "record_sha256": "b222b84e869da79fe5981bed0398a9bbe5e522bd6b69a07b36c7ffe446bb841d",
+              "score": 0.6237597465515137,
+              "source_lines": [
+                170,
+                177
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+            },
+            {
+              "chunk_id": "L13-02",
+              "content_zh_sha256": "7e12c738a01a03c731d82a440e74b7c9703210cef5263d3a9f78284240cff010",
+              "distance": 0.38094764947891235,
+              "law_number": 13,
+              "rank": 6,
+              "record_sha256": "dd029a62166618daa267c1d5811b4f3d8274fe5c43cca78031a3db89ab55cfa2",
+              "score": 0.6190523505210876,
+              "source_lines": [
+                203,
+                203
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29"
+            },
+            {
+              "chunk_id": "L12-05",
+              "content_zh_sha256": "88ea24aedb7b67f8cc817c2538ac3a09745488b468c1758825058a836a465456",
+              "distance": 0.38247859477996826,
+              "law_number": 12,
+              "rank": 7,
+              "record_sha256": "8a31a0a33610c9d92a81739a381591aa86b4374937cdfb6a1641486e5db281f0",
+              "score": 0.6175214052200317,
+              "source_lines": [
+                193,
+                199
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+            },
+            {
+              "chunk_id": "L14-05",
+              "content_zh_sha256": "a69b78c030e22f5236081b4fc124e42068e4de344af0f79530a658ca563a2849",
+              "distance": 0.38738781213760376,
+              "law_number": 14,
+              "rank": 8,
+              "record_sha256": "97b5a0ee3a58b82d8be18f7a3ab0e84acd960a0a2f0d9e35e452d23cd9f1a0b4",
+              "score": 0.6126121878623962,
+              "source_lines": [
+                215,
+                220
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+            },
+            {
+              "chunk_id": "L12-03",
+              "content_zh_sha256": "051557c1d4fe00cf623f3b62088ea9302fffff84bf1f6d023b9c47a36f32893b",
+              "distance": 0.38757091760635376,
+              "law_number": 12,
+              "rank": 9,
+              "record_sha256": "74f1fc08f64edcfb8d142ac3873c4858571da09b4d6a11e455bef7cd152af2e0",
+              "score": 0.6124290823936462,
+              "source_lines": [
+                181,
+                181
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+            },
+            {
+              "chunk_id": "L13-07",
+              "content_zh_sha256": "e35726cba8c67e039bf11586d983a8f8d311ea8c56bc09ecab9d9bfe5ee2f50e",
+              "distance": 0.3948715925216675,
+              "law_number": 13,
+              "rank": 10,
+              "record_sha256": "599141f4c89ea18213d62770935878cf205e24de93f6c9f35b7c3e0c421f1052",
+              "score": 0.6051284074783325,
+              "source_lines": [
+                242,
+                244
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29"
+            }
+          ],
+          "timing": {
+            "query_embedding_seconds": 0.27374060000011013,
+            "vector_search_seconds": 0.005356299999903058
+          }
+        }
+      },
+      "embedding_observation": {
+        "elapsed_seconds": 0.1663871000000654,
+        "inputs": 1,
+        "prompt_eval_count": 19,
+        "server_load_duration_ns": 6997900,
+        "server_total_duration_ns": 49621900
+      },
+      "k": 60,
+      "llm_generation_requests": 0,
+      "quality_evaluation": false,
+      "question": "请检索和“间接任意球”有关的规则段落。",
+      "results": {
+        "bm25": [
+          {
+            "chunk_id": "L13-03",
+            "content_zh_sha256": "626db8434afb207afbd5dd7d6227492efa534daa10d23d548d41cb261062f64c",
+            "law_number": 13,
+            "rank": 1,
+            "record_sha256": "2d0860e0d490d16919953606ee7cd80ecca5fa0e4cc745f06890119e3e703cc8",
+            "score": 4.886909407494938,
+            "source_lines": [
+              208,
+              212
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 1,
+                "score": 4.886909407494938
+              },
+              "dense": {
+                "distance": 0.3668380379676819,
+                "rank": 4,
+                "score": 0.6331619620323181
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-01",
+            "content_zh_sha256": "8d52183d297d6cbf3a288a74ac88379af0344ddf7c6aed6e62eb44dc87088414",
+            "law_number": 12,
+            "rank": 2,
+            "record_sha256": "b222b84e869da79fe5981bed0398a9bbe5e522bd6b69a07b36c7ffe446bb841d",
+            "score": 4.715450380937501,
+            "source_lines": [
+              170,
+              177
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 2,
+                "score": 4.715450380937501
+              },
+              "dense": {
+                "distance": 0.37624025344848633,
+                "rank": 5,
+                "score": 0.6237597465515137
+              }
+            }
+          },
+          {
+            "chunk_id": "L08B-04",
+            "content_zh_sha256": "7657602642617681d2d8ac53f1f1c34696885ad1d5d020bb5061dd91102a4584",
+            "law_number": 8,
+            "rank": 3,
+            "record_sha256": "4501febec9164c58f0d8596a9aa37d66575679ef423fb1283f63f6205084767d",
+            "score": 4.573311987050126,
+            "source_lines": [
+              163,
+              177
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Dropped-ball",
+            "sources": {
+              "bm25": {
+                "rank": 3,
+                "score": 4.573311987050126
+              }
+            }
+          },
+          {
+            "chunk_id": "L17-02",
+            "content_zh_sha256": "98dfd94ebe3ce810d8b3135649a4b1e7db7e685c4ee229f2b19fae64cdb3b6d9",
+            "law_number": 17,
+            "rank": 4,
+            "record_sha256": "0aa3aa63ff5cbd8697ebfb7fb58797c82e7428de49317f2e412508700be5bbd8",
+            "score": 4.440979480002063,
+            "source_lines": [
+              205,
+              206
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Corner_kick",
+            "sources": {
+              "bm25": {
+                "rank": 4,
+                "score": 4.440979480002063
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-02",
+            "content_zh_sha256": "7e12c738a01a03c731d82a440e74b7c9703210cef5263d3a9f78284240cff010",
+            "law_number": 13,
+            "rank": 5,
+            "record_sha256": "dd029a62166618daa267c1d5811b4f3d8274fe5c43cca78031a3db89ab55cfa2",
+            "score": 4.395157111051262,
+            "source_lines": [
+              203,
+              203
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 5,
+                "score": 4.395157111051262
+              },
+              "dense": {
+                "distance": 0.38094764947891235,
+                "rank": 6,
+                "score": 0.6190523505210876
+              }
+            }
+          },
+          {
+            "chunk_id": "L08B-01",
+            "content_zh_sha256": "c24d697ce2b63325ee6a6882e806c9416330612c7df476db2e0826b2f7262cf6",
+            "law_number": 8,
+            "rank": 6,
+            "record_sha256": "56f65d8d22bc3be9d6361e030ef8bd702cbdf127c5b29418e6082b1dbfa642e4",
+            "score": 4.32986086269292,
+            "source_lines": [
+              131,
+              138
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Dropped-ball",
+            "sources": {
+              "bm25": {
+                "rank": 6,
+                "score": 4.32986086269292
+              }
+            }
+          },
+          {
+            "chunk_id": "L05-01",
+            "content_zh_sha256": "b4212657e684746031b02fbd37c183479f123c8c1b88de86e6d5bc752a78cf51",
+            "law_number": 5,
+            "rank": 7,
+            "record_sha256": "89ce64182ffa28d17a6adc7389693c355b77d6f230ed40c930232b4b9a8761de",
+            "score": 4.323399868036559,
+            "source_lines": [
+              186,
+              192
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Referee_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 7,
+                "score": 4.323399868036559
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-05",
+            "content_zh_sha256": "4d25211c6c320b43c5ac9552b0fe72a750cc561ed652325e8f7d0ab19d89d9b4",
+            "law_number": 11,
+            "rank": 8,
+            "record_sha256": "f7edc3e149b8f768e5e52a11cdb5e5398f51d46929ff2689ebfbba073bb4a2e2",
+            "score": 4.148118233808078,
+            "source_lines": [
+              246,
+              246
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 8,
+                "score": 4.148118233808078
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-01",
+            "content_zh_sha256": "881ea0b9c259521180b30f24440bbbcaf97a1ca0a1e1c38de5dee9fdfe91c2b2",
+            "law_number": 13,
+            "rank": 9,
+            "record_sha256": "a8f4525d7f200de27175a8872f85ee6fb6ab684b556e095ef79822033cba9950",
+            "score": 3.8300455021778985,
+            "source_lines": [
+              189,
+              192
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 9,
+                "score": 3.8300455021778985
+              },
+              "dense": {
+                "distance": 0.35343092679977417,
+                "rank": 2,
+                "score": 0.6465690732002258
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-14",
+            "content_zh_sha256": "5c8af8e055a09ea1f935348ddfd3ccfdb217e1af21f8205a527a984fe83f0ac9",
+            "law_number": 12,
+            "rank": 10,
+            "record_sha256": "fac16b370fee4cabbdb4ba8950a6c6b2de81cfcaa82816e65956d4e19afc5a03",
+            "score": 3.5074064298117724,
+            "source_lines": [
+              283,
+              291
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 10,
+                "score": 3.5074064298117724
+              }
+            }
+          }
+        ],
+        "dense": [
+          {
+            "chunk_id": "L12-04",
+            "content_zh_sha256": "39034a61c197ec7a75a05519792465ee4b05795bdc5e6e350637d4744baa1f19",
+            "law_number": 12,
+            "rank": 1,
+            "record_sha256": "e6321bcbc31161331ae7cbcbd7f6528dbc1a4f24d27bcdc3641716c5c53678aa",
+            "score": 0.6701545715332031,
+            "source_lines": [
+              186,
+              192
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.3298454284667969,
+                "rank": 1,
+                "score": 0.6701545715332031
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-01",
+            "content_zh_sha256": "881ea0b9c259521180b30f24440bbbcaf97a1ca0a1e1c38de5dee9fdfe91c2b2",
+            "law_number": 13,
+            "rank": 2,
+            "record_sha256": "a8f4525d7f200de27175a8872f85ee6fb6ab684b556e095ef79822033cba9950",
+            "score": 0.6465690732002258,
+            "source_lines": [
+              189,
+              192
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 9,
+                "score": 3.8300455021778985
+              },
+              "dense": {
+                "distance": 0.35343092679977417,
+                "rank": 2,
+                "score": 0.6465690732002258
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-05",
+            "content_zh_sha256": "0123e05b7155f2ac685b0d88e4580abc10dad2509d842aa455fb67b4334701b7",
+            "law_number": 13,
+            "rank": 3,
+            "record_sha256": "a1fdedb465191870b9ce26747a0e0d58d6497065f4eacf0c3c31eb7e5627c32b",
+            "score": 0.6352121829986572,
+            "source_lines": [
+              221,
+              233
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.3647878170013428,
+                "rank": 3,
+                "score": 0.6352121829986572
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-03",
+            "content_zh_sha256": "626db8434afb207afbd5dd7d6227492efa534daa10d23d548d41cb261062f64c",
+            "law_number": 13,
+            "rank": 4,
+            "record_sha256": "2d0860e0d490d16919953606ee7cd80ecca5fa0e4cc745f06890119e3e703cc8",
+            "score": 0.6331619620323181,
+            "source_lines": [
+              208,
+              212
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 1,
+                "score": 4.886909407494938
+              },
+              "dense": {
+                "distance": 0.3668380379676819,
+                "rank": 4,
+                "score": 0.6331619620323181
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-01",
+            "content_zh_sha256": "8d52183d297d6cbf3a288a74ac88379af0344ddf7c6aed6e62eb44dc87088414",
+            "law_number": 12,
+            "rank": 5,
+            "record_sha256": "b222b84e869da79fe5981bed0398a9bbe5e522bd6b69a07b36c7ffe446bb841d",
+            "score": 0.6237597465515137,
+            "source_lines": [
+              170,
+              177
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 2,
+                "score": 4.715450380937501
+              },
+              "dense": {
+                "distance": 0.37624025344848633,
+                "rank": 5,
+                "score": 0.6237597465515137
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-02",
+            "content_zh_sha256": "7e12c738a01a03c731d82a440e74b7c9703210cef5263d3a9f78284240cff010",
+            "law_number": 13,
+            "rank": 6,
+            "record_sha256": "dd029a62166618daa267c1d5811b4f3d8274fe5c43cca78031a3db89ab55cfa2",
+            "score": 0.6190523505210876,
+            "source_lines": [
+              203,
+              203
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 5,
+                "score": 4.395157111051262
+              },
+              "dense": {
+                "distance": 0.38094764947891235,
+                "rank": 6,
+                "score": 0.6190523505210876
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-05",
+            "content_zh_sha256": "88ea24aedb7b67f8cc817c2538ac3a09745488b468c1758825058a836a465456",
+            "law_number": 12,
+            "rank": 7,
+            "record_sha256": "8a31a0a33610c9d92a81739a381591aa86b4374937cdfb6a1641486e5db281f0",
+            "score": 0.6175214052200317,
+            "source_lines": [
+              193,
+              199
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.38247859477996826,
+                "rank": 7,
+                "score": 0.6175214052200317
+              }
+            }
+          },
+          {
+            "chunk_id": "L14-05",
+            "content_zh_sha256": "a69b78c030e22f5236081b4fc124e42068e4de344af0f79530a658ca563a2849",
+            "law_number": 14,
+            "rank": 8,
+            "record_sha256": "97b5a0ee3a58b82d8be18f7a3ab0e84acd960a0a2f0d9e35e452d23cd9f1a0b4",
+            "score": 0.6126121878623962,
+            "source_lines": [
+              215,
+              220
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.38738781213760376,
+                "rank": 8,
+                "score": 0.6126121878623962
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-03",
+            "content_zh_sha256": "051557c1d4fe00cf623f3b62088ea9302fffff84bf1f6d023b9c47a36f32893b",
+            "law_number": 12,
+            "rank": 9,
+            "record_sha256": "74f1fc08f64edcfb8d142ac3873c4858571da09b4d6a11e455bef7cd152af2e0",
+            "score": 0.6124290823936462,
+            "source_lines": [
+              181,
+              181
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.38757091760635376,
+                "rank": 9,
+                "score": 0.6124290823936462
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-07",
+            "content_zh_sha256": "e35726cba8c67e039bf11586d983a8f8d311ea8c56bc09ecab9d9bfe5ee2f50e",
+            "law_number": 13,
+            "rank": 10,
+            "record_sha256": "599141f4c89ea18213d62770935878cf205e24de93f6c9f35b7c3e0c421f1052",
+            "score": 0.6051284074783325,
+            "source_lines": [
+              242,
+              244
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.3948715925216675,
+                "rank": 10,
+                "score": 0.6051284074783325
+              }
+            }
+          }
+        ],
+        "rrf": [
+          {
+            "chunk_id": "L13-03",
+            "content_zh_sha256": "626db8434afb207afbd5dd7d6227492efa534daa10d23d548d41cb261062f64c",
+            "law_number": 13,
+            "rank": 1,
+            "record_sha256": "2d0860e0d490d16919953606ee7cd80ecca5fa0e4cc745f06890119e3e703cc8",
+            "score": 0.03201844262295082,
+            "source_lines": [
+              208,
+              212
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 1,
+                "score": 4.886909407494938
+              },
+              "dense": {
+                "distance": 0.3668380379676819,
+                "rank": 4,
+                "score": 0.6331619620323181
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-01",
+            "content_zh_sha256": "8d52183d297d6cbf3a288a74ac88379af0344ddf7c6aed6e62eb44dc87088414",
+            "law_number": 12,
+            "rank": 2,
+            "record_sha256": "b222b84e869da79fe5981bed0398a9bbe5e522bd6b69a07b36c7ffe446bb841d",
+            "score": 0.0315136476426799,
+            "source_lines": [
+              170,
+              177
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 2,
+                "score": 4.715450380937501
+              },
+              "dense": {
+                "distance": 0.37624025344848633,
+                "rank": 5,
+                "score": 0.6237597465515137
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-01",
+            "content_zh_sha256": "881ea0b9c259521180b30f24440bbbcaf97a1ca0a1e1c38de5dee9fdfe91c2b2",
+            "law_number": 13,
+            "rank": 3,
+            "record_sha256": "a8f4525d7f200de27175a8872f85ee6fb6ab684b556e095ef79822033cba9950",
+            "score": 0.030621785881252923,
+            "source_lines": [
+              189,
+              192
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 9,
+                "score": 3.8300455021778985
+              },
+              "dense": {
+                "distance": 0.35343092679977417,
+                "rank": 2,
+                "score": 0.6465690732002258
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-02",
+            "content_zh_sha256": "7e12c738a01a03c731d82a440e74b7c9703210cef5263d3a9f78284240cff010",
+            "law_number": 13,
+            "rank": 4,
+            "record_sha256": "dd029a62166618daa267c1d5811b4f3d8274fe5c43cca78031a3db89ab55cfa2",
+            "score": 0.030536130536130537,
+            "source_lines": [
+              203,
+              203
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 5,
+                "score": 4.395157111051262
+              },
+              "dense": {
+                "distance": 0.38094764947891235,
+                "rank": 6,
+                "score": 0.6190523505210876
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-04",
+            "content_zh_sha256": "39034a61c197ec7a75a05519792465ee4b05795bdc5e6e350637d4744baa1f19",
+            "law_number": 12,
+            "rank": 5,
+            "record_sha256": "e6321bcbc31161331ae7cbcbd7f6528dbc1a4f24d27bcdc3641716c5c53678aa",
+            "score": 0.01639344262295082,
+            "source_lines": [
+              186,
+              192
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.3298454284667969,
+                "rank": 1,
+                "score": 0.6701545715332031
+              }
+            }
+          },
+          {
+            "chunk_id": "L08B-04",
+            "content_zh_sha256": "7657602642617681d2d8ac53f1f1c34696885ad1d5d020bb5061dd91102a4584",
+            "law_number": 8,
+            "rank": 6,
+            "record_sha256": "4501febec9164c58f0d8596a9aa37d66575679ef423fb1283f63f6205084767d",
+            "score": 0.015873015873015872,
+            "source_lines": [
+              163,
+              177
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Dropped-ball",
+            "sources": {
+              "bm25": {
+                "rank": 3,
+                "score": 4.573311987050126
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-05",
+            "content_zh_sha256": "0123e05b7155f2ac685b0d88e4580abc10dad2509d842aa455fb67b4334701b7",
+            "law_number": 13,
+            "rank": 7,
+            "record_sha256": "a1fdedb465191870b9ce26747a0e0d58d6497065f4eacf0c3c31eb7e5627c32b",
+            "score": 0.015873015873015872,
+            "source_lines": [
+              221,
+              233
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.3647878170013428,
+                "rank": 3,
+                "score": 0.6352121829986572
+              }
+            }
+          },
+          {
+            "chunk_id": "L17-02",
+            "content_zh_sha256": "98dfd94ebe3ce810d8b3135649a4b1e7db7e685c4ee229f2b19fae64cdb3b6d9",
+            "law_number": 17,
+            "rank": 8,
+            "record_sha256": "0aa3aa63ff5cbd8697ebfb7fb58797c82e7428de49317f2e412508700be5bbd8",
+            "score": 0.015625,
+            "source_lines": [
+              205,
+              206
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Corner_kick",
+            "sources": {
+              "bm25": {
+                "rank": 4,
+                "score": 4.440979480002063
+              }
+            }
+          },
+          {
+            "chunk_id": "L08B-01",
+            "content_zh_sha256": "c24d697ce2b63325ee6a6882e806c9416330612c7df476db2e0826b2f7262cf6",
+            "law_number": 8,
+            "rank": 9,
+            "record_sha256": "56f65d8d22bc3be9d6361e030ef8bd702cbdf127c5b29418e6082b1dbfa642e4",
+            "score": 0.015151515151515152,
+            "source_lines": [
+              131,
+              138
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Dropped-ball",
+            "sources": {
+              "bm25": {
+                "rank": 6,
+                "score": 4.32986086269292
+              }
+            }
+          },
+          {
+            "chunk_id": "L05-01",
+            "content_zh_sha256": "b4212657e684746031b02fbd37c183479f123c8c1b88de86e6d5bc752a78cf51",
+            "law_number": 5,
+            "rank": 10,
+            "record_sha256": "89ce64182ffa28d17a6adc7389693c355b77d6f230ed40c930232b4b9a8761de",
+            "score": 0.014925373134328358,
+            "source_lines": [
+              186,
+              192
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Referee_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 7,
+                "score": 4.323399868036559
+              }
+            }
+          }
+        ],
+        "union": [
+          {
+            "chunk_id": "L12-04",
+            "content_zh_sha256": "39034a61c197ec7a75a05519792465ee4b05795bdc5e6e350637d4744baa1f19",
+            "law_number": 12,
+            "rank": 1,
+            "record_sha256": "e6321bcbc31161331ae7cbcbd7f6528dbc1a4f24d27bcdc3641716c5c53678aa",
+            "score": null,
+            "source_lines": [
+              186,
+              192
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.3298454284667969,
+                "rank": 1,
+                "score": 0.6701545715332031
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-03",
+            "content_zh_sha256": "626db8434afb207afbd5dd7d6227492efa534daa10d23d548d41cb261062f64c",
+            "law_number": 13,
+            "rank": 2,
+            "record_sha256": "2d0860e0d490d16919953606ee7cd80ecca5fa0e4cc745f06890119e3e703cc8",
+            "score": null,
+            "source_lines": [
+              208,
+              212
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 1,
+                "score": 4.886909407494938
+              },
+              "dense": {
+                "distance": 0.3668380379676819,
+                "rank": 4,
+                "score": 0.6331619620323181
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-01",
+            "content_zh_sha256": "881ea0b9c259521180b30f24440bbbcaf97a1ca0a1e1c38de5dee9fdfe91c2b2",
+            "law_number": 13,
+            "rank": 3,
+            "record_sha256": "a8f4525d7f200de27175a8872f85ee6fb6ab684b556e095ef79822033cba9950",
+            "score": null,
+            "source_lines": [
+              189,
+              192
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 9,
+                "score": 3.8300455021778985
+              },
+              "dense": {
+                "distance": 0.35343092679977417,
+                "rank": 2,
+                "score": 0.6465690732002258
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-01",
+            "content_zh_sha256": "8d52183d297d6cbf3a288a74ac88379af0344ddf7c6aed6e62eb44dc87088414",
+            "law_number": 12,
+            "rank": 4,
+            "record_sha256": "b222b84e869da79fe5981bed0398a9bbe5e522bd6b69a07b36c7ffe446bb841d",
+            "score": null,
+            "source_lines": [
+              170,
+              177
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 2,
+                "score": 4.715450380937501
+              },
+              "dense": {
+                "distance": 0.37624025344848633,
+                "rank": 5,
+                "score": 0.6237597465515137
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-05",
+            "content_zh_sha256": "0123e05b7155f2ac685b0d88e4580abc10dad2509d842aa455fb67b4334701b7",
+            "law_number": 13,
+            "rank": 5,
+            "record_sha256": "a1fdedb465191870b9ce26747a0e0d58d6497065f4eacf0c3c31eb7e5627c32b",
+            "score": null,
+            "source_lines": [
+              221,
+              233
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.3647878170013428,
+                "rank": 3,
+                "score": 0.6352121829986572
+              }
+            }
+          },
+          {
+            "chunk_id": "L08B-04",
+            "content_zh_sha256": "7657602642617681d2d8ac53f1f1c34696885ad1d5d020bb5061dd91102a4584",
+            "law_number": 8,
+            "rank": 6,
+            "record_sha256": "4501febec9164c58f0d8596a9aa37d66575679ef423fb1283f63f6205084767d",
+            "score": null,
+            "source_lines": [
+              163,
+              177
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Dropped-ball",
+            "sources": {
+              "bm25": {
+                "rank": 3,
+                "score": 4.573311987050126
+              }
+            }
+          },
+          {
+            "chunk_id": "L17-02",
+            "content_zh_sha256": "98dfd94ebe3ce810d8b3135649a4b1e7db7e685c4ee229f2b19fae64cdb3b6d9",
+            "law_number": 17,
+            "rank": 7,
+            "record_sha256": "0aa3aa63ff5cbd8697ebfb7fb58797c82e7428de49317f2e412508700be5bbd8",
+            "score": null,
+            "source_lines": [
+              205,
+              206
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Corner_kick",
+            "sources": {
+              "bm25": {
+                "rank": 4,
+                "score": 4.440979480002063
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-02",
+            "content_zh_sha256": "7e12c738a01a03c731d82a440e74b7c9703210cef5263d3a9f78284240cff010",
+            "law_number": 13,
+            "rank": 8,
+            "record_sha256": "dd029a62166618daa267c1d5811b4f3d8274fe5c43cca78031a3db89ab55cfa2",
+            "score": null,
+            "source_lines": [
+              203,
+              203
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "bm25": {
+                "rank": 5,
+                "score": 4.395157111051262
+              },
+              "dense": {
+                "distance": 0.38094764947891235,
+                "rank": 6,
+                "score": 0.6190523505210876
+              }
+            }
+          },
+          {
+            "chunk_id": "L08B-01",
+            "content_zh_sha256": "c24d697ce2b63325ee6a6882e806c9416330612c7df476db2e0826b2f7262cf6",
+            "law_number": 8,
+            "rank": 9,
+            "record_sha256": "56f65d8d22bc3be9d6361e030ef8bd702cbdf127c5b29418e6082b1dbfa642e4",
+            "score": null,
+            "source_lines": [
+              131,
+              138
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Dropped-ball",
+            "sources": {
+              "bm25": {
+                "rank": 6,
+                "score": 4.32986086269292
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-05",
+            "content_zh_sha256": "88ea24aedb7b67f8cc817c2538ac3a09745488b468c1758825058a836a465456",
+            "law_number": 12,
+            "rank": 10,
+            "record_sha256": "8a31a0a33610c9d92a81739a381591aa86b4374937cdfb6a1641486e5db281f0",
+            "score": null,
+            "source_lines": [
+              193,
+              199
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.38247859477996826,
+                "rank": 7,
+                "score": 0.6175214052200317
+              }
+            }
+          }
+        ]
+      },
+      "timing": {
+        "bm25_seconds": 0.0003043,
+        "dense_seconds": 0.2791083,
+        "fusion_and_adapter_seconds": 0.0003516,
+        "normalization_seconds": 7.2e-06,
+        "total_seconds": 0.2797714
+      }
+    },
+    {
+      "channels": {
+        "bm25": {
+          "query": "zzzzunknownlexicaltoken987654321",
+          "results": [],
+          "timing": {
+            "normalization_seconds": 6.5e-06,
+            "scoring_seconds": 4.46e-05,
+            "tokenization_seconds": 1.42e-05,
+            "total_seconds": 6.53e-05
+          },
+          "tokens": [
+            "zzzzunknownlexicaltoken",
+            "987654321"
+          ]
+        },
+        "dense": {
+          "query": "zzzzunknownlexicaltoken987654321",
+          "results": [
+            {
+              "chunk_id": "L11-07",
+              "content_zh_sha256": "a2f47802c6ffc710bcbc267c287f971633ca5d6be98bcab4e97a43369862bb12",
+              "distance": 0.6435341238975525,
+              "law_number": 11,
+              "rank": 1,
+              "record_sha256": "ba0f0deb089cf0b4ca64b22b9202e415b72c503c525f24196f38381500aa2d4f",
+              "score": 0.3564658761024475,
+              "source_lines": [
+                257,
+                259
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L12-04",
+              "content_zh_sha256": "39034a61c197ec7a75a05519792465ee4b05795bdc5e6e350637d4744baa1f19",
+              "distance": 0.6635298728942871,
+              "law_number": 12,
+              "rank": 2,
+              "record_sha256": "e6321bcbc31161331ae7cbcbd7f6528dbc1a4f24d27bcdc3641716c5c53678aa",
+              "score": 0.3364701271057129,
+              "source_lines": [
+                186,
+                192
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29"
+            },
+            {
+              "chunk_id": "L17-06",
+              "content_zh_sha256": "2495dca5b236f243d2dd0dab8db4662611f2a5ac195f244c2dcbdc24102b9e5f",
+              "distance": 0.6649416691771977,
+              "law_number": 17,
+              "rank": 3,
+              "record_sha256": "8204eb13ad60a7d575c366d443bc1558d1bbb6941403cfb5856239f425be9a8f",
+              "score": 0.33505833082280234,
+              "source_lines": [
+                296,
+                297
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Corner_kick"
+            },
+            {
+              "chunk_id": "L06-06",
+              "content_zh_sha256": "6ef924ce5af7a7d9a3a7607fedafd718add61f155d7e258dc9662fae6cbcd88a",
+              "distance": 0.6704177856445312,
+              "law_number": 6,
+              "rank": 4,
+              "record_sha256": "a07ace05f9ff057ed84d6c7e7d717b8e1e23106298015b5344e8382ce2842524",
+              "score": 0.32958221435546875,
+              "source_lines": [
+                220,
+                224
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Assistant_referee_%28association_football%29"
+            },
+            {
+              "chunk_id": "L10-01",
+              "content_zh_sha256": "467643aff52a118adb26aa2226541208bcbc750a71d48d455f369f4678b0505d",
+              "distance": 0.6762939691543579,
+              "law_number": 10,
+              "rank": 5,
+              "record_sha256": "65b57914033c1bc9e577f3ceaac87bab01ed7158c51aacf5425dbb3683dbedbf",
+              "score": 0.3237060308456421,
+              "source_lines": [
+                125,
+                131
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Determining_the_Outcome_of_a_Match_%28association_football%29"
+            },
+            {
+              "chunk_id": "L13-02",
+              "content_zh_sha256": "7e12c738a01a03c731d82a440e74b7c9703210cef5263d3a9f78284240cff010",
+              "distance": 0.6768766641616821,
+              "law_number": 13,
+              "rank": 6,
+              "record_sha256": "dd029a62166618daa267c1d5811b4f3d8274fe5c43cca78031a3db89ab55cfa2",
+              "score": 0.32312333583831787,
+              "source_lines": [
+                203,
+                203
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29"
+            },
+            {
+              "chunk_id": "L04-03",
+              "content_zh_sha256": "285089995955d725c5384c3fd39b851a71e39d86fe5a527936c3b19ab5a8621d",
+              "distance": 0.6783480644226074,
+              "law_number": 4,
+              "rank": 7,
+              "record_sha256": "3493e5e57cf8fbcf09ed041401a5d3aa033d841da79ed2dd00e96336c65a5e2f",
+              "score": 0.3216519355773926,
+              "source_lines": [
+                184,
+                184
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Kit_%28association_football%29"
+            },
+            {
+              "chunk_id": "L01-05",
+              "content_zh_sha256": "57c7cb9485569ba65c3dc6429fc5e186037ee2cc5438e3f633df944280731900",
+              "distance": 0.6786578893661499,
+              "law_number": 1,
+              "rank": 8,
+              "record_sha256": "2e2d1b22588e13defec584ed74ab6a4fd8d992718e0a503d55a8f4007fb56f81",
+              "score": 0.3213421106338501,
+              "source_lines": [
+                203,
+                207
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+            },
+            {
+              "chunk_id": "L11-09",
+              "content_zh_sha256": "1e9945f4ba1346f42da1a128be7e92c1cb8b889208cba5b3f9df3bd4ca2c1aee",
+              "distance": 0.6855263113975525,
+              "law_number": 11,
+              "rank": 9,
+              "record_sha256": "a91810d4bbfe39baf1298527bd21ae7cdb9663b8f2169a4ffd95ef97f8105eda",
+              "score": 0.3144736886024475,
+              "source_lines": [
+                267,
+                267
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29"
+            },
+            {
+              "chunk_id": "L08B-04",
+              "content_zh_sha256": "7657602642617681d2d8ac53f1f1c34696885ad1d5d020bb5061dd91102a4584",
+              "distance": 0.685927152633667,
+              "law_number": 8,
+              "rank": 10,
+              "record_sha256": "4501febec9164c58f0d8596a9aa37d66575679ef423fb1283f63f6205084767d",
+              "score": 0.314072847366333,
+              "source_lines": [
+                163,
+                177
+              ],
+              "source_url": "https://en.wikipedia.org/wiki/Dropped-ball"
+            }
+          ],
+          "timing": {
+            "query_embedding_seconds": 0.24626480000006268,
+            "vector_search_seconds": 0.004933400000027177
+          }
+        }
+      },
+      "embedding_observation": {
+        "elapsed_seconds": 0.14412459999994098,
+        "inputs": 1,
+        "prompt_eval_count": 15,
+        "server_load_duration_ns": 7394200,
+        "server_total_duration_ns": 41541300
+      },
+      "k": 60,
+      "llm_generation_requests": 0,
+      "quality_evaluation": false,
+      "question": "zzzzunknownlexicaltoken987654321",
+      "results": {
+        "bm25": [],
+        "dense": [
+          {
+            "chunk_id": "L11-07",
+            "content_zh_sha256": "a2f47802c6ffc710bcbc267c287f971633ca5d6be98bcab4e97a43369862bb12",
+            "law_number": 11,
+            "rank": 1,
+            "record_sha256": "ba0f0deb089cf0b4ca64b22b9202e415b72c503c525f24196f38381500aa2d4f",
+            "score": 0.3564658761024475,
+            "source_lines": [
+              257,
+              259
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6435341238975525,
+                "rank": 1,
+                "score": 0.3564658761024475
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-04",
+            "content_zh_sha256": "39034a61c197ec7a75a05519792465ee4b05795bdc5e6e350637d4744baa1f19",
+            "law_number": 12,
+            "rank": 2,
+            "record_sha256": "e6321bcbc31161331ae7cbcbd7f6528dbc1a4f24d27bcdc3641716c5c53678aa",
+            "score": 0.3364701271057129,
+            "source_lines": [
+              186,
+              192
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6635298728942871,
+                "rank": 2,
+                "score": 0.3364701271057129
+              }
+            }
+          },
+          {
+            "chunk_id": "L17-06",
+            "content_zh_sha256": "2495dca5b236f243d2dd0dab8db4662611f2a5ac195f244c2dcbdc24102b9e5f",
+            "law_number": 17,
+            "rank": 3,
+            "record_sha256": "8204eb13ad60a7d575c366d443bc1558d1bbb6941403cfb5856239f425be9a8f",
+            "score": 0.33505833082280234,
+            "source_lines": [
+              296,
+              297
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Corner_kick",
+            "sources": {
+              "dense": {
+                "distance": 0.6649416691771977,
+                "rank": 3,
+                "score": 0.33505833082280234
+              }
+            }
+          },
+          {
+            "chunk_id": "L06-06",
+            "content_zh_sha256": "6ef924ce5af7a7d9a3a7607fedafd718add61f155d7e258dc9662fae6cbcd88a",
+            "law_number": 6,
+            "rank": 4,
+            "record_sha256": "a07ace05f9ff057ed84d6c7e7d717b8e1e23106298015b5344e8382ce2842524",
+            "score": 0.32958221435546875,
+            "source_lines": [
+              220,
+              224
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Assistant_referee_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6704177856445312,
+                "rank": 4,
+                "score": 0.32958221435546875
+              }
+            }
+          },
+          {
+            "chunk_id": "L10-01",
+            "content_zh_sha256": "467643aff52a118adb26aa2226541208bcbc750a71d48d455f369f4678b0505d",
+            "law_number": 10,
+            "rank": 5,
+            "record_sha256": "65b57914033c1bc9e577f3ceaac87bab01ed7158c51aacf5425dbb3683dbedbf",
+            "score": 0.3237060308456421,
+            "source_lines": [
+              125,
+              131
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Determining_the_Outcome_of_a_Match_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6762939691543579,
+                "rank": 5,
+                "score": 0.3237060308456421
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-02",
+            "content_zh_sha256": "7e12c738a01a03c731d82a440e74b7c9703210cef5263d3a9f78284240cff010",
+            "law_number": 13,
+            "rank": 6,
+            "record_sha256": "dd029a62166618daa267c1d5811b4f3d8274fe5c43cca78031a3db89ab55cfa2",
+            "score": 0.32312333583831787,
+            "source_lines": [
+              203,
+              203
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6768766641616821,
+                "rank": 6,
+                "score": 0.32312333583831787
+              }
+            }
+          },
+          {
+            "chunk_id": "L04-03",
+            "content_zh_sha256": "285089995955d725c5384c3fd39b851a71e39d86fe5a527936c3b19ab5a8621d",
+            "law_number": 4,
+            "rank": 7,
+            "record_sha256": "3493e5e57cf8fbcf09ed041401a5d3aa033d841da79ed2dd00e96336c65a5e2f",
+            "score": 0.3216519355773926,
+            "source_lines": [
+              184,
+              184
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Kit_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6783480644226074,
+                "rank": 7,
+                "score": 0.3216519355773926
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-05",
+            "content_zh_sha256": "57c7cb9485569ba65c3dc6429fc5e186037ee2cc5438e3f633df944280731900",
+            "law_number": 1,
+            "rank": 8,
+            "record_sha256": "2e2d1b22588e13defec584ed74ab6a4fd8d992718e0a503d55a8f4007fb56f81",
+            "score": 0.3213421106338501,
+            "source_lines": [
+              203,
+              207
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "dense": {
+                "distance": 0.6786578893661499,
+                "rank": 8,
+                "score": 0.3213421106338501
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-09",
+            "content_zh_sha256": "1e9945f4ba1346f42da1a128be7e92c1cb8b889208cba5b3f9df3bd4ca2c1aee",
+            "law_number": 11,
+            "rank": 9,
+            "record_sha256": "a91810d4bbfe39baf1298527bd21ae7cdb9663b8f2169a4ffd95ef97f8105eda",
+            "score": 0.3144736886024475,
+            "source_lines": [
+              267,
+              267
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6855263113975525,
+                "rank": 9,
+                "score": 0.3144736886024475
+              }
+            }
+          },
+          {
+            "chunk_id": "L08B-04",
+            "content_zh_sha256": "7657602642617681d2d8ac53f1f1c34696885ad1d5d020bb5061dd91102a4584",
+            "law_number": 8,
+            "rank": 10,
+            "record_sha256": "4501febec9164c58f0d8596a9aa37d66575679ef423fb1283f63f6205084767d",
+            "score": 0.314072847366333,
+            "source_lines": [
+              163,
+              177
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Dropped-ball",
+            "sources": {
+              "dense": {
+                "distance": 0.685927152633667,
+                "rank": 10,
+                "score": 0.314072847366333
+              }
+            }
+          }
+        ],
+        "rrf": [
+          {
+            "chunk_id": "L11-07",
+            "content_zh_sha256": "a2f47802c6ffc710bcbc267c287f971633ca5d6be98bcab4e97a43369862bb12",
+            "law_number": 11,
+            "rank": 1,
+            "record_sha256": "ba0f0deb089cf0b4ca64b22b9202e415b72c503c525f24196f38381500aa2d4f",
+            "score": 0.01639344262295082,
+            "source_lines": [
+              257,
+              259
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6435341238975525,
+                "rank": 1,
+                "score": 0.3564658761024475
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-04",
+            "content_zh_sha256": "39034a61c197ec7a75a05519792465ee4b05795bdc5e6e350637d4744baa1f19",
+            "law_number": 12,
+            "rank": 2,
+            "record_sha256": "e6321bcbc31161331ae7cbcbd7f6528dbc1a4f24d27bcdc3641716c5c53678aa",
+            "score": 0.016129032258064516,
+            "source_lines": [
+              186,
+              192
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6635298728942871,
+                "rank": 2,
+                "score": 0.3364701271057129
+              }
+            }
+          },
+          {
+            "chunk_id": "L17-06",
+            "content_zh_sha256": "2495dca5b236f243d2dd0dab8db4662611f2a5ac195f244c2dcbdc24102b9e5f",
+            "law_number": 17,
+            "rank": 3,
+            "record_sha256": "8204eb13ad60a7d575c366d443bc1558d1bbb6941403cfb5856239f425be9a8f",
+            "score": 0.015873015873015872,
+            "source_lines": [
+              296,
+              297
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Corner_kick",
+            "sources": {
+              "dense": {
+                "distance": 0.6649416691771977,
+                "rank": 3,
+                "score": 0.33505833082280234
+              }
+            }
+          },
+          {
+            "chunk_id": "L06-06",
+            "content_zh_sha256": "6ef924ce5af7a7d9a3a7607fedafd718add61f155d7e258dc9662fae6cbcd88a",
+            "law_number": 6,
+            "rank": 4,
+            "record_sha256": "a07ace05f9ff057ed84d6c7e7d717b8e1e23106298015b5344e8382ce2842524",
+            "score": 0.015625,
+            "source_lines": [
+              220,
+              224
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Assistant_referee_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6704177856445312,
+                "rank": 4,
+                "score": 0.32958221435546875
+              }
+            }
+          },
+          {
+            "chunk_id": "L10-01",
+            "content_zh_sha256": "467643aff52a118adb26aa2226541208bcbc750a71d48d455f369f4678b0505d",
+            "law_number": 10,
+            "rank": 5,
+            "record_sha256": "65b57914033c1bc9e577f3ceaac87bab01ed7158c51aacf5425dbb3683dbedbf",
+            "score": 0.015384615384615385,
+            "source_lines": [
+              125,
+              131
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Determining_the_Outcome_of_a_Match_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6762939691543579,
+                "rank": 5,
+                "score": 0.3237060308456421
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-02",
+            "content_zh_sha256": "7e12c738a01a03c731d82a440e74b7c9703210cef5263d3a9f78284240cff010",
+            "law_number": 13,
+            "rank": 6,
+            "record_sha256": "dd029a62166618daa267c1d5811b4f3d8274fe5c43cca78031a3db89ab55cfa2",
+            "score": 0.015151515151515152,
+            "source_lines": [
+              203,
+              203
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6768766641616821,
+                "rank": 6,
+                "score": 0.32312333583831787
+              }
+            }
+          },
+          {
+            "chunk_id": "L04-03",
+            "content_zh_sha256": "285089995955d725c5384c3fd39b851a71e39d86fe5a527936c3b19ab5a8621d",
+            "law_number": 4,
+            "rank": 7,
+            "record_sha256": "3493e5e57cf8fbcf09ed041401a5d3aa033d841da79ed2dd00e96336c65a5e2f",
+            "score": 0.014925373134328358,
+            "source_lines": [
+              184,
+              184
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Kit_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6783480644226074,
+                "rank": 7,
+                "score": 0.3216519355773926
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-05",
+            "content_zh_sha256": "57c7cb9485569ba65c3dc6429fc5e186037ee2cc5438e3f633df944280731900",
+            "law_number": 1,
+            "rank": 8,
+            "record_sha256": "2e2d1b22588e13defec584ed74ab6a4fd8d992718e0a503d55a8f4007fb56f81",
+            "score": 0.014705882352941176,
+            "source_lines": [
+              203,
+              207
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "dense": {
+                "distance": 0.6786578893661499,
+                "rank": 8,
+                "score": 0.3213421106338501
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-09",
+            "content_zh_sha256": "1e9945f4ba1346f42da1a128be7e92c1cb8b889208cba5b3f9df3bd4ca2c1aee",
+            "law_number": 11,
+            "rank": 9,
+            "record_sha256": "a91810d4bbfe39baf1298527bd21ae7cdb9663b8f2169a4ffd95ef97f8105eda",
+            "score": 0.014492753623188406,
+            "source_lines": [
+              267,
+              267
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6855263113975525,
+                "rank": 9,
+                "score": 0.3144736886024475
+              }
+            }
+          },
+          {
+            "chunk_id": "L08B-04",
+            "content_zh_sha256": "7657602642617681d2d8ac53f1f1c34696885ad1d5d020bb5061dd91102a4584",
+            "law_number": 8,
+            "rank": 10,
+            "record_sha256": "4501febec9164c58f0d8596a9aa37d66575679ef423fb1283f63f6205084767d",
+            "score": 0.014285714285714285,
+            "source_lines": [
+              163,
+              177
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Dropped-ball",
+            "sources": {
+              "dense": {
+                "distance": 0.685927152633667,
+                "rank": 10,
+                "score": 0.314072847366333
+              }
+            }
+          }
+        ],
+        "union": [
+          {
+            "chunk_id": "L11-07",
+            "content_zh_sha256": "a2f47802c6ffc710bcbc267c287f971633ca5d6be98bcab4e97a43369862bb12",
+            "law_number": 11,
+            "rank": 1,
+            "record_sha256": "ba0f0deb089cf0b4ca64b22b9202e415b72c503c525f24196f38381500aa2d4f",
+            "score": null,
+            "source_lines": [
+              257,
+              259
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6435341238975525,
+                "rank": 1,
+                "score": 0.3564658761024475
+              }
+            }
+          },
+          {
+            "chunk_id": "L12-04",
+            "content_zh_sha256": "39034a61c197ec7a75a05519792465ee4b05795bdc5e6e350637d4744baa1f19",
+            "law_number": 12,
+            "rank": 2,
+            "record_sha256": "e6321bcbc31161331ae7cbcbd7f6528dbc1a4f24d27bcdc3641716c5c53678aa",
+            "score": null,
+            "source_lines": [
+              186,
+              192
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6635298728942871,
+                "rank": 2,
+                "score": 0.3364701271057129
+              }
+            }
+          },
+          {
+            "chunk_id": "L17-06",
+            "content_zh_sha256": "2495dca5b236f243d2dd0dab8db4662611f2a5ac195f244c2dcbdc24102b9e5f",
+            "law_number": 17,
+            "rank": 3,
+            "record_sha256": "8204eb13ad60a7d575c366d443bc1558d1bbb6941403cfb5856239f425be9a8f",
+            "score": null,
+            "source_lines": [
+              296,
+              297
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Corner_kick",
+            "sources": {
+              "dense": {
+                "distance": 0.6649416691771977,
+                "rank": 3,
+                "score": 0.33505833082280234
+              }
+            }
+          },
+          {
+            "chunk_id": "L06-06",
+            "content_zh_sha256": "6ef924ce5af7a7d9a3a7607fedafd718add61f155d7e258dc9662fae6cbcd88a",
+            "law_number": 6,
+            "rank": 4,
+            "record_sha256": "a07ace05f9ff057ed84d6c7e7d717b8e1e23106298015b5344e8382ce2842524",
+            "score": null,
+            "source_lines": [
+              220,
+              224
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Assistant_referee_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6704177856445312,
+                "rank": 4,
+                "score": 0.32958221435546875
+              }
+            }
+          },
+          {
+            "chunk_id": "L10-01",
+            "content_zh_sha256": "467643aff52a118adb26aa2226541208bcbc750a71d48d455f369f4678b0505d",
+            "law_number": 10,
+            "rank": 5,
+            "record_sha256": "65b57914033c1bc9e577f3ceaac87bab01ed7158c51aacf5425dbb3683dbedbf",
+            "score": null,
+            "source_lines": [
+              125,
+              131
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Determining_the_Outcome_of_a_Match_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6762939691543579,
+                "rank": 5,
+                "score": 0.3237060308456421
+              }
+            }
+          },
+          {
+            "chunk_id": "L13-02",
+            "content_zh_sha256": "7e12c738a01a03c731d82a440e74b7c9703210cef5263d3a9f78284240cff010",
+            "law_number": 13,
+            "rank": 6,
+            "record_sha256": "dd029a62166618daa267c1d5811b4f3d8274fe5c43cca78031a3db89ab55cfa2",
+            "score": null,
+            "source_lines": [
+              203,
+              203
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6768766641616821,
+                "rank": 6,
+                "score": 0.32312333583831787
+              }
+            }
+          },
+          {
+            "chunk_id": "L04-03",
+            "content_zh_sha256": "285089995955d725c5384c3fd39b851a71e39d86fe5a527936c3b19ab5a8621d",
+            "law_number": 4,
+            "rank": 7,
+            "record_sha256": "3493e5e57cf8fbcf09ed041401a5d3aa033d841da79ed2dd00e96336c65a5e2f",
+            "score": null,
+            "source_lines": [
+              184,
+              184
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Kit_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6783480644226074,
+                "rank": 7,
+                "score": 0.3216519355773926
+              }
+            }
+          },
+          {
+            "chunk_id": "L01-05",
+            "content_zh_sha256": "57c7cb9485569ba65c3dc6429fc5e186037ee2cc5438e3f633df944280731900",
+            "law_number": 1,
+            "rank": 8,
+            "record_sha256": "2e2d1b22588e13defec584ed74ab6a4fd8d992718e0a503d55a8f4007fb56f81",
+            "score": null,
+            "source_lines": [
+              203,
+              207
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "sources": {
+              "dense": {
+                "distance": 0.6786578893661499,
+                "rank": 8,
+                "score": 0.3213421106338501
+              }
+            }
+          },
+          {
+            "chunk_id": "L11-09",
+            "content_zh_sha256": "1e9945f4ba1346f42da1a128be7e92c1cb8b889208cba5b3f9df3bd4ca2c1aee",
+            "law_number": 11,
+            "rank": 9,
+            "record_sha256": "a91810d4bbfe39baf1298527bd21ae7cdb9663b8f2169a4ffd95ef97f8105eda",
+            "score": null,
+            "source_lines": [
+              267,
+              267
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "sources": {
+              "dense": {
+                "distance": 0.6855263113975525,
+                "rank": 9,
+                "score": 0.3144736886024475
+              }
+            }
+          },
+          {
+            "chunk_id": "L08B-04",
+            "content_zh_sha256": "7657602642617681d2d8ac53f1f1c34696885ad1d5d020bb5061dd91102a4584",
+            "law_number": 8,
+            "rank": 10,
+            "record_sha256": "4501febec9164c58f0d8596a9aa37d66575679ef423fb1283f63f6205084767d",
+            "score": null,
+            "source_lines": [
+              163,
+              177
+            ],
+            "source_url": "https://en.wikipedia.org/wiki/Dropped-ball",
+            "sources": {
+              "dense": {
+                "distance": 0.685927152633667,
+                "rank": 10,
+                "score": 0.314072847366333
+              }
+            }
+          }
+        ]
+      },
+      "timing": {
+        "bm25_seconds": 6.99e-05,
+        "dense_seconds": 0.2512188,
+        "fusion_and_adapter_seconds": 0.000186,
+        "normalization_seconds": 7.5e-06,
+        "total_seconds": 0.2514822
+      }
+    }
+  ],
+  "scope": "Four ad-hoc actual dual-channel queries; not new accuracy or latency benchmark samples",
+  "source_sha256": {
+    "scripts/bm25_index.py": "1428b38df11e11f32a075ed4d93720fdcb30bc9009c7dddb5add118c2ee8dc68",
+    "scripts/bm25_retrieval_eval.py": "e4d21c8ed57ed7ddacd2aa1bab8f3773adf32d83c1064f8191ecf27b2daa3d49",
+    "scripts/build_bm25_index.py": "5b9f349735e5b336ef9f274f4a2d03be75cf1fa4fcc7405c433f6fe6294d5b14",
+    "scripts/dense_index.py": "9e991910367987021e1ace250c5796c213ad53f14072ecbc4fe1539352f3d875",
+    "scripts/dense_retrieval_contracts.py": "b20ab9bac37bbd1e973af8f11e2b889415f793e2678770d920d49153f20c5f3a",
+    "scripts/dense_retrieval_eval.py": "7a1a522f35c2b8ed8ffb5712b3ec5371b4fbb0b41450c5ef89d03f1c2cb40fd0",
+    "scripts/dense_telemetry.py": "a4feda38a98504a437e614b55d9cb15a79be3fd0ca77444be7ad67277537d179",
+    "scripts/eval_dataset.py": "48d47343ce008457d031c54a40019ae8bc3a9c76bdaf2d9cbbc274628e3785c1",
+    "scripts/hybrid_live.py": "c9b7e04f092e14a59915587ab8533043dc40dd52ff743d7b33ce536b8efeae03",
+    "scripts/hybrid_retrieval_eval.py": "789df3d90afa81820ad3743dd76d52b43457b0c4862fcfb660af7e5955041e0e",
+    "scripts/install_bm25_runtime.py": "66bd5d9a57a035cad059af266b641c1a142872c82a1315e407743bd093c1d319",
+    "scripts/recompute_bm25_retrieval.py": "e355f1ea2d53294da1ea69c25cc905a8402370d5573dd2648281fdd2c74d9272",
+    "scripts/recompute_dense_retrieval.py": "0d7dade40a54e7c1d567cd3c669b888f0234ad4dcf72173211c0d15bd8b910a3",
+    "scripts/retrieval_metrics.py": "350759f655b78e43f4d0c4114a4a2c7d03b87c7281ac0cae40678bae15341168",
+    "scripts/rrf.py": "41a07635c740706af9d5349fd1e1d8f5b44e723a3103730b4dc87aefac697995",
+    "scripts/run_bm25_retrieval.py": "d39c9e4cd0b12833239e3005f99e6398b8dab5e593794742cb11eecf16111011",
+    "scripts/run_dense_retrieval.py": "5148e5ec0bc6aee74fc6fa58984d87502224349c433414b544199aec14a2ead9",
+    "scripts/run_hybrid_retrieval.py": "012d3fcf160eed1f2a9118b091e795fec47b8bc6412c160513ad9681861cf433",
+    "scripts/run_retrieval_metrics.py": "11021dfc06a8c6e3e765c051c594f598b6c2bea220ee78f7a96ce08d0d56eae5",
+    "scripts/validate_eval_dataset.py": "f943adc5eeab93296434b7b05edb1706272033a2913dbb2ea20ccb71fc5fdff5",
+    "scripts/validate_eval_receipt.py": "d22500345f20487b4f712fdad149c74bdcd7d64386606f9bc16365d3ce696b85",
+    "scripts/verify_bm25_contract.py": "205c50bdb3b16cc6468402f4aafac102a02ae6d53ff8e561685cc62641d731c4",
+    "scripts/verify_dense_metric_arithmetic.py": "5e5a548389cadd21b1f92b4c51c02c2cd770edd260421b7a9210de66eb0abb49",
+    "scripts/verify_dense_retrieval_contract.py": "13e7e4f0d4e378bb4abfda2ee77467366dfd35305ce701554b0f0c9cc385df10",
+    "scripts/verify_hybrid_contract.py": "2d1d874724f82c1119cbfad1faeab8f42f61e9f47a899e4df181d92f2077ddb4",
+    "scripts/verify_hybrid_live.py": "20949fe811ed8ffbb212f2d9eb14c76c793d3c1fe8c3345e05784f0828e83ea6"
+  },
+  "started_at": "2026-11-13T02:43:36.662363+00:00",
+  "status": "PASS",
+  "total": 17,
+  "version": "hybrid-live-smoke-1.0"
+}

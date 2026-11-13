@@ -1,5 +1,7 @@
 # 报告阅读说明
 
+最新任务九见[TASK_09_DELIVERY](TASK_09_DELIVERY.md)及[hybrid_rrf_results.json](hybrid_rrf_results.json)。retrieval/hybrid_rrf_b0保存双路原始排名/分数/计时、四方法输出、开发案例和测试聚合；完整30/30、专项56/56、实际双路17/17、公开副本7/7通过，原任务八35/35复验。正式RRF的Recall@5/10与BM25持平、MRR低0.0325；负收益保留，没有新检索原测试题或生成答案。
+
 任务七最新重新交付见[TASK_07_SUPPLEMENT](TASK_07_SUPPLEMENT.md)：7组缺陷修复，新证据rechecks/task7-audit-20261112，真实开发记录retrieval/task7-audit-20261112/dev。原任务七所有证据维持原字节。最终依据acceptance/task7-delivery-final.json（43/43）、supplement-final-v2.json（61/61）、contract-final.json（110/110）、replay-final.json（113/113）、public-only-replay.json（三组无模型复算）。中间55/59/112等结果保留其当时范围；v2仅澄清底层会重放原测试记录但不发新请求，不把字段read混同为exposed。
 
 任务七当前交付：[TASK_07_DELIVERY](TASK_07_DELIVERY.md)。retrieval/dense_b0/dev与test保存真实逐题Top10、3次计时、run manifest、汇总和错误分析；acceptance/task7_delivery_gate.json为43/43。54项算术、110项合同与113项开发期回归均为程序验证，不能当成绩样本。test_authorization.json与test_usage.jsonl绑定开发完成→代码/配置冻结→一次正式测试；旧测试锁清单未改。
