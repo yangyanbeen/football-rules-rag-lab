@@ -1,0 +1,84 @@
+{
+  "definition": "Every incomplete support case retained, even if any-hit Recall remains one; no new child relevance judgements inferred.",
+  "methods": {
+    "base": [
+      {
+        "MRR@10": 0.125,
+        "Recall@10": 1.0,
+        "Recall@5": 0.0,
+        "all_gold_coverage@5": 0.0,
+        "full_gold_coverage@10": 1.0,
+        "included": true,
+        "missing_gold_at_10": [],
+        "missing_gold_at_5": [
+          "L01-01"
+        ],
+        "question_id": "T003"
+      }
+    ],
+    "child": [
+      {
+        "MRR@10": 0.0,
+        "Recall@10": 0.0,
+        "Recall@5": 0.0,
+        "all_gold_coverage@5": 0.0,
+        "full_gold_coverage@10": 0.0,
+        "included": true,
+        "missing_gold_at_10": [
+          "L01-02"
+        ],
+        "missing_gold_at_5": [
+          "L01-02"
+        ],
+        "question_id": "T002"
+      },
+      {
+        "MRR@10": 0.125,
+        "Recall@10": 1.0,
+        "Recall@5": 0.0,
+        "all_gold_coverage@5": 0.0,
+        "full_gold_coverage@10": 1.0,
+        "included": true,
+        "missing_gold_at_10": [],
+        "missing_gold_at_5": [
+          "L01-01"
+        ],
+        "question_id": "T003"
+      },
+      {
+        "MRR@10": 1.0,
+        "Recall@10": 1.0,
+        "Recall@5": 1.0,
+        "all_gold_coverage@5": 0.5,
+        "full_gold_coverage@10": 0.5,
+        "included": true,
+        "missing_gold_at_10": [
+          "L01-05"
+        ],
+        "missing_gold_at_5": [
+          "L01-05"
+        ],
+        "question_id": "T030"
+      }
+    ],
+    "parent_child": [
+      {
+        "MRR@10": 0.0,
+        "Recall@10": 0.0,
+        "Recall@5": 0.0,
+        "all_gold_coverage@5": 0.0,
+        "full_gold_coverage@10": 0.0,
+        "included": true,
+        "missing_gold_at_10": [
+          "L01-01"
+        ],
+        "missing_gold_at_5": [
+          "L01-01"
+        ],
+        "question_id": "T003"
+      }
+    ]
+  },
+  "split": "test",
+  "version": "structure-errors-1.0"
+}

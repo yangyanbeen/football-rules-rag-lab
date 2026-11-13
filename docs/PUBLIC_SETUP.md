@@ -107,3 +107,8 @@ UiCapture 必须来自已完成的真实浏览器操作；也可传历史采集�
 ## 任务十缺陷补交付的复验入口
 
 当前版本另用 `scripts/verify_task10_audit_delivery.py --complete --public-only --report reports/rechecks/task10-recheck/delivery.json`，可由系统Python以 `-S -B` 执行，无须模型或全文；保留Git历史以校验生产提交。原 `verify_reranker_delivery.py` 在原标签 `v0.10.0-bge-reranker` 使用，不能要求它把后续代码当作当时交付源码。见 [TASK_10_AUDIT](TASK_10_AUDIT.md)。新运行输出1.1诊断，旧1.0结果不改写，不重跑锁定test。
+
+
+## 任务十一复验
+
+参见 [CHUNKING_STRATEGY](CHUNKING_STRATEGY.md)。当前标签保留原JSONL与新增父子JSONL本地副本；新增全文由structure_parent_child映射的derived_corpus哈希核验，私有索引由structure_index_manifest核验。公开系统Python以 `-S -B scripts/verify_structure_delivery.py --complete --public-only --report reports/rechecks/task11-repeat.json` 复算，不重复正式test。

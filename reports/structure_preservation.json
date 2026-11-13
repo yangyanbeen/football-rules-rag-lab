@@ -1,0 +1,3493 @@
+{
+  "checks": {
+    "all_marker_counts_retained": true,
+    "all_originals_reassemble_exactly": true,
+    "all_titles_rules_retained": true,
+    "complete_table_atomic": true
+  },
+  "samples": [
+    {
+      "child_spans": [
+        [
+          0,
+          307
+        ]
+      ],
+      "children": [
+        "L01-01-C01-9cb486bf"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L01-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          300
+        ],
+        [
+          300,
+          369
+        ]
+      ],
+      "children": [
+        "L01-02-C01-18ca6274",
+        "L01-02-C02-6ca57d66"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L01-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          189
+        ]
+      ],
+      "children": [
+        "L01-03-C01-ab914f42"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 2,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L01-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 2,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          269
+        ]
+      ],
+      "children": [
+        "L01-04-C01-bb23094e"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L01-04",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          240
+        ],
+        [
+          240,
+          425
+        ]
+      ],
+      "children": [
+        "L01-05-C01-279ffc8f",
+        "L01-05-C02-f74cbdf9"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L01-05",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          150
+        ]
+      ],
+      "children": [
+        "L01-06-C01-00d77146"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L01-06",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          267
+        ],
+        [
+          267,
+          339
+        ]
+      ],
+      "children": [
+        "L01-07-C01-6eed536c",
+        "L01-07-C02-45d45b61"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L01-07",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          208
+        ]
+      ],
+      "children": [
+        "L02-01-C01-b5a1d4c7"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L02-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          210
+        ]
+      ],
+      "children": [
+        "L02-02-C01-aaf69e77"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L02-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          142
+        ]
+      ],
+      "children": [
+        "L03-01-C01-561b2caa"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 1,
+        "如果": 0,
+        "必须": 2,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L03-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 1,
+        "如果": 0,
+        "必须": 2,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          140
+        ]
+      ],
+      "children": [
+        "L03-02-C01-ad3bb246"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L03-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          275
+        ]
+      ],
+      "children": [
+        "L03-03-C01-aa6f4756"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L03-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          193
+        ]
+      ],
+      "children": [
+        "L03-04-C01-d194490a"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L03-04",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          224
+        ]
+      ],
+      "children": [
+        "L04-01-C01-3382a62e"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 4,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L04-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 4,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          152
+        ]
+      ],
+      "children": [
+        "L04-02-C01-10bb096b"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 1,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L04-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 1,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          157
+        ]
+      ],
+      "children": [
+        "L04-03-C01-28508999"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L04-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          140
+        ]
+      ],
+      "children": [
+        "L04-04-C01-63a4cf0a"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L04-04",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          252
+        ]
+      ],
+      "children": [
+        "L04-05-C01-a13d4ccd"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L04-05",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          124
+        ]
+      ],
+      "children": [
+        "L05-01-C01-b4212657"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L05-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          74
+        ]
+      ],
+      "children": [
+        "L05-02-C01-05888e9b"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L05-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          250
+        ]
+      ],
+      "children": [
+        "L05-03-C01-ac8815f7"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L05-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          218
+        ]
+      ],
+      "children": [
+        "L05-04-C01-8af39eda"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L05-04",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          181
+        ]
+      ],
+      "children": [
+        "L06-01-C01-aa164396"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L06-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          237
+        ]
+      ],
+      "children": [
+        "L06-02-C01-7154cbc5"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L06-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          141
+        ]
+      ],
+      "children": [
+        "L06-03-C01-2efa6b72"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L06-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          309
+        ]
+      ],
+      "children": [
+        "L06-04-C01-979a4c84"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L06-04",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          312
+        ]
+      ],
+      "children": [
+        "L06-05-C01-d1a2e843"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L06-05",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          195
+        ]
+      ],
+      "children": [
+        "L06-06-C01-6ef924ce"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L06-06",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          309
+        ]
+      ],
+      "children": [
+        "L07-01-C01-3ffcac4a"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L07-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          155
+        ]
+      ],
+      "children": [
+        "L07-02-C01-c4d8479d"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L07-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          292
+        ]
+      ],
+      "children": [
+        "L07-03-C01-a4ed33f1"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L07-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          188
+        ]
+      ],
+      "children": [
+        "L08A-01-C01-c0da3d87"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L08A-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          132
+        ]
+      ],
+      "children": [
+        "L08A-02-C01-14651415"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L08A-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          149
+        ]
+      ],
+      "children": [
+        "L08A-03-C01-45f13d80"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L08A-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          229
+        ]
+      ],
+      "children": [
+        "L08B-01-C01-c24d697c"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L08B-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          278
+        ]
+      ],
+      "children": [
+        "L08B-02-C01-5015b3be"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L08B-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          154
+        ]
+      ],
+      "children": [
+        "L08B-03-C01-0f038cac"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L08B-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          319
+        ]
+      ],
+      "children": [
+        "L08B-04-C01-76576026"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L08B-04",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          228
+        ]
+      ],
+      "children": [
+        "L09-01-C01-1994a3ef"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L09-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          229
+        ]
+      ],
+      "children": [
+        "L09-02-C01-045f9db9"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L09-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          257
+        ]
+      ],
+      "children": [
+        "L09-03-C01-43f91d88"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L09-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          199
+        ]
+      ],
+      "children": [
+        "L09-04-C01-aff30b82"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L09-04",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          96
+        ]
+      ],
+      "children": [
+        "L10-01-C01-467643af"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L10-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          264
+        ]
+      ],
+      "children": [
+        "L10-02-C01-f2545cea"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L10-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          320
+        ]
+      ],
+      "children": [
+        "L11-01-C01-1e1429d9"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L11-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          192
+        ]
+      ],
+      "children": [
+        "L11-02-C01-5df1e966"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 1,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L11-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 1,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          298
+        ]
+      ],
+      "children": [
+        "L11-03-C01-b5992da7"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 1,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L11-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 1,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          282
+        ]
+      ],
+      "children": [
+        "L11-04-C01-376f5869"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L11-04",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          78
+        ]
+      ],
+      "children": [
+        "L11-05-C01-4d25211c"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L11-05",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          215
+        ]
+      ],
+      "children": [
+        "L11-06-C01-ba4c6e29"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L11-06",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          161
+        ]
+      ],
+      "children": [
+        "L11-07-C01-a2f47802"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L11-07",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          158
+        ]
+      ],
+      "children": [
+        "L11-08-C01-84338232"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L11-08",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          156
+        ]
+      ],
+      "children": [
+        "L11-09-C01-1e9945f4"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L11-09",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          248
+        ]
+      ],
+      "children": [
+        "L12-01-C01-8d52183d"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          304
+        ]
+      ],
+      "children": [
+        "L12-02-C01-64205bfa"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 1,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 1,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          84
+        ]
+      ],
+      "children": [
+        "L12-03-C01-051557c1"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          247
+        ]
+      ],
+      "children": [
+        "L12-04-C01-39034a61"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-04",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          224
+        ]
+      ],
+      "children": [
+        "L12-05-C01-88ea24ae"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-05",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          138
+        ]
+      ],
+      "children": [
+        "L12-06-C01-9d036805"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-06",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          162
+        ]
+      ],
+      "children": [
+        "L12-07-C01-fb1c390b"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-07",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          284
+        ]
+      ],
+      "children": [
+        "L12-08-C01-b8c9b445"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-08",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          278
+        ]
+      ],
+      "children": [
+        "L12-09-C01-c2ede674"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-09",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          137
+        ]
+      ],
+      "children": [
+        "L12-10-C01-75178994"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 4,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-10",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 4,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          278
+        ]
+      ],
+      "children": [
+        "L12-11-C01-2a02f0cd"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 1,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-11",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 1,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          177
+        ]
+      ],
+      "children": [
+        "L12-12-C01-98d72e83"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-12",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          125
+        ]
+      ],
+      "children": [
+        "L12-13-C01-64110a27"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-13",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          240
+        ]
+      ],
+      "children": [
+        "L12-14-C01-5c8af8e0"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-14",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          329
+        ]
+      ],
+      "children": [
+        "L12-15-C01-c4920121"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-15",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          172
+        ]
+      ],
+      "children": [
+        "L12-16-C01-1fcd4228"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L12-16",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          165
+        ]
+      ],
+      "children": [
+        "L13-01-C01-881ea0b9"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L13-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          79
+        ]
+      ],
+      "children": [
+        "L13-02-C01-7e12c738"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L13-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          297
+        ]
+      ],
+      "children": [
+        "L13-03-C01-626db843"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L13-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          249
+        ]
+      ],
+      "children": [
+        "L13-04-C01-2ec53f2a"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 2,
+        "必须": 2,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L13-04",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 2,
+        "必须": 2,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          249
+        ]
+      ],
+      "children": [
+        "L13-05-C01-0123e05b"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L13-05",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          153
+        ]
+      ],
+      "children": [
+        "L13-06-C01-d8759b2a"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L13-06",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          119
+        ]
+      ],
+      "children": [
+        "L13-07-C01-e35726cb"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L13-07",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          266
+        ]
+      ],
+      "children": [
+        "L13-08-C01-d7f3d5c9"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L13-08",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          108
+        ]
+      ],
+      "children": [
+        "L14-01-C01-106324ac"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L14-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          245
+        ]
+      ],
+      "children": [
+        "L14-02-C01-b600377f"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 3,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L14-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 3,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          212
+        ]
+      ],
+      "children": [
+        "L14-03-C01-6ff6fd09"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 2,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L14-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 2,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          388
+        ]
+      ],
+      "children": [
+        "L14-04-C01-4c1c5a09"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 2,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L14-04",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 2,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          281
+        ]
+      ],
+      "children": [
+        "L14-05-C01-a69b78c0"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L14-05",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          168
+        ]
+      ],
+      "children": [
+        "L14-06-C01-120fccc8"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 2,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L14-06",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 2,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          70
+        ]
+      ],
+      "children": [
+        "L15-01-C01-2d3a54bd"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L15-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          143
+        ]
+      ],
+      "children": [
+        "L15-02-C01-522683d4"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L15-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 1,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          118
+        ]
+      ],
+      "children": [
+        "L15-03-C01-aebb7848"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L15-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 1,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          177
+        ]
+      ],
+      "children": [
+        "L15-04-C01-30300412"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L15-04",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 2,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          219
+        ]
+      ],
+      "children": [
+        "L15-05-C01-bb61d393"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L15-05",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          89
+        ]
+      ],
+      "children": [
+        "L16-01-C01-6fc467ae"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L16-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          156
+        ]
+      ],
+      "children": [
+        "L16-02-C01-f362d2b8"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L16-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          204
+        ]
+      ],
+      "children": [
+        "L16-03-C01-eafeb4e1"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 2,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L16-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 2,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          229
+        ]
+      ],
+      "children": [
+        "L16-04-C01-2a13aa0a"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 3,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L16-04",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 3,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          140
+        ]
+      ],
+      "children": [
+        "L16-05-C01-bad39f66"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L16-05",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          271
+        ]
+      ],
+      "children": [
+        "L17-01-C01-09144643"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L17-01",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          203
+        ]
+      ],
+      "children": [
+        "L17-02-C01-98dfd94e"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L17-02",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          173
+        ]
+      ],
+      "children": [
+        "L17-03-C01-866f3365"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 2,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L17-03",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 0,
+        "必须": 2,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          147
+        ]
+      ],
+      "children": [
+        "L17-04-C01-b8c944b8"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L17-04",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          146
+        ]
+      ],
+      "children": [
+        "L17-05-C01-1d046663"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L17-05",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 1,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    },
+    {
+      "child_spans": [
+        [
+          0,
+          190
+        ]
+      ],
+      "children": [
+        "L17-06-C01-2495dca5"
+      ],
+      "conditions_and_exceptions_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "lossless": true,
+      "original_id": "L17-06",
+      "original_title_and_rule_preserved": true,
+      "reassembled_marker_counts": {
+        "不得": 0,
+        "但是": 0,
+        "例外": 0,
+        "只有": 0,
+        "如果": 1,
+        "必须": 0,
+        "除外": 0,
+        "除非": 0
+      },
+      "table_atomic": true
+    }
+  ],
+  "scope": "All original units checked mechanically; marker equality and exact bytes are not expert factual/translation review.",
+  "status": "PASS",
+  "version": "structure-preservation-1.0"
+}
