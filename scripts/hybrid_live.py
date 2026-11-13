@@ -76,11 +76,19 @@ def validate_live_smoke(value):
     if version.endswith('1.1'):
         snapshots=value['index_snapshots'];fields(snapshots,('before','after'),'index snapshots')
         if canonical(snapshots['before'])!=canonical(snapshots['after']) or len(snapshots['before'])!=13:raise ValueError('Live index files changed or incomplete')
+        dense=json.loads((ROOT/'data/manifests/dense_index_manifest.json').read_text('utf-8'))
+        bm25=json.loads((ROOT/'data/manifests/bm25_indexes.json').read_text('utf-8'))['indexes']['title_body']
+        expected={**{'data/indexes/dense/'+p:v for p,v in dense['artifact_files'].items()},
+                  **{'data/indexes/bm25/title_body/'+p:v for p,v in bm25['artifacts'].items()},
+                  'data/indexes/dense/index_manifest.json':{'sha256':dense['local_manifest_sha256']},
+                  'data/indexes/bm25/title_body/index_manifest.json':{'sha256':digest((json.dumps(bm25,ensure_ascii=False,sort_keys=True,indent=2)+'\n').encode())}}
+        if set(snapshots['before'])!=set(expected):raise ValueError('Index snapshot path coverage differs from original indexes')
         for path,entry in snapshots['before'].items():
             fields(entry,('path','size_bytes','sha256'),'index snapshot entry')
             if (entry['path']!=path or not path.startswith(('data/indexes/dense/','data/indexes/bm25/title_body/')) or '..' in Path(path).parts
                 or type(entry['size_bytes']) is not int or entry['size_bytes']<1 or not isinstance(entry['sha256'],str) or len(entry['sha256'])!=64
                 or any(c not in '0123456789abcdef' for c in entry['sha256'])):raise ValueError('Invalid index snapshot entry')
+            if any(entry[k]!=v for k,v in expected[path].items()):raise ValueError('Index snapshot differs from original published artifact identity')
     checks.update(all_four_queries_completed=True,oov_bm25_empty_no_zero_fill=not rows[-1]['channels']['bm25']['results'],
                   oov_rrf_falls_to_dense_ranks=[r['chunk_id'] for r in rows[-1]['results']['rrf']]==[r['chunk_id'] for r in rows[-1]['channels']['dense']['results']],
                   pinned_embedding_cpu=True,original_index_files_unchanged=True)

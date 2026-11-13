@@ -12,7 +12,7 @@ BASE='8553f390107fc9f38cdefb927fa4f016b996f4bc'
 
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--report',type=Path,required=True);p.add_argument('--expect-gaps',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--report',type=Path,required=True);p.add_argument('--expect-gaps',action='store_true');p.add_argument('--live-report',type=Path);a=p.parse_args()
     report=runner.new_report(a.report);temp=ROOT/'.tmp'/('task9-audit-'+uuid.uuid4().hex);temp.mkdir(parents=True)
     checks={};errors=[]
     def check(name,fn):
@@ -83,6 +83,27 @@ def main():
                 return False
             check('live_rejects_'+name,rejects)
         check('rrf_values_unchanged_for_original_dev_packet',lambda:canonical(rrf.fuse(channels))==canonical(packet['results']))
+        if a.live_report:
+            fresh=json.loads(a.live_report.read_text('utf-8'))
+            check('new_live_receipt_validates_with_producer_and_index_snapshots',lambda:len(live.validate_live_smoke(fresh))==17)
+            def both_snapshots(r):
+                key=next(iter(r['index_snapshots']['before']))
+                for side in ('before','after'):r['index_snapshots'][side][key]['sha256']='0'*64
+            def renamed_snapshot(r):
+                key=next(iter(r['index_snapshots']['before']))
+                for side in ('before','after'):
+                    entry=r['index_snapshots'][side].pop(key);entry['path']=key+'-fake';r['index_snapshots'][side][key+'-fake']=entry
+            for name,mutate in [('changed_after_snapshot',lambda r:r['index_snapshots']['after'].clear()),
+                                ('same_forged_before_after',both_snapshots),('invented_index_path',renamed_snapshot),
+                                ('wrong_declared_producer',lambda r:r.update(source_commit=live.ORIGINAL_SMOKE_SOURCE)),
+                                ('boolean_request_count',lambda r:r.update(actual_embedding_queries=True)),
+                                ('boolean_observation_count',lambda r:r['queries'][0]['embedding_observation'].update(inputs=True))]:
+                def rejects_new(mutate=mutate):
+                    bad=copy.deepcopy(fresh);mutate(bad)
+                    try:live.validate_live_smoke(bad)
+                    except (ValueError,KeyError,TypeError):return True
+                    return False
+                check('new_live_rejects_'+name,rejects_new)
     value={'version':'task9-audit-regression-1.0','captured_at':now(),'baseline':BASE,
            'status':('GAPS_REPRODUCED' if a.expect_gaps else 'PASS') if all(checks.values()) else 'FAIL',
            'passed':sum(checks.values()),'total':len(checks),'checks':checks,'errors':errors,
