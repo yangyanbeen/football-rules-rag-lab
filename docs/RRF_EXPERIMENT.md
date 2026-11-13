@@ -1,5 +1,7 @@
 # 混合召回与RRF实验（任务九）
 
+最新可靠性修复见[TASK_09_SUPPLEMENT](../reports/TASK_09_SUPPLEMENT.md)。返回结果的嵌套出处现独立拷贝；query/replay先校验输出；真实回执须逐条重算并核对实际Git生产源码。新1.1回执保存13个原索引文件的前后身份，旧1.0按实际历史来源验证，不改写原实验。完整门禁可用`--live-report`指定新的真实查询证据。
+
 依据原技术设计5.2与原任务9；范围及先后顺序见 [TASK_09_SCOPE](TASK_09_SCOPE.md)，交付见 [TASK_09_DELIVERY](../reports/TASK_09_DELIVERY.md)，规定汇总为 [hybrid_rrf_results.json](../reports/hybrid_rrf_results.json)。原权威文档未修改。
 
 ## 1. 数据、排名与预算

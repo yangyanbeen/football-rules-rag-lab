@@ -1,0 +1,33 @@
+{
+  "baseline": "8553f390107fc9f38cdefb927fa4f016b996f4bc",
+  "captured_at": "2026-11-13T03:37:04.241155+00:00",
+  "checks": {
+    "15_original_experiment_objects_preserved": true,
+    "514_original_files_present": true,
+    "61_local_corpus_files_identical": true,
+    "all_22_original_index_files_identical": true,
+    "all_original_reports_except_three_current_indexes_identical": true,
+    "contract-current.json": true,
+    "delivery-current.json": true,
+    "forged_live_receipt_rejected_by_full_gate": true,
+    "new_dev_40_queries_same_four_method_quality": true,
+    "new_live_receipt_fully_recomputes": true,
+    "no_private_data_indexes_dependencies_or_runtime_tracked": true,
+    "original_experiment_log_prefix_preserved": true,
+    "original_files_outside_declared_changes_byte_identical": true,
+    "original_task9_authorization_and_two_usage_events_identical": true,
+    "private_human_review_ledger_identical": true,
+    "public_only_three_rank_runs_two_live_receipts_recompute": true,
+    "regressions-final.json": true
+  },
+  "errors": [],
+  "new_ad_hoc_embedding_queries": 4,
+  "new_development_fusion_measurements": 120,
+  "new_locked_test_queries": 0,
+  "new_test_fusion_runs": 0,
+  "passed": 17,
+  "source_sha256": "d4402da9b885d35f96acfe9beb7627ea3f5345912b186f4a27d8bfd51d9912a5",
+  "status": "PASS",
+  "total": 17,
+  "version": "task9-audit-preservation-1.0"
+}
