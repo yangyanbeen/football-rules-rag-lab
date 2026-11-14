@@ -1,0 +1,24 @@
+{
+  "actual_human_submission_events": 0,
+  "browser_open_attempt": "Chrome DevTools returned Target closed; direct local HTTP page verified; user can open the URL",
+  "captured_at": "2026-11-14T08:26:25.308485+00:00",
+  "checks": {
+    "12_explicit_submission_forms": true,
+    "all12_frozen_sample_questions_present": true,
+    "foreign_origin_rejected_without_review": true,
+    "invalid_csrf_rejected_without_review": true,
+    "local_page_http200": true,
+    "negative_tests_created_no_human_judgments": true,
+    "no_AI_grades_shown_as_human_defaults": true,
+    "no_default_selected_verdicts": true,
+    "original_gold_source_and_offered_ids_visible": true,
+    "page_not_cached": true
+  },
+  "page_sha256": "c4489752e19d34fa2741273d54f56af4b056c822a51c3af2295a418617c88dfd",
+  "passed": 10,
+  "scope": "Local review UI readiness and rejected invalid submissions; not human judgments; no successful form submission by agent",
+  "source_sha256": "636b15e68fe273f4ae9e8e8cc8b8f39df5b06f80f85fb29bbcdb43494085966c",
+  "status": "PASS",
+  "total": 10,
+  "url": "http://127.0.0.1:7864/"
+}

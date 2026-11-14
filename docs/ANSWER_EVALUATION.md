@@ -65,6 +65,8 @@ python -S -B scripts/verify_answer_delivery.py --public-only --complete --report
 
 本机完整门禁用`.venv/Scripts/python.exe -B scripts/verify_answer_delivery.py --complete --report <新路径>`，核对私有完整答案、证据原段、实际模型输出、评分原文和旧索引/语料/人审账本。公开副本无法重新证明私有推理发生或重新判定语义，只能独立复算公开投影、输入身份和判定向量；完整记录的SHA供本机审查。
 
+`verify_answer_release.py`是**发布前本机门禁**，要求发布前快照中的20标签仍是全部旧标签；创建本轮新标签后不应重复把它当作当前门禁。发布后复验使用上述delivery或public入口。任务十一等历史门禁带当时累计实验数要求，应在各自原标签独立checkout使用；当前累计交付保全以本轮门禁为准。
+
 四种独立探针通过`run_answer_probes.py --report <新路径>`执行：真实资料外问答、官方版本请求、D001真实难负例单独提供，以及明确标注为合成的同版本来源冲突。探针不进入90题质量分母。原失败记录在dev-before-warmup、dev-before-id-fix保留：环境观测需先加载Embedding，规则ID还包含L08A/L08B；开发中明确了普通资料问答与官方版本确认的区别。没有修改原标签和原Corpus。
 
 ## 交付入口
