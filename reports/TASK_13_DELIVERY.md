@@ -2,7 +2,7 @@
 
 日期：2026-11-14。原技术设计、原任务十三工作项和通过条件逐字节保留；任务范围见[冻结说明](../docs/TASK_13_SCOPE.md)。本报告对应分支feat/task-13-integrated-delivery，运行包生产提交`d1c2a630f4ac6f1051743b3b3888f8c27abba7d6`，基线`10897adeee92841c22b1f83992b4ee6c5abdae70`。最终合并与标签由Git历史记录，不在此自引用提交SHA。
 
-**当前：本机完整验收39/39通过，task13_fully_accepted=true。功能、实测、清单与复现材料齐备；正在补做最终公开副本复验和远端发布。**
+**任务十三按原标准验收完成：本机完整39/39、干净公开副本完整33/33，task13_fully_accepted=true。功能、实测、清单与复现材料齐备。**
 
 ## 逐项对照原交付标准
 
@@ -66,4 +66,4 @@
 
 ## 最终验收记录
 
-本机完整门禁实际39/39通过，见task13/delivery-first.json，task13_fully_accepted=true。公开副本最终完整复验和远端发布核对随后追加；历史中间失败/通过记录保持原字节。
+本机完整门禁实际39/39通过（task13/delivery-first.json），真正无.runtime/.models/data/processed/data/indexes的Git worktree以Python -S完整33/33通过（task13/delivery-clean-public.json），均task13_fully_accepted=true。最终本机门禁另写task13/delivery-final.json，不覆盖前次记录。GitHub通过同名功能分支PR合并、新标签v0.13.0-integrated-delivery发布；实际提交/合并SHA与PR可在仓库Git历史核对，发布后再只读比较远端文件、旧标签与其他原有仓库。历史中间失败/通过记录保持原字节。

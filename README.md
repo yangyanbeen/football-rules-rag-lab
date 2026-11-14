@@ -1,6 +1,6 @@
 # 足球规则 RAG Lab
 
-**任务十三集成版已完成实现与演示，正在最终交付核对。** 新入口[127.0.0.1:7866](http://127.0.0.1:7866/)，[安装/导入/重建/评测与回滚](docs/TASK_13_REPRODUCTION.md)，[逐项交付报告](reports/TASK_13_DELIVERY.md)，[来源与许可](docs/TASK_13_LICENSES.md)。新隔离环境262包、新Dense/BM25索引99段，后端5/5、真实页面5/5、合同45/45、干净公开副本28/28和21/21已实测。历史答案质量限制保留。
+**任务十三已按原标准完成：本机完整39/39、干净公开副本33/33通过。** 新入口[127.0.0.1:7866](http://127.0.0.1:7866/)，[安装/导入/重建/评测与回滚](docs/TASK_13_REPRODUCTION.md)，[逐项交付报告](reports/TASK_13_DELIVERY.md)，[来源与许可](docs/TASK_13_LICENSES.md)。新隔离环境262包、新Dense/BM25索引99段，后端5/5、真实页面5/5、合同45/45、干净公开副本28/28和21/21已实测。历史答案质量限制保留。
 
 **当前：任务十二已完成原规定评测与12/12真实人工抽样。** 见[最终验收与缺陷补充](reports/TASK_12_FINAL_ACCEPTANCE.md)：人审要点21/27、引用9/20、条件21/27，新增28/28、公开21/21、原专项53/53。新增编目编号显示防护；原测试低分和已发现回答错误保留。下一项任务13。
 
@@ -26,7 +26,7 @@
 
 基于 [Cinnamon/kotaemon](https://github.com/Cinnamon/kotaemon) 的足球规则中文问答与可追溯语料工程。面向逐项实现、真实评测和可回滚开发。
 
-**当前已交付任务 1–12（任务12为评测与人工抽样交付，保留已发现质量问题）。** 任务八BM25中文基线在同一锁定测试上Recall@5=97.5%（39/40）、Recall@10=100%（40/40）、MRR@10=.95，完整门禁35/35、专项74/74通过，见[任务八交付](reports/TASK_08_DELIVERY.md)和[运行/测量口径](docs/BM25_RETRIEVAL.md)。正式模式与模板只依照开发阶段冻结方案测量一次测试；后续分词探索另列。
+**当前已交付任务 1–13（任务13为整合与复现交付，保留已发现质量问题）。** 任务八BM25中文基线在同一锁定测试上Recall@5=97.5%（39/40）、Recall@10=100%（40/40）、MRR@10=.95，完整门禁35/35、专项74/74通过，见[任务八交付](reports/TASK_08_DELIVERY.md)和[运行/测量口径](docs/BM25_RETRIEVAL.md)。正式模式与模板只依照开发阶段冻结方案测量一次测试；后续分词探索另列。
 
 任务七固定Dense基线的Recall@5/10均为95%（38/40），MRR@10为0.86042；150次总检索P50/P95为270.18/312.82ms，原记录保留，见[任务七报告](reports/TASK_07_DELIVERY.md)。这些是检索成绩，不是答案准确率。
 
@@ -54,8 +54,8 @@
 
 | 层 | 目录/入口 | 现状 |
 | --- | --- | --- |
-| 前端 | [frontend/](frontend/README.md) | 固定Kotaemon Gradio UI；正式RAG入口 `frontend/start_rag_b0.ps1`，旧任务二入口保留 |
-| 后端 | [backend/](backend/README.md)、`scripts/rag_b0.py` | 正式Dense→本机LLM→引用/拒答；UI通过独立Python问答进程调用 |
+| 前端 | [frontend/](frontend/README.md) | 固定Kotaemon Gradio UI；当前入口 `frontend/start_integrated_rag.ps1`（7866）；旧任务二/B0入口保留 |
+| 后端 | [backend/](backend/README.md)、`scripts/rag_b0.py` | 当前Dense/BM25→RRF→BGE→本机LLM→引用/拒答；UI通过独立Python问答进程调用 |
 | 数据 | [data/](data/README.md)、`scripts/build_rag_dataset.py` | 冻结语料、稳定 ID、统一 Schema、独立校验与来源清单 |
 | 环境 | [infra/](infra/README.md)、`config/` | 上游 commit、锁定依赖、本地模型配置 |
 | 设计与执行 | `docs/` | 原技术设计、14 项任务计划及新增 Git 治理说明 |

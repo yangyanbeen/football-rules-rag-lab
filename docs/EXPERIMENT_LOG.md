@@ -407,3 +407,5 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 基线10897ade，运行包源d1c2a630f4ac6f1051743b3b3888f8c27abba7d6。新Python3.10.22隔离环境262包、固定上游uv.lock逐字hash导出；61文件/99段在真实干净公开副本导入，新Dense1024维和BM25 title_body索引实际重建，原数据与索引不覆盖。新增7866 Kotaemon通过独立进程接通RRF60/BGE Top40/固定Qwen完整证据选择、引用编号显示保护和来源/署名/许可。后端5/5、实际浏览器5/5、45/45边界合同、Python -S公开28/28及21/21。原任务12完整26/26在追加第24实验前复验。首次TEMP editable安装失败保留，新目录重试成功。
 
 实际33次Embedding请求107输入、8次答案尝试、320pair；0正式test重跑、0新人工判断。原23实验对象/标签和质量负收益保留。新增清单、安装/导入/重建/启动/评测/回滚、许可说明，最终完整门禁见TASK_13_DELIVERY及task13目录。只保证本机Windows已记录资源下复现，不宣称全新下载、Docker、跨平台、生产SLA或答案提升。
+
+任务13最终完整本机39/39、真实干净公开副本Python -S完整33/33通过，task13_fully_accepted=true；最终本机复验用delivery-final新文件，既有回执保持。版本v0.13.0-integrated-delivery，实际发布SHA以Git标签/合并历史为准。
