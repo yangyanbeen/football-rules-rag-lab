@@ -76,6 +76,18 @@ def verify(private=False):
         return result['reviewed_samples']==1 and result['ledger_entries']==2 and result['status']=='PENDING'
     check('review_revisions_append_not_inflate_samples',revise)
     check('empty_ledger_stays_pending',lambda:review.aggregate(context,[])['status']=='PENDING')
+    public=read(ROOT/'reports/answer_evaluation_audit/human-review-status.json')
+    check('actual_public_human_summary_recomputes',lambda:review.validate_public_summary(public,context))
+    for name,mutate in {
+        'claimed_completion':lambda r:r.update(status='REVIEW_COMPLETE'),
+        'inflated_reviewed_count':lambda r:r.update(reviewed_samples=12),
+        'inflated_human_metric':lambda r:r['metrics']['citation_correctness'].update(numerator=999),
+        'changed_human_context':lambda r:r.update(context_sha256='0'*64),
+        'lost_missing_samples':lambda r:r.update(missing_ids=[])}.items():
+        def test(mutate=mutate):
+            r=copy.deepcopy(public);mutate(r)
+            return rejected(lambda:review.validate_public_summary(r,context))
+        check('reject_public_'+name,test)
     def all_negative():
         records=[]
         for id_ in context['ids']:

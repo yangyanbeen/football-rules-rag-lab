@@ -62,6 +62,9 @@ def validate_trace(q,p,g,actual,j,corpus):
                 lambda s:parse_selection(s,p['offered_ids'],config()))
             if not p['error'] and (selected is None or selected['chunk_ids']!=p['selected_ids']):
                 raise ValueError('Actual selection not bound to displayed answer')
+            if not p['error'] and (selected['answerable']!=(p['status']=='answered') or
+                (not selected['answerable'] and selected['reason']!=p['refusal_reason'])):
+                raise ValueError('Actual answerability/refusal reason differs')
     if set(p['timing']) != {'retrieval_seconds','generation_seconds','total_seconds'}:
         raise ValueError('Missing timing stages')
     if p['timing']['total_seconds']+0.001 < p['timing']['retrieval_seconds']+p['timing']['generation_seconds']:
