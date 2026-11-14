@@ -72,3 +72,16 @@ python -S -B scripts/verify_answer_delivery.py --public-only --complete --report
 ## 交付入口
 
 正式汇总：`reports/answer_quality_results.json`。逐题公开投影：`reports/answer_evaluation/{dev,test}/predictions.jsonl`及`judgments.jsonl`；每题评分与错误：`summary.json`和`error_analysis.json`。公开不包含原规则全文、完整回答或模型原始长文本；完整问答与证据位于本机`.runtime/task12/{dev,test}/answers`和`judges`，人审页面同目录。新结果、已知错误及交付检查见`reports/TASK_12_DELIVERY.md`。
+
+
+## 本轮实际结果
+
+| 指标 | dev40 | test50 |
+| --- | --- | --- |
+| 答案要点覆盖率（AI） | 40/72 = 55.56% | 40/100 = 40.00% |
+| 引用正确率（AI） | 21/49 = 42.86% | 22/71 = 30.99% |
+| 条件/例外保留率（AI） | 51/72 = 70.83% | 56/100 = 56.00% |
+| 正确拒答率 | 8/8 = 100.00% | 10/10 = 100.00% |
+| 错误拒答率 | 6/32 = 18.75% | 5/40 = 12.50% |
+
+以上AI判断与规则计分不等于人工语义验收；具体错误及最终检查见TASK_12_DELIVERY。

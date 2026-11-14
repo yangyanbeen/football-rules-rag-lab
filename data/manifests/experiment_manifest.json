@@ -4158,7 +4158,289 @@
         }
       ],
       "artifact_policy": "Only new audit evidence; final gate and final public wrapper excluded to avoid recursive hashes. Original19 objects remain immutable."
+    },
+    {
+      "id": "TASK-012-ANSWER-EVALUATION",
+      "objective": "End-to-end answer/citation/refusal assessment with honest human boundary",
+      "baseline_commit": "9c6f5a4a4b7b60511d948c3ae056400fa48327a6",
+      "main_variable": "Assessment of one optimized extractive profile; no baseline answer comparison or causal optimization claim",
+      "source_commit": "9f1ab7ce63de97805f99208e370a9ab1f1eaa127",
+      "code_commit": "9f1ab7ce63de97805f99208e370a9ab1f1eaa127",
+      "source_sha256": {
+        "scripts/answer_eval_core.py": "cd784d1c7ee6dfe6abf8b2b514492513c1593717a57840a866cafca9acaf79f5",
+        "scripts/answer_eval_engine.py": "3465fed70251dc97f06edfbd254448aa0dfb0d3e0592352a27faef8f2e60a75f",
+        "scripts/run_answer_evaluation.py": "0e26e4a01a4e5fb12e8f125c31fec41fe8446a75e7767f2761bf94a620e363c1",
+        "scripts/verify_answer_evaluation.py": "b028dfef65890b13cbe62c4eea65988af233dfd51137d7151ddf2a46f65cfe52",
+        "scripts/verify_answer_delivery.py": "ddacd2fa3cc9174636308cc0ced9d7fb86faa8d6885a016255ec2bdbd7903855",
+        "scripts/answer_json_chat.py": "92b3e0a12c6a166c31b60c59b540dff06c8bcb167325712d323432a8147a471a",
+        "scripts/verify_answer_public.py": "9f6918dd3a09dec452b338179f171ee1dfb7f9e1cc4bad6602a29e393722b8a7",
+        "scripts/verify_answer_arithmetic.py": "5a7935706b7645f52d33cc892c88765c8f163a5943e534541b4263ee8e872b0f",
+        "scripts/verify_answer_release.py": "aa6684fdcb6837ae54d99ab67519b3b5a214883e6fc1e794bab0b71033592c9a",
+        "scripts/serve_answer_review.py": "6a761d4b2afd62229510c93b99b2759bbff94c85ab9e15db07e5650652193d1c",
+        "scripts/run_answer_probes.py": "ad4195fe62d2b9bc846dc3877db780334b5ef8b2ca47909a808d436bb1b6a15a"
+      },
+      "dataset_version": "football-eval-0.1.0; original human-approved labels; source translation remains unreviewed",
+      "model": {
+        "version": "answer-evaluation-1.0",
+        "retrieval_method": "top40",
+        "retrieval_selection_source": "reports/reranker_results.json",
+        "input_utf8_byte_budget": 6200,
+        "chat_template_token_reserve": 512,
+        "max_context_chunks": 5,
+        "max_selected_chunks": 3,
+        "max_generation_attempts": 2,
+        "prompt_file": "config/answer_evaluation_system.txt",
+        "judge_prompt_file": "config/answer_evaluation_judge.txt",
+        "llm": {
+          "name": "qwen2.5:3b",
+          "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+          "ollama_version": "0.40.16",
+          "num_ctx": 8192,
+          "num_predict": 1024,
+          "num_gpu": 0,
+          "num_thread": 8,
+          "temperature": 0,
+          "seed": 42,
+          "keep_alive": "10m",
+          "timeout_seconds": 180
+        },
+        "judge_kind": "AI semantic assessment, same pinned small model, no new human adjudication",
+        "quality_threshold": "report all outcomes; no fabricated accuracy target",
+        "formal_samples": {
+          "dev": 40,
+          "test": 50
+        },
+        "human_sampling": "12 deterministic test samples: all refusals/errors first, then remaining IDs; source/point/citation/condition review, independent of AI grade"
+      },
+      "hardware": {
+        "path": "reports/answer_evaluation/test/environment.json",
+        "size_bytes": 52212,
+        "sha256": "b0f5210e3176c3298cef2b246e9ec9c602f8e6d2008699f5b66a02a77187c839"
+      },
+      "commands": [
+        "run_answer_evaluation.py dev",
+        "run_answer_evaluation.py prepare-test",
+        "run_answer_evaluation.py test",
+        "run_answer_evaluation.py export",
+        "verify_answer_public.py --complete",
+        "verify_answer_release.py"
+      ],
+      "result": {
+        "development": {
+          "answer_point_coverage": {
+            "numerator": 40,
+            "denominator": 72,
+            "value": 0.5555555555555556
+          },
+          "citation_correctness": {
+            "numerator": 21,
+            "denominator": 49,
+            "value": 0.42857142857142855
+          },
+          "condition_exception_retention": {
+            "numerator": 51,
+            "denominator": 72,
+            "value": 0.7083333333333334
+          },
+          "correct_refusal_rate": {
+            "numerator": 8,
+            "denominator": 8,
+            "value": 1.0
+          },
+          "false_refusal_rate": {
+            "numerator": 6,
+            "denominator": 32,
+            "value": 0.1875
+          }
+        },
+        "test": {
+          "answer_point_coverage": {
+            "numerator": 40,
+            "denominator": 100,
+            "value": 0.4
+          },
+          "citation_correctness": {
+            "numerator": 22,
+            "denominator": 71,
+            "value": 0.30985915492957744
+          },
+          "condition_exception_retention": {
+            "numerator": 56,
+            "denominator": 100,
+            "value": 0.56
+          },
+          "correct_refusal_rate": {
+            "numerator": 10,
+            "denominator": 10,
+            "value": 1.0
+          },
+          "false_refusal_rate": {
+            "numerator": 5,
+            "denominator": 40,
+            "value": 0.125
+          }
+        },
+        "runtime_errors": 0,
+        "judge_errors": 0,
+        "new_human_answer_judgments": 0,
+        "human_review": "PENDING12",
+        "formal_test_runs": 1,
+        "unseen_holdout": false
+      },
+      "artifacts": [
+        {
+          "path": "reports/answer_quality_results.json",
+          "size_bytes": 89009,
+          "sha256": "0746d6f5b44da157b97dbe58e3e1e9f1ffb197bd9688cd38adb7346cbbb6f0ec"
+        },
+        {
+          "path": "docs/ANSWER_EVALUATION.md",
+          "size_bytes": 9330,
+          "sha256": "93881988f17269e4e1593d3925b6d1aabf3e2cea4e9e9fec9bb0533bd79169e1"
+        },
+        {
+          "path": "config/answer_evaluation.json",
+          "size_bytes": 1126,
+          "sha256": "283b98a40187a357a319db195ee1c535d518ae897b80ce38385fe67f581b031e"
+        },
+        {
+          "path": "config/answer_evaluation_system.txt",
+          "size_bytes": 1400,
+          "sha256": "7441aac9b7f025ac006064b4d778d78ffb1f342f2fba7164567dfab1642aec5f"
+        },
+        {
+          "path": "config/answer_evaluation_judge.txt",
+          "size_bytes": 1083,
+          "sha256": "ad1e6639d61b2ea8165a2fd3717d79b562b0df1bcee7539f2be84d4bb2d979a8"
+        },
+        {
+          "path": "docs/TASK_12_SCOPE.md",
+          "size_bytes": 2830,
+          "sha256": "f471242de9b60c4bfa7838a98e349e0298f950ea40000d05aea8e00cec91b0eb"
+        },
+        {
+          "path": "reports/answer_evaluation/dev/completed.json",
+          "size_bytes": 1440,
+          "sha256": "d32678eab56190a008ebdaa5999afc034ae6e8be1c9e1ca32c5c28e8bb6c1573"
+        },
+        {
+          "path": "reports/answer_evaluation/dev/environment.json",
+          "size_bytes": 52199,
+          "sha256": "cfcf5338c7af91e5cbd625e20875766d2e1208cc6ab197a4248252e26a884216"
+        },
+        {
+          "path": "reports/answer_evaluation/dev/error_analysis.json",
+          "size_bytes": 23602,
+          "sha256": "38291200eb686f5c2d03b4429982acc72d1ab2ce447e2344f1a540c2b33a65e0"
+        },
+        {
+          "path": "reports/answer_evaluation/dev/judgments.jsonl",
+          "size_bytes": 20379,
+          "sha256": "bdfc3a146897dd475e5567cddcf016dea7d8aa3a6e7832e0f98ff6b92a9a8321"
+        },
+        {
+          "path": "reports/answer_evaluation/dev/predictions.jsonl",
+          "size_bytes": 88581,
+          "sha256": "f3619e9f1f5834d85312933a52d46a5c563f45b024b19ccf9d095ee1b863a8ab"
+        },
+        {
+          "path": "reports/answer_evaluation/dev/run_started.json",
+          "size_bytes": 31986,
+          "sha256": "b9aedc84e1ebf8070fd4bcf5c6b78a90a1d0eab58fa988f49603e6307169f660"
+        },
+        {
+          "path": "reports/answer_evaluation/dev/summary.json",
+          "size_bytes": 34266,
+          "sha256": "804b5442c87e34ff3fb0b2bb242773f5e98e4744f66a65faa5f1137a92fcda45"
+        },
+        {
+          "path": "reports/answer_evaluation/test/completed.json",
+          "size_bytes": 1448,
+          "sha256": "97fdd44acfa5ed1a2f787417095317a2cd341c660cff777f92a29e8f40c444d5"
+        },
+        {
+          "path": "reports/answer_evaluation/test/environment.json",
+          "size_bytes": 52212,
+          "sha256": "b0f5210e3176c3298cef2b246e9ec9c602f8e6d2008699f5b66a02a77187c839"
+        },
+        {
+          "path": "reports/answer_evaluation/test/error_analysis.json",
+          "size_bytes": 34790,
+          "sha256": "a51726bf99c812d246fe2b068e84c014f35180b8cb57d68a1f3267701beb8b64"
+        },
+        {
+          "path": "reports/answer_evaluation/test/judgments.jsonl",
+          "size_bytes": 26638,
+          "sha256": "57db3dd17deb9a98da941da35676812af582ee29bc3354ee28235ce0688a3ace"
+        },
+        {
+          "path": "reports/answer_evaluation/test/predictions.jsonl",
+          "size_bytes": 120708,
+          "sha256": "e1855e74402bfe6c44d24b2affe0f5b7a0c8e48c7de839b05f2bdcf3b2da21d7"
+        },
+        {
+          "path": "reports/answer_evaluation/test/run_started.json",
+          "size_bytes": 32159,
+          "sha256": "8c5c2267267d0b2dcbe5212b9a1d0d1f469d1e1808cb29ef6798d14e5b51dfd4"
+        },
+        {
+          "path": "reports/answer_evaluation/test/summary.json",
+          "size_bytes": 45311,
+          "sha256": "5d3f76635be35a266de16fcea4af452cbe772fa2dfef2fdab2eb91b704348581"
+        },
+        {
+          "path": "reports/answer_evaluation/evidence/development_archive_map.json",
+          "size_bytes": 27438,
+          "sha256": "8486dc1d5e41d02aa8808f3eb2ed10f9f14884f1b6ead2a6447c24c661b2ad45"
+        },
+        {
+          "path": "reports/answer_evaluation/evidence/human_review_ready.json",
+          "size_bytes": 1090,
+          "sha256": "49fc7cd28facacab0fa3171e58bd9f471f31bad2635a85b1501956321e489e10"
+        },
+        {
+          "path": "reports/answer_evaluation/evidence/local_answer_bundle.json",
+          "size_bytes": 32666,
+          "sha256": "e734c51d8a4dc54428d535f1f19429ffa38b662aed366938ea55b1b5ec95376c"
+        },
+        {
+          "path": "reports/answer_evaluation/evidence/model_runtime.json",
+          "size_bytes": 870,
+          "sha256": "ece6d8fb4c6e0c2d750eff5f1afe7d0bb1a01177fd4f07ef1335e130dc29d04f"
+        },
+        {
+          "path": "reports/answer_evaluation/evidence/probes-before-branch.json",
+          "size_bytes": 33577,
+          "sha256": "9b8f7d25339db6fbf42e0b9943efc09f186174abf369a52e3b0680fa90791b59"
+        },
+        {
+          "path": "reports/answer_evaluation/evidence/probes.json",
+          "size_bytes": 33522,
+          "sha256": "2b7922fd00b93d76df0cf0c119ba5881080196f9a76052fe84d5a738e7557e6d"
+        },
+        {
+          "path": "reports/answer_evaluation/evidence/structured_decode_probe.json",
+          "size_bytes": 1487,
+          "sha256": "87973ad15e4f20c878f57a266b3dd9f67d34bc501e3d39ca1f78ba4223e7ab30"
+        },
+        {
+          "path": "reports/answer_evaluation/test_authorization.json",
+          "size_bytes": 31375,
+          "sha256": "5c3b544e5949ef6878625053936f18025d6888884ddb93e828896ed8408e8574"
+        },
+        {
+          "path": "reports/answer_evaluation/test_usage.jsonl",
+          "size_bytes": 27948,
+          "sha256": "c4f1f616fef9c599171414abaa4263605c14a4e8f16194965db4de0de2d2ac23"
+        },
+        {
+          "path": "reports/answer_evaluation/human_review_sample.json",
+          "size_bytes": 6490,
+          "sha256": "e14bc7931a16718c69c48d4d5a590b9e680ccffd50df9c690b6b4bab08621d3d"
+        }
+      ],
+      "artifact_policy": "Raw/results/config/methods fixed; final delivery prose, final gates and global registry/index excluded to avoid recursive hashes; final file manifest covers public checkout. All20 prior experiment objects remain byte-equivalent."
     }
   ],
-  "last_updated_at": "2026-11-13T10:32:12.762152+00:00"
+  "last_updated_at": "2026-11-14T08:27:36.028875+00:00"
 }

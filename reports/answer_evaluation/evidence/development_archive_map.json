@@ -1,0 +1,694 @@
+{
+  "captured_at": "2026-11-14T08:27:35.922768+00:00",
+  "policy": "Archived reports retain original bytes, including their old logical paths. Resolve archived private traces using this mapping; never substitute final dev/probe traces at those same old logical paths.",
+  "records": [
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-id-fix/answers/D001.json",
+        "sha256": "f9ec39033ea707d72e4854adc1c2d85d3753ff48559cf779601be8416cb50c4c",
+        "size_bytes": 76379
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D001.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-id-fix/answers/D002.json",
+        "sha256": "e35c873833a9e56b7f3a7fd24333d6b6fcce694de5fac149d4e8761b7798fa19",
+        "size_bytes": 81199
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D002.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D001.json",
+        "sha256": "4e00e8810079868b3e1d7e1e944bb9e8484fdc97edc648d43143ff7efc69f69f",
+        "size_bytes": 76567
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D001.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D002.json",
+        "sha256": "ba5d014b1718737f12bf1731c2423c23d20798694f48eb94472b2694bda6acb0",
+        "size_bytes": 81481
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D002.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D003.json",
+        "sha256": "317eb13622e1e0c954828e30e4ab7ec810cb099ce5599e36991bd3827a9a890c",
+        "size_bytes": 83844
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D003.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D004.json",
+        "sha256": "569224c316246e09fb4b4c1e44234c49fee2931a875e27488dca3fbaa6d2eb92",
+        "size_bytes": 83867
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D004.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D005.json",
+        "sha256": "52d3dda8306c54d307c0d2ca2a5090f6c0ae78b49487c7f377d8ef1b39736444",
+        "size_bytes": 82906
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D005.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D006.json",
+        "sha256": "5838d6a7be8366fecf0d25cb4235fad73b3d5d1575dddb76f481b42476ad3b2f",
+        "size_bytes": 85586
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D006.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D007.json",
+        "sha256": "888f1c39235187e3320d686c1b59aefce1b6bd6a9d28c9f0d76a2b9c922d1c65",
+        "size_bytes": 85987
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D007.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D008.json",
+        "sha256": "516dce0fc2f1b18634dbde4729b5af107912854e150eec88b4c049df0ac9a3e0",
+        "size_bytes": 88619
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D008.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D009.json",
+        "sha256": "af07d5dc58f9ffd4c6ccf9e0e48ddd5bb1b1e064826cd1b11c47168fcd786b82",
+        "size_bytes": 87407
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D009.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D010.json",
+        "sha256": "7d0848ae8948be9ccf9559d019f930adcf933848f35370242c93935347adc911",
+        "size_bytes": 86371
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D010.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D011.json",
+        "sha256": "2e42a294d65d584bdc38ffd3d2523b487ac63b285af4d99997325e8c539462f3",
+        "size_bytes": 87879
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D011.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D012.json",
+        "sha256": "a2aee24a3b6820d0636a9539732cef3f2633443feb975b2a0a047037318c6f42",
+        "size_bytes": 77444
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D012.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D013.json",
+        "sha256": "d77dabdcb5d73111059c2f3a27be62284ac8a1f449808ad7b91be3c30b153e96",
+        "size_bytes": 88961
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D013.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D014.json",
+        "sha256": "bc5159f011983c297bef3c27f3a1e7178316349aa301a49e5eb6aa27815d9426",
+        "size_bytes": 85485
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D014.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D015.json",
+        "sha256": "54e8455f1159e5c888462f01db408ce4299cd8059180fc2c93e88587e69e37bb",
+        "size_bytes": 86183
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D015.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D016.json",
+        "sha256": "976b9b6e032bb0dc9e3b2ce1481381c426fcf6c10bf5491f06302b30f2fb17cf",
+        "size_bytes": 90566
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D016.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D017.json",
+        "sha256": "99f2cea5462f9d7185f0fb60c593dcb933a2cdeeaeadc38e157716d683be652a",
+        "size_bytes": 86831
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D017.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D018.json",
+        "sha256": "459e7fcf7ae09aeeaff4dfa30be6b23085b234d70ffbd6dac0d9c64f13b3754b",
+        "size_bytes": 87218
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D018.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D019.json",
+        "sha256": "42a5020f7fd19bdd6a2bed701bc1147dbd0f308dd2b3d8e93da949f9ba9fdfbb",
+        "size_bytes": 91023
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D019.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D020.json",
+        "sha256": "169d80dc10060a737561500bfdf7d27fdae16c6f993dda4e2210cc55bb63f851",
+        "size_bytes": 87207
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D020.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D021.json",
+        "sha256": "0e4af5bb531732ce2d7d98fc7b32fc05f3d0e25e8a9f22b522af48d97dede707",
+        "size_bytes": 90280
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D021.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D022.json",
+        "sha256": "d4b453a9b4ab565134241412a90c17b837e5ebb5d79245b2f349138fc22492e0",
+        "size_bytes": 88552
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D022.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D023.json",
+        "sha256": "12d00aecc0251a31ffdddc9d0e7e670b848b83deaba06e1049991b11b80ac45a",
+        "size_bytes": 92583
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D023.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D024.json",
+        "sha256": "34fb8662b6d810513896853fff4c959dc045150933f36214af5eda3c017879f3",
+        "size_bytes": 87224
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D024.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D025.json",
+        "sha256": "7875db5c1c5f5bcb4cd63444376e2502ed5a313266762c8e1d6895c95981fdae",
+        "size_bytes": 86365
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D025.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D026.json",
+        "sha256": "cc06f6a297c8c2dcec46c47cbcd6af069d21f02c0e2ddfc6368a7593b44daaf6",
+        "size_bytes": 84112
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D026.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D027.json",
+        "sha256": "0b4dae9657aa10be55d92872313fcc4281b0ef623331f43552e33f1d6df90a40",
+        "size_bytes": 92994
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D027.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D028.json",
+        "sha256": "6ff19aeea8d076e402be32a7ea6a4adbb171c08aeb98ff394101a3b961a07f4e",
+        "size_bytes": 86299
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D028.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D029.json",
+        "sha256": "7ffd85a72bb07ef1c8de3aa8954de752b414c9d6e42bd9066dc5c43df3a114a6",
+        "size_bytes": 83173
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D029.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D030.json",
+        "sha256": "126c02ce4ac51f7da8d74daa787346bea4e1a71e31be838044ed3831765b327f",
+        "size_bytes": 89281
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D030.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D031.json",
+        "sha256": "95fa8f76afee29337386761b6971cb2f4312ed414495a6ac275d608175cd9479",
+        "size_bytes": 87320
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D031.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D032.json",
+        "sha256": "342b65bc2f8a2e25a5f5b19b5aa3d111cc2b11e2128dc5b67a9bbf20dac39df1",
+        "size_bytes": 91049
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D032.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D033.json",
+        "sha256": "66fc487d02f64cc3023c3daf266f186a1197a495ca81df8b8c537e1231941e60",
+        "size_bytes": 79949
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D033.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D034.json",
+        "sha256": "32e3844be10b8fd994fdc7c821cb9660387333ab5ffb9267a6400b61ef62dc1d",
+        "size_bytes": 89706
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D034.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D035.json",
+        "sha256": "dccefe6817ab09b5334802067c191cf9a1e1e2ce01d5f789e82bbdb6808ad765",
+        "size_bytes": 90672
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D035.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D036.json",
+        "sha256": "002a0590d2e32721ffe47d66613e0e0817939ffa12236b638eb1941d82d27787",
+        "size_bytes": 90571
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D036.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D037.json",
+        "sha256": "280b804bd54bd39f8e1e5451da3b96e65e84f999fd1680adb4010860d2493c11",
+        "size_bytes": 79962
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D037.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D038.json",
+        "sha256": "3a0c69c99266aa54efb4d6729a3d88f6fcbc12d2e72f9f633aa48f4cb06620aa",
+        "size_bytes": 724
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D038.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D039.json",
+        "sha256": "81f00dcd30999ab47f3e7c9fbe619a843db777c3ee0aca6aa93402584460d8a8",
+        "size_bytes": 75392
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D039.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/answers/D040.json",
+        "sha256": "4a1255036454954f76cdba0c74ec079e82cb283ebba56d595029a2e6c66e0dad",
+        "size_bytes": 721
+      },
+      "original_private_path": ".runtime/task12/dev/answers/D040.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D001.json",
+        "sha256": "943c1d22a82dc6ef9046d5f88a71e2736f46196fe76284973f79215d7df08675",
+        "size_bytes": 7432
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D001.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D002.json",
+        "sha256": "bd0b5782744d5cc080c75da1f19754bd2bd60f7d45be439c29387fea4a5a8701",
+        "size_bytes": 7504
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D002.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D003.json",
+        "sha256": "d19f25413626ac065739d4d20260583be1238c760869411d5ffc1934d5f079c3",
+        "size_bytes": 7596
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D003.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D004.json",
+        "sha256": "b7229d8459dd02b13645afb8b1e45719edcee951a9862a3e7e41497e3152b025",
+        "size_bytes": 9915
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D004.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D005.json",
+        "sha256": "84ca34dc3a98fed3b02a26be32b815e25a88590da294e3407ea0c309fdd21bd9",
+        "size_bytes": 10836
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D005.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D006.json",
+        "sha256": "b1d9820330395320d469e6455a114e7a8d000fce45d980a3d29bcc725816943b",
+        "size_bytes": 8150
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D006.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D007.json",
+        "sha256": "3fb526966d3791b58d9705c2a6b977d1e84fd6bc69ec6acc1d0c6f28d587531e",
+        "size_bytes": 10759
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D007.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D008.json",
+        "sha256": "e4781086d7ab7b808b59699c701d7304efe1200ce34dde90ce69ef4291bdc693",
+        "size_bytes": 11253
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D008.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D009.json",
+        "sha256": "a173f9d99111992802e1e985ea5a3458d2e2a301c5c1d0d799bb2aac638cdb0d",
+        "size_bytes": 9707
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D009.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D010.json",
+        "sha256": "352392c437183584939f852eefdf5927b024735733543c48931e9993b3542509",
+        "size_bytes": 11655
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D010.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D011.json",
+        "sha256": "a78287c09f7cea5799ad91ca5a43863b871f1437745494a6f950001c9bef0be2",
+        "size_bytes": 7495
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D011.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D012.json",
+        "sha256": "6a263396a9e17055fea03544c58588f49880afe2d00e57f7986ae3813a3cd1f1",
+        "size_bytes": 7625
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D012.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D013.json",
+        "sha256": "ffed44197595d66248c5501e9623b501d0a76ea5a88cb48115c3375fe2bae20c",
+        "size_bytes": 18307
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D013.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D014.json",
+        "sha256": "ede46d439df70e9f531a4da58b69067b1534934a4031188e73aaca7ae7cb181d",
+        "size_bytes": 11008
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D014.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D015.json",
+        "sha256": "6bd79226cee8d4acede6187aa0535a301d67156c673c8f501a112918ca40fd50",
+        "size_bytes": 7492
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D015.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D016.json",
+        "sha256": "0c3ddea57e299f04587a42338ca6d30bc5a9b55dc84546e763b7ad6bee4876a6",
+        "size_bytes": 7909
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D016.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D017.json",
+        "sha256": "3becb49b17eae3d32c8b7c602aa940549cc1fbb90f29f308bfd3ebdf758448e4",
+        "size_bytes": 10867
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D017.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D018.json",
+        "sha256": "55494793ef09ab6c2695951b4397f78d94399862a4f9e752b8392b8f56922829",
+        "size_bytes": 9743
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D018.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D019.json",
+        "sha256": "283eedf020948dd99d2b70fc1e3eb0d55b1209bc79c5a4f6a9f90aebc4e6e4d7",
+        "size_bytes": 16518
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D019.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D020.json",
+        "sha256": "5f641a62e97ae768b90e733b17c7398f2f37c8e18c91143576d53521a8f760a9",
+        "size_bytes": 10116
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D020.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D021.json",
+        "sha256": "3d9bf133890165e2b051c5186415c21fcd18cb961a9e9904484ab0668b0073e3",
+        "size_bytes": 16245
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D021.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D022.json",
+        "sha256": "8ae4f07d00dbf9451553b3aed549d77f9c8721e3d094b979fae7de837d7d8893",
+        "size_bytes": 14874
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D022.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D023.json",
+        "sha256": "0d925928769ed053479207505aa6ab2833a4a79de63ff616c60766c22d5c0069",
+        "size_bytes": 17662
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D023.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D024.json",
+        "sha256": "9dac06c461744b0f0c895899800c10430a6de14c2012f7001fbdb0f2de4c26cf",
+        "size_bytes": 7569
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D024.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D025.json",
+        "sha256": "6a1b98e158a5fb5f5f691dee7d0ebe82d4a730e8651312af10507b138e7d26c7",
+        "size_bytes": 10684
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D025.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D026.json",
+        "sha256": "cf5e1d44ab1afa9fb38a67ff1cc0037e110072a98357bc4cc51f60bb5e98f3ee",
+        "size_bytes": 11716
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D026.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D027.json",
+        "sha256": "f36b1542ff00b17456a4a004625defe04eb4f16abe458dbfe8368accdde90c99",
+        "size_bytes": 19299
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D027.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D028.json",
+        "sha256": "91bab4775217e39956947d4c21c9e26a0ca44ece7e752d8eb0c9c8296f1233ea",
+        "size_bytes": 9955
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D028.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D029.json",
+        "sha256": "3874b4d70425097debfc03fa35f0299e60b994fc34e5c1e6ea547dcaeab775d7",
+        "size_bytes": 10835
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D029.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D030.json",
+        "sha256": "afb9a70d2d4772b4505c056b5b47cd1ab2dbd1ee3935ccbbfd61a9b6fcdcf105",
+        "size_bytes": 10396
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D030.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D031.json",
+        "sha256": "a8b736578c68b425ee844492a641b97724a3593450f04eea6e0c9a3fe97be601",
+        "size_bytes": 10526
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D031.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D032.json",
+        "sha256": "0c0c17c8eaee37399f0c96b0c6ee239c188756045d19a789116a1544c9827aff",
+        "size_bytes": 8525
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D032.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D033.json",
+        "sha256": "df9d35b07135d81e0640dbb393de7dd2cad771775c9402e6fe8c58e3151eca09",
+        "size_bytes": 7166
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D033.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D034.json",
+        "sha256": "9631c9c97e4adf52fcd6620c403b4e6cab41a4696b0cea8af42ce0d8652211d6",
+        "size_bytes": 7401
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D034.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D035.json",
+        "sha256": "2774313fa8b8c6cecb75e24cfdc3b7a9b4fe40d60c70b1f212c568b677a36cd3",
+        "size_bytes": 7199
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D035.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D036.json",
+        "sha256": "fef840f8e47f62ab727c07b137ecdb44071ed6b09d80524f2d5104b2e054177d",
+        "size_bytes": 7309
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D036.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D037.json",
+        "sha256": "69a3543816e12052f11908c88ecc641e2bb3720b19dbe420c1a2e7aad7e30429",
+        "size_bytes": 7243
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D037.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D038.json",
+        "sha256": "81304436f7075a88b862c80bc062a208f5c616218bfe394e97ad3b413e557052",
+        "size_bytes": 7340
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D038.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D039.json",
+        "sha256": "c1515c7aab131dcb330af9029543f3e1a1927b4105789131c5728db1405e0440",
+        "size_bytes": 7197
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D039.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/dev-before-structured/judges/D040.json",
+        "sha256": "b23de8836ad63e51f4fb548a1a8e56891f78bf66cdd195d91d519e39e59b4c73",
+        "size_bytes": 7325
+      },
+      "original_private_path": ".runtime/task12/dev/judges/D040.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/probes-before-branch/outside.json",
+        "sha256": "5997eadfba1df720c8838ccf6fa374e0705a2bbd6b160a9548f215628c195926",
+        "size_bytes": 90156
+      },
+      "original_private_path": ".runtime/task12/probes/outside.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/probes-before-branch/similar_negative.json",
+        "sha256": "f3f4fb860fd751c5479fa1d184f35691970efb213b78704e1469fff29202c871",
+        "size_bytes": 10389
+      },
+      "original_private_path": ".runtime/task12/probes/similar_negative.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/probes-before-branch/source_conflict.json",
+        "sha256": "f65f235674f08f502ff9ae4562ae29d21b6b9f78619ebc3289c04dfbb3ab5b7f",
+        "size_bytes": 17651
+      },
+      "original_private_path": ".runtime/task12/probes/source_conflict.json"
+    },
+    {
+      "archived_private_record": {
+        "path": ".runtime/task12/probes-before-branch/version.json",
+        "sha256": "36bc688d6c5afbeebd4efea9855f7771eb7f8d3cf93b164bf3eab7f40f1e0e8c",
+        "size_bytes": 681
+      },
+      "original_private_path": ".runtime/task12/probes/version.json"
+    }
+  ]
+}

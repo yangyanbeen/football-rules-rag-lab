@@ -117,3 +117,8 @@ UiCapture 必须来自已完成的真实浏览器操作；也可传历史采集�
 ## 任务十一缺陷补交付入口
 
 当前使用 `scripts/verify_task11_audit_delivery.py --complete --report reports/rechecks/task11-next.json`；公开系统Python -S -B增加--public-only。原verify_structure_delivery.py固定为v0.11.0原发布门禁，需在旧标签独立checkout运行。当前严格重放原生产源码，正式结果未变；旧无版本查询只允许原发布字节，新查询/父块回执使用1.1。详见[TASK_11_AUDIT](TASK_11_AUDIT.md)。
+
+
+## 任务十二问答评测复验
+
+见[ANSWER_EVALUATION](ANSWER_EVALUATION.md)。公开Python -S -B可运行scripts/run_answer_evaluation.py replay及verify_answer_public.py --complete --report <新JSON路径>。不要删除已消耗的test目录/账本重测。完整90题问答及来源在本机.runtime/task12/all_answers.html；新回答人审仍0/12，逐题审核入口serve_answer_review.py --port 7864。自动评分不是人工准确率，当前B0页面未整合新适配器。
