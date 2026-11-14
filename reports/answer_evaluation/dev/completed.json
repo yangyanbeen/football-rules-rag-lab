@@ -1,0 +1,39 @@
+{
+  "artifacts": {
+    "environment.json": {
+      "path": "reports/answer_evaluation/dev/environment.json",
+      "sha256": "cfcf5338c7af91e5cbd625e20875766d2e1208cc6ab197a4248252e26a884216",
+      "size_bytes": 52199
+    },
+    "error_analysis.json": {
+      "path": "reports/answer_evaluation/dev/error_analysis.json",
+      "sha256": "38291200eb686f5c2d03b4429982acc72d1ab2ce447e2344f1a540c2b33a65e0",
+      "size_bytes": 23602
+    },
+    "judgments.jsonl": {
+      "path": "reports/answer_evaluation/dev/judgments.jsonl",
+      "sha256": "bdfc3a146897dd475e5567cddcf016dea7d8aa3a6e7832e0f98ff6b92a9a8321",
+      "size_bytes": 20379
+    },
+    "predictions.jsonl": {
+      "path": "reports/answer_evaluation/dev/predictions.jsonl",
+      "sha256": "f3619e9f1f5834d85312933a52d46a5c563f45b024b19ccf9d095ee1b863a8ab",
+      "size_bytes": 88581
+    },
+    "run_started.json": {
+      "path": "reports/answer_evaluation/dev/run_started.json",
+      "sha256": "b9aedc84e1ebf8070fd4bcf5c6b78a90a1d0eab58fa988f49603e6307169f660",
+      "size_bytes": 31986
+    },
+    "summary.json": {
+      "path": "reports/answer_evaluation/dev/summary.json",
+      "sha256": "804b5442c87e34ff3fb0b2bb242773f5e98e4744f66a65faa5f1137a92fcda45",
+      "size_bytes": 34266
+    }
+  },
+  "completed_at": "2026-11-14T07:53:05.772589+00:00",
+  "event": "COMPLETED",
+  "samples": 40,
+  "source_commit": "cd2b6daacffa6a0cbd3913cacfdb083fa318f966",
+  "split": "dev"
+}
