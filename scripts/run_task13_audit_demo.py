@@ -23,7 +23,7 @@ def browser():
         if len(matches)!=1:raise ValueError('Expected one actual UI event per demonstration')
         event=matches[0];p=ROOT/event['private_trace']['path'];actual=read(p);validate_private(actual,case['question'],True)
         if record(p)!=event['private_trace'] or actual['implementation']!=event['implementation']:raise ValueError('UI event trace differs')
-        snapshot=ROOT/'.runtime/task13-audit'/('ui-'+case['id']+'.txt');text=snapshot.read_text('utf-8');answers=re.findall(r'button "bot\x27s message: (.*)"',text)
+        snapshot=ROOT/'.runtime/task13-audit'/('ui-'+case['id']+'-final.txt');text=snapshot.read_text('utf-8');answers=re.findall(r'button "bot\x27s message: (.*)"',text)
         flatten=lambda s:re.sub(r'\s+',' ',s).strip()
         matched=bool(answers) and flatten(answers[-1])==flatten(actual['answer']);linked=all(c['source_url'] in text and c['license_url'] in text for c in actual['citations'])
         passed=case_passes(case,actual) and matched and linked and 'http://127.0.0.1:7867/' in text
