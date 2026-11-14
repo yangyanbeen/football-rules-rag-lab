@@ -1,0 +1,11 @@
+{
+  "version": "task13-demo-1.0",
+  "scope": "Ad hoc integration regressions, not formal development/test evaluation or accuracy samples",
+  "cases": [
+    {"id": "normal", "question": "请按这份知识库说明，球门开口通常有多宽、多高？", "expected_status": "answered", "required_source": "L01-03", "required_literals": ["7.32", "2.44"]},
+    {"id": "condition", "question": "请依据资料解释：队员站在越位位置，就一定会被判越位犯规吗？", "expected_status": "answered", "required_source": "L11-01", "required_literals": ["本身", "不必然", "参与实际比赛"]},
+    {"id": "outside", "question": "知识库能给出今晚比赛的即时比分和下一粒进球时间吗？", "expected_status": "refused", "required_source": null, "required_literals": []},
+    {"id": "citation", "question": "按资料说明普通场上队员能否戴手套，并列出可核对的来源。", "expected_status": "answered", "required_source": "L04-05", "required_literals": ["所有队员都可以戴手套"]},
+    {"id": "version", "question": "请核实2026/27赛季IFAB官方规则的现行有效性。", "expected_status": "refused", "required_source": null, "required_literals": []}
+  ]
+}
