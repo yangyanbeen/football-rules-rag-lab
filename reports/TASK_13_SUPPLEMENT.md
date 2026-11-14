@@ -2,7 +2,7 @@
 
 日期：2026-11-14。基线8befa040b94b7b1da1ac592f73ccf98da363e036 / v0.13.0-integrated-delivery，范围见TASK_13_AUDIT_SCOPE；原技术设计、执行规则和任务十三历史交付不改。当前修订入口[7867](http://127.0.0.1:7867/)，[运行与复验说明](../docs/TASK_13_AUDIT.md)。
 
-**最终代码后端和真实页面各5/5，54/54私有回归、47/47干净公开副本回归、本机完整28/28通过；公开完整验收和发布核对中。**
+**本轮缺陷按原标准补交付：最终后端和真实页面各5/5，54/54私有回归、47/47公开回归、本机完整28/28和干净公开完整25/25全部通过。**
 
 ## 缺陷与闭环
 
@@ -35,4 +35,4 @@
 
 ## 最终交付记录
 
-最终代码后端backend-final.json为5/5，实际浏览器ui.json为5/5，完整本机delivery-first.json为28/28，task13_fully_accepted=true。全部实际17个trace去重统计：14次Embedding/14输入、14次答案尝试、560pair，见resource-usage.json；0正式test重跑、0新人工判断。公开完整门禁随后用新文件保存，最终发布v0.13.1-task13-audit。
+最终代码后端backend-final.json为5/5，实际浏览器ui.json为5/5，完整本机delivery-first.json为28/28，task13_fully_accepted=true。全部实际17个trace去重统计：14次Embedding/14输入、14次答案尝试、560pair，见resource-usage.json；0正式test重跑、0新人工判断。真正无私有语料/模型/索引的公开Git worktree以Python -S完成public-delivery.json为25/25，task13_fully_accepted=true；最终本机复验另写delivery-final.json，保留首次28/28。新版本v0.13.1-task13-audit，通过功能分支小提交/PR合并发布，实际PR/合并SHA/标签可在Git历史核对。825原公开文件除允许导航/全局索引/追加外保留，298私有记录、24旧标签与其他原有仓库另在发布后复核。
