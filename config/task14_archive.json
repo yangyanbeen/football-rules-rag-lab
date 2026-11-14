@@ -1,0 +1,868 @@
+{
+  "version": "task14-spec-1.0",
+  "baseline_commit": "5658f30ecaa714e2bdaca3085cc547414f478e36",
+  "groups": {
+    "corpus": {
+      "experiment": "TASK-003",
+      "sources": [
+        "data/manifests/rag_dataset_manifest.json",
+        "data/manifests/dense_chunk_ids.json"
+      ],
+      "parameters": [],
+      "manifest": null,
+      "commands": [
+        "python -B scripts/validate_rag_dataset.py"
+      ],
+      "scope": "冻结中文语料规模；完整正文不公开；数据适配无质量推理"
+    },
+    "evaluation": {
+      "experiment": "TASK-004-HUMAN-DELIVER",
+      "sources": [
+        "data/eval/dataset_manifest.json",
+        "data/eval/retrieval_dev.jsonl",
+        "data/eval/retrieval_test.jsonl",
+        "data/eval/hard_negatives.jsonl",
+        "data/eval/human_review_receipt.json"
+      ],
+      "parameters": [],
+      "manifest": null,
+      "commands": [
+        "python -B scripts/validate_eval_receipt.py"
+      ],
+      "scope": "40开发/50测试，90条逐题人工核对标签；非裁判专家认证"
+    },
+    "dense": {
+      "experiment": "TASK-007-DENSE-RETRIEVAL",
+      "sources": [
+        "reports/retrieval/dense_b0/test/summary.json",
+        "reports/retrieval/dense_b0/test/predictions.jsonl",
+        "reports/retrieval/dense_b0/test/run_manifest.json",
+        "reports/retrieval/dense_b0/test_usage.jsonl"
+      ],
+      "parameters": [
+        "config/dense_index.json",
+        "config/dense_retrieval_b0.json"
+      ],
+      "manifest": "reports/retrieval/dense_b0/test/run_manifest.json",
+      "commands": [
+        "python -S -B scripts/task14_archive.py show --group dense"
+      ],
+      "scope": "固定99段Dense历史基线，测试40可回答/50总题，串行暖态，不能与不同候选预算直接计算因果增益"
+    },
+    "bm25": {
+      "experiment": "TASK-008-BM25",
+      "sources": [
+        "reports/retrieval/bm25_b0/test/summary.json",
+        "reports/retrieval/bm25_b0/test/predictions.jsonl",
+        "reports/retrieval/bm25_b0/test/run_manifest.json",
+        "reports/retrieval/bm25_b0/test_usage.jsonl"
+      ],
+      "parameters": [
+        "config/bm25_b0.json",
+        "config/bm25_dependency.json"
+      ],
+      "manifest": "reports/retrieval/bm25_b0/test/run_manifest.json",
+      "commands": [
+        "python -S -B scripts/task14_archive.py show --group bm25"
+      ],
+      "scope": "开发选title_body；CPU99段纯词法计时，不是端到端LLM延迟"
+    },
+    "hybrid": {
+      "experiment": "TASK-009-HYBRID-RRF",
+      "sources": [
+        "reports/retrieval/hybrid_rrf_b0/test/summary.json",
+        "reports/retrieval/hybrid_rrf_b0/test/predictions.jsonl",
+        "reports/retrieval/hybrid_rrf_b0/test/run_manifest.json",
+        "reports/retrieval/hybrid_rrf_b0/test_usage.jsonl"
+      ],
+      "parameters": [
+        "config/hybrid_rrf.json"
+      ],
+      "manifest": "reports/retrieval/hybrid_rrf_b0/test/run_manifest.json",
+      "commands": [
+        "python -S -B scripts/task14_archive.py show --group hybrid"
+      ],
+      "scope": "双路各Top10的历史离线融合；不把通道与融合时间相加冒充真实端到端时钟"
+    },
+    "reranker": {
+      "experiment": "TASK-010-BGE-RERANKER",
+      "sources": [
+        "reports/retrieval/bge_reranker_b0/test/summary.json",
+        "reports/retrieval/bge_reranker_b0/test/predictions.jsonl",
+        "reports/retrieval/bge_reranker_b0/test/run_manifest.json",
+        "reports/retrieval/bge_reranker_b0/test_usage.jsonl"
+      ],
+      "parameters": [
+        "config/reranker_experiment.json"
+      ],
+      "manifest": "reports/retrieval/bge_reranker_b0/test/run_manifest.json",
+      "commands": [
+        "python -S -B scripts/task14_archive.py show --group reranker"
+      ],
+      "scope": "同轮Dense/BM25各80、RRF60、四方法控制；开发选Top40，旧锁集已用，测试仅报告"
+    },
+    "structure": {
+      "experiment": "TASK-011-STRUCTURE-PARENT-CHILD",
+      "sources": [
+        "reports/retrieval/structure_pc_b0/test/summary.json",
+        "reports/retrieval/structure_pc_b0/test/predictions.jsonl",
+        "reports/retrieval/structure_pc_b0/test/run_manifest.json",
+        "reports/retrieval/structure_pc_b0/test_usage.jsonl",
+        "data/manifests/structure_parent_child.json"
+      ],
+      "parameters": [
+        "config/structure_parent_child.json"
+      ],
+      "manifest": "reports/retrieval/structure_pc_b0/test/run_manifest.json",
+      "commands": [
+        "python -S -B scripts/task14_archive.py show --group structure"
+      ],
+      "scope": "两组统一精确余弦，无重排；4096加性上下文预算；不能与Chroma基线混算收益"
+    },
+    "answers": {
+      "experiment": "TASK-012-ANSWER-EVALUATION",
+      "sources": [
+        "reports/answer_evaluation/test/summary.json",
+        "reports/answer_evaluation/test/predictions.jsonl",
+        "reports/answer_evaluation/test/judgments.jsonl",
+        "reports/answer_evaluation/test/run_started.json",
+        "reports/answer_evaluation/test/environment.json",
+        "reports/answer_evaluation/test_usage.jsonl"
+      ],
+      "parameters": [
+        "config/answer_evaluation.json",
+        "config/reranker_experiment.json"
+      ],
+      "manifest": "reports/answer_evaluation/test/run_started.json",
+      "commands": [
+        "python -S -B scripts/run_answer_evaluation.py replay"
+      ],
+      "scope": "同一小模型AI评分；不等于人工准确率，无B0答案对照，无改善结论"
+    },
+    "human": {
+      "experiment": "TASK-012-HUMAN-ACCEPTANCE",
+      "sources": [
+        "reports/answer_evaluation_acceptance/human-quality-analysis.json",
+        "reports/answer_evaluation_acceptance/human-review-completed.json"
+      ],
+      "parameters": [
+        "config/citation_catalog_notes.json"
+      ],
+      "manifest": null,
+      "commands": [
+        "python -S -B scripts/task14_archive.py show --group human"
+      ],
+      "scope": "12题优先抽取错误的样本，AI先建议、用户本人提交；非盲审/非专家，不能外推50题"
+    }
+  },
+  "claims": [
+    {
+      "id": "documents",
+      "group": "corpus",
+      "source": "data/manifests/rag_dataset_manifest.json",
+      "pointer": "/summary/documents",
+      "op": "value",
+      "unit": "份",
+      "role": "context"
+    },
+    {
+      "id": "chunks",
+      "group": "corpus",
+      "source": "data/manifests/rag_dataset_manifest.json",
+      "pointer": "/summary/chinese_records",
+      "op": "value",
+      "unit": "段",
+      "role": "context"
+    },
+    {
+      "id": "dev_questions",
+      "group": "evaluation",
+      "source": "data/eval/retrieval_dev.jsonl",
+      "pointer": "",
+      "op": "length",
+      "unit": "题",
+      "role": "context"
+    },
+    {
+      "id": "test_questions",
+      "group": "evaluation",
+      "source": "data/eval/retrieval_test.jsonl",
+      "pointer": "",
+      "op": "length",
+      "unit": "题",
+      "role": "context"
+    },
+    {
+      "id": "hard_negatives",
+      "group": "evaluation",
+      "source": "data/eval/hard_negatives.jsonl",
+      "pointer": "",
+      "op": "length",
+      "unit": "对",
+      "role": "context"
+    },
+    {
+      "id": "dense_r5",
+      "group": "dense",
+      "source": "reports/retrieval/dense_b0/test/summary.json",
+      "pointer": "/quality/metrics/Recall@5",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "dense_r10",
+      "group": "dense",
+      "source": "reports/retrieval/dense_b0/test/summary.json",
+      "pointer": "/quality/metrics/Recall@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "dense_mrr",
+      "group": "dense",
+      "source": "reports/retrieval/dense_b0/test/summary.json",
+      "pointer": "/quality/metrics/MRR@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "bm25_r5",
+      "group": "bm25",
+      "source": "reports/retrieval/bm25_b0/test/summary.json",
+      "pointer": "/quality/metrics/Recall@5",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "bm25_r10",
+      "group": "bm25",
+      "source": "reports/retrieval/bm25_b0/test/summary.json",
+      "pointer": "/quality/metrics/Recall@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "bm25_mrr",
+      "group": "bm25",
+      "source": "reports/retrieval/bm25_b0/test/summary.json",
+      "pointer": "/quality/metrics/MRR@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "hybrid_bm25_r5",
+      "group": "hybrid",
+      "source": "reports/retrieval/hybrid_rrf_b0/test/summary.json",
+      "pointer": "/methods/bm25/quality/metrics/Recall@5",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "hybrid_bm25_r10",
+      "group": "hybrid",
+      "source": "reports/retrieval/hybrid_rrf_b0/test/summary.json",
+      "pointer": "/methods/bm25/quality/metrics/Recall@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "hybrid_bm25_mrr",
+      "group": "hybrid",
+      "source": "reports/retrieval/hybrid_rrf_b0/test/summary.json",
+      "pointer": "/methods/bm25/quality/metrics/MRR@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "hybrid_rrf_r5",
+      "group": "hybrid",
+      "source": "reports/retrieval/hybrid_rrf_b0/test/summary.json",
+      "pointer": "/methods/rrf/quality/metrics/Recall@5",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "hybrid_rrf_r10",
+      "group": "hybrid",
+      "source": "reports/retrieval/hybrid_rrf_b0/test/summary.json",
+      "pointer": "/methods/rrf/quality/metrics/Recall@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "hybrid_rrf_mrr",
+      "group": "hybrid",
+      "source": "reports/retrieval/hybrid_rrf_b0/test/summary.json",
+      "pointer": "/methods/rrf/quality/metrics/MRR@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "reranker_no_rerank_r5",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/no_rerank/quality/metrics/Recall@5",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "reranker_no_rerank_r10",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/no_rerank/quality/metrics/Recall@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "reranker_no_rerank_mrr",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/no_rerank/quality/metrics/MRR@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "reranker_top20_r5",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top20/quality/metrics/Recall@5",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "reranker_top20_r10",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top20/quality/metrics/Recall@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "reranker_top20_mrr",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top20/quality/metrics/MRR@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "reranker_top40_r5",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top40/quality/metrics/Recall@5",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "reranker_top40_r10",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top40/quality/metrics/Recall@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "reranker_top40_mrr",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top40/quality/metrics/MRR@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "reranker_top80_r5",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top80/quality/metrics/Recall@5",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "reranker_top80_r10",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top80/quality/metrics/Recall@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "reranker_top80_mrr",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top80/quality/metrics/MRR@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "reranker_top20_rerank_seconds_P50_ms",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top20/latency/rerank_seconds/P50_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "reranker_top20_rerank_seconds_P95_ms",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top20/latency/rerank_seconds/P95_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "reranker_top20_total_seconds_P50_ms",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top20/latency/total_seconds/P50_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "reranker_top20_total_seconds_P95_ms",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top20/latency/total_seconds/P95_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "reranker_top40_rerank_seconds_P50_ms",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top40/latency/rerank_seconds/P50_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "reranker_top40_rerank_seconds_P95_ms",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top40/latency/rerank_seconds/P95_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "reranker_top40_total_seconds_P50_ms",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top40/latency/total_seconds/P50_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "reranker_top40_total_seconds_P95_ms",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top40/latency/total_seconds/P95_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "reranker_top80_rerank_seconds_P50_ms",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top80/latency/rerank_seconds/P50_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "reranker_top80_rerank_seconds_P95_ms",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top80/latency/rerank_seconds/P95_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "reranker_top80_total_seconds_P50_ms",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top80/latency/total_seconds/P50_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "reranker_top80_total_seconds_P95_ms",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top80/latency/total_seconds/P95_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "dense_P50_ms",
+      "group": "dense",
+      "source": "reports/retrieval/dense_b0/test/summary.json",
+      "pointer": "/latency/all/total_seconds/P50_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "dense_P95_ms",
+      "group": "dense",
+      "source": "reports/retrieval/dense_b0/test/summary.json",
+      "pointer": "/latency/all/total_seconds/P95_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "bm25_P50_ms",
+      "group": "bm25",
+      "source": "reports/retrieval/bm25_b0/test/summary.json",
+      "pointer": "/latency/all/total_seconds/P50_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "bm25_P95_ms",
+      "group": "bm25",
+      "source": "reports/retrieval/bm25_b0/test/summary.json",
+      "pointer": "/latency/all/total_seconds/P95_ms",
+      "op": "value",
+      "unit": "ms",
+      "role": "latency"
+    },
+    {
+      "id": "rrf_k",
+      "group": "reranker",
+      "source": "config/reranker_experiment.json",
+      "pointer": "/rrf_k",
+      "op": "value",
+      "unit": "k",
+      "role": "context"
+    },
+    {
+      "id": "candidate_depth",
+      "group": "reranker",
+      "source": "config/reranker_experiment.json",
+      "pointer": "/channel_top_k",
+      "op": "value",
+      "unit": "候选/通道",
+      "role": "context"
+    },
+    {
+      "id": "children",
+      "group": "structure",
+      "source": "data/manifests/structure_parent_child.json",
+      "pointer": "/children",
+      "op": "length",
+      "unit": "块",
+      "role": "context"
+    },
+    {
+      "id": "parents",
+      "group": "structure",
+      "source": "data/manifests/structure_parent_child.json",
+      "pointer": "/parents",
+      "op": "length",
+      "unit": "块",
+      "role": "context"
+    },
+    {
+      "id": "context_budget",
+      "group": "structure",
+      "source": "config/structure_parent_child.json",
+      "pointer": "/context_token_budget",
+      "op": "value",
+      "unit": "tokens",
+      "role": "context"
+    },
+    {
+      "id": "structure_base_r5",
+      "group": "structure",
+      "source": "reports/retrieval/structure_pc_b0/test/summary.json",
+      "pointer": "/methods/base/budgeted/metrics/Recall@5",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "structure_base_r10",
+      "group": "structure",
+      "source": "reports/retrieval/structure_pc_b0/test/summary.json",
+      "pointer": "/methods/base/budgeted/metrics/Recall@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "structure_base_mrr",
+      "group": "structure",
+      "source": "reports/retrieval/structure_pc_b0/test/summary.json",
+      "pointer": "/methods/base/budgeted/metrics/MRR@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "structure_base_context_tokens",
+      "group": "structure",
+      "source": "reports/retrieval/structure_pc_b0/test/summary.json",
+      "pointer": "/methods/base/budgeted/context/mean_tokens",
+      "op": "value",
+      "unit": "tokens",
+      "role": "cost"
+    },
+    {
+      "id": "structure_child_r5",
+      "group": "structure",
+      "source": "reports/retrieval/structure_pc_b0/test/summary.json",
+      "pointer": "/methods/child/budgeted/metrics/Recall@5",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "structure_child_r10",
+      "group": "structure",
+      "source": "reports/retrieval/structure_pc_b0/test/summary.json",
+      "pointer": "/methods/child/budgeted/metrics/Recall@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "structure_child_mrr",
+      "group": "structure",
+      "source": "reports/retrieval/structure_pc_b0/test/summary.json",
+      "pointer": "/methods/child/budgeted/metrics/MRR@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "structure_child_context_tokens",
+      "group": "structure",
+      "source": "reports/retrieval/structure_pc_b0/test/summary.json",
+      "pointer": "/methods/child/budgeted/context/mean_tokens",
+      "op": "value",
+      "unit": "tokens",
+      "role": "cost"
+    },
+    {
+      "id": "structure_parent_child_r5",
+      "group": "structure",
+      "source": "reports/retrieval/structure_pc_b0/test/summary.json",
+      "pointer": "/methods/parent_child/budgeted/metrics/Recall@5",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "structure_parent_child_r10",
+      "group": "structure",
+      "source": "reports/retrieval/structure_pc_b0/test/summary.json",
+      "pointer": "/methods/parent_child/budgeted/metrics/Recall@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "structure_parent_child_mrr",
+      "group": "structure",
+      "source": "reports/retrieval/structure_pc_b0/test/summary.json",
+      "pointer": "/methods/parent_child/budgeted/metrics/MRR@10",
+      "op": "value",
+      "unit": "ratio",
+      "role": "quality"
+    },
+    {
+      "id": "structure_parent_child_context_tokens",
+      "group": "structure",
+      "source": "reports/retrieval/structure_pc_b0/test/summary.json",
+      "pointer": "/methods/parent_child/budgeted/context/mean_tokens",
+      "op": "value",
+      "unit": "tokens",
+      "role": "cost"
+    },
+    {
+      "id": "ai_answer_point_coverage",
+      "group": "answers",
+      "source": "reports/answer_evaluation/test/summary.json",
+      "pointer": "/metrics/answer_point_coverage/value",
+      "op": "value",
+      "unit": "ratio",
+      "role": "AI_quality"
+    },
+    {
+      "id": "ai_citation_correctness",
+      "group": "answers",
+      "source": "reports/answer_evaluation/test/summary.json",
+      "pointer": "/metrics/citation_correctness/value",
+      "op": "value",
+      "unit": "ratio",
+      "role": "AI_quality"
+    },
+    {
+      "id": "ai_condition_exception_retention",
+      "group": "answers",
+      "source": "reports/answer_evaluation/test/summary.json",
+      "pointer": "/metrics/condition_exception_retention/value",
+      "op": "value",
+      "unit": "ratio",
+      "role": "AI_quality"
+    },
+    {
+      "id": "ai_correct_refusal_rate",
+      "group": "answers",
+      "source": "reports/answer_evaluation/test/summary.json",
+      "pointer": "/metrics/correct_refusal_rate/value",
+      "op": "value",
+      "unit": "ratio",
+      "role": "AI_quality"
+    },
+    {
+      "id": "ai_false_refusal_rate",
+      "group": "answers",
+      "source": "reports/answer_evaluation/test/summary.json",
+      "pointer": "/metrics/false_refusal_rate/value",
+      "op": "value",
+      "unit": "ratio",
+      "role": "AI_quality"
+    },
+    {
+      "id": "human_samples",
+      "group": "human",
+      "source": "reports/answer_evaluation_acceptance/human-quality-analysis.json",
+      "pointer": "/human_reviewed_questions",
+      "op": "value",
+      "unit": "题",
+      "role": "context"
+    },
+    {
+      "id": "human_answer_point_coverage_numerator",
+      "group": "human",
+      "source": "reports/answer_evaluation_acceptance/human-quality-analysis.json",
+      "pointer": "/human_semantic_metrics/answer_point_coverage/numerator",
+      "op": "value",
+      "unit": "count",
+      "role": "human_sample"
+    },
+    {
+      "id": "human_answer_point_coverage_denominator",
+      "group": "human",
+      "source": "reports/answer_evaluation_acceptance/human-quality-analysis.json",
+      "pointer": "/human_semantic_metrics/answer_point_coverage/denominator",
+      "op": "value",
+      "unit": "count",
+      "role": "human_sample"
+    },
+    {
+      "id": "human_answer_point_coverage_value",
+      "group": "human",
+      "source": "reports/answer_evaluation_acceptance/human-quality-analysis.json",
+      "pointer": "/human_semantic_metrics/answer_point_coverage/value",
+      "op": "value",
+      "unit": "ratio",
+      "role": "human_sample"
+    },
+    {
+      "id": "human_citation_correctness_numerator",
+      "group": "human",
+      "source": "reports/answer_evaluation_acceptance/human-quality-analysis.json",
+      "pointer": "/human_semantic_metrics/citation_correctness/numerator",
+      "op": "value",
+      "unit": "count",
+      "role": "human_sample"
+    },
+    {
+      "id": "human_citation_correctness_denominator",
+      "group": "human",
+      "source": "reports/answer_evaluation_acceptance/human-quality-analysis.json",
+      "pointer": "/human_semantic_metrics/citation_correctness/denominator",
+      "op": "value",
+      "unit": "count",
+      "role": "human_sample"
+    },
+    {
+      "id": "human_citation_correctness_value",
+      "group": "human",
+      "source": "reports/answer_evaluation_acceptance/human-quality-analysis.json",
+      "pointer": "/human_semantic_metrics/citation_correctness/value",
+      "op": "value",
+      "unit": "ratio",
+      "role": "human_sample"
+    },
+    {
+      "id": "human_condition_exception_retention_numerator",
+      "group": "human",
+      "source": "reports/answer_evaluation_acceptance/human-quality-analysis.json",
+      "pointer": "/human_semantic_metrics/condition_exception_retention/numerator",
+      "op": "value",
+      "unit": "count",
+      "role": "human_sample"
+    },
+    {
+      "id": "human_condition_exception_retention_denominator",
+      "group": "human",
+      "source": "reports/answer_evaluation_acceptance/human-quality-analysis.json",
+      "pointer": "/human_semantic_metrics/condition_exception_retention/denominator",
+      "op": "value",
+      "unit": "count",
+      "role": "human_sample"
+    },
+    {
+      "id": "human_condition_exception_retention_value",
+      "group": "human",
+      "source": "reports/answer_evaluation_acceptance/human-quality-analysis.json",
+      "pointer": "/human_semantic_metrics/condition_exception_retention/value",
+      "op": "value",
+      "unit": "ratio",
+      "role": "human_sample"
+    }
+  ],
+  "unmeasured": [
+    "FAISS HNSW参数优化收益",
+    "语义缓存命中率/调用节省",
+    "Redis与错误命中率",
+    "LangGraph对照",
+    "QPS/并发/SLA",
+    "总体答案准确率提升",
+    "nDCG/Precision@5",
+    "200条查询/40条hard negative的示例规模",
+    "61%→80%示例召回收益",
+    "400ms→120ms与70%示例重排收益",
+    "180→96与40%示例冗余收益",
+    "35%示例HNSW提速与30%示例缓存命中率"
+  ],
+  "policy": "Archive/replay only. Report existing measurements with source hashes, per-question links, code, parameters, hardware and scope. Unrun values are 待测; preserve all negative results."
+}
