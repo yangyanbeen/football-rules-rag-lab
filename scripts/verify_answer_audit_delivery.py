@@ -35,11 +35,11 @@ def main():
     def receipt(name):
         v=read(FOLDER/name)
         return v['status']=='PASS' and type(v['passed']) is int and v['passed']==v['total']==len(v['checks']) and all(b is True for b in v['checks'].values())
-    for name in ('regression-final.json','http-review-final.json','public-final.json','legacy-contract.json','independent-arithmetic.json','legacy-delivery.json','legacy-public.json'):
+    for name in ('regression-final-v3.json','http-review-final.json','public-final-v3.json','legacy-contract.json','independent-arithmetic.json','legacy-delivery.json','legacy-public.json'):
         check(name+'_actual_pass',lambda name=name:receipt(name))
-    check('regression_bound_to_current_sources',lambda:all(record(ROOT/n)['sha256']==h for n,h in read(FOLDER/'regression-final.json')['source_sha256'].items()))
-    check('zero_new_model_requests_in_audit',lambda:all(read(FOLDER/n)['new_model_requests']==0 for n in ('regression-final.json','public-final.json','http-review-final.json')))
-    check('public_replay_uses_python_S',lambda:read(FOLDER/'public-final.json')['site_packages_disabled'] is True)
+    check('regression_bound_to_current_sources',lambda:all(record(ROOT/n)['sha256']==h for n,h in read(FOLDER/'regression-final-v3.json')['source_sha256'].items()))
+    check('zero_new_model_requests_in_audit',lambda:all(read(FOLDER/n)['new_model_requests']==0 for n in ('regression-final-v3.json','public-final-v3.json','http-review-final.json')))
+    check('public_replay_uses_python_S',lambda:read(FOLDER/'public-final-v3.json')['site_packages_disabled'] is True)
     check('test_ledger_remains_single_completed_run',lambda:[r['event'] for r in rows(DIRECTORY/'test_usage.jsonl')]==['STARTED','COMPLETED'])
     human=read(FOLDER/'human-review-status.json');context=review.review_context()
     check('human_summary_recomputes_without_private_names',lambda:review.validate_public_summary(human,context))

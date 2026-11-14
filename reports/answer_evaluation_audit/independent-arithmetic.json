@@ -1,0 +1,43 @@
+{
+  "version": "answer-independent-arithmetic-1.0",
+  "captured_at": "2026-11-14T09:10:12.925115+00:00",
+  "status": "PASS",
+  "passed": 19,
+  "total": 19,
+  "checks": {
+    "synthetic_answer_point_coverage": true,
+    "synthetic_citation_correctness": true,
+    "synthetic_condition_exception_retention": true,
+    "synthetic_correct_refusal_rate": true,
+    "synthetic_false_refusal_rate": true,
+    "empty_denominators_are_null": true,
+    "runtime_failure_not_rewarded_as_correct_refusal": true,
+    "dev_sample_order_binding": true,
+    "dev_answer_point_coverage_independent_recompute": true,
+    "dev_citation_correctness_independent_recompute": true,
+    "dev_condition_exception_retention_independent_recompute": true,
+    "dev_correct_refusal_rate_independent_recompute": true,
+    "dev_false_refusal_rate_independent_recompute": true,
+    "test_sample_order_binding": true,
+    "test_answer_point_coverage_independent_recompute": true,
+    "test_citation_correctness_independent_recompute": true,
+    "test_condition_exception_retention_independent_recompute": true,
+    "test_correct_refusal_rate_independent_recompute": true,
+    "test_false_refusal_rate_independent_recompute": true
+  },
+  "bound_artifacts": {
+    "dev": {
+      "predictions.jsonl": "f3619e9f1f5834d85312933a52d46a5c563f45b024b19ccf9d095ee1b863a8ab",
+      "judgments.jsonl": "bdfc3a146897dd475e5567cddcf016dea7d8aa3a6e7832e0f98ff6b92a9a8321",
+      "summary.json": "804b5442c87e34ff3fb0b2bb242773f5e98e4744f66a65faa5f1137a92fcda45"
+    },
+    "test": {
+      "predictions.jsonl": "e1855e74402bfe6c44d24b2affe0f5b7a0c8e48c7de839b05f2bdcf3b2da21d7",
+      "judgments.jsonl": "57db3dd17deb9a98da941da35676812af582ee29bc3354ee28235ce0688a3ace",
+      "summary.json": "5d3f76635be35a266de16fcea4af452cbe772fa2dfef2fdab2eb91b704348581"
+    }
+  },
+  "source_sha256": "5a7935706b7645f52d33cc892c88765c8f163a5943e534541b4263ee8e872b0f",
+  "new_model_requests": 0,
+  "scope": "Independent arithmetic only, not semantic adjudication or human review"
+}
