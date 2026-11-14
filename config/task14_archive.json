@@ -529,7 +529,7 @@
       "id": "dense_P50_ms",
       "group": "dense",
       "source": "reports/retrieval/dense_b0/test/summary.json",
-      "pointer": "/latency/all/total_seconds/P50_ms",
+      "pointer": "/latency/stages/total_seconds/p50",
       "op": "value",
       "unit": "ms",
       "role": "latency"
@@ -538,7 +538,7 @@
       "id": "dense_P95_ms",
       "group": "dense",
       "source": "reports/retrieval/dense_b0/test/summary.json",
-      "pointer": "/latency/all/total_seconds/P95_ms",
+      "pointer": "/latency/stages/total_seconds/p95",
       "op": "value",
       "unit": "ms",
       "role": "latency"
