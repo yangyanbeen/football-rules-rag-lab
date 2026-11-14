@@ -13,7 +13,7 @@ PROFILES=('optimized_extractive',)
 NATIVE=('scripts/answer_eval_core.py','scripts/answer_eval_engine.py','scripts/run_answer_evaluation.py',
         'scripts/verify_answer_evaluation.py','scripts/verify_answer_delivery.py')
 RESOURCES=(CONFIG,'config/answer_evaluation_system.txt','config/answer_evaluation_judge.txt','docs/TASK_12_SCOPE.md')
-INPUTS=('data/eval/answer_eval.jsonl','data/eval/dev.jsonl','data/eval/test.jsonl',
+INPUTS=('data/eval/answer_eval.jsonl','data/eval/retrieval_dev.jsonl','data/eval/retrieval_test.jsonl',
         'data/eval/human_review_receipt.json','reports/reranker_results.json','config/rag_b0.json',
         'config/reranker_experiment.json','config/dense_index.json')
 BOUNDARY='资料为固定Wikipedia快照的AI中文整理，非官方赛季规则，未经过裁判专家审校；历史修订正文未独立核验。'
@@ -53,6 +53,7 @@ def config():
     old=read(ROOT/'config/rag_b0.json')
     if c['llm']!=old['llm'] or c['chat_template_token_reserve']!=512:raise ValueError('Model or context policy differs from pinned B0')
     if c['input_utf8_byte_budget']+512+c['llm']['num_predict']>c['llm']['num_ctx']:raise ValueError('Context reserve overflow')
+    if read(ROOT/c['retrieval_selection_source'])['selected_method_on_dev']!=c['retrieval_method']:raise ValueError('Not the development-selected retrieval configuration')
     return c
 
 
@@ -145,6 +146,10 @@ def validate_public_prediction(q,p):
     for value in p['timing'].values():
         if type(value) not in (int,float) or not math.isfinite(value) or value<0:raise ValueError('Invalid timing')
     for c in p['citations']:
+        original=read(ROOT/'data/manifests/structure_parent_child.json')['originals'].get(c['chunk_id'])
+        if not original or c['law_number']!=original['law_number'] or c['quote_characters']!=original['characters'] or c['title']!=original['section_path'][-1]:raise ValueError('Citation original ID/law/title/length differs')
+        for k,v in original['source'].items():
+            if c.get(k)!=v:raise ValueError('Citation frozen source metadata differs: '+k)
         expected=next((r for r in q['source_references'] if r['chunk_id']==c['chunk_id']),None)
         # An unlabelled citation is allowed to be scored as a quality error, not hidden.
         if expected:
@@ -157,6 +162,7 @@ def validate_public_prediction(q,p):
         if a['attempt']!=i:raise ValueError('Attempt sequence differs')
         if a['error'] is None:
             if type(a['prompt_eval_count']) is not int or type(a['eval_count']) is not int or not 0<a['eval_count']<=1024 or a['prompt_eval_count']+1024+512>8192 or a['done_reason']!='stop':raise ValueError('Invalid model counters')
+    if p['status']=='answered' and (not p['generation_attempts'] or p['generation_attempts'][-1]['error'] is not None):raise ValueError('Answered without completed actual generation')
     return True
 
 

@@ -10,7 +10,7 @@ def freeze():
     if development['samples']!=40:raise ValueError('Development incomplete')
     write_new(DIRECTORY/'test_authorization.json',{'version':'answer-test-authorization-1.0','created_at':now(),
         'source_commit':source,'inputs':inputs,'development_summary':record(DIRECTORY/'dev/summary.json'),
-        'test_labels':record(ROOT/'data/eval/test.jsonl'),'scope':'User-authorized Task12; one new answer assessment on previously used locked50, not unseen holdout; no test tuning',
+        'test_labels':record(ROOT/'data/eval/retrieval_test.jsonl'),'scope':'User-authorized Task12; one new answer assessment on previously used locked50, not unseen holdout; no test tuning',
         'retrieval_method':config()['retrieval_method'],'metrics_policy':'AI_not_human; all five rates plus denominators, failures and per-question evidence'})
 
 
@@ -22,7 +22,7 @@ def execute(split):
     auth=None
     if split=='test':
         auth=read(DIRECTORY/'test_authorization.json')
-        if auth['inputs']!=inputs or auth['test_labels']!=record(ROOT/'data/eval/test.jsonl') or auth['development_summary']!=record(DIRECTORY/'dev/summary.json'):raise ValueError('Frozen source/dev/test changed')
+        if auth['inputs']!=inputs or auth['test_labels']!=record(ROOT/'data/eval/retrieval_test.jsonl') or auth['development_summary']!=record(DIRECTORY/'dev/summary.json'):raise ValueError('Frozen source/dev/test changed')
         raw=subprocess.check_output(['git','show','HEAD:reports/answer_evaluation/test_authorization.json'],cwd=ROOT)
         if raw!=(DIRECTORY/'test_authorization.json').read_bytes():raise ValueError('Commit authorization before test')
         if (DIRECTORY/'test_usage.jsonl').exists():raise ValueError('Formal test authorization already consumed')

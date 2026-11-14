@@ -37,6 +37,7 @@ def verify(path,saved=False):
     check('long_question_rejected_without_truncation',lambda:rejects(lambda:pack('中'*4000,[],cfg,'规则')))
     check('full_messages_within_budget',lambda:pack('尺寸',[stub]*10,cfg,'规则')[2]<=6200 and len(pack('尺寸',[stub]*10,cfg,'规则')[0])==5)
     check('version_boundary_explicit',lambda:all(w in BOUNDARY for w in ('Wikipedia','非官方','未经过裁判专家审校','未独立核验')))
+    check('all_declared_frozen_inputs_exist',lambda:all((ROOT/p).is_file() for p in INPUTS))
     if saved:
         for s in ('dev','test'):
             if (DIRECTORY/s/'summary.json').exists():check(s+'_saved_metrics_and_all_vectors_replay',lambda s=s:replay(s)['samples']==cfg['formal_samples'][s])

@@ -66,7 +66,7 @@ def verify(output,public_only=False,complete=False):
     def authorization():
         start=read(DIRECTORY/'test/run_started.json');auth=read(DIRECTORY/'test_authorization.json')
         return (start['authorization']==record(DIRECTORY/'test_authorization.json') and auth['inputs']==start['inputs'] and
-          auth['test_labels']==record(ROOT/'data/eval/test.jsonl') and auth['development_summary']==record(DIRECTORY/'dev/summary.json') and
+          auth['test_labels']==record(ROOT/'data/eval/retrieval_test.jsonl') and auth['development_summary']==record(DIRECTORY/'dev/summary.json') and
           subprocess.check_output(['git','show',start['source_commit']+':reports/answer_evaluation/test_authorization.json'],cwd=ROOT)==(DIRECTORY/'test_authorization.json').read_bytes())
     check('dev_selected_config_and_committed_test_authorization',authorization)
     def formal():
