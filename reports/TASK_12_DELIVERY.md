@@ -55,3 +55,20 @@ dev运行错误1、自动评分错误0；test运行错误0、自动评分错误0
 公共：[正式汇总](answer_quality_results.json)、[指标方法](../docs/ANSWER_EVALUATION.md)、[逐题错误](answer_evaluation/test/error_analysis.json)、[待人审12题](answer_evaluation/human_review_sample.json)。
 
 本机完整90题：`.runtime/task12/all_answers.html`；人工12题静态材料：`.runtime/task12/human_review.html`；实际逐题审核服务：`scripts/serve_answer_review.py --port 7864`。只有本人逐题提交的判断才追加到新人工账本；原标签人审与本轮新回答评分分开。
+
+
+## 最终实际工程验收记录
+
+| 范围 | 实际检查 | 证据 |
+| --- | --- | --- |
+| 专项回归和已保存结果重放 | 42/42 PASS | [记录](answer_evaluation/acceptance/contract-final.json) |
+| 独立算术 | 19/19 PASS | [记录](answer_evaluation/acceptance/arithmetic-final.json) |
+| 完整本机交付 | 20/20 PASS | [记录](answer_evaluation/acceptance/delivery-complete.json) |
+| Python -S独立公开副本 | 24/24 PASS | [记录](answer_evaluation/acceptance/public-complete.json) |
+| 发布前本机门禁 | 13/13 PASS | [记录](answer_evaluation/acceptance/release-final.json) |
+| 原任务十一回归（累计20实验时） | 31/31 PASS | [记录](answer_evaluation/acceptance/prior-task11-regression.json) |
+| 人工页面准备及无效提交拒绝 | 10/10 PASS | [记录](answer_evaluation/evidence/human_review_ready.json) |
+
+公开24/24包含19种故意错误拒绝及完整公开15/15门禁，0次新推理；四类真实/明确合成探针4/4。页面10/10仅证明可审核、无默认勾选和无效提交不会落账，**不算10份或12份人工判断**。发布前13/13在新标签创建前执行；发布后复验用delivery/public入口。
+
+以上工程通过与低质量AI分数同时保留。新回答人工样本仍为0/12；人工语义验收尚未完成，不把程序PASS当人审PASS。完整90题本地答案已交付，固定测试没有重测。
