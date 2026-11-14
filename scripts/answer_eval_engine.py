@@ -17,14 +17,15 @@ def pack(question,evidence,cfg,prompt):
     return selected,m,len(canonical(m))
 
 
-def request_json(chat,messages,cfg,parser):
+def request_json(chat,messages,cfg,parser,schema):
+    from answer_json_chat import generate
     attempts=[];last=None
     for i in range(cfg['max_generation_attempts']):
         current=messages if not i else messages+[{'role':'user','content':'上次输出格式无效。重新按规定只输出一个JSON对象，不加说明；不要改变原始证据。'}]
         if len(canonical(current))>cfg['input_utf8_byte_budget']:break
-        a={'attempt':i+1,'messages':current,'response':None,'error':None,'prompt_eval_count':None,'eval_count':None,'done_reason':None};started=time.perf_counter()
+        a={'attempt':i+1,'messages':current,'format':schema,'response':None,'error':None,'prompt_eval_count':None,'eval_count':None,'done_reason':None};started=time.perf_counter()
         try:
-            response=chat.generate(current);a['response']=response
+            response=generate(chat,current,schema);a['response']=response
             for k in ('prompt_eval_count','eval_count','done_reason'):a[k]=response[k]
             parsed=parser(response['message']['content']);a['parsed']=parsed
             return parsed,attempts+[a],None
@@ -65,7 +66,8 @@ class AnswerEngine:
             r.update(context=context,offered_ids=[v['chunk_id'] for v in context],messages=messages,prompt_utf8_bytes=size)
             if not context:r['refusal_reason']='no_whole_evidence_within_budget';return r
             begin=time.perf_counter()
-            selection,attempts,error=request_json(self.chat,messages,self.cfg,lambda s:parse_selection(s,r['offered_ids'],self.cfg))
+            from answer_json_chat import selection_schema
+            selection,attempts,error=request_json(self.chat,messages,self.cfg,lambda s:parse_selection(s,r['offered_ids'],self.cfg),selection_schema(r['offered_ids'],self.cfg['max_selected_chunks']))
             r['attempts']=attempts;r['timing']['generation_seconds']=time.perf_counter()-begin
             if error:raise ValueError(error)
             if selection['answerable']:
@@ -87,7 +89,9 @@ def judge(q,p,private_result,chat,path):
     messages=[{'role':'system','content':prompt},{'role':'user','content':json.dumps(body,ensure_ascii=False)}]
     if len(canonical(messages))>cfg['input_utf8_byte_budget']:
         value=None;attempts=[];error='Judge prompt exceeds budget; no truncation or invented grade'
-    else:value,attempts,error=request_json(chat,messages,cfg,lambda s:parse_grade(s,q,p))
+    else:
+        from answer_json_chat import grade_schema
+        value,attempts,error=request_json(chat,messages,cfg,lambda s:parse_grade(s,q,p),grade_schema(q,p))
     if value is None:value={'points':[False]*len(q['expected_answer_points']),'conditions':[False]*len(q['required_conditions']),
                            'citations':[False]*len(p['citations']),'reason':'自动评分失败；不虚构正面得分，需人工复核。'}
     write_new(path,{'question_id':q['question_id'],'messages':messages,'attempts':attempts,'grade':value,'error':error})

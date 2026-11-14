@@ -38,6 +38,11 @@ def verify(path,saved=False):
     check('full_messages_within_budget',lambda:pack('尺寸',[stub]*10,cfg,'规则')[2]<=6200 and len(pack('尺寸',[stub]*10,cfg,'规则')[0])==5)
     check('version_boundary_explicit',lambda:all(w in BOUNDARY for w in ('Wikipedia','非官方','未经过裁判专家审校','未独立核验')))
     check('all_declared_frozen_inputs_exist',lambda:all((ROOT/p).is_file() for p in INPUTS))
+    from answer_json_chat import selection_schema,grade_schema
+    selection=selection_schema(offered,3);grading=grade_schema(q,p)
+    check('structured_selection_ids_bound_to_offered',lambda:selection['properties']['chunk_ids']['items']['enum']==offered and selection['additionalProperties'] is False)
+    check('structured_judge_exact_boolean_vector_lengths',lambda:all(grading['properties'][k]['minItems']==grading['properties'][k]['maxItems']==1 and grading['properties'][k]['items']['type']=='boolean' for k in ('points','conditions','citations')))
+    check('structured_judge_reason_required',lambda:'reason' in grading['required'] and grading['additionalProperties'] is False)
     if saved:
         for s in ('dev','test'):
             if (DIRECTORY/s/'summary.json').exists():check(s+'_saved_metrics_and_all_vectors_replay',lambda s=s:replay(s)['samples']==cfg['formal_samples'][s])
