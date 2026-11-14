@@ -35,7 +35,8 @@ def safe_render(selected,corpus):
         # Original bodies and source identities remain untouched, even in this preview.
         if note and (note['record_sha256']!=r['record_sha256'] or note['content_zh_sha256']!=r['content_zh_sha256'] or note['catalog_number']!=r['law_number']):
             raise ValueError('Catalog note belongs to another corpus version')
-        ref=copy.deepcopy(c);ref.update(catalog_number=c['law_number'],official_law_number=None,
+        ref=copy.deepcopy(c);ref.pop('law_number')
+        ref.update(source_catalog_metadata={'law_number':c['law_number']},catalog_number=c['law_number'],official_law_number=None,
             law_reference_kind='local_catalog_only',catalog_notice=note['note'] if note else '本地语料编目编号；官方条号未独立核验。')
         start,end=c['source_lines']
         parts.extend([body,f"来源：{cid} · 本地编目第{c['law_number']}组 · L{start}–L{end} · {c['source_url']}",
@@ -62,10 +63,11 @@ if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--question-id',required=True);p.add_argument('--report',required=True);p.add_argument('--html');a=p.parse_args()
     path=(ROOT/a.report).resolve()
     if not path.is_relative_to(ROOT/'.runtime'):raise ValueError('Full answer previews must remain private under .runtime')
+    target=(ROOT/a.html).resolve() if a.html else None
+    if target is not None and (not target.is_relative_to(ROOT/'.runtime') or target.exists()):raise ValueError('HTML preview must be a new private path')
+    if path.exists():raise ValueError('JSON preview already exists')
     value=make_preview(a.question_id);write_new(path,value)
     if a.html:
-        target=(ROOT/a.html).resolve()
-        if not target.is_relative_to(ROOT/'.runtime'):raise ValueError('HTML preview must remain private')
         target.parent.mkdir(parents=True,exist_ok=True)
         with target.open('x',encoding='utf-8') as f:f.write('<!doctype html><meta charset="utf-8"><title>引用编目显示修复预览</title><h1>派生显示预览：'+html.escape(value['question'])+'</h1><p>原实验和人工审核保持原样；本页仅修正编号显示。</p><pre style="white-space:pre-wrap">'+html.escape(value['answer'])+'</pre>')
     print(json.dumps({'question_id':a.question_id,'private_preview':record(path),'new_model_requests':0},ensure_ascii=False))
