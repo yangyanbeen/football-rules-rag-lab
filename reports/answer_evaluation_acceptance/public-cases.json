@@ -1,0 +1,42 @@
+{
+  "captured_at": "2026-11-14T13:17:09.190262+00:00",
+  "checkout_commit": "0980864b65db457873a3d9c5513d8823e70b875a",
+  "checks": {
+    "AI_guidance_and_biased_sample_disclosed": true,
+    "actual_twelve_reviews_and_thirteen_append_entries": true,
+    "answerability_choice_is_not_answer_correctness": true,
+    "catalog_notes_have_no_invented_official_numbers": true,
+    "false_refusal_sample_rate2_of12": true,
+    "human_analysis_recomputes": true,
+    "independent_human_citations9_of20": true,
+    "independent_human_point_and_condition21_of27": true,
+    "reject_boolean_uncertain": true,
+    "reject_duplicate_review": true,
+    "reject_human_pending": true,
+    "reject_inflated_points": true,
+    "reject_invented_ledger_count": true,
+    "reject_lost_ledger_receipt": true,
+    "reject_missing_review": true,
+    "reject_private_name_in_receipt": true,
+    "reject_private_note_in_row": true,
+    "reject_uncertain_judgment": true,
+    "reject_unknown_review": true,
+    "reject_wrong_answer_hash": true,
+    "zero_unanswerable_refusal_rate_is_null": true
+  },
+  "errors": [],
+  "new_human_judgments": 0,
+  "new_model_requests": 0,
+  "passed": 21,
+  "private": false,
+  "scope": "Actual stored human judgments plus isolated in-memory corruptions. No form submitted or formal model request repeated.",
+  "site_packages_disabled": true,
+  "source_sha256": {
+    "scripts/answer_acceptance.py": "0bef5f693a0616302e329bad23d89dd253e6f9159deee34c381c9bb81c541102",
+    "scripts/citation_catalog_guard.py": "e6b6098aff842c766293e2c865e3d543dfb96d1d31cdcbc46648c2d74bf40359",
+    "scripts/verify_answer_acceptance_cases.py": "9873e558ff7b749abdf1904877adf50b9dcfd184229d83318fbea35722a766c1"
+  },
+  "status": "PASS",
+  "total": 21,
+  "version": "answer-acceptance-cases-1.0"
+}

@@ -1,5 +1,9 @@
 # 报告阅读说明
 
+任务十二当前最终依据：[TASK_12_FINAL_ACCEPTANCE](TASK_12_FINAL_ACCEPTANCE.md)和answer_evaluation_acceptance目录。真实人工12/12完成，新增28/28、Python -S公开21/21、原专项53/53、原严格完整26/26通过；先前0/12报告保留其生成时状态。
+
+以下较早阶段描述按当时状态保留，以本页最新入口为准。
+
 任务十二最新[补交付报告](TASK_12_SUPPLEMENT.md)，证据目录answer_evaluation_audit：53/53、44/44、14/14及原42/42、19/19、20/20、24/24。人工快照0/12 PENDING，不能据工程PASS宣称全任务验收。
 
 任务十一最新修复见[TASK_11_SUPPLEMENT](TASK_11_SUPPLEMENT.md)，新证据rechecks/task11-audit-20261113。最终regressions-complete32/32、contract-current46/46、delivery-final31/31、public-complete17/17（24/24），三组实际父块各5/5。reproduction-final-v2为21/21；较早15/21是原源码快照隔离不完整的复现工具中间结果，已纠正并保留。原测试/交付不覆盖。

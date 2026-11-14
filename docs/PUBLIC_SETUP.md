@@ -127,3 +127,8 @@ UiCapture 必须来自已完成的真实浏览器操作；也可传历史采集�
 ## 任务十二补丁阶段当前入口
 
 使用 [ANSWER_REVIEW_WORKFLOW](ANSWER_REVIEW_WORKFLOW.md)：审核页serve_answer_review_v2.py --port 7865；新增严格审计verify_answer_audit.py和verify_answer_audit_delivery.py。公开Python -S可用补交付门禁加--public-only；旧完整门禁固定21实验，应在v0.12.0历史版本复验。12题新回答人工尚未完成，工程PASS不代表人审完成。
+
+
+## 任务十二最终验收与当前入口
+
+真实12题人工抽样已完成，旧0/12为历史。当前用`.venv/Scripts/python.exe -B scripts/verify_task12_final.py --report .runtime/task12-acceptance/新文件.json`；公开系统Python -S -B加--public-only。原完整门禁固定累计22实验，用历史标签复验。新人工快照和AI原成绩分开，完整说明[TASK_12_FINAL_ACCEPTANCE](../reports/TASK_12_FINAL_ACCEPTANCE.md)。编号显示独立预览使用citation_catalog_guard.py，UI集成按任务13。
