@@ -1,0 +1,99 @@
+{
+  "actual_traces": 17,
+  "answer_model_attempts": 14,
+  "captured_at": "2026-11-14T15:04:53.221125+00:00",
+  "embedding_inputs": 14,
+  "embedding_requests": 14,
+  "new_formal_test_runs": 0,
+  "new_human_judgments": 0,
+  "reranker_pairs": 560,
+  "scope": "All actual revision workers, including first backend5 and early UI2 plus final backend5/UI5. Duplicate public backend exports do not add model requests. Synthetic failure fixtures excluded by profile/implementation/retrieval identity.",
+  "traces": [
+    {
+      "path": ".runtime/task13-audit/workers/21d4a3ce6b8b40df9d8aa2c1f03f54ce.json",
+      "sha256": "94e742a5ef2fe74c3e5c7f616a4709ea4db1835edb9c12e11e02f9b721a1de3c",
+      "size_bytes": 98033
+    },
+    {
+      "path": ".runtime/task13-audit/workers/277e1c5390af408e948e02fa46d245f8.json",
+      "sha256": "694c46d243f340dbecb30a6ba5d218db8c6551126f565a1b22ec46169b007f47",
+      "size_bytes": 98023
+    },
+    {
+      "path": ".runtime/task13-audit/workers/3929b5fce0ba47c9ae406c0385f58176.json",
+      "sha256": "7839981c6796cd0e7d1acfaad5ee8a1f3d6143d8021a29e5efdcdeba35d27e07",
+      "size_bytes": 90275
+    },
+    {
+      "path": ".runtime/task13-audit/workers/89c16fd0b3054346b1e09010771f83ec.json",
+      "sha256": "475da5315e91d2f0753c205811e4bc71c20bdc38bb13c689639b0bc88aef697b",
+      "size_bytes": 87859
+    },
+    {
+      "path": ".runtime/task13-audit/workers/9f6f8a893f3b47229c793f5ea43deef5.json",
+      "sha256": "93e4956b46c535cf870e75220d3dfba7924e9d38da97d7058b18eb5368401e4c",
+      "size_bytes": 90301
+    },
+    {
+      "path": ".runtime/task13-audit/workers/af9026db20954bd88cf1ac00feac8ca4.json",
+      "sha256": "d61e8abebdcec8d5510e9de725838006a930f0ec417c3ffbb0127c75db05eca1",
+      "size_bytes": 4854
+    },
+    {
+      "path": ".runtime/task13-audit/workers/b90b20fab0394546b707a8fec86ce9a1.json",
+      "sha256": "80a1c962dc804305b39162e6aea790e85f2e5b786b7c87a19cdbd87f5816a4a0",
+      "size_bytes": 95076
+    },
+    {
+      "path": ".runtime/task13-audit/workers/b9531396ce9246d5b77f48f281b4fdcb.json",
+      "sha256": "83d234213131d9618ecddcc8675464eb89f1a6e7eae739ee994e7c5c430fffc1",
+      "size_bytes": 98022
+    },
+    {
+      "path": ".runtime/task13-audit/workers/bcc1c33408694c68afbced4d8f6e9d29.json",
+      "sha256": "6a9bcb3503aeb7875ebc72a6c4e3df1fce9e847f68f3b99997d5bd1d71049983",
+      "size_bytes": 87847
+    },
+    {
+      "path": ".runtime/task13-audit/workers/c007ad383cdb44f4bd2c0e1e3caac15f.json",
+      "sha256": "3c5841d0f52507481eece34da6c4df9e81ffae6dc06d7aec5dbe34cbe0d5d93e",
+      "size_bytes": 98038
+    },
+    {
+      "path": ".runtime/task13-audit/workers/ca9db3213af44a7d903148010c4e2c03.json",
+      "sha256": "1d1eb3ab342372b6e1b550f687ba6c918e73ff4d286b2504120c3c0b07dfa653",
+      "size_bytes": 95078
+    },
+    {
+      "path": ".runtime/task13-audit/workers/d6b479f8382345c88053d094c9f5b275.json",
+      "sha256": "b7e5999b632505068b06ffb26ff4649c73592f3c4e5076a4dc83f57ae9f614e0",
+      "size_bytes": 90288
+    },
+    {
+      "path": ".runtime/task13-audit/workers/f45e6c84984c4bba814ed818a4e13539.json",
+      "sha256": "a8baeb86bfcbd492c3346b3a61578bb3b079a447f393a1459e0846eade3bdc66",
+      "size_bytes": 87846
+    },
+    {
+      "path": ".runtime/task13-audit/workers/f5e34cd0a4424385a848a27971950058.json",
+      "sha256": "004c07f053cbbe7a5d5e6ca1ed7a97cc0fe26c0613dc2f87bd8ea28435820026",
+      "size_bytes": 4854
+    },
+    {
+      "path": ".runtime/task13-audit/workers/f8db6459f3f6455a89d253eb3478ae0f.json",
+      "sha256": "f6429a05054c2d83debce4dd30e33e1ef5cdb875516d6154fe26f580479044ed",
+      "size_bytes": 95082
+    },
+    {
+      "path": ".runtime/task13-audit/workers/fd2c9d6109794a96b1ea73e5bc0e0081.json",
+      "sha256": "146081c4cf42f5b1d8bdcead17bd7d1a69e3699e12917577d5af72764d504ba9",
+      "size_bytes": 4855
+    },
+    {
+      "path": ".runtime/task13-audit/workers/fee1f58801b6490c916ef81e7af9b6a7.json",
+      "sha256": "1dbef8e6baf901b7d18fd73a6b0ea73b72af0c441021b3433c807d539bff529c",
+      "size_bytes": 90275
+    }
+  ],
+  "version": "task13-audit-usage-1.0"
+}

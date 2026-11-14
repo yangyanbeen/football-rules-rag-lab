@@ -1,5 +1,7 @@
 # 报告阅读说明
 
+任务十三最新依据：[TASK_13_SUPPLEMENT](TASK_13_SUPPLEMENT.md)及rechecks/task13-audit-20261114。原7/7缺口复现，最终54/54、公开47/47与后端/页面各5/5。早期43/52/45回归和首次真实演示均保留；最终完整门禁另写新文件。
+
 当前阶段：[TASK_13_DELIVERY](TASK_13_DELIVERY.md)及task13目录；新环境/导入/索引/真实后端与页面演示、无模型复算和完整验收证据。本机完整39/39与干净公开副本33/33均通过。任务12先前质量指标不改写，本轮不声称整体准确率提升。
 
 任务十二当前最终依据：[TASK_12_FINAL_ACCEPTANCE](TASK_12_FINAL_ACCEPTANCE.md)和answer_evaluation_acceptance目录。真实人工12/12完成，新增28/28、Python -S公开21/21、原专项53/53、原严格完整26/26通过；先前0/12报告保留其生成时状态。

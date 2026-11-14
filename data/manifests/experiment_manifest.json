@@ -4818,7 +4818,129 @@
         }
       ],
       "artifact_policy": "Original23 experiment objects remain identical. Runtime package freezes committed sources/config/docs and ten completed receipts. Final delivery prose/gates/global registry and manifest excluded from own artifact hashes to avoid cycles; final global file manifest covers them."
+    },
+    {
+      "id": "TASK-013-AUDIT",
+      "baseline_commit": "8befa040b94b7b1da1ac592f73ccf98da363e036",
+      "source_commit": "89d10789cd213e915aab6ec70cb40bb3b24fb0d1",
+      "source_sha256": {
+        "config/task13_audit.json": "e5e2fb47597bd0c62e050bc6573f39e5d8c592b116bb8cdcf9b19c76d9c38f44",
+        "frontend/start_integrated_rag_audit.ps1": "ed7f005d9dbddd14b42e103d8dbccd154485ee95df79b9028f6e92a240a80fee",
+        "scripts/export_task13_citation_sources.py": "0ac6124273f3698413a39694d8639c5c11def1b01cf2b2ffebf67de845cd8343",
+        "scripts/prepare_task13_environment_checked.py": "811a9fc027233a2163332dade207df333bebdf97fde829b493ead2920443cb5b",
+        "scripts/query_task13_audit.py": "6d94e5d79a28c1b6af4050b00e4b8f64b73827858a6ad2903da0bcdbbdf8cfba",
+        "scripts/reproduce_task13_defects.py": "88f5d5f9ab360b52c461d43deb483b73e3e4ec2a403a2b9a8548c3d707d17c3d",
+        "scripts/run_integrated_rag_audit.py": "28e764eeb371b2b8ff3b3459e4652e59c37e6c24ef429941ec84158699568487",
+        "scripts/run_task13_audit_demo.py": "9b48eac06f6940b65288e2e99464b97f972a5fcdcb10f0aba5565da8c2957607",
+        "scripts/task13_audit.py": "011893d15f5f221fdda7965caab9df9963171f44ebffb77b4354ca5c8488f6bc",
+        "scripts/task13_audit_client.py": "9b5579af54fb2fc18d704dceef99417b2b51ce197500b6ef2b7ce32625ec73d9",
+        "scripts/task13_audit_pipeline.py": "6eac23a11a681478bd4f6c3d9a5b97d864c9c95d6befe88f793844846b96110c",
+        "scripts/verify_task13_audit.py": "496b11e586dce92741925b23c782e781afc2da705fe83f12e807397c2c2f5cda",
+        "scripts/verify_task13_audit_delivery.py": "0f567f0d139dabc274d8d0df4387eab5bc33a7aa7ba9ad7a9e5310e083c17d7e"
+      },
+      "objective": "Close Task13 runtime failure, retry, citation metadata and package completeness gaps without modifying original accepted artifacts",
+      "new_formal_test_runs": 0,
+      "new_human_judgments": 0,
+      "actual_backend_cases": 5,
+      "actual_final_browser_cases": 5,
+      "regressions": 54,
+      "public_regressions": 47,
+      "resource_usage": {
+        "actual_traces": 17,
+        "embedding_requests": 14,
+        "embedding_inputs": 14,
+        "answer_model_attempts": 14,
+        "reranker_pairs": 560
+      },
+      "artifacts": [
+        {
+          "path": "reports/rechecks/task13-audit-20261114/backend-final.json",
+          "size_bytes": 38634,
+          "sha256": "4edee127ce453b767ed5eb2dfe37d725addc8144c4bb668802d0e7a81939785b"
+        },
+        {
+          "path": "reports/rechecks/task13-audit-20261114/backend-first.json",
+          "size_bytes": 38635,
+          "sha256": "e616a8d2e486f978db26bb77269bcd57a86e0d4ce426f8176e24262ce54ac4b8"
+        },
+        {
+          "path": "reports/rechecks/task13-audit-20261114/backend.json",
+          "size_bytes": 38635,
+          "sha256": "e616a8d2e486f978db26bb77269bcd57a86e0d4ce426f8176e24262ce54ac4b8"
+        },
+        {
+          "path": "reports/rechecks/task13-audit-20261114/original-gaps.json",
+          "size_bytes": 766,
+          "sha256": "1940513bca44e2a85ccc02984c3222ecd791312d4b912983bfadedf23c5c8d52"
+        },
+        {
+          "path": "reports/rechecks/task13-audit-20261114/prior-full.json",
+          "size_bytes": 3135,
+          "sha256": "96f5c508a4934c2247ca870ce7666332b0790dbc3570538aa3d1fffd1f6da823"
+        },
+        {
+          "path": "reports/rechecks/task13-audit-20261114/public-current.json",
+          "size_bytes": 3485,
+          "sha256": "2849b768be4eedcb2e711dead0b852e0ede0033a00becebfa5f2422f45f8fe85"
+        },
+        {
+          "path": "reports/rechecks/task13-audit-20261114/public-regressions.json",
+          "size_bytes": 3362,
+          "sha256": "3426f13fc94e66b888c9cd907d5119bc2e644d50cde24678c3bb240d4fe7bc2c"
+        },
+        {
+          "path": "reports/rechecks/task13-audit-20261114/regressions-complete.json",
+          "size_bytes": 3808,
+          "sha256": "f7eaea6a3d0e79b63fc7d4d0bf2de2e31a2bd6079176ecdea78de86ee7df5dad"
+        },
+        {
+          "path": "reports/rechecks/task13-audit-20261114/regressions-final.json",
+          "size_bytes": 3685,
+          "sha256": "553f57b5b118717f826bb1cd4372216752c9428e0f85455aec43a0045e7750ec"
+        },
+        {
+          "path": "reports/rechecks/task13-audit-20261114/regressions-first.json",
+          "size_bytes": 3274,
+          "sha256": "a41964c611301980a0bab03ddc2084fc97789b366b55715e117329279f5c726a"
+        },
+        {
+          "path": "reports/rechecks/task13-audit-20261114/resource-usage.json",
+          "size_bytes": 4085,
+          "sha256": "c3aa0dc75c12d0e208e0ca673246bad007ee37c236bf064067cc794e8d31f53c"
+        },
+        {
+          "path": "reports/rechecks/task13-audit-20261114/runtime-package.json",
+          "size_bytes": 4747,
+          "sha256": "16d0085ca71fd6750a97c6eff6e8a1217a4b26fc97c4bd2d9df02acded8bef29"
+        },
+        {
+          "path": "reports/rechecks/task13-audit-20261114/ui.json",
+          "size_bytes": 40690,
+          "sha256": "e17d34e7a754ff562226fc59ad8125e418f9ba4a6a9414c8f42662688932005a"
+        },
+        {
+          "path": "docs/TASK_13_AUDIT_SCOPE.md",
+          "size_bytes": 1225,
+          "sha256": "2b2ad878ebaddd12887e90c26319a331f8521456ab97a85880946240097f44b7"
+        },
+        {
+          "path": "docs/TASK_13_AUDIT.md",
+          "size_bytes": 5409,
+          "sha256": "e17bfcb2bc14d7c9d8111f2933561746246b583d2d1271f31f9bb198e40d4e85"
+        },
+        {
+          "path": "data/manifests/task13_citation_sources.json",
+          "size_bytes": 135486,
+          "sha256": "77e241c977934437f56e3355df4ebd41570f095afbc4bb00625f52bb4fc0a3f7"
+        },
+        {
+          "path": "config/task13_audit.json",
+          "size_bytes": 584,
+          "sha256": "e5e2fb47597bd0c62e050bc6573f39e5d8c592b116bb8cdcf9b19c76d9c38f44"
+        }
+      ],
+      "artifact_policy": "Original24 experiment objects preserved. Final complete gate reports/delivery prose/global indices excluded from own hashes to avoid cycles; final global file manifest covers them."
     }
   ],
-  "last_updated_at": "2026-11-14T14:19:20.963570+00:00"
+  "last_updated_at": "2026-11-14T15:04:53.417567+00:00"
 }
