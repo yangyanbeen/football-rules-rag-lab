@@ -112,3 +112,8 @@ UiCapture 必须来自已完成的真实浏览器操作；也可传历史采集�
 ## 任务十一复验
 
 参见 [CHUNKING_STRATEGY](CHUNKING_STRATEGY.md)。当前标签保留原JSONL与新增父子JSONL本地副本；新增全文由structure_parent_child映射的derived_corpus哈希核验，私有索引由structure_index_manifest核验。公开系统Python以 `-S -B scripts/verify_structure_delivery.py --complete --public-only --report reports/rechecks/task11-repeat.json` 复算，不重复正式test。
+
+
+## 任务十一缺陷补交付入口
+
+当前使用 `scripts/verify_task11_audit_delivery.py --complete --report reports/rechecks/task11-next.json`；公开系统Python -S -B增加--public-only。原verify_structure_delivery.py固定为v0.11.0原发布门禁，需在旧标签独立checkout运行。当前严格重放原生产源码，正式结果未变；旧无版本查询只允许原发布字节，新查询/父块回执使用1.1。详见[TASK_11_AUDIT](TASK_11_AUDIT.md)。

@@ -1,5 +1,7 @@
 # 报告阅读说明
 
+任务十一最新修复见[TASK_11_SUPPLEMENT](TASK_11_SUPPLEMENT.md)，新证据rechecks/task11-audit-20261113。最终regressions-complete32/32、contract-current46/46、delivery-final31/31、public-complete17/17（24/24），三组实际父块各5/5。reproduction-final-v2为21/21；较早15/21是原源码快照隔离不完整的复现工具中间结果，已纠正并保留。原测试/交付不覆盖。
+
 任务十一最新见[TASK_11_DELIVERY](TASK_11_DELIVERY.md)、[chunking_comparison](chunking_comparison.json)，原始记录retrieval/structure_pc_b0。46/46专项、31/31完整、公开初18/18、终19/19及其25/25公开门禁。正式测试仅一次，子块/父块预算负收益保留，不改任务十历史结果。
 
 任务十最新修复见[TASK_10_SUPPLEMENT](TASK_10_SUPPLEMENT.md)，新证据rechecks/task10-audit-20261113。当前27/27、74/74、12/12、公开14/14、真实四预算8/8、冷启动8/8及补交付31/31；历史35/35在e24e5c1原提交复验。当前验收使用verify_task10_audit_delivery.py，原门禁绑定其历史发布代码。新增诊断不是重跑test，原Recall/MRR保持，T022/T034的证据不完整如实列出。

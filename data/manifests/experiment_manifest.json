@@ -4002,7 +4002,163 @@
       ],
       "artifact_policy": "Only new Task11 artifacts; final gate and final public receipt excluded to avoid recursive hashes. Original18 entries immutable.",
       "actual_parent_materialization_checks": 5
+    },
+    {
+      "id": "TASK-011-AUDIT",
+      "objective": "Fix Task11 validation, evidence and historical replay without changing formal results",
+      "baseline_commit": "e542340ebab150bc4a37a478f9f5e7d05027f52e",
+      "source_commit": "e4861edd3070a5ae6eb148d90bac512c4bf33dab",
+      "source_sha256": {
+        "scripts/structure_aware_chunking.py": "f8b3b1e9796d12d767dd6f33922fd6c28c8e456fbdd502356b05ecbefa2be37e",
+        "scripts/structure_retrieval_eval.py": "19a68590aa76c195e2f49c8a1e07d7ff9a9211a6928b6071cd60b8cd60b67c2e",
+        "scripts/structure_retrieval_live.py": "b4b7b9ef76a23ef1dc81f56086b0f337c1a3f9bc3cb40ff7696b543d0bf9a9c8",
+        "scripts/run_structure_comparison.py": "3226ac0e242caaec1aafd37c09988c08c4d12ecfbd090543568c2431e7f7db8d",
+        "scripts/query_parent_child.py": "5100316da6bc0863736c4ac72ccb91e6f952171cc34d044638dadd516d40ce3d",
+        "scripts/verify_task11_audit.py": "b0e29c892d5e4c698a75522b733fd441ee42a38809871e7f4556e39f1a232c2b",
+        "scripts/verify_task11_audit_delivery.py": "a43f0aa02e4c636dad4aee8ea48aef9131c27d708dae9ef8768aa2a99802eada"
+      },
+      "dataset": "Original99, independent102child18parent and tokenizer/config unchanged",
+      "evaluation": "No new formal retrieval; original dev/test strictly replayed with historical producers",
+      "actual_ad_hoc_embedding_queries": 2,
+      "new_formal_test_queries": 0,
+      "answer_llm_requests": 0,
+      "checks": {
+        "new_regressions": 32,
+        "original_contract": 46,
+        "public_current": 16,
+        "historical_public": 25,
+        "actual_parent_groups": 3,
+        "checks_each_parent_group": 5
+      },
+      "artifacts": [
+        {
+          "path": "docs/TASK_11_AUDIT_SCOPE.md",
+          "size_bytes": 1708,
+          "sha256": "edd8737563cd8d13c48cd6bf93ad9558026806217440db758935491caa5ba74c"
+        },
+        {
+          "path": "docs/TASK_11_AUDIT.md",
+          "size_bytes": 6365,
+          "sha256": "a8baa354f2ae34a4aae046cb0566a32a08f866b4d23f461b9048f6239965f856"
+        },
+        {
+          "path": "reports/TASK_11_SUPPLEMENT.md",
+          "size_bytes": 3379,
+          "sha256": "986ab54dc98350e240dd1ff1f3622e2bedb785c932b194fd15f177c03414afc6"
+        },
+        {
+          "path": "scripts/structure_aware_chunking.py",
+          "size_bytes": 9170,
+          "sha256": "f8b3b1e9796d12d767dd6f33922fd6c28c8e456fbdd502356b05ecbefa2be37e"
+        },
+        {
+          "path": "scripts/structure_retrieval_eval.py",
+          "size_bytes": 26507,
+          "sha256": "19a68590aa76c195e2f49c8a1e07d7ff9a9211a6928b6071cd60b8cd60b67c2e"
+        },
+        {
+          "path": "scripts/structure_retrieval_live.py",
+          "size_bytes": 10899,
+          "sha256": "b4b7b9ef76a23ef1dc81f56086b0f337c1a3f9bc3cb40ff7696b543d0bf9a9c8"
+        },
+        {
+          "path": "scripts/run_structure_comparison.py",
+          "size_bytes": 7850,
+          "sha256": "3226ac0e242caaec1aafd37c09988c08c4d12ecfbd090543568c2431e7f7db8d"
+        },
+        {
+          "path": "scripts/query_parent_child.py",
+          "size_bytes": 4679,
+          "sha256": "5100316da6bc0863736c4ac72ccb91e6f952171cc34d044638dadd516d40ce3d"
+        },
+        {
+          "path": "scripts/verify_task11_audit.py",
+          "size_bytes": 11587,
+          "sha256": "b0e29c892d5e4c698a75522b733fd441ee42a38809871e7f4556e39f1a232c2b"
+        },
+        {
+          "path": "scripts/verify_task11_audit_delivery.py",
+          "size_bytes": 11882,
+          "sha256": "a43f0aa02e4c636dad4aee8ea48aef9131c27d708dae9ef8768aa2a99802eada"
+        },
+        {
+          "path": "scripts/verify_task11_public_audit.py",
+          "size_bytes": 5973,
+          "sha256": "330332d556589348c82f332463572e1afbc3b8e35e23b96114a49f2b2f44c8e6"
+        },
+        {
+          "path": "reports/rechecks/task11-audit-20261113/contract-current.json",
+          "size_bytes": 2991,
+          "sha256": "22f97988b272ae42f43004665e159133d1e8e109bfd137dbe8fc01f496f06d76"
+        },
+        {
+          "path": "reports/rechecks/task11-audit-20261113/delivery-initial.json",
+          "size_bytes": 2004,
+          "sha256": "f16a269f2d5de6747d909eb4d9e5520a6441c51eecbdf9c538bdd5c261731168"
+        },
+        {
+          "path": "reports/rechecks/task11-audit-20261113/historical-public.json",
+          "size_bytes": 1876,
+          "sha256": "a095e31560446d7cac5b44752b98e86d89fe4a733ee3e68794f3bc3c89938c3c"
+        },
+        {
+          "path": "reports/rechecks/task11-audit-20261113/parent-fresh.json",
+          "size_bytes": 86335,
+          "sha256": "a8efdde5e3696cc33b6bd43a9ed1166c3f11ede5cbe1c81ba56f124771fe814a"
+        },
+        {
+          "path": "reports/rechecks/task11-audit-20261113/parent-from-current.json",
+          "size_bytes": 24306,
+          "sha256": "6a0972746fa6e1e8787f684aa0f36c1d354ac2c9dceb0586ab7dbe7481cdfd67"
+        },
+        {
+          "path": "reports/rechecks/task11-audit-20261113/parent-from-legacy.json",
+          "size_bytes": 28772,
+          "sha256": "276d943c6ec3bc72ccc1728ef59bbe4bd6fb96537762479b21488ef6d94f6331"
+        },
+        {
+          "path": "reports/rechecks/task11-audit-20261113/public-current.json",
+          "size_bytes": 1311,
+          "sha256": "397158a8f090d0936745c340ee2e5957eb6bea955eb519378e425a28aed67492"
+        },
+        {
+          "path": "reports/rechecks/task11-audit-20261113/query-current.json",
+          "size_bytes": 60740,
+          "sha256": "4bf69171359129512863845f7808d6a23edb4cdadf4ed8604a82eb36513c0ae7"
+        },
+        {
+          "path": "reports/rechecks/task11-audit-20261113/regressions-complete.json",
+          "size_bytes": 6616,
+          "sha256": "d7097e0799be59c7309b1aa96c2c815bf853a7ba222ddf67fb8a8f98cefa5cf0"
+        },
+        {
+          "path": "reports/rechecks/task11-audit-20261113/regressions-final.json",
+          "size_bytes": 6616,
+          "sha256": "71d98315646b9730b030fcfcb275664fd48369fc071e23abd98716b9f20e36d8"
+        },
+        {
+          "path": "reports/rechecks/task11-audit-20261113/regressions-first.json",
+          "size_bytes": 4706,
+          "sha256": "7292522596adeb46eee2387a941081513776f46f30d0b519f05d060aed399aec"
+        },
+        {
+          "path": "reports/rechecks/task11-audit-20261113/reproduction-final-v2.json",
+          "size_bytes": 4705,
+          "sha256": "337904211f3b64644d234226581ce2d13e7ab9beca0e98dd3735cb13a0c143b3"
+        },
+        {
+          "path": "reports/rechecks/task11-audit-20261113/reproduction-final.json",
+          "size_bytes": 5316,
+          "sha256": "5e7a0b4d97eac78c333628af3f120bc99b047507a1ea87c2e51fe25dc4254317"
+        },
+        {
+          "path": "reports/rechecks/task11-audit-20261113/reproduction.json",
+          "size_bytes": 4705,
+          "sha256": "d91f759759fe62741ecb128022f8565156acdd4e36612ead99e5a3c1d61ae351"
+        }
+      ],
+      "artifact_policy": "Only new audit evidence; final gate and final public wrapper excluded to avoid recursive hashes. Original19 objects remain immutable."
     }
   ],
-  "last_updated_at": "2026-11-13T09:54:46.731343+00:00"
+  "last_updated_at": "2026-11-13T10:32:12.762152+00:00"
 }
