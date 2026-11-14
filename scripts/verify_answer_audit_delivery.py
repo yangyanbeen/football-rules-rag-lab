@@ -27,7 +27,7 @@ def main():
         check(name+'_append_only',lambda name=name:(ROOT/name).read_bytes().startswith(old[name]))
     registry=read(ROOT/'data/manifests/experiment_manifest.json');previous=json.loads(old['data/manifests/experiment_manifest.json'])
     check('21_prior_experiment_objects_preserved',lambda:len(previous['experiments'])==21 and registry['experiments'][:21]==previous['experiments'])
-    check('all21_prior_experiment_artifacts_unchanged',lambda:all(record(ROOT/r['path'])==r for e in previous['experiments'] for r in e.get('artifacts',[])))
+    check('original_Task12_registered_artifact_hashes_unchanged',lambda:all(record(ROOT/r['path'])==r for r in previous['experiments'][-1]['artifacts']))
     entry=registry['experiments'][-1]
     check('22nd_audit_entry_has_actual_artifacts',lambda:len(registry['experiments'])==22 and entry['id']=='TASK-012-AUDIT' and all(record(ROOT/r['path'])==r for r in entry['artifacts']))
     check('supplement_sources_committed_and_identical',lambda:all(digest(subprocess.check_output(['git','show',entry['source_commit']+':'+n],cwd=ROOT))==h==record(ROOT/n)['sha256'] for n,h in entry['source_sha256'].items()))

@@ -131,6 +131,10 @@ def snapshot(context, path=LEDGER):
 
 def validate_public_summary(value, context):
     """Recompute public sample metrics without disclosing names or private comments."""
+    required={'version','judgment_kind','status','required_samples','reviewed_samples','ledger_entries',
+        'missing_ids','unresolved_ids','context_sha256','metrics','per_question','scope'}
+    if not required<=set(value) or set(value)-required-{'captured_at','private_ledger'}:
+        raise ValueError('Unknown public summary fields or private information')
     ids=[];synthetic=[]
     keys={'question_id','answer_sha256','point_decisions','condition_decisions','citation_decisions',
         'refusal_appropriate','status','answerable'}
