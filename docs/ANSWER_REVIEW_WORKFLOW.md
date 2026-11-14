@@ -30,6 +30,8 @@
 
 本轮保存的快照是 `human-review-status.json`。之后若完成真实审核，新增带后缀的快照，并以新PR追加当前状态和证据；历史快照保持原字节。审阅样本的分数只能描述该12题，不能扩写为全测试集成绩。
 
+对新增快照使用 `verify_answer_audit_delivery.py --human-report reports/answer_evaluation_audit/human-review-status-next.json --report .runtime/task12-audit/acceptance-next.json --require-complete` 验收。无需覆盖原快照或改写旧AI实验。
+
 ## 工程复验
 
 ```powershell

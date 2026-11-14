@@ -13,6 +13,7 @@ MUTABLE={'README.md','docs/DELIVERY_STATUS.md','docs/PUBLIC_SETUP.md','reports/R
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--report',required=True)
+    p.add_argument('--human-report',default='reports/answer_evaluation_audit/human-review-status.json')
     p.add_argument('--public-only',action='store_true');p.add_argument('--require-complete',action='store_true');a=p.parse_args()
     checks={};errors=[]
     def check(name,fn):
@@ -41,7 +42,9 @@ def main():
     check('zero_new_model_requests_in_audit',lambda:all(read(FOLDER/n)['new_model_requests']==0 for n in ('regression-final-v3.json','public-final-v3.json','http-review-final.json')))
     check('public_replay_uses_python_S',lambda:read(FOLDER/'public-final-v3.json')['site_packages_disabled'] is True)
     check('test_ledger_remains_single_completed_run',lambda:[r['event'] for r in rows(DIRECTORY/'test_usage.jsonl')]==['STARTED','COMPLETED'])
-    human=read(FOLDER/'human-review-status.json');context=review.review_context()
+    human_path=(ROOT/a.human_report).resolve()
+    if not human_path.is_relative_to(ROOT):raise ValueError('Human receipt outside checkout')
+    human=read(human_path);context=review.review_context()
     check('human_summary_recomputes_without_private_names',lambda:review.validate_public_summary(human,context))
     check('formal_AI_metrics_and_human_results_kept_separate',lambda:read(ROOT/'reports/answer_quality_results.json')['new_human_answer_judgments']==0 and human['judgment_kind']=='human_explicit_form')
     if not a.public_only:
@@ -55,6 +58,7 @@ def main():
     value={'version':'answer-audit-delivery-1.1','captured_at':now(),'status':'PASS' if all(checks.values()) else 'FAIL',
         'passed':sum(checks.values()),'total':len(checks),'checks':checks,'errors':errors,'new_model_requests':0,
         'source_sha256':record(__file__)['sha256'],'human_review_status':human['status'],
+        'human_receipt':record(human_path),
         'reviewed_samples':human['reviewed_samples'],'required_samples':12,'task12_fully_accepted':full,
         'delivery_status':'COMPLETE' if full else 'HUMAN_REVIEW_PENDING' if all(checks.values()) else 'ENGINEERING_FAILED',
         'scope':'Engineering PASS cannot substitute for the original human citation sampling requirement.'}
