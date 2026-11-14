@@ -76,8 +76,9 @@ def verify(private=False):
         return result['reviewed_samples']==1 and result['ledger_entries']==2 and result['status']=='PENDING'
     check('review_revisions_append_not_inflate_samples',revise)
     check('empty_ledger_stays_pending',lambda:review.aggregate(context,[])['status']=='PENDING')
-    public=read(ROOT/'reports/answer_evaluation_audit/human-review-status.json')
-    check('actual_public_human_summary_recomputes',lambda:review.validate_public_summary(public,context))
+    actual_public=read(ROOT/'reports/answer_evaluation_audit/human-review-status.json')
+    check('actual_public_human_summary_recomputes',lambda:review.validate_public_summary(actual_public,context))
+    public=review.aggregate(context,[])
     for name,mutate in {
         'claimed_completion':lambda r:r.update(status='REVIEW_COMPLETE'),
         'inflated_reviewed_count':lambda r:r.update(reviewed_samples=12),
