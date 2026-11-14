@@ -44,6 +44,18 @@ def verify(path,saved=False):
     check('structured_refusal_cannot_carry_unused_citation_ids',lambda:selection['anyOf'][1]['properties']['chunk_ids']['maxItems']==0 and selection['anyOf'][1]['properties']['answerable']['const'] is False)
     check('structured_judge_exact_boolean_vector_lengths',lambda:all(grading['properties'][k]['minItems']==grading['properties'][k]['maxItems']==1 and grading['properties'][k]['items']['type']=='boolean' for k in ('points','conditions','citations')))
     check('structured_judge_reason_required',lambda:'reason' in grading['required'] and grading['additionalProperties'] is False)
+    def refusal_grade():
+        import uuid
+        from answer_eval_engine import judge
+        class NoModel:
+            def generate(self,*_):raise AssertionError('Refusal scoring called a model')
+        path=PRIVATE/'contracts'/('refusal-'+uuid.uuid4().hex+'.json')
+        result=judge({'question_id':'SYNTHETIC','question':'synthetic','answerable':True,**q},
+                     {'status':'refused','citations':[],'selected_ids':[]},
+                     {'answer':REFUSAL,'citations':[],'context':[]},NoModel(),path)
+        trace=read(path)
+        return result['error'] is None and trace['mode']=='deterministic_refusal' and trace['attempts']==[] and result['grade']['points']==[False] and result['grade']['conditions']==[False]
+    check('refusal_points_scored_without_model_or_invented_human',refusal_grade)
     if saved:
         for s in ('dev','test'):
             if (DIRECTORY/s/'summary.json').exists():check(s+'_saved_metrics_and_all_vectors_replay',lambda s=s:replay(s)['samples']==cfg['formal_samples'][s])

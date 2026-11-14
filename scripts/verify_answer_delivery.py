@@ -42,7 +42,9 @@ def validate_run(split,private=False):
                     if packet['model']!=config()['llm']['name'] or packet['done'] is not True or packet['done_reason']!='stop':raise ValueError('Actual model response incomplete')
                     parsed=parse_selection(packet['message']['content'],p['offered_ids'],config())
                     if a['parsed']!=parsed:raise ValueError('Selection response differs')
-            if j['error'] is None and (not j['attempts'] or parse_grade(j['attempts'][-1]['response']['message']['content'],q,p)!=g['grade']):raise ValueError('Actual judge response differs')
+            if p['status']=='refused':
+                if j['mode']!='deterministic_refusal' or j['attempts'] or j['messages'] or j['error'] is not None or any(g['grade']['points']+g['grade']['conditions']+g['grade']['citations']):raise ValueError('Refusal grading must be deterministic with no invented request')
+            elif j['error'] is None and (not j['attempts'] or parse_grade(j['attempts'][-1]['response']['message']['content'],q,p)!=g['grade']):raise ValueError('Actual judge response differs')
             quotes='\n'.join(corpus[cid]['content_zh'] for cid in p['selected_ids'])
             if g['literal_points']!=[normalized(t) in normalized(quotes) for t in q['expected_answer_points']] or g['literal_conditions']!=[normalized(t) in normalized(quotes) for t in q['required_conditions']]:raise ValueError('Literal diagnostics differ')
     return summary

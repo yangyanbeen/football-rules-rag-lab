@@ -11,6 +11,7 @@ def main():
     if not 1024<=a.port<=65535:raise ValueError('Invalid port')
     sample=read(DIRECTORY/'human_review_sample.json');qs={q['question_id']:q for q in questions('test')}
     predictions={r['question_id']:r for r in rows(DIRECTORY/'test/predictions.jsonl')}
+    corpus={r['chunk_id']:r for r in rows(ROOT/'data/processed/rag_chunks_zh.jsonl')}
     ids=[r['question_id'] for r in sample['samples']];ledger=PRIVATE/'human_answer_reviews.jsonl';token=secrets.token_urlsafe(32);lock=threading.RLock()
     def latest():
         result={}
@@ -38,6 +39,10 @@ def main():
                 q=qs[qid];pred=predictions[qid];actual=evidence(qid)
                 blocks.append('<section><h2>'+html.escape(qid+' '+q['question'])+('（已提交，可追加修订）' if qid in done else '')+'</h2>')
                 blocks.append('<h3>实际回答与来源</h3><pre>'+html.escape(actual['answer'])+'</pre><p>答案SHA256：'+pred['answer_sha256']+'</p>')
+                blocks.append('<details><summary>原标签支持段与当次可见证据（核对错误拒答和相关性）</summary>')
+                for cid in q['expected_chunk_ids']:
+                    r=corpus[cid];blocks.append('<h4>'+html.escape(cid+' '+r['source_url'])+'</h4><pre>'+html.escape(r['content_zh'])+'</pre>')
+                blocks.append('<p>当次实际提供ID：'+html.escape(', '.join(pred['offered_ids']))+'</p></details>')
                 blocks.append('<form action="/review" method="post"><input type="hidden" name="csrf" value="'+token+'"><input type="hidden" name="question_id" value="'+qid+'">')
                 for i,label in enumerate(q['expected_answer_points']):blocks.append(field('point_'+str(i),'答案是否正确覆盖：'+label))
                 for i,label in enumerate(q['required_conditions']):blocks.append(field('condition_'+str(i),'答案是否完整保留条件/例外：'+label))

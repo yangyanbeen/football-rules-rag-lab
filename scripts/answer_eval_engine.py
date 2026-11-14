@@ -87,14 +87,21 @@ def judge(q,p,private_result,chat,path):
           'citations':[{k:c[k] for k in ('chunk_id','law_number','source_url','source_revision_verified','needs_rule_review')}
                        for c in private_result['citations']]}
     messages=[{'role':'system','content':prompt},{'role':'user','content':json.dumps(body,ensure_ascii=False)}]
-    if len(canonical(messages))>cfg['input_utf8_byte_budget']:
+    mode='AI_semantic_judge'
+    if p['status']=='refused':
+        # No displayed rule assertions can cover an answer point. This is a
+        # deterministic scoring rule, not an invented model/human judgment.
+        mode='deterministic_refusal';messages=[];attempts=[];error=None
+        value={'points':[False]*len(q['expected_answer_points']),'conditions':[False]*len(q['required_conditions']),
+               'citations':[],'reason':'实际受控拒答没有展示规则要点、条件或引用，覆盖项按固定口径计false。'}
+    elif len(canonical(messages))>cfg['input_utf8_byte_budget']:
         value=None;attempts=[];error='Judge prompt exceeds budget; no truncation or invented grade'
     else:
         from answer_json_chat import grade_schema
         value,attempts,error=request_json(chat,messages,cfg,lambda s:parse_grade(s,q,p),grade_schema(q,p))
     if value is None:value={'points':[False]*len(q['expected_answer_points']),'conditions':[False]*len(q['required_conditions']),
                            'citations':[False]*len(p['citations']),'reason':'自动评分失败；不虚构正面得分，需人工复核。'}
-    write_new(path,{'question_id':q['question_id'],'messages':messages,'attempts':attempts,'grade':value,'error':error})
+    write_new(path,{'question_id':q['question_id'],'mode':mode,'messages':messages,'attempts':attempts,'grade':value,'error':error})
     quotes='\n'.join(v['content_zh'] for v in private_result['context'] if v['chunk_id'] in p['selected_ids'])
     return {'question_id':q['question_id'],'judgment_kind':'AI_not_human','grade':value,'error':error,'trace':record(path),
             'literal_points':[normalized(x) in normalized(quotes) for x in q['expected_answer_points']],
