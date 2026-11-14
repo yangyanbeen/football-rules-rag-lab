@@ -1,0 +1,131 @@
+{
+  "base_package": {
+    "path": "reports/task13/delivery_manifest.json",
+    "sha256": "b9c86974527826e15a2feef74dbb3d8bb0208f4787ce34e0f608f4d0775f150e",
+    "size_bytes": 36266
+  },
+  "config": {
+    "path": "config/task13_audit.json",
+    "sha256": "e5e2fb47597bd0c62e050bc6573f39e5d8c592b116bb8cdcf9b19c76d9c38f44",
+    "size_bytes": 584
+  },
+  "created_at": "2026-11-14T15:04:53.109949+00:00",
+  "members": [
+    {
+      "path": "config/task13_audit.json",
+      "sha256": "e5e2fb47597bd0c62e050bc6573f39e5d8c592b116bb8cdcf9b19c76d9c38f44",
+      "size_bytes": 584
+    },
+    {
+      "path": "data/manifests/task13_citation_sources.json",
+      "sha256": "77e241c977934437f56e3355df4ebd41570f095afbc4bb00625f52bb4fc0a3f7",
+      "size_bytes": 135486
+    },
+    {
+      "path": "docs/TASK_13_AUDIT.md",
+      "sha256": "e17bfcb2bc14d7c9d8111f2933561746246b583d2d1271f31f9bb198e40d4e85",
+      "size_bytes": 5409
+    },
+    {
+      "path": "docs/TASK_13_AUDIT_SCOPE.md",
+      "sha256": "2b2ad878ebaddd12887e90c26319a331f8521456ab97a85880946240097f44b7",
+      "size_bytes": 1225
+    },
+    {
+      "path": "frontend/start_integrated_rag_audit.ps1",
+      "sha256": "ed7f005d9dbddd14b42e103d8dbccd154485ee95df79b9028f6e92a240a80fee",
+      "size_bytes": 494
+    },
+    {
+      "path": "scripts/export_task13_citation_sources.py",
+      "sha256": "0ac6124273f3698413a39694d8639c5c11def1b01cf2b2ffebf67de845cd8343",
+      "size_bytes": 745
+    },
+    {
+      "path": "scripts/prepare_task13_environment_checked.py",
+      "sha256": "811a9fc027233a2163332dade207df333bebdf97fde829b493ead2920443cb5b",
+      "size_bytes": 1259
+    },
+    {
+      "path": "scripts/query_task13_audit.py",
+      "sha256": "6d94e5d79a28c1b6af4050b00e4b8f64b73827858a6ad2903da0bcdbbdf8cfba",
+      "size_bytes": 1606
+    },
+    {
+      "path": "scripts/reproduce_task13_defects.py",
+      "sha256": "88f5d5f9ab360b52c461d43deb483b73e3e4ec2a403a2b9a8548c3d707d17c3d",
+      "size_bytes": 3074
+    },
+    {
+      "path": "scripts/run_integrated_rag_audit.py",
+      "sha256": "28e764eeb371b2b8ff3b3459e4652e59c37e6c24ef429941ec84158699568487",
+      "size_bytes": 5922
+    },
+    {
+      "path": "scripts/run_task13_audit_demo.py",
+      "sha256": "9b48eac06f6940b65288e2e99464b97f972a5fcdcb10f0aba5565da8c2957607",
+      "size_bytes": 5694
+    },
+    {
+      "path": "scripts/task13_audit.py",
+      "sha256": "011893d15f5f221fdda7965caab9df9963171f44ebffb77b4354ca5c8488f6bc",
+      "size_bytes": 13711
+    },
+    {
+      "path": "scripts/task13_audit_client.py",
+      "sha256": "9b5579af54fb2fc18d704dceef99417b2b51ce197500b6ef2b7ce32625ec73d9",
+      "size_bytes": 2724
+    },
+    {
+      "path": "scripts/task13_audit_pipeline.py",
+      "sha256": "6eac23a11a681478bd4f6c3d9a5b97d864c9c95d6befe88f793844846b96110c",
+      "size_bytes": 1693
+    },
+    {
+      "path": "scripts/verify_task13_audit.py",
+      "sha256": "496b11e586dce92741925b23c782e781afc2da705fe83f12e807397c2c2f5cda",
+      "size_bytes": 10407
+    },
+    {
+      "path": "scripts/verify_task13_audit_delivery.py",
+      "sha256": "0f567f0d139dabc274d8d0df4387eab5bc33a7aa7ba9ad7a9e5310e083c17d7e",
+      "size_bytes": 6982
+    }
+  ],
+  "model_policies": {
+    "config/answer_evaluation.json": {
+      "path": "config/answer_evaluation.json",
+      "sha256": "283b98a40187a357a319db195ee1c535d518ae897b80ce38385fe67f581b031e",
+      "size_bytes": 1126
+    },
+    "config/answer_evaluation_system.txt": {
+      "path": "config/answer_evaluation_system.txt",
+      "sha256": "7441aac9b7f025ac006064b4d778d78ffb1f342f2fba7164567dfab1642aec5f",
+      "size_bytes": 1400
+    },
+    "config/citation_catalog_notes.json": {
+      "path": "config/citation_catalog_notes.json",
+      "sha256": "b5e7c10235454a08776dc47b5dcdcbbf383d4acfa887d98e125ce35af035e272",
+      "size_bytes": 1261
+    },
+    "config/dense_index.json": {
+      "path": "config/dense_index.json",
+      "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988",
+      "size_bytes": 1613
+    },
+    "config/reranker_experiment.json": {
+      "path": "config/reranker_experiment.json",
+      "sha256": "9b77781e8f32d886c5b15a6af852acd4ac95d534196406fde641bce079144062",
+      "size_bytes": 2468
+    },
+    "config/task13_app.json": {
+      "path": "config/task13_app.json",
+      "sha256": "68075020ed2444219bb41ef477aaa5344d8e57eb7ab75430fbeffe275fb915cc",
+      "size_bytes": 779
+    }
+  },
+  "new_formal_test_runs": 0,
+  "policy": "Frozen revised code/config/source metadata/current runbook and fixed original runtime package. Final reports/registry/global manifest excluded to avoid recursive self-hashes.",
+  "source_commit": "89d10789cd213e915aab6ec70cb40bb3b24fb0d1",
+  "version": "task13-audit-package-1.0"
+}

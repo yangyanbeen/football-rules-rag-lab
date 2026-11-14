@@ -1,0 +1,19 @@
+{
+  "captured_at": "2026-11-14T14:37:09.962070+00:00",
+  "checks": {
+    "extra_full_answer_field_accepted": true,
+    "failed_runtime_validates_as_refusal": true,
+    "integer_zero_accepted_as_boolean_config": true,
+    "missing_worker_package_member_accepted": true,
+    "nonretryable_identity_error_requested_twice": true,
+    "timeout_escapes_UI_supported_error_types": true,
+    "unrelated_same_origin_citation_accepted": true
+  },
+  "new_human_judgments": 0,
+  "new_model_requests": 0,
+  "reproduced": 7,
+  "scope": "Controlled copies/mocks of original code. True means an original gap reproduced, not an accepted production answer. No old evidence modified.",
+  "status": "GAPS_REPRODUCED",
+  "total": 7,
+  "version": "task13-original-gap-reproduction-1.0"
+}

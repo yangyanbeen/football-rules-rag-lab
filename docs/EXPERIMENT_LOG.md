@@ -409,3 +409,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 实际33次Embedding请求107输入、8次答案尝试、320pair；0正式test重跑、0新人工判断。原23实验对象/标签和质量负收益保留。新增清单、安装/导入/重建/启动/评测/回滚、许可说明，最终完整门禁见TASK_13_DELIVERY及task13目录。只保证本机Windows已记录资源下复现，不宣称全新下载、Docker、跨平台、生产SLA或答案提升。
 
 任务13最终完整本机39/39、真实干净公开副本Python -S完整33/33通过，task13_fully_accepted=true；最终本机复验用delivery-final新文件，既有回执保持。版本v0.13.0-integrated-delivery，实际发布SHA以Git标签/合并历史为准。
+
+
+## TASK-013-AUDIT（2026-11-14）
+
+基线8befa04，7/7原版接口缺口复现；新增修订入口7867，修复超时/运行故障/重试、字段白名单、99段精确来源元数据、运行包完整成员/版本、配置类型和安装前检查。最终54/54、真正无私有语料/模型的Python -S公开47/47；后端与最终浏览器各5/5。首次后端5与页面2及43/52/45中间检查保留；实际17个工作trace去重，14次Embedding/14输入、14次答案尝试、560pair，无新正式test或人工判断。第25项实验登记，旧24项/标签及298私有记录保全，完整门禁见TASK_13_SUPPLEMENT；不声称答案准确率提升。运行包源89d10789cd213e915aab6ec70cb40bb3b24fb0d1。
+
+任务13补交付最终本机完整28/28、真实干净公开副本Python -S完整25/25通过；原298私有记录/24旧标签保全。最终代码后端/页面各5/5，54项私有与47项公开回归分列。版本v0.13.1-task13-audit，具体发布SHA由Git标签和PR合并历史核对。

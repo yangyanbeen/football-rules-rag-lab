@@ -1,0 +1,3145 @@
+{
+  "corpus": {
+    "path": "data/processed/rag_chunks_zh.jsonl",
+    "sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+    "size_bytes": 302368
+  },
+  "generator": {
+    "path": "scripts/export_task13_citation_sources.py",
+    "sha256": "0ac6124273f3698413a39694d8639c5c11def1b01cf2b2ffebf67de845cd8343",
+    "size_bytes": 745
+  },
+  "records": 99,
+  "scope": "Metadata and hashes only; not raw source text, translation, answers or expert judgments.",
+  "sources": {
+    "L01-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 1,
+      "chunk_id": "L01-01",
+      "content_zh_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 307,
+      "quote_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+      "record_sha256": "44f2b8c87a8ffe41304f8d45d35109eff500e629a07e6479af35062b57e57491",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 1
+      },
+      "source_id": "wiki-01",
+      "source_lines": [
+        167,
+        171
+      ],
+      "source_revision_id": "1384097820",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+      "title": "场地表面、界线和单位"
+    },
+    "L01-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 1,
+      "chunk_id": "L01-02",
+      "content_zh_sha256": "8382e2e43132ae955f49fe74254a38dbd935f568686fefd26284d2bd21e42858",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 369,
+      "quote_sha256": "8382e2e43132ae955f49fe74254a38dbd935f568686fefd26284d2bd21e42858",
+      "record_sha256": "8ea46b78771615543a2b252558a8eb3c3ac6a37b21c182b49a22b13a0c2b24d5",
+      "review_notes": [
+        "本段忠实保留原网页以码数换算出的近似米数。这些近似值与正式规则直接规定的公制界限可能不同，不能把换算舍入值当作官方精确标准。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 1
+      },
+      "source_id": "wiki-01",
+      "source_lines": [
+        177,
+        179
+      ],
+      "source_revision_id": "1384097820",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+      "title": "场地尺寸与“球门线”的含义"
+    },
+    "L01-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 1,
+      "chunk_id": "L01-03",
+      "content_zh_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 189,
+      "quote_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+      "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 1
+      },
+      "source_id": "wiki-01",
+      "source_lines": [
+        187,
+        189
+      ],
+      "source_revision_id": "1384097820",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+      "title": "球门结构与安全"
+    },
+    "L01-04": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 1,
+      "chunk_id": "L01-04",
+      "content_zh_sha256": "bb23094e588d3f34b3db1956520c137bbfbd2ab2263b9b166bb37ef69797cb77",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 269,
+      "quote_sha256": "bb23094e588d3f34b3db1956520c137bbfbd2ab2263b9b166bb37ef69797cb77",
+      "record_sha256": "54c377f15097f4f617d98f658bff0e41bb77fb166cbcf887a21a545662d6c723",
+      "review_notes": [
+        "原文关于守方犯规后进球无效的举例缺少“裁判是否已停止比赛”等完整条件；青少年球门尺寸也取决于比赛规程。本段保留来源内容供核对，不应直接用来概括有利原则或统一的青少年场地标准。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 1
+      },
+      "source_id": "wiki-01",
+      "source_lines": [
+        192,
+        194
+      ],
+      "source_revision_id": "1384097820",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+      "title": "进球成立与原文中的无效情形"
+    },
+    "L01-05": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 1,
+      "chunk_id": "L01-05",
+      "content_zh_sha256": "57c7cb9485569ba65c3dc6429fc5e186037ee2cc5438e3f633df944280731900",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 425,
+      "quote_sha256": "57c7cb9485569ba65c3dc6429fc5e186037ee2cc5438e3f633df944280731900",
+      "record_sha256": "2e2d1b22588e13defec584ed74ab6a4fd8d992718e0a503d55a8f4007fb56f81",
+      "review_notes": [
+        "这里的5.49米、16.46米等数字是原网页的英制换算值，译文没有将其替换为正式规则中的公制标记尺寸。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 1
+      },
+      "source_id": "wiki-01",
+      "source_lines": [
+        203,
+        207
+      ],
+      "source_revision_id": "1384097820",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+      "title": "球门区与罚球区"
+    },
+    "L01-06": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 1,
+      "chunk_id": "L01-06",
+      "content_zh_sha256": "00d7714660f64f28374b8658030e569c1e83715e8351badb52a6f2f4296c5289",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 150,
+      "quote_sha256": "00d7714660f64f28374b8658030e569c1e83715e8351badb52a6f2f4296c5289",
+      "record_sha256": "21747735bc996b04c025d5fb21308f4a5ec12a765a986a6b59ee908fde28d338",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 1
+      },
+      "source_id": "wiki-01",
+      "source_lines": [
+        208,
+        210
+      ],
+      "source_revision_id": "1384097820",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+      "title": "罚球点与罚球弧"
+    },
+    "L01-07": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 1,
+      "chunk_id": "L01-07",
+      "content_zh_sha256": "a9b6a663ac2e01caf8dddee39764bfcfd1f463bd3d921f311f5e8dac9da106f8",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 339,
+      "quote_sha256": "a9b6a663ac2e01caf8dddee39764bfcfd1f463bd3d921f311f5e8dac9da106f8",
+      "record_sha256": "cbb1224a6411540428205c50bbb22b6a06e97bc87f1b0839b296b6cb654e9324",
+      "review_notes": [
+        "开球主罚者的位置例外见第二份文档；本段是原条目的概括性表述。角球专题页使用1米和9.15米，显示不同条目在近似单位表达上存在差别。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 1
+      },
+      "source_id": "wiki-01",
+      "source_lines": [
+        217,
+        219
+      ],
+      "source_revision_id": "1384097820",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+      "title": "中圈、中线与角球弧"
+    },
+    "L02-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 2,
+      "chunk_id": "L02-01",
+      "content_zh_sha256": "b5a1d4c7b4f5a773a16cbc023bf9a5fc4697b55d68aa1c03e5bce308424277e6",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 208,
+      "quote_sha256": "b5a1d4c7b4f5a773a16cbc023bf9a5fc4697b55d68aa1c03e5bce308424277e6",
+      "record_sha256": "d447388f81d4fa584edd59a88ac33b2f505e568d736ea989416bde7f8b671305",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 2
+      },
+      "source_id": "wiki-02",
+      "source_lines": [
+        214,
+        215
+      ],
+      "source_revision_id": "1383832954",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Ball_%28association_football%29",
+      "title": "球体结构与表面"
+    },
+    "L02-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 2,
+      "chunk_id": "L02-02",
+      "content_zh_sha256": "aaf69e77f266fa144df20549ff0a7286853d7556d2f558dcd86e3d7039e23129",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 210,
+      "quote_sha256": "aaf69e77f266fa144df20549ff0a7286853d7556d2f558dcd86e3d7039e23129",
+      "record_sha256": "6c65f30e691befa68a7ed4781c18b63ec23f02508c3d0d6e98856a875106f05e",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 2
+      },
+      "source_id": "wiki-02",
+      "source_lines": [
+        219,
+        220
+      ],
+      "source_revision_id": "1383832954",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Ball_%28association_football%29",
+      "title": "标准尺寸、重量与青少年用球"
+    },
+    "L03-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 3,
+      "chunk_id": "L03-01",
+      "content_zh_sha256": "561b2caa91831f965bf4dd192ee159bf168b6ea6a6f1d8d8ad4de3bf728d497f",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 142,
+      "quote_sha256": "561b2caa91831f965bf4dd192ee159bf168b6ea6a6f1d8d8ad4de3bf728d497f",
+      "record_sha256": "942257114fdd336638ce034a411865fe259b324dbb1ce7a582f9fbeae898d731",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 3
+      },
+      "source_id": "wiki-03",
+      "source_lines": [
+        523,
+        524
+      ],
+      "source_revision_id": "1384532641",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Association_football",
+      "title": "队伍人数与守门员身份"
+    },
+    "L03-02": {
+      "catalog_notice": "本地第3组中的装备内容；原编目不能作为本段官方规则条号。",
+      "catalog_number": 3,
+      "chunk_id": "L03-02",
+      "content_zh_sha256": "ad3bb24660657d3868f116cf2c298022177fb5847786f8b876e3242e73dd15dc",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 140,
+      "quote_sha256": "ad3bb24660657d3868f116cf2c298022177fb5847786f8b876e3242e73dd15dc",
+      "record_sha256": "fea9545bab52835b4dfa2da2de17f7389080841e65f40d4c9f1430ff60025f8d",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 3
+      },
+      "source_id": "wiki-03",
+      "source_lines": [
+        525,
+        527
+      ],
+      "source_revision_id": "1384532641",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Association_football",
+      "title": "队员的基本装备和守门员服装"
+    },
+    "L03-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 3,
+      "chunk_id": "L03-03",
+      "content_zh_sha256": "aa6f475617a86ad3400633df2b08223df94bd1493171c812d3b5239a31a77676",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 275,
+      "quote_sha256": "aa6f475617a86ad3400633df2b08223df94bd1493171c812d3b5239a31a77676",
+      "record_sha256": "cb4d1eeab135a846e0c86b35da227cabd4dd58af95389ffd0727ae4e3e5a27fc",
+      "review_notes": [
+        "换人名额、换人次数、是否允许重新上场和加时赛额外名额均须结合具体赛事及规则版本核对，不能只按这段概述推断。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 3
+      },
+      "source_id": "wiki-03",
+      "source_lines": [
+        528,
+        529
+      ],
+      "source_revision_id": "1384532641",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Association_football",
+      "title": "换人名额、被换下队员和人数不足"
+    },
+    "L03-04": {
+      "catalog_notice": "本地第3组中的比赛官员与VAR概述；内容涉及多处规则及协议，不能当作官方第3条。",
+      "catalog_number": 3,
+      "chunk_id": "L03-04",
+      "content_zh_sha256": "d194490ae80c4f52a7f2577ee1ace9b776bd9036a2cc878eaaeeffda943ce368",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 193,
+      "quote_sha256": "d194490ae80c4f52a7f2577ee1ace9b776bd9036a2cc878eaaeeffda943ce368",
+      "record_sha256": "d96c30ca86b7b6c18b5b598af033b4867b2f86e759b8f5ea8df5cbc505af2a86",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 3
+      },
+      "source_id": "wiki-03",
+      "source_lines": [
+        530,
+        532
+      ],
+      "source_revision_id": "1384532641",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Association_football",
+      "title": "比赛官员与视频复核范围"
+    },
+    "L04-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 4,
+      "chunk_id": "L04-01",
+      "content_zh_sha256": "3382a62e216940f59ca135faa686b8a3c65d7689e5e165f56e0d67654848c79f",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 224,
+      "quote_sha256": "3382a62e216940f59ca135faa686b8a3c65d7689e5e165f56e0d67654848c79f",
+      "record_sha256": "81a02ffbd21df3ed79c408118ed8f5bf7e36511419afcdcbaa6ba3aed05e8dd9",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 4
+      },
+      "source_id": "wiki-04",
+      "source_lines": [
+        175,
+        177
+      ],
+      "source_revision_id": "1384045144",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Kit_%28association_football%29",
+      "title": "五项基本装备与护腿板"
+    },
+    "L04-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 4,
+      "chunk_id": "L04-02",
+      "content_zh_sha256": "10bb096bda00272cd3548332da5daf60e7203c8e2683fbabeffffca05fbee7f3",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 152,
+      "quote_sha256": "10bb096bda00272cd3548332da5daf60e7203c8e2683fbabeffffca05fbee7f3",
+      "record_sha256": "068fef6e33f54071668f6b12b1fc0886dd1a8d564e344e4601ba6f2b65cbd3cc",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 4
+      },
+      "source_id": "wiki-04",
+      "source_lines": [
+        178,
+        178
+      ],
+      "source_revision_id": "1384045144",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Kit_%28association_football%29",
+      "title": "两队颜色与替换服装"
+    },
+    "L04-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 4,
+      "chunk_id": "L04-03",
+      "content_zh_sha256": "285089995955d725c5384c3fd39b851a71e39d86fe5a527936c3b19ab5a8621d",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 157,
+      "quote_sha256": "285089995955d725c5384c3fd39b851a71e39d86fe5a527936c3b19ab5a8621d",
+      "record_sha256": "3493e5e57cf8fbcf09ed041401a5d3aa033d841da79ed2dd00e96336c65a5e2f",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 4
+      },
+      "source_id": "wiki-04",
+      "source_lines": [
+        184,
+        184
+      ],
+      "source_revision_id": "1384045144",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Kit_%28association_football%29",
+      "title": "球衣、号码和队长袖标"
+    },
+    "L04-04": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 4,
+      "chunk_id": "L04-04",
+      "content_zh_sha256": "63a4cf0abe33118c04def38e665cda267937dae7518c80a1a2649e9d8f32e3a7",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 140,
+      "quote_sha256": "63a4cf0abe33118c04def38e665cda267937dae7518c80a1a2649e9d8f32e3a7",
+      "record_sha256": "a13e2782b282d197a8ec4b854a75b5adfa1c77fdf8e17e422560caa0423a2585",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 4
+      },
+      "source_id": "wiki-04",
+      "source_lines": [
+        186,
+        187
+      ],
+      "source_revision_id": "1384045144",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Kit_%28association_football%29",
+      "title": "球鞋与鞋钉"
+    },
+    "L04-05": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 4,
+      "chunk_id": "L04-05",
+      "content_zh_sha256": "a13d4ccd48cea011be0b20fbeb2bd5f8fa5731552087258103d713c0b8d7dcf0",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 252,
+      "quote_sha256": "a13d4ccd48cea011be0b20fbeb2bd5f8fa5731552087258103d713c0b8d7dcf0",
+      "record_sha256": "accbb9369a496c19b8e2cac237d2c4e4c1d559be57bdbf004d73b845084538e3",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 4
+      },
+      "source_id": "wiki-04",
+      "source_lines": [
+        195,
+        197
+      ],
+      "source_revision_id": "1384045144",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Kit_%28association_football%29",
+      "title": "手套、眼镜和护头装备"
+    },
+    "L05-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 5,
+      "chunk_id": "L05-01",
+      "content_zh_sha256": "b4212657e684746031b02fbd37c183479f123c8c1b88de86e6d5bc752a78cf51",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 124,
+      "quote_sha256": "b4212657e684746031b02fbd37c183479f123c8c1b88de86e6d5bc752a78cf51",
+      "record_sha256": "89ce64182ffa28d17a6adc7389693c355b77d6f230ed40c930232b4b9a8761de",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 5
+      },
+      "source_id": "wiki-05",
+      "source_lines": [
+        186,
+        192
+      ],
+      "source_revision_id": "1383936867",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Referee_%28association_football%29",
+      "title": "裁判的基本职责"
+    },
+    "L05-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 5,
+      "chunk_id": "L05-02",
+      "content_zh_sha256": "05888e9b4b276f5af32d4221919ff27983fbb954d3f3b6139652f44eb76aa297",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 74,
+      "quote_sha256": "05888e9b4b276f5af32d4221919ff27983fbb954d3f3b6139652f44eb76aa297",
+      "record_sha256": "10aa3445cfbf0d9d6c5ee2784fe8f4e5e8b6ea21b5e4c046ed5854a504839f8e",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 5
+      },
+      "source_id": "wiki-05",
+      "source_lines": [
+        194,
+        195
+      ],
+      "source_revision_id": "1383936867",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Referee_%28association_football%29",
+      "title": "有利原则"
+    },
+    "L05-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 5,
+      "chunk_id": "L05-03",
+      "content_zh_sha256": "ac8815f7d4f185049aec7046047fb3e19db269ee75af486fdb4367527194dc53",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 250,
+      "quote_sha256": "ac8815f7d4f185049aec7046047fb3e19db269ee75af486fdb4367527194dc53",
+      "record_sha256": "ab875e766e378ef147488975d9f44c8cbd83f74f40f4c5b5658f3e9c7df65318",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 5
+      },
+      "source_id": "wiki-05",
+      "source_lines": [
+        198,
+        202
+      ],
+      "source_revision_id": "1383936867",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Referee_%28association_football%29",
+      "title": "同时发生多项违例与纪律处罚"
+    },
+    "L05-04": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 5,
+      "chunk_id": "L05-04",
+      "content_zh_sha256": "8af39edadf9c6aa8dc8098ce22829e087274b2a13829393389064d05d1e5e62d",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 218,
+      "quote_sha256": "8af39edadf9c6aa8dc8098ce22829e087274b2a13829393389064d05d1e5e62d",
+      "record_sha256": "a297a942410d84a6dc310627301a9bf88f2aa8dc92078f947053ea7a5e6e5c14",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 5
+      },
+      "source_id": "wiki-05",
+      "source_lines": [
+        203,
+        206
+      ],
+      "source_revision_id": "1383936867",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Referee_%28association_football%29",
+      "title": "球队官员、医疗人员与协助意见"
+    },
+    "L06-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 6,
+      "chunk_id": "L06-01",
+      "content_zh_sha256": "aa1643966fa2aaa687d1e5dd05109e92ed3740e9e5e0ea82886d721530a90c5e",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 181,
+      "quote_sha256": "aa1643966fa2aaa687d1e5dd05109e92ed3740e9e5e0ea82886d721530a90c5e",
+      "record_sha256": "39f8bae42ba404d18ec6861ae8f6b5ae36eb400c8a30626bd8a9c2822ea61361",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 6
+      },
+      "source_id": "wiki-06",
+      "source_lines": [
+        171,
+        175
+      ],
+      "source_revision_id": "1380533934",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Assistant_referee_%28association_football%29",
+      "title": "官员合作与最终决定"
+    },
+    "L06-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 6,
+      "chunk_id": "L06-02",
+      "content_zh_sha256": "7154cbc52c8f2033ddb40051ab73a6a35bffc5d4235999051174918bec0cc42b",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 237,
+      "quote_sha256": "7154cbc52c8f2033ddb40051ab73a6a35bffc5d4235999051174918bec0cc42b",
+      "record_sha256": "3a8383232446eb0983b1862178634320ea677b4c90b3f327dcaace316dd7e3f1",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 6
+      },
+      "source_id": "wiki-06",
+      "source_lines": [
+        185,
+        194
+      ],
+      "source_revision_id": "1380533934",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Assistant_referee_%28association_football%29",
+      "title": "助理裁判的职责与建议性质"
+    },
+    "L06-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 6,
+      "chunk_id": "L06-03",
+      "content_zh_sha256": "2efa6b722e0489e73eff69dda16da1236c6964cb2ff3bf30a934cb926c517f4d",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 141,
+      "quote_sha256": "2efa6b722e0489e73eff69dda16da1236c6964cb2ff3bf30a934cb926c517f4d",
+      "record_sha256": "38db6384fbc51974de80214d5218da91a745858ae9edd95d79e678e58d2143b1",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 6
+      },
+      "source_id": "wiki-06",
+      "source_lines": [
+        195,
+        196
+      ],
+      "source_revision_id": "1380533934",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Assistant_referee_%28association_football%29",
+      "title": "旗示与沟通设备"
+    },
+    "L06-04": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 6,
+      "chunk_id": "L06-04",
+      "content_zh_sha256": "979a4c84a3e1f9c4a92e5eda13c3942ccdf78c641e410c9fdcaa4371b23b4af4",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 309,
+      "quote_sha256": "979a4c84a3e1f9c4a92e5eda13c3942ccdf78c641e410c9fdcaa4371b23b4af4",
+      "record_sha256": "7f3bb8cfcd338c4d1b9921e0ce3bdab28f011a1e6b6877adbf8ea6cdfca4d9da",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 6
+      },
+      "source_id": "wiki-06",
+      "source_lines": [
+        202,
+        214
+      ],
+      "source_revision_id": "1380533934",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Assistant_referee_%28association_football%29",
+      "title": "第四官员的任务"
+    },
+    "L06-05": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 6,
+      "chunk_id": "L06-05",
+      "content_zh_sha256": "d1a2e84358f2fb1bd84f3cf065ad96f14b19c481317b60cf56e7e96a73d31a5e",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 312,
+      "quote_sha256": "d1a2e84358f2fb1bd84f3cf065ad96f14b19c481317b60cf56e7e96a73d31a5e",
+      "record_sha256": "cc936b48699da21b98714a519c93760c1726cf7a3ace26ddf07b04e2121eab42",
+      "review_notes": [
+        "这一段包含岗位的历史发展；不能把历史上的第五官员职责直接当成当下 VAR 的权限。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 6
+      },
+      "source_id": "wiki-06",
+      "source_lines": [
+        231,
+        238
+      ],
+      "source_revision_id": "1380533934",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Assistant_referee_%28association_football%29",
+      "title": "视频助理裁判与预备助理裁判"
+    },
+    "L06-06": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 6,
+      "chunk_id": "L06-06",
+      "content_zh_sha256": "6ef924ce5af7a7d9a3a7607fedafd718add61f155d7e258dc9662fae6cbcd88a",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 195,
+      "quote_sha256": "6ef924ce5af7a7d9a3a7607fedafd718add61f155d7e258dc9662fae6cbcd88a",
+      "record_sha256": "a07ace05f9ff057ed84d6c7e7d717b8e1e23106298015b5344e8382ce2842524",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 6
+      },
+      "source_id": "wiki-06",
+      "source_lines": [
+        220,
+        224
+      ],
+      "source_revision_id": "1380533934",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Assistant_referee_%28association_football%29",
+      "title": "附加助理裁判"
+    },
+    "L07-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 7,
+      "chunk_id": "L07-01",
+      "content_zh_sha256": "3ffcac4a46dbc155b7b4275836524c26701e384bcd8c50c499aafdf04762e9ae",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 309,
+      "quote_sha256": "3ffcac4a46dbc155b7b4275836524c26701e384bcd8c50c499aafdf04762e9ae",
+      "record_sha256": "e1e57480b0ce14258dfa5f321aef4908cba755691a1979b9fdce691980000d1a",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 7
+      },
+      "source_id": "wiki-03",
+      "source_lines": [
+        553,
+        556
+      ],
+      "source_revision_id": "1384532641",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Association_football",
+      "title": "正常比赛时间与补时"
+    },
+    "L07-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 7,
+      "chunk_id": "L07-02",
+      "content_zh_sha256": "c4d8479d879fbf08ff9344c92a96da4798978464fc69b7752146cf4dc852c34c",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 155,
+      "quote_sha256": "c4d8479d879fbf08ff9344c92a96da4798978464fc69b7752146cf4dc852c34c",
+      "record_sha256": "135a1c885f3c4d69d8e6b77cf812aa54f136054b72fe2df2c4299de267522edc",
+      "review_notes": [
+        "这是原条目给出的具体安排示例，不应据此推断所有赛事都必须在同一温度、同一分钟安排相同长度的降温休息。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 7
+      },
+      "source_id": "wiki-03",
+      "source_lines": [
+        557,
+        557
+      ],
+      "source_revision_id": "1384532641",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Association_football",
+      "title": "降温休息的来源限定"
+    },
+    "L07-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 7,
+      "chunk_id": "L07-03",
+      "content_zh_sha256": "a4ed33f18947d574a89273ab2b1b0bdeb1ae4cacdb72f0f1155a621435d18f1a",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 292,
+      "quote_sha256": "a4ed33f18947d574a89273ab2b1b0bdeb1ae4cacdb72f0f1155a621435d18f1a",
+      "record_sha256": "99b5aa61a659a3623905f06ad708d8253008d9286d837a3cf34fcda2066397d8",
+      "review_notes": [
+        "客场进球规则是否适用，取决于具体赛事与赛季，不能把这一条目的概述当成所有两回合比赛的统一现行规则。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 7
+      },
+      "source_id": "wiki-03",
+      "source_lines": [
+        563,
+        566
+      ],
+      "source_revision_id": "1384532641",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Association_football",
+      "title": "加时赛与点球决胜"
+    },
+    "L08A-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 8,
+      "chunk_id": "L08A-01",
+      "content_zh_sha256": "c0da3d87eb19c2d9e4555a00984eb1f8dc58e238381763fa54cd524cb61adc12",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 188,
+      "quote_sha256": "c0da3d87eb19c2d9e4555a00984eb1f8dc58e238381763fa54cd524cb61adc12",
+      "record_sha256": "6767fce81e43645e5eee74d9efc48af415f48f994e2b913e4c88cbb0b6359983",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 8
+      },
+      "source_id": "wiki-08a",
+      "source_lines": [
+        137,
+        148
+      ],
+      "source_revision_id": "1306104355",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Kick-off_%28association_football%29",
+      "title": "开球时机与掷币选择"
+    },
+    "L08A-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 8,
+      "chunk_id": "L08A-02",
+      "content_zh_sha256": "14651415315dfd99f5cc05d413f78d980c3dae8ff7f85f55b1dfc169b1ecafd6",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 132,
+      "quote_sha256": "14651415315dfd99f5cc05d413f78d980c3dae8ff7f85f55b1dfc169b1ecafd6",
+      "record_sha256": "04a8d040cb1609c42b3194fe9092a93610cba840f8202165804e7a2627aa0fc0",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 8
+      },
+      "source_id": "wiki-08a",
+      "source_lines": [
+        153,
+        154
+      ],
+      "source_revision_id": "1306104355",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Kick-off_%28association_football%29",
+      "title": "开球程序与直接得分"
+    },
+    "L08A-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 8,
+      "chunk_id": "L08A-03",
+      "content_zh_sha256": "45f13d80899463b9cb97d8782a3b1b5d7becc2634c984c78c5c03f55ccabfe2d",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 149,
+      "quote_sha256": "45f13d80899463b9cb97d8782a3b1b5d7becc2634c984c78c5c03f55ccabfe2d",
+      "record_sha256": "34cde4f635849858489744aded457208fa2b5f91681e825f37707b24eb0756e6",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 8
+      },
+      "source_id": "wiki-08a",
+      "source_lines": [
+        159,
+        160
+      ],
+      "source_revision_id": "1306104355",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Kick-off_%28association_football%29",
+      "title": "开球违例和再次触球"
+    },
+    "L08B-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 8,
+      "chunk_id": "L08B-01",
+      "content_zh_sha256": "c24d697ce2b63325ee6a6882e806c9416330612c7df476db2e0826b2f7262cf6",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 229,
+      "quote_sha256": "c24d697ce2b63325ee6a6882e806c9416330612c7df476db2e0826b2f7262cf6",
+      "record_sha256": "56f65d8d22bc3be9d6361e030ef8bd702cbdf127c5b29418e6082b1dbfa642e4",
+      "review_notes": [
+        "这一专题页面随后引用2019及2020年的规则；以下内容保留该来源的版本背景，没有把它自动标成2026/27赛季的正式程序。",
+        "来源坠球专题明确包含2019/2020年程序，不能自动当作现行赛季。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 8
+      },
+      "source_id": "wiki-08b",
+      "source_lines": [
+        131,
+        138
+      ],
+      "source_revision_id": "1337401666",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Dropped-ball",
+      "title": "坠球适用的停止比赛情形"
+    },
+    "L08B-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 8,
+      "chunk_id": "L08B-02",
+      "content_zh_sha256": "5015b3becae8370ca76fac982e95f7678a705f59c56df13435991f656182c9c9",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 278,
+      "quote_sha256": "5015b3becae8370ca76fac982e95f7678a705f59c56df13435991f656182c9c9",
+      "record_sha256": "38f5acc8b185cd6a7284bc381c6d0b99a379cf3a2ebc74f45376f54ae282df12",
+      "review_notes": [
+        "本段专门译自来源页面关于2019年改动的描述，当前赛季适用性待核对。",
+        "来源坠球专题明确包含2019/2020年程序，不能自动当作现行赛季。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 8
+      },
+      "source_id": "wiki-08b",
+      "source_lines": [
+        145,
+        152
+      ],
+      "source_revision_id": "1337401666",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Dropped-ball",
+      "title": "原条目描述的2019年坠球程序"
+    },
+    "L08B-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 8,
+      "chunk_id": "L08B-03",
+      "content_zh_sha256": "0f038cacf4352a7f4da61c28d66c142598334748a2419a8b3a6d665014fd142c",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 154,
+      "quote_sha256": "0f038cacf4352a7f4da61c28d66c142598334748a2419a8b3a6d665014fd142c",
+      "record_sha256": "125e96c6186078c1470ae331f985391d86a5683cdc503825a57408904b42a02d",
+      "review_notes": [
+        "来源坠球专题明确包含2019/2020年程序，不能自动当作现行赛季。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 8
+      },
+      "source_id": "wiki-08b",
+      "source_lines": [
+        157,
+        158
+      ],
+      "source_revision_id": "1337401666",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Dropped-ball",
+      "title": "坠球违例、进球与第二次触球"
+    },
+    "L08B-04": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 8,
+      "chunk_id": "L08B-04",
+      "content_zh_sha256": "7657602642617681d2d8ac53f1f1c34696885ad1d5d020bb5061dd91102a4584",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 319,
+      "quote_sha256": "7657602642617681d2d8ac53f1f1c34696885ad1d5d020bb5061dd91102a4584",
+      "record_sha256": "4501febec9164c58f0d8596a9aa37d66575679ef423fb1283f63f6205084767d",
+      "review_notes": [
+        "本知识段保留“2020年”这一来源时间限定，检索时应与现行赛季问题区分。",
+        "来源坠球专题明确包含2019/2020年程序，不能自动当作现行赛季。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 8
+      },
+      "source_id": "wiki-08b",
+      "source_lines": [
+        163,
+        177
+      ],
+      "source_revision_id": "1337401666",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Dropped-ball",
+      "title": "原条目列出的2020年坠球适用事件"
+    },
+    "L09-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 9,
+      "chunk_id": "L09-01",
+      "content_zh_sha256": "1994a3ef67c18103def2b028ea6cad99929b29c62d964043675f72a40cb1c7a6",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 228,
+      "quote_sha256": "1994a3ef67c18103def2b028ea6cad99929b29c62d964043675f72a40cb1c7a6",
+      "record_sha256": "60426ebf915be380466dd88a9602f060c498cb4a6bb8ec8e576736da3a4a74b9",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 9
+      },
+      "source_id": "wiki-09",
+      "source_lines": [
+        123,
+        135
+      ],
+      "source_revision_id": "1379531770",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Ball_in_and_out_of_play",
+      "title": "何时不再处于比赛中"
+    },
+    "L09-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 9,
+      "chunk_id": "L09-02",
+      "content_zh_sha256": "045f9db91a5896d5fba8578eed7655b42e8b45c033d5a90e7d12589f191be00d",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 229,
+      "quote_sha256": "045f9db91a5896d5fba8578eed7655b42e8b45c033d5a90e7d12589f191be00d",
+      "record_sha256": "f9b062be4ca82c9933b348afbcda68d422b745235b90a31fc35e944c6a443244",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 9
+      },
+      "source_id": "wiki-09",
+      "source_lines": [
+        136,
+        140
+      ],
+      "source_revision_id": "1379531770",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Ball_in_and_out_of_play",
+      "title": "反弹、空中出界与有利原则"
+    },
+    "L09-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 9,
+      "chunk_id": "L09-03",
+      "content_zh_sha256": "43f91d88305995cf7754695ba121dfa4a1b04245ac7c05f5bce686f06dc33f0f",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 257,
+      "quote_sha256": "43f91d88305995cf7754695ba121dfa4a1b04245ac7c05f5bce686f06dc33f0f",
+      "record_sha256": "98eb65ae504e85788a728af925c11e42c1dd5db5a3f838c968a7136f87f9bada",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 9
+      },
+      "source_id": "wiki-09",
+      "source_lines": [
+        145,
+        153
+      ],
+      "source_revision_id": "1379531770",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Ball_in_and_out_of_play",
+      "title": "重新开始比赛的方式"
+    },
+    "L09-04": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 9,
+      "chunk_id": "L09-04",
+      "content_zh_sha256": "aff30b82b87774f9ca030251ae95747a16758f0b539103ae7cd193b2bc1adc43",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 199,
+      "quote_sha256": "aff30b82b87774f9ca030251ae95747a16758f0b539103ae7cd193b2bc1adc43",
+      "record_sha256": "1d1272cd70d4e43e23b353e2036354696c4da4b09484f618bcfb0dbf64c61b58",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 9
+      },
+      "source_id": "wiki-09",
+      "source_lines": [
+        154,
+        156
+      ],
+      "source_revision_id": "1379531770",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Ball_in_and_out_of_play",
+      "title": "比赛停止后的行为通常不改变重启原因"
+    },
+    "L10-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 10,
+      "chunk_id": "L10-01",
+      "content_zh_sha256": "467643aff52a118adb26aa2226541208bcbc750a71d48d455f369f4678b0505d",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 96,
+      "quote_sha256": "467643aff52a118adb26aa2226541208bcbc750a71d48d455f369f4678b0505d",
+      "record_sha256": "65b57914033c1bc9e577f3ceaac87bab01ed7158c51aacf5425dbb3683dbedbf",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 10
+      },
+      "source_id": "wiki-10",
+      "source_lines": [
+        125,
+        131
+      ],
+      "source_revision_id": "1363296017",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Determining_the_Outcome_of_a_Match_%28association_football%29",
+      "title": "第10条处理的两个问题"
+    },
+    "L10-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 10,
+      "chunk_id": "L10-02",
+      "content_zh_sha256": "f2545ceae4c82efac0706b3506b9ea2cef52d68365eabe3ad7cad387f5c2d8b1",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 264,
+      "quote_sha256": "f2545ceae4c82efac0706b3506b9ea2cef52d68365eabe3ad7cad387f5c2d8b1",
+      "record_sha256": "93cd5aa510bac6b4d5ddaa0e2f0ca078be259c058452321ab28e33c813d3bea7",
+      "review_notes": [
+        "本段列的是原条目描述的可选程序；是否使用客场进球或加时，应按具体赛事和赛季判断。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 10
+      },
+      "source_id": "wiki-10",
+      "source_lines": [
+        136,
+        144
+      ],
+      "source_revision_id": "1363296017",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Determining_the_Outcome_of_a_Match_%28association_football%29",
+      "title": "平局与必须决胜的比赛"
+    },
+    "L11-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 11,
+      "chunk_id": "L11-01",
+      "content_zh_sha256": "1e1429d95561a392cdeeb44ff3b59854eccf4ac9863e190a9a2c9c8efcff2046",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 320,
+      "quote_sha256": "1e1429d95561a392cdeeb44ff3b59854eccf4ac9863e190a9a2c9c8efcff2046",
+      "record_sha256": "1eb8592408bc0560a9c8c1cff36674044ce34340202a571ac62bdec808fd34d6",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 11
+      },
+      "source_id": "wiki-11",
+      "source_lines": [
+        208,
+        216
+      ],
+      "source_revision_id": "1380941115",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+      "title": "越位位置不等于越位犯规"
+    },
+    "L11-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 11,
+      "chunk_id": "L11-02",
+      "content_zh_sha256": "5df1e966b4b78568143b6060e652a824e2bc06bccaa2b0fd77c81d0a3e7478e3",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 192,
+      "quote_sha256": "5df1e966b4b78568143b6060e652a824e2bc06bccaa2b0fd77c81d0a3e7478e3",
+      "record_sha256": "acc8fcd2ee028adee4539b71111493db9d5007ecd866e8a4ab881b2eb1114e1c",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 11
+      },
+      "source_id": "wiki-11",
+      "source_lines": [
+        221,
+        228
+      ],
+      "source_revision_id": "1380941115",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+      "title": "干扰比赛与干扰对方队员"
+    },
+    "L11-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 11,
+      "chunk_id": "L11-03",
+      "content_zh_sha256": "b5992da7315efd1d1db4960317213f2782f2b8cc3727390a9d0a908357e11a22",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 298,
+      "quote_sha256": "b5992da7315efd1d1db4960317213f2782f2b8cc3727390a9d0a908357e11a22",
+      "record_sha256": "0a86e76ae75bfc91063d2c82f724228bd7f2a3b682ef47013860242b092463b3",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 11
+      },
+      "source_id": "wiki-11",
+      "source_lines": [
+        229,
+        234
+      ],
+      "source_revision_id": "1380941115",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+      "title": "从反弹、折射或扑救中获得利益"
+    },
+    "L11-04": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 11,
+      "chunk_id": "L11-04",
+      "content_zh_sha256": "376f5869126fa03805575507e676a71485fe59951fc8700931ee0e73db2ae972",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 282,
+      "quote_sha256": "376f5869126fa03805575507e676a71485fe59951fc8700931ee0e73db2ae972",
+      "record_sha256": "82f5cc426d66885c26c930a4333f39a5aa7b58d977c721bcce83dab3322ff82c",
+      "review_notes": [
+        "坠球后应结合实际由谁触球和触球时点判断，不能把“直接接坠球”脱离具体过程独立解释。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 11
+      },
+      "source_id": "wiki-11",
+      "source_lines": [
+        235,
+        238
+      ],
+      "source_revision_id": "1380941115",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+      "title": "不同重启方式与越位判断时点"
+    },
+    "L11-05": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 11,
+      "chunk_id": "L11-05",
+      "content_zh_sha256": "4d25211c6c320b43c5ac9552b0fe72a750cc561ed652325e8f7d0ab19d89d9b4",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 78,
+      "quote_sha256": "4d25211c6c320b43c5ac9552b0fe72a750cc561ed652325e8f7d0ab19d89d9b4",
+      "record_sha256": "f7edc3e149b8f768e5e52a11cdb5e5398f51d46929ff2689ebfbba073bb4a2e2",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 11
+      },
+      "source_id": "wiki-11",
+      "source_lines": [
+        246,
+        246
+      ],
+      "source_revision_id": "1380941115",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+      "title": "越位处罚与执行地点"
+    },
+    "L11-06": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 11,
+      "chunk_id": "L11-06",
+      "content_zh_sha256": "ba4c6e29457c3c3496b60226087364eff0bb2f64dae6851be51323283de571b8",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 215,
+      "quote_sha256": "ba4c6e29457c3c3496b60226087364eff0bb2f64dae6851be51323283de571b8",
+      "record_sha256": "16bfa8d3a1e3e1f9f6faf9b94b21da5b892d2f26644e95b01b4d8878abaafbb7",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 11
+      },
+      "source_id": "wiki-11",
+      "source_lines": [
+        252,
+        256
+      ],
+      "source_revision_id": "1380941115",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+      "title": "助理裁判的站位和旗示"
+    },
+    "L11-07": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 11,
+      "chunk_id": "L11-07",
+      "content_zh_sha256": "a2f47802c6ffc710bcbc267c287f971633ca5d6be98bcab4e97a43369862bb12",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 161,
+      "quote_sha256": "a2f47802c6ffc710bcbc267c287f971633ca5d6be98bcab4e97a43369862bb12",
+      "record_sha256": "ba0f0deb089cf0b4ca64b22b9202e415b72c503c525f24196f38381500aa2d4f",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 11
+      },
+      "source_id": "wiki-11",
+      "source_lines": [
+        257,
+        259
+      ],
+      "source_revision_id": "1380941115",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+      "title": "肉眼判断越位的困难"
+    },
+    "L11-08": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 11,
+      "chunk_id": "L11-08",
+      "content_zh_sha256": "84338232c7dbad4b44c3059ad80f06ebf8e2da613caff49ddafd921eef973e38",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 158,
+      "quote_sha256": "84338232c7dbad4b44c3059ad80f06ebf8e2da613caff49ddafd921eef973e38",
+      "record_sha256": "c7bba4431695b03d81f3d8bdf0c955e37b93bde7189ce120d82d6579345e2240",
+      "review_notes": [
+        "延迟举旗的具体适用情景仍应结合执法指引，不能由本段推出所有不明显的越位都必须等待到同一时刻才举旗。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 11
+      },
+      "source_id": "wiki-11",
+      "source_lines": [
+        266,
+        266
+      ],
+      "source_revision_id": "1380941115",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+      "title": "VAR 情况下的延迟举旗"
+    },
+    "L11-09": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 11,
+      "chunk_id": "L11-09",
+      "content_zh_sha256": "1e9945f4ba1346f42da1a128be7e92c1cb8b889208cba5b3f9df3bd4ca2c1aee",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 156,
+      "quote_sha256": "1e9945f4ba1346f42da1a128be7e92c1cb8b889208cba5b3f9df3bd4ca2c1aee",
+      "record_sha256": "a91810d4bbfe39baf1298527bd21ae7cdb9663b8f2169a4ffd95ef97f8105eda",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 11
+      },
+      "source_id": "wiki-11",
+      "source_lines": [
+        267,
+        267
+      ],
+      "source_revision_id": "1380941115",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+      "title": "半自动越位技术"
+    },
+    "L12-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-01",
+      "content_zh_sha256": "8d52183d297d6cbf3a288a74ac88379af0344ddf7c6aed6e62eb44dc87088414",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 248,
+      "quote_sha256": "8d52183d297d6cbf3a288a74ac88379af0344ddf7c6aed6e62eb44dc87088414",
+      "record_sha256": "b222b84e869da79fe5981bed0398a9bbe5e522bd6b69a07b36c7ffe446bb841d",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        170,
+        177
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "直接任意球犯规及身体接触的分级"
+    },
+    "L12-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-02",
+      "content_zh_sha256": "64205bfa70529fd27a893b9c692e47c4dca0caf6021ba2fd6389d6ed297f3172",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 304,
+      "quote_sha256": "64205bfa70529fd27a893b9c692e47c4dca0caf6021ba2fd6389d6ed297f3172",
+      "record_sha256": "79b923d57a743b3c22c4e0903601eb276e2a26549cd54d77749e6179f705dc66",
+      "review_notes": [
+        "本段是来源概述，不包含正式规则关于全部手球判罚、进球关联和纪律处罚的完整条件。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        178,
+        180
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "手球：触球部位与“非自然扩大身体”"
+    },
+    "L12-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-03",
+      "content_zh_sha256": "051557c1d4fe00cf623f3b62088ea9302fffff84bf1f6d023b9c47a36f32893b",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 84,
+      "quote_sha256": "051557c1d4fe00cf623f3b62088ea9302fffff84bf1f6d023b9c47a36f32893b",
+      "record_sha256": "74f1fc08f64edcfb8d142ac3873c4858571da09b4d6a11e455bef7cd152af2e0",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        181,
+        181
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "其他直接任意球犯规"
+    },
+    "L12-04": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-04",
+      "content_zh_sha256": "39034a61c197ec7a75a05519792465ee4b05795bdc5e6e350637d4744baa1f19",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 247,
+      "quote_sha256": "39034a61c197ec7a75a05519792465ee4b05795bdc5e6e350637d4744baa1f19",
+      "record_sha256": "e6321bcbc31161331ae7cbcbd7f6528dbc1a4f24d27bcdc3641716c5c53678aa",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        186,
+        192
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "一般间接任意球犯规"
+    },
+    "L12-05": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-05",
+      "content_zh_sha256": "88ea24aedb7b67f8cc817c2538ac3a09745488b468c1758825058a836a465456",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 224,
+      "quote_sha256": "88ea24aedb7b67f8cc817c2538ac3a09745488b468c1758825058a836a465456",
+      "record_sha256": "8a31a0a33610c9d92a81739a381591aa86b4374937cdfb6a1641486e5db281f0",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        193,
+        199
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "守门员再次用手、回传球与越位"
+    },
+    "L12-06": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-06",
+      "content_zh_sha256": "9d036805a65fba31f575b223fd0235f7a1a49b7b0794fb11d367527f3327d230",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 138,
+      "quote_sha256": "9d036805a65fba31f575b223fd0235f7a1a49b7b0794fb11d367527f3327d230",
+      "record_sha256": "4b6958c5f097226ba4c1ee33440cf8c08852d0f0a55abe459692a9137e3ed373",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        204,
+        211
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "技术性违例与不当行为"
+    },
+    "L12-07": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-07",
+      "content_zh_sha256": "fb1c390b66a431f3caf800e53dd882e1723e18f73cf865c8bde2b6416576b3da",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 162,
+      "quote_sha256": "fb1c390b66a431f3caf800e53dd882e1723e18f73cf865c8bde2b6416576b3da",
+      "record_sha256": "d24275e41e6fec333c40f6d92601071fc67243299b9f1b6fb26a2a8bb0e080c5",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        217,
+        224
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "黄牌的作用和常见理由"
+    },
+    "L12-08": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-08",
+      "content_zh_sha256": "b8c9b44578a368f77f2b07391d39108aff09f8839d7591b190c0aa9b279790c9",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 284,
+      "quote_sha256": "b8c9b44578a368f77f2b07391d39108aff09f8839d7591b190c0aa9b279790c9",
+      "record_sha256": "3bb25a06f4ceb3320b6694d29774cdd60490ba931c9b31411039a7a95e281630",
+      "review_notes": [
+        "阻止有希望进攻与破坏明显得分机会存在不同条件及部分罚球区内例外，不能仅凭结果机械决定牌色。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        226,
+        231
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "VAR 相关黄牌与违反体育精神"
+    },
+    "L12-09": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-09",
+      "content_zh_sha256": "c2ede674f54d2108d6942440c7d192d8820f3f2295445e382b94f532883756d4",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 278,
+      "quote_sha256": "c2ede674f54d2108d6942440c7d192d8820f3f2295445e382b94f532883756d4",
+      "record_sha256": "670340957efd92b146e453bb991f5ae399475158befd4505c78107583c6dbaaa",
+      "review_notes": [
+        "欧冠例子未给出具体赛季和完整计数条件；临时罚下的适用赛事及方案也需核对。此段保留为来源资料，不用作当前任意赛事的自动处罚依据。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        232,
+        235
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "累计黄牌和临时罚下的来源说明"
+    },
+    "L12-10": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-10",
+      "content_zh_sha256": "751789949da226baa64768e383281fb0329113d42fba6fef838a11ad081a764c",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 137,
+      "quote_sha256": "751789949da226baa64768e383281fb0329113d42fba6fef838a11ad081a764c",
+      "record_sha256": "507dcea5623612b8dcccb47a8c103792d7b63d538046222c1f2aeae2156dd1a3",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        243,
+        244
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "红牌的后果与守门员被罚下"
+    },
+    "L12-11": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-11",
+      "content_zh_sha256": "2a02f0cd29c0c79b2ff930537e88774bc9bac52cbf69a92b95df67b7157b793d",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 278,
+      "quote_sha256": "2a02f0cd29c0c79b2ff930537e88774bc9bac52cbf69a92b95df67b7157b793d",
+      "record_sha256": "753d533ab0fc9a1b707468242c2829dfaaa056127241e1bd3cca1a290cd65ba3",
+      "review_notes": [
+        "手球相关项目在原条目中有重复和不完整条件，应以正式规则核对；本译文说明了重叠，未将其擅自改写成一套新的正式条文。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        245,
+        254
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "应罚令出场的行为类别"
+    },
+    "L12-12": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-12",
+      "content_zh_sha256": "98d72e83f3612e2e98ffd20dc3faced42001ce464ad64ecc8d83e4a4bede184b",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 177,
+      "quote_sha256": "98d72e83f3612e2e98ffd20dc3faced42001ce464ad64ecc8d83e4a4bede184b",
+      "record_sha256": "1142d92218faa2900062727a21317b0290b94578dfe25b4228d969cf047be05c",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        255,
+        258
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "严重犯规、暴力行为和场上人数"
+    },
+    "L12-13": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-13",
+      "content_zh_sha256": "64110a27fb2d2e3a8b64e3263426a208228afbf088c167d798fe92119f1f47c0",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 125,
+      "quote_sha256": "64110a27fb2d2e3a8b64e3263426a208228afbf088c167d798fe92119f1f47c0",
+      "record_sha256": "fe1532b820cf87f69171035e23c04a4c3a131f1e934d3c887ace392945d4c471",
+      "review_notes": [
+        "这是具有明确2020年背景的来源记载，不作为未经核对的当前赛季独立条款。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        259,
+        259
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "2020年有关故意向他人咳嗽的说明"
+    },
+    "L12-14": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-14",
+      "content_zh_sha256": "5c8af8e055a09ea1f935348ddfd3ccfdb217e1af21f8205a527a984fe83f0ac9",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 240,
+      "quote_sha256": "5c8af8e055a09ea1f935348ddfd3ccfdb217e1af21f8205a527a984fe83f0ac9",
+      "record_sha256": "fac16b370fee4cabbdb4ba8950a6c6b2de81cfcaa82816e65956d4e19afc5a03",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        283,
+        291
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "裁判裁量和有利原则"
+    },
+    "L12-15": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-15",
+      "content_zh_sha256": "c49201212c5b1e5a46193f3cc5e50338d9884fe127a3247960065d12d9e4c596",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 329,
+      "quote_sha256": "c49201212c5b1e5a46193f3cc5e50338d9884fe127a3247960065d12d9e4c596",
+      "record_sha256": "a5436858628839788ec6b951e727644ac7a1c5c44871f6e1238a3d49954ac470",
+      "review_notes": [
+        "最后一种概述未穷尽针对比赛官员、场外人员或不同地点的所有例外，实际问题仍需进一步核对规则。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        296,
+        301
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "不当行为发生后如何恢复比赛"
+    },
+    "L12-16": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 12,
+      "chunk_id": "L12-16",
+      "content_zh_sha256": "1fcd4228ad41ddea7aa254de01ed0d294eac254718d38141e253f992df40b5cf",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 172,
+      "quote_sha256": "1fcd4228ad41ddea7aa254de01ed0d294eac254718d38141e253f992df40b5cf",
+      "record_sha256": "3058db7e42942a038deb0f54042328010b252a8dee3ba62edaa7aa1ba176430b",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 12
+      },
+      "source_id": "wiki-12",
+      "source_lines": [
+        307,
+        309
+      ],
+      "source_revision_id": "1383054660",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+      "title": "球队官员的红黄牌"
+    },
+    "L13-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 13,
+      "chunk_id": "L13-01",
+      "content_zh_sha256": "881ea0b9c259521180b30f24440bbbcaf97a1ca0a1e1c38de5dee9fdfe91c2b2",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 165,
+      "quote_sha256": "881ea0b9c259521180b30f24440bbbcaf97a1ca0a1e1c38de5dee9fdfe91c2b2",
+      "record_sha256": "a8f4525d7f200de27175a8872f85ee6fb6ab684b556e095ef79822033cba9950",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 13
+      },
+      "source_id": "wiki-13",
+      "source_lines": [
+        189,
+        192
+      ],
+      "source_revision_id": "1379099837",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+      "title": "直接与间接任意球的区别"
+    },
+    "L13-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 13,
+      "chunk_id": "L13-02",
+      "content_zh_sha256": "7e12c738a01a03c731d82a440e74b7c9703210cef5263d3a9f78284240cff010",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 79,
+      "quote_sha256": "7e12c738a01a03c731d82a440e74b7c9703210cef5263d3a9f78284240cff010",
+      "record_sha256": "dd029a62166618daa267c1d5811b4f3d8274fe5c43cca78031a3db89ab55cfa2",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 13
+      },
+      "source_id": "wiki-13",
+      "source_lines": [
+        203,
+        203
+      ],
+      "source_revision_id": "1379099837",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+      "title": "裁判手势"
+    },
+    "L13-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 13,
+      "chunk_id": "L13-03",
+      "content_zh_sha256": "626db8434afb207afbd5dd7d6227492efa534daa10d23d548d41cb261062f64c",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 297,
+      "quote_sha256": "626db8434afb207afbd5dd7d6227492efa534daa10d23d548d41cb261062f64c",
+      "record_sha256": "2d0860e0d490d16919953606ee7cd80ecca5fa0e4cc745f06890119e3e703cc8",
+      "review_notes": [
+        "技术性进入场地违例的处理可能取决于身份、干扰程度和具体规则版本，最后一段的来源概述需进一步核对后才能作现行规则依据。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 13
+      },
+      "source_id": "wiki-13",
+      "source_lines": [
+        208,
+        212
+      ],
+      "source_revision_id": "1379099837",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+      "title": "任意球的执行地点与例外"
+    },
+    "L13-04": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 13,
+      "chunk_id": "L13-04",
+      "content_zh_sha256": "2ec53f2adf5066f0da831050feb0c0d9ad35aebb0000271ab38162b48bf240e5",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 249,
+      "quote_sha256": "2ec53f2adf5066f0da831050feb0c0d9ad35aebb0000271ab38162b48bf240e5",
+      "record_sha256": "68aef8a52472606f6cc777c0ff54b59a8847dc9fc98570273b6cf34f78fd4ae5",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 13
+      },
+      "source_id": "wiki-13",
+      "source_lines": [
+        217,
+        220
+      ],
+      "source_revision_id": "1379099837",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+      "title": "静止球、距离与人墙"
+    },
+    "L13-05": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 13,
+      "chunk_id": "L13-05",
+      "content_zh_sha256": "0123e05b7155f2ac685b0d88e4580abc10dad2509d842aa455fb67b4334701b7",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 249,
+      "quote_sha256": "0123e05b7155f2ac685b0d88e4580abc10dad2509d842aa455fb67b4334701b7",
+      "record_sha256": "a1fdedb465191870b9ce26747a0e0d58d6497065f4eacf0c3c31eb7e5627c32b",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 13
+      },
+      "source_id": "wiki-13",
+      "source_lines": [
+        221,
+        233
+      ],
+      "source_revision_id": "1379099837",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+      "title": "任意球后的越位与直接进球"
+    },
+    "L13-06": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 13,
+      "chunk_id": "L13-06",
+      "content_zh_sha256": "d8759b2aa19cca9500310072afcb4cad337e5265cf3dc7fbdf42a4a9afff4ea1",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 153,
+      "quote_sha256": "d8759b2aa19cca9500310072afcb4cad337e5265cf3dc7fbdf42a4a9afff4ea1",
+      "record_sha256": "43c555bd7bfa075968341d718c19302b94e8a9c0fbe4c328d419761644bad362",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 13
+      },
+      "source_id": "wiki-13",
+      "source_lines": [
+        240,
+        241
+      ],
+      "source_revision_id": "1379099837",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+      "title": "位置、球移动与对方距离违例"
+    },
+    "L13-07": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 13,
+      "chunk_id": "L13-07",
+      "content_zh_sha256": "e35726cba8c67e039bf11586d983a8f8d311ea8c56bc09ecab9d9bfe5ee2f50e",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 119,
+      "quote_sha256": "e35726cba8c67e039bf11586d983a8f8d311ea8c56bc09ecab9d9bfe5ee2f50e",
+      "record_sha256": "599141f4c89ea18213d62770935878cf205e24de93f6c9f35b7c3e0c421f1052",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 13
+      },
+      "source_id": "wiki-13",
+      "source_lines": [
+        242,
+        244
+      ],
+      "source_revision_id": "1379099837",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+      "title": "主罚者第二次触球与侵入人墙距离"
+    },
+    "L13-08": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 13,
+      "chunk_id": "L13-08",
+      "content_zh_sha256": "d7f3d5c900ea67e3c0215e4eaf809d5f71b6fe41e38e0f74b2e6b08de2c18f50",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 266,
+      "quote_sha256": "d7f3d5c900ea67e3c0215e4eaf809d5f71b6fe41e38e0f74b2e6b08de2c18f50",
+      "record_sha256": "33dfa893ee88601ede7cae3ccfa96a0cde6584fbfb877c37b75a7c4fde022df1",
+      "review_notes": [
+        "原文举出的管理指引具有机构和情景限定，不把它当作所有赛事中不经条件判断的统一程序。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 13
+      },
+      "source_id": "wiki-13",
+      "source_lines": [
+        248,
+        249
+      ],
+      "source_revision_id": "1379099837",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+      "title": "快发任意球的选择和后果"
+    },
+    "L14-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 14,
+      "chunk_id": "L14-01",
+      "content_zh_sha256": "106324acbf25de268323ebb6ed33e3dbffc5cbcbf1e728b817d90e9dc0fd1d21",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 108,
+      "quote_sha256": "106324acbf25de268323ebb6ed33e3dbffc5cbcbf1e728b817d90e9dc0fd1d21",
+      "record_sha256": "d81370b870f2f4857025f264b2d5eccbf0e0839da9ff8c2722ece535992a923f",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 14
+      },
+      "source_id": "wiki-14",
+      "source_lines": [
+        192,
+        193
+      ],
+      "source_revision_id": "1384120223",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29",
+      "title": "点球判罚条件与位置"
+    },
+    "L14-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 14,
+      "chunk_id": "L14-02",
+      "content_zh_sha256": "b600377f16217e927b6cd3490608b43f46ad52568ab3b5a780862418520981d5",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 245,
+      "quote_sha256": "b600377f16217e927b6cd3490608b43f46ad52568ab3b5a780862418520981d5",
+      "record_sha256": "5ad0e6e145c339ce5f907096fd6b187278c88ed241a12847b993db93afcf7050",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 14
+      },
+      "source_id": "wiki-14",
+      "source_lines": [
+        197,
+        199
+      ],
+      "source_revision_id": "1384120223",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29",
+      "title": "放球、主罚者与其他队员站位"
+    },
+    "L14-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 14,
+      "chunk_id": "L14-03",
+      "content_zh_sha256": "6ff6fd0984862f0f469e51d9fd8e1caddc72b01ac7796c44315f2b9975a975d0",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 212,
+      "quote_sha256": "6ff6fd0984862f0f469e51d9fd8e1caddc72b01ac7796c44315f2b9975a975d0",
+      "record_sha256": "48243d58f514d1b5ce94b269011cabefa4947eb557acbffeb8a9832becd48596",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 14
+      },
+      "source_id": "wiki-14",
+      "source_lines": [
+        200,
+        201
+      ],
+      "source_revision_id": "1384120223",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29",
+      "title": "鸣哨、假动作、向前踢与再次触球"
+    },
+    "L14-04": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 14,
+      "chunk_id": "L14-04",
+      "content_zh_sha256": "4c1c5a093e08a763d8ccca3f04000e9197c9a5cc66574177bb864dbfc1cecb61",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 388,
+      "quote_sha256": "4c1c5a093e08a763d8ccca3f04000e9197c9a5cc66574177bb864dbfc1cecb61",
+      "record_sha256": "327c63e7722b5e3b35a8d7b18eb9a1546512900547c38c141bd61bf657bbe570",
+      "review_notes": [
+        "这是原 Wikipedia 页面的概括表，未完整表示不同类型违例的优先级、提前进入是否影响比赛以及现行规则的全部条件。保留它用于来源对照，不能不加条件地用作裁判判罚矩阵。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 14
+      },
+      "source_id": "wiki-14",
+      "source_lines": [
+        206,
+        214
+      ],
+      "source_revision_id": "1384120223",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29",
+      "title": "来源中的提前进入与双方违例表"
+    },
+    "L14-05": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 14,
+      "chunk_id": "L14-05",
+      "content_zh_sha256": "a69b78c030e22f5236081b4fc124e42068e4de344af0f79530a658ca563a2849",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 281,
+      "quote_sha256": "a69b78c030e22f5236081b4fc124e42068e4de344af0f79530a658ca563a2849",
+      "record_sha256": "97b5a0ee3a58b82d8be18f7a3ab0e84acd960a0a2f0d9e35e452d23cd9f1a0b4",
+      "review_notes": [
+        "原文对2025年意外双触球的概括没有完整写出“球是否进入球门”等条件，本段忠实记录来源说法，但必须进一步核对正式澄清文件，不能推断所有意外双触球都一律重罚。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 14
+      },
+      "source_id": "wiki-14",
+      "source_lines": [
+        215,
+        220
+      ],
+      "source_revision_id": "1384120223",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29",
+      "title": "主罚方的特殊违例与2025年双触球说明"
+    },
+    "L14-06": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 14,
+      "chunk_id": "L14-06",
+      "content_zh_sha256": "120fccc83cbb0ea6ca43a96859c61c28c607621e6d8301954fb7eb0abbfa9733",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 168,
+      "quote_sha256": "120fccc83cbb0ea6ca43a96859c61c28c607621e6d8301954fb7eb0abbfa9733",
+      "record_sha256": "5ed70e9b1fee85d0ec3125d35f808cf55a670c1af0ce5c691775c971ed303822",
+      "review_notes": [
+        "外部干扰的正式规则可能还包含未影响防守等例外；本段不是包含全部例外的完整官方条文。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 14
+      },
+      "source_id": "wiki-14",
+      "source_lines": [
+        221,
+        223
+      ],
+      "source_revision_id": "1384120223",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29",
+      "title": "反复违例与外部干扰"
+    },
+    "L15-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 15,
+      "chunk_id": "L15-01",
+      "content_zh_sha256": "2d3a54bdfcb6f2a9add351af6c17787ed5a0f2a4dcfa461640e64bc08396f493",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 70,
+      "quote_sha256": "2d3a54bdfcb6f2a9add351af6c17787ed5a0f2a4dcfa461640e64bc08396f493",
+      "record_sha256": "0c6415555d54606d065cc42d5d6287c7d26ddf716d34d0713e083902d579d605",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 15
+      },
+      "source_id": "wiki-15",
+      "source_lines": [
+        161,
+        166
+      ],
+      "source_revision_id": "1369226293",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Throw-in",
+      "title": "何时判界外球"
+    },
+    "L15-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 15,
+      "chunk_id": "L15-02",
+      "content_zh_sha256": "522683d4cac4594f5ef89620c2ca75303c70e871839c25bbc823d4b83a76a18e",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 143,
+      "quote_sha256": "522683d4cac4594f5ef89620c2ca75303c70e871839c25bbc823d4b83a76a18e",
+      "record_sha256": "da7786c8e90ca8281e336c79f560604b13a47cb0ad881aa8d6f5a5a5446ac0bb",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 15
+      },
+      "source_id": "wiki-15",
+      "source_lines": [
+        171,
+        174
+      ],
+      "source_revision_id": "1369226293",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Throw-in",
+      "title": "执行地点、对方距离与动作"
+    },
+    "L15-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 15,
+      "chunk_id": "L15-03",
+      "content_zh_sha256": "aebb784845e2e93ba403a592107606cbc2737c04f09fcefa243e0f00dbb96636",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 118,
+      "quote_sha256": "aebb784845e2e93ba403a592107606cbc2737c04f09fcefa243e0f00dbb96636",
+      "record_sha256": "d8e3b50ce1b9bb0f421d5f2a5801b32bd44499408ce19a0fd7adf465bd064272",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 15
+      },
+      "source_id": "wiki-15",
+      "source_lines": [
+        175,
+        176
+      ],
+      "source_revision_id": "1369226293",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Throw-in",
+      "title": "不能直接进球，直接接球不判越位"
+    },
+    "L15-04": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 15,
+      "chunk_id": "L15-04",
+      "content_zh_sha256": "303004127a8ed230edad776a9b0fb595a2855c4f6bf6dc9fa5b0474b6b421baf",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 177,
+      "quote_sha256": "303004127a8ed230edad776a9b0fb595a2855c4f6bf6dc9fa5b0474b6b421baf",
+      "record_sha256": "0d333b3561755cc8777bc6bb8fab74af9bafc06466bd489833d65c67b33dcbed",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 15
+      },
+      "source_id": "wiki-15",
+      "source_lines": [
+        184,
+        185
+      ],
+      "source_revision_id": "1369226293",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Throw-in",
+      "title": "对方干扰与不正确掷球"
+    },
+    "L15-05": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 15,
+      "chunk_id": "L15-05",
+      "content_zh_sha256": "bb61d3939108eb584710adf0643d52bb6307effcc3c6b0d8094f2cef765b37f2",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 219,
+      "quote_sha256": "bb61d3939108eb584710adf0643d52bb6307effcc3c6b0d8094f2cef765b37f2",
+      "record_sha256": "8fb4240cd89d06f76fa8d6fe16c870e5bca024368c1e0d248506c1f99675f381",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 15
+      },
+      "source_id": "wiki-15",
+      "source_lines": [
+        186,
+        188
+      ],
+      "source_revision_id": "1369226293",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Throw-in",
+      "title": "再次触球、拖延与守门员接回传"
+    },
+    "L16-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 16,
+      "chunk_id": "L16-01",
+      "content_zh_sha256": "6fc467aed8149cf7ecd0eaa9d5d7819b231f382d352d094d60e6e39eb619f5f7",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 89,
+      "quote_sha256": "6fc467aed8149cf7ecd0eaa9d5d7819b231f382d352d094d60e6e39eb619f5f7",
+      "record_sha256": "95aee4887f37e07696006a6c30b5d2fa9e22faadf92f1f620a0ff89b3f5ccdbc",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 16
+      },
+      "source_id": "wiki-16",
+      "source_lines": [
+        151,
+        156
+      ],
+      "source_revision_id": "1372728422",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Goal_kick",
+      "title": "球门球的一般判给条件"
+    },
+    "L16-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 16,
+      "chunk_id": "L16-02",
+      "content_zh_sha256": "f362d2b8f1d048e63948a4f97ffcfc8cb6c06e5aef2a5dacb3ec66605fd7bd06",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 156,
+      "quote_sha256": "f362d2b8f1d048e63948a4f97ffcfc8cb6c06e5aef2a5dacb3ec66605fd7bd06",
+      "record_sha256": "d3388ccb56eae280ed9f2d4271a04aad07b5f95103bd8f9d8490e45155ea3944",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 16
+      },
+      "source_id": "wiki-16",
+      "source_lines": [
+        157,
+        163
+      ],
+      "source_revision_id": "1372728422",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Goal_kick",
+      "title": "不能直接得分的重启进入对方球门"
+    },
+    "L16-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 16,
+      "chunk_id": "L16-03",
+      "content_zh_sha256": "eafeb4e18f3040796c2c10471637bb5853758cbe0e7018c4820421d042c6859c",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 204,
+      "quote_sha256": "eafeb4e18f3040796c2c10471637bb5853758cbe0e7018c4820421d042c6859c",
+      "record_sha256": "68aa6d0c69bf78c905da469c3279b97284aa3cc5eb0b0ef070f1b30362b3c862",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 16
+      },
+      "source_id": "wiki-16",
+      "source_lines": [
+        169,
+        173
+      ],
+      "source_revision_id": "1372728422",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Goal_kick",
+      "title": "放球、踢出、直接进球与越位"
+    },
+    "L16-04": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 16,
+      "chunk_id": "L16-04",
+      "content_zh_sha256": "2a13aa0aba8f2f7314795c5f4fbc933e9721a478c6fd47f48802f84a87f21a30",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 229,
+      "quote_sha256": "2a13aa0aba8f2f7314795c5f4fbc933e9721a478c6fd47f48802f84a87f21a30",
+      "record_sha256": "ac10073716373c1f08c628485a3e2202e3720a2686389b7ca76ecbe684d7834d",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 16
+      },
+      "source_id": "wiki-16",
+      "source_lines": [
+        178,
+        182
+      ],
+      "source_revision_id": "1372728422",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Goal_kick",
+      "title": "球移动、对方未退出罚球区和再次触球"
+    },
+    "L16-05": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 16,
+      "chunk_id": "L16-05",
+      "content_zh_sha256": "bad39f66e7aecf22d761b1db3d247a946fd86317ac9b960b131a1e4a3d5d4e8b",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 140,
+      "quote_sha256": "bad39f66e7aecf22d761b1db3d247a946fd86317ac9b960b131a1e4a3d5d4e8b",
+      "record_sha256": "75fbfc0062c2d2b702365303de9bbb38a94f048cfb55bd44967d1a12e7e06761",
+      "review_notes": [
+        "这是来源对2026年变化的描述。具体生效赛季、倒计时程序和适用赛事尚未通过正式条款逐一核定，不能把采集日期当成生效证明。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 16
+      },
+      "source_id": "wiki-16",
+      "source_lines": [
+        183,
+        183
+      ],
+      "source_revision_id": "1372728422",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Goal_kick",
+      "title": "来源所述的2026年拖延球门球规定"
+    },
+    "L17-01": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 17,
+      "chunk_id": "L17-01",
+      "content_zh_sha256": "0914464369dd89a8ab43a7e2c47f59f0db54004478cc88188ee0f5c54f3ea02d",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 271,
+      "quote_sha256": "0914464369dd89a8ab43a7e2c47f59f0db54004478cc88188ee0f5c54f3ea02d",
+      "record_sha256": "86891af25a808b343a371f8b8e44ff0600c7908dd2f2bee878882bf0f8ce3674",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 17
+      },
+      "source_id": "wiki-17",
+      "source_lines": [
+        184,
+        200
+      ],
+      "source_revision_id": "1367102817",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Corner_kick",
+      "title": "角球判给条件与最近角"
+    },
+    "L17-02": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 17,
+      "chunk_id": "L17-02",
+      "content_zh_sha256": "98dfd94ebe3ce810d8b3135649a4b1e7db7e685c4ee229f2b19fae64cdb3b6d9",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": true,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 203,
+      "quote_sha256": "98dfd94ebe3ce810d8b3135649a4b1e7db7e685c4ee229f2b19fae64cdb3b6d9",
+      "record_sha256": "0aa3aa63ff5cbd8697ebfb7fb58797c82e7428de49317f2e412508700be5bbd8",
+      "review_notes": [
+        "本段保留网页标明的2025、2026年背景，但有关“持球/控制球”、裁判倒计时和正式适用范围仍须核对相应赛季规则。"
+      ],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 17
+      },
+      "source_id": "wiki-17",
+      "source_lines": [
+        205,
+        206
+      ],
+      "source_revision_id": "1367102817",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Corner_kick",
+      "title": "来源所述的守门员8秒及球门球5秒变化"
+    },
+    "L17-03": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 17,
+      "chunk_id": "L17-03",
+      "content_zh_sha256": "866f3365f634282c1ea5d393156f371689b6765dbbe67d9dcb3cb71f4c96fb9e",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 173,
+      "quote_sha256": "866f3365f634282c1ea5d393156f371689b6765dbbe67d9dcb3cb71f4c96fb9e",
+      "record_sha256": "8d5a94efc36adb6386a88610a1436582061f46f99eec745df2d12e9d414d9fbf",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 17
+      },
+      "source_id": "wiki-17",
+      "source_lines": [
+        212,
+        214
+      ],
+      "source_revision_id": "1367102817",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Corner_kick",
+      "title": "裁判示意与角球的执行位置"
+    },
+    "L17-04": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 17,
+      "chunk_id": "L17-04",
+      "content_zh_sha256": "b8c944b87083888db02fb3bf5fd5b9d7dd600721a7806ec94c26c8f19cf7a203",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 147,
+      "quote_sha256": "b8c944b87083888db02fb3bf5fd5b9d7dd600721a7806ec94c26c8f19cf7a203",
+      "record_sha256": "d0581b9c7f1904549fb39c717349487272db940472620d64ca889f1f209eabe0",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 17
+      },
+      "source_id": "wiki-17",
+      "source_lines": [
+        215,
+        218
+      ],
+      "source_revision_id": "1367102817",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Corner_kick",
+      "title": "球进入比赛、第二次触球和直接进球"
+    },
+    "L17-05": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 17,
+      "chunk_id": "L17-05",
+      "content_zh_sha256": "1d046663e311d00ad793e88a3722da54baf6cdf536adfe6e605bb8d0547b993e",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 146,
+      "quote_sha256": "1d046663e311d00ad793e88a3722da54baf6cdf536adfe6e605bb8d0547b993e",
+      "record_sha256": "a486d176f1d4bbc5149e28c78e349f9a8544704c470aa86176784d56c4b5c5bc",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 17
+      },
+      "source_id": "wiki-17",
+      "source_lines": [
+        223,
+        228
+      ],
+      "source_revision_id": "1367102817",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Corner_kick",
+      "title": "角球违例处理"
+    },
+    "L17-06": {
+      "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+      "catalog_number": 17,
+      "chunk_id": "L17-06",
+      "content_zh_sha256": "2495dca5b236f243d2dd0dab8db4662611f2a5ac195f244c2dcbdc24102b9e5f",
+      "expert_reviewed": false,
+      "law_reference_kind": "local_catalog_only",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "needs_rule_review": false,
+      "official_law_number": null,
+      "official_translation": false,
+      "quote_characters": 190,
+      "quote_sha256": "2495dca5b236f243d2dd0dab8db4662611f2a5ac195f244c2dcbdc24102b9e5f",
+      "record_sha256": "8204eb13ad60a7d575c366d443bc1558d1bbb6941403cfb5856239f425be9a8f",
+      "review_notes": [],
+      "source_attribution": "Wikipedia contributors",
+      "source_catalog_metadata": {
+        "law_number": 17
+      },
+      "source_id": "wiki-17",
+      "source_lines": [
+        296,
+        297
+      ],
+      "source_revision_id": "1367102817",
+      "source_revision_status": "reader footer ID; exact revision not independently fetched",
+      "source_revision_verified": false,
+      "source_url": "https://en.wikipedia.org/wiki/Corner_kick",
+      "title": "直接进入本方球门的重启归纳"
+    }
+  },
+  "version": "task13-citation-sources-1.0"
+}
