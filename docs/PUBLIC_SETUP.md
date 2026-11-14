@@ -122,3 +122,8 @@ UiCapture 必须来自已完成的真实浏览器操作；也可传历史采集�
 ## 任务十二问答评测复验
 
 见[ANSWER_EVALUATION](ANSWER_EVALUATION.md)。公开Python -S -B可运行scripts/run_answer_evaluation.py replay及verify_answer_public.py --complete --report <新JSON路径>。不要删除已消耗的test目录/账本重测。完整90题问答及来源在本机.runtime/task12/all_answers.html；新回答人审仍0/12，逐题审核入口serve_answer_review.py --port 7864。自动评分不是人工准确率，当前B0页面未整合新适配器。
+
+
+## 任务十二补丁阶段当前入口
+
+使用 [ANSWER_REVIEW_WORKFLOW](ANSWER_REVIEW_WORKFLOW.md)：审核页serve_answer_review_v2.py --port 7865；新增严格审计verify_answer_audit.py和verify_answer_audit_delivery.py。公开Python -S可用补交付门禁加--public-only；旧完整门禁固定21实验，应在v0.12.0历史版本复验。12题新回答人工尚未完成，工程PASS不代表人审完成。

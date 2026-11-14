@@ -390,3 +390,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 | 错误拒答率 | 6/32 = 18.75% | 5/40 = 12.50% |
 
 指标为AI或确定性规则计分，新回答人工0/12待复核；原标签批准90不等于本次答案批准。完整原始记录本机SHA回链，公开可独立算术重放；无准确率改善、QPS或SLA结论。命令run_answer_evaluation.py dev/prepare-test/test/export与verify_answer_*；详细方法和原始结果见ANSWER_EVALUATION和TASK_12_DELIVERY。
+
+
+## TASK-012-AUDIT（2026-11-14）
+
+基线cd2e034，3种完成记录缺口合成复现；增强6产物/生产提交/分割、错误分析、完整messages/schema/实际计数/选择和非标签引用recordSHA检查。新增严格人审账本、互斥与fsync、脱敏向量及完成门禁。53/53、公开44/44、页面14/14，原42/42、19/19、20/20、24/24在追加22实验前复验。新增模型请求0，正式test重测0；AI低分保留。真实人审0/12待完成，工程通过不代表语义签收；原21实验对象和标签不改。来源及证据见reports/TASK_12_SUPPLEMENT.md。
