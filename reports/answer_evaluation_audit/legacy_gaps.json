@@ -1,0 +1,16 @@
+{
+  "captured_at": "2026-11-14T08:59:48.944421+00:00",
+  "checks": {
+    "missing_completed_artifacts": {
+      "legacy_accepted_invalid": true
+    },
+    "wrong_completed_producer": {
+      "legacy_accepted_invalid": true
+    },
+    "wrong_completed_split": {
+      "legacy_accepted_invalid": true
+    }
+  },
+  "new_model_requests": 0,
+  "scope": "in-memory synthetic completion mutations; original files untouched"
+}
