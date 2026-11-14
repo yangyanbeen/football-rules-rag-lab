@@ -4,7 +4,7 @@
   "retrieval_policy": "config/reranker_experiment.json",
   "dense_policy": "config/dense_index.json",
   "catalog_policy": "config/citation_catalog_notes.json",
-  "environment": ".runtime/task13/venv/Scripts/python.exe",
+  "environment": ".runtime/task13/venv-final/Scripts/python.exe",
   "dense_index": "data/indexes/task13/dense-v1",
   "bm25_index": "data/indexes/bm25/task13-title-body-v1",
   "corpus": "data/processed/rag_chunks_zh.jsonl",

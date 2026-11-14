@@ -68,11 +68,13 @@ def validate_result(value,question):
     elif not value['error'] and value['refusal_reason']!='version_unverified':raise ValueError('Unexpected missing retrieval')
     attempts=value['attempts']
     if not isinstance(attempts,list) or len(attempts)>2:raise ValueError('Attempt budget differs')
-    if value['status']=='answered':
+    if attempts and not value['error']:
         from answer_audit_v2 import validate_attempts
         from answer_json_chat import selection_schema
         selected=validate_attempts(attempts,value['messages'],selection_schema(value['offered_ids'],3),lambda s:parse_selection(s,value['offered_ids'],answer_config()))
-        if selected is None or selected['chunk_ids']!=value['selected_ids'] or selected['answerable'] is not True:raise ValueError('Actual generation did not select displayed evidence')
+        if selected is None or selected['chunk_ids']!=value['selected_ids'] or selected['answerable']!=(value['status']=='answered'):raise ValueError('Actual generation did not select displayed evidence')
+        if value['status']=='refused' and selected['reason']!=value['refusal_reason']:raise ValueError('Actual refusal reason differs')
+    elif value['status']=='answered':raise ValueError('Answered without completed generation')
     if set(value['timing'])!={'retrieval_seconds','generation_seconds','total_seconds'} or any(type(v) not in (int,float) or not math.isfinite(v) or v<0 for v in value['timing'].values()):raise ValueError('Invalid timing')
     if value['timing']['total_seconds']+0.01<sum(value['timing'][k] for k in ('retrieval_seconds','generation_seconds')):raise ValueError('Incomplete stage clock')
     return True

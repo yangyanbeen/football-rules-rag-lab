@@ -6,7 +6,7 @@ from answer_eval_core import ROOT,record,read,write_new,now,digest
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--environment',default='.runtime/task13/venv')
+    p.add_argument('--environment',default='.runtime/task13/venv-final')
     p.add_argument('--uv',default='.runtime/uv/uv.exe')
     p.add_argument('--python',default='.runtime/python/cpython-3.10.22/python.exe')
     p.add_argument('--offline',action='store_true');p.add_argument('--report',required=True);a=p.parse_args()
@@ -22,6 +22,7 @@ def main():
     # The exported lock is public; never resolve floating requirements here.
     requirements=ROOT/'infra/task13-runtime-requirements.txt'
     started=now();commands=[];folder=ROOT/'.runtime/task13/environment-install';folder.mkdir(parents=True,exist_ok=True)
+    temporary=folder/'build-temp';temporary.mkdir(exist_ok=True)
     log=folder/('install-'+str(time.time_ns())+'.log');python=envpath/'Scripts/python.exe'
     offline=['--offline'] if a.offline else []
     operations=[['venv',*offline,'--cache-dir',str(ROOT/'.cache/uv'),'--python',str(base),str(envpath)],
@@ -31,7 +32,7 @@ def main():
         with log.open('xb') as handle:
             for operation in operations:
                 proc=subprocess.run([str(uv),*operation],cwd=ROOT,stdout=handle,stderr=handle,
-                    env={**os.environ,'UV_NO_PROGRESS':'1','PYTHONIOENCODING':'utf-8'},timeout=1800,
+                    env={**os.environ,'UV_NO_PROGRESS':'1','UV_LINK_MODE':'copy','TEMP':str(temporary),'TMP':str(temporary),'PYTHONIOENCODING':'utf-8'},timeout=1800,
                     creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
                 commands.append({'operation':operation[0:2],'exit_code':proc.returncode})
                 print(json.dumps(commands[-1]),flush=True)
