@@ -143,7 +143,7 @@ def resume_text(v):
     lines=['# 足球规则RAG项目：当前可使用的简历版本','',
         '基于开源Kotaemon二次开发。数据是Wikipedia固定快照的AI中文整理，非官方赛季规则、非裁判专家审校；以下是小规模固定领域集的工程与实测事实。','',
         '- 将'+n('documents')+'份中文资料、'+n('chunks')+'个稳定知识段接入可追溯问答系统，实现Dense/BM25混合检索、RRF融合、候选截断重排、结构化证据选择及来源/许可校验。[documents, chunks]',
-        '- 构建'+n('dev_questions')+'题开发集、'+n('test_questions')+'题锁定测试和'+n('hard_negatives')+'对难负例；同轮候选深度固定的重排对照中，Top40方案测试Recall@5为'+n('reranker_top40_r5')+'、MRR@10为'+format(c['reranker_top40_mrr']['value'],'.3f')+'，开发先选方案，测试仅报告。[dev_questions, test_questions, hard_negatives, reranker_top40_r5, reranker_top40_mrr]',
+        '- 构建'+n('dev_questions')+'题开发集、'+n('test_questions')+'题锁定测试和'+n('hard_negatives')+'对难负例；同轮候选深度固定的重排对照中，Top40方案在'+n('reranker_answerable')+'条可回答测试题上的Recall@5为'+n('reranker_top40_r5')+'、MRR@10为'+format(c['reranker_top40_mrr']['value'],'.3f')+'，开发先选方案，测试仅报告。[dev_questions, test_questions, hard_negatives, reranker_answerable, reranker_top40_r5, reranker_top40_mrr]',
         '- 实现结构感知切分与父子块来源区间映射，从原知识段派生'+n('children')+'子块/'+n('parents')+'父块，在'+n('context_budget')+' token预算下比较完整证据覆盖与上下文成本，保留子块召回下降和父块成本增加的结果。[children, parents, context_budget]',
         '- 建立检索逐题评测、回答/引用/条件/拒答评测及'+n('human_samples')+'题真实人工抽样，支持无模型结果复算、故障回执、Git/PR小步版本与文件hash追溯。[human_samples]','',
         '## 面试时必须说明的边界','',

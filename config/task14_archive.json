@@ -848,6 +848,15 @@
       "op": "value",
       "unit": "ratio",
       "role": "human_sample"
+    },
+    {
+      "id": "reranker_answerable",
+      "group": "reranker",
+      "source": "reports/retrieval/bge_reranker_b0/test/summary.json",
+      "pointer": "/methods/top40/quality/answerable_denominator",
+      "op": "value",
+      "unit": "题",
+      "role": "context"
     }
   ],
   "unmeasured": [
