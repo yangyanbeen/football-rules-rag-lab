@@ -1,0 +1,704 @@
+{
+  "actual_browser_submissions": 5,
+  "captured_at": "2026-11-14T14:05:10.252241+00:00",
+  "new_formal_test_runs": 0,
+  "passed": 5,
+  "raw_browser_snapshots_public": false,
+  "rows": [
+    {
+      "browser_answer_matches_actual_trace": true,
+      "browser_snapshot": {
+        "path": ".runtime/task13/ui-normal.txt",
+        "sha256": "fbdbcbb687680f70f011f57361537cb911e65e63070567e84bc03c6b652bae6d",
+        "size_bytes": 3278
+      },
+      "id": "normal",
+      "passed": true,
+      "result": {
+        "answer_sha256": "ac964d64903587a0869a8b37db0050651f52b8bee3bbf9f49ba5da64bf1306b4",
+        "attempts": [
+          {
+            "attempt": 1,
+            "done_reason": "stop",
+            "error": null,
+            "eval_count": 21,
+            "prompt_eval_count": 1515
+          }
+        ],
+        "citations": [
+          {
+            "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+            "catalog_number": 1,
+            "chunk_id": "L01-03",
+            "content_zh_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+            "expert_reviewed": false,
+            "law_reference_kind": "local_catalog_only",
+            "license": "CC BY-SA 4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "needs_rule_review": false,
+            "official_law_number": null,
+            "official_translation": false,
+            "quote_characters": 189,
+            "quote_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+            "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836",
+            "review_notes": [],
+            "source_attribution": "Wikipedia contributors",
+            "source_catalog_metadata": {
+              "law_number": 1
+            },
+            "source_id": "wiki-01",
+            "source_lines": [
+              187,
+              189
+            ],
+            "source_revision_id": "1384097820",
+            "source_revision_status": "reader footer ID; exact revision not independently fetched",
+            "source_revision_verified": false,
+            "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+            "title": "球门结构与安全"
+          }
+        ],
+        "configuration": {
+          "config/answer_evaluation.json": {
+            "path": "config/answer_evaluation.json",
+            "sha256": "283b98a40187a357a319db195ee1c535d518ae897b80ce38385fe67f581b031e",
+            "size_bytes": 1126
+          },
+          "config/answer_evaluation_system.txt": {
+            "path": "config/answer_evaluation_system.txt",
+            "sha256": "7441aac9b7f025ac006064b4d778d78ffb1f342f2fba7164567dfab1642aec5f",
+            "size_bytes": 1400
+          },
+          "config/citation_catalog_notes.json": {
+            "path": "config/citation_catalog_notes.json",
+            "sha256": "b5e7c10235454a08776dc47b5dcdcbbf383d4acfa887d98e125ce35af035e272",
+            "size_bytes": 1261
+          },
+          "config/dense_index.json": {
+            "path": "config/dense_index.json",
+            "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988",
+            "size_bytes": 1613
+          },
+          "config/reranker_experiment.json": {
+            "path": "config/reranker_experiment.json",
+            "sha256": "9b77781e8f32d886c5b15a6af852acd4ac95d534196406fde641bce079144062",
+            "size_bytes": 2468
+          },
+          "config/task13_app.json": {
+            "path": "config/task13_app.json",
+            "sha256": "68075020ed2444219bb41ef477aaa5344d8e57eb7ab75430fbeffe275fb915cc",
+            "size_bytes": 779
+          }
+        },
+        "error": null,
+        "indexes": {
+          "bm25_index": {
+            "path": "data/indexes/bm25/task13-title-body-v1/index_manifest.json",
+            "sha256": "5064ed9ae32b7f22465491ea0f719cb99f0a855434e06fbc89bcc59fe00ab142",
+            "size_bytes": 2485
+          },
+          "dense_index": {
+            "path": "data/indexes/task13/dense-v1/index_manifest.json",
+            "sha256": "b5034751debfeba49f7b954910aa956b9323f75082e6647f598f5eba57f40758",
+            "size_bytes": 11507
+          }
+        },
+        "new_formal_test_runs": 0,
+        "offered_ids": [
+          "L01-03",
+          "L01-02",
+          "L01-05",
+          "L02-02"
+        ],
+        "private_trace": {
+          "path": ".runtime/task13/workers/3e48454e4c9c4724868c4b795705d1df.json",
+          "sha256": "d75c07781553b9349e8c8499787e4c4801ddc2fae89236fee8012dc65680b7f3",
+          "size_bytes": 87938
+        },
+        "profile": "task13-integrated-1.0",
+        "prompt_utf8_bytes": 5678,
+        "question": "请按这份知识库说明，球门开口通常有多宽、多高？",
+        "refusal_reason": null,
+        "retrieved_ids": [
+          "L01-03",
+          "L01-02",
+          "L01-05",
+          "L01-04",
+          "L02-02",
+          "L01-06",
+          "L15-02",
+          "L08A-02",
+          "L03-01",
+          "L16-03"
+        ],
+        "selected_ids": [
+          "L01-03"
+        ],
+        "status": "answered",
+        "timing": {
+          "generation_seconds": 1.2959248000006482,
+          "retrieval_seconds": 5.431416800001898,
+          "total_seconds": 6.748809900000197
+        },
+        "trace_id": "27756b4130e540a5a8f96c1a49b3139f"
+      },
+      "source_and_license_links_visible": true,
+      "ui_event_sha256": "6e4617a0d0c623a75acf0cd4b80d5047abe6866b3ca4e543f3dc97473952c32c",
+      "worker_wall_seconds": 36.888662100001966
+    },
+    {
+      "browser_answer_matches_actual_trace": true,
+      "browser_snapshot": {
+        "path": ".runtime/task13/ui-condition.txt",
+        "sha256": "ea867f97027538f9f0f9fdb1704b0491edd3f12a5ab819bed6dee2d764319312",
+        "size_bytes": 7390
+      },
+      "id": "condition",
+      "passed": true,
+      "result": {
+        "answer_sha256": "6c7c964c9cc537aeb65e65a25af518a398eee5b0554241e9b42b933b4445aaad",
+        "attempts": [
+          {
+            "attempt": 1,
+            "done_reason": "stop",
+            "error": null,
+            "eval_count": 35,
+            "prompt_eval_count": 1331
+          }
+        ],
+        "citations": [
+          {
+            "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+            "catalog_number": 11,
+            "chunk_id": "L11-01",
+            "content_zh_sha256": "1e1429d95561a392cdeeb44ff3b59854eccf4ac9863e190a9a2c9c8efcff2046",
+            "expert_reviewed": false,
+            "law_reference_kind": "local_catalog_only",
+            "license": "CC BY-SA 4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "needs_rule_review": false,
+            "official_law_number": null,
+            "official_translation": false,
+            "quote_characters": 320,
+            "quote_sha256": "1e1429d95561a392cdeeb44ff3b59854eccf4ac9863e190a9a2c9c8efcff2046",
+            "record_sha256": "1eb8592408bc0560a9c8c1cff36674044ce34340202a571ac62bdec808fd34d6",
+            "review_notes": [],
+            "source_attribution": "Wikipedia contributors",
+            "source_catalog_metadata": {
+              "law_number": 11
+            },
+            "source_id": "wiki-11",
+            "source_lines": [
+              208,
+              216
+            ],
+            "source_revision_id": "1380941115",
+            "source_revision_status": "reader footer ID; exact revision not independently fetched",
+            "source_revision_verified": false,
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "title": "越位位置不等于越位犯规"
+          },
+          {
+            "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+            "catalog_number": 11,
+            "chunk_id": "L11-02",
+            "content_zh_sha256": "5df1e966b4b78568143b6060e652a824e2bc06bccaa2b0fd77c81d0a3e7478e3",
+            "expert_reviewed": false,
+            "law_reference_kind": "local_catalog_only",
+            "license": "CC BY-SA 4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "needs_rule_review": false,
+            "official_law_number": null,
+            "official_translation": false,
+            "quote_characters": 192,
+            "quote_sha256": "5df1e966b4b78568143b6060e652a824e2bc06bccaa2b0fd77c81d0a3e7478e3",
+            "record_sha256": "acc8fcd2ee028adee4539b71111493db9d5007ecd866e8a4ab881b2eb1114e1c",
+            "review_notes": [],
+            "source_attribution": "Wikipedia contributors",
+            "source_catalog_metadata": {
+              "law_number": 11
+            },
+            "source_id": "wiki-11",
+            "source_lines": [
+              221,
+              228
+            ],
+            "source_revision_id": "1380941115",
+            "source_revision_status": "reader footer ID; exact revision not independently fetched",
+            "source_revision_verified": false,
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "title": "干扰比赛与干扰对方队员"
+          },
+          {
+            "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+            "catalog_number": 11,
+            "chunk_id": "L11-05",
+            "content_zh_sha256": "4d25211c6c320b43c5ac9552b0fe72a750cc561ed652325e8f7d0ab19d89d9b4",
+            "expert_reviewed": false,
+            "law_reference_kind": "local_catalog_only",
+            "license": "CC BY-SA 4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "needs_rule_review": false,
+            "official_law_number": null,
+            "official_translation": false,
+            "quote_characters": 78,
+            "quote_sha256": "4d25211c6c320b43c5ac9552b0fe72a750cc561ed652325e8f7d0ab19d89d9b4",
+            "record_sha256": "f7edc3e149b8f768e5e52a11cdb5e5398f51d46929ff2689ebfbba073bb4a2e2",
+            "review_notes": [],
+            "source_attribution": "Wikipedia contributors",
+            "source_catalog_metadata": {
+              "law_number": 11
+            },
+            "source_id": "wiki-11",
+            "source_lines": [
+              246,
+              246
+            ],
+            "source_revision_id": "1380941115",
+            "source_revision_status": "reader footer ID; exact revision not independently fetched",
+            "source_revision_verified": false,
+            "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+            "title": "越位处罚与执行地点"
+          }
+        ],
+        "configuration": {
+          "config/answer_evaluation.json": {
+            "path": "config/answer_evaluation.json",
+            "sha256": "283b98a40187a357a319db195ee1c535d518ae897b80ce38385fe67f581b031e",
+            "size_bytes": 1126
+          },
+          "config/answer_evaluation_system.txt": {
+            "path": "config/answer_evaluation_system.txt",
+            "sha256": "7441aac9b7f025ac006064b4d778d78ffb1f342f2fba7164567dfab1642aec5f",
+            "size_bytes": 1400
+          },
+          "config/citation_catalog_notes.json": {
+            "path": "config/citation_catalog_notes.json",
+            "sha256": "b5e7c10235454a08776dc47b5dcdcbbf383d4acfa887d98e125ce35af035e272",
+            "size_bytes": 1261
+          },
+          "config/dense_index.json": {
+            "path": "config/dense_index.json",
+            "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988",
+            "size_bytes": 1613
+          },
+          "config/reranker_experiment.json": {
+            "path": "config/reranker_experiment.json",
+            "sha256": "9b77781e8f32d886c5b15a6af852acd4ac95d534196406fde641bce079144062",
+            "size_bytes": 2468
+          },
+          "config/task13_app.json": {
+            "path": "config/task13_app.json",
+            "sha256": "68075020ed2444219bb41ef477aaa5344d8e57eb7ab75430fbeffe275fb915cc",
+            "size_bytes": 779
+          }
+        },
+        "error": null,
+        "indexes": {
+          "bm25_index": {
+            "path": "data/indexes/bm25/task13-title-body-v1/index_manifest.json",
+            "sha256": "5064ed9ae32b7f22465491ea0f719cb99f0a855434e06fbc89bcc59fe00ab142",
+            "size_bytes": 2485
+          },
+          "dense_index": {
+            "path": "data/indexes/task13/dense-v1/index_manifest.json",
+            "sha256": "b5034751debfeba49f7b954910aa956b9323f75082e6647f598f5eba57f40758",
+            "size_bytes": 11507
+          }
+        },
+        "new_formal_test_runs": 0,
+        "offered_ids": [
+          "L11-01",
+          "L11-03",
+          "L11-02",
+          "L11-05",
+          "L12-05"
+        ],
+        "private_trace": {
+          "path": ".runtime/task13/workers/344813f6e8b04324863eca3c2fe25c89.json",
+          "sha256": "104c64c543bca2876cfa0c5acffdc9db378045de8902cff202a492bb60032636",
+          "size_bytes": 95700
+        },
+        "profile": "task13-integrated-1.0",
+        "prompt_utf8_bytes": 5558,
+        "question": "请依据资料解释：队员站在越位位置，就一定会被判越位犯规吗？",
+        "refusal_reason": null,
+        "retrieved_ids": [
+          "L11-01",
+          "L11-03",
+          "L11-02",
+          "L11-05",
+          "L12-05",
+          "L17-04",
+          "L11-04",
+          "L15-03",
+          "L13-05",
+          "L11-06"
+        ],
+        "selected_ids": [
+          "L11-01",
+          "L11-02",
+          "L11-05"
+        ],
+        "status": "answered",
+        "timing": {
+          "generation_seconds": 2.0420709999998508,
+          "retrieval_seconds": 5.086055999996461,
+          "total_seconds": 7.138862699997844
+        },
+        "trace_id": "ecbfddb4a0b34c17ba286dc27e712ef7"
+      },
+      "source_and_license_links_visible": true,
+      "ui_event_sha256": "1dcf80dc447dd2f4ba446b68b86460d56a3c0936ccb259cfae9671c0bbbfdca1",
+      "worker_wall_seconds": 14.935923499997443
+    },
+    {
+      "browser_answer_matches_actual_trace": true,
+      "browser_snapshot": {
+        "path": ".runtime/task13/ui-outside.txt",
+        "sha256": "e771f822b4c848ac5a0b6e9dab17f268f05c5a0b67a0783420b43397cc8e162b",
+        "size_bytes": 7646
+      },
+      "id": "outside",
+      "passed": true,
+      "result": {
+        "answer_sha256": "4d4391ac83f3806f1a0704132d835b357e121b7014189179b624ec24e4d9f3ba",
+        "attempts": [
+          {
+            "attempt": 1,
+            "done_reason": "stop",
+            "error": null,
+            "eval_count": 18,
+            "prompt_eval_count": 1241
+          }
+        ],
+        "citations": [],
+        "configuration": {
+          "config/answer_evaluation.json": {
+            "path": "config/answer_evaluation.json",
+            "sha256": "283b98a40187a357a319db195ee1c535d518ae897b80ce38385fe67f581b031e",
+            "size_bytes": 1126
+          },
+          "config/answer_evaluation_system.txt": {
+            "path": "config/answer_evaluation_system.txt",
+            "sha256": "7441aac9b7f025ac006064b4d778d78ffb1f342f2fba7164567dfab1642aec5f",
+            "size_bytes": 1400
+          },
+          "config/citation_catalog_notes.json": {
+            "path": "config/citation_catalog_notes.json",
+            "sha256": "b5e7c10235454a08776dc47b5dcdcbbf383d4acfa887d98e125ce35af035e272",
+            "size_bytes": 1261
+          },
+          "config/dense_index.json": {
+            "path": "config/dense_index.json",
+            "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988",
+            "size_bytes": 1613
+          },
+          "config/reranker_experiment.json": {
+            "path": "config/reranker_experiment.json",
+            "sha256": "9b77781e8f32d886c5b15a6af852acd4ac95d534196406fde641bce079144062",
+            "size_bytes": 2468
+          },
+          "config/task13_app.json": {
+            "path": "config/task13_app.json",
+            "sha256": "68075020ed2444219bb41ef477aaa5344d8e57eb7ab75430fbeffe275fb915cc",
+            "size_bytes": 779
+          }
+        },
+        "error": null,
+        "indexes": {
+          "bm25_index": {
+            "path": "data/indexes/bm25/task13-title-body-v1/index_manifest.json",
+            "sha256": "5064ed9ae32b7f22465491ea0f719cb99f0a855434e06fbc89bcc59fe00ab142",
+            "size_bytes": 2485
+          },
+          "dense_index": {
+            "path": "data/indexes/task13/dense-v1/index_manifest.json",
+            "sha256": "b5034751debfeba49f7b954910aa956b9323f75082e6647f598f5eba57f40758",
+            "size_bytes": 11507
+          }
+        },
+        "new_formal_test_runs": 0,
+        "offered_ids": [
+          "L07-03",
+          "L07-02",
+          "L09-01",
+          "L03-03"
+        ],
+        "private_trace": {
+          "path": ".runtime/task13/workers/fa2342c2a3b8443695cef2cf3330cb29.json",
+          "sha256": "817a28965c7225b3c364f882dda6e31387e06848f7d2d06d5c4ca9182243bdb0",
+          "size_bytes": 85511
+        },
+        "profile": "task13-integrated-1.0",
+        "prompt_utf8_bytes": 5355,
+        "question": "知识库能给出今晚比赛的即时比分和下一粒进球时间吗？",
+        "refusal_reason": "insufficient_evidence",
+        "retrieved_ids": [
+          "L07-03",
+          "L07-02",
+          "L09-01",
+          "L03-03",
+          "L12-09",
+          "L11-08",
+          "L10-02",
+          "L03-04",
+          "L07-01",
+          "L08A-01"
+        ],
+        "selected_ids": [],
+        "status": "refused",
+        "timing": {
+          "generation_seconds": 1.123319199999969,
+          "retrieval_seconds": 4.723246100002143,
+          "total_seconds": 5.858324100001482
+        },
+        "trace_id": "59a1521bfeb44c3cb08b19766ee6bb70"
+      },
+      "source_and_license_links_visible": true,
+      "ui_event_sha256": "076204c43fc4c27773490e22c2ece8002f0fae54126dfe86e975f8beda8508d1",
+      "worker_wall_seconds": 13.811388800000714
+    },
+    {
+      "browser_answer_matches_actual_trace": true,
+      "browser_snapshot": {
+        "path": ".runtime/task13/ui-citation.txt",
+        "sha256": "063454cc8d417a5e522dd688dd4426cd3ff17553365c1aa9c52e08fd27fac396",
+        "size_bytes": 9489
+      },
+      "id": "citation",
+      "passed": true,
+      "result": {
+        "answer_sha256": "3d0e62a6338f56da6acae38b853a4fe7b7548c0b599e9c1791e6323ada90e25d",
+        "attempts": [
+          {
+            "attempt": 1,
+            "done_reason": "stop",
+            "error": null,
+            "eval_count": 21,
+            "prompt_eval_count": 1402
+          }
+        ],
+        "citations": [
+          {
+            "catalog_notice": "本地语料编目编号；官方条号未独立核验。",
+            "catalog_number": 4,
+            "chunk_id": "L04-05",
+            "content_zh_sha256": "a13d4ccd48cea011be0b20fbeb2bd5f8fa5731552087258103d713c0b8d7dcf0",
+            "expert_reviewed": false,
+            "law_reference_kind": "local_catalog_only",
+            "license": "CC BY-SA 4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "needs_rule_review": false,
+            "official_law_number": null,
+            "official_translation": false,
+            "quote_characters": 252,
+            "quote_sha256": "a13d4ccd48cea011be0b20fbeb2bd5f8fa5731552087258103d713c0b8d7dcf0",
+            "record_sha256": "accbb9369a496c19b8e2cac237d2c4e4c1d559be57bdbf004d73b845084538e3",
+            "review_notes": [],
+            "source_attribution": "Wikipedia contributors",
+            "source_catalog_metadata": {
+              "law_number": 4
+            },
+            "source_id": "wiki-04",
+            "source_lines": [
+              195,
+              197
+            ],
+            "source_revision_id": "1384045144",
+            "source_revision_status": "reader footer ID; exact revision not independently fetched",
+            "source_revision_verified": false,
+            "source_url": "https://en.wikipedia.org/wiki/Kit_%28association_football%29",
+            "title": "手套、眼镜和护头装备"
+          }
+        ],
+        "configuration": {
+          "config/answer_evaluation.json": {
+            "path": "config/answer_evaluation.json",
+            "sha256": "283b98a40187a357a319db195ee1c535d518ae897b80ce38385fe67f581b031e",
+            "size_bytes": 1126
+          },
+          "config/answer_evaluation_system.txt": {
+            "path": "config/answer_evaluation_system.txt",
+            "sha256": "7441aac9b7f025ac006064b4d778d78ffb1f342f2fba7164567dfab1642aec5f",
+            "size_bytes": 1400
+          },
+          "config/citation_catalog_notes.json": {
+            "path": "config/citation_catalog_notes.json",
+            "sha256": "b5e7c10235454a08776dc47b5dcdcbbf383d4acfa887d98e125ce35af035e272",
+            "size_bytes": 1261
+          },
+          "config/dense_index.json": {
+            "path": "config/dense_index.json",
+            "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988",
+            "size_bytes": 1613
+          },
+          "config/reranker_experiment.json": {
+            "path": "config/reranker_experiment.json",
+            "sha256": "9b77781e8f32d886c5b15a6af852acd4ac95d534196406fde641bce079144062",
+            "size_bytes": 2468
+          },
+          "config/task13_app.json": {
+            "path": "config/task13_app.json",
+            "sha256": "68075020ed2444219bb41ef477aaa5344d8e57eb7ab75430fbeffe275fb915cc",
+            "size_bytes": 779
+          }
+        },
+        "error": null,
+        "indexes": {
+          "bm25_index": {
+            "path": "data/indexes/bm25/task13-title-body-v1/index_manifest.json",
+            "sha256": "5064ed9ae32b7f22465491ea0f719cb99f0a855434e06fbc89bcc59fe00ab142",
+            "size_bytes": 2485
+          },
+          "dense_index": {
+            "path": "data/indexes/task13/dense-v1/index_manifest.json",
+            "sha256": "b5034751debfeba49f7b954910aa956b9323f75082e6647f598f5eba57f40758",
+            "size_bytes": 11507
+          }
+        },
+        "new_formal_test_runs": 0,
+        "offered_ids": [
+          "L04-05",
+          "L12-02",
+          "L03-02",
+          "L03-04",
+          "L12-09"
+        ],
+        "private_trace": {
+          "path": ".runtime/task13/workers/bf3965e5d655484da77928db5c716d59.json",
+          "sha256": "e98213726acec2ae2f669b6600ccff630902912194f34abb778df5ec4f72e536",
+          "size_bytes": 92737
+        },
+        "profile": "task13-integrated-1.0",
+        "prompt_utf8_bytes": 5994,
+        "question": "按资料说明普通场上队员能否戴手套，并列出可核对的来源。",
+        "refusal_reason": null,
+        "retrieved_ids": [
+          "L04-05",
+          "L12-02",
+          "L03-02",
+          "L03-04",
+          "L12-09",
+          "L12-13",
+          "L08B-04",
+          "L13-03",
+          "L04-01",
+          "L03-03"
+        ],
+        "selected_ids": [
+          "L04-05"
+        ],
+        "status": "answered",
+        "timing": {
+          "generation_seconds": 1.3200529999994615,
+          "retrieval_seconds": 4.880248699999356,
+          "total_seconds": 6.211881399998674
+        },
+        "trace_id": "3d5bf9ddcbe74adaae8075fdf43f839a"
+      },
+      "source_and_license_links_visible": true,
+      "ui_event_sha256": "9e5abc4a3c1c07a8f643be6e948905e9b230acedddcfd93c725f8e37b902f36b",
+      "worker_wall_seconds": 13.888875199998438
+    },
+    {
+      "browser_answer_matches_actual_trace": true,
+      "browser_snapshot": {
+        "path": ".runtime/task13/ui-version.txt",
+        "sha256": "8828cd90ffe2dd010b9d4c8ad16054b81d365d4f2454a55666ea753628875f6d",
+        "size_bytes": 9881
+      },
+      "id": "version",
+      "passed": true,
+      "result": {
+        "answer_sha256": "4d4391ac83f3806f1a0704132d835b357e121b7014189179b624ec24e4d9f3ba",
+        "attempts": [],
+        "citations": [],
+        "configuration": {
+          "config/answer_evaluation.json": {
+            "path": "config/answer_evaluation.json",
+            "sha256": "283b98a40187a357a319db195ee1c535d518ae897b80ce38385fe67f581b031e",
+            "size_bytes": 1126
+          },
+          "config/answer_evaluation_system.txt": {
+            "path": "config/answer_evaluation_system.txt",
+            "sha256": "7441aac9b7f025ac006064b4d778d78ffb1f342f2fba7164567dfab1642aec5f",
+            "size_bytes": 1400
+          },
+          "config/citation_catalog_notes.json": {
+            "path": "config/citation_catalog_notes.json",
+            "sha256": "b5e7c10235454a08776dc47b5dcdcbbf383d4acfa887d98e125ce35af035e272",
+            "size_bytes": 1261
+          },
+          "config/dense_index.json": {
+            "path": "config/dense_index.json",
+            "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988",
+            "size_bytes": 1613
+          },
+          "config/reranker_experiment.json": {
+            "path": "config/reranker_experiment.json",
+            "sha256": "9b77781e8f32d886c5b15a6af852acd4ac95d534196406fde641bce079144062",
+            "size_bytes": 2468
+          },
+          "config/task13_app.json": {
+            "path": "config/task13_app.json",
+            "sha256": "68075020ed2444219bb41ef477aaa5344d8e57eb7ab75430fbeffe275fb915cc",
+            "size_bytes": 779
+          }
+        },
+        "error": null,
+        "indexes": {
+          "bm25_index": {
+            "path": "data/indexes/bm25/task13-title-body-v1/index_manifest.json",
+            "sha256": "5064ed9ae32b7f22465491ea0f719cb99f0a855434e06fbc89bcc59fe00ab142",
+            "size_bytes": 2485
+          },
+          "dense_index": {
+            "path": "data/indexes/task13/dense-v1/index_manifest.json",
+            "sha256": "b5034751debfeba49f7b954910aa956b9323f75082e6647f598f5eba57f40758",
+            "size_bytes": 11507
+          }
+        },
+        "new_formal_test_runs": 0,
+        "offered_ids": [],
+        "private_trace": {
+          "path": ".runtime/task13/workers/35704ee886d7433da7a835e810aabf58.json",
+          "sha256": "3c10f594d84441b24a8aeecc9bcbfd7ed526fcff2305aa62b16e5f56be091a1a",
+          "size_bytes": 2520
+        },
+        "profile": "task13-integrated-1.0",
+        "prompt_utf8_bytes": 0,
+        "question": "请核实2026/27赛季IFAB官方规则的现行有效性。",
+        "refusal_reason": "version_unverified",
+        "retrieved_ids": [],
+        "selected_ids": [],
+        "status": "refused",
+        "timing": {
+          "generation_seconds": 0.0,
+          "retrieval_seconds": 0.0,
+          "total_seconds": 0.006207599999470403
+        },
+        "trace_id": "cea9a50c968f47e68ce0904d637afbf7"
+      },
+      "source_and_license_links_visible": true,
+      "ui_event_sha256": "b6e74b3f952b9d749cb26229b3a29bb2f2a34e42db984fa60d0437bb8d2cd5d5",
+      "worker_wall_seconds": 8.188048600000911
+    }
+  ],
+  "scope": "Actual browser input/click actions, displayed answers and source links bound to saved worker traces; not human semantic judgments or quality measurements.",
+  "source_sha256": {
+    "scripts/capture_task13_ui.py": "e9fc2b2ece7121a300ac853576541e5247f48c111c051def04c4f7500b3f3663",
+    "scripts/run_integrated_rag.py": "5f1d6dfcf3a70de415124571ee8956ccc9a037e597c696d5fabf448c841ca62f",
+    "scripts/task13_pipeline.py": "c38aca33f5a29acc54e90dd519bd5ab48e567a2dd26d64f3cf027e79c8c8cb08",
+    "scripts/task13_worker_client.py": "e8fed8c4158cc5d979b523dbd735cd21a4b496fbbf058a78a9822641f9b306f8"
+  },
+  "status": "PASS",
+  "total": 5,
+  "ui_journal": {
+    "path": ".runtime/task13/ui-events.jsonl",
+    "sha256": "1be16555d2cbcc538adbb4b38338b061502d87c3c53566f3d216f2008aff4fb4",
+    "size_bytes": 2471
+  },
+  "url": "http://127.0.0.1:7866/",
+  "version": "task13-ui-demo-1.0"
+}

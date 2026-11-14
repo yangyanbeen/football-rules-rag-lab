@@ -1,0 +1,14 @@
+{
+  "captured_at": "2026-11-14T13:56:56.172480+00:00",
+  "command": "uv export --offline --locked --no-dev --package kotaemon --package ktem --no-emit-workspace --python <task13 Python> --project third_party/kotaemon-v0.12.0 --cache-dir .cache/uv --no-header --no-annotate --output-file <new path>",
+  "exact_offline_reexport_matches": true,
+  "requirements": {
+    "path": "infra/task13-runtime-requirements.txt",
+    "sha256": "416de02fcd85e9df3be6e906d85dfeab57f27be7cfa4069f910ddd8ec74916a6",
+    "size_bytes": 257427
+  },
+  "status": "PASS",
+  "upstream_commit": "9ad3e4e49aa35b8acddd235918a5d9753c1cfdf9",
+  "upstream_uv_lock_sha256": "cead56f491c1c35464ae7fdd4898dc8d5bd4f2a2e848d55627507d49c85b919f",
+  "version": "task13-requirements-1.0"
+}

@@ -400,3 +400,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 ## TASK-012-HUMAN-ACCEPTANCE
 
 基线c6cf77c。读取用户真实逐题提交12题、13条账本（含一次修订），AI先给过建议，不能称独立盲审或专家标注。人审要点21/27、引用9/20、条件21/27；样本错误拒答2/12，不可回答0题故正确拒答null。原50题AI结果及正式test账本保持。新增标准库独立算术、错误清单及编目显示防护，L03-02/04不再在派生预览中冒充官方第3条，旧正文和正式答案不改。28/28新专项、公开21/21、原53/53及原严格完整26/26实际通过，人审缺口关闭。新模型请求0、正式test重跑0；第23实验对象登记，22旧对象/标签保全，详见TASK_12_FINAL_ACCEPTANCE。
+
+
+## TASK-013-INTEGRATED-DELIVERY（2026-11-14）
+
+基线10897ade，运行包源d1c2a630f4ac6f1051743b3b3888f8c27abba7d6。新Python3.10.22隔离环境262包、固定上游uv.lock逐字hash导出；61文件/99段在真实干净公开副本导入，新Dense1024维和BM25 title_body索引实际重建，原数据与索引不覆盖。新增7866 Kotaemon通过独立进程接通RRF60/BGE Top40/固定Qwen完整证据选择、引用编号显示保护和来源/署名/许可。后端5/5、实际浏览器5/5、45/45边界合同、Python -S公开28/28及21/21。原任务12完整26/26在追加第24实验前复验。首次TEMP editable安装失败保留，新目录重试成功。
+
+实际33次Embedding请求107输入、8次答案尝试、320pair；0正式test重跑、0新人工判断。原23实验对象/标签和质量负收益保留。新增清单、安装/导入/重建/启动/评测/回滚、许可说明，最终完整门禁见TASK_13_DELIVERY及task13目录。只保证本机Windows已记录资源下复现，不宣称全新下载、Docker、跨平台、生产SLA或答案提升。
+
+任务13最终完整本机39/39、真实干净公开副本Python -S完整33/33通过，task13_fully_accepted=true；最终本机复验用delivery-final新文件，既有回执保持。版本v0.13.0-integrated-delivery，实际发布SHA以Git标签/合并历史为准。

@@ -1,0 +1,232 @@
+{
+  "bm25_index": {
+    "path": "data/indexes/bm25/task13-title-body-v1/index_manifest.json",
+    "sha256": "5064ed9ae32b7f22465491ea0f719cb99f0a855434e06fbc89bcc59fe00ab142",
+    "size_bytes": 2485
+  },
+  "bm25_seconds": 1.746339600002102,
+  "completed_at": "2026-11-14T13:42:55.193942+00:00",
+  "configuration": {
+    "config/answer_evaluation.json": {
+      "path": "config/answer_evaluation.json",
+      "sha256": "283b98a40187a357a319db195ee1c535d518ae897b80ce38385fe67f581b031e",
+      "size_bytes": 1126
+    },
+    "config/answer_evaluation_system.txt": {
+      "path": "config/answer_evaluation_system.txt",
+      "sha256": "7441aac9b7f025ac006064b4d778d78ffb1f342f2fba7164567dfab1642aec5f",
+      "size_bytes": 1400
+    },
+    "config/citation_catalog_notes.json": {
+      "path": "config/citation_catalog_notes.json",
+      "sha256": "b5e7c10235454a08776dc47b5dcdcbbf383d4acfa887d98e125ce35af035e272",
+      "size_bytes": 1261
+    },
+    "config/dense_index.json": {
+      "path": "config/dense_index.json",
+      "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988",
+      "size_bytes": 1613
+    },
+    "config/reranker_experiment.json": {
+      "path": "config/reranker_experiment.json",
+      "sha256": "9b77781e8f32d886c5b15a6af852acd4ac95d534196406fde641bce079144062",
+      "size_bytes": 2468
+    },
+    "config/task13_app.json": {
+      "path": "config/task13_app.json",
+      "sha256": "68075020ed2444219bb41ef477aaa5344d8e57eb7ab75430fbeffe275fb915cc",
+      "size_bytes": 779
+    }
+  },
+  "dense_index": {
+    "path": "data/indexes/task13/dense-v1/index_manifest.json",
+    "sha256": "b5034751debfeba49f7b954910aa956b9323f75082e6647f598f5eba57f40758",
+    "size_bytes": 11507
+  },
+  "dense_seconds": 45.15265680000084,
+  "dimensions": 1024,
+  "embedding_batches": [
+    {
+      "elapsed_seconds": 4.965739100000064,
+      "inputs": 4,
+      "prompt_eval_count": 968,
+      "server_load_duration_ns": 2990967500,
+      "server_total_duration_ns": 4869740100
+    },
+    {
+      "elapsed_seconds": 2.0033994000004895,
+      "inputs": 4,
+      "prompt_eval_count": 1026,
+      "server_load_duration_ns": 8286900,
+      "server_total_duration_ns": 1936003400
+    },
+    {
+      "elapsed_seconds": 1.3705482999976084,
+      "inputs": 4,
+      "prompt_eval_count": 664,
+      "server_load_duration_ns": 7646800,
+      "server_total_duration_ns": 1275137300
+    },
+    {
+      "elapsed_seconds": 1.3732512000024144,
+      "inputs": 4,
+      "prompt_eval_count": 650,
+      "server_load_duration_ns": 9191100,
+      "server_total_duration_ns": 1267101800
+    },
+    {
+      "elapsed_seconds": 1.1186199000003398,
+      "inputs": 4,
+      "prompt_eval_count": 525,
+      "server_load_duration_ns": 8508700,
+      "server_total_duration_ns": 1045345000
+    },
+    {
+      "elapsed_seconds": 1.4397203000007721,
+      "inputs": 4,
+      "prompt_eval_count": 708,
+      "server_load_duration_ns": 13752100,
+      "server_total_duration_ns": 1359084100
+    },
+    {
+      "elapsed_seconds": 1.4692793000031088,
+      "inputs": 4,
+      "prompt_eval_count": 735,
+      "server_load_duration_ns": 9030000,
+      "server_total_duration_ns": 1381217800
+    },
+    {
+      "elapsed_seconds": 1.604631000001973,
+      "inputs": 4,
+      "prompt_eval_count": 804,
+      "server_load_duration_ns": 9665100,
+      "server_total_duration_ns": 1511854600
+    },
+    {
+      "elapsed_seconds": 1.5984957999971812,
+      "inputs": 4,
+      "prompt_eval_count": 696,
+      "server_load_duration_ns": 10124600,
+      "server_total_duration_ns": 1483536000
+    },
+    {
+      "elapsed_seconds": 1.7309913999997661,
+      "inputs": 4,
+      "prompt_eval_count": 791,
+      "server_load_duration_ns": 9747500,
+      "server_total_duration_ns": 1609286600
+    },
+    {
+      "elapsed_seconds": 1.500961699999607,
+      "inputs": 4,
+      "prompt_eval_count": 717,
+      "server_load_duration_ns": 10621900,
+      "server_total_duration_ns": 1408578300
+    },
+    {
+      "elapsed_seconds": 1.8586916999993264,
+      "inputs": 4,
+      "prompt_eval_count": 917,
+      "server_load_duration_ns": 11066400,
+      "server_total_duration_ns": 1747852400
+    },
+    {
+      "elapsed_seconds": 1.180814499999542,
+      "inputs": 4,
+      "prompt_eval_count": 550,
+      "server_load_duration_ns": 8860400,
+      "server_total_duration_ns": 1074659800
+    },
+    {
+      "elapsed_seconds": 1.6177916000015102,
+      "inputs": 4,
+      "prompt_eval_count": 726,
+      "server_load_duration_ns": 7563300,
+      "server_total_duration_ns": 1486084900
+    },
+    {
+      "elapsed_seconds": 1.5538841999987199,
+      "inputs": 4,
+      "prompt_eval_count": 713,
+      "server_load_duration_ns": 9816500,
+      "server_total_duration_ns": 1466695800
+    },
+    {
+      "elapsed_seconds": 1.8317672000011953,
+      "inputs": 4,
+      "prompt_eval_count": 842,
+      "server_load_duration_ns": 9694500,
+      "server_total_duration_ns": 1740890100
+    },
+    {
+      "elapsed_seconds": 1.493042099999002,
+      "inputs": 4,
+      "prompt_eval_count": 734,
+      "server_load_duration_ns": 7977200,
+      "server_total_duration_ns": 1393014400
+    },
+    {
+      "elapsed_seconds": 1.2857987999996112,
+      "inputs": 4,
+      "prompt_eval_count": 643,
+      "server_load_duration_ns": 11270000,
+      "server_total_duration_ns": 1223835700
+    },
+    {
+      "elapsed_seconds": 1.4290703000006033,
+      "inputs": 4,
+      "prompt_eval_count": 712,
+      "server_load_duration_ns": 10132300,
+      "server_total_duration_ns": 1326867400
+    },
+    {
+      "elapsed_seconds": 1.6161725999991177,
+      "inputs": 4,
+      "prompt_eval_count": 759,
+      "server_load_duration_ns": 8529500,
+      "server_total_duration_ns": 1503267600
+    },
+    {
+      "elapsed_seconds": 1.7006241000017326,
+      "inputs": 4,
+      "prompt_eval_count": 819,
+      "server_load_duration_ns": 9542200,
+      "server_total_duration_ns": 1621468600
+    },
+    {
+      "elapsed_seconds": 1.367037200001505,
+      "inputs": 4,
+      "prompt_eval_count": 651,
+      "server_load_duration_ns": 9417100,
+      "server_total_duration_ns": 1284235300
+    },
+    {
+      "elapsed_seconds": 1.4124703999987105,
+      "inputs": 4,
+      "prompt_eval_count": 680,
+      "server_load_duration_ns": 7677100,
+      "server_total_duration_ns": 1310183900
+    },
+    {
+      "elapsed_seconds": 1.5203879000000597,
+      "inputs": 4,
+      "prompt_eval_count": 746,
+      "server_load_duration_ns": 9477000,
+      "server_total_duration_ns": 1415492600
+    },
+    {
+      "elapsed_seconds": 0.9704980999995314,
+      "inputs": 3,
+      "prompt_eval_count": 462,
+      "server_load_duration_ns": 11238500,
+      "server_total_duration_ns": 894917100
+    }
+  ],
+  "new_formal_test_runs": 0,
+  "previous_indexes_overwritten": false,
+  "records": 99,
+  "started_at": "2026-11-14T13:42:00.168270+00:00",
+  "status": "PASS",
+  "vector_fingerprint": "1f709033daf4df83416da434f2b0f4b15181273c9465780e53977a050346fa07",
+  "version": "task13-index-rebuild-1.0"
+}

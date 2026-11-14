@@ -1,0 +1,16 @@
+{
+  "version": "task13-integrated-1.0",
+  "answer_policy": "config/answer_evaluation.json",
+  "retrieval_policy": "config/reranker_experiment.json",
+  "dense_policy": "config/dense_index.json",
+  "catalog_policy": "config/citation_catalog_notes.json",
+  "environment": ".runtime/task13/venv-final/Scripts/python.exe",
+  "dense_index": "data/indexes/task13/dense-v1",
+  "bm25_index": "data/indexes/bm25/task13-title-body-v1",
+  "corpus": "data/processed/rag_chunks_zh.jsonl",
+  "private_root": ".runtime/task13",
+  "ui": {"host": "127.0.0.1", "port": 7866, "share": false, "app_data": ".runtime/task13/kotaemon"},
+  "worker_timeout_seconds": 420,
+  "retrieval_method": "top40",
+  "scope": "Integrated fixed corpus demonstration; no new formal quality experiment or test tuning"
+}

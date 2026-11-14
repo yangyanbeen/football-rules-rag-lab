@@ -1,0 +1,39 @@
+{
+  "captured_at": "2026-11-14T14:14:53.238847+00:00",
+  "checks": {
+    "demonstration_not_formal_test_or_accuracy": true,
+    "five_actual_backend_cases_passed": true,
+    "fixed_top40_and_loopback_only_profile": true,
+    "query_not_silently_truncated": true,
+    "reject_config_bool_timeout": true,
+    "reject_config_dense_path_escape": true,
+    "reject_config_old_dense_index": true,
+    "reject_config_old_environment": true,
+    "reject_config_public_host": true,
+    "reject_config_sharing": true,
+    "reject_config_unknown_config": true,
+    "reject_config_wrong_corpus": true,
+    "reject_config_wrong_method": true,
+    "reject_config_wrong_model_policy": true,
+    "reject_config_wrong_port": true,
+    "reject_invalid_query_0": true,
+    "reject_invalid_query_1": true,
+    "reject_invalid_query_2": true,
+    "reject_invalid_query_3": true,
+    "reject_invalid_query_4": true,
+    "reject_invalid_query_5": true
+  },
+  "errors": [],
+  "new_model_requests": 0,
+  "passed": 21,
+  "private": false,
+  "scope": "Synthetic in-memory corruptions and existing integration traces; no new formal tests or human reviews.",
+  "source_sha256": {
+    "scripts/task13_core.py": "7acd80393418d2458816592d8db9d435ac08242b03e85c75864ab9ca86627ae7",
+    "scripts/task13_engine.py": "c3561ac32de26b2fe8859323413ebfea86389f924733b119b94341d6b86ad510",
+    "scripts/verify_task13_contract.py": "4f48fcae3dc2bd3615c3da457ed42e7365decfd3a83756e4682f294ed5faf1c4"
+  },
+  "status": "PASS",
+  "total": 21,
+  "version": "task13-contract-1.0"
+}

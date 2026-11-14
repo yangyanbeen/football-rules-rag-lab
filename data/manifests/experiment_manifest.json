@@ -4652,7 +4652,173 @@
         }
       ],
       "artifact_policy": "Original22 objects, frozen answers, prior0/12 snapshot and raw human ledger preserved. Final gates/prose excluded from own recursive hashes; global manifest covers final public files."
+    },
+    {
+      "id": "TASK-013-INTEGRATED-DELIVERY",
+      "objective": "Integrate fixed local corpus and dev-selected hybrid reranking into an isolated reproducible Kotaemon application",
+      "baseline_commit": "10897adeee92841c22b1f83992b4ee6c5abdae70",
+      "source_commit": "d1c2a630f4ac6f1051743b3b3888f8c27abba7d6",
+      "source_sha256": {
+        "config/task13_app.json": "68075020ed2444219bb41ef477aaa5344d8e57eb7ab75430fbeffe275fb915cc",
+        "config/task13_demo.json": "7da5527493dc565060e48878d977e180a102750faaac68d7b451b8d9020fc205",
+        "frontend/start_integrated_rag.ps1": "80ae6b570c7d60b6605a15cf4578426bdb3d609b5dfdfce11683a0eebd99f81e",
+        "scripts/capture_task13_ui.py": "e9fc2b2ece7121a300ac853576541e5247f48c111c051def04c4f7500b3f3663",
+        "scripts/prepare_task13_environment.py": "24472fa4db706bf3df6034a76fff7c4400d02bcf29624130d9ccfafccd06d842",
+        "scripts/query_task13.py": "5a90391a4916264f108ff404d33e0e7ec1c392a7790a6226c66f536ee751de01",
+        "scripts/run_integrated_rag.py": "5f1d6dfcf3a70de415124571ee8956ccc9a037e597c696d5fabf448c841ca62f",
+        "scripts/run_task13_demo.py": "a628e2b9786884552772abca7bfeb6cf26203a70b8bb0865e0c055dbd4daff4f",
+        "scripts/task13_core.py": "7acd80393418d2458816592d8db9d435ac08242b03e85c75864ab9ca86627ae7",
+        "scripts/task13_engine.py": "c3561ac32de26b2fe8859323413ebfea86389f924733b119b94341d6b86ad510",
+        "scripts/task13_package.py": "423b0d4870fca4ae3b6d349facbe48abcfad5716d02eadf4880c3e2c8055fec7",
+        "scripts/task13_pipeline.py": "c38aca33f5a29acc54e90dd519bd5ab48e567a2dd26d64f3cf027e79c8c8cb08",
+        "scripts/task13_replay.py": "c106b1971ad49538200e2062bd53d4f3ba2f569e7efe6b6263c33472bae49044",
+        "scripts/task13_resources.py": "531b72e2a13bc72b5cef0b673f4c5eb4eeb615fe1145c4059dee78fdfe634493",
+        "scripts/task13_worker_client.py": "e8fed8c4158cc5d979b523dbd735cd21a4b496fbbf058a78a9822641f9b306f8",
+        "scripts/verify_task13_contract.py": "4f48fcae3dc2bd3615c3da457ed42e7365decfd3a83756e4682f294ed5faf1c4",
+        "scripts/verify_task13_delivery.py": "eaf06dd72b61638f494f92f1148b09274315afc53c23199fdb9348bee5b7cc8f",
+        "scripts/verify_task13_public_cases.py": "7c5d43a2a3370fa7caca782ecf11af66d773c73e4bd86b9afcc7789363309686"
+      },
+      "formal_test_runs_added": 0,
+      "new_human_judgments": 0,
+      "ad_hoc_backend_examples": 5,
+      "actual_browser_examples": 5,
+      "fresh_environment_packages": 262,
+      "corpus_records": 99,
+      "resource_accounting": {
+        "embedding_requests": 33,
+        "embedding_inputs": 107,
+        "answer_model_attempts": 8,
+        "reranker_pairs": 320
+      },
+      "artifacts": [
+        {
+          "path": "config/task13_app.json",
+          "size_bytes": 779,
+          "sha256": "68075020ed2444219bb41ef477aaa5344d8e57eb7ab75430fbeffe275fb915cc"
+        },
+        {
+          "path": "config/task13_demo.json",
+          "size_bytes": 1229,
+          "sha256": "7da5527493dc565060e48878d977e180a102750faaac68d7b451b8d9020fc205"
+        },
+        {
+          "path": "docs/TASK_13_LICENSES.md",
+          "size_bytes": 2455,
+          "sha256": "8692ce592592c545c94fa32acf6ac2e5aca3ca204fb5c824fd8a99e92986c281"
+        },
+        {
+          "path": "docs/TASK_13_REPRODUCTION.md",
+          "size_bytes": 9362,
+          "sha256": "f9eb2007fd28166fe64cd773387b19af480088ad4becd4e50373e6dd8dff04e9"
+        },
+        {
+          "path": "docs/TASK_13_SCOPE.md",
+          "size_bytes": 2420,
+          "sha256": "673fdb17a9cfbd13b6913391cab264bfab29b8ac06ec0213b5548ff08d46a4a5"
+        },
+        {
+          "path": "frontend/start_integrated_rag.ps1",
+          "size_bytes": 495,
+          "sha256": "80ae6b570c7d60b6605a15cf4578426bdb3d609b5dfdfce11683a0eebd99f81e"
+        },
+        {
+          "path": "infra/task13-runtime-requirements.txt",
+          "size_bytes": 257427,
+          "sha256": "416de02fcd85e9df3be6e906d85dfeab57f27be7cfa4069f910ddd8ec74916a6"
+        },
+        {
+          "path": "reports/task13/backend-demo-first.json",
+          "size_bytes": 27001,
+          "sha256": "99bbc32724bfc138e2b68a8728de21fce45cc4765997fcdc73448c7586d0cfa8"
+        },
+        {
+          "path": "reports/task13/clean-corpus-import.json",
+          "size_bytes": 4496,
+          "sha256": "28ef30506eaf51372878cb5aaa9bfaa9d510b3dc6fe95fb82b8cf2f765e9fd68"
+        },
+        {
+          "path": "reports/task13/contract-clean-public.json",
+          "size_bytes": 1534,
+          "sha256": "238bd2a57889c6b11934ee46a25e5a31fdd82ae68a1f08d77a09eddd05c58f8b"
+        },
+        {
+          "path": "reports/task13/contract-final.json",
+          "size_bytes": 2661,
+          "sha256": "e6c7888c00d8ffe04dad5306c3365d5e8e79a312d64926de04808ebdd79c056c"
+        },
+        {
+          "path": "reports/task13/contract-first.json",
+          "size_bytes": 2661,
+          "sha256": "324424a890387f7f4a77113bd1b0b168f8cda9e514040829f9df5c9ecf0f6643"
+        },
+        {
+          "path": "reports/task13/corpus-import.json",
+          "size_bytes": 4350,
+          "sha256": "6d9deda5c63fdab6cefdf2ac8346336612fbaf7081a6b77ae3c323120a358b1e"
+        },
+        {
+          "path": "reports/task13/delivery_manifest.json",
+          "size_bytes": 36266,
+          "sha256": "b9c86974527826e15a2feef74dbb3d8bb0208f4787ce34e0f608f4d0775f150e"
+        },
+        {
+          "path": "reports/task13/environment-final.json",
+          "size_bytes": 9462,
+          "sha256": "29455f2f7c7cd4533553b9d9ae46124c25cc1095563f15fcf3794477a56c61da"
+        },
+        {
+          "path": "reports/task13/environment.json",
+          "size_bytes": 824,
+          "sha256": "f995b3695e5af551de8d867be60f0fc1090c0a18fe651fb3d58fb16f88ef6501"
+        },
+        {
+          "path": "reports/task13/index-rebuild.json",
+          "size_bytes": 7011,
+          "sha256": "d908b7754e7c9282f8279357ca6f5f36e27a207084d2c384d3743376a2a62e6e"
+        },
+        {
+          "path": "reports/task13/preflight.json",
+          "size_bytes": 11221,
+          "sha256": "087272a5aafb509d5be7ba2837f58b5811423b0389a62a8f0c91e4124b9d7314"
+        },
+        {
+          "path": "reports/task13/prior-task12.json",
+          "size_bytes": 2614,
+          "sha256": "e0760fe075d32659aefec0dcb77bacbe2f76252040ea90fef1b5a758a373ae0a"
+        },
+        {
+          "path": "reports/task13/public-cases-clean.json",
+          "size_bytes": 1625,
+          "sha256": "8f187441a9ec349f826a0d631cd14bcad95bda8dd22ba96824b537e72cc0f022"
+        },
+        {
+          "path": "reports/task13/public-cases-current.json",
+          "size_bytes": 1527,
+          "sha256": "9fa3f642a8e4f53d7acd44880cb4fdf795056b48cc4e8917d332d11c76d83d22"
+        },
+        {
+          "path": "reports/task13/public-cases-first.json",
+          "size_bytes": 1527,
+          "sha256": "7462447336ae06667759029863d8c555ff4ec330c271d621d90b86f80384064b"
+        },
+        {
+          "path": "reports/task13/requirements-provenance.json",
+          "size_bytes": 750,
+          "sha256": "8e671b9f3b764b77bb1aca375b53f39f796254e6b345a63665fbb1e5145251b6"
+        },
+        {
+          "path": "reports/task13/resource-accounting.json",
+          "size_bytes": 1004,
+          "sha256": "eadecc23e182974e7f10cb452e4f4ca7d80f178ed76c0f2c836b4f3405a0f2d7"
+        },
+        {
+          "path": "reports/task13/ui-demo.json",
+          "size_bytes": 27910,
+          "sha256": "571a7dab82c66833d61e89447c1c4c62eeda6318c1192ae5fe6280af30892904"
+        }
+      ],
+      "artifact_policy": "Original23 experiment objects remain identical. Runtime package freezes committed sources/config/docs and ten completed receipts. Final delivery prose/gates/global registry and manifest excluded from own artifact hashes to avoid cycles; final global file manifest covers them."
     }
   ],
-  "last_updated_at": "2026-11-14T13:17:57.042334+00:00"
+  "last_updated_at": "2026-11-14T14:19:20.963570+00:00"
 }

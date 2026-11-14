@@ -1,0 +1,35 @@
+{
+  "error": "RuntimeError: Pinned install failed; private log .runtime/task13/environment-install/install-1794663184882926400.log",
+  "failed_at": "2026-11-14T13:34:10.339293+00:00",
+  "operations": [
+    {
+      "exit_code": 0,
+      "operation": [
+        "venv",
+        "--offline"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "operation": [
+        "pip",
+        "install"
+      ]
+    },
+    {
+      "exit_code": 1,
+      "operation": [
+        "pip",
+        "install"
+      ]
+    }
+  ],
+  "private_log": {
+    "path": ".runtime/task13/environment-install/install-1794663184882926400.log",
+    "sha256": "83df19cefe85d51bf866cbc239ac99c358da7ad4603d44d0e0ca2f116b77153f",
+    "size_bytes": 9584
+  },
+  "started_at": "2026-11-14T13:33:04.882926+00:00",
+  "status": "FAIL",
+  "version": "task13-environment-1.0"
+}
