@@ -1,0 +1,26 @@
+{
+  "captured_at": "2026-11-14T08:30:58.859991+00:00",
+  "checks": {
+    "21st_experiment_real_source_commit_and_native_hashes": true,
+    "actual_pinned_answer_and_embedding_models_observed_on_cpu": true,
+    "all90_complete_local_answers_and_review_html_delivered": true,
+    "arithmetic-final.json_all_actual_checks_pass": true,
+    "contract-final.json_all_actual_checks_pass": true,
+    "delivery-complete.json_all_actual_checks_pass": true,
+    "dev_and_test_identical_production_metrics_prompts_and_policy": true,
+    "four_real_or_explicit_synthetic_robustness_probes": true,
+    "human_accuracy_not_fabricated": true,
+    "independent_public_checkout_no_models_and_no_new_inference": true,
+    "original20_git_tags_unchanged_locally": true,
+    "prior-task11-regression.json_all_actual_checks_pass": true,
+    "public-complete.json_all_actual_checks_pass": true
+  },
+  "delivery_scope": "Automated answer evaluation and review-ready artifacts; human semantic acceptance remains pending without actual decisions",
+  "errors": [],
+  "new_model_requests": 0,
+  "passed": 13,
+  "source_sha256": "aa6684fdcb6837ae54d99ab67519b3b5a214883e6fc1e794bab0b71033592c9a",
+  "status": "PASS",
+  "total": 13,
+  "version": "answer-release-gate-1.0"
+}

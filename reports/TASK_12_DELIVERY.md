@@ -1,0 +1,74 @@
+# 任务十二：回答、引用和拒答评测交付
+
+日期：2026-11-14；基线`9c6f5a4a4b7b60511d948c3ae056400fa48327a6`；分支`feat/task-12-answer-evaluation`；冻结测试生产提交`9f1ab7ce63de97805f99208e370a9ab1f1eaa127`；拟发布版本`v0.12.0-answer-evaluation`，最终合并/标签以GitHub记录为准。
+
+**自动评测及可审核材料交付；新回答的12题人工语义复核仍待完成。不能标作人工语义验收全部通过。** 原技术文档引用指标要求人工抽样，当前提供方法、绑定实际答案的抽样与审核界面，不伪造人审记录。
+
+## 原基线逐项对应
+
+| 原要求 | 本轮交付 |
+| --- | --- |
+| 可运行RAG B0和最佳检索输入 | 原任务六B0与页面不改；独立适配器采用任务十dev选定Top40，原99段及索引只读 |
+| 任务四答案标签 | 原90题标签/人工凭证/开发测试分割/所有原文件原字节保留 |
+| 证据范围和引用 | 只输出已提供完整原段，确定性URL/规则号/行号/许可/版本/校核提示；逐字和来源身份另核验 |
+| 无答案/冲突/版本/相似证据 | 四种实际或明确合成探针4/4；合成冲突不是足球规则质量样本 |
+| 答案评测脚本 | run_answer_evaluation.py、answer_eval_core/engine、结构解码、独立算术与本机/公开/发布检查 |
+| answer_quality_results.json | 真实dev40/test50、五项分子分母、模型/参数/判断性质、错误逐题保留 |
+| 逐题答案与引用 | 公共predictions/judgments/summary/error_analysis；全部90题完整答案、来源正文和原响应在本机.runtime/task12 |
+| 错误分析与ANSWER_EVALUATION.md | 本报告、逐题错误文件、度量公式/人工方法/数据版本/复算命令及限制 |
+| 人工方法和样本数 | 原标签批准90；新回答人工0，固定12题待复核，不能混算或把旧批准当本次答案正确 |
+
+## 实测五项指标
+
+| 指标 | dev40 | test50 |
+| --- | --- | --- |
+| 答案要点覆盖率（AI） | 40/72 = 55.56% | 40/100 = 40.00% |
+| 引用正确率（AI） | 21/49 = 42.86% | 22/71 = 30.99% |
+| 条件/例外保留率（AI） | 51/72 = 70.83% | 56/100 = 56.00% |
+| 正确拒答率 | 8/8 = 100.00% | 10/10 = 100.00% |
+| 错误拒答率 | 6/32 = 18.75% | 5/40 = 12.50% |
+
+dev可回答32/必须拒答8；test可回答40/必须拒答10。答案与评分模型均为固定Qwen2.5:3b；前三项实际作答由同一小模型AI语义评分，拒答确定性未覆盖。后两项按冻结标签/实际状态判断。**以上不是人工或裁判专家准确率**，模型可能共同误判，引用身份真实也不等于内容相关。
+
+dev运行错误1、自动评分错误0；test运行错误0、自动评分错误0。错误拒答含运行失败；运行失败不奖励为正确拒答。完整正式运行共88次答案模型请求、61次评分请求；其余拒答评分未调用模型，不虚构节省前后的性能对照。
+
+测试错误拒答：T001, T009, T015, T017, T034；资料外误答：无；AI判定含不支持引用的题：T003, T004, T005, T006, T007, T008, T010, T011, T013, T014, T016, T018, T019, T020, T021, T023, T024, T025, T026, T027, T028, T030, T031, T032, T033, T035, T036, T037, T038, T039, T040。逐项遗漏要点、条件和引用ID见test/error_analysis.json。语义判断也可能错，人工审核须回看全文，不能照抄AI结果。
+
+## 开发缺陷与保留记录
+
+1. 初始声明了不存在的dev.jsonl/test.jsonl，预检查在进入运行前拒绝；改用原retrieval_dev/test，没有改标签。
+2. 模型尚未加载时采集CPU驻留失败，dev-before-warmup保留0题失败；改为非评测检索预热后观察环境。
+3. 合法L08A/L08B ID被过窄正则拒绝，dev-before-id-fix保留1条公开/2份完整实际结果；兼容真实ID并全量来源绑定。
+4. 自由JSON开发全40题完成但32条评分无效，完整保存在dev-before-structured；不能把18.06%等失败阶段数值当最终有效质量。采用实际JSON Schema约束数组长度、必填理由和回答/拒答分支后重新完成dev。
+5. 原拒答探针仅3/4通过，1项失败，保留probes-before-branch.json；修复false分支携带多余ID后4/4。拒答确定性计分，不再浪费模型调用。所有归档旧逻辑路径由development_archive_map.json映射到私有归档，不指向新结果冒充旧原始记录。
+
+## 验收、保全和版本
+
+开发结束后提交结果与授权，再执行一次test，独立账本仅STARTED/COMPLETED。旧测试已用过，本轮不称未见holdout；未依据测试修改提示、标签、预算或重测。最终检查记录位于acceptance：contract-final、arithmetic-final、delivery-complete、public-complete、release-final；尚未运行的检查不预写通过。检查通过只能证明其对应工程/复算范围，不能证明人工语义验收。
+
+667原公开文件除允许的当前导航/实验索引外保全；原技术设计/执行/上游锁与任务1—11报告不变。20原实验对象保持，新注册第21项；日志/CSV/简历只追加。61原语料、25索引、父子派生语料、旧人审账本及178原工程静态文件另核验。所有20旧标签保持，仅指定football-rules-rag-lab新分支/PR/标签发布；其他既有仓库不写入。
+
+当前页面仍是原B0，本轮只交付独立适配器与评测，不宣称检索提升带来答案提升。没有测量B0正式答案对照、QPS、生产SLA、专家规则正确率或人工满意度。负面结果不隐藏，后续改进应另开新实验，不改本次test。
+
+## 用户查看入口
+
+公共：[正式汇总](answer_quality_results.json)、[指标方法](../docs/ANSWER_EVALUATION.md)、[逐题错误](answer_evaluation/test/error_analysis.json)、[待人审12题](answer_evaluation/human_review_sample.json)。
+
+本机完整90题：`.runtime/task12/all_answers.html`；人工12题静态材料：`.runtime/task12/human_review.html`；实际逐题审核服务：`scripts/serve_answer_review.py --port 7864`。只有本人逐题提交的判断才追加到新人工账本；原标签人审与本轮新回答评分分开。
+
+
+## 最终实际工程验收记录
+
+| 范围 | 实际检查 | 证据 |
+| --- | --- | --- |
+| 专项回归和已保存结果重放 | 42/42 PASS | [记录](answer_evaluation/acceptance/contract-final.json) |
+| 独立算术 | 19/19 PASS | [记录](answer_evaluation/acceptance/arithmetic-final.json) |
+| 完整本机交付 | 20/20 PASS | [记录](answer_evaluation/acceptance/delivery-complete.json) |
+| Python -S独立公开副本 | 24/24 PASS | [记录](answer_evaluation/acceptance/public-complete.json) |
+| 发布前本机门禁 | 13/13 PASS | [记录](answer_evaluation/acceptance/release-final.json) |
+| 原任务十一回归（累计20实验时） | 31/31 PASS | [记录](answer_evaluation/acceptance/prior-task11-regression.json) |
+| 人工页面准备及无效提交拒绝 | 10/10 PASS | [记录](answer_evaluation/evidence/human_review_ready.json) |
+
+公开24/24包含19种故意错误拒绝及完整公开15/15门禁，0次新推理；四类真实/明确合成探针4/4。页面10/10仅证明可审核、无默认勾选和无效提交不会落账，**不算10份或12份人工判断**。发布前13/13在新标签创建前执行；发布后复验用delivery/public入口。
+
+以上工程通过与低质量AI分数同时保留。新回答人工样本仍为0/12；人工语义验收尚未完成，不把程序PASS当人审PASS。完整90题本地答案已交付，固定测试没有重测。

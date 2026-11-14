@@ -1,0 +1,29 @@
+{
+  "version": "answer-evaluation-1.0",
+  "retrieval_method": "top40",
+  "retrieval_selection_source": "reports/reranker_results.json",
+  "input_utf8_byte_budget": 6200,
+  "chat_template_token_reserve": 512,
+  "max_context_chunks": 5,
+  "max_selected_chunks": 3,
+  "max_generation_attempts": 2,
+  "prompt_file": "config/answer_evaluation_system.txt",
+  "judge_prompt_file": "config/answer_evaluation_judge.txt",
+  "llm": {
+    "name": "qwen2.5:3b",
+    "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+    "ollama_version": "0.40.16",
+    "num_ctx": 8192,
+    "num_predict": 1024,
+    "num_gpu": 0,
+    "num_thread": 8,
+    "temperature": 0,
+    "seed": 42,
+    "keep_alive": "10m",
+    "timeout_seconds": 180
+  },
+  "judge_kind": "AI semantic assessment, same pinned small model, no new human adjudication",
+  "quality_threshold": "report all outcomes; no fabricated accuracy target",
+  "formal_samples": {"dev": 40, "test": 50},
+  "human_sampling": "12 deterministic test samples: all refusals/errors first, then remaining IDs; source/point/citation/condition review, independent of AI grade"
+}

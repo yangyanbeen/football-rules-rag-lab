@@ -1,0 +1,25 @@
+{
+  "capture_source_sha256": "efcd4d1f0766b8f37c0cea7fc67c367a8606e5d7e286eb49116bf58f09da07ba",
+  "captured_at": "2026-11-14T07:36:34.484885+00:00",
+  "endpoint": "http://127.0.0.1:11434/api/ps",
+  "models": [
+    {
+      "context_length": 8192,
+      "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "name": "qwen2.5:3b",
+      "size": 2420574780,
+      "size_vram": 0
+    },
+    {
+      "context_length": 8192,
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+      "name": "bge-m3:latest",
+      "size": 1244166879,
+      "size_vram": 0
+    }
+  ],
+  "ollama_version": "0.40.16",
+  "phase": "Actual development answer inference in progress",
+  "raw_packet_sha256": "c803d0e56dbc3302378b2fe22021f8a1ff705fd1c5b749753759fdedb5b9c154",
+  "source_commit": "9e78412f4826e73f202c57c5a1d444199080b8c2"
+}

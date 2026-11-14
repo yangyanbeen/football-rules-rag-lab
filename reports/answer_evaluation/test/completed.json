@@ -1,0 +1,39 @@
+{
+  "artifacts": {
+    "environment.json": {
+      "path": "reports/answer_evaluation/test/environment.json",
+      "sha256": "b0f5210e3176c3298cef2b246e9ec9c602f8e6d2008699f5b66a02a77187c839",
+      "size_bytes": 52212
+    },
+    "error_analysis.json": {
+      "path": "reports/answer_evaluation/test/error_analysis.json",
+      "sha256": "a51726bf99c812d246fe2b068e84c014f35180b8cb57d68a1f3267701beb8b64",
+      "size_bytes": 34790
+    },
+    "judgments.jsonl": {
+      "path": "reports/answer_evaluation/test/judgments.jsonl",
+      "sha256": "57db3dd17deb9a98da941da35676812af582ee29bc3354ee28235ce0688a3ace",
+      "size_bytes": 26638
+    },
+    "predictions.jsonl": {
+      "path": "reports/answer_evaluation/test/predictions.jsonl",
+      "sha256": "e1855e74402bfe6c44d24b2affe0f5b7a0c8e48c7de839b05f2bdcf3b2da21d7",
+      "size_bytes": 120708
+    },
+    "run_started.json": {
+      "path": "reports/answer_evaluation/test/run_started.json",
+      "sha256": "8c5c2267267d0b2dcbe5212b9a1d0d1f469d1e1808cb29ef6798d14e5b51dfd4",
+      "size_bytes": 32159
+    },
+    "summary.json": {
+      "path": "reports/answer_evaluation/test/summary.json",
+      "sha256": "5d3f76635be35a266de16fcea4af452cbe772fa2dfef2fdab2eb91b704348581",
+      "size_bytes": 45311
+    }
+  },
+  "completed_at": "2026-11-14T08:23:35.084443+00:00",
+  "event": "COMPLETED",
+  "samples": 50,
+  "source_commit": "9f1ab7ce63de97805f99208e370a9ab1f1eaa127",
+  "split": "test"
+}

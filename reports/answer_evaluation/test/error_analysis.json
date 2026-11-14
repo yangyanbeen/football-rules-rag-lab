@@ -1,0 +1,1061 @@
+{
+  "cases": [
+    {
+      "answerable": true,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 1,
+      "correct_refusal": false,
+      "false_refusal": true,
+      "judge_error": false,
+      "judge_reason": "实际受控拒答没有展示规则要点、条件或引用，覆盖项按固定口径计false。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "约59至108千帕"
+      ],
+      "missing_points": [
+        "约59至108千帕"
+      ],
+      "points_correct": 0,
+      "points_total": 1,
+      "question_id": "T001",
+      "runtime_error": false,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L14-02",
+        "L16-03"
+      ],
+      "citations_correct": 1,
+      "citations_total": 3,
+      "conditions_correct": 1,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确指出发生在罚球区边界线上的相应犯规属于罚球区内，满足points中的第一个条件；但未明确指出发生在罚球区边界线上的相应犯规属于区内，仅满足conditions中的第一个条件；citations中引用了与问题相关的内容，但未直接支持实际答案的一部分。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "罚球区线上的相应犯规属于区内"
+      ],
+      "missing_points": [
+        "罚球区线上的相应犯规属于区内"
+      ],
+      "points_correct": 1,
+      "points_total": 2,
+      "question_id": "T003",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L14-02"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 1,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确表达了罚球点为中心和主罚者和守方守门员以外队员受进入限制，但没有提及罚球弧用于辅助标示距离，且没有提及守门员在球被踢前可以移动的条件。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "主罚者和守方守门员以外队员受进入限制",
+        "限球进入比赛之前"
+      ],
+      "missing_points": [
+        "主罚者和守方守门员以外队员受进入限制"
+      ],
+      "points_correct": 2,
+      "points_total": 3,
+      "question_id": "T004",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L03-01"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 2,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确指出《足球竞赛规则》本身没有要求队伍必须采用某一种场上位置划分，但允许教练安排各种战术位置。因此points为false，conditions为true。citations为false，因为引用为Wikipedia快照，未经裁判专家审校，且未经过独立核验。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [
+        "规则不要求某一种战术位置划分"
+      ],
+      "points_correct": 1,
+      "points_total": 2,
+      "question_id": "T005",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L03-04"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 1,
+      "conditions_total": 4,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案未明确指出VAR包含身份误认，仅列出四类可复核事件，未详细说明VAR如何处理身份误认。",
+      "literal_conditions_correct": 2,
+      "literal_points_correct": 2,
+      "missing_conditions": [
+        "进球及之前违例",
+        "直接红牌",
+        "点球判罚"
+      ],
+      "missing_points": [
+        "包含牌示中的身份误认",
+        "进球及之前违例",
+        "直接红牌"
+      ],
+      "points_correct": 1,
+      "points_total": 4,
+      "question_id": "T006",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L04-05",
+        "L03-02",
+        "L11-03"
+      ],
+      "citations_correct": 0,
+      "citations_total": 3,
+      "conditions_correct": 1,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案仅提及守门员可以使用专用手套，未提及其他队员是否允许戴手套，且未提及其他队员是否可以戴手套的条件。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "守门员通常用专用手套"
+      ],
+      "missing_points": [
+        "所有队员均可戴手套",
+        "守门员通常用专用手套"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "T007",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L04-02"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 2,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确表达了两队球衣颜色需要与双方彼此及裁判助理裁判区分，并且客场球衣不只限于客场使用。但实际答案中未直接引用原文支持客场球衣不只限于客场使用，因此citations为false。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [],
+      "points_correct": 2,
+      "points_total": 2,
+      "question_id": "T008",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": true,
+      "judge_error": false,
+      "judge_reason": "实际受控拒答没有展示规则要点、条件或引用，覆盖项按固定口径计false。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "有弹性的袖标",
+        "通常在左臂"
+      ],
+      "missing_points": [
+        "有弹性的袖标",
+        "通常在左臂"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "T009",
+      "runtime_error": false,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L05-04",
+        "L12-15",
+        "L12-16"
+      ],
+      "citations_correct": 0,
+      "citations_total": 3,
+      "conditions_correct": 1,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案遗漏了关于医疗官员留场例外的具体规定，且未提及球队官员的处罚方式。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "无替代医疗人员时可允许医疗官员留下提供处理"
+      ],
+      "missing_points": [
+        "无替代医疗人员时可允许医疗官员留下提供处理"
+      ],
+      "points_correct": 1,
+      "points_total": 2,
+      "question_id": "T010",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L05-03"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 1,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案中遗漏了关于'处罚与重启方式'的描述，导致points为false；citations为false，因为引用内容未直接支持实际答案中的具体描述。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "身体接触严重程度",
+        "战术影响"
+      ],
+      "missing_points": [
+        "身体接触严重程度",
+        "战术影响"
+      ],
+      "points_correct": 1,
+      "points_total": 3,
+      "question_id": "T011",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L07-01",
+        "L06-02"
+      ],
+      "citations_correct": 1,
+      "citations_total": 3,
+      "conditions_correct": 1,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确表达了关于第四官员在半场末公布补时时间的事实，但遗漏了关于第四官员负责用号码牌或电子屏管理换人的信息。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "用号码牌或电子屏管理换人"
+      ],
+      "missing_points": [
+        "用号码牌或电子屏管理换人"
+      ],
+      "points_correct": 1,
+      "points_total": 2,
+      "question_id": "T013",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "citations_correct": 0,
+      "citations_total": 3,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案未明确指出站在球门线附近辅助观察罚球区的是哪类官员，且未说明是否每项赛事都必须配备。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "附加助理裁判",
+        "历史试验与批准不等于所有赛事强制配备"
+      ],
+      "missing_points": [
+        "附加助理裁判",
+        "历史试验与批准不等于所有赛事强制配备"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "T014",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": true,
+      "judge_error": false,
+      "judge_reason": "实际受控拒答没有展示规则要点、条件或引用，覆盖项按固定口径计false。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "是来源的具体安排示例",
+        "不能推广为所有赛事统一标准"
+      ],
+      "missing_points": [
+        "是来源的具体安排示例",
+        "不能推广为所有赛事统一标准"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "T015",
+      "runtime_error": false,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L06-04",
+        "L14-03"
+      ],
+      "citations_correct": 1,
+      "citations_total": 3,
+      "conditions_correct": 1,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确表达了补时可继续延长的事实，但遗漏了关于半场结束前执行点球时需延至程序完成的条件。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "延至点球执行或重罚程序完成"
+      ],
+      "missing_points": [
+        "延至点球执行或重罚程序完成"
+      ],
+      "points_correct": 1,
+      "points_total": 2,
+      "question_id": "T016",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": true,
+      "judge_error": false,
+      "judge_reason": "实际受控拒答没有展示规则要点、条件或引用，覆盖项按固定口径计false。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "决胜罚中数不计本场正常进球",
+        "加时进球计最终比分"
+      ],
+      "missing_points": [
+        "决胜罚中数不计本场正常进球",
+        "加时进球计最终比分"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "T017",
+      "runtime_error": false,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L17-05"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 1,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案没有明确指出开球者在他人触球前再次碰球而未构成手球时应如何重启，仅提供了关于角球和间接任意球的相关信息。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "按违例地点执行",
+        "题设不含更严重手球例外"
+      ],
+      "missing_points": [
+        "另一队间接任意球",
+        "按违例地点执行",
+        "题设不含更严重手球例外"
+      ],
+      "points_correct": 0,
+      "points_total": 3,
+      "question_id": "T018",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L08B-03",
+        "L17-06",
+        "L17-04"
+      ],
+      "citations_correct": 0,
+      "citations_total": 3,
+      "conditions_correct": 2,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案没有明确表达坠球规则关于最少两名不同队员触球的必要性，也没有提及首次触球者是否可以连续触球。同时，引用来源并未直接支持实际答案，且存在需要规则审查的情况。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "限定本地资料版本背景"
+      ],
+      "missing_points": [
+        "至少两名不同队员",
+        "首次触球者可再次触球",
+        "限定本地资料版本背景"
+      ],
+      "points_correct": 0,
+      "points_total": 3,
+      "question_id": "T019",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L08B-04"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 1,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案遗漏了外部人员或额外物体动物进入并干扰的条件，仅提及观众哨声干扰。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "外部人员或额外物体动物进入并干扰",
+        "观众哨声干扰"
+      ],
+      "missing_points": [
+        "外部人员或额外物体动物进入并干扰",
+        "观众哨声干扰"
+      ],
+      "points_correct": 1,
+      "points_total": 3,
+      "question_id": "T020",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L09-02"
+      ],
+      "citations_correct": 2,
+      "citations_total": 3,
+      "conditions_correct": 2,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案提及球整体越过边线后仍处于比赛中，无需等待落地，但未明确提及是否可以在空中救球。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [
+        "整体在空中越线即出界"
+      ],
+      "points_correct": 1,
+      "points_total": 2,
+      "question_id": "T021",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [],
+      "citations_correct": 3,
+      "citations_total": 3,
+      "conditions_correct": 3,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案没有明确区分界外球、球门球和角球的通常归属，仅提供了相关规则的来源信息，未涵盖所有情况。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [
+        "边线出界给最后触球方对手",
+        "球门线无进球且攻方最后触球给守方球门球",
+        "守方最后触球给攻方角球"
+      ],
+      "points_correct": 0,
+      "points_total": 3,
+      "question_id": "T022",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L07-03"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 1,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案没有明确表达所有杯赛战平后都必须先踢加时才能点球决胜，只是提到有些杯赛可省略加时直接点球，且没有提及不能自动套用客场进球制度。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "有些杯赛可省略加时直接点球",
+        "不能自动套用客场进球制度"
+      ],
+      "missing_points": [
+        "程序依赛事规程",
+        "有些杯赛可省略加时直接点球"
+      ],
+      "points_correct": 1,
+      "points_total": 3,
+      "question_id": "T023",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L11-06"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 1,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "points数组中第二个元素应为false，因为实际答案中提到的'停赛后与地面平行表示场地中间区域'与提供的资料不符。资料中提到的是'旗与地面平行，表示场地中间'。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "停赛后与地面平行表示场地中间区域"
+      ],
+      "missing_points": [
+        "停赛后与地面平行表示场地中间区域"
+      ],
+      "points_correct": 1,
+      "points_total": 2,
+      "question_id": "T024",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L03-04",
+        "L12-08"
+      ],
+      "citations_correct": 1,
+      "citations_total": 3,
+      "conditions_correct": 1,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确提及了高速摄像机估算触球时位置和可生成三维回放，但未提及仍为辅助判定而非取消裁判，因此points为true，conditions和citations为false",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "可生成三维回放",
+        "仍为辅助判定而非取消裁判"
+      ],
+      "missing_points": [
+        "可生成三维回放",
+        "仍为辅助判定而非取消裁判"
+      ],
+      "points_correct": 1,
+      "points_total": 3,
+      "question_id": "T025",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L12-01"
+      ],
+      "citations_correct": 2,
+      "citations_total": 3,
+      "conditions_correct": 3,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确区分了技术性违例和不当行为，并提及了不当行为的警告或罚令出场，但未直接引用关于技术性违例与身体犯规等同的规则。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [
+        "并非所有违例都属于犯规"
+      ],
+      "points_correct": 2,
+      "points_total": 3,
+      "question_id": "T026",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L12-07",
+        "L12-11"
+      ],
+      "citations_correct": 0,
+      "citations_total": 2,
+      "conditions_correct": 1,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案未明确表达黄牌和红牌的具体顺序和结果，仅提供了相关规则的来源信息。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "随后红牌罚下"
+      ],
+      "missing_points": [
+        "再次出示黄牌",
+        "随后红牌罚下"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "T027",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L12-02"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 1,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案未提及任何关于庆祝进球时脱下球衣或用它蒙住头脸的纪律处理，仅提供了关于手球违例的规则概述。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "庆祝不能过度"
+      ],
+      "missing_points": [
+        "出示黄牌警告",
+        "庆祝不能过度"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "T028",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L13-01",
+        "L13-05"
+      ],
+      "citations_correct": 1,
+      "citations_total": 3,
+      "conditions_correct": 2,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确表达了主罚方在己方球门区获任意球时可任一点执行，但未提及攻方在对手球门区获间接任意球时的具体执行点，遗漏了条件。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [
+        "攻方移到平行球门线的球门区线上最近点"
+      ],
+      "points_correct": 1,
+      "points_total": 2,
+      "question_id": "T030",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L13-07"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 3,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确表达了至少三人形成的人墙和违例给守方间接任意球，但未明确表达攻方距人墙至少1米的距离限制。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [
+        "攻方距人墙至少1米"
+      ],
+      "points_correct": 2,
+      "points_total": 3,
+      "question_id": "T031",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L14-05"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 1,
+      "conditions_total": 4,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案遗漏了2025年意外双触球的完整条件，仅提及“球是否进入球门”等条件，未能全面覆盖所有条件。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "守方间接任意球",
+        "主罚者可能受警告",
+        "不得混同允许的助跑中假动作"
+      ],
+      "missing_points": [
+        "完成助跑后不得踢球假动作",
+        "守方间接任意球",
+        "主罚者可能受警告",
+        "不得混同允许的助跑中假动作"
+      ],
+      "points_correct": 0,
+      "points_total": 4,
+      "question_id": "T032",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L14-03"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 2,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确引用了Wikipedia关于点球规则的描述，并且保留了原文中的关键条件，包括门柱不是其他队员且他人触球前主罚者不能再次触球。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [],
+      "points_correct": 2,
+      "points_total": 2,
+      "question_id": "T033",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": true,
+      "judge_error": false,
+      "judge_reason": "实际受控拒答没有展示规则要点、条件或引用，覆盖项按固定口径计false。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "比赛中的罚球点球是重启",
+        "点球决胜用于定晋级或冠军",
+        "决胜罚中不计正常进球数"
+      ],
+      "missing_points": [
+        "比赛中的罚球点球是重启",
+        "点球决胜用于定晋级或冠军",
+        "决胜罚中不计正常进球数"
+      ],
+      "points_correct": 0,
+      "points_total": 3,
+      "question_id": "T034",
+      "runtime_error": false,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L15-02"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 3,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确表达了掷界外球时的条件，包括面向场地、双脚各有一部分站在边线上或边线外的地面上、双手从头后经头顶掷出，与提供的expected_answer_points完全一致。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [],
+      "missing_points": [],
+      "points_correct": 3,
+      "points_total": 3,
+      "question_id": "T035",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L15-04",
+        "L15-01",
+        "L15-02"
+      ],
+      "citations_correct": 0,
+      "citations_total": 3,
+      "conditions_correct": 3,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确表达了掷界外球动作正确但球入场前先碰地时应由原队在原处重新掷球的事实，并且保留了原文中的必要范围。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [],
+      "missing_points": [],
+      "points_correct": 3,
+      "points_total": 3,
+      "question_id": "T036",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L16-04"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 3,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确表达了关于主罚者在非守门员在本方罚球区内再次触球时可能被判罚的条件，但未提及他人触球前二次触球和非守门员在本方罚球区内可能点球的具体条件，因此points为false。conditions和citations均为true。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [
+        "他人触球前二次触球"
+      ],
+      "points_correct": 2,
+      "points_total": 3,
+      "question_id": "T037",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L17-01",
+        "L16-03"
+      ],
+      "citations_correct": 1,
+      "citations_total": 3,
+      "conditions_correct": 1,
+      "conditions_total": 4,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案列举了所有在重启时允许直接攻入对方球门的情况，但实际规则中这些情况不允许直接攻入对方球门，因此points和conditions均为false。citations为部分true，因为部分引用直接支持了实际答案的一部分内容。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "界外球直接入门",
+        "坠球未经两人触球入门",
+        "守门员直接手掷入对方球门"
+      ],
+      "missing_points": [
+        "界外球直接入门",
+        "坠球未经两人触球入门",
+        "守门员直接手掷入对方球门"
+      ],
+      "points_correct": 1,
+      "points_total": 4,
+      "question_id": "T038",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L17-03",
+        "L01-07"
+      ],
+      "citations_correct": 0,
+      "citations_total": 2,
+      "conditions_correct": 2,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确表达了角球放置区域和对方至少9.15米的距离要求，且提供了具体来源支持。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [],
+      "points_correct": 2,
+      "points_total": 2,
+      "question_id": "T039",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L17-05"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 1,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案没有明确指出角球由主罚者在其他队员碰球前再次用脚触球时应如何重启，仅提供了相关完整段落和来源信息",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "守方间接任意球",
+        "按违例地点执行"
+      ],
+      "missing_points": [
+        "他人触球前再次触球",
+        "守方间接任意球",
+        "按违例地点执行"
+      ],
+      "points_correct": 0,
+      "points_total": 3,
+      "question_id": "T040",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    }
+  ],
+  "judgment_kind": "AI_not_human",
+  "split": "test"
+}

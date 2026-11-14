@@ -87,3 +87,8 @@
 最新 [TASK_08_DELIVERY.md](TASK_08_DELIVERY.md)；规定汇总 [bm25_baseline.json](bm25_baseline.json)，原始结果retrieval/bm25_b0/development及test。35项完整门禁、74项当前专项、8项复现保护，公开副本五组复算；原任务四/六/七回归分别通过。
 
 初次失败保留dev/body/failure.json，该目录即使有summary也不计成功。原74项是65e7516唯一正式测试前的回执；当前74项与恢复dev另列。segmentation-dev是测试后仅开发集补充实验，准确模式正式B0及唯一test不变；INTEGRITY_SCOPE解释共享哈希I/O边界。
+
+
+## 任务十二自动问答评测
+
+最新[TASK_12_DELIVERY](TASK_12_DELIVERY.md)、answer_quality_results.json和answer_evaluation目录；dev40/test50真实问答及AI判断向量、正式账本、逐题错误和公开来源投影。完整答案/原始响应留本机并公开SHA。12题人审待完成，不能用旧90题标签批准代替新回答人审。工程检查与质量指标分别统计，原失败和负面结果保留。

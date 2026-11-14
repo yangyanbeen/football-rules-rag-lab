@@ -1,0 +1,189 @@
+{
+  "human_answer_judgments": 0,
+  "results_sha256": "0746d6f5b44da157b97dbe58e3e1e9f1ffb197bd9688cd38adb7346cbbb6f0ec",
+  "samples": [
+    {
+      "answer_sha256": "4d4391ac83f3806f1a0704132d835b357e121b7014189179b624ec24e4d9f3ba",
+      "citation_decisions": null,
+      "condition_decisions": null,
+      "decision": null,
+      "point_decisions": null,
+      "private_trace": {
+        "path": ".runtime/task12/test/answers/T001.json",
+        "sha256": "771c22eb164e7466649283ed00d250e79553f283ca44d84cb58221f651ba25d9",
+        "size_bytes": 84543
+      },
+      "question_id": "T001",
+      "reviewed_at": null,
+      "reviewer": null
+    },
+    {
+      "answer_sha256": "a44e8f196e3621b6ffbf5107d32ea5fc7169350e73be5811b206f0bb340c2a5b",
+      "citation_decisions": null,
+      "condition_decisions": null,
+      "decision": null,
+      "point_decisions": null,
+      "private_trace": {
+        "path": ".runtime/task12/test/answers/T003.json",
+        "sha256": "da4340ac034b994304835c3fffb2dce2065860af57075319f4b8a015a8af9456",
+        "size_bytes": 93531
+      },
+      "question_id": "T003",
+      "reviewed_at": null,
+      "reviewer": null
+    },
+    {
+      "answer_sha256": "e9862ffab750cc2d6698b83b45848ae1181b1976fa954a054f2e20ad225e094d",
+      "citation_decisions": null,
+      "condition_decisions": null,
+      "decision": null,
+      "point_decisions": null,
+      "private_trace": {
+        "path": ".runtime/task12/test/answers/T004.json",
+        "sha256": "709f9ecd489e2f63fec3594917d8db127861a78f9fe22f8ab7341e4ee24c2632",
+        "size_bytes": 85783
+      },
+      "question_id": "T004",
+      "reviewed_at": null,
+      "reviewer": null
+    },
+    {
+      "answer_sha256": "5e4179840e8e2755e4f14f07738023c6629dcf5610ac36ba852773685a57cf19",
+      "citation_decisions": null,
+      "condition_decisions": null,
+      "decision": null,
+      "point_decisions": null,
+      "private_trace": {
+        "path": ".runtime/task12/test/answers/T005.json",
+        "sha256": "c35355873f366765dca4fe48f820dee4a6e6b5f65e9d0b9ee6320c030f774c8c",
+        "size_bytes": 88600
+      },
+      "question_id": "T005",
+      "reviewed_at": null,
+      "reviewer": null
+    },
+    {
+      "answer_sha256": "24272cc525cbc96672dc8dd7c8a8fc2a7281c77e007c63357bf18f90331c5723",
+      "citation_decisions": null,
+      "condition_decisions": null,
+      "decision": null,
+      "point_decisions": null,
+      "private_trace": {
+        "path": ".runtime/task12/test/answers/T006.json",
+        "sha256": "d4a01789e2ce4491ba40307ee84e5bad6623ba26cc3106abf84c42cead916171",
+        "size_bytes": 85161
+      },
+      "question_id": "T006",
+      "reviewed_at": null,
+      "reviewer": null
+    },
+    {
+      "answer_sha256": "63dbd5bafa9197254c09317ddcbcb29ff941dc221e03ad502def1ffc49588bfc",
+      "citation_decisions": null,
+      "condition_decisions": null,
+      "decision": null,
+      "point_decisions": null,
+      "private_trace": {
+        "path": ".runtime/task12/test/answers/T007.json",
+        "sha256": "5d4115d7c4b00d2e1fe68d517f0434e44cc24430153655cf0d99fa480de55ef1",
+        "size_bytes": 94013
+      },
+      "question_id": "T007",
+      "reviewed_at": null,
+      "reviewer": null
+    },
+    {
+      "answer_sha256": "d5dfc8ca72ccf413127b42b3e3cf7f4a75d5fc11061953acdaa53c294f9e6c4b",
+      "citation_decisions": null,
+      "condition_decisions": null,
+      "decision": null,
+      "point_decisions": null,
+      "private_trace": {
+        "path": ".runtime/task12/test/answers/T008.json",
+        "sha256": "6efcfd714fd9803b2728118242fa2ed00f23dfaccae6d266dbf22385300e5323",
+        "size_bytes": 87525
+      },
+      "question_id": "T008",
+      "reviewed_at": null,
+      "reviewer": null
+    },
+    {
+      "answer_sha256": "4d4391ac83f3806f1a0704132d835b357e121b7014189179b624ec24e4d9f3ba",
+      "citation_decisions": null,
+      "condition_decisions": null,
+      "decision": null,
+      "point_decisions": null,
+      "private_trace": {
+        "path": ".runtime/task12/test/answers/T009.json",
+        "sha256": "c9fe754803d5ed38390af71b38e2fbde1c5b3382a5b972ad93fe1224fcf192b1",
+        "size_bytes": 87756
+      },
+      "question_id": "T009",
+      "reviewed_at": null,
+      "reviewer": null
+    },
+    {
+      "answer_sha256": "46e4ba9bf944976bb9df0626acfa7cc1eefec8c08b04589266355c03d21499ec",
+      "citation_decisions": null,
+      "condition_decisions": null,
+      "decision": null,
+      "point_decisions": null,
+      "private_trace": {
+        "path": ".runtime/task12/test/answers/T010.json",
+        "sha256": "69a05ade0efe490ceabaf4ab1f0cb344afcc81484c17b6bb0d224d3202217da1",
+        "size_bytes": 92777
+      },
+      "question_id": "T010",
+      "reviewed_at": null,
+      "reviewer": null
+    },
+    {
+      "answer_sha256": "6ce4aef2913fbff22f0fd3448f0d5b0960add041ab5628e09959270b7b276668",
+      "citation_decisions": null,
+      "condition_decisions": null,
+      "decision": null,
+      "point_decisions": null,
+      "private_trace": {
+        "path": ".runtime/task12/test/answers/T011.json",
+        "sha256": "76861fed592c8d2e06d310011050ae06ec3ca92eff4d1466bfb23528d10a5cc3",
+        "size_bytes": 86664
+      },
+      "question_id": "T011",
+      "reviewed_at": null,
+      "reviewer": null
+    },
+    {
+      "answer_sha256": "e9f0c7f633e1f7e782bc99c11cdf6566a5916793bb826f675397fd6439ada1c7",
+      "citation_decisions": null,
+      "condition_decisions": null,
+      "decision": null,
+      "point_decisions": null,
+      "private_trace": {
+        "path": ".runtime/task12/test/answers/T013.json",
+        "sha256": "d0fae903ada92e698d548d966389d6f3c1dbae26c856fd71e72458864b83d499",
+        "size_bytes": 89237
+      },
+      "question_id": "T013",
+      "reviewed_at": null,
+      "reviewer": null
+    },
+    {
+      "answer_sha256": "e13170c2aff1c0b2867b9f52cb622836ede2570757cafce0a6d17a17dd7295ba",
+      "citation_decisions": null,
+      "condition_decisions": null,
+      "decision": null,
+      "point_decisions": null,
+      "private_trace": {
+        "path": ".runtime/task12/test/answers/T014.json",
+        "sha256": "70dbcc604cfa2e50fb39d836858d467ebe9c9e25d0d9dac8e532bd3f00f50db3",
+        "size_bytes": 94635
+      },
+      "question_id": "T014",
+      "reviewed_at": null,
+      "reviewer": null
+    }
+  ],
+  "selection": "errors/refusals/condition failures first, then question_id; 12 fixed samples; no selection by flattering output",
+  "status": "PENDING",
+  "version": "answer-human-sample-1.0"
+}
