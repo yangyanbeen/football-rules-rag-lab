@@ -89,6 +89,14 @@ def verify(private=False):
             v,a,e=request_json(None,[{'role':'user','content':'test'}],answer_config(),lambda x:x,{})
             return v=='ok' and len(a)==generate.call_count==2 and e is None and len(a[-1]['messages'])==2
     check('repairable_format_retains_bounded_second_attempt',retry_format)
+    def repaired_public():
+        v=copy.deepcopy(normal);first=copy.deepcopy(v['attempts'][0]);first['error']='ValueError: invalid format';v['attempts'][0]['attempt']=2;v['attempts'].insert(0,first)
+        return validate_public(v)
+    check('successful_format_repair_public_projection_remains_usable',repaired_public)
+    def after_success():
+        v=copy.deepcopy(normal);v['attempts'].append(copy.deepcopy(v['attempts'][0]));v['attempts'][1]['attempt']=2
+        return rejects(lambda:validate_public(v))
+    check('no_request_allowed_after_first_success',after_success)
     def config_type():
         v=app_config();v['ui']['share']=0
         with patch.object(audit,'app_config',return_value=v):return rejects(audit_config)

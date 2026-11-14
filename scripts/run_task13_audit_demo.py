@@ -19,7 +19,7 @@ def backend():
 def browser():
     journal=ROOT/'.runtime/task13-audit/ui-events.jsonl';events=[json.loads(s) for s in journal.read_text('utf-8').splitlines() if s.strip()];rows=[]
     for case in read(ROOT/'config/task13_demo.json')['cases']:
-        matches=[e for e in events if e['question_sha256']==digest(case['question'].encode()) and e['source']=='kotaemon_integrated_audit_ui']
+        matches=[e for e in events if e['question_sha256']==digest(case['question'].encode()) and e['source']=='kotaemon_integrated_audit_ui' and e['implementation']['sources']['scripts/task13_audit.py']==record(ROOT/'scripts/task13_audit.py')]
         if len(matches)!=1:raise ValueError('Expected one actual UI event per demonstration')
         event=matches[0];p=ROOT/event['private_trace']['path'];actual=read(p);validate_private(actual,case['question'],True)
         if record(p)!=event['private_trace'] or actual['implementation']!=event['implementation']:raise ValueError('UI event trace differs')

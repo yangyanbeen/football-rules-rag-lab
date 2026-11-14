@@ -28,13 +28,13 @@ def verify(public=False):
     check('original_runtime_package_strict_member_and_data_verification',lambda:verify_package(read(ROOT/'reports/task13/delivery_manifest.json'),not public))
     revisions=read(FOLDER/'runtime-package.json')
     check('revision_package_code_resources_and_policies_identical',lambda:all(record(ROOT/r['path'])==r for r in revisions['members']) and revisions['base_package']==record(ROOT/'reports/task13/delivery_manifest.json') and revisions['config']==record(ROOT/CONFIG) and revisions['new_formal_test_runs']==0)
-    for name,count in (('regressions-final.json',52),('public-regressions.json',45)):
+    for name,count in (('regressions-complete.json',54),('public-current.json',47)):
         v=read(FOLDER/name);check(name+'_recorded_checks_pass',lambda v=v,count=count:passed(v,count) and v['new_model_requests']==0 and all(record(ROOT/n)['sha256']==h for n,h in v['source_sha256'].items()))
-    check('real_clean_public_python_S_regressions_completed',lambda:read(FOLDER/'public-regressions.json')['clean_checkout_before_tests'] is True and read(FOLDER/'public-regressions.json')['site_packages_disabled'] is True)
+    check('real_clean_public_python_S_regressions_completed',lambda:read(FOLDER/'public-current.json')['clean_checkout_before_tests'] is True and read(FOLDER/'public-current.json')['site_packages_disabled'] is True)
     from verify_task13_audit import verify as regress
-    check('current_regressions_recompute_without_model_requests',lambda:passed(regress(not public),45 if public else 52))
+    check('current_regressions_recompute_without_model_requests',lambda:passed(regress(not public),47 if public else 54))
     from run_task13_audit_demo import replay
-    for name,ui in (('backend.json',False),('ui.json',True)):
+    for name,ui in (('backend-final.json',False),('ui.json',True)):
         check(name+'_five_actual_cases_replay',lambda name=name,ui=ui:replay(read(FOLDER/name),ui,not public))
     for split in ('dev','test'):
         from answer_audit_v2 import strict_run

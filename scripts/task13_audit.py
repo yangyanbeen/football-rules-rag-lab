@@ -71,7 +71,10 @@ def validate_public(v,revised=False):
     elif not v['attempts']:raise ValueError('Public result missing actual generation')
     for i,a in enumerate(v['attempts']):
         exact(a,('attempt','error','prompt_eval_count','eval_count','done_reason'),'attempt')
-        if type(a['attempt']) is not int or a['attempt']!=i+1 or a['error'] is not None or a['done_reason']!='stop' or type(a['eval_count']) is not int or not 0<a['eval_count']<=1024 or type(a['prompt_eval_count']) is not int or not 0<a['prompt_eval_count']<=6656:raise ValueError('Public model attempt differs')
+        if type(a['attempt']) is not int or a['attempt']!=i+1:raise ValueError('Public attempt sequence differs')
+        if a['error'] is not None:
+            if i==len(v['attempts'])-1 or not isinstance(a['error'],str) or not a['error']:raise ValueError('Uncompleted final attempt')
+        elif i!=len(v['attempts'])-1 or a['done_reason']!='stop' or type(a['eval_count']) is not int or not 0<a['eval_count']<=1024 or type(a['prompt_eval_count']) is not int or not 0<a['prompt_eval_count']<=6656:raise ValueError('Public model attempt differs')
     t=v['timing'];exact(t,('retrieval_seconds','generation_seconds','total_seconds'),'timing')
     if any(type(x) not in (int,float) or not math.isfinite(x) or x<0 for x in t.values()) or t['total_seconds']+.01<t['retrieval_seconds']+t['generation_seconds']:raise ValueError('Public clock differs')
     for c in v['citations']:
