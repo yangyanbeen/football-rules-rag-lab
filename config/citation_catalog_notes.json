@@ -1,0 +1,29 @@
+{
+  "entries": [
+    {
+      "catalog_number": 3,
+      "chunk_id": "L03-02",
+      "content_zh_sha256": "ad3bb24660657d3868f116cf2c298022177fb5847786f8b876e3242e73dd15dc",
+      "note": "本地第3组中的装备内容；原编目不能作为本段官方规则条号。",
+      "official_law_number": null,
+      "record_sha256": "fea9545bab52835b4dfa2da2de17f7389080841e65f40d4c9f1430ff60025f8d",
+      "reference_urls": [
+        "https://www.theifab.com/laws/latest/the-players-equipment/"
+      ]
+    },
+    {
+      "catalog_number": 3,
+      "chunk_id": "L03-04",
+      "content_zh_sha256": "d194490ae80c4f52a7f2577ee1ace9b776bd9036a2cc878eaaeeffda943ce368",
+      "note": "本地第3组中的比赛官员与VAR概述；内容涉及多处规则及协议，不能当作官方第3条。",
+      "official_law_number": null,
+      "record_sha256": "d96c30ca86b7b6c18b5b598af033b4867b2f86e759b8f5ea8df5cbc505af2a86",
+      "reference_urls": [
+        "https://www.theifab.com/laws/latest/the-other-match-officials/",
+        "https://www.theifab.com/laws/latest/the-referee/"
+      ]
+    }
+  ],
+  "policy": "Display source catalog separately from official rules; no factual corpus changes or retroactive grading.",
+  "version": "citation-catalog-notes-1.0"
+}

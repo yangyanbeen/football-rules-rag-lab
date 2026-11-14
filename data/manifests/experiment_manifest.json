@@ -4566,7 +4566,93 @@
         }
       ],
       "artifact_policy": "Frozen original21 experiment objects retained. Final prose/gate and global registry/file manifest excluded from own artifact hashes to avoid cycles."
+    },
+    {
+      "id": "TASK-012-HUMAN-ACCEPTANCE",
+      "objective": "Close real12 human sampling and guard catalog-to-official citation display",
+      "baseline_commit": "c6cf77c5c0ccab92b097b9bda700dff12219b859",
+      "source_commit": "0980864b65db457873a3d9c5513d8823e70b875a",
+      "source_sha256": {
+        "scripts/answer_acceptance.py": "0bef5f693a0616302e329bad23d89dd253e6f9159deee34c381c9bb81c541102",
+        "scripts/citation_catalog_guard.py": "e6b6098aff842c766293e2c865e3d543dfb96d1d31cdcbc46648c2d74bf40359",
+        "scripts/verify_answer_acceptance_cases.py": "9873e558ff7b749abdf1904877adf50b9dcfd184229d83318fbea35722a766c1",
+        "scripts/verify_task12_final.py": "250e2fa1b0a971d98a555b102c67d267fc8b687297d0e2709631a95b58d4ebb6",
+        "config/citation_catalog_notes.json": "b5e7c10235454a08776dc47b5dcdcbbf383d4acfa887d98e125ce35af035e272"
+      },
+      "human_reviewed_samples": 12,
+      "human_ledger_entries": 13,
+      "new_model_requests": 0,
+      "formal_test_runs_added": 0,
+      "review_assistance": "AI suggested choices; user explicitly submitted local browser forms, not independent blind review",
+      "metrics": {
+        "answer_point_coverage": {
+          "denominator": 27,
+          "numerator": 21,
+          "uncertain": 0,
+          "value": 0.7777777777777778
+        },
+        "citation_correctness": {
+          "denominator": 20,
+          "numerator": 9,
+          "uncertain": 0,
+          "value": 0.45
+        },
+        "condition_exception_retention": {
+          "denominator": 27,
+          "numerator": 21,
+          "uncertain": 0,
+          "value": 0.7777777777777778
+        }
+      },
+      "artifacts": [
+        {
+          "path": "reports/answer_evaluation_acceptance/cases-final.json",
+          "size_bytes": 2094,
+          "sha256": "b9eaa71edc37396e096fd583ca0ec10f4e87b2655649e010edc2d0de0ef46458"
+        },
+        {
+          "path": "reports/answer_evaluation_acceptance/cases-first.json",
+          "size_bytes": 2094,
+          "sha256": "2e656b59041cb9d19cba55c9f4d3557977501513cbbf90122a2b0e89daf7057f"
+        },
+        {
+          "path": "reports/answer_evaluation_acceptance/human-quality-analysis.json",
+          "size_bytes": 8188,
+          "sha256": "fe42767801de6508be03e16c67dcbc259338141b347eb8cc38225b789e279cd3"
+        },
+        {
+          "path": "reports/answer_evaluation_acceptance/human-review-completed.json",
+          "size_bytes": 6323,
+          "sha256": "a1b562d99a146d53147bbb30f343933d7b5a72e83b93d38dc4d31799290cf8a8"
+        },
+        {
+          "path": "reports/answer_evaluation_acceptance/prior-full-acceptance.json",
+          "size_bytes": 2157,
+          "sha256": "d70267f9f16463d5b83fbabfbd614e95625aaa1c6528858d19847d4724aba5c8"
+        },
+        {
+          "path": "reports/answer_evaluation_acceptance/prior-regression.json",
+          "size_bytes": 3088,
+          "sha256": "d95f2d6d7d208e9610d00fe6d76c8a99e0b7c2cd4a95f2b5c130cf155a8c025a"
+        },
+        {
+          "path": "reports/answer_evaluation_acceptance/public-cases.json",
+          "size_bytes": 1783,
+          "sha256": "c620b7d9d5b3a652aba6fbc56ac5d01853b616e7ff05c4e18e8b52e69365cf18"
+        },
+        {
+          "path": "config/citation_catalog_notes.json",
+          "size_bytes": 1261,
+          "sha256": "b5e7c10235454a08776dc47b5dcdcbbf383d4acfa887d98e125ce35af035e272"
+        },
+        {
+          "path": "docs/TASK_12_ACCEPTANCE_SCOPE.md",
+          "size_bytes": 1860,
+          "sha256": "b81466a32fd02ef16e86dcb8cffd8f8c4deff15c19f4e3b0339a0eeff8422d20"
+        }
+      ],
+      "artifact_policy": "Original22 objects, frozen answers, prior0/12 snapshot and raw human ledger preserved. Final gates/prose excluded from own recursive hashes; global manifest covers final public files."
     }
   ],
-  "last_updated_at": "2026-11-14T09:15:05.172693+00:00"
+  "last_updated_at": "2026-11-14T13:17:57.042334+00:00"
 }
