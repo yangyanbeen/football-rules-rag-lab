@@ -1,0 +1,347 @@
+{
+  "AI_human_different_questions": [
+    {
+      "different_zero_based_slots": {
+        "conditions": [
+          1
+        ],
+        "points": [
+          1
+        ]
+      },
+      "question_id": "T003"
+    },
+    {
+      "different_zero_based_slots": {
+        "citations": [
+          0
+        ],
+        "conditions": [
+          0,
+          1,
+          2
+        ],
+        "points": [
+          0,
+          1
+        ]
+      },
+      "question_id": "T004"
+    },
+    {
+      "different_zero_based_slots": {
+        "citations": [
+          0
+        ],
+        "points": [
+          0
+        ]
+      },
+      "question_id": "T005"
+    },
+    {
+      "different_zero_based_slots": {
+        "conditions": [
+          1,
+          2,
+          3
+        ],
+        "points": [
+          0,
+          1,
+          2
+        ]
+      },
+      "question_id": "T006"
+    },
+    {
+      "different_zero_based_slots": {
+        "citations": [
+          0
+        ],
+        "conditions": [
+          1
+        ],
+        "points": [
+          0,
+          1
+        ]
+      },
+      "question_id": "T007"
+    },
+    {
+      "different_zero_based_slots": {
+        "citations": [
+          0
+        ]
+      },
+      "question_id": "T008"
+    },
+    {
+      "different_zero_based_slots": {
+        "citations": [
+          0
+        ],
+        "conditions": [
+          1
+        ],
+        "points": [
+          1
+        ]
+      },
+      "question_id": "T010"
+    },
+    {
+      "different_zero_based_slots": {
+        "citations": [
+          0
+        ],
+        "conditions": [
+          1,
+          2
+        ],
+        "points": [
+          1,
+          2
+        ]
+      },
+      "question_id": "T011"
+    },
+    {
+      "different_zero_based_slots": {
+        "citations": [
+          1
+        ],
+        "conditions": [
+          1
+        ],
+        "points": [
+          1
+        ]
+      },
+      "question_id": "T013"
+    }
+  ],
+  "AI_human_disagreement": {
+    "citations": {
+      "denominator": 20,
+      "numerator": 7,
+      "value": 0.35
+    },
+    "conditions": {
+      "denominator": 27,
+      "numerator": 12,
+      "value": 0.4444444444444444
+    },
+    "points": {
+      "denominator": 27,
+      "numerator": 13,
+      "value": 0.48148148148148145
+    }
+  },
+  "error_cases": [
+    {
+      "false_refusal_by_frozen_label": true,
+      "human_answerability_choice_appropriate": false,
+      "missing_conditions": [
+        "约59至108千帕"
+      ],
+      "missing_points": [
+        "约59至108千帕"
+      ],
+      "question_id": "T001",
+      "rejected_citations": [],
+      "status": "refused"
+    },
+    {
+      "false_refusal_by_frozen_label": false,
+      "human_answerability_choice_appropriate": true,
+      "missing_conditions": [],
+      "missing_points": [],
+      "question_id": "T003",
+      "rejected_citations": [
+        {
+          "chunk_id": "L14-02",
+          "classification": "human_rejected_support_or_relevance"
+        },
+        {
+          "chunk_id": "L16-03",
+          "classification": "human_rejected_support_or_relevance"
+        }
+      ],
+      "status": "answered"
+    },
+    {
+      "false_refusal_by_frozen_label": false,
+      "human_answerability_choice_appropriate": true,
+      "missing_conditions": [
+        "以罚球点为中心"
+      ],
+      "missing_points": [
+        "以罚球点为中心"
+      ],
+      "question_id": "T004",
+      "rejected_citations": [],
+      "status": "answered"
+    },
+    {
+      "false_refusal_by_frozen_label": false,
+      "human_answerability_choice_appropriate": true,
+      "missing_conditions": [],
+      "missing_points": [],
+      "question_id": "T006",
+      "rejected_citations": [
+        {
+          "chunk_id": "L03-04",
+          "classification": "catalog_number_not_official"
+        }
+      ],
+      "status": "answered"
+    },
+    {
+      "false_refusal_by_frozen_label": false,
+      "human_answerability_choice_appropriate": true,
+      "missing_conditions": [],
+      "missing_points": [],
+      "question_id": "T007",
+      "rejected_citations": [
+        {
+          "chunk_id": "L03-02",
+          "classification": "catalog_number_not_official"
+        },
+        {
+          "chunk_id": "L11-03",
+          "classification": "human_rejected_support_or_relevance"
+        }
+      ],
+      "status": "answered"
+    },
+    {
+      "false_refusal_by_frozen_label": true,
+      "human_answerability_choice_appropriate": false,
+      "missing_conditions": [
+        "有弹性的袖标",
+        "通常在左臂"
+      ],
+      "missing_points": [
+        "有弹性的袖标",
+        "通常在左臂"
+      ],
+      "question_id": "T009",
+      "rejected_citations": [],
+      "status": "refused"
+    },
+    {
+      "false_refusal_by_frozen_label": false,
+      "human_answerability_choice_appropriate": true,
+      "missing_conditions": [],
+      "missing_points": [],
+      "question_id": "T010",
+      "rejected_citations": [
+        {
+          "chunk_id": "L12-15",
+          "classification": "human_rejected_support_or_relevance"
+        },
+        {
+          "chunk_id": "L12-16",
+          "classification": "human_rejected_support_or_relevance"
+        }
+      ],
+      "status": "answered"
+    },
+    {
+      "false_refusal_by_frozen_label": false,
+      "human_answerability_choice_appropriate": true,
+      "missing_conditions": [],
+      "missing_points": [],
+      "question_id": "T013",
+      "rejected_citations": [
+        {
+          "chunk_id": "L06-02",
+          "classification": "human_rejected_support_or_relevance"
+        }
+      ],
+      "status": "answered"
+    },
+    {
+      "false_refusal_by_frozen_label": false,
+      "human_answerability_choice_appropriate": true,
+      "missing_conditions": [
+        "附加助理裁判",
+        "历史试验与批准不等于所有赛事强制配备"
+      ],
+      "missing_points": [
+        "附加助理裁判",
+        "历史试验与批准不等于所有赛事强制配备"
+      ],
+      "question_id": "T014",
+      "rejected_citations": [
+        {
+          "chunk_id": "L06-05",
+          "classification": "human_rejected_support_or_relevance"
+        },
+        {
+          "chunk_id": "L06-04",
+          "classification": "human_rejected_support_or_relevance"
+        },
+        {
+          "chunk_id": "L03-04",
+          "classification": "catalog_number_not_official"
+        }
+      ],
+      "status": "answered"
+    }
+  ],
+  "human_answerability_choice_appropriate": {
+    "denominator": 12,
+    "numerator": 10,
+    "value": 0.8333333333333334
+  },
+  "human_receipt": {
+    "path": "reports/answer_evaluation_acceptance/human-review-completed.json",
+    "sha256": "a1b562d99a146d53147bbb30f343933d7b5a72e83b93d38dc4d31799290cf8a8",
+    "size_bytes": 6323
+  },
+  "human_reviewed_questions": 12,
+  "human_semantic_metrics": {
+    "answer_point_coverage": {
+      "denominator": 27,
+      "numerator": 21,
+      "uncertain": 0,
+      "value": 0.7777777777777778
+    },
+    "citation_correctness": {
+      "denominator": 20,
+      "numerator": 9,
+      "uncertain": 0,
+      "value": 0.45
+    },
+    "condition_exception_retention": {
+      "denominator": 27,
+      "numerator": 21,
+      "uncertain": 0,
+      "value": 0.7777777777777778
+    }
+  },
+  "interpretation": "Twelve error-prioritized reviewed test answers only. Zero unanswerable samples means correct refusal is null, not100%. No overall50 accuracy, improvement or causal gain claim; frozen AI results unchanged.",
+  "label_based_refusal_metrics": {
+    "correct_refusal_rate": {
+      "denominator": 0,
+      "numerator": 0,
+      "value": null
+    },
+    "false_refusal_rate": {
+      "denominator": 12,
+      "numerator": 2,
+      "value": 0.16666666666666666
+    }
+  },
+  "ledger_entries": 13,
+  "model_configuration": {
+    "path": "config/answer_evaluation.json",
+    "sha256": "283b98a40187a357a319db195ee1c535d518ae897b80ce38385fe67f581b031e",
+    "size_bytes": 1126
+  },
+  "review_assistance": "AI supplied suggested choices before the user explicitly submitted each local browser form; not independent blind review or referee expertise.",
+  "version": "answer-human-quality-1.0"
+}

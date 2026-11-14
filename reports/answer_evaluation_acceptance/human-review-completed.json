@@ -1,0 +1,268 @@
+{
+  "captured_at": "2026-11-14T13:10:52.122374+00:00",
+  "context_sha256": "5bb85241798c12648244b7295a80106eefb97c7245491f00bc71a51a31e718e3",
+  "judgment_kind": "human_explicit_form",
+  "ledger_entries": 13,
+  "metrics": {
+    "answer_point_coverage": {
+      "denominator": 27,
+      "numerator": 21,
+      "uncertain": 0,
+      "value": 0.7777777777777778
+    },
+    "citation_correctness": {
+      "denominator": 20,
+      "numerator": 9,
+      "uncertain": 0,
+      "value": 0.45
+    },
+    "condition_exception_retention": {
+      "denominator": 27,
+      "numerator": 21,
+      "uncertain": 0,
+      "value": 0.7777777777777778
+    }
+  },
+  "missing_ids": [],
+  "per_question": [
+    {
+      "answer_sha256": "4d4391ac83f3806f1a0704132d835b357e121b7014189179b624ec24e4d9f3ba",
+      "answerable": true,
+      "citation_decisions": [],
+      "condition_decisions": [
+        "no"
+      ],
+      "point_decisions": [
+        "no"
+      ],
+      "question_id": "T001",
+      "refusal_appropriate": "no",
+      "status": "refused"
+    },
+    {
+      "answer_sha256": "a44e8f196e3621b6ffbf5107d32ea5fc7169350e73be5811b206f0bb340c2a5b",
+      "answerable": true,
+      "citation_decisions": [
+        "yes",
+        "no",
+        "no"
+      ],
+      "condition_decisions": [
+        "yes",
+        "yes"
+      ],
+      "point_decisions": [
+        "yes",
+        "yes"
+      ],
+      "question_id": "T003",
+      "refusal_appropriate": "yes",
+      "status": "answered"
+    },
+    {
+      "answer_sha256": "e9862ffab750cc2d6698b83b45848ae1181b1976fa954a054f2e20ad225e094d",
+      "answerable": true,
+      "citation_decisions": [
+        "yes"
+      ],
+      "condition_decisions": [
+        "no",
+        "yes",
+        "yes"
+      ],
+      "point_decisions": [
+        "no",
+        "yes",
+        "yes"
+      ],
+      "question_id": "T004",
+      "refusal_appropriate": "yes",
+      "status": "answered"
+    },
+    {
+      "answer_sha256": "5e4179840e8e2755e4f14f07738023c6629dcf5610ac36ba852773685a57cf19",
+      "answerable": true,
+      "citation_decisions": [
+        "yes"
+      ],
+      "condition_decisions": [
+        "yes",
+        "yes"
+      ],
+      "point_decisions": [
+        "yes",
+        "yes"
+      ],
+      "question_id": "T005",
+      "refusal_appropriate": "yes",
+      "status": "answered"
+    },
+    {
+      "answer_sha256": "24272cc525cbc96672dc8dd7c8a8fc2a7281c77e007c63357bf18f90331c5723",
+      "answerable": true,
+      "citation_decisions": [
+        "no"
+      ],
+      "condition_decisions": [
+        "yes",
+        "yes",
+        "yes",
+        "yes"
+      ],
+      "point_decisions": [
+        "yes",
+        "yes",
+        "yes",
+        "yes"
+      ],
+      "question_id": "T006",
+      "refusal_appropriate": "yes",
+      "status": "answered"
+    },
+    {
+      "answer_sha256": "63dbd5bafa9197254c09317ddcbcb29ff941dc221e03ad502def1ffc49588bfc",
+      "answerable": true,
+      "citation_decisions": [
+        "yes",
+        "no",
+        "no"
+      ],
+      "condition_decisions": [
+        "yes",
+        "yes"
+      ],
+      "point_decisions": [
+        "yes",
+        "yes"
+      ],
+      "question_id": "T007",
+      "refusal_appropriate": "yes",
+      "status": "answered"
+    },
+    {
+      "answer_sha256": "d5dfc8ca72ccf413127b42b3e3cf7f4a75d5fc11061953acdaa53c294f9e6c4b",
+      "answerable": true,
+      "citation_decisions": [
+        "yes"
+      ],
+      "condition_decisions": [
+        "yes",
+        "yes"
+      ],
+      "point_decisions": [
+        "yes",
+        "yes"
+      ],
+      "question_id": "T008",
+      "refusal_appropriate": "yes",
+      "status": "answered"
+    },
+    {
+      "answer_sha256": "4d4391ac83f3806f1a0704132d835b357e121b7014189179b624ec24e4d9f3ba",
+      "answerable": true,
+      "citation_decisions": [],
+      "condition_decisions": [
+        "no",
+        "no"
+      ],
+      "point_decisions": [
+        "no",
+        "no"
+      ],
+      "question_id": "T009",
+      "refusal_appropriate": "no",
+      "status": "refused"
+    },
+    {
+      "answer_sha256": "46e4ba9bf944976bb9df0626acfa7cc1eefec8c08b04589266355c03d21499ec",
+      "answerable": true,
+      "citation_decisions": [
+        "yes",
+        "no",
+        "no"
+      ],
+      "condition_decisions": [
+        "yes",
+        "yes"
+      ],
+      "point_decisions": [
+        "yes",
+        "yes"
+      ],
+      "question_id": "T010",
+      "refusal_appropriate": "yes",
+      "status": "answered"
+    },
+    {
+      "answer_sha256": "6ce4aef2913fbff22f0fd3448f0d5b0960add041ab5628e09959270b7b276668",
+      "answerable": true,
+      "citation_decisions": [
+        "yes"
+      ],
+      "condition_decisions": [
+        "yes",
+        "yes",
+        "yes"
+      ],
+      "point_decisions": [
+        "yes",
+        "yes",
+        "yes"
+      ],
+      "question_id": "T011",
+      "refusal_appropriate": "yes",
+      "status": "answered"
+    },
+    {
+      "answer_sha256": "e9f0c7f633e1f7e782bc99c11cdf6566a5916793bb826f675397fd6439ada1c7",
+      "answerable": true,
+      "citation_decisions": [
+        "yes",
+        "yes",
+        "no"
+      ],
+      "condition_decisions": [
+        "yes",
+        "yes"
+      ],
+      "point_decisions": [
+        "yes",
+        "yes"
+      ],
+      "question_id": "T013",
+      "refusal_appropriate": "yes",
+      "status": "answered"
+    },
+    {
+      "answer_sha256": "e13170c2aff1c0b2867b9f52cb622836ede2570757cafce0a6d17a17dd7295ba",
+      "answerable": true,
+      "citation_decisions": [
+        "no",
+        "no",
+        "no"
+      ],
+      "condition_decisions": [
+        "no",
+        "no"
+      ],
+      "point_decisions": [
+        "no",
+        "no"
+      ],
+      "question_id": "T014",
+      "refusal_appropriate": "yes",
+      "status": "answered"
+    }
+  ],
+  "private_ledger": {
+    "path": ".runtime/task12/human_answer_reviews.jsonl",
+    "sha256": "6be2d5c75b76265181a3e21e2e58e30b1a8cc6f1b0d422afe17f4317b0a1b63c",
+    "size_bytes": 11942
+  },
+  "required_samples": 12,
+  "reviewed_samples": 12,
+  "scope": "Fixed error-prioritized twelve-question sample; not representative of all50, not expert rules certification. Completion is review completion, not all answers correct. Uncertain stays in denominator.",
+  "status": "REVIEW_COMPLETE",
+  "unresolved_ids": [],
+  "version": "answer-human-summary-1.1"
+}
