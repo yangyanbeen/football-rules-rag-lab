@@ -46,7 +46,7 @@ def validate_review(row, context):
     if row['reviewer_type'] != 'human' or row['submission_channel'] != 'explicit local browser form':
         raise ValueError('Not an explicit human form submission')
     for key, length in (('reviewer',100),('reason',2000)):
-        if not isinstance(row[key],str) or not 1 <= len(row[key].strip()) <= length:
+        if not isinstance(row[key],str) or not row[key].strip() or len(row[key]) > length:
             raise ValueError('Missing/oversize '+key)
     t = datetime.fromisoformat(row['reviewed_at'])
     minimum = datetime.fromisoformat(read(DIRECTORY/'test/completed.json')['completed_at'])
@@ -127,6 +127,35 @@ def snapshot(context, path=LEDGER):
         result = aggregate(context,read_reviews(context,path))
         result['private_ledger'] = record(path) if Path(path).exists() else None
         return result
+
+
+def validate_public_summary(value, context):
+    """Recompute public sample metrics without disclosing names or private comments."""
+    ids=[];synthetic=[]
+    keys={'question_id','answer_sha256','point_decisions','condition_decisions','citation_decisions',
+        'refusal_appropriate','status','answerable'}
+    for r in value['per_question']:
+        if set(r)!=keys or r['question_id'] in ids or r['question_id'] not in context['ids']:
+            raise ValueError('Invalid public human row or private fields leaked')
+        qid=r['question_id'];ids.append(qid);p=context['predictions'][qid]
+        if r['status']!=p['status'] or r['answerable'] is not context['labels'][qid]['answerable']:
+            raise ValueError('Public review answer/label differs')
+        # Internal validation fixture only; never saved or represented as a human record.
+        synthetic.append({k:r[k] for k in ('question_id','answer_sha256','point_decisions',
+            'condition_decisions','citation_decisions','refusal_appropriate')} |
+            {'version':'answer-human-review-1.1','private_trace':p['trace'],'reviewer_type':'human',
+             'reviewer':'PUBLIC VALIDATION ONLY','reviewed_at':now(),'reason':'PUBLIC VALIDATION ONLY',
+             'submission_channel':'explicit local browser form','context_sha256':context['identity']})
+    expected=aggregate(context,synthetic)
+    for k in ('version','judgment_kind','status','required_samples','reviewed_samples','missing_ids',
+              'unresolved_ids','context_sha256','metrics','per_question','scope'):
+        if value[k]!=expected[k]: raise ValueError('Public human summary does not recompute: '+k)
+    if type(value['ledger_entries']) is not int or value['ledger_entries']<len(ids):
+        raise ValueError('Invalid append-only review count')
+    receipt=value.get('private_ledger')
+    if ids and (not receipt or receipt['path']!=LEDGER.relative_to(ROOT).as_posix() or not sha(receipt['sha256']) or type(receipt['size_bytes']) is not int or receipt['size_bytes']<1):
+        raise ValueError('Missing private ledger receipt')
+    return True
 
 
 def evidence(qid, context):

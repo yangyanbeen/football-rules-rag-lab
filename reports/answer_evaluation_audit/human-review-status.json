@@ -1,0 +1,48 @@
+{
+  "captured_at": "2026-11-14T09:08:01.563621+00:00",
+  "context_sha256": "5bb85241798c12648244b7295a80106eefb97c7245491f00bc71a51a31e718e3",
+  "judgment_kind": "human_explicit_form",
+  "ledger_entries": 0,
+  "metrics": {
+    "answer_point_coverage": {
+      "denominator": 0,
+      "numerator": 0,
+      "uncertain": 0,
+      "value": null
+    },
+    "citation_correctness": {
+      "denominator": 0,
+      "numerator": 0,
+      "uncertain": 0,
+      "value": null
+    },
+    "condition_exception_retention": {
+      "denominator": 0,
+      "numerator": 0,
+      "uncertain": 0,
+      "value": null
+    }
+  },
+  "missing_ids": [
+    "T001",
+    "T003",
+    "T004",
+    "T005",
+    "T006",
+    "T007",
+    "T008",
+    "T009",
+    "T010",
+    "T011",
+    "T013",
+    "T014"
+  ],
+  "per_question": [],
+  "private_ledger": null,
+  "required_samples": 12,
+  "reviewed_samples": 0,
+  "scope": "Fixed error-prioritized twelve-question sample; not representative of all50, not expert rules certification. Completion is review completion, not all answers correct. Uncertain stays in denominator.",
+  "status": "PENDING",
+  "unresolved_ids": [],
+  "version": "answer-human-summary-1.1"
+}

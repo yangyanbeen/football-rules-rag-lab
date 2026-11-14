@@ -1,6 +1,6 @@
 """Synthetic adversarial regressions and read-only replay; never submit human judgments."""
 from __future__ import annotations
-import argparse,copy,tempfile
+import argparse,copy,uuid
 from pathlib import Path
 from answer_audit_v2 import *
 import answer_review_v2 as review
@@ -90,8 +90,10 @@ def verify(private=False):
         return review.aggregate(context,records)['status']=='PENDING'
     check('synthetic_all_negative_is_completed_review_not_correct_answers',all_negative)
     def ledger_tests():
-        with tempfile.TemporaryDirectory(prefix='task12-synthetic-') as temp:
-            path=Path(temp)/'synthetic.jsonl';review.save_review(fixture,context,path)
+        def run():
+            temp=ROOT/'.tmp'/('task12-synthetic-'+uuid.uuid4().hex)
+            temp.mkdir(parents=True)
+            path=temp/'synthetic.jsonl';review.save_review(fixture,context,path)
             before=path.read_bytes();review.save_review(fixture,context,path)
             if not path.read_bytes().startswith(before) or len(review.read_reviews(context,path))!=2:return False
             with review.ledger_lock(path):
@@ -100,6 +102,7 @@ def verify(private=False):
             if not rejected(lambda:review.save_review(fixture,context,path)) or path.read_bytes()!=b'{}\n':return False
             path.write_bytes(canonical(fixture))
             return rejected(lambda:review.read_reviews(context,path))
+        return run()
     check('synthetic_ledger_durable_append_lock_corruption_and_truncation',ledger_tests)
     if private:
         corpus=review.source_corpus();index=next(i for i,p in enumerate(rows(DIRECTORY/'test/predictions.jsonl')) if p['status']=='answered')

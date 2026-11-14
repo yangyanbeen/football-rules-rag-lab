@@ -1,0 +1,28 @@
+{
+  "captured_at": "2026-11-14T09:07:06.957354+00:00",
+  "checks": {
+    "actual_http200": true,
+    "actual_sources_visible": true,
+    "bound_context_and_answer": true,
+    "foreign_host_rejected": true,
+    "no_default_checked": true,
+    "no_review_ledger_changes": true,
+    "private_review_names_not_echoed": true,
+    "reject_csrf": true,
+    "reject_foreign_origin": true,
+    "reject_missing_judgments": true,
+    "reject_stale_answer": true,
+    "reject_stale_context": true,
+    "reject_unknown_fields": true,
+    "twelve_forms": true
+  },
+  "errors": [],
+  "new_human_judgments": 0,
+  "new_model_requests": 0,
+  "passed": 14,
+  "scope": "Actual page and deliberately invalid submissions only; does not validate human semantic judgments.",
+  "status": "PASS",
+  "total": 14,
+  "url": "http://127.0.0.1:7865/",
+  "version": "answer-review-http-1.1"
+}
