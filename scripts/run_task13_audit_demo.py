@@ -32,11 +32,14 @@ def browser():
 
 
 def replay(value,ui=False,private=False):
+    fields={'version','status','passed','total','rows','new_formal_test_runs','new_human_judgments','scope'}|({'captured_at','url','ui_journal'} if ui else {'started_at','completed_at'})
+    exact(value,fields,'demonstration receipt')
     cases=read(ROOT/'config/task13_demo.json')['cases']
     if value['status']!='PASS' or not value['passed']==value['total']==len(value['rows'])==5 or [r['id'] for r in value['rows']]!=[c['id'] for c in cases]:raise ValueError('Incomplete demo receipt')
     if value['new_formal_test_runs']!=0 or value['new_human_judgments']!=0:raise ValueError('Unexpected formal run/review')
     if len({r['result']['trace_id'] for r in value['rows']})!=5:raise ValueError('Duplicate demonstration trace')
     for case,row in zip(cases,value['rows']):
+        exact(row,{'id','passed','worker_wall_seconds','result'}|({'browser_answer_matches_trace','source_and_license_links','snapshot','event_sha256'} if ui else set()),'demonstration row')
         v=row['result'];validate_public(v,True)
         if v['question']!=case['question'] or v['status']!=case['expected_status'] or (case['required_source'] and case['required_source'] not in v['selected_ids']):raise ValueError('Demonstration case differs')
         if type(row['worker_wall_seconds']) not in (int,float) or not math.isfinite(row['worker_wall_seconds']) or row['worker_wall_seconds']<v['timing']['total_seconds']:raise ValueError('Worker clock differs')
