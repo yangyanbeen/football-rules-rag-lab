@@ -1,0 +1,28 @@
+{
+  "answer_model_attempts": 8,
+  "captured_at": "2026-11-14T14:19:20.831407+00:00",
+  "embedding_inputs": 107,
+  "embedding_requests": 33,
+  "inputs": [
+    {
+      "path": "reports/task13/index-rebuild.json",
+      "sha256": "d908b7754e7c9282f8279357ca6f5f36e27a207084d2c384d3743376a2a62e6e",
+      "size_bytes": 7011
+    },
+    {
+      "path": "reports/task13/backend-demo-first.json",
+      "sha256": "99bbc32724bfc138e2b68a8728de21fce45cc4765997fcdc73448c7586d0cfa8",
+      "size_bytes": 27001
+    },
+    {
+      "path": "reports/task13/ui-demo.json",
+      "sha256": "571a7dab82c66833d61e89447c1c4c62eeda6318c1192ae5fe6280af30892904",
+      "size_bytes": 27910
+    }
+  ],
+  "new_formal_test_runs": 0,
+  "new_human_judgments": 0,
+  "reranker_pairs": 320,
+  "scope": "Actual index build and ten ad hoc backend/browser examples only. Preflight/readiness/metadata regressions do not perform inference. No formal benchmark rerun or new human judgments.",
+  "version": "task13-resource-accounting-1.0"
+}
