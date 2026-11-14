@@ -31,6 +31,8 @@
 | 独立指标算术 | 19/19 PASS | [independent-arithmetic](answer_evaluation_audit/independent-arithmetic.json) |
 | 原完整本机门禁，注册第22实验之前 | 20/20 PASS | [legacy-delivery](answer_evaluation_audit/legacy-delivery.json) |
 | 原完整公开门禁，注册第22实验之前 | 24/24 PASS | [legacy-public](answer_evaluation_audit/legacy-public.json) |
+| 当前本机补交付工程门禁 | 26/26 PASS；完整验收false | [delivery-final](answer_evaluation_audit/delivery-final.json) |
+| 当前Python -S公开完整补交付门禁 | 23/23 PASS；完整验收false | [public-delivery](answer_evaluation_audit/public-delivery.json) |
 
 最终补交付门禁记录为 [delivery-final](answer_evaluation_audit/delivery-final.json)。它单列工程状态、真实人工状态和 `task12_fully_accepted`；工程通过不改变人审未完成的事实。用 `--require-complete` 的实际运行不会因人审缺失返回成功。
 
