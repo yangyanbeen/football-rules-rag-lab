@@ -1,9 +1,11 @@
 """Pinned local structured decoding; semantic decisions remain model-generated."""
 def selection_schema(offered,limit):
-    return {'type':'object','properties':{'answerable':{'type':'boolean'},
-      'chunk_ids':{'type':'array','items':{'type':'string','enum':list(offered)},'maxItems':limit},
-      'reason':{'anyOf':[{'type':'null'},{'type':'string','enum':['insufficient_evidence','source_conflict','version_unverified']}]}},
-      'required':['answerable','chunk_ids','reason'],'additionalProperties':False}
+    def branch(answerable):
+        return {'type':'object','properties':{'answerable':{'const':answerable},
+          'chunk_ids':{'type':'array','items':{'type':'string','enum':list(offered)},'minItems':1 if answerable else 0,'maxItems':limit if answerable else 0},
+          'reason':{'type':'null'} if answerable else {'type':'string','enum':['insufficient_evidence','source_conflict','version_unverified']}},
+          'required':['answerable','chunk_ids','reason'],'additionalProperties':False}
+    return {'anyOf':[branch(True),branch(False)]}
 
 
 def grade_schema(q,p):

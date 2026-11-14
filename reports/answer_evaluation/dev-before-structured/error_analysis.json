@@ -1,0 +1,1093 @@
+{
+  "cases": [
+    {
+      "answerable": true,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 1,
+      "correct_refusal": false,
+      "false_refusal": true,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "人造场地应为绿色"
+      ],
+      "missing_points": [
+        "人造场地应为绿色"
+      ],
+      "points_correct": 0,
+      "points_total": 1,
+      "question_id": "D001",
+      "runtime_error": false,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": true,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "内宽7.32米",
+        "横梁下沿高2.44米"
+      ],
+      "missing_points": [
+        "内宽7.32米",
+        "横梁下沿高2.44米"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D002",
+      "runtime_error": false,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": true,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "周长68至70厘米",
+        "重量410至450克"
+      ],
+      "missing_points": [
+        "周长68至70厘米",
+        "重量410至450克"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D003",
+      "runtime_error": false,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L03-01"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "最多11人不含替补",
+        "必须有一名守门员"
+      ],
+      "missing_points": [
+        "最多11人不含替补",
+        "必须有一名守门员"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D004",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L04-01"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "有袖上衣、短裤、球袜、鞋和护腿板",
+        "守门员可穿运动长裤"
+      ],
+      "missing_points": [
+        "有袖上衣、短裤、球袜、鞋和护腿板",
+        "守门员可穿运动长裤"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D005",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L12-14"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 2,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确表达了有利原则下如果预期利益在数秒内没有实现，裁判应停止比赛并根据原违例性质恢复比赛，符合expected_answer_points中的'有利未实现追究原违例'。但未提及允许未犯规方有利时继续，因此points为false。citations为false，因为引用内容未直接支持实际答案。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [
+        "允许未犯规方有利时继续"
+      ],
+      "points_correct": 1,
+      "points_total": 2,
+      "question_id": "D006",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L06-02"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "建议不约束裁判",
+        "裁判可改变或不采纳意见"
+      ],
+      "missing_points": [
+        "建议不约束裁判",
+        "裁判可改变或不采纳意见"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D007",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L07-01"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "每半场45分钟",
+        "连续计时不因出界暂停"
+      ],
+      "missing_points": [
+        "每半场45分钟",
+        "连续计时不因出界暂停"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D008",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L08A-02",
+        "L01-07"
+      ],
+      "citations_correct": 0,
+      "citations_total": 2,
+      "conditions_correct": 2,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确表达了除主罚者外均在本方半场和对手距球至少9.15米的要求，且引用了相关资料支持。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [],
+      "points_correct": 2,
+      "points_total": 2,
+      "question_id": "D009",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L08B-02"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 0,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "限定来源2019年程序",
+        "其他队员至少4米",
+        "球触地进入比赛"
+      ],
+      "missing_points": [
+        "限定来源2019年程序",
+        "其他队员至少4米",
+        "球触地进入比赛"
+      ],
+      "points_correct": 0,
+      "points_total": 3,
+      "question_id": "D010",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L09-03"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 3,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案中未明确列出导致球不再处于比赛中的三类后果，仅描述了球碰到裁判后的处理方式。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [
+        "开始有希望进攻",
+        "直接进球",
+        "控球队改变"
+      ],
+      "points_correct": 0,
+      "points_total": 3,
+      "question_id": "D011",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": true,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "进球成立程序",
+        "必要时确定胜者"
+      ],
+      "missing_points": [
+        "进球成立程序",
+        "必要时确定胜者"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D012",
+      "runtime_error": false,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L11-01",
+        "L11-03",
+        "L12-05"
+      ],
+      "citations_correct": 0,
+      "citations_total": 3,
+      "conditions_correct": 0,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "考虑头身体脚",
+        "不考虑手和手臂",
+        "守门员同样适用"
+      ],
+      "missing_points": [
+        "考虑头身体脚",
+        "不考虑手和手臂",
+        "守门员同样适用"
+      ],
+      "points_correct": 0,
+      "points_total": 3,
+      "question_id": "D013",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L12-04"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 2,
+      "literal_points_correct": 2,
+      "missing_conditions": [
+        "没有身体接触",
+        "间接任意球"
+      ],
+      "missing_points": [
+        "没有身体接触",
+        "间接任意球"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D014",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L15-05"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 3,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确表达了守门员在本方罚球区内直接用手接队友掷来的界外球应判间接任意球的事实，但遗漏了在罚球区外的手球情形判直接任意球的条件。",
+      "literal_conditions_correct": 2,
+      "literal_points_correct": 2,
+      "missing_conditions": [],
+      "missing_points": [
+        "队友直接掷来"
+      ],
+      "points_correct": 2,
+      "points_total": 3,
+      "question_id": "D015",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": true,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "间接球直接入对方球门判球门球",
+        "未经他人触球入本方球门判角球"
+      ],
+      "missing_points": [
+        "间接球直接入对方球门判球门球",
+        "未经他人触球入本方球门判角球"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D016",
+      "runtime_error": true,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L14-02"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 0,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "在场内和罚球区外",
+        "在罚球点后",
+        "至少9.15米"
+      ],
+      "missing_points": [
+        "在场内和罚球区外",
+        "在罚球点后",
+        "至少9.15米"
+      ],
+      "points_correct": 0,
+      "points_total": 3,
+      "question_id": "D017",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L16-04"
+      ],
+      "citations_correct": 2,
+      "citations_total": 3,
+      "conditions_correct": 2,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案明确表达了界外球应判给最后触球者的对方，但未提及整体越过边线和故意与否不改变归属的情况，因此points为false。conditions和citations部分与实际答案一致。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "故意与否不改变归属"
+      ],
+      "missing_points": [
+        "最后触球者的对方",
+        "故意与否不改变归属"
+      ],
+      "points_correct": 1,
+      "points_total": 3,
+      "question_id": "D018",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L16-04",
+        "L17-04",
+        "L08B-02"
+      ],
+      "citations_correct": 0,
+      "citations_total": 3,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "被踢且明显移动",
+        "不用先离开罚球区"
+      ],
+      "missing_points": [
+        "被踢且明显移动",
+        "不用先离开罚球区"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D019",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L11-03",
+        "L12-05",
+        "L15-03"
+      ],
+      "citations_correct": 0,
+      "citations_total": 3,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "任意球可能越位",
+        "直接接界外球不因这一接球越位"
+      ],
+      "missing_points": [
+        "任意球可能越位",
+        "直接接界外球不因这一接球越位"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D021",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L16-03",
+        "L17-04",
+        "L17-05"
+      ],
+      "citations_correct": 0,
+      "citations_total": 3,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "球门球不必先离开罚球区",
+        "角球不必先离开角球区"
+      ],
+      "missing_points": [
+        "球门球不必先离开罚球区",
+        "角球不必先离开角球区"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D022",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L12-11",
+        "L12-01",
+        "L12-12"
+      ],
+      "citations_correct": 0,
+      "citations_total": 3,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "严重犯规涉及比赛中争抢球",
+        "暴力行为不局限争抢球"
+      ],
+      "missing_points": [
+        "严重犯规涉及比赛中争抢球",
+        "暴力行为不局限争抢球"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D023",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L09-04"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 3,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案涵盖了所有预期答案点，并且详细说明了在比赛因犯规停止后，后续打人行为不会自动改变原决定，但裁判可以在重启前修正错误决定。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [],
+      "points_correct": 3,
+      "points_total": 3,
+      "question_id": "D024",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L04-01"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 0,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "适当材料且合理保护",
+        "由球袜遮住",
+        "队员负责尺寸和适用性"
+      ],
+      "missing_points": [
+        "适当材料且合理保护",
+        "由球袜遮住",
+        "队员负责尺寸和适用性"
+      ],
+      "points_correct": 0,
+      "points_total": 3,
+      "question_id": "D025",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L10-02"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "补时补回中断损失由裁判决定",
+        "加时依赛事决胜安排两个15分钟半场"
+      ],
+      "missing_points": [
+        "补时补回中断损失由裁判决定",
+        "加时依赛事决胜安排两个15分钟半场"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D026",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L09-02",
+        "L08B-04",
+        "L14-04"
+      ],
+      "citations_correct": 0,
+      "citations_total": 3,
+      "conditions_correct": 0,
+      "conditions_total": 1,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "反弹回场内仍处于比赛中"
+      ],
+      "missing_points": [
+        "反弹回场内仍处于比赛中"
+      ],
+      "points_correct": 0,
+      "points_total": 1,
+      "question_id": "D027",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L05-01"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "计时并记录比赛",
+        "报告纪律处罚及比赛前中后的相关事件"
+      ],
+      "missing_points": [
+        "计时并记录比赛",
+        "报告纪律处罚及比赛前中后的相关事件"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D028",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L08A-01"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "另一队选择进攻方向",
+        "下半场由未执行上半场首次开球的一方开球"
+      ],
+      "missing_points": [
+        "另一队选择进攻方向",
+        "下半场由未执行上半场首次开球的一方开球"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D029",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L12-10",
+        "L03-01",
+        "L12-12"
+      ],
+      "citations_correct": 0,
+      "citations_total": 3,
+      "conditions_correct": 3,
+      "conditions_total": 3,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": false,
+      "judge_reason": "实际答案遗漏了红牌罚下守门员时必须有人承担守门职责的必要条件，且未提及红牌人数缺额不能补上的具体细节。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [
+        "必须有人承担守门职责",
+        "红牌人数缺额不能补上"
+      ],
+      "points_correct": 1,
+      "points_total": 3,
+      "question_id": "D030",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [
+        "L02-01"
+      ],
+      "citations_correct": 0,
+      "citations_total": 1,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 1,
+      "literal_points_correct": 1,
+      "missing_conditions": [
+        "机缝、手缝或热黏合",
+        "乳胶或丁基橡胶球胆"
+      ],
+      "missing_points": [
+        "机缝、手缝或热黏合",
+        "乳胶或丁基橡胶球胆"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D031",
+      "runtime_error": false,
+      "status": "answered",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": true,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 2,
+      "correct_refusal": false,
+      "false_refusal": true,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [
+        "名额次数和重新上场依赛事与版本",
+        "来源概述不能自动推广"
+      ],
+      "missing_points": [
+        "名额次数和重新上场依赛事与版本",
+        "来源概述不能自动推广"
+      ],
+      "points_correct": 0,
+      "points_total": 2,
+      "question_id": "D032",
+      "runtime_error": false,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": false,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 0,
+      "correct_refusal": true,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [],
+      "points_correct": 0,
+      "points_total": 0,
+      "question_id": "D033",
+      "runtime_error": false,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": false,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 0,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [],
+      "points_correct": 0,
+      "points_total": 0,
+      "question_id": "D034",
+      "runtime_error": true,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": false,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 0,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [],
+      "points_correct": 0,
+      "points_total": 0,
+      "question_id": "D035",
+      "runtime_error": true,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": false,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 0,
+      "correct_refusal": false,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [],
+      "points_correct": 0,
+      "points_total": 0,
+      "question_id": "D036",
+      "runtime_error": true,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": false,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 0,
+      "correct_refusal": true,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [],
+      "points_correct": 0,
+      "points_total": 0,
+      "question_id": "D037",
+      "runtime_error": false,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": false,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 0,
+      "correct_refusal": true,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [],
+      "points_correct": 0,
+      "points_total": 0,
+      "question_id": "D038",
+      "runtime_error": false,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": false,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 0,
+      "correct_refusal": true,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [],
+      "points_correct": 0,
+      "points_total": 0,
+      "question_id": "D039",
+      "runtime_error": false,
+      "status": "refused",
+      "unsupported_answer": false
+    },
+    {
+      "answerable": false,
+      "bad_citation_ids": [],
+      "citations_correct": 0,
+      "citations_total": 0,
+      "conditions_correct": 0,
+      "conditions_total": 0,
+      "correct_refusal": true,
+      "false_refusal": false,
+      "judge_error": true,
+      "judge_reason": "自动评分失败；不虚构正面得分，需人工复核。",
+      "literal_conditions_correct": 0,
+      "literal_points_correct": 0,
+      "missing_conditions": [],
+      "missing_points": [],
+      "points_correct": 0,
+      "points_total": 0,
+      "question_id": "D040",
+      "runtime_error": false,
+      "status": "refused",
+      "unsupported_answer": false
+    }
+  ],
+  "judgment_kind": "AI_not_human",
+  "split": "dev"
+}
