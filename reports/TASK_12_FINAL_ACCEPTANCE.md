@@ -68,7 +68,8 @@
 - [公开无模型专项](answer_evaluation_acceptance/public-cases.json)：Python -S隔离副本21/21 PASS，不需要全文、模型或私有账本。
 - [原专项重放](answer_evaluation_acceptance/prior-regression.json)：53/53 PASS，原dev/test仅只读复算。
 - [原严格完整验收](answer_evaluation_acceptance/prior-full-acceptance.json)：26/26 PASS，完整验收true；没有改旧脚本或编造人工提交。
-- 当前完整门禁与公开门禁分别以同目录delivery-final、public-delivery记录为准，检查未执行时不预填通过数量。
+- [当前本机完整门禁](answer_evaluation_acceptance/delivery-final.json)：26/26 PASS，task12_fully_accepted=true。
+- [当前无模型公开完整门禁](answer_evaluation_acceptance/public-delivery.json)：Python -S隔离副本22/22 PASS，task12_fully_accepted=true。
 
 当前入口：
 
