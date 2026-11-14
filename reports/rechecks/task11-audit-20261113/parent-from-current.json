@@ -1,0 +1,589 @@
+{
+  "actual_new_embedding_queries": 0,
+  "answer_llm_requests": 0,
+  "checks": {
+    "actual_parent_bodies_and_member_sources_match": true,
+    "all_context_tokens_within4096": true,
+    "at_least_one_real_parent_materialized": true,
+    "parent_ids_unique": true,
+    "private_output_not_tracked": true
+  },
+  "completed_at": "2026-11-13T10:24:43.872214+00:00",
+  "context_tokens": 3598,
+  "input_query_receipt": {
+    "path": "reports/rechecks/task11-audit-20261113/query-current.json",
+    "sha256": "4bf69171359129512863845f7808d6a23edb4cdadf4ed8604a82eb36513c0ae7",
+    "size_bytes": 60740
+  },
+  "passed": 5,
+  "private_output": {
+    "path": ".runtime/task11/audit-current-parent.json",
+    "sha256": "e740c45e3730f5eda8c14a2ef737800be3709e34739f52799ceca583d2f93e70",
+    "size_bytes": 33592
+  },
+  "query_receipt": null,
+  "results_without_bodies": [
+    {
+      "content_sha256": "40172cb82d485d8cbaed17c409fd6a8c69f2de892ed8d94a775eb8bc4df6cba2",
+      "context_id": "P14-7a7de0e2890e",
+      "context_tokens": 1149,
+      "original_ids": [
+        "L14-01",
+        "L14-02",
+        "L14-03",
+        "L14-04",
+        "L14-05",
+        "L14-06"
+      ],
+      "rank": 1,
+      "section_path": [
+        "足球规则中文资料（四）：任意球与罚球点球",
+        "第14条：罚球点球"
+      ],
+      "seed_rank": 1,
+      "source_refs": [
+        {
+          "chunk_id": "L14-01",
+          "content_zh_sha256": "106324acbf25de268323ebb6ed33e3dbffc5cbcbf1e728b817d90e9dc0fd1d21",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-14",
+          "source_lines": [
+            192,
+            193
+          ],
+          "source_revision_id": "1384120223",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+        },
+        {
+          "chunk_id": "L14-02",
+          "content_zh_sha256": "b600377f16217e927b6cd3490608b43f46ad52568ab3b5a780862418520981d5",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-14",
+          "source_lines": [
+            197,
+            199
+          ],
+          "source_revision_id": "1384120223",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+        },
+        {
+          "chunk_id": "L14-03",
+          "content_zh_sha256": "6ff6fd0984862f0f469e51d9fd8e1caddc72b01ac7796c44315f2b9975a975d0",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-14",
+          "source_lines": [
+            200,
+            201
+          ],
+          "source_revision_id": "1384120223",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+        },
+        {
+          "chunk_id": "L14-04",
+          "content_zh_sha256": "4c1c5a093e08a763d8ccca3f04000e9197c9a5cc66574177bb864dbfc1cecb61",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "这是原 Wikipedia 页面的概括表，未完整表示不同类型违例的优先级、提前进入是否影响比赛以及现行规则的全部条件。保留它用于来源对照，不能不加条件地用作裁判判罚矩阵。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-14",
+          "source_lines": [
+            206,
+            214
+          ],
+          "source_revision_id": "1384120223",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+        },
+        {
+          "chunk_id": "L14-05",
+          "content_zh_sha256": "a69b78c030e22f5236081b4fc124e42068e4de344af0f79530a658ca563a2849",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "原文对2025年意外双触球的概括没有完整写出“球是否进入球门”等条件，本段忠实记录来源说法，但必须进一步核对正式澄清文件，不能推断所有意外双触球都一律重罚。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-14",
+          "source_lines": [
+            215,
+            220
+          ],
+          "source_revision_id": "1384120223",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+        },
+        {
+          "chunk_id": "L14-06",
+          "content_zh_sha256": "120fccc83cbb0ea6ca43a96859c61c28c607621e6d8301954fb7eb0abbfa9733",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "外部干扰的正式规则可能还包含未影响防守等例外；本段不是包含全部例外的完整官方条文。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-14",
+          "source_lines": [
+            221,
+            223
+          ],
+          "source_revision_id": "1384120223",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29"
+        }
+      ]
+    },
+    {
+      "content_sha256": "bfd7b82618d3ad0f3b13572307c5f94f634d0b48384251f7a7db34fd2ba76dc1",
+      "context_id": "P01-b9addf90d5a1",
+      "context_tokens": 1660,
+      "original_ids": [
+        "L01-01",
+        "L01-02",
+        "L01-03",
+        "L01-04",
+        "L01-05",
+        "L01-06",
+        "L01-07"
+      ],
+      "rank": 2,
+      "section_path": [
+        "足球规则中文资料（一）：场地、器材与队员",
+        "第1条：比赛场地"
+      ],
+      "seed_rank": 3,
+      "source_refs": [
+        {
+          "chunk_id": "L01-01",
+          "content_zh_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-01",
+          "source_lines": [
+            167,
+            171
+          ],
+          "source_revision_id": "1384097820",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+        },
+        {
+          "chunk_id": "L01-02",
+          "content_zh_sha256": "8382e2e43132ae955f49fe74254a38dbd935f568686fefd26284d2bd21e42858",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "本段忠实保留原网页以码数换算出的近似米数。这些近似值与正式规则直接规定的公制界限可能不同，不能把换算舍入值当作官方精确标准。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-01",
+          "source_lines": [
+            177,
+            179
+          ],
+          "source_revision_id": "1384097820",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+        },
+        {
+          "chunk_id": "L01-03",
+          "content_zh_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-01",
+          "source_lines": [
+            187,
+            189
+          ],
+          "source_revision_id": "1384097820",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+        },
+        {
+          "chunk_id": "L01-04",
+          "content_zh_sha256": "bb23094e588d3f34b3db1956520c137bbfbd2ab2263b9b166bb37ef69797cb77",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "原文关于守方犯规后进球无效的举例缺少“裁判是否已停止比赛”等完整条件；青少年球门尺寸也取决于比赛规程。本段保留来源内容供核对，不应直接用来概括有利原则或统一的青少年场地标准。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-01",
+          "source_lines": [
+            192,
+            194
+          ],
+          "source_revision_id": "1384097820",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+        },
+        {
+          "chunk_id": "L01-05",
+          "content_zh_sha256": "57c7cb9485569ba65c3dc6429fc5e186037ee2cc5438e3f633df944280731900",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "这里的5.49米、16.46米等数字是原网页的英制换算值，译文没有将其替换为正式规则中的公制标记尺寸。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-01",
+          "source_lines": [
+            203,
+            207
+          ],
+          "source_revision_id": "1384097820",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+        },
+        {
+          "chunk_id": "L01-06",
+          "content_zh_sha256": "00d7714660f64f28374b8658030e569c1e83715e8351badb52a6f2f4296c5289",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-01",
+          "source_lines": [
+            208,
+            210
+          ],
+          "source_revision_id": "1384097820",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+        },
+        {
+          "chunk_id": "L01-07",
+          "content_zh_sha256": "a9b6a663ac2e01caf8dddee39764bfcfd1f463bd3d921f311f5e8dac9da106f8",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "开球主罚者的位置例外见第二份文档；本段是原条目的概括性表述。角球专题页使用1米和9.15米，显示不同条目在近似单位表达上存在差别。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-01",
+          "source_lines": [
+            217,
+            219
+          ],
+          "source_revision_id": "1384097820",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Football_pitch"
+        }
+      ]
+    },
+    {
+      "content_sha256": "e468af0ecced91500b6e4d551fa1e69858c696395eda4523354d3cd6368a44ec",
+      "context_id": "P05-1c770a5c84d5",
+      "context_tokens": 494,
+      "original_ids": [
+        "L05-01",
+        "L05-02",
+        "L05-03",
+        "L05-04"
+      ],
+      "rank": 3,
+      "section_path": [
+        "足球规则中文资料（二）：裁判、比赛流程与结果",
+        "第5条：裁判员"
+      ],
+      "seed_rank": 9,
+      "source_refs": [
+        {
+          "chunk_id": "L05-01",
+          "content_zh_sha256": "b4212657e684746031b02fbd37c183479f123c8c1b88de86e6d5bc752a78cf51",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-05",
+          "source_lines": [
+            186,
+            192
+          ],
+          "source_revision_id": "1383936867",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Referee_%28association_football%29"
+        },
+        {
+          "chunk_id": "L05-02",
+          "content_zh_sha256": "05888e9b4b276f5af32d4221919ff27983fbb954d3f3b6139652f44eb76aa297",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-05",
+          "source_lines": [
+            194,
+            195
+          ],
+          "source_revision_id": "1383936867",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Referee_%28association_football%29"
+        },
+        {
+          "chunk_id": "L05-03",
+          "content_zh_sha256": "ac8815f7d4f185049aec7046047fb3e19db269ee75af486fdb4367527194dc53",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-05",
+          "source_lines": [
+            198,
+            202
+          ],
+          "source_revision_id": "1383936867",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Referee_%28association_football%29"
+        },
+        {
+          "chunk_id": "L05-04",
+          "content_zh_sha256": "8af39edadf9c6aa8dc8098ce22829e087274b2a13829393389064d05d1e5e62d",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-05",
+          "source_lines": [
+            203,
+            206
+          ],
+          "source_revision_id": "1383936867",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Referee_%28association_football%29"
+        }
+      ]
+    },
+    {
+      "content_sha256": "5b37df9a2288a14bf82c1a5e5c76a3b5bf18a1d7793b3937e6e8da465981ff46",
+      "context_id": "P10-b866656ef7a7",
+      "context_tokens": 295,
+      "original_ids": [
+        "L10-01",
+        "L10-02"
+      ],
+      "rank": 4,
+      "section_path": [
+        "足球规则中文资料（二）：裁判、比赛流程与结果",
+        "第10条：比赛结果"
+      ],
+      "seed_rank": 10,
+      "source_refs": [
+        {
+          "chunk_id": "L10-01",
+          "content_zh_sha256": "467643aff52a118adb26aa2226541208bcbc750a71d48d455f369f4678b0505d",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": false,
+          "official_translation": false,
+          "review_notes": [],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-10",
+          "source_lines": [
+            125,
+            131
+          ],
+          "source_revision_id": "1363296017",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Determining_the_Outcome_of_a_Match_%28association_football%29"
+        },
+        {
+          "chunk_id": "L10-02",
+          "content_zh_sha256": "f2545ceae4c82efac0706b3506b9ea2cef52d68365eabe3ad7cad387f5c2d8b1",
+          "expert_reviewed": false,
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "needs_rule_review": true,
+          "official_translation": false,
+          "review_notes": [
+            "本段列的是原条目描述的可选程序；是否使用客场进球或加时，应按具体赛事和赛季判断。"
+          ],
+          "source_attribution": "Wikipedia contributors",
+          "source_id": "wiki-10",
+          "source_lines": [
+            136,
+            144
+          ],
+          "source_revision_id": "1363296017",
+          "source_revision_status": "reader footer ID; exact revision not independently fetched",
+          "source_revision_verified": false,
+          "source_url": "https://en.wikipedia.org/wiki/Determining_the_Outcome_of_a_Match_%28association_football%29"
+        }
+      ]
+    }
+  ],
+  "scope": "Actual local parent body lookup from new query or recorded non-evaluation seed; replay is not new model inference.",
+  "skipped_ids": [
+    "P12-7e66f26420a7"
+  ],
+  "source_commit": "5459f5341bf7178a0a0d9411be4cc966822c2c87",
+  "source_records": {
+    "scripts/bge_reranker.py": {
+      "path": "scripts/bge_reranker.py",
+      "sha256": "2654cace523109b1cfe595c1a9eb8bdec9013011325f907dd1ebc7c35bc62946",
+      "size_bytes": 4770
+    },
+    "scripts/bm25_index.py": {
+      "path": "scripts/bm25_index.py",
+      "sha256": "1428b38df11e11f32a075ed4d93720fdcb30bc9009c7dddb5add118c2ee8dc68",
+      "size_bytes": 12301
+    },
+    "scripts/bm25_retrieval_eval.py": {
+      "path": "scripts/bm25_retrieval_eval.py",
+      "sha256": "e4d21c8ed57ed7ddacd2aa1bab8f3773adf32d83c1064f8191ecf27b2daa3d49",
+      "size_bytes": 20471
+    },
+    "scripts/dense_index.py": {
+      "path": "scripts/dense_index.py",
+      "sha256": "9e991910367987021e1ace250c5796c213ad53f14072ecbc4fe1539352f3d875",
+      "size_bytes": 22904
+    },
+    "scripts/dense_retrieval_eval.py": {
+      "path": "scripts/dense_retrieval_eval.py",
+      "sha256": "7a1a522f35c2b8ed8ffb5712b3ec5371b4fbb0b41450c5ef89d03f1c2cb40fd0",
+      "size_bytes": 21211
+    },
+    "scripts/eval_dataset.py": {
+      "path": "scripts/eval_dataset.py",
+      "sha256": "48d47343ce008457d031c54a40019ae8bc3a9c76bdaf2d9cbbc274628e3785c1",
+      "size_bytes": 3147
+    },
+    "scripts/install_bm25_runtime.py": {
+      "path": "scripts/install_bm25_runtime.py",
+      "sha256": "66bd5d9a57a035cad059af266b641c1a142872c82a1315e407743bd093c1d319",
+      "size_bytes": 4313
+    },
+    "scripts/query_parent_child.py": {
+      "path": "scripts/query_parent_child.py",
+      "sha256": "5100316da6bc0863736c4ac72ccb91e6f952171cc34d044638dadd516d40ce3d",
+      "size_bytes": 4679
+    },
+    "scripts/run_bm25_retrieval.py": {
+      "path": "scripts/run_bm25_retrieval.py",
+      "sha256": "d39c9e4cd0b12833239e3005f99e6398b8dab5e593794742cb11eecf16111011",
+      "size_bytes": 11431
+    },
+    "scripts/run_structure_comparison.py": {
+      "path": "scripts/run_structure_comparison.py",
+      "sha256": "3226ac0e242caaec1aafd37c09988c08c4d12ecfbd090543568c2431e7f7db8d",
+      "size_bytes": 7850
+    },
+    "scripts/structure_aware_chunking.py": {
+      "path": "scripts/structure_aware_chunking.py",
+      "sha256": "f8b3b1e9796d12d767dd6f33922fd6c28c8e456fbdd502356b05ecbefa2be37e",
+      "size_bytes": 9170
+    },
+    "scripts/structure_retrieval_eval.py": {
+      "path": "scripts/structure_retrieval_eval.py",
+      "sha256": "19a68590aa76c195e2f49c8a1e07d7ff9a9211a6928b6071cd60b8cd60b67c2e",
+      "size_bytes": 26507
+    },
+    "scripts/structure_retrieval_live.py": {
+      "path": "scripts/structure_retrieval_live.py",
+      "sha256": "b4b7b9ef76a23ef1dc81f56086b0f337c1a3f9bc3cb40ff7696b543d0bf9a9c8",
+      "size_bytes": 10899
+    },
+    "scripts/verify_structure_contract.py": {
+      "path": "scripts/verify_structure_contract.py",
+      "sha256": "e99c810591dbd7fdf2453ca6efb265b8f92517823092f3bf07790d6ebefa273f",
+      "size_bytes": 8258
+    },
+    "scripts/verify_structure_delivery.py": {
+      "path": "scripts/verify_structure_delivery.py",
+      "sha256": "75d1e2dd58060b6383a5949eda65398d9f338b29813f5fae423693f8c8313256",
+      "size_bytes": 9119
+    }
+  },
+  "source_sha256": "5100316da6bc0863736c4ac72ccb91e6f952171cc34d044638dadd516d40ce3d",
+  "started_at": "2026-11-13T10:24:42.236384+00:00",
+  "status": "PASS",
+  "total": 5,
+  "version": "task11-actual-parent-context-1.1"
+}

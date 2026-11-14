@@ -1,5 +1,5 @@
 """Independent exact-cosine/BM25 controls sharing one actual query embedding."""
-import importlib.metadata,json,os,platform,time
+import importlib.metadata,json,os,platform,sys,time
 from pathlib import Path
 from eval_dataset import ROOT,canonical,digest,load_jsonl
 from bm25_index import corpus,Tokenizer,payload_for,rank,record,write_new,committed
@@ -10,6 +10,15 @@ HOME=ROOT/'data/indexes/structure_pc_b0'
 
 
 def files():return {p.relative_to(ROOT).as_posix():record(p) for p in HOME.rglob('*') if p.is_file()}
+
+
+def validate_layout(index,m,base_ids):
+    if index['version']!='structure-exact-index-1.0' or index['base_ids']!=base_ids or index['child_ids']!=list(m['children']):raise ValueError('Vector ID order differs from actual corpus/mapping')
+    if len(set(index['child_ids']))!=len(index['child_ids']):raise ValueError('Duplicate child vector IDs')
+    expected=[cid for cid,c in m['children'].items() if c['passage_sha256']!=m['originals'][c['original_id']]['passage_sha256']]
+    if index['changed_children_embedded']!=expected or type(index['reused_unchanged_child_vectors']) is not int or index['reused_unchanged_child_vectors']!=len(m['children'])-len(expected):raise ValueError('Changed/reused child identities differ')
+    if type(index['embedding_items']) is not int or index['embedding_items']!=len(expected):raise ValueError('Embedding item count differs')
+    if set(index['artifact_files'])!={'data/indexes/structure_pc_b0/children.npy','data/indexes/structure_pc_b0/lexical.json'}:raise ValueError('Incomplete independent index artifact paths')
 
 
 def build():
@@ -59,15 +68,27 @@ class Retriever:
         import numpy as np
         from dense_index import PinnedEmbedder,load_config
         self.np=np;self.before=files();self.m=mapping();self.index=json.loads((ROOT/INDEX).read_text('utf-8'))
+        originals=corpus();validate_layout(self.index,self.m,[r['chunk_id'] for r in originals])
         if json.loads((HOME/'index_manifest.json').read_text('utf-8'))!=self.index:raise ValueError('Index metadata differs')
         for p,r in self.index['artifact_files'].items():
             if record(ROOT/p)!=r:raise ValueError('Independent index checksum differs')
         if self.index['mapping']!=record(ROOT/MAP) or self.index['derived_corpus']!=record(ROOT/DATA) or self.index['original_vectors']!=record(ROOT/self.index['original_vectors']['path']):raise ValueError('Index input changed')
         self.lexical=json.loads((HOME/'lexical.json').read_text('utf-8'));self.ids={'base':self.index['base_ids'],'child':self.index['child_ids']}
+        original_manifest=json.loads((ROOT/'data/manifests/dense_index_manifest.json').read_text('utf-8'))
+        if self.index['original_vectors']['path']!='data/indexes/dense/embeddings.npy' or self.index['original_vectors']['sha256']!=original_manifest['artifact_files']['embeddings.npy']['sha256']:raise ValueError('Base vectors not original artifact')
         self.vectors={'base':np.load(ROOT/self.index['original_vectors']['path'],allow_pickle=False),'child':np.load(HOME/'children.npy',allow_pickle=False)}
         for method,values in self.vectors.items():
             if values.dtype!=np.float32 or values.shape!=(len(self.ids[method]),1024) or not np.isfinite(values).all() or not np.allclose(np.linalg.norm(values,axis=1),1,atol=1e-6):raise ValueError('Independent vectors invalid')
-        self.tokenizer=Tokenizer();self.embedder=PinnedEmbedder(load_config())
+        self.tokenizer=Tokenizer();bodies={r['chunk_id']:r for r in load_jsonl(ROOT/DATA)}
+        child_rows=[];base_positions={cid:i for i,cid in enumerate(self.ids['base'])}
+        for i,cid in enumerate(self.ids['child']):
+            child=self.m['children'][cid];body=bodies[cid]
+            if body['kind']!='child' or digest(body['content_zh'].encode())!=child['content_sha256'] or digest((' / '.join(body['section_path'])+'\n\n'+body['content_zh']).encode())!=child['passage_sha256']:raise ValueError('Child indexed text identity differs')
+            child_rows.append({'chunk_id':cid,'title_zh':child['title_zh'],'content_zh':body['content_zh']})
+            if child['passage_sha256']==self.m['originals'][child['original_id']]['passage_sha256'] and not np.array_equal(self.vectors['child'][i],self.vectors['base'][base_positions[child['original_id']]]):raise ValueError('Unchanged child vector reuse differs')
+        if canonical(self.lexical)!=canonical({'base':payload_for(originals,'title_body',self.tokenizer),'child':payload_for(child_rows,'title_body',self.tokenizer)}):raise ValueError('Actual BM25 payload differs from frozen text/tokenizer')
+        if self.index['embedding_config']!=record(ROOT/'config/dense_index.json') or self.index['config']!=record(ROOT/'config/structure_parent_child.json'):raise ValueError('Index configuration differs')
+        self.embedder=PinnedEmbedder(load_config())
 
     def query(self,question,qid='warmup'):
         from dense_retrieval_eval import normalize_query
@@ -91,7 +112,12 @@ class Retriever:
     def close(self):
         if files()!=self.before:raise ValueError('Read-only independent index changed')
     def __enter__(self):return self
-    def __exit__(self,*_):self.close()
+    def __exit__(self,*_):
+        primary=sys.exc_info()[0] is not None
+        try:self.close()
+        except Exception as exc:
+            if primary:print('Secondary structure index cleanup error: '+type(exc).__name__,file=sys.stderr)
+            else:raise
 
 
 if __name__=='__main__':

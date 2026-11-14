@@ -15,10 +15,9 @@ MARKERS=('如果','但是','除外','不得','必须','只有','除非','例外'
 
 def config():
     value=json.loads((ROOT/CONFIG).read_text('utf-8'))
-    if (type(value['child_max_body_tokens']) is not int or value['child_max_body_tokens']!=256
-        or value['methods']!=['base','child','parent_child'] or value['context_token_budget']!=4096
-        or value['tokenizers_version']!='0.22.1' or value['channel_top_k']!=80 or value['rrf_k']!=60
-        or value['reranker'] is not False or value['cache'] is not False):raise ValueError('Fixed Task11 policy differs')
+    # All fields and JSON types belong to the frozen 1.0 policy, including
+    # parameters consumed by the adapters rather than the chunker itself.
+    if digest(canonical(value))!='bb2c6e31510638f4384e306b0ab553d0180568ee2b0acc8c8beb4a88a2827968':raise ValueError('Fixed Task11 policy differs; use a new version for changes')
     return value
 
 
