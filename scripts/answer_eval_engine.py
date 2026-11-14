@@ -8,7 +8,7 @@ def pack(question,evidence,cfg,prompt):
     selected=[]
     def messages(rows):
         body=[{'chunk_id':r['chunk_id'],'law_number':r['law_number'],'content_zh':r['content_zh'],
-               'source_revision_verified':r['source_revision_verified'],'needs_rule_review':r['needs_rule_review'],'review_notes':r['review_notes']} for r in rows]
+               'needs_rule_review':r['needs_rule_review'],'review_notes':r['review_notes']} for r in rows]
         return [{'role':'system','content':prompt},{'role':'user','content':json.dumps({'question':question,'evidence':body},ensure_ascii=False)}]
     if len(canonical(messages([])))>cfg['input_utf8_byte_budget']:raise ValueError('Question cannot fit whole prompt')
     for r in evidence[:cfg['max_context_chunks']]:

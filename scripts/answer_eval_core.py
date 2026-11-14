@@ -133,7 +133,7 @@ def validate_public_prediction(q,p):
     if p['profile']!='optimized_extractive' or p['status'] not in ('answered','refused'):raise ValueError('Invalid profile/status')
     for key,maxsize in [('retrieved_ids',10),('offered_ids',5),('selected_ids',3)]:
         ids=p[key]
-        if not isinstance(ids,list) or len(ids)>maxsize or any(not isinstance(v,str) or not re.fullmatch(r'L\d{2}-\d{2}',v) for v in ids) or len(set(ids))!=len(ids):raise ValueError('Invalid IDs: '+key)
+        if not isinstance(ids,list) or len(ids)>maxsize or any(not isinstance(v,str) or not re.fullmatch(r'L\d{2}[A-Z]?-\d{2}',v) for v in ids) or len(set(ids))!=len(ids):raise ValueError('Invalid IDs: '+key)
     if not set(p['selected_ids'])<=set(p['offered_ids'])<=set(p['retrieved_ids']):raise ValueError('Unretrieved or unoffered citation')
     if [c['chunk_id'] for c in p['citations']]!=p['selected_ids'] or (p['status']=='answered')!=bool(p['selected_ids']):raise ValueError('Answer/citation status differs')
     if p['status']=='answered' and (p['error'] is not None or p['refusal_reason'] is not None):raise ValueError('Failed result asserted answer')
