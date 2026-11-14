@@ -34,7 +34,10 @@ def execute(split):
         with (DIRECTORY/'test_usage.jsonl').open('x',encoding='utf-8') as f:f.write(canonical({'event':'STARTED',**started}).decode()+'\n')
     engine=None
     try:
-        engine=AnswerEngine();write_new(folder/'environment.json',{'retriever':engine.retriever.environment(),'answer_model':config()['llm'],'same_model_judge':True})
+        engine=AnswerEngine()
+        warmup=engine.retriever.query('请查找球场球门的规定尺寸资料。','top40')
+        write_new(folder/'environment.json',{'retriever':engine.retriever.environment(),'answer_model':config()['llm'],'same_model_judge':True,
+                                           'non_evaluation_retrieval_warmup':warmup})
         qs=questions(split);predictions=[]
         for i,q in enumerate(qs,1):
             # Only the question string crosses the production answer API.
