@@ -20,7 +20,7 @@ def reproduce():
     checks['extra_full_answer_field_accepted']=replay_demo(ui,True)
     ui=copy.deepcopy(read(ROOT/'reports/task13/ui-demo.json'));ui['rows'][0]['result']['citations'][0]['source_url']='https://en.wikipedia.org/wiki/Unrelated_page'
     checks['unrelated_same_origin_citation_accepted']=replay_demo(ui,True)
-    cfg=copy.deepcopy(app_config());cfg['ui']['share']=0;path=ROOT/'.tmp/task13-audit/share-zero.json';write_new(path,cfg)
+    cfg=copy.deepcopy(app_config());cfg['ui']['share']=0;path=ROOT/'.tmp/task13-audit'/('share-zero-'+uuid.uuid4().hex+'.json');write_new(path,cfg)
     checks['integer_zero_accepted_as_boolean_config']=app_config(path.relative_to(ROOT).as_posix())['ui']['share']==0
     row=next(r for r in read(ROOT/'reports/task13/backend-demo-first.json')['rows'] if r['id']=='outside')
     failure=copy.deepcopy(read(ROOT/row['result']['private_trace']['path']));failure.update(error='RuntimeError: service failed',refusal_reason='runtime_or_validation_error',attempts=[])

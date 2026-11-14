@@ -1,0 +1,11 @@
+{
+  "version": "task13-audit-1.1",
+  "base_config": "config/task13_app.json",
+  "corpus": "data/processed/rag_chunks_zh.jsonl",
+  "citation_sources": "data/manifests/task13_citation_sources.json",
+  "environment": ".runtime/task13/venv-final/Scripts/python.exe",
+  "private_root": ".runtime/task13-audit",
+  "ui": {"host": "127.0.0.1", "port": 7867, "share": false, "app_data": ".runtime/task13/audit/kotaemon"},
+  "worker_timeout_seconds": 420,
+  "scope": "Task13 correctness and delivery repairs; unchanged corpus/models/retrieval/answer policy; isolated revised UI and receipts"
+}
