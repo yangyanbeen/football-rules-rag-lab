@@ -455,3 +455,5 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 - 112 个锁定依赖和本机环境见 [运行清单](../reports/task17/live-comparison.json)，复跑见 [流程与命令](LANGGRAPH_FLOW.md)。7 条真实记录中有 5 次查询编码、200 个重排对和 5 次生成。正式测试及人工评测均为 0 次新增。
 - 普通及图均通过正常、资料外、版本路由。对照图在正常情况下引用一致，受控错误引用返回校验失败。实际编译的 11 个节点与 22 条边可查分支。15 项受控图检查及本机/公开独立 18 项复算通过。 [受控 trace](../reports/task17/controls.json) · [交付报告](../reports/TASK_17_DELIVERY.md)
 - 普通与图的单次耗时各有快慢。启动和编译耗时另记，整体延迟、吞吐和模型回答质量变化待测。
+
+- 完整验收本机 18/18、干净公开副本 16/16。 [本机回执](../reports/task17/delivery-final.json) · [公开回执](../reports/task17/delivery-public.json)

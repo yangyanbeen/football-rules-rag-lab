@@ -12,3 +12,5 @@
 7/7 真实案例通过，共完成5次查询 Embedding、200个重排对及5次生成请求。受控实际图测试 15/15，通过了格式重试后成功、预算不足、两次上限、引用异常和请求隔离。两个报告分别保留实际请求与合成故障。原锁定评测和人工记录沿用前序版本。 [真实记录](task17/live-comparison.json) · [受控记录](task17/controls.json)
 
 本机和独立公开副本各通过 18/18 只读复验，证据与生成提交、锁包清单和私有请求哈希关联。保留原入口用于默认问答，图供需要分支和诊断的独立运行。 [本机复验](task17/replay-local.json) · [公开复验](task17/replay-public.json)
+
+完整交付验收本机 18/18、干净公开副本 16/16。版本 v0.17.0-langgraph-flow。 [本机验收](task17/delivery-final.json) · [公开验收](task17/delivery-public.json)
