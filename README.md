@@ -1,5 +1,7 @@
 # 足球规则 RAG Lab
 
+**原计划任务 1–17 已交付。** 任务十七新增独立 LangGraph 问答入口，提供真实普通链路对照、受控重试与引用失败记录。 [任务十七交付](reports/TASK_17_DELIVERY.md) · [流程与复跑](docs/LANGGRAPH_FLOW.md)
+
 **任务十六已交付。** 精确缓存已通过真实重复问答，语义缓存留出样本发现错误复用。 [交付报告](reports/TASK_16_DELIVERY.md) · [使用、结果与复算](docs/REDIS_CACHE_EXPERIMENT.md)
 
 **任务十五已完成 FAISS HNSW 对照。** 固定 99 条向量，开发集预选精确 Flat。锁定测试五组标注召回一致，搜索深度改变了精确 Top10 重合率和延迟。 [交付报告](reports/TASK_15_DELIVERY.md) · [参数和复跑](docs/FAISS_HNSW_EXPERIMENT.md)

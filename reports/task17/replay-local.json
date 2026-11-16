@@ -1,0 +1,45 @@
+{
+  "checks": {
+    "actual_graph_topology_matches_reviewed_11_nodes_and_22_edges": true,
+    "all_public_traces_replay_and_bind_request_ids": true,
+    "exact_isolated_dependency_lock_and_positive_setup_and_compile_time": true,
+    "new_experiments_do_not_change_formal_test_or_human_ledger": true,
+    "normal_and_outside_run_same_model_budgets": true,
+    "normal_outputs_and_source_hashes_agree_across_paths": true,
+    "real_run_commit_and_runtime_sources_match": true,
+    "real_seven_runs_match_frozen_order_and_case_results": true,
+    "reject_citation_check_skipped": true,
+    "reject_citation_leaked_on_failure": true,
+    "reject_fabricated_wall_clock": true,
+    "reject_inflated_retries": true,
+    "reject_unbound_node_id": true,
+    "reject_unbound_trace_path": true,
+    "reject_unredacted_answer": true,
+    "reject_version_hits_embedding": true,
+    "retry_and_failure_controls_keep_two_attempt_ceiling": true,
+    "synthetic_compiled_controls_and_sources_match": true
+  },
+  "controlled_report": {
+    "path": "reports/task17/controls.json",
+    "sha256": "6605b45d9471d44f579c76d0f0d95142d82c423e1f4c13ebcd3adf226bc94e37",
+    "size_bytes": 36590
+  },
+  "errors": [],
+  "live_report": {
+    "path": "reports/task17/live-comparison.json",
+    "sha256": "6be4046d22b83c53ed0dd62aa3b94d58ab1dd8b0d1129a4e61a95350f702bef0",
+    "size_bytes": 28172
+  },
+  "new_formal_test_runs": 0,
+  "new_human_judgments": 0,
+  "new_model_requests": 0,
+  "passed": 18,
+  "producer": {
+    "path": "scripts/verify_langgraph_replay.py",
+    "sha256": "a0a34ff42f091cffb59e2517684c0731a40830e31bba515b6058e284e8b2a907",
+    "size_bytes": 13132
+  },
+  "site_packages_disabled": true,
+  "status": "PASS",
+  "total": 18
+}
