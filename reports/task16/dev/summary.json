@@ -1,0 +1,787 @@
+{
+  "0.85": {
+    "budget": {
+      "baseline_downstream_requests": 24,
+      "modeled_downstream_requests": 8,
+      "modeled_embedding_queries_with_reuse": 18,
+      "safe_downstream_requests_avoided": 14,
+      "unsafe_downstream_requests_avoided": 2
+    },
+    "cache_only_hit_latency": {
+      "p50_ms": 0.47465,
+      "p95_ms": 0.802125,
+      "samples": 256
+    },
+    "cache_only_miss_latency": {
+      "p50_ms": 0.4802,
+      "p95_ms": 0.817395,
+      "samples": 128
+    },
+    "correct_hits": 14,
+    "eligible_reuse_probes": 18,
+    "eligible_reuse_recall": 0.7777777777777778,
+    "errors": [
+      {
+        "expected_anchor": null,
+        "kind": "near_negative",
+        "matched_anchor": "D1",
+        "probe": "D1-3",
+        "similarity": 0.8754751236467821
+      },
+      {
+        "expected_anchor": null,
+        "kind": "near_negative",
+        "matched_anchor": "D3",
+        "probe": "D3-3",
+        "similarity": 0.8797846025499569
+      }
+    ],
+    "hit_rate": 0.6666666666666666,
+    "hits": 16,
+    "misses": 8,
+    "new_correct_semantic_hits": 8,
+    "outcomes": [
+      {
+        "id": "D1-1",
+        "matched_anchor": "D1",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D1-2",
+        "matched_anchor": "D1",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D1-3",
+        "matched_anchor": "D1",
+        "outcome": "wrong_hit"
+      },
+      {
+        "id": "D1-4",
+        "matched_anchor": "D1",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D2-1",
+        "matched_anchor": "D2",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D2-2",
+        "matched_anchor": "D2",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D2-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D2-4",
+        "matched_anchor": "D2",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D3-1",
+        "matched_anchor": "D3",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D3-2",
+        "matched_anchor": "D3",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D3-3",
+        "matched_anchor": "D3",
+        "outcome": "wrong_hit"
+      },
+      {
+        "id": "D3-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D4-1",
+        "matched_anchor": "D4",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D4-2",
+        "matched_anchor": "D4",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D4-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D4-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D5-1",
+        "matched_anchor": "D5",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D5-2",
+        "matched_anchor": "D5",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D5-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D5-4",
+        "matched_anchor": "D5",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D6-1",
+        "matched_anchor": "D6",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D6-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D6-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D6-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      }
+    ],
+    "probes": 24,
+    "threshold": 0.85,
+    "wrong_hit_rate_among_hits": 0.125,
+    "wrong_hit_rate_among_requests": 0.08333333333333333,
+    "wrong_hits": 2
+  },
+  "0.9": {
+    "budget": {
+      "baseline_downstream_requests": 24,
+      "modeled_downstream_requests": 13,
+      "modeled_embedding_queries_with_reuse": 18,
+      "safe_downstream_requests_avoided": 11,
+      "unsafe_downstream_requests_avoided": 0
+    },
+    "cache_only_hit_latency": {
+      "p50_ms": 0.02195,
+      "p95_ms": 0.7061,
+      "samples": 176
+    },
+    "cache_only_miss_latency": {
+      "p50_ms": 0.51045,
+      "p95_ms": 0.817395,
+      "samples": 208
+    },
+    "correct_hits": 11,
+    "eligible_reuse_probes": 18,
+    "eligible_reuse_recall": 0.6111111111111112,
+    "errors": [],
+    "hit_rate": 0.4583333333333333,
+    "hits": 11,
+    "misses": 13,
+    "new_correct_semantic_hits": 5,
+    "outcomes": [
+      {
+        "id": "D1-1",
+        "matched_anchor": "D1",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D1-2",
+        "matched_anchor": "D1",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D1-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D1-4",
+        "matched_anchor": "D1",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D2-1",
+        "matched_anchor": "D2",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D2-2",
+        "matched_anchor": "D2",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D2-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D2-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D3-1",
+        "matched_anchor": "D3",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D3-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D3-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D3-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D4-1",
+        "matched_anchor": "D4",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D4-2",
+        "matched_anchor": "D4",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D4-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D4-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D5-1",
+        "matched_anchor": "D5",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D5-2",
+        "matched_anchor": "D5",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D5-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D5-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D6-1",
+        "matched_anchor": "D6",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D6-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D6-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D6-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      }
+    ],
+    "probes": 24,
+    "threshold": 0.9,
+    "wrong_hit_rate_among_hits": 0.0,
+    "wrong_hit_rate_among_requests": 0.0,
+    "wrong_hits": 0
+  },
+  "0.95": {
+    "budget": {
+      "baseline_downstream_requests": 24,
+      "modeled_downstream_requests": 17,
+      "modeled_embedding_queries_with_reuse": 18,
+      "safe_downstream_requests_avoided": 7,
+      "unsafe_downstream_requests_avoided": 0
+    },
+    "cache_only_hit_latency": {
+      "p50_ms": 0.0091,
+      "p95_ms": 0.5216249999999999,
+      "samples": 112
+    },
+    "cache_only_miss_latency": {
+      "p50_ms": 0.5184,
+      "p95_ms": 0.815505,
+      "samples": 272
+    },
+    "correct_hits": 7,
+    "eligible_reuse_probes": 18,
+    "eligible_reuse_recall": 0.3888888888888889,
+    "errors": [],
+    "hit_rate": 0.2916666666666667,
+    "hits": 7,
+    "misses": 17,
+    "new_correct_semantic_hits": 1,
+    "outcomes": [
+      {
+        "id": "D1-1",
+        "matched_anchor": "D1",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D1-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D1-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D1-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D2-1",
+        "matched_anchor": "D2",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D2-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D2-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D2-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D3-1",
+        "matched_anchor": "D3",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D3-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D3-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D3-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D4-1",
+        "matched_anchor": "D4",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D4-2",
+        "matched_anchor": "D4",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D4-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D4-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D5-1",
+        "matched_anchor": "D5",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D5-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D5-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D5-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D6-1",
+        "matched_anchor": "D6",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D6-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D6-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D6-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      }
+    ],
+    "probes": 24,
+    "threshold": 0.95,
+    "wrong_hit_rate_among_hits": 0.0,
+    "wrong_hit_rate_among_requests": 0.0,
+    "wrong_hits": 0
+  },
+  "0.98": {
+    "budget": {
+      "baseline_downstream_requests": 24,
+      "modeled_downstream_requests": 18,
+      "modeled_embedding_queries_with_reuse": 18,
+      "safe_downstream_requests_avoided": 6,
+      "unsafe_downstream_requests_avoided": 0
+    },
+    "cache_only_hit_latency": {
+      "p50_ms": 0.0089,
+      "p95_ms": 0.0463,
+      "samples": 96
+    },
+    "cache_only_miss_latency": {
+      "p50_ms": 0.51795,
+      "p95_ms": 0.81475,
+      "samples": 288
+    },
+    "correct_hits": 6,
+    "eligible_reuse_probes": 18,
+    "eligible_reuse_recall": 0.3333333333333333,
+    "errors": [],
+    "hit_rate": 0.25,
+    "hits": 6,
+    "misses": 18,
+    "new_correct_semantic_hits": 0,
+    "outcomes": [
+      {
+        "id": "D1-1",
+        "matched_anchor": "D1",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D1-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D1-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D1-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D2-1",
+        "matched_anchor": "D2",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D2-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D2-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D2-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D3-1",
+        "matched_anchor": "D3",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D3-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D3-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D3-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D4-1",
+        "matched_anchor": "D4",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D4-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D4-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D4-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D5-1",
+        "matched_anchor": "D5",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D5-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D5-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D5-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D6-1",
+        "matched_anchor": "D6",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D6-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D6-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D6-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      }
+    ],
+    "probes": 24,
+    "threshold": 0.98,
+    "wrong_hit_rate_among_hits": 0.0,
+    "wrong_hit_rate_among_requests": 0.0,
+    "wrong_hits": 0
+  },
+  "exact": {
+    "budget": {
+      "baseline_downstream_requests": 24,
+      "modeled_downstream_requests": 18,
+      "modeled_embedding_queries_with_reuse": 18,
+      "safe_downstream_requests_avoided": 6,
+      "unsafe_downstream_requests_avoided": 0
+    },
+    "cache_only_hit_latency": {
+      "p50_ms": 0.0089,
+      "p95_ms": 0.0463,
+      "samples": 96
+    },
+    "cache_only_miss_latency": {
+      "p50_ms": 0.0044,
+      "p95_ms": 0.013124999999999989,
+      "samples": 288
+    },
+    "correct_hits": 6,
+    "eligible_reuse_probes": 18,
+    "eligible_reuse_recall": 0.3333333333333333,
+    "errors": [],
+    "hit_rate": 0.25,
+    "hits": 6,
+    "misses": 18,
+    "new_correct_semantic_hits": 0,
+    "outcomes": [
+      {
+        "id": "D1-1",
+        "matched_anchor": "D1",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D1-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D1-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D1-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D2-1",
+        "matched_anchor": "D2",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D2-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D2-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D2-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D3-1",
+        "matched_anchor": "D3",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D3-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D3-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D3-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D4-1",
+        "matched_anchor": "D4",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D4-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D4-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D4-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D5-1",
+        "matched_anchor": "D5",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D5-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D5-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D5-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D6-1",
+        "matched_anchor": "D6",
+        "outcome": "correct_hit"
+      },
+      {
+        "id": "D6-2",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D6-3",
+        "matched_anchor": null,
+        "outcome": "miss"
+      },
+      {
+        "id": "D6-4",
+        "matched_anchor": null,
+        "outcome": "miss"
+      }
+    ],
+    "probes": 24,
+    "threshold": null,
+    "wrong_hit_rate_among_hits": 0.0,
+    "wrong_hit_rate_among_requests": 0.0,
+    "wrong_hits": 0
+  }
+}
