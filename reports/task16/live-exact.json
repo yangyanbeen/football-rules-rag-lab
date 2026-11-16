@@ -1,0 +1,115 @@
+{
+  "backend": "memory",
+  "captured_at": "2026-11-16T07:17:30.249940+00:00",
+  "configuration": {
+    "path": "config/query_cache.json",
+    "sha256": "e04b2e592af879af55f30d85639baa8db75e73f2dbdf69a756974fc034d1c8b5",
+    "size_bytes": 195
+  },
+  "new_formal_test_runs": 0,
+  "new_human_judgments": 0,
+  "question_sha256": "13a0eb1149554109ee43cffb7366cbf7c46ecbb8ac1fd09095694aa1c5e9ac6c",
+  "saved": {
+    "embedding_queries": 1,
+    "generation_attempts": 1,
+    "reranked_pairs": 40,
+    "worker_invocations": 1
+  },
+  "scope": "Ad hoc repeated audited query from Task13 demo. Measures actual worker invocations and API attempts.",
+  "source": {
+    "path": "scripts/run_cached_query.py",
+    "sha256": "119d2d5507f0a475f240e49f94f363e8b4a58b4e2598fd7976ecbc55411c8c21",
+    "size_bytes": 5748
+  },
+  "source_commit": "cb642cf29f5ac171f722024ce8a79e044676cb94",
+  "status": "PASS",
+  "steps": [
+    {
+      "answer_sha256": "ac964d64903587a0869a8b37db0050651f52b8bee3bbf9f49ba5da64bf1306b4",
+      "cache_state": "disabled",
+      "citation_ids": [
+        "L01-03"
+      ],
+      "embedding_queries": 1,
+      "generation_attempts": 1,
+      "mode": "uncached",
+      "private_trace": {
+        "path": ".runtime/task13-audit/workers/d7700b70466b4403b8ee1057c76af7f4.json",
+        "sha256": "2b04c7275bb48c88a1566f6761ddc0880bf4e6ade12f2b50e887a45ae525f783",
+        "size_bytes": 90292
+      },
+      "reranked_pairs": 40,
+      "store_state": null,
+      "wall_ns": 48824803900,
+      "worker_invocations": 1
+    },
+    {
+      "answer_sha256": "ac964d64903587a0869a8b37db0050651f52b8bee3bbf9f49ba5da64bf1306b4",
+      "cache_state": "disabled",
+      "citation_ids": [
+        "L01-03"
+      ],
+      "embedding_queries": 1,
+      "generation_attempts": 1,
+      "mode": "uncached",
+      "private_trace": {
+        "path": ".runtime/task13-audit/workers/8e465670e5e94fadbd01228d7065d435.json",
+        "sha256": "151f096505ad93d620bb3e5b16565bce51c98f8f9a4bbed80beb1052336710ba",
+        "size_bytes": 90291
+      },
+      "reranked_pairs": 40,
+      "store_state": null,
+      "wall_ns": 15967635600,
+      "worker_invocations": 1
+    },
+    {
+      "answer_sha256": "ac964d64903587a0869a8b37db0050651f52b8bee3bbf9f49ba5da64bf1306b4",
+      "cache_state": "miss",
+      "citation_ids": [
+        "L01-03"
+      ],
+      "embedding_queries": 1,
+      "generation_attempts": 1,
+      "mode": "exact",
+      "private_trace": {
+        "path": ".runtime/task13-audit/workers/6d3b85e42a01495585dbdd9df7b9f856.json",
+        "sha256": "4439d0a3dee9de00e1ef6cee3bdf11f5dc4961b1b1b9c8e3a7795a5ab5a39758",
+        "size_bytes": 90276
+      },
+      "reranked_pairs": 40,
+      "store_state": "stored",
+      "wall_ns": 15567932300,
+      "worker_invocations": 1
+    },
+    {
+      "answer_sha256": "ac964d64903587a0869a8b37db0050651f52b8bee3bbf9f49ba5da64bf1306b4",
+      "cache_state": "hit",
+      "citation_ids": [
+        "L01-03"
+      ],
+      "embedding_queries": 0,
+      "generation_attempts": 0,
+      "mode": "exact",
+      "private_trace": null,
+      "reranked_pairs": 0,
+      "store_state": null,
+      "wall_ns": 15957900,
+      "worker_invocations": 0
+    }
+  ],
+  "totals": {
+    "exact": {
+      "embedding_queries": 1,
+      "generation_attempts": 1,
+      "reranked_pairs": 40,
+      "worker_invocations": 1
+    },
+    "uncached": {
+      "embedding_queries": 2,
+      "generation_attempts": 2,
+      "reranked_pairs": 80,
+      "worker_invocations": 2
+    }
+  },
+  "version": "task16-live-exact-1.0"
+}
