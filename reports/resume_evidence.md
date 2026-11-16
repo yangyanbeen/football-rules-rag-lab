@@ -156,3 +156,8 @@
 ## 任务十四最终汇总
 
 简历请用[当前成稿](task14/RESUME_FINAL.md)。每个数字后有来源编号；在仓库根目录运行 python -S -B scripts/task14_archive.py show --claim 加上编号，即可查原逐题记录、参数、原命令和校验值。完整范围与口径见[结果及取舍](task14/RESULTS_FINAL.md)和[交付报告](TASK_14_DELIVERY.md)。上文保留对应阶段状态。未实测的示例数据、HNSW、缓存及总体答案准确率提升继续标“待测”。
+
+
+## 任务十五 FAISS 证据补充
+
+可写为“在 99 条足球规则向量上搭建 FAISS CPU 基准，以精确 FlatIP 为对照验证 HNSW 的 M、efConstruction、efSearch，量化了标注 Recall、精确 Top10 重合率、P50/P95、构建成本与内存。”如果写数字，标注样本来源和仅向量检索的计时口径。五组测试 Recall@5 为 97.5%。精确 Top10 完全重合的 HNSW S64 搜索 P50 为 12.2 µs，Flat 为 9.1 µs，选中 Flat。大规模检索、整体提速和吞吐待测。 [实验参数与命令](../docs/FAISS_HNSW_EXPERIMENT.md) · [测试逐题、计时与构建汇总](task15/test/summary.json)

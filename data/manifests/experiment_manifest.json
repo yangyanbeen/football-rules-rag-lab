@@ -5091,7 +5091,384 @@
       "decision": "保存原始正负收益、未测量指标、独立评分口径；简历仅取可核验结论",
       "limitations": "固定Wikipedia快照中文整理的领域数据；无新增算法或总体准确率、吞吐量、部署表现结论",
       "artifact_policy": "排除最终完整回执和全局文件清单避免递归；由全局清单统一记录它们。"
+    },
+    {
+      "id": "TASK-015-FAISS-HNSW-B0",
+      "date": "2026-11-16",
+      "task": 15,
+      "objective": "测量 FAISS HNSW 相对精确余弦检索的质量、延迟和资源取舍",
+      "control": "IndexFlatIP on the same normalized 99 vectors",
+      "main_variable": "独立向量检索索引。HNSW 每组从参考图参数仅改一个因素",
+      "data_version": {
+        "corpus": "Corpus B0, frozen Dense task 5 vectors",
+        "fingerprint": "1f709033daf4df83416da434f2b0f4b15181273c9465780e53977a050346fa07",
+        "records": 99,
+        "dimensions": 1024
+      },
+      "evaluation_version": {
+        "dev": {
+          "path": "data/eval/retrieval_dev.jsonl",
+          "sha256": "b24b2dc9c1483495623407c472ca1ff3b0b0a6846b4894892f8d85e9ffb34e04",
+          "size_bytes": 60024
+        },
+        "test": {
+          "path": "data/eval/retrieval_test.jsonl",
+          "sha256": "269d49e7d65c4ad3a97b588f34093a65bbc483c7382f78b0e9cf466eaa759a62",
+          "size_bytes": 78040
+        },
+        "freeze": {
+          "path": "reports/task15/test-freeze.json",
+          "size_bytes": 2970,
+          "sha256": "f66a487761190c46141d9e159ffa8c76c046918f80e7e1f05a73a86c54cd2a44"
+        },
+        "locked_test_runs": 1
+      },
+      "producer_commits": {
+        "dev": "09ac6a60e4f7911980c0d41ab2d596c02eb1c2b6",
+        "test": "e77136480d972429309510be5bf3c34d1fbd49d3"
+      },
+      "models": {
+        "embedding": {
+          "architecture": "bert",
+          "context_length": 8192,
+          "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+          "dimensions": 1024,
+          "name": "bge-m3:latest",
+          "ollama_version": "0.40.16",
+          "quantization": "F16"
+        },
+        "answer_llm_requests": 0
+      },
+      "parameters": {
+        "version": "faiss-hnsw-b0-1.0",
+        "corpus_vectors": "data/indexes/dense/embeddings.npy",
+        "dense_config": "config/dense_index.json",
+        "dependencies": {
+          "faiss-cpu": "1.11.0",
+          "numpy": "1.26.4",
+          "packaging": "24.2",
+          "psutil": "6.1.1"
+        },
+        "dimensions": 1024,
+        "vector_count": 99,
+        "top_k": 10,
+        "threads": 1,
+        "build_repetitions": 3,
+        "warmup_rounds": 3,
+        "query_repetitions": 32,
+        "order_seed": 15,
+        "graphs": {
+          "flat": {
+            "type": "IndexFlatIP"
+          },
+          "hnsw_base": {
+            "type": "IndexHNSWFlat",
+            "M": 16,
+            "efConstruction": 100
+          },
+          "hnsw_m8": {
+            "type": "IndexHNSWFlat",
+            "M": 8,
+            "efConstruction": 100
+          },
+          "hnsw_c40": {
+            "type": "IndexHNSWFlat",
+            "M": 16,
+            "efConstruction": 40
+          }
+        },
+        "methods": {
+          "flat": {
+            "graph": "flat",
+            "efSearch": null
+          },
+          "hnsw_base": {
+            "graph": "hnsw_base",
+            "efSearch": 16
+          },
+          "hnsw_m8": {
+            "graph": "hnsw_m8",
+            "efSearch": 16
+          },
+          "hnsw_c40": {
+            "graph": "hnsw_c40",
+            "efSearch": 16
+          },
+          "hnsw_s64": {
+            "graph": "hnsw_base",
+            "efSearch": 64
+          }
+        },
+        "selection": {
+          "min_mean_flat_overlap_at_10": 0.99,
+          "required_quality": [
+            "Recall@5",
+            "Recall@10",
+            "MRR@10"
+          ],
+          "tie_break": "prefer flat, then method name",
+          "primary_cost": "development vector search P50"
+        }
+      },
+      "hardware": {
+        "faiss_options": "OPTIMIZE AVX2 ",
+        "faiss_threads": 1,
+        "logical_cpus": 20,
+        "machine": "AMD64",
+        "packages": {
+          "faiss-cpu": "1.11.0",
+          "numpy": "1.26.4",
+          "packaging": "24.2",
+          "psutil": "6.1.1"
+        },
+        "physical_memory_bytes": 16858472448,
+        "platform": "Windows-10-10.0.26200-SP0",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "python": "3.10.22"
+      },
+      "commands": [
+        "python -B scripts/run_faiss_hnsw.py dev",
+        "python -B scripts/run_faiss_hnsw.py freeze",
+        "python -B scripts/run_faiss_hnsw.py test",
+        "python -S -B scripts/verify_faiss_hnsw.py --report .tmp/task15-replay-new.json"
+      ],
+      "artifacts": [
+        {
+          "path": "config/faiss_hnsw_experiment.json",
+          "size_bytes": 1204,
+          "sha256": "2f8f18d4f44c34bd956cbe8f468a314f956e1b283c7887be9cbf5293eaa4c436"
+        },
+        {
+          "path": "docs/FAISS_HNSW_EXPERIMENT.md",
+          "size_bytes": 6162,
+          "sha256": "85790e1c4b6d5b05de74330f456c875814f18948336419d2034bf6f25d46683b"
+        },
+        {
+          "path": "docs/TASK_15_SCOPE.md",
+          "size_bytes": 1530,
+          "sha256": "30b7857acc94a3db08f25b59d338824a40bf5cd6890ca1494d34230adc0bace5"
+        },
+        {
+          "path": "reports/task15/dev/builds.json",
+          "size_bytes": 3916,
+          "sha256": "24cfbe27af4a3bc52882fc567891e09c5462fc2adca379b153f6dee042b5efb6"
+        },
+        {
+          "path": "reports/task15/dev/predictions.jsonl",
+          "size_bytes": 103568,
+          "sha256": "c87117c7710c823a261a7cec0bb3c3e2c96e24e911be8dfec0c32e91b8f87c84"
+        },
+        {
+          "path": "reports/task15/dev/run_manifest.json",
+          "size_bytes": 7221,
+          "sha256": "ac2d44c6522b8dec363e67dbfae364ca62da984fff1b667a1cca910b6da61c6f"
+        },
+        {
+          "path": "reports/task15/dev/run_started.json",
+          "size_bytes": 154,
+          "sha256": "ba93cc17283337c9fdcc8875b6fb5b49810821b78448dc3f8e6e893bc126f38f"
+        },
+        {
+          "path": "reports/task15/dev/summary.json",
+          "size_bytes": 64838,
+          "sha256": "092fa7f78060e7295f2d5b72b6630b29d3fa8653d05eeb0a366af1ea9b6003eb"
+        },
+        {
+          "path": "reports/task15/replay-local.json",
+          "size_bytes": 1569,
+          "sha256": "52f31b0083e145b8b575e2ae5d27413cf69b125db9168b643a98513011f9efcb"
+        },
+        {
+          "path": "reports/task15/replay-public.json",
+          "size_bytes": 1855,
+          "sha256": "10cf75114e696b61e932dc7ae050ca81650eb09d01d37af2beee223369c6e3a8"
+        },
+        {
+          "path": "reports/task15/test-freeze.json",
+          "size_bytes": 2970,
+          "sha256": "f66a487761190c46141d9e159ffa8c76c046918f80e7e1f05a73a86c54cd2a44"
+        },
+        {
+          "path": "reports/task15/test/builds.json",
+          "size_bytes": 3916,
+          "sha256": "24cfbe27af4a3bc52882fc567891e09c5462fc2adca379b153f6dee042b5efb6"
+        },
+        {
+          "path": "reports/task15/test/predictions.jsonl",
+          "size_bytes": 129373,
+          "sha256": "eabfc1999b1109084347f0de4ef848ff4728e0d435fae00de8d777bffca0ee6d"
+        },
+        {
+          "path": "reports/task15/test/run_manifest.json",
+          "size_bytes": 8063,
+          "sha256": "a585a0a840a67a707456f5ed86eb8e14adfebde76b038a06ac7021ec934bc9a6"
+        },
+        {
+          "path": "reports/task15/test/run_started.json",
+          "size_bytes": 308,
+          "sha256": "84a9c84394baf31d5248967bc701dadf3428118609977bca2ce0116664852f57"
+        },
+        {
+          "path": "reports/task15/test/summary.json",
+          "size_bytes": 79937,
+          "sha256": "8af65b1b6cdac34a08a94dfc0dec0313033da3e143d7d1c8a20e39722f5cf3ee"
+        },
+        {
+          "path": "scripts/faiss_hnsw_eval.py",
+          "size_bytes": 8188,
+          "sha256": "ae996eee762f549dbbb23777871ab5a4efb1ff974aee1ef58bd30eb9e5e3c352"
+        },
+        {
+          "path": "scripts/run_faiss_hnsw.py",
+          "size_bytes": 14244,
+          "sha256": "ee053aa9a440aa098d722eda58eb1bbbec59adfd36f4f7569dd1bcc2b62ed068"
+        },
+        {
+          "path": "scripts/verify_faiss_hnsw.py",
+          "size_bytes": 9747,
+          "sha256": "910e0fac5cff5e610213ea73805ca1a3e2cd29af8c8a444c38b1d61bdb4af618"
+        },
+        {
+          "path": "scripts/verify_task15_delivery.py",
+          "size_bytes": 9819,
+          "sha256": "277d1cbc1765f1a79a12f440fedfc84dd8575ab5b19832d98db04eec0c74a307"
+        }
+      ],
+      "metrics": {
+        "recall_at_5": {
+          "flat": 0.975,
+          "hnsw_base": 0.975,
+          "hnsw_c40": 0.975,
+          "hnsw_m8": 0.975,
+          "hnsw_s64": 0.975
+        },
+        "mrr_at_10": {
+          "flat": 0.86875,
+          "hnsw_base": 0.86875,
+          "hnsw_c40": 0.86875,
+          "hnsw_m8": 0.8729166666666668,
+          "hnsw_s64": 0.86875
+        },
+        "overlap_at_10": {
+          "flat": 1.0,
+          "hnsw_base": 0.9819999999999998,
+          "hnsw_c40": 0.9799999999999998,
+          "hnsw_m8": 0.9739999999999996,
+          "hnsw_s64": 1.0
+        },
+        "query_p50_ms": {
+          "flat": 0.0091,
+          "hnsw_base": 0.0077,
+          "hnsw_c40": 0.0085,
+          "hnsw_m8": 0.0094,
+          "hnsw_s64": 0.0122
+        },
+        "query_p95_ms": {
+          "flat": 0.0112,
+          "hnsw_base": 0.0103,
+          "hnsw_c40": 0.0115,
+          "hnsw_m8": 0.0128,
+          "hnsw_s64": 0.0165
+        },
+        "graphs": {
+          "flat": {
+            "build_ms": {
+              "p50": 0.0645,
+              "p95": 0.07935,
+              "samples": 3
+            },
+            "index_bytes": 405549,
+            "index_sha256": "0f473217baeaf47ace6fd0eba06968661aa903cbc9a6fd55d74306a177b20030",
+            "peak_working_set_bytes_by_build": [
+              70397952,
+              70955008,
+              70860800
+            ],
+            "rss_after_bytes_median": 56139776,
+            "rss_before_bytes_median": 56086528,
+            "rss_delta_bytes_by_build": [
+              53248,
+              53248,
+              53248
+            ],
+            "rss_delta_bytes_median": 53248
+          },
+          "hnsw_base": {
+            "build_ms": {
+              "p50": 13.1978,
+              "p95": 23.4749,
+              "samples": 3
+            },
+            "index_bytes": 419998,
+            "index_sha256": "1e3453cf59744d9d55e88a2f9fab4a9b4a15e12ea106a0fd46d27a60215f82cb",
+            "peak_working_set_bytes_by_build": [
+              71016448,
+              70283264,
+              71385088
+            ],
+            "rss_after_bytes_median": 56299520,
+            "rss_before_bytes_median": 56057856,
+            "rss_delta_bytes_by_build": [
+              241664,
+              245760,
+              249856
+            ],
+            "rss_delta_bytes_median": 245760
+          },
+          "hnsw_c40": {
+            "build_ms": {
+              "p50": 4.3607,
+              "p95": 17.66261,
+              "samples": 3
+            },
+            "index_bytes": 419998,
+            "index_sha256": "c41474cb9fedd12b8a36da2f0506da5431e8665a5b9351dcf5547ad1ecadef8f",
+            "peak_working_set_bytes_by_build": [
+              70451200,
+              70561792,
+              70971392
+            ],
+            "rss_after_bytes_median": 56332288,
+            "rss_before_bytes_median": 56090624,
+            "rss_delta_bytes_by_build": [
+              253952,
+              241664,
+              241664
+            ],
+            "rss_delta_bytes_median": 241664
+          },
+          "hnsw_m8": {
+            "build_ms": {
+              "p50": 3.8886,
+              "p95": 4.08516,
+              "samples": 3
+            },
+            "index_bytes": 413846,
+            "index_sha256": "bacc7233ea39a657428bca189f6cba6a94b1f0b21dc5a4e8f8db780288dc8889",
+            "peak_working_set_bytes_by_build": [
+              71155712,
+              70938624,
+              70811648
+            ],
+            "rss_after_bytes_median": 56274944,
+            "rss_before_bytes_median": 56033280,
+            "rss_delta_bytes_by_build": [
+              241664,
+              241664,
+              253952
+            ],
+            "rss_delta_bytes_median": 241664
+          }
+        },
+        "query_embeddings": 90,
+        "embedding_requests": 23,
+        "new_document_embeddings": 0,
+        "answer_llm_requests": 0,
+        "new_human_judgments": 0
+      },
+      "decision": "开发规则选中 Flat。测试所有组的标注召回持平，低 efSearch 降低精确结果重合，高 efSearch 增加延迟。实验保留，当前应用继续用原配置。",
+      "limitations": "本机99条向量单线程微基准。规模扩展、应用端到端延迟和并发吞吐待测。"
     }
   ],
-  "last_updated_at": "2026-11-16T06:36:30.057159+00:00"
+  "last_updated_at": "2026-11-16T07:00:57.386184+00:00"
 }

@@ -427,3 +427,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 - 取舍：[结果对照](../reports/task14/RESULTS_FINAL.md)保留RRF的MRR下降、子块的召回下降、父子块的上下文成本和原回答引用问题；未测HNSW/缓存/吞吐不写入简历。详见[任务14交付](../reports/TASK_14_DELIVERY.md)。
 
 - 完整验收：[本机28/28](../reports/task14/delivery-final.json)与[干净公开25/25](../reports/task14/delivery-public.json)，两份均按本阶段原标准通过。
+
+
+### 2026-11-16 · TASK-015-FAISS-HNSW-B0
+
+- 用同一台机器和原99条 BGE-M3 单位向量，对照精确 FlatIP 和三项 HNSW 参数。对照范围、阈值、线程和计时见固定配置。开发和正式测试分别生成于 09ac6a60e4f7911980c0d41ab2d596c02eb1c2b6 与 e77136480d972429309510be5bf3c34d1fbd49d3。原评测固定 dev40/test50。
+- 执行 scripts/run_faiss_hnsw.py 的 dev、freeze、test 三步。保留 [测试运行清单](../reports/task15/test/run_manifest.json)、[四张索引的12条构建读数](../reports/task15/dev/builds.json)、[两期逐题证据](../reports/task15)、[复跑命令](FAISS_HNSW_EXPERIMENT.md)。
+- 测试五组 Recall@5/@10 均为97.5%。HNSW 参考搜索 P50 7.7 µs，Flat 9.1 µs，精确 Top10 重合98.2%。S64 重合100%，P50 12.2 µs。Flat 为开发期选中方法。原应用继续使用现有配置，规模扩展和总体延迟仍待测。
+- 新90条查询向量、23个编码批次、一次锁定测试，原99条文档向量直接复用，0次答案请求。开发和测试均可只读复算。详见 [交付报告](../reports/TASK_15_DELIVERY.md)。
