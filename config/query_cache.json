@@ -1,0 +1,8 @@
+{
+  "version": "football-query-cache-v1",
+  "ttl_ms": 300000,
+  "capacity": 128,
+  "max_payload_bytes": 65536,
+  "semantic_thresholds": [0.85, 0.90, 0.95, 0.98],
+  "warm_probe_repetitions": 16
+}

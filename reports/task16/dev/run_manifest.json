@@ -1,0 +1,143 @@
+{
+  "anchors": 6,
+  "backend": "memory",
+  "batch_encoding_wall_ns": 3581342300,
+  "command": "python -B scripts/run_cache_experiment.py dev",
+  "completed_at": "2026-11-16T07:20:25.334122+00:00",
+  "embedding_batches": [
+    {
+      "elapsed_seconds": 1.8359636999998656,
+      "inputs": 4,
+      "prompt_eval_count": 84,
+      "server_load_duration_ns": 1563029800,
+      "server_total_duration_ns": 1741912900
+    },
+    {
+      "elapsed_seconds": 0.2588540000001558,
+      "inputs": 4,
+      "prompt_eval_count": 91,
+      "server_load_duration_ns": 7931300,
+      "server_total_duration_ns": 202516200
+    },
+    {
+      "elapsed_seconds": 0.27504610000005414,
+      "inputs": 4,
+      "prompt_eval_count": 85,
+      "server_load_duration_ns": 7221700,
+      "server_total_duration_ns": 199471200
+    },
+    {
+      "elapsed_seconds": 0.23527510000030816,
+      "inputs": 4,
+      "prompt_eval_count": 69,
+      "server_load_duration_ns": 10736000,
+      "server_total_duration_ns": 175047800
+    },
+    {
+      "elapsed_seconds": 0.2666057000001274,
+      "inputs": 4,
+      "prompt_eval_count": 89,
+      "server_load_duration_ns": 6580100,
+      "server_total_duration_ns": 200592300
+    },
+    {
+      "elapsed_seconds": 0.30049689999987095,
+      "inputs": 4,
+      "prompt_eval_count": 87,
+      "server_load_duration_ns": 10461600,
+      "server_total_duration_ns": 205582800
+    }
+  ],
+  "embedding_inputs": 24,
+  "embedding_model": {
+    "architecture": "bert",
+    "context_length": 8192,
+    "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+    "dimensions": 1024,
+    "name": "bge-m3:latest",
+    "ollama_version": "0.40.16",
+    "quantization": "F16"
+  },
+  "embedding_runtime": {
+    "context_length": 8192,
+    "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+    "name": "bge-m3:latest",
+    "runner": "llamacpp",
+    "size": 1244166879,
+    "size_vram": 0
+  },
+  "freeze": null,
+  "hardware": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "python": "3.10.22"
+  },
+  "new_answer_requests": 0,
+  "new_formal_test_runs": 0,
+  "new_human_judgments": 0,
+  "observations": {
+    "path": "reports/task16/dev/observations.json",
+    "sha256": "9740edb335855360fc4f2cbee9a9263ca73ec399dac1153a8e56a31abe01b565",
+    "size_bytes": 15186
+  },
+  "private_embeddings": {
+    "path": ".runtime/task16/dev-embeddings.npy",
+    "sha256": "be04de9b4ce7126b206832fb52b92646a5990b48b3ae9d6c64332b1687cb8293",
+    "size_bytes": 98432
+  },
+  "probes": 24,
+  "selection": null,
+  "source_commit": "8d900c356be31435f203cd9635e1e16fed752ead",
+  "source_files": {
+    "config/dense_index.json": {
+      "path": "config/dense_index.json",
+      "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988",
+      "size_bytes": 1613
+    },
+    "config/query_cache.json": {
+      "path": "config/query_cache.json",
+      "sha256": "e04b2e592af879af55f30d85639baa8db75e73f2dbdf69a756974fc034d1c8b5",
+      "size_bytes": 195
+    },
+    "data/eval/cache_query_workload_v1.json": {
+      "path": "data/eval/cache_query_workload_v1.json",
+      "sha256": "3a5e2c2d09450048e57e820c97bd8b480ce1e0aa3a980d0d76694f8aa9514188",
+      "size_bytes": 15100
+    },
+    "scripts/cache_experiment.py": {
+      "path": "scripts/cache_experiment.py",
+      "sha256": "29df1cca807f18014bd6ad3cf76e7132e1bbea23d93ee1eb924508b26df2687c",
+      "size_bytes": 8540
+    },
+    "scripts/query_cache.py": {
+      "path": "scripts/query_cache.py",
+      "sha256": "05da9209c6a03e83305536f1106367bd8a58ade81f8aa4977fc35197aeb335fb",
+      "size_bytes": 6559
+    },
+    "scripts/run_cache_experiment.py": {
+      "path": "scripts/run_cache_experiment.py",
+      "sha256": "d1df07451dce398b29cdd79e53c8d236583f22d386174059b4e2cbbfc1f0213b",
+      "size_bytes": 6970
+    },
+    "scripts/run_cached_query.py": {
+      "path": "scripts/run_cached_query.py",
+      "sha256": "119d2d5507f0a475f240e49f94f363e8b4a58b4e2598fd7976ecbc55411c8c21",
+      "size_bytes": 5748
+    }
+  },
+  "split": "dev",
+  "started_at": "2026-11-16T07:20:21.560607+00:00",
+  "status": "COMPLETE",
+  "summary": {
+    "path": "reports/task16/dev/summary.json",
+    "sha256": "fc783f1cf0d6fbe1319d6ae1e457e15062f27a1266fe9635de7f27a4df217e30",
+    "size_bytes": 16727
+  },
+  "vector_fingerprint": "c52b20f3785f6939ce8f6b271f3c85a97d6ca9d93ec85c6f8e48588fa9625caf",
+  "version": "task16-semantic-run-1.0",
+  "workload": {
+    "path": "data/eval/cache_query_workload_v1.json",
+    "sha256": "3a5e2c2d09450048e57e820c97bd8b480ce1e0aa3a980d0d76694f8aa9514188",
+    "size_bytes": 15100
+  }
+}

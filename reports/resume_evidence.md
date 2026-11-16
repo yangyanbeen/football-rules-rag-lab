@@ -161,3 +161,8 @@
 ## 任务十五 FAISS 证据补充
 
 可写为“在 99 条足球规则向量上搭建 FAISS CPU 基准，以精确 FlatIP 为对照验证 HNSW 的 M、efConstruction、efSearch，量化了标注 Recall、精确 Top10 重合率、P50/P95、构建成本与内存。”如果写数字，标注样本来源和仅向量检索的计时口径。五组测试 Recall@5 为 97.5%。精确 Top10 完全重合的 HNSW S64 搜索 P50 为 12.2 µs，Flat 为 9.1 µs，选中 Flat。大规模检索、整体提速和吞吐待测。 [实验参数与命令](../docs/FAISS_HNSW_EXPERIMENT.md) · [测试逐题、计时与构建汇总](task15/test/summary.json)
+
+
+## 任务十六缓存证据补充
+
+可写“为规则问答实现带语料、模型、检索配置与 TTL 的精确缓存，并用独立近义及难负例评估语义复用。真实重复问答的缓存命中省去一次 Embedding、40 对重排、一次生成。留出集开发阈值 0.90 的 12 次命中出现 4 次错误，因此语义留作实验。”精确测试使用内存后端，生产流量、Redis 服务端性能、总体准确率待测。 [参数、原始结果及命令](../docs/REDIS_CACHE_EXPERIMENT.md) · [真实请求](task16/live-exact.json)

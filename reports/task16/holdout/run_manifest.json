@@ -1,0 +1,150 @@
+{
+  "anchors": 6,
+  "backend": "memory",
+  "batch_encoding_wall_ns": 3789529000,
+  "command": "python -B scripts/run_cache_experiment.py holdout",
+  "completed_at": "2026-11-16T07:22:32.642376+00:00",
+  "embedding_batches": [
+    {
+      "elapsed_seconds": 1.6161050000000614,
+      "inputs": 4,
+      "prompt_eval_count": 87,
+      "server_load_duration_ns": 1324004400,
+      "server_total_duration_ns": 1530103500
+    },
+    {
+      "elapsed_seconds": 0.31625290000010864,
+      "inputs": 4,
+      "prompt_eval_count": 88,
+      "server_load_duration_ns": 12078700,
+      "server_total_duration_ns": 219464300
+    },
+    {
+      "elapsed_seconds": 0.3489510999997947,
+      "inputs": 4,
+      "prompt_eval_count": 98,
+      "server_load_duration_ns": 8512800,
+      "server_total_duration_ns": 254930300
+    },
+    {
+      "elapsed_seconds": 0.3217150999998921,
+      "inputs": 4,
+      "prompt_eval_count": 85,
+      "server_load_duration_ns": 7619200,
+      "server_total_duration_ns": 213930100
+    },
+    {
+      "elapsed_seconds": 0.3390322999998716,
+      "inputs": 4,
+      "prompt_eval_count": 94,
+      "server_load_duration_ns": 9161800,
+      "server_total_duration_ns": 227374400
+    },
+    {
+      "elapsed_seconds": 0.29820969999991576,
+      "inputs": 4,
+      "prompt_eval_count": 91,
+      "server_load_duration_ns": 8171900,
+      "server_total_duration_ns": 221011200
+    }
+  ],
+  "embedding_inputs": 24,
+  "embedding_model": {
+    "architecture": "bert",
+    "context_length": 8192,
+    "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+    "dimensions": 1024,
+    "name": "bge-m3:latest",
+    "ollama_version": "0.40.16",
+    "quantization": "F16"
+  },
+  "embedding_runtime": {
+    "context_length": 8192,
+    "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+    "name": "bge-m3:latest",
+    "runner": "llamacpp",
+    "size": 1244166879,
+    "size_vram": 0
+  },
+  "freeze": {
+    "path": "reports/task16/holdout-freeze.json",
+    "sha256": "268e78017764a6c641d79c27aee33ef7f28f659ad22b43100d59641710991357",
+    "size_bytes": 2559
+  },
+  "hardware": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "python": "3.10.22"
+  },
+  "new_answer_requests": 0,
+  "new_formal_test_runs": 0,
+  "new_human_judgments": 0,
+  "observations": {
+    "path": "reports/task16/holdout/observations.json",
+    "sha256": "4ee77271f708069337ae93674cabd93990f895a9237a5c9b5868d22dc5b66588",
+    "size_bytes": 15186
+  },
+  "private_embeddings": {
+    "path": ".runtime/task16/holdout-embeddings.npy",
+    "sha256": "fcf7ae13260e71c23b48aa5231669cd004034a9efeec3125500ceb80c78fedf6",
+    "size_bytes": 98432
+  },
+  "probes": 24,
+  "selection": {
+    "reason": "Zero development wrong hits, then highest additional correct reuse, then strictest threshold",
+    "threshold": 0.9
+  },
+  "source_commit": "c8eb4f930e66fd3b8633e34a9410282646a828ec",
+  "source_files": {
+    "config/dense_index.json": {
+      "path": "config/dense_index.json",
+      "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988",
+      "size_bytes": 1613
+    },
+    "config/query_cache.json": {
+      "path": "config/query_cache.json",
+      "sha256": "e04b2e592af879af55f30d85639baa8db75e73f2dbdf69a756974fc034d1c8b5",
+      "size_bytes": 195
+    },
+    "data/eval/cache_query_workload_v1.json": {
+      "path": "data/eval/cache_query_workload_v1.json",
+      "sha256": "3a5e2c2d09450048e57e820c97bd8b480ce1e0aa3a980d0d76694f8aa9514188",
+      "size_bytes": 15100
+    },
+    "scripts/cache_experiment.py": {
+      "path": "scripts/cache_experiment.py",
+      "sha256": "29df1cca807f18014bd6ad3cf76e7132e1bbea23d93ee1eb924508b26df2687c",
+      "size_bytes": 8540
+    },
+    "scripts/query_cache.py": {
+      "path": "scripts/query_cache.py",
+      "sha256": "05da9209c6a03e83305536f1106367bd8a58ade81f8aa4977fc35197aeb335fb",
+      "size_bytes": 6559
+    },
+    "scripts/run_cache_experiment.py": {
+      "path": "scripts/run_cache_experiment.py",
+      "sha256": "d1df07451dce398b29cdd79e53c8d236583f22d386174059b4e2cbbfc1f0213b",
+      "size_bytes": 6970
+    },
+    "scripts/run_cached_query.py": {
+      "path": "scripts/run_cached_query.py",
+      "sha256": "119d2d5507f0a475f240e49f94f363e8b4a58b4e2598fd7976ecbc55411c8c21",
+      "size_bytes": 5748
+    }
+  },
+  "split": "holdout",
+  "started_at": "2026-11-16T07:22:28.686240+00:00",
+  "status": "COMPLETE",
+  "summary": {
+    "path": "reports/task16/holdout/summary.json",
+    "sha256": "d495472ebeba101b2cc009102fc0d503113f79973cd4f14ab7e79c1e5909765a",
+    "size_bytes": 18847
+  },
+  "vector_fingerprint": "8a6f29e58c565be15e1413315f8e055e2c87d32bd528ee3b931e33153ffe3ab0",
+  "version": "task16-semantic-run-1.0",
+  "workload": {
+    "path": "data/eval/cache_query_workload_v1.json",
+    "sha256": "3a5e2c2d09450048e57e820c97bd8b480ce1e0aa3a980d0d76694f8aa9514188",
+    "size_bytes": 15100
+  }
+}

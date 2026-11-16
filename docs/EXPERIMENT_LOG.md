@@ -437,3 +437,13 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 - 新90条查询向量、23个编码批次、一次锁定测试，原99条文档向量直接复用，0次答案请求。开发和测试均可只读复算。详见 [交付报告](../reports/TASK_15_DELIVERY.md)。
 
 - 本机完整验收 18/18、无私有数据的公开副本 16/16。 [本机回执](../reports/task15/delivery-final.json) · [公开回执](../reports/task15/delivery-public.json)
+
+
+### 2026-11-16 · TASK-016-EXACT-SEMANTIC-CACHE
+
+- 对照为同一问题的无缓存与精确缓存，另在独立工作负载上比较精确与语义阈值。版本身份覆盖语料、模型、检索与回答配置、索引和 TTL。实际用内存，redis-py 连接不可用时回源已实测。
+- 代码与命令见 [真实问答工作进程回执](../reports/task16/live-exact.json)、[BGE-M3 开发清单](../reports/task16/dev/run_manifest.json)、[阈值冻结](../reports/task16/holdout-freeze.json) 和 [留出清单](../reports/task16/holdout/run_manifest.json)。
+- 留出精确 6/24 命中，6 次均正确。开发选中的 0.90 在留出 12 次命中中有 4 次错误，0.98 亦有 1 次错误。报告保存命中及未命中 P50/P95、错误条件和预算估算。
+- 实际精确复用省 1 次 Embedding、40 对重排及 1 次生成。语义两组实测共 48 个 Embedding 输入，生成预算为离线估算。Redis 服务端延迟、实际生产错误率待测。 [交付](../reports/TASK_16_DELIVERY.md)
+
+- 完整验收本机 18/18、干净公开副本 16/16。 [本机回执](../reports/task16/delivery-final.json) · [公开回执](../reports/task16/delivery-public.json)
