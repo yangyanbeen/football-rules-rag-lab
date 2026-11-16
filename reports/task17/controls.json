@@ -1,0 +1,1355 @@
+{
+  "captured_at": "2026-11-16T07:42:31.114878+00:00",
+  "cases": {
+    "bad_citation_is_blocked_after_generation": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "chat_calls": 1,
+          "outcome": "accepted"
+        }
+      ],
+      "chat_calls": 1,
+      "events": [
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2600,
+          "node": "route",
+          "reason": null,
+          "request_id": "795658f9ba054298aa293da1a4dacb26",
+          "retry": false,
+          "seq": 1
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 8200,
+          "node": "version_check",
+          "reason": null,
+          "request_id": "795658f9ba054298aa293da1a4dacb26",
+          "retry": false,
+          "seq": 2
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 1700,
+          "node": "retrieve",
+          "reason": null,
+          "request_id": "795658f9ba054298aa293da1a4dacb26",
+          "retry": false,
+          "seq": 3
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3000,
+          "node": "fuse",
+          "reason": null,
+          "request_id": "795658f9ba054298aa293da1a4dacb26",
+          "retry": false,
+          "seq": 4
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3100,
+          "node": "rerank",
+          "reason": null,
+          "request_id": "795658f9ba054298aa293da1a4dacb26",
+          "retry": false,
+          "seq": 5
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3700,
+          "node": "expand_context",
+          "reason": null,
+          "request_id": "795658f9ba054298aa293da1a4dacb26",
+          "retry": false,
+          "seq": 6
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 45500,
+          "node": "check_evidence",
+          "reason": null,
+          "request_id": "795658f9ba054298aa293da1a4dacb26",
+          "retry": false,
+          "seq": 7
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 36600,
+          "node": "answer",
+          "reason": null,
+          "request_id": "795658f9ba054298aa293da1a4dacb26",
+          "retry": false,
+          "seq": 8
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 21700,
+          "node": "check_citations",
+          "reason": "citation_invalid",
+          "request_id": "795658f9ba054298aa293da1a4dacb26",
+          "retry": false,
+          "seq": 9
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 2000,
+          "node": "refusal",
+          "reason": null,
+          "request_id": "795658f9ba054298aa293da1a4dacb26",
+          "retry": false,
+          "seq": 10
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 1300,
+          "node": "finish",
+          "reason": null,
+          "request_id": "795658f9ba054298aa293da1a4dacb26",
+          "retry": false,
+          "seq": 11
+        }
+      ],
+      "fault_applied": true,
+      "reason": "citation_invalid",
+      "request_id": "795658f9ba054298aa293da1a4dacb26",
+      "selected_ids": [],
+      "status": "failed"
+    },
+    "changed_source_metadata_is_blocked": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "chat_calls": 1,
+          "outcome": "accepted"
+        }
+      ],
+      "chat_calls": 1,
+      "events": [
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2700,
+          "node": "route",
+          "reason": null,
+          "request_id": "7df64cd1ee8544bb84f8c8fb349ba854",
+          "retry": false,
+          "seq": 1
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 9000,
+          "node": "version_check",
+          "reason": null,
+          "request_id": "7df64cd1ee8544bb84f8c8fb349ba854",
+          "retry": false,
+          "seq": 2
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2100,
+          "node": "retrieve",
+          "reason": null,
+          "request_id": "7df64cd1ee8544bb84f8c8fb349ba854",
+          "retry": false,
+          "seq": 3
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2600,
+          "node": "fuse",
+          "reason": null,
+          "request_id": "7df64cd1ee8544bb84f8c8fb349ba854",
+          "retry": false,
+          "seq": 4
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2800,
+          "node": "rerank",
+          "reason": null,
+          "request_id": "7df64cd1ee8544bb84f8c8fb349ba854",
+          "retry": false,
+          "seq": 5
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3500,
+          "node": "expand_context",
+          "reason": null,
+          "request_id": "7df64cd1ee8544bb84f8c8fb349ba854",
+          "retry": false,
+          "seq": 6
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 45500,
+          "node": "check_evidence",
+          "reason": null,
+          "request_id": "7df64cd1ee8544bb84f8c8fb349ba854",
+          "retry": false,
+          "seq": 7
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 38300,
+          "node": "answer",
+          "reason": null,
+          "request_id": "7df64cd1ee8544bb84f8c8fb349ba854",
+          "retry": false,
+          "seq": 8
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 17300,
+          "node": "check_citations",
+          "reason": "citation_invalid",
+          "request_id": "7df64cd1ee8544bb84f8c8fb349ba854",
+          "retry": false,
+          "seq": 9
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 2000,
+          "node": "refusal",
+          "reason": null,
+          "request_id": "7df64cd1ee8544bb84f8c8fb349ba854",
+          "retry": false,
+          "seq": 10
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 1000,
+          "node": "finish",
+          "reason": null,
+          "request_id": "7df64cd1ee8544bb84f8c8fb349ba854",
+          "retry": false,
+          "seq": 11
+        }
+      ],
+      "fault_applied": false,
+      "reason": "citation_invalid",
+      "request_id": "7df64cd1ee8544bb84f8c8fb349ba854",
+      "selected_ids": [],
+      "status": "failed"
+    },
+    "format_retries_stop_at_two": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "chat_calls": 1,
+          "outcome": "JSONDecodeError"
+        },
+        {
+          "attempt": 2,
+          "chat_calls": 1,
+          "outcome": "ValueError"
+        }
+      ],
+      "chat_calls": 2,
+      "events": [
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3500,
+          "node": "route",
+          "reason": null,
+          "request_id": "131f4061d34f4f3cb320e8b6dc61c0a7",
+          "retry": false,
+          "seq": 1
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 10500,
+          "node": "version_check",
+          "reason": null,
+          "request_id": "131f4061d34f4f3cb320e8b6dc61c0a7",
+          "retry": false,
+          "seq": 2
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2500,
+          "node": "retrieve",
+          "reason": null,
+          "request_id": "131f4061d34f4f3cb320e8b6dc61c0a7",
+          "retry": false,
+          "seq": 3
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2900,
+          "node": "fuse",
+          "reason": null,
+          "request_id": "131f4061d34f4f3cb320e8b6dc61c0a7",
+          "retry": false,
+          "seq": 4
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3400,
+          "node": "rerank",
+          "reason": null,
+          "request_id": "131f4061d34f4f3cb320e8b6dc61c0a7",
+          "retry": false,
+          "seq": 5
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3800,
+          "node": "expand_context",
+          "reason": null,
+          "request_id": "131f4061d34f4f3cb320e8b6dc61c0a7",
+          "retry": false,
+          "seq": 6
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 47000,
+          "node": "check_evidence",
+          "reason": null,
+          "request_id": "131f4061d34f4f3cb320e8b6dc61c0a7",
+          "retry": false,
+          "seq": 7
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 46000,
+          "node": "answer",
+          "reason": null,
+          "request_id": "131f4061d34f4f3cb320e8b6dc61c0a7",
+          "retry": true,
+          "seq": 8
+        },
+        {
+          "answer_attempts": 2,
+          "elapsed_ns": 28300,
+          "node": "answer",
+          "reason": "generation_failed",
+          "request_id": "131f4061d34f4f3cb320e8b6dc61c0a7",
+          "retry": false,
+          "seq": 9
+        },
+        {
+          "answer_attempts": 2,
+          "elapsed_ns": 1800,
+          "node": "refusal",
+          "reason": null,
+          "request_id": "131f4061d34f4f3cb320e8b6dc61c0a7",
+          "retry": false,
+          "seq": 10
+        },
+        {
+          "answer_attempts": 2,
+          "elapsed_ns": 900,
+          "node": "finish",
+          "reason": null,
+          "request_id": "131f4061d34f4f3cb320e8b6dc61c0a7",
+          "retry": false,
+          "seq": 11
+        }
+      ],
+      "fault_applied": false,
+      "reason": "generation_failed",
+      "request_id": "131f4061d34f4f3cb320e8b6dc61c0a7",
+      "selected_ids": [],
+      "status": "failed"
+    },
+    "model_format_retry_then_success": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "chat_calls": 1,
+          "outcome": "JSONDecodeError"
+        },
+        {
+          "attempt": 2,
+          "chat_calls": 1,
+          "outcome": "accepted"
+        }
+      ],
+      "chat_calls": 2,
+      "events": [
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2800,
+          "node": "route",
+          "reason": null,
+          "request_id": "69e5197d378547d3a1e3884a28b3d2bf",
+          "retry": false,
+          "seq": 1
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 7900,
+          "node": "version_check",
+          "reason": null,
+          "request_id": "69e5197d378547d3a1e3884a28b3d2bf",
+          "retry": false,
+          "seq": 2
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2300,
+          "node": "retrieve",
+          "reason": null,
+          "request_id": "69e5197d378547d3a1e3884a28b3d2bf",
+          "retry": false,
+          "seq": 3
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3000,
+          "node": "fuse",
+          "reason": null,
+          "request_id": "69e5197d378547d3a1e3884a28b3d2bf",
+          "retry": false,
+          "seq": 4
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3300,
+          "node": "rerank",
+          "reason": null,
+          "request_id": "69e5197d378547d3a1e3884a28b3d2bf",
+          "retry": false,
+          "seq": 5
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 4000,
+          "node": "expand_context",
+          "reason": null,
+          "request_id": "69e5197d378547d3a1e3884a28b3d2bf",
+          "retry": false,
+          "seq": 6
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 52000,
+          "node": "check_evidence",
+          "reason": null,
+          "request_id": "69e5197d378547d3a1e3884a28b3d2bf",
+          "retry": false,
+          "seq": 7
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 50300,
+          "node": "answer",
+          "reason": null,
+          "request_id": "69e5197d378547d3a1e3884a28b3d2bf",
+          "retry": true,
+          "seq": 8
+        },
+        {
+          "answer_attempts": 2,
+          "elapsed_ns": 36500,
+          "node": "answer",
+          "reason": null,
+          "request_id": "69e5197d378547d3a1e3884a28b3d2bf",
+          "retry": false,
+          "seq": 9
+        },
+        {
+          "answer_attempts": 2,
+          "elapsed_ns": 15900,
+          "node": "check_citations",
+          "reason": null,
+          "request_id": "69e5197d378547d3a1e3884a28b3d2bf",
+          "retry": false,
+          "seq": 10
+        },
+        {
+          "answer_attempts": 2,
+          "elapsed_ns": 900,
+          "node": "finish",
+          "reason": null,
+          "request_id": "69e5197d378547d3a1e3884a28b3d2bf",
+          "retry": false,
+          "seq": 11
+        }
+      ],
+      "fault_applied": false,
+      "reason": null,
+      "request_id": "69e5197d378547d3a1e3884a28b3d2bf",
+      "selected_ids": [
+        "fixture-1"
+      ],
+      "status": "answered"
+    },
+    "model_refusal": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "chat_calls": 1,
+          "outcome": "accepted"
+        }
+      ],
+      "chat_calls": 1,
+      "events": [
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3100,
+          "node": "route",
+          "reason": null,
+          "request_id": "a997787188004d62bd0c3d5b73f8c5e2",
+          "retry": false,
+          "seq": 1
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 8300,
+          "node": "version_check",
+          "reason": null,
+          "request_id": "a997787188004d62bd0c3d5b73f8c5e2",
+          "retry": false,
+          "seq": 2
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2400,
+          "node": "retrieve",
+          "reason": null,
+          "request_id": "a997787188004d62bd0c3d5b73f8c5e2",
+          "retry": false,
+          "seq": 3
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3100,
+          "node": "fuse",
+          "reason": null,
+          "request_id": "a997787188004d62bd0c3d5b73f8c5e2",
+          "retry": false,
+          "seq": 4
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3200,
+          "node": "rerank",
+          "reason": null,
+          "request_id": "a997787188004d62bd0c3d5b73f8c5e2",
+          "retry": false,
+          "seq": 5
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3900,
+          "node": "expand_context",
+          "reason": null,
+          "request_id": "a997787188004d62bd0c3d5b73f8c5e2",
+          "retry": false,
+          "seq": 6
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 47000,
+          "node": "check_evidence",
+          "reason": null,
+          "request_id": "a997787188004d62bd0c3d5b73f8c5e2",
+          "retry": false,
+          "seq": 7
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 36400,
+          "node": "answer",
+          "reason": "insufficient_evidence",
+          "request_id": "a997787188004d62bd0c3d5b73f8c5e2",
+          "retry": false,
+          "seq": 8
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 2100,
+          "node": "refusal",
+          "reason": null,
+          "request_id": "a997787188004d62bd0c3d5b73f8c5e2",
+          "retry": false,
+          "seq": 9
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 900,
+          "node": "finish",
+          "reason": null,
+          "request_id": "a997787188004d62bd0c3d5b73f8c5e2",
+          "retry": false,
+          "seq": 10
+        }
+      ],
+      "fault_applied": false,
+      "reason": "insufficient_evidence",
+      "request_id": "a997787188004d62bd0c3d5b73f8c5e2",
+      "selected_ids": [],
+      "status": "refused"
+    },
+    "no_evidence_refuses_before_generation": {
+      "attempts": [],
+      "chat_calls": 0,
+      "events": [
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3100,
+          "node": "route",
+          "reason": null,
+          "request_id": "944c8a1954014ce59dc29c57a2858ca0",
+          "retry": false,
+          "seq": 1
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 8100,
+          "node": "version_check",
+          "reason": null,
+          "request_id": "944c8a1954014ce59dc29c57a2858ca0",
+          "retry": false,
+          "seq": 2
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2300,
+          "node": "retrieve",
+          "reason": null,
+          "request_id": "944c8a1954014ce59dc29c57a2858ca0",
+          "retry": false,
+          "seq": 3
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2800,
+          "node": "fuse",
+          "reason": null,
+          "request_id": "944c8a1954014ce59dc29c57a2858ca0",
+          "retry": false,
+          "seq": 4
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2600,
+          "node": "rerank",
+          "reason": null,
+          "request_id": "944c8a1954014ce59dc29c57a2858ca0",
+          "retry": false,
+          "seq": 5
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3800,
+          "node": "expand_context",
+          "reason": null,
+          "request_id": "944c8a1954014ce59dc29c57a2858ca0",
+          "retry": false,
+          "seq": 6
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 35100,
+          "node": "check_evidence",
+          "reason": "no_whole_evidence_within_budget",
+          "request_id": "944c8a1954014ce59dc29c57a2858ca0",
+          "retry": false,
+          "seq": 7
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2400,
+          "node": "refusal",
+          "reason": null,
+          "request_id": "944c8a1954014ce59dc29c57a2858ca0",
+          "retry": false,
+          "seq": 8
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 900,
+          "node": "finish",
+          "reason": null,
+          "request_id": "944c8a1954014ce59dc29c57a2858ca0",
+          "retry": false,
+          "seq": 9
+        }
+      ],
+      "fault_applied": false,
+      "reason": "no_whole_evidence_within_budget",
+      "request_id": "944c8a1954014ce59dc29c57a2858ca0",
+      "selected_ids": [],
+      "status": "refused"
+    },
+    "normal": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "chat_calls": 1,
+          "outcome": "accepted"
+        }
+      ],
+      "chat_calls": 1,
+      "events": [
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3800,
+          "node": "route",
+          "reason": null,
+          "request_id": "939cee762f1d4ee0917d497c9164106e",
+          "retry": false,
+          "seq": 1
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 76200,
+          "node": "version_check",
+          "reason": null,
+          "request_id": "939cee762f1d4ee0917d497c9164106e",
+          "retry": false,
+          "seq": 2
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2700,
+          "node": "retrieve",
+          "reason": null,
+          "request_id": "939cee762f1d4ee0917d497c9164106e",
+          "retry": false,
+          "seq": 3
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3200,
+          "node": "fuse",
+          "reason": null,
+          "request_id": "939cee762f1d4ee0917d497c9164106e",
+          "retry": false,
+          "seq": 4
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3400,
+          "node": "rerank",
+          "reason": null,
+          "request_id": "939cee762f1d4ee0917d497c9164106e",
+          "retry": false,
+          "seq": 5
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3900,
+          "node": "expand_context",
+          "reason": null,
+          "request_id": "939cee762f1d4ee0917d497c9164106e",
+          "retry": false,
+          "seq": 6
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 54400,
+          "node": "check_evidence",
+          "reason": null,
+          "request_id": "939cee762f1d4ee0917d497c9164106e",
+          "retry": false,
+          "seq": 7
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 43800,
+          "node": "answer",
+          "reason": null,
+          "request_id": "939cee762f1d4ee0917d497c9164106e",
+          "retry": false,
+          "seq": 8
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 18200,
+          "node": "check_citations",
+          "reason": null,
+          "request_id": "939cee762f1d4ee0917d497c9164106e",
+          "retry": false,
+          "seq": 9
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 1000,
+          "node": "finish",
+          "reason": null,
+          "request_id": "939cee762f1d4ee0917d497c9164106e",
+          "retry": false,
+          "seq": 10
+        }
+      ],
+      "fault_applied": false,
+      "reason": null,
+      "request_id": "939cee762f1d4ee0917d497c9164106e",
+      "selected_ids": [
+        "fixture-1"
+      ],
+      "status": "answered"
+    },
+    "post_identity_error_is_terminal": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "chat_calls": 1,
+          "outcome": "UnsafeIdentity"
+        }
+      ],
+      "chat_calls": 1,
+      "events": [
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3500,
+          "node": "route",
+          "reason": null,
+          "request_id": "19b99090cca445a79814b65eb1eb5e88",
+          "retry": false,
+          "seq": 1
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 7700,
+          "node": "version_check",
+          "reason": null,
+          "request_id": "19b99090cca445a79814b65eb1eb5e88",
+          "retry": false,
+          "seq": 2
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2300,
+          "node": "retrieve",
+          "reason": null,
+          "request_id": "19b99090cca445a79814b65eb1eb5e88",
+          "retry": false,
+          "seq": 3
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3000,
+          "node": "fuse",
+          "reason": null,
+          "request_id": "19b99090cca445a79814b65eb1eb5e88",
+          "retry": false,
+          "seq": 4
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2800,
+          "node": "rerank",
+          "reason": null,
+          "request_id": "19b99090cca445a79814b65eb1eb5e88",
+          "retry": false,
+          "seq": 5
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3500,
+          "node": "expand_context",
+          "reason": null,
+          "request_id": "19b99090cca445a79814b65eb1eb5e88",
+          "retry": false,
+          "seq": 6
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 46400,
+          "node": "check_evidence",
+          "reason": null,
+          "request_id": "19b99090cca445a79814b65eb1eb5e88",
+          "retry": false,
+          "seq": 7
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 83600,
+          "node": "answer",
+          "reason": "generation_failed",
+          "request_id": "19b99090cca445a79814b65eb1eb5e88",
+          "retry": false,
+          "seq": 8
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 2000,
+          "node": "refusal",
+          "reason": null,
+          "request_id": "19b99090cca445a79814b65eb1eb5e88",
+          "retry": false,
+          "seq": 9
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 1100,
+          "node": "finish",
+          "reason": null,
+          "request_id": "19b99090cca445a79814b65eb1eb5e88",
+          "retry": false,
+          "seq": 10
+        }
+      ],
+      "fault_applied": false,
+      "reason": "generation_failed",
+      "request_id": "19b99090cca445a79814b65eb1eb5e88",
+      "selected_ids": [],
+      "status": "failed"
+    },
+    "preflight_failure_makes_no_chat_request": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "chat_calls": 0,
+          "outcome": "ValueError"
+        }
+      ],
+      "chat_calls": 0,
+      "events": [
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2500,
+          "node": "route",
+          "reason": null,
+          "request_id": "8f279ae780e84263b838e5f399d7676f",
+          "retry": false,
+          "seq": 1
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 5900,
+          "node": "version_check",
+          "reason": null,
+          "request_id": "8f279ae780e84263b838e5f399d7676f",
+          "retry": false,
+          "seq": 2
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 1900,
+          "node": "retrieve",
+          "reason": null,
+          "request_id": "8f279ae780e84263b838e5f399d7676f",
+          "retry": false,
+          "seq": 3
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2500,
+          "node": "fuse",
+          "reason": null,
+          "request_id": "8f279ae780e84263b838e5f399d7676f",
+          "retry": false,
+          "seq": 4
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2800,
+          "node": "rerank",
+          "reason": null,
+          "request_id": "8f279ae780e84263b838e5f399d7676f",
+          "retry": false,
+          "seq": 5
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3400,
+          "node": "expand_context",
+          "reason": null,
+          "request_id": "8f279ae780e84263b838e5f399d7676f",
+          "retry": false,
+          "seq": 6
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 82200,
+          "node": "check_evidence",
+          "reason": null,
+          "request_id": "8f279ae780e84263b838e5f399d7676f",
+          "retry": false,
+          "seq": 7
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 19500,
+          "node": "answer",
+          "reason": "generation_failed",
+          "request_id": "8f279ae780e84263b838e5f399d7676f",
+          "retry": false,
+          "seq": 8
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 2000,
+          "node": "refusal",
+          "reason": null,
+          "request_id": "8f279ae780e84263b838e5f399d7676f",
+          "retry": false,
+          "seq": 9
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 800,
+          "node": "finish",
+          "reason": null,
+          "request_id": "8f279ae780e84263b838e5f399d7676f",
+          "retry": false,
+          "seq": 10
+        }
+      ],
+      "fault_applied": false,
+      "reason": "generation_failed",
+      "request_id": "8f279ae780e84263b838e5f399d7676f",
+      "selected_ids": [],
+      "status": "failed"
+    },
+    "retrieval_failure_is_operational_failure": {
+      "attempts": [],
+      "chat_calls": 0,
+      "events": [
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2600,
+          "node": "route",
+          "reason": null,
+          "request_id": "3b7914921e18442786e4d7d1bf537642",
+          "retry": false,
+          "seq": 1
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 6900,
+          "node": "version_check",
+          "reason": null,
+          "request_id": "3b7914921e18442786e4d7d1bf537642",
+          "retry": false,
+          "seq": 2
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3700,
+          "node": "retrieve",
+          "reason": "stage_error",
+          "request_id": "3b7914921e18442786e4d7d1bf537642",
+          "retry": false,
+          "seq": 3
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 11400,
+          "node": "refusal",
+          "reason": null,
+          "request_id": "3b7914921e18442786e4d7d1bf537642",
+          "retry": false,
+          "seq": 4
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 1000,
+          "node": "finish",
+          "reason": null,
+          "request_id": "3b7914921e18442786e4d7d1bf537642",
+          "retry": false,
+          "seq": 5
+        }
+      ],
+      "fault_applied": false,
+      "reason": "stage_error",
+      "request_id": "3b7914921e18442786e4d7d1bf537642",
+      "selected_ids": [],
+      "status": "failed"
+    },
+    "retry_cannot_exceed_prompt_budget": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "chat_calls": 1,
+          "outcome": "JSONDecodeError"
+        }
+      ],
+      "chat_calls": 1,
+      "events": [
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2900,
+          "node": "route",
+          "reason": null,
+          "request_id": "bf8dd780541140e194851b1653977da8",
+          "retry": false,
+          "seq": 1
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 7800,
+          "node": "version_check",
+          "reason": null,
+          "request_id": "bf8dd780541140e194851b1653977da8",
+          "retry": false,
+          "seq": 2
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2300,
+          "node": "retrieve",
+          "reason": null,
+          "request_id": "bf8dd780541140e194851b1653977da8",
+          "retry": false,
+          "seq": 3
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2200,
+          "node": "fuse",
+          "reason": null,
+          "request_id": "bf8dd780541140e194851b1653977da8",
+          "retry": false,
+          "seq": 4
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2800,
+          "node": "rerank",
+          "reason": null,
+          "request_id": "bf8dd780541140e194851b1653977da8",
+          "retry": false,
+          "seq": 5
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3200,
+          "node": "expand_context",
+          "reason": null,
+          "request_id": "bf8dd780541140e194851b1653977da8",
+          "retry": false,
+          "seq": 6
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 40600,
+          "node": "check_evidence",
+          "reason": null,
+          "request_id": "bf8dd780541140e194851b1653977da8",
+          "retry": false,
+          "seq": 7
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 41600,
+          "node": "answer",
+          "reason": "generation_failed",
+          "request_id": "bf8dd780541140e194851b1653977da8",
+          "retry": false,
+          "seq": 8
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 2100,
+          "node": "refusal",
+          "reason": null,
+          "request_id": "bf8dd780541140e194851b1653977da8",
+          "retry": false,
+          "seq": 9
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 1000,
+          "node": "finish",
+          "reason": null,
+          "request_id": "bf8dd780541140e194851b1653977da8",
+          "retry": false,
+          "seq": 10
+        }
+      ],
+      "fault_applied": false,
+      "reason": "generation_failed",
+      "request_id": "bf8dd780541140e194851b1653977da8",
+      "selected_ids": [],
+      "status": "failed"
+    },
+    "transport_error_is_terminal": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "chat_calls": 1,
+          "outcome": "TimeoutError"
+        }
+      ],
+      "chat_calls": 1,
+      "events": [
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2600,
+          "node": "route",
+          "reason": null,
+          "request_id": "4fba190469794026bd74f3929717528f",
+          "retry": false,
+          "seq": 1
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 8100,
+          "node": "version_check",
+          "reason": null,
+          "request_id": "4fba190469794026bd74f3929717528f",
+          "retry": false,
+          "seq": 2
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2500,
+          "node": "retrieve",
+          "reason": null,
+          "request_id": "4fba190469794026bd74f3929717528f",
+          "retry": false,
+          "seq": 3
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2700,
+          "node": "fuse",
+          "reason": null,
+          "request_id": "4fba190469794026bd74f3929717528f",
+          "retry": false,
+          "seq": 4
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3300,
+          "node": "rerank",
+          "reason": null,
+          "request_id": "4fba190469794026bd74f3929717528f",
+          "retry": false,
+          "seq": 5
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 3500,
+          "node": "expand_context",
+          "reason": null,
+          "request_id": "4fba190469794026bd74f3929717528f",
+          "retry": false,
+          "seq": 6
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 46000,
+          "node": "check_evidence",
+          "reason": null,
+          "request_id": "4fba190469794026bd74f3929717528f",
+          "retry": false,
+          "seq": 7
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 20100,
+          "node": "answer",
+          "reason": "generation_failed",
+          "request_id": "4fba190469794026bd74f3929717528f",
+          "retry": false,
+          "seq": 8
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 2100,
+          "node": "refusal",
+          "reason": null,
+          "request_id": "4fba190469794026bd74f3929717528f",
+          "retry": false,
+          "seq": 9
+        },
+        {
+          "answer_attempts": 1,
+          "elapsed_ns": 800,
+          "node": "finish",
+          "reason": null,
+          "request_id": "4fba190469794026bd74f3929717528f",
+          "retry": false,
+          "seq": 10
+        }
+      ],
+      "fault_applied": false,
+      "reason": "generation_failed",
+      "request_id": "4fba190469794026bd74f3929717528f",
+      "selected_ids": [],
+      "status": "failed"
+    },
+    "unsupported_version_skips_retrieval": {
+      "attempts": [],
+      "chat_calls": 0,
+      "events": [
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2900,
+          "node": "route",
+          "reason": null,
+          "request_id": "c2cecda7c08c49e6aeae0391b2ce0d48",
+          "retry": false,
+          "seq": 1
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 168400,
+          "node": "version_check",
+          "reason": "version_unverified",
+          "request_id": "c2cecda7c08c49e6aeae0391b2ce0d48",
+          "retry": false,
+          "seq": 2
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 2300,
+          "node": "refusal",
+          "reason": null,
+          "request_id": "c2cecda7c08c49e6aeae0391b2ce0d48",
+          "retry": false,
+          "seq": 3
+        },
+        {
+          "answer_attempts": 0,
+          "elapsed_ns": 800,
+          "node": "finish",
+          "reason": null,
+          "request_id": "c2cecda7c08c49e6aeae0391b2ce0d48",
+          "retry": false,
+          "seq": 4
+        }
+      ],
+      "fault_applied": false,
+      "reason": "version_unverified",
+      "request_id": "c2cecda7c08c49e6aeae0391b2ce0d48",
+      "selected_ids": [],
+      "status": "refused"
+    }
+  },
+  "checks": {
+    "bad_citation_is_blocked_after_generation": true,
+    "changed_source_metadata_is_blocked": true,
+    "format_retries_stop_at_two": true,
+    "invalid_input_makes_no_calls": true,
+    "model_format_retry_then_success": true,
+    "model_refusal": true,
+    "no_evidence_refuses_before_generation": true,
+    "normal": true,
+    "post_identity_error_is_terminal": true,
+    "preflight_failure_makes_no_chat_request": true,
+    "repeated_invocations_have_isolated_ids_and_state": true,
+    "retrieval_failure_is_operational_failure": true,
+    "retry_cannot_exceed_prompt_budget": true,
+    "transport_error_is_terminal": true,
+    "unsupported_version_skips_retrieval": true
+  },
+  "errors": [],
+  "flow_source": {
+    "path": "scripts/rag_langgraph.py",
+    "sha256": "dd6d03bf76f1f1f820842b652408e97229bdd05deea10c8870f7fa95fa2b9eaa",
+    "size_bytes": 11973
+  },
+  "new_formal_test_runs": 0,
+  "new_human_judgments": 0,
+  "new_model_requests": 0,
+  "passed": 15,
+  "producer": {
+    "path": "scripts/verify_langgraph_controls.py",
+    "sha256": "2384234a52012fbde9e6dad50d3e0f141f003341bbd8f31238a995d9fab8ea9b",
+    "size_bytes": 8244
+  },
+  "scope": "Actual compiled LangGraph. Synthetic adapters deliberately exercise control branches.",
+  "status": "PASS",
+  "total": 15
+}
