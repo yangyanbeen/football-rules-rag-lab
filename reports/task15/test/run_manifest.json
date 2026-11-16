@@ -1,0 +1,250 @@
+{
+  "build_origin": "reports/task15/dev/builds.json",
+  "command": "python -B scripts/run_faiss_hnsw.py test",
+  "completed_at": "2026-11-16T06:55:42.900662+00:00",
+  "document_vector_fingerprint": "1f709033daf4df83416da434f2b0f4b15181273c9465780e53977a050346fa07",
+  "embedding_batches": [
+    {
+      "elapsed_seconds": 1.847079800000074,
+      "inputs": 4,
+      "prompt_eval_count": 86,
+      "server_load_duration_ns": 1572609300,
+      "server_total_duration_ns": 1754302600
+    },
+    {
+      "elapsed_seconds": 0.2668148000000201,
+      "inputs": 4,
+      "prompt_eval_count": 92,
+      "server_load_duration_ns": 8001400,
+      "server_total_duration_ns": 206936000
+    },
+    {
+      "elapsed_seconds": 0.3210066999999981,
+      "inputs": 4,
+      "prompt_eval_count": 82,
+      "server_load_duration_ns": 7610600,
+      "server_total_duration_ns": 189433900
+    },
+    {
+      "elapsed_seconds": 0.33609789999991335,
+      "inputs": 4,
+      "prompt_eval_count": 97,
+      "server_load_duration_ns": 6477800,
+      "server_total_duration_ns": 217315700
+    },
+    {
+      "elapsed_seconds": 0.35268040000005385,
+      "inputs": 4,
+      "prompt_eval_count": 105,
+      "server_load_duration_ns": 7662800,
+      "server_total_duration_ns": 227289700
+    },
+    {
+      "elapsed_seconds": 0.3172875000000204,
+      "inputs": 4,
+      "prompt_eval_count": 104,
+      "server_load_duration_ns": 7319300,
+      "server_total_duration_ns": 222760700
+    },
+    {
+      "elapsed_seconds": 0.3209259000000202,
+      "inputs": 4,
+      "prompt_eval_count": 94,
+      "server_load_duration_ns": 7601200,
+      "server_total_duration_ns": 209042000
+    },
+    {
+      "elapsed_seconds": 0.3473309999999401,
+      "inputs": 4,
+      "prompt_eval_count": 117,
+      "server_load_duration_ns": 7071300,
+      "server_total_duration_ns": 239760600
+    },
+    {
+      "elapsed_seconds": 0.3310793000000558,
+      "inputs": 4,
+      "prompt_eval_count": 96,
+      "server_load_duration_ns": 7220000,
+      "server_total_duration_ns": 215308900
+    },
+    {
+      "elapsed_seconds": 0.34716690000004746,
+      "inputs": 4,
+      "prompt_eval_count": 115,
+      "server_load_duration_ns": 6825500,
+      "server_total_duration_ns": 244041300
+    },
+    {
+      "elapsed_seconds": 0.27397849999988466,
+      "inputs": 4,
+      "prompt_eval_count": 86,
+      "server_load_duration_ns": 6651800,
+      "server_total_duration_ns": 195430600
+    },
+    {
+      "elapsed_seconds": 0.2750435999998899,
+      "inputs": 4,
+      "prompt_eval_count": 84,
+      "server_load_duration_ns": 6869300,
+      "server_total_duration_ns": 192101700
+    },
+    {
+      "elapsed_seconds": 0.19226880000019264,
+      "inputs": 2,
+      "prompt_eval_count": 38,
+      "server_load_duration_ns": 8340700,
+      "server_total_duration_ns": 95724600
+    }
+  ],
+  "embedding_model": {
+    "architecture": "bert",
+    "context_length": 8192,
+    "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+    "dimensions": 1024,
+    "name": "bge-m3:latest",
+    "ollama_version": "0.40.16",
+    "quantization": "F16"
+  },
+  "embedding_runtime": {
+    "context_length": 8192,
+    "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+    "name": "bge-m3:latest",
+    "runner": "llamacpp",
+    "size": 1244166879,
+    "size_vram": 0
+  },
+  "environment": {
+    "faiss_options": "OPTIMIZE AVX2 ",
+    "faiss_threads": 1,
+    "logical_cpus": 20,
+    "machine": "AMD64",
+    "packages": {
+      "faiss-cpu": "1.11.0",
+      "numpy": "1.26.4",
+      "packaging": "24.2",
+      "psutil": "6.1.1"
+    },
+    "physical_memory_bytes": 16858472448,
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "python": "3.10.22"
+  },
+  "freeze": {
+    "path": "reports/task15/test-freeze.json",
+    "sha256": "f66a487761190c46141d9e159ffa8c76c046918f80e7e1f05a73a86c54cd2a44",
+    "size_bytes": 2970
+  },
+  "frozen_selection": {
+    "eligible_methods": [
+      "flat",
+      "hnsw_s64"
+    ],
+    "selected_method": "flat"
+  },
+  "inputs": {
+    "dataset_manifest": {
+      "path": "data/eval/dataset_manifest.json",
+      "sha256": "778ffc31872d379dbd714cd4e085e075b0a308b7a67d1306e459e978f70a6c66",
+      "size_bytes": 2189
+    },
+    "dense_config": {
+      "path": "config/dense_index.json",
+      "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988",
+      "size_bytes": 1613
+    },
+    "document_vectors": {
+      "path": "data/indexes/dense/embeddings.npy",
+      "sha256": "d9d44255bc652ca71a05ee42c9156f8afa324d3e5caaf24fd8a875da8651353c",
+      "size_bytes": 405632
+    },
+    "mapping": {
+      "path": "data/manifests/dense_chunk_ids.json",
+      "sha256": "0bdff8a39d7a458d586fecb921582224ad7a854cc3bf6fa589e04a1150b95b61",
+      "size_bytes": 32967
+    },
+    "public_dense_manifest": {
+      "path": "data/manifests/dense_index_manifest.json",
+      "sha256": "9ea5d0403acb9ccaae8185623cf3cd66f834f555f7d839fa12cdbc8f60b2d557",
+      "size_bytes": 11745
+    },
+    "questions": {
+      "path": "data/eval/retrieval_test.jsonl",
+      "sha256": "269d49e7d65c4ad3a97b588f34093a65bbc483c7382f78b0e9cf466eaa759a62",
+      "size_bytes": 78040
+    }
+  },
+  "new_answer_requests": 0,
+  "new_document_embeddings": 0,
+  "public_artifacts": {
+    "builds.json": {
+      "path": "reports/task15/test/builds.json",
+      "sha256": "24cfbe27af4a3bc52882fc567891e09c5462fc2adca379b153f6dee042b5efb6",
+      "size_bytes": 3916
+    },
+    "predictions.jsonl": {
+      "path": "reports/task15/test/predictions.jsonl",
+      "sha256": "eabfc1999b1109084347f0de4ef848ff4728e0d435fae00de8d777bffca0ee6d",
+      "size_bytes": 129373
+    },
+    "run_started.json": {
+      "path": "reports/task15/test/run_started.json",
+      "sha256": "84a9c84394baf31d5248967bc701dadf3428118609977bca2ce0116664852f57",
+      "size_bytes": 308
+    },
+    "summary.json": {
+      "path": "reports/task15/test/summary.json",
+      "sha256": "8af65b1b6cdac34a08a94dfc0dec0313033da3e143d7d1c8a20e39722f5cf3ee",
+      "size_bytes": 79937
+    }
+  },
+  "purpose": "final_report",
+  "query_embeddings": 50,
+  "query_vector_artifact": {
+    "path": ".runtime/task15/test/query_vectors.npy",
+    "sha256": "ee4f7863f9722bfb2d124d012534ccca406bb13e539e74b7d47a191052e903cb",
+    "size_bytes": 204928
+  },
+  "query_vector_fingerprint": "7f9554683f123e54f6a262427231af9a8bbb7d600492159be4a8b66cbe57c00a",
+  "source_commit": "e77136480d972429309510be5bf3c34d1fbd49d3",
+  "source_files": {
+    "config/faiss_hnsw_experiment.json": {
+      "path": "config/faiss_hnsw_experiment.json",
+      "sha256": "2f8f18d4f44c34bd956cbe8f468a314f956e1b283c7887be9cbf5293eaa4c436",
+      "size_bytes": 1204
+    },
+    "scripts/dense_index.py": {
+      "path": "scripts/dense_index.py",
+      "sha256": "9e991910367987021e1ace250c5796c213ad53f14072ecbc4fe1539352f3d875",
+      "size_bytes": 22904
+    },
+    "scripts/dense_retrieval_eval.py": {
+      "path": "scripts/dense_retrieval_eval.py",
+      "sha256": "7a1a522f35c2b8ed8ffb5712b3ec5371b4fbb0b41450c5ef89d03f1c2cb40fd0",
+      "size_bytes": 21211
+    },
+    "scripts/faiss_hnsw_eval.py": {
+      "path": "scripts/faiss_hnsw_eval.py",
+      "sha256": "ae996eee762f549dbbb23777871ab5a4efb1ff974aee1ef58bd30eb9e5e3c352",
+      "size_bytes": 8188
+    },
+    "scripts/retrieval_metrics.py": {
+      "path": "scripts/retrieval_metrics.py",
+      "sha256": "350759f655b78e43f4d0c4114a4a2c7d03b87c7281ac0cae40678bae15341168",
+      "size_bytes": 3079
+    },
+    "scripts/run_faiss_hnsw.py": {
+      "path": "scripts/run_faiss_hnsw.py",
+      "sha256": "ee053aa9a440aa098d722eda58eb1bbbec59adfd36f4f7569dd1bcc2b62ed068",
+      "size_bytes": 14244
+    },
+    "scripts/run_retrieval_metrics.py": {
+      "path": "scripts/run_retrieval_metrics.py",
+      "sha256": "11021dfc06a8c6e3e765c051c594f598b6c2bea220ee78f7a96ce08d0d56eae5",
+      "size_bytes": 4121
+    }
+  },
+  "split": "test",
+  "status": "COMPLETE",
+  "used_for_parameter_selection": false,
+  "version": "faiss-hnsw-b0-1.0"
+}
