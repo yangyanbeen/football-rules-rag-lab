@@ -465,3 +465,5 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 - 18 项边界控制在旧代码均复现问题，修订后全部通过。真实 CLI 对照另确认一次改动归档值被拒绝，合计关闭19项。 [控制前后记录](../reports/rechecks/task14-17) · [交付报告](../reports/TASK_14_17_SUPPLEMENT.md)
 - 原向量、标签、正式结果、应用配置和归档原件均可用历史 Git 读取。当前复算43/17/34/18项通过，独立实际图控制15/15，使用当前代码重验证5项本机冒烟。
 - 本机请求仅用于已修复入口集成，正式锁定测试及人工账本无新增。实际冒烟生成代码 1dfc1fdccad7910a2db62862699ce8cd822c5e59，模型与版本见登记。 [修订和命令](TASK_14_17_AUDIT.md)
+
+- 完整验收本机 23/23、干净公开副本 21/21，两份回执绑定验收提交。 [本机回执](../reports/rechecks/task14-17/delivery-final.json) · [公开回执](../reports/rechecks/task14-17/delivery-public.json)
