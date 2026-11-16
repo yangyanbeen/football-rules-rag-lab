@@ -150,7 +150,7 @@ def verify(public_only):
     check('eighteen_before_after_mechanism_controls', before_after)
     check('cli_rejects_mutated_value_and_valid_value_still_returns', cli_evidence)
     check('all_recorded_historical_replays_and_actual_controlled_graph_pass', lambda: (
-        all(pass_count(read(REPORT / n), size) for n, size in REPLAYS)))
+        all(pass_count(read(REPORT / n), size) for n, size in REPLAYS.items())))
     check('current_task14_report_recomputes_exactly_from_original_producer', lambda: verify_archive(
         read(ROOT / 'reports/task14/archive.json')))
     check('current_task15_replays_all_seventeen_historical_checks', lambda: pass_count(replay_faiss(), 17))

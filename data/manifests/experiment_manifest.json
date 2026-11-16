@@ -6221,8 +6221,8 @@
         },
         {
           "path": "scripts/verify_task14_17_delivery.py",
-          "size_bytes": 11958,
-          "sha256": "fd6cf0a0d19cd26aa55ebcccfba259f72cfdb23736d7fb8f344fe86026a5d6ef"
+          "size_bytes": 11966,
+          "sha256": "1f15c10ed04ab5656182577f265281a70b7740f2c5cfa83a3894eae1b2c77a74"
         },
         {
           "path": "scripts/verify_task14_17_regressions.py",
@@ -6257,5 +6257,5 @@
       "limitations": "仅本轮已复现的缺口和相关证据。Redis 服务端、生产量级吞吐及总体准确率待测。"
     }
   ],
-  "last_updated_at": "2026-11-16T10:45:45.929500+00:00"
+  "last_updated_at": "2026-11-16T10:47:44.165327+00:00"
 }

@@ -330,7 +330,7 @@
     {
       "path": "data/manifests/experiment_manifest.json",
       "size_bytes": 264847,
-      "sha256": "1933f6f04629696a1cf0717a306df64aa29ac17d5a2a2686493f8d9036b9d66f",
+      "sha256": "d1f9828c6a8ac2fada17955b26deb8acd56355bb619531ad1ccc107ca0f27f92",
       "purpose": "数据格式、来源或版本清单",
       "distribution": "public-git"
     },
@@ -7028,8 +7028,8 @@
     },
     {
       "path": "scripts/verify_task14_17_delivery.py",
-      "size_bytes": 11958,
-      "sha256": "fd6cf0a0d19cd26aa55ebcccfba259f72cfdb23736d7fb8f344fe86026a5d6ef",
+      "size_bytes": 11966,
+      "sha256": "1f15c10ed04ab5656182577f265281a70b7740f2c5cfa83a3894eae1b2c77a74",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
