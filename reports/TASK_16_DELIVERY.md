@@ -14,3 +14,5 @@
 两组语义探针实测 48 个去重 Embedding 输入、12 个批次。真实重复问答实际运行工作进程 3 次，缓存命中额外触发的请求为 0。原锁定测试没有重跑，原人工评测账本保持原样。 [开发模型清单](task16/dev/run_manifest.json) · [留出模型清单](task16/holdout/run_manifest.json)
 
 本机与独立公开副本各 34/34 专项检查通过，涵盖版本隔离、过期、错误回源、真实性回链和独立复算。 [本机复验](task16/replay-local.json) · [公开复验](task16/replay-public.json)
+
+完整交付验收本机 18/18、干净公开副本 16/16，发布版本 v0.16.0-query-cache-experiment。 [本机验收](task16/delivery-final.json) · [公开验收](task16/delivery-public.json)

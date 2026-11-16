@@ -1,0 +1,33 @@
+{
+  "captured_at": "2026-11-16T07:28:44.004705+00:00",
+  "checks": {
+    "27_prior_registry_objects_remain_identical": true,
+    "907_prior_public_files_and_authority_documents_preserved": true,
+    "actual_local_replay_matches_current_scripts": true,
+    "archive_file_records_match_public_artifacts": true,
+    "csv_ids_match_registry": true,
+    "current_replay_has_all_34_checks": true,
+    "docs/EXPERIMENT_LOG.md_append_only": true,
+    "isolated_public_replay_matches_current_scripts": true,
+    "new_entry_has_scope_models_hardware_sources_commands_and_metrics": true,
+    "no_private_artifacts_in_public_index": true,
+    "no_private_state_or_site_packages": true,
+    "public_file_inventory_and_hashes_match": true,
+    "redis_unavailable_and_memory_used_explicitly": true,
+    "report_and_reproduction_links_present": true,
+    "reports/all_experiments_summary.csv_append_only": true,
+    "reports/resume_evidence.md_append_only": true
+  },
+  "clean_public_checkout": true,
+  "errors": [],
+  "new_formal_test_runs": 0,
+  "new_human_judgments": 0,
+  "new_model_requests": 0,
+  "passed": 16,
+  "public_only": true,
+  "source_sha256": "6ffa27d5d2e2463775bd621c53edc885921b7a6961212862ffe8ce44e2e15b2d",
+  "status": "PASS",
+  "task16_fully_accepted": true,
+  "tested_commit": "18ec95166c96c6f933711fdff6cc5a830e0f972f",
+  "total": 16
+}
