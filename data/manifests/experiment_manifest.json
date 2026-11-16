@@ -5797,7 +5797,235 @@
       },
       "decision": "保留精确缓存入口。0.90 在留出集错误复用 4/12，0.98 仍有错，语义仅用于离线评估。",
       "limitations": "Redis 服务端未启用，延迟来自内存。语义工作负载用于评估复用条件，非真实请求流量或答案准确率。"
+    },
+    {
+      "id": "TASK-017-LANGGRAPH-ORCHESTRATION",
+      "date": "2026-11-16",
+      "task": 17,
+      "objective": "在固定问答配置下对照显式编排的分支、重试、延迟与可观测性",
+      "control": "Task13 audited linear pipeline with the same engine and source checks",
+      "main_variable": "普通链路和独立 LangGraph 的执行编排、状态及追踪方式",
+      "data_version": {
+        "corpus": "Corpus B0 原语料和固定来源表",
+        "inventory": {
+          "path": "data/manifests/local_data_files.json",
+          "size_bytes": 11934,
+          "sha256": "f10c562de07cad7120ecd16593f2dd32df55fc88391dd74cb5a0d1c96bbee41b"
+        },
+        "index_reference": {
+          "path": "reports/task13/index-rebuild.json",
+          "size_bytes": 7011,
+          "sha256": "d908b7754e7c9282f8279357ca6f5f36e27a207084d2c384d3743376a2a62e6e"
+        }
+      },
+      "evaluation_version": {
+        "demo_cases": {
+          "path": "config/task13_demo.json",
+          "size_bytes": 1229,
+          "sha256": "7da5527493dc565060e48878d977e180a102750faaac68d7b451b8d9020fc205"
+        },
+        "actual_cases": 7,
+        "synthetic_controls": 15,
+        "formal_test_runs": 0,
+        "new_human_judgments": 0
+      },
+      "source_commit": "8d14b43623b2605f72ffb1d31a006b07ed2338fa",
+      "models": {
+        "embedding": {
+          "source_id": "BAAI/bge-m3",
+          "distribution": "Ollama GGUF",
+          "name": "bge-m3:latest",
+          "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+          "dimensions": 1024,
+          "quantization": "F16",
+          "ollama_version": "0.40.16",
+          "license": "MIT",
+          "query_prefix": "",
+          "document_prefix": ""
+        },
+        "generation": {
+          "name": "qwen2.5:3b",
+          "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+          "ollama_version": "0.40.16",
+          "num_ctx": 8192,
+          "num_predict": 1024,
+          "num_gpu": 0,
+          "num_thread": 8,
+          "temperature": 0,
+          "seed": 42,
+          "keep_alive": "10m",
+          "timeout_seconds": 180
+        },
+        "reranker": {
+          "model_id": "BAAI/bge-reranker-base",
+          "revision": "2cfc18c9415c912f9d8155881c133215df768a70",
+          "packages": {
+            "numpy": "1.26.4",
+            "onnxruntime": "1.19.2",
+            "tokenizers": "0.22.1"
+          }
+        }
+      },
+      "parameters": {
+        "flow": {
+          "version": "football-rag-langgraph-1.0",
+          "langgraph_version": "1.2.22",
+          "comparison_cases": [
+            "normal",
+            "outside",
+            "version"
+          ],
+          "retrieval_depth": 80,
+          "rrf_k": 60,
+          "rerank_budget": 40,
+          "result_limit": 10,
+          "max_generation_attempts": 2,
+          "recursion_limit": 24,
+          "trace_root": ".runtime/task17/traces"
+        },
+        "runtime_lock": {
+          "path": "config/task17-requirements.lock.txt",
+          "sha256": "8268347c728bc3599ede20f76a7a47f492fd9dd744ad9bd038308faffd51e38b",
+          "size_bytes": 2180
+        },
+        "application": {
+          "config/answer_evaluation.json": {
+            "path": "config/answer_evaluation.json",
+            "sha256": "283b98a40187a357a319db195ee1c535d518ae897b80ce38385fe67f581b031e",
+            "size_bytes": 1126
+          },
+          "config/answer_evaluation_system.txt": {
+            "path": "config/answer_evaluation_system.txt",
+            "sha256": "7441aac9b7f025ac006064b4d778d78ffb1f342f2fba7164567dfab1642aec5f",
+            "size_bytes": 1400
+          },
+          "config/citation_catalog_notes.json": {
+            "path": "config/citation_catalog_notes.json",
+            "sha256": "b5e7c10235454a08776dc47b5dcdcbbf383d4acfa887d98e125ce35af035e272",
+            "size_bytes": 1261
+          },
+          "config/dense_index.json": {
+            "path": "config/dense_index.json",
+            "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988",
+            "size_bytes": 1613
+          },
+          "config/reranker_experiment.json": {
+            "path": "config/reranker_experiment.json",
+            "sha256": "9b77781e8f32d886c5b15a6af852acd4ac95d534196406fde641bce079144062",
+            "size_bytes": 2468
+          },
+          "config/task13_app.json": {
+            "path": "config/task13_app.json",
+            "sha256": "68075020ed2444219bb41ef477aaa5344d8e57eb7ab75430fbeffe275fb915cc",
+            "size_bytes": 779
+          }
+        }
+      },
+      "hardware": {
+        "python": "3.10.22",
+        "system": "Windows-10-10.0.26200-SP0",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+      },
+      "commands": [
+        "python -B scripts/run_langgraph_flow.py --live-report reports/task17/live-new.json",
+        "python -B scripts/verify_langgraph_controls.py --report .tmp/task17-controls-new.json",
+        "python -S -B scripts/verify_langgraph_replay.py --report .tmp/task17-replay-new.json"
+      ],
+      "artifacts": [
+        {
+          "path": "config/langgraph_flow.json",
+          "size_bytes": 319,
+          "sha256": "8fd74db87560bcb7d4e9f9c94cfb3a39b1fa7f707a53b6a14d3d465abc1fa714"
+        },
+        {
+          "path": "config/task17-requirements.lock.txt",
+          "size_bytes": 2180,
+          "sha256": "8268347c728bc3599ede20f76a7a47f492fd9dd744ad9bd038308faffd51e38b"
+        },
+        {
+          "path": "docs/LANGGRAPH_FLOW.md",
+          "size_bytes": 5257,
+          "sha256": "c88fe53cb6e9513d936f90f97c035e1407e1419124730acced7605c981d1dabc"
+        },
+        {
+          "path": "docs/TASK_17_SCOPE.md",
+          "size_bytes": 1256,
+          "sha256": "41077507035db811d6810b6c8ae98d52c517d38a8da2a6381265aea1f8bf4e4f"
+        },
+        {
+          "path": "reports/task17/controls.json",
+          "size_bytes": 36590,
+          "sha256": "6605b45d9471d44f579c76d0f0d95142d82c423e1f4c13ebcd3adf226bc94e37"
+        },
+        {
+          "path": "reports/task17/live-comparison.json",
+          "size_bytes": 28172,
+          "sha256": "6be4046d22b83c53ed0dd62aa3b94d58ab1dd8b0d1129a4e61a95350f702bef0"
+        },
+        {
+          "path": "reports/task17/replay-local.json",
+          "size_bytes": 1717,
+          "sha256": "009dd076840bcca2d6b27f6f5c45441effa30da7ee5bb7122687b3371ab82981"
+        },
+        {
+          "path": "reports/task17/replay-public.json",
+          "size_bytes": 2003,
+          "sha256": "b07cff1b6bed9b44e6cb08849ee4f7f13d6058bb28d1f4a269550ba97f7f351b"
+        },
+        {
+          "path": "scripts/rag_langgraph.py",
+          "size_bytes": 11973,
+          "sha256": "dd6d03bf76f1f1f820842b652408e97229bdd05deea10c8870f7fa95fa2b9eaa"
+        },
+        {
+          "path": "scripts/run_langgraph_flow.py",
+          "size_bytes": 8770,
+          "sha256": "519e49466bb40efc70a5c9b62a116c023057b06212bfeba6cad2a0cb342921ec"
+        },
+        {
+          "path": "scripts/verify_langgraph_controls.py",
+          "size_bytes": 8244,
+          "sha256": "2384234a52012fbde9e6dad50d3e0f141f003341bbd8f31238a995d9fab8ea9b"
+        },
+        {
+          "path": "scripts/verify_langgraph_replay.py",
+          "size_bytes": 13132,
+          "sha256": "a0a34ff42f091cffb59e2517684c0731a40830e31bba515b6058e284e8b2a907"
+        },
+        {
+          "path": "scripts/verify_task17_delivery.py",
+          "size_bytes": 8897,
+          "sha256": "f83f38b623ed2035ab005b1c7ef7fd98b7a37be2d57c3caea342c314e23bb232"
+        }
+      ],
+      "metrics": {
+        "request_measurements_ns": {
+          "normal_linear": 24166024600,
+          "normal_graph": 7354570500,
+          "outside_graph": 15498520900,
+          "outside_linear": 6639216000,
+          "version_linear": 28551700,
+          "version_graph": 2523400,
+          "citation_fault_graph": 7566510400
+        },
+        "actual_requests": {
+          "embedding_queries": 5,
+          "reranked_pairs": 200,
+          "chat_calls": 5
+        },
+        "setup_ns": 6180471400,
+        "compile_ns": 1216153000,
+        "app_nodes": 11,
+        "compiled_edges": 22,
+        "actual_cases_passed": 7,
+        "controlled_cases_passed": 15,
+        "replay_checks": 18,
+        "new_formal_test_runs": 0,
+        "new_human_judgments": 0
+      },
+      "decision": "保留独立图入口用于显式路由、重试及节点诊断。日常使用已有入口。",
+      "limitations": "每对案例仅一条读数，受模型预热和执行顺序影响。总体延迟、吞吐、准确率变化待测。"
     }
   ],
-  "last_updated_at": "2026-11-16T07:28:16.743076+00:00"
+  "last_updated_at": "2026-11-16T10:17:27.991768+00:00"
 }

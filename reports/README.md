@@ -1,5 +1,7 @@
 # 报告阅读说明
 
+任务十七包含真实对照、独立编排、受控故障、锁定依赖和公开复验。 [任务十七交付](TASK_17_DELIVERY.md) · [复跑与流程](../docs/LANGGRAPH_FLOW.md)
+
 任务十六保存真实重复问答、缓存过期和版本验收、语义留出逐题错误及 Redis 客户端旁路证据。 [交付报告](TASK_16_DELIVERY.md)
 
 任务十五材料包括两期逐题排名、查询计时、四种索引构建读数、冻结证明和独立复算。 [任务十五交付](TASK_15_DELIVERY.md) · [试验参数和解读](../docs/FAISS_HNSW_EXPERIMENT.md)
