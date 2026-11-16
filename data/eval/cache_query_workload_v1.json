@@ -1,0 +1,414 @@
+{
+  "version": "football-cache-workload-v1",
+  "label_basis": "事先编写的同一答案意图与条件对比；不是原任务四固定评测集或人工裁判复核。",
+  "splits": {
+    "dev": {
+      "anchors": [
+        {
+          "id": "D1",
+          "topic": "球队人数上限",
+          "question": "成人标准十一人制足球比赛中，每队场上球员最多多少人？"
+        },
+        {
+          "id": "D2",
+          "topic": "静态越位位置",
+          "question": "球员只是处于越位位置，既不参与也不干扰比赛，要判越位犯规吗？"
+        },
+        {
+          "id": "D3",
+          "topic": "球门宽度",
+          "question": "标准成人足球球门两个门柱内侧之间相距多少米？"
+        },
+        {
+          "id": "D4",
+          "topic": "界外球直接进对方门",
+          "question": "掷界外球时，球能直接进入对方球门并算进球吗？"
+        },
+        {
+          "id": "D5",
+          "topic": "点球二次触球",
+          "question": "主罚点球后，在任何其他球员都没有触球的情况下，主罚者可以再次踢球吗？"
+        },
+        {
+          "id": "D6",
+          "topic": "常规时间",
+          "question": "标准成人十一人制足球比赛两半场常规时间合计多少分钟？"
+        }
+      ],
+      "probes": [
+        {
+          "id": "D1-1",
+          "question": "成人标准十一人制足球比赛中，每队场上球员最多多少人？",
+          "kind": "exact",
+          "accepted_anchor": "D1",
+          "reason": "同一问题"
+        },
+        {
+          "id": "D1-2",
+          "question": "踢标准成人十一人制时，一方在场球员人数的上限是多少？",
+          "kind": "paraphrase",
+          "accepted_anchor": "D1",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "D1-3",
+          "question": "正式十一人制足球比赛要继续进行，一队在场球员至少要几名？",
+          "kind": "near_negative",
+          "accepted_anchor": null,
+          "reason": "下限与上限不同"
+        },
+        {
+          "id": "D1-4",
+          "question": "每队同时上场的球员最多几人，按成人标准十一人制算？",
+          "kind": "paraphrase",
+          "accepted_anchor": "D1",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "D2-1",
+          "question": "球员只是处于越位位置，既不参与也不干扰比赛，要判越位犯规吗？",
+          "kind": "exact",
+          "accepted_anchor": "D2",
+          "reason": "同一问题"
+        },
+        {
+          "id": "D2-2",
+          "question": "没有参与比赛或干扰任何人，站在越位位置会被判犯规吗？",
+          "kind": "paraphrase",
+          "accepted_anchor": "D2",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "D2-3",
+          "question": "处于越位位置的球员挡住守门员视线时，还算不参与比赛吗？",
+          "kind": "near_negative",
+          "accepted_anchor": null,
+          "reason": "阻挡视线带来干扰对手条件"
+        },
+        {
+          "id": "D2-4",
+          "question": "单纯站在越位位置，没有任何干扰，会被判越位吗？",
+          "kind": "paraphrase",
+          "accepted_anchor": "D2",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "D3-1",
+          "question": "标准成人足球球门两个门柱内侧之间相距多少米？",
+          "kind": "exact",
+          "accepted_anchor": "D3",
+          "reason": "同一问题"
+        },
+        {
+          "id": "D3-2",
+          "question": "标准成人足球球门的内宽是多少？",
+          "kind": "paraphrase",
+          "accepted_anchor": "D3",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "D3-3",
+          "question": "标准成人足球球门横梁下沿离地多少米？",
+          "kind": "near_negative",
+          "accepted_anchor": null,
+          "reason": "高度与宽度不同"
+        },
+        {
+          "id": "D3-4",
+          "question": "成人十一人制的球门两根立柱之间净宽多大？",
+          "kind": "paraphrase",
+          "accepted_anchor": "D3",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "D4-1",
+          "question": "掷界外球时，球能直接进入对方球门并算进球吗？",
+          "kind": "exact",
+          "accepted_anchor": "D4",
+          "reason": "同一问题"
+        },
+        {
+          "id": "D4-2",
+          "question": "直接从界外掷到对手球门里，算进球吗？",
+          "kind": "paraphrase",
+          "accepted_anchor": "D4",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "D4-3",
+          "question": "界外球直接掷入本方球门后应怎样重新开始？",
+          "kind": "near_negative",
+          "accepted_anchor": null,
+          "reason": "对方球门与本方球门的处理不同"
+        },
+        {
+          "id": "D4-4",
+          "question": "边线界外球没有被其他人触碰就进入对方球门，能得分吗？",
+          "kind": "paraphrase",
+          "accepted_anchor": "D4",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "D5-1",
+          "question": "主罚点球后，在任何其他球员都没有触球的情况下，主罚者可以再次踢球吗？",
+          "kind": "exact",
+          "accepted_anchor": "D5",
+          "reason": "同一问题"
+        },
+        {
+          "id": "D5-2",
+          "question": "罚点球的人踢出的球如果未碰其他球员，他能再踢一次吗？",
+          "kind": "paraphrase",
+          "accepted_anchor": "D5",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "D5-3",
+          "question": "点球被守门员扑出后，主罚者能在比赛进行时补射吗？",
+          "kind": "near_negative",
+          "accepted_anchor": null,
+          "reason": "守门员触球改变了判断前提"
+        },
+        {
+          "id": "D5-4",
+          "question": "其他人还没碰过点球主罚者踢出的球，主罚者能补踢吗？",
+          "kind": "paraphrase",
+          "accepted_anchor": "D5",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "D6-1",
+          "question": "标准成人十一人制足球比赛两半场常规时间合计多少分钟？",
+          "kind": "exact",
+          "accepted_anchor": "D6",
+          "reason": "同一问题"
+        },
+        {
+          "id": "D6-2",
+          "question": "不含补时和加时，成人正式足球比赛的两节时长一共是多少？",
+          "kind": "paraphrase",
+          "accepted_anchor": "D6",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "D6-3",
+          "question": "成人足球比赛打平后，加时赛通常共多少分钟？",
+          "kind": "near_negative",
+          "accepted_anchor": null,
+          "reason": "常规时间与加时不同"
+        },
+        {
+          "id": "D6-4",
+          "question": "按标准成人足球比赛算，90分钟是两半场常规时间合计吗？",
+          "kind": "paraphrase",
+          "accepted_anchor": "D6",
+          "reason": "相同问题范围和前提"
+        }
+      ]
+    },
+    "holdout": {
+      "anchors": [
+        {
+          "id": "H1",
+          "topic": "罚球点距离",
+          "question": "标准十一人制足球的罚球点距离球门线多少米？"
+        },
+        {
+          "id": "H2",
+          "topic": "守门员接脚踢回传",
+          "question": "守门员在本方罚球区用手接住队友故意用脚传回的球，怎么判罚？"
+        },
+        {
+          "id": "H3",
+          "topic": "间接任意球直接入对方门",
+          "question": "间接任意球未碰其他人，直接进对方球门，该判什么？"
+        },
+        {
+          "id": "H4",
+          "topic": "出边线后的恢复",
+          "question": "整个足球越过边线后，应以何种方式重新开始？"
+        },
+        {
+          "id": "H5",
+          "topic": "红牌后的补员",
+          "question": "比赛进行中球员被红牌罚下后，可以用替补把该队人数补齐吗？"
+        },
+        {
+          "id": "H6",
+          "topic": "角球直接进对方门",
+          "question": "角球可以不经任何其他球员触球就直接踢进对方球门得分吗？"
+        }
+      ],
+      "probes": [
+        {
+          "id": "H1-1",
+          "question": "标准十一人制足球的罚球点距离球门线多少米？",
+          "kind": "exact",
+          "accepted_anchor": "H1",
+          "reason": "同一问题"
+        },
+        {
+          "id": "H1-2",
+          "question": "踢标准成人足球时，球门线中心到罚球点有多远？",
+          "kind": "paraphrase",
+          "accepted_anchor": "H1",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "H1-3",
+          "question": "标准十一人制足球的球门区线距球门线多少米？",
+          "kind": "near_negative",
+          "accepted_anchor": null,
+          "reason": "罚球点与球门区的标线不同"
+        },
+        {
+          "id": "H1-4",
+          "question": "十一人制点球的位置离球门线多远？",
+          "kind": "paraphrase",
+          "accepted_anchor": "H1",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "H2-1",
+          "question": "守门员在本方罚球区用手接住队友故意用脚传回的球，怎么判罚？",
+          "kind": "exact",
+          "accepted_anchor": "H2",
+          "reason": "同一问题"
+        },
+        {
+          "id": "H2-2",
+          "question": "队友故意脚踢把球回传给本方门将，门将在罚球区内用手接球如何处理？",
+          "kind": "paraphrase",
+          "accepted_anchor": "H2",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "H2-3",
+          "question": "队友正常用头把球传给门将，门将在本方罚球区用手接球怎么判？",
+          "kind": "near_negative",
+          "accepted_anchor": null,
+          "reason": "正常头球与故意脚踢回传条件不同"
+        },
+        {
+          "id": "H2-4",
+          "question": "本方球员明确用脚回传，门将在禁区内用手接，比赛如何恢复？",
+          "kind": "paraphrase",
+          "accepted_anchor": "H2",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "H3-1",
+          "question": "间接任意球未碰其他人，直接进对方球门，该判什么？",
+          "kind": "exact",
+          "accepted_anchor": "H3",
+          "reason": "同一问题"
+        },
+        {
+          "id": "H3-2",
+          "question": "踢间接任意球时，球没有碰到别的球员就进对方球门，怎么恢复比赛？",
+          "kind": "paraphrase",
+          "accepted_anchor": "H3",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "H3-3",
+          "question": "直接任意球未碰其他人就进对方球门，该判什么？",
+          "kind": "near_negative",
+          "accepted_anchor": null,
+          "reason": "直接与间接任意球的得分规则不同"
+        },
+        {
+          "id": "H3-4",
+          "question": "间接任意球直接进对方大门，过程中无人再触球，如何处理？",
+          "kind": "paraphrase",
+          "accepted_anchor": "H3",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "H4-1",
+          "question": "整个足球越过边线后，应以何种方式重新开始？",
+          "kind": "exact",
+          "accepted_anchor": "H4",
+          "reason": "同一问题"
+        },
+        {
+          "id": "H4-2",
+          "question": "足球完整滚出了球场边线，接下来通过什么方式恢复比赛？",
+          "kind": "paraphrase",
+          "accepted_anchor": "H4",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "H4-3",
+          "question": "整个足球越过球门线且未进球后，应以何种方式重新开始？",
+          "kind": "near_negative",
+          "accepted_anchor": null,
+          "reason": "边线和球门线的恢复方式不同"
+        },
+        {
+          "id": "H4-4",
+          "question": "球完全越过场边的边线后，怎么恢复比赛？",
+          "kind": "paraphrase",
+          "accepted_anchor": "H4",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "H5-1",
+          "question": "比赛进行中球员被红牌罚下后，可以用替补把该队人数补齐吗？",
+          "kind": "exact",
+          "accepted_anchor": "H5",
+          "reason": "同一问题"
+        },
+        {
+          "id": "H5-2",
+          "question": "一名在场队员比赛中被红牌罚出场，球队可以换一个替补替他上来吗？",
+          "kind": "paraphrase",
+          "accepted_anchor": "H5",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "H5-3",
+          "question": "一名在首发名单的球员在开球前被罚出场，能由替补顶替他吗？",
+          "kind": "near_negative",
+          "accepted_anchor": null,
+          "reason": "开球前与比赛进行中的替代条件不同"
+        },
+        {
+          "id": "H5-4",
+          "question": "正打比赛的一方有队员吃红牌被罚下，能补人回到原先人数吗？",
+          "kind": "paraphrase",
+          "accepted_anchor": "H5",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "H6-1",
+          "question": "角球可以不经任何其他球员触球就直接踢进对方球门得分吗？",
+          "kind": "exact",
+          "accepted_anchor": "H6",
+          "reason": "同一问题"
+        },
+        {
+          "id": "H6-2",
+          "question": "角球罚出直接飞进对手球门，中间无人触球，算进球吗？",
+          "kind": "paraphrase",
+          "accepted_anchor": "H6",
+          "reason": "相同问题范围和前提"
+        },
+        {
+          "id": "H6-3",
+          "question": "角球可以不经任何其他球员触球就直接踢进本方球门得分吗？",
+          "kind": "near_negative",
+          "accepted_anchor": null,
+          "reason": "直入本方和对方球门处理不同"
+        },
+        {
+          "id": "H6-4",
+          "question": "开角球直接射入对方球门，可以有效得分吗？",
+          "kind": "paraphrase",
+          "accepted_anchor": "H6",
+          "reason": "相同问题范围和前提"
+        }
+      ]
+    }
+  }
+}
