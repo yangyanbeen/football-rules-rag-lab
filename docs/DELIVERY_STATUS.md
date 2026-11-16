@@ -1,6 +1,8 @@
 # 当前进度与交付索引
 
-**任务1–14最终归档：** [任务十四交付](../reports/TASK_14_DELIVERY.md)、[简历成稿](../reports/task14/RESUME_FINAL.md)、[复验方式](TASK_14_ARCHIVE.md)。归档和可选增强分开，任务15–17未执行。
+**任务十五已完成。** 同一语料、模型和机器比较 Flat 与四组 HNSW，保留各组资源与负收益。任务16和17待执行。 [任务十五交付](../reports/TASK_15_DELIVERY.md)
+
+**任务1–14最终归档：** [任务十四交付](../reports/TASK_14_DELIVERY.md)、[简历成稿](../reports/task14/RESUME_FINAL.md)、[复验方式](TASK_14_ARCHIVE.md)。该报告记录任务十四归档时的状态。
 
 任务十三当前修订依据：[缺陷补交付](../reports/TASK_13_SUPPLEMENT.md)及[TASK_13_AUDIT](TASK_13_AUDIT.md)。修复工作进程超时/故障误拒答、不可重试错误、来源与回执、完整运行包校验和安装预检查。54/54、公开47/47，真实后端和最终页面各5/5，本机完整28/28、干净公开完整25/25通过，已按原标准补交付。旧原交付及质量限制保留。
 

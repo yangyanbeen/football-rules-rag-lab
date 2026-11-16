@@ -1,0 +1,219 @@
+{
+  "build_origin": "reports/task15/dev/builds.json",
+  "command": "python -B scripts/run_faiss_hnsw.py dev",
+  "completed_at": "2026-11-16T06:53:59.604507+00:00",
+  "document_vector_fingerprint": "1f709033daf4df83416da434f2b0f4b15181273c9465780e53977a050346fa07",
+  "embedding_batches": [
+    {
+      "elapsed_seconds": 2.1055332000000817,
+      "inputs": 4,
+      "prompt_eval_count": 66,
+      "server_load_duration_ns": 1822383600,
+      "server_total_duration_ns": 1999952700
+    },
+    {
+      "elapsed_seconds": 0.3111131000000569,
+      "inputs": 4,
+      "prompt_eval_count": 81,
+      "server_load_duration_ns": 8773000,
+      "server_total_duration_ns": 215887800
+    },
+    {
+      "elapsed_seconds": 0.27929089999997814,
+      "inputs": 4,
+      "prompt_eval_count": 77,
+      "server_load_duration_ns": 8455700,
+      "server_total_duration_ns": 204541200
+    },
+    {
+      "elapsed_seconds": 0.3155541000000994,
+      "inputs": 4,
+      "prompt_eval_count": 99,
+      "server_load_duration_ns": 8183600,
+      "server_total_duration_ns": 226432200
+    },
+    {
+      "elapsed_seconds": 0.3637229999999363,
+      "inputs": 4,
+      "prompt_eval_count": 95,
+      "server_load_duration_ns": 8423200,
+      "server_total_duration_ns": 233165800
+    },
+    {
+      "elapsed_seconds": 0.2926428999999189,
+      "inputs": 4,
+      "prompt_eval_count": 90,
+      "server_load_duration_ns": 7423300,
+      "server_total_duration_ns": 216297500
+    },
+    {
+      "elapsed_seconds": 0.2669395999998869,
+      "inputs": 4,
+      "prompt_eval_count": 81,
+      "server_load_duration_ns": 7402500,
+      "server_total_duration_ns": 205652700
+    },
+    {
+      "elapsed_seconds": 0.31092450000005556,
+      "inputs": 4,
+      "prompt_eval_count": 100,
+      "server_load_duration_ns": 7931900,
+      "server_total_duration_ns": 231233900
+    },
+    {
+      "elapsed_seconds": 0.26656019999995806,
+      "inputs": 4,
+      "prompt_eval_count": 76,
+      "server_load_duration_ns": 8300200,
+      "server_total_duration_ns": 193681300
+    },
+    {
+      "elapsed_seconds": 0.30487349999998514,
+      "inputs": 4,
+      "prompt_eval_count": 87,
+      "server_load_duration_ns": 7796800,
+      "server_total_duration_ns": 225447600
+    }
+  ],
+  "embedding_model": {
+    "architecture": "bert",
+    "context_length": 8192,
+    "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+    "dimensions": 1024,
+    "name": "bge-m3:latest",
+    "ollama_version": "0.40.16",
+    "quantization": "F16"
+  },
+  "embedding_runtime": {
+    "context_length": 8192,
+    "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+    "name": "bge-m3:latest",
+    "runner": "llamacpp",
+    "size": 1244166879,
+    "size_vram": 0
+  },
+  "environment": {
+    "faiss_options": "OPTIMIZE AVX2 ",
+    "faiss_threads": 1,
+    "logical_cpus": 20,
+    "machine": "AMD64",
+    "packages": {
+      "faiss-cpu": "1.11.0",
+      "numpy": "1.26.4",
+      "packaging": "24.2",
+      "psutil": "6.1.1"
+    },
+    "physical_memory_bytes": 16858472448,
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "python": "3.10.22"
+  },
+  "freeze": null,
+  "frozen_selection": null,
+  "inputs": {
+    "dataset_manifest": {
+      "path": "data/eval/dataset_manifest.json",
+      "sha256": "778ffc31872d379dbd714cd4e085e075b0a308b7a67d1306e459e978f70a6c66",
+      "size_bytes": 2189
+    },
+    "dense_config": {
+      "path": "config/dense_index.json",
+      "sha256": "35e17cce45ebffa82c91bbd8e2bda79882dfa369fc43dcf88827bd8b8f8d6988",
+      "size_bytes": 1613
+    },
+    "document_vectors": {
+      "path": "data/indexes/dense/embeddings.npy",
+      "sha256": "d9d44255bc652ca71a05ee42c9156f8afa324d3e5caaf24fd8a875da8651353c",
+      "size_bytes": 405632
+    },
+    "mapping": {
+      "path": "data/manifests/dense_chunk_ids.json",
+      "sha256": "0bdff8a39d7a458d586fecb921582224ad7a854cc3bf6fa589e04a1150b95b61",
+      "size_bytes": 32967
+    },
+    "public_dense_manifest": {
+      "path": "data/manifests/dense_index_manifest.json",
+      "sha256": "9ea5d0403acb9ccaae8185623cf3cd66f834f555f7d839fa12cdbc8f60b2d557",
+      "size_bytes": 11745
+    },
+    "questions": {
+      "path": "data/eval/retrieval_dev.jsonl",
+      "sha256": "b24b2dc9c1483495623407c472ca1ff3b0b0a6846b4894892f8d85e9ffb34e04",
+      "size_bytes": 60024
+    }
+  },
+  "new_answer_requests": 0,
+  "new_document_embeddings": 0,
+  "public_artifacts": {
+    "builds.json": {
+      "path": "reports/task15/dev/builds.json",
+      "sha256": "24cfbe27af4a3bc52882fc567891e09c5462fc2adca379b153f6dee042b5efb6",
+      "size_bytes": 3916
+    },
+    "predictions.jsonl": {
+      "path": "reports/task15/dev/predictions.jsonl",
+      "sha256": "c87117c7710c823a261a7cec0bb3c3e2c96e24e911be8dfec0c32e91b8f87c84",
+      "size_bytes": 103568
+    },
+    "run_started.json": {
+      "path": "reports/task15/dev/run_started.json",
+      "sha256": "ba93cc17283337c9fdcc8875b6fb5b49810821b78448dc3f8e6e893bc126f38f",
+      "size_bytes": 154
+    },
+    "summary.json": {
+      "path": "reports/task15/dev/summary.json",
+      "sha256": "092fa7f78060e7295f2d5b72b6630b29d3fa8653d05eeb0a366af1ea9b6003eb",
+      "size_bytes": 64838
+    }
+  },
+  "purpose": "development",
+  "query_embeddings": 40,
+  "query_vector_artifact": {
+    "path": ".runtime/task15/dev/query_vectors.npy",
+    "sha256": "6906c2816d8aa331e85566c9bcfe730f23e3728b80a078f10fba6c2db3abd4f5",
+    "size_bytes": 163968
+  },
+  "query_vector_fingerprint": "25eb6c126c6892d46dabc886d4f2976493c94db6cd851f0abb050d84e96e9acc",
+  "source_commit": "09ac6a60e4f7911980c0d41ab2d596c02eb1c2b6",
+  "source_files": {
+    "config/faiss_hnsw_experiment.json": {
+      "path": "config/faiss_hnsw_experiment.json",
+      "sha256": "2f8f18d4f44c34bd956cbe8f468a314f956e1b283c7887be9cbf5293eaa4c436",
+      "size_bytes": 1204
+    },
+    "scripts/dense_index.py": {
+      "path": "scripts/dense_index.py",
+      "sha256": "9e991910367987021e1ace250c5796c213ad53f14072ecbc4fe1539352f3d875",
+      "size_bytes": 22904
+    },
+    "scripts/dense_retrieval_eval.py": {
+      "path": "scripts/dense_retrieval_eval.py",
+      "sha256": "7a1a522f35c2b8ed8ffb5712b3ec5371b4fbb0b41450c5ef89d03f1c2cb40fd0",
+      "size_bytes": 21211
+    },
+    "scripts/faiss_hnsw_eval.py": {
+      "path": "scripts/faiss_hnsw_eval.py",
+      "sha256": "ae996eee762f549dbbb23777871ab5a4efb1ff974aee1ef58bd30eb9e5e3c352",
+      "size_bytes": 8188
+    },
+    "scripts/retrieval_metrics.py": {
+      "path": "scripts/retrieval_metrics.py",
+      "sha256": "350759f655b78e43f4d0c4114a4a2c7d03b87c7281ac0cae40678bae15341168",
+      "size_bytes": 3079
+    },
+    "scripts/run_faiss_hnsw.py": {
+      "path": "scripts/run_faiss_hnsw.py",
+      "sha256": "ee053aa9a440aa098d722eda58eb1bbbec59adfd36f4f7569dd1bcc2b62ed068",
+      "size_bytes": 14244
+    },
+    "scripts/run_retrieval_metrics.py": {
+      "path": "scripts/run_retrieval_metrics.py",
+      "sha256": "11021dfc06a8c6e3e765c051c594f598b6c2bea220ee78f7a96ce08d0d56eae5",
+      "size_bytes": 4121
+    }
+  },
+  "split": "dev",
+  "status": "COMPLETE",
+  "used_for_parameter_selection": true,
+  "version": "faiss-hnsw-b0-1.0"
+}

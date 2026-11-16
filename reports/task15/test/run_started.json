@@ -1,0 +1,10 @@
+{
+  "freeze": {
+    "path": "reports/task15/test-freeze.json",
+    "sha256": "f66a487761190c46141d9e159ffa8c76c046918f80e7e1f05a73a86c54cd2a44",
+    "size_bytes": 2970
+  },
+  "source_commit": "e77136480d972429309510be5bf3c34d1fbd49d3",
+  "split": "test",
+  "started_at": "2026-11-16T06:55:36.067412+00:00"
+}
