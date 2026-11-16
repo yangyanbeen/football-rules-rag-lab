@@ -1,0 +1,12 @@
+{
+  "version": "football-rag-langgraph-1.0",
+  "langgraph_version": "1.2.22",
+  "comparison_cases": ["normal", "outside", "version"],
+  "retrieval_depth": 80,
+  "rrf_k": 60,
+  "rerank_budget": 40,
+  "result_limit": 10,
+  "max_generation_attempts": 2,
+  "recursion_limit": 24,
+  "trace_root": ".runtime/task17/traces"
+}
