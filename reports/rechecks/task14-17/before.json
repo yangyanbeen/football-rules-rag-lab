@@ -1,0 +1,39 @@
+{
+  "base": "a6aaca199ab420fca2af39e58e0fce32e03f1a23",
+  "checked_at": "2026-11-16T10:29:24.141477+00:00",
+  "checks": {
+    "14_pointer_indices_follow_json_pointer_grammar": false,
+    "14_reject_unknown_pointer_escape": false,
+    "15_reject_boolean_repeat_number": false,
+    "15_reject_changed_development_questions_before_tuning": false,
+    "15_reject_drift_in_preregistered_policy": false,
+    "15_reject_permuted_vector_id_mapping": false,
+    "16_cached_answer_matches_verified_source_render": false,
+    "16_corrupt_cache_packet_recovers_through_loader": false,
+    "16_reject_invalid_policy_types_and_thresholds": false,
+    "16_same_key_concurrent_miss_loads_once": false,
+    "16_scope_tracks_corpus_bytes": false,
+    "16_scope_tracks_embedding_implementation": false,
+    "16_scope_tracks_index_payload_bytes": false,
+    "16_version_change_during_load_does_not_cache": false,
+    "17_context_integrity_before_model_request": false,
+    "17_graphs_sharing_engine_have_request_local_counters": false,
+    "17_partial_retrieval_preserves_completed_embedding_count": false,
+    "17_reject_invalid_explicit_request_identifiers": false
+  },
+  "exceptions": {
+    "17_reject_invalid_explicit_request_identifiers": "TypeError: expected string or bytes-like object"
+  },
+  "new_formal_test_runs": 0,
+  "new_human_judgments": 0,
+  "new_model_requests": 0,
+  "passed": 0,
+  "phase": "legacy_reproduction",
+  "producer": {
+    "path": "scripts/verify_task14_17_regressions.py",
+    "sha256": "148fd6a642babe037ed4a71398c20d06419fe24661c2a17bd0ce5f20eaaec8ef",
+    "size_bytes": 12050
+  },
+  "status": "PASS",
+  "total": 18
+}
