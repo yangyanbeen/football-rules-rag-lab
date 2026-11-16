@@ -1,15 +1,18 @@
 """Validate and recompute the FAISS experiment with the Python standard library."""
+import json
 import math
 from statistics import median
 
-from answer_eval_core import ROOT, read, record, rows
+from answer_eval_core import ROOT, canonical, read, record
 from dense_retrieval_eval import percentile
+from historical_evidence import frozen_bytes
 from retrieval_metrics import compute_metrics
 
 CONFIG = ROOT / 'config/faiss_hnsw_experiment.json'
 REPORT = ROOT / 'reports/task15'
 BASE = 'bcffd4e8c8566b5402e0009e0b3308e7b09ee043'
-SOURCES = (
+POLICY_RELEASE = '362bdc84f3f748bebfb38bb3cdb7dba649b981a9'
+SOURCES_V1 = (
     'config/faiss_hnsw_experiment.json',
     'scripts/faiss_hnsw_eval.py',
     'scripts/run_faiss_hnsw.py',
@@ -18,6 +21,7 @@ SOURCES = (
     'scripts/dense_retrieval_eval.py',
     'scripts/run_retrieval_metrics.py',
 )
+SOURCES = (*SOURCES_V1, 'scripts/historical_evidence.py')
 DENSE = ROOT / 'data/manifests/dense_index_manifest.json'
 MAPPING = ROOT / 'data/manifests/dense_chunk_ids.json'
 DATASET = ROOT / 'data/eval/dataset_manifest.json'
@@ -25,8 +29,9 @@ DATASET = ROOT / 'data/eval/dataset_manifest.json'
 
 def config():
     cfg = read(CONFIG)
-    if cfg['version'] != 'faiss-hnsw-b0-1.0':
-        raise ValueError('Unrecognized experiment policy')
+    expected = json.loads(frozen_bytes(CONFIG, POLICY_RELEASE))
+    if canonical(cfg) != canonical(expected):
+        raise ValueError('Experiment policy differs from task 15')
     return cfg
 
 
@@ -35,22 +40,31 @@ def source_records():
 
 
 def questions(split):
+    expected = {'dev': (40, 32), 'test': (50, 40)}.get(split)
+    if expected is None:
+        raise ValueError('Unknown evaluation split')
     path = ROOT / f'data/eval/retrieval_{split}.jsonl'
-    manifest = read(DATASET)
+    manifest = json.loads(frozen_bytes(DATASET, BASE))
+    raw = frozen_bytes(path, BASE)
     if split == 'test' and manifest['test_lock']['sha256'] != record(path)['sha256']:
         raise ValueError('Locked test hash differs')
-    result = rows(path)
-    expected = {'dev': (40, 32), 'test': (50, 40)}[split]
+    result = [json.loads(line) for line in raw.splitlines() if line.strip()]
     if (len(result), sum(q['answerable'] is True for q in result)) != expected:
         raise ValueError('Question count or answerable denominator differs')
     return path, result
 
 
-def known_ids():
-    ids = [v['chunk_id'] for v in read(MAPPING)]
-    if len(ids) != 99 or len(set(ids)) != 99:
+def mapping_rows():
+    records = json.loads(frozen_bytes(MAPPING, BASE))
+    ids = [v['chunk_id'] for v in records]
+    if (len(ids) != 99 or len(set(ids)) != 99
+            or any(type(v['position']) is not int or v['position'] != i for i, v in enumerate(records))):
         raise ValueError('Original corpus ID mapping is incomplete')
-    return set(ids)
+    return records
+
+
+def known_ids():
+    return {v['chunk_id'] for v in mapping_rows()}
 
 
 def clocks(values, scale):
@@ -71,7 +85,8 @@ def build_summary(cfg, builds):
         for number, obs in enumerate(observations, 1):
             fields = {'graph', 'repetition', 'build_ns', 'rss_before_bytes', 'rss_after_bytes',
                       'peak_working_set_bytes', 'index_bytes', 'index_sha256'}
-            if set(obs) != fields or (obs['graph'], obs['repetition']) != (graph, number):
+            if (set(obs) != fields or type(obs['repetition']) is not int
+                    or (obs['graph'], obs['repetition']) != (graph, number)):
                 raise ValueError('Wrong graph build or repetition')
             amounts = ['build_ns', 'rss_before_bytes', 'rss_after_bytes', 'index_bytes']
             if any(type(obs[k]) is not int or obs[k] <= 0 for k in amounts):

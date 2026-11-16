@@ -6025,7 +6025,237 @@
       },
       "decision": "保留独立图入口用于显式路由、重试及节点诊断。日常使用已有入口。",
       "limitations": "每对案例仅一条读数，受模型预热和执行顺序影响。总体延迟、吞吐、准确率变化待测。"
+    },
+    {
+      "id": "TASK-014-017-DELIVERY-AUDIT",
+      "date": "2026-11-16",
+      "task": "14-17",
+      "objective": "复现并修复归档、FAISS、缓存和编排边界缺口，维持历史证据可验证",
+      "control": "a6aaca199ab420fca2af39e58e0fce32e03f1a23",
+      "main_variable": "修订各阶段的数据约束、证据验证与运行隔离",
+      "data_version": {
+        "historical_snapshot": "a6aaca199ab420fca2af39e58e0fce32e03f1a23",
+        "frozen_corpus": {
+          "path": "data/manifests/local_data_files.json",
+          "size_bytes": 11934,
+          "sha256": "f10c562de07cad7120ecd16593f2dd32df55fc88391dd74cb5a0d1c96bbee41b"
+        }
+      },
+      "evaluation_version": {
+        "baseline_reproductions": 18,
+        "cli_comparison": 1,
+        "ad_hoc_smoke_checks": 5,
+        "original_formal_test_runs": 0,
+        "new_human_judgments": 0
+      },
+      "source_commit": "1dfc1fdccad7910a2db62862699ce8cd822c5e59",
+      "models": {
+        "real_smoke_embedding": {
+          "source_id": "BAAI/bge-m3",
+          "distribution": "Ollama GGUF",
+          "name": "bge-m3:latest",
+          "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+          "dimensions": 1024,
+          "quantization": "F16",
+          "ollama_version": "0.40.16",
+          "license": "MIT",
+          "query_prefix": "",
+          "document_prefix": ""
+        },
+        "real_smoke_generation": {
+          "name": "qwen2.5:3b",
+          "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+          "ollama_version": "0.40.16",
+          "num_ctx": 8192,
+          "num_predict": 1024,
+          "num_gpu": 0,
+          "num_thread": 8,
+          "temperature": 0,
+          "seed": 42,
+          "keep_alive": "10m",
+          "timeout_seconds": 180
+        }
+      },
+      "parameters": {
+        "previous_fixed_application": {
+          "path": "config/task13_app.json",
+          "size_bytes": 779,
+          "sha256": "68075020ed2444219bb41ef477aaa5344d8e57eb7ab75430fbeffe275fb915cc"
+        },
+        "runtime_package_lock": {
+          "path": "config/task17-requirements.lock.txt",
+          "size_bytes": 2180,
+          "sha256": "8268347c728bc3599ede20f76a7a47f492fd9dd744ad9bd038308faffd51e38b"
+        }
+      },
+      "hardware": {
+        "python": "3.10.22",
+        "system": "Windows-10-10.0.26200-SP0",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+      },
+      "commands": [
+        "python -B scripts/verify_task14_17_regressions.py --report .tmp/regression-new.json",
+        "python -B scripts/run_task14_17_smoke.py --report reports/rechecks/task14-17/live-new.json",
+        "python -S -B scripts/verify_task14_17_delivery.py --public-only --report .tmp/delivery-new.json"
+      ],
+      "artifacts": [
+        {
+          "path": "docs/TASK_14_17_AUDIT.md",
+          "size_bytes": 2752,
+          "sha256": "6458f48c540dda715d6660339be0602aef64baca0623cafaedb4823219deea16"
+        },
+        {
+          "path": "reports/rechecks/task14-17/archive-cli.json",
+          "size_bytes": 779,
+          "sha256": "2e8f66f8fc27006ea4ee4bea46e6fb0764c44b1c3800d919a4ad163c02da259e"
+        },
+        {
+          "path": "reports/rechecks/task14-17/archive-replay.json",
+          "size_bytes": 2649,
+          "sha256": "3a0b53b634c5ad08b050c3c3da5b515121bb3f713f14ba983d66563452ac51b3"
+        },
+        {
+          "path": "reports/rechecks/task14-17/before.json",
+          "size_bytes": 1630,
+          "sha256": "46a572c31ccbb54359442eb5ea8515f2a4fc4cf252e33cf12c0832108e1c8c24"
+        },
+        {
+          "path": "reports/rechecks/task14-17/cache-replay.json",
+          "size_bytes": 1960,
+          "sha256": "cbd533e6bb1296a0a5b8cc4217a2be8492a40b4b0c331349daa1a88bd7ec4567"
+        },
+        {
+          "path": "reports/rechecks/task14-17/faiss-replay.json",
+          "size_bytes": 1569,
+          "sha256": "686f6cf7b408a6339fe43bf15c74de74b99455764213733e4c1d3bd6603fbd1c"
+        },
+        {
+          "path": "reports/rechecks/task14-17/graph-controls.json",
+          "size_bytes": 36607,
+          "sha256": "23ea17be0fb45b9b1cf436b5cb598fcb5ce451244241085389f987e2463eb3c2"
+        },
+        {
+          "path": "reports/rechecks/task14-17/graph-replay.json",
+          "size_bytes": 1717,
+          "sha256": "62a3a83d010e6a2b3ed6895797f326a367123eebb1b353075e6923505aaf962b"
+        },
+        {
+          "path": "reports/rechecks/task14-17/live-smoke.json",
+          "size_bytes": 13184,
+          "sha256": "1bfc7dbeee90039f8146985471ccab4272f4af4c66761c74b6750c4715fe0701"
+        },
+        {
+          "path": "reports/rechecks/task14-17/native-prior.json",
+          "size_bytes": 217,
+          "sha256": "b8a862cd6a95a17e7e9a0e0d06b9253b8f9cfbbcb1c35dd1e786b8198f5bc641"
+        },
+        {
+          "path": "reports/rechecks/task14-17/redis-fallback.json",
+          "size_bytes": 452,
+          "sha256": "f536d809df5a7f35bca49104ff2d103912b7778766ee1af415db60df5c8fbcff"
+        },
+        {
+          "path": "reports/rechecks/task14-17/regressions-first.json",
+          "size_bytes": 1506,
+          "sha256": "e536ac51d174c85ffaf75b15f9f9659cadaef29ca9fee2c9c60d3254e0784616"
+        },
+        {
+          "path": "scripts/faiss_hnsw_eval.py",
+          "size_bytes": 8925,
+          "sha256": "360771c7d432e59f6ba56324a3ab191ffea615b858a1b154a58a50ccc5037c4c"
+        },
+        {
+          "path": "scripts/historical_evidence.py",
+          "size_bytes": 1303,
+          "sha256": "e255ae9d4f0005ff9203c03ee1e040a70889a4093a805d3f6f852e411e967c95"
+        },
+        {
+          "path": "scripts/query_cache.py",
+          "size_bytes": 8669,
+          "sha256": "e15b1e839899c5d1cb7232f5357c6cd0282ab1d05233ef70c5d852a546cad0b9"
+        },
+        {
+          "path": "scripts/rag_langgraph.py",
+          "size_bytes": 13160,
+          "sha256": "1608371efd159cd835efcda10b1499f61d09a6203f7d4f013c37a4fccf29d2aa"
+        },
+        {
+          "path": "scripts/run_cached_query.py",
+          "size_bytes": 6496,
+          "sha256": "a112cce1985fec1f82433c63fec08d13ea856ff5273a5f4412502f70370a5ec4"
+        },
+        {
+          "path": "scripts/run_faiss_hnsw.py",
+          "size_bytes": 14409,
+          "sha256": "1d93b0e040774d9ec36345a11580731c8c53abf37a57711b335fa32580e7d6eb"
+        },
+        {
+          "path": "scripts/run_task14_17_smoke.py",
+          "size_bytes": 4295,
+          "sha256": "2bcd8b302936d92206c22c5ad3b2a10c78a34b04fac399de9bdfbea938c703be"
+        },
+        {
+          "path": "scripts/task14_archive.py",
+          "size_bytes": 21815,
+          "sha256": "9019a9296cecb1b45559a1fb1cb13f54ea33beb8da14e3a6ecb31e7562f9c403"
+        },
+        {
+          "path": "scripts/verify_faiss_hnsw.py",
+          "size_bytes": 10046,
+          "sha256": "4e87c7cdd0fc33ed0b56b4fb3ee0246210ed5f69828189912c8b610d67f0ecd7"
+        },
+        {
+          "path": "scripts/verify_langgraph_controls.py",
+          "size_bytes": 8607,
+          "sha256": "bcd8f24af5b52b76f3ccc2201f1667752e92f021b9f940c4b882f60f3f1639b7"
+        },
+        {
+          "path": "scripts/verify_langgraph_replay.py",
+          "size_bytes": 13113,
+          "sha256": "89fde5a84c844d412ff4dd50d892682915404c4b9374e613c36a70dadc36cc5c"
+        },
+        {
+          "path": "scripts/verify_query_cache.py",
+          "size_bytes": 13081,
+          "sha256": "85ba8ed85ca1f05202ced4c7198c0bcce65bd44f0f0e528b146e469e806fba17"
+        },
+        {
+          "path": "scripts/verify_task14_17_delivery.py",
+          "size_bytes": 11966,
+          "sha256": "1f15c10ed04ab5656182577f265281a70b7740f2c5cfa83a3894eae1b2c77a74"
+        },
+        {
+          "path": "scripts/verify_task14_17_regressions.py",
+          "size_bytes": 12050,
+          "sha256": "148fd6a642babe037ed4a71398c20d06419fe24661c2a17bd0ce5f20eaaec8ef"
+        },
+        {
+          "path": "scripts/verify_task14_show_cli.py",
+          "size_bytes": 2923,
+          "sha256": "2a5409ec7f4604b8afdb15bc258fcd6b3bbff098d4f5fa5b7db71e225e788c18"
+        }
+      ],
+      "metrics": {
+        "reproduced": 19,
+        "fixed": 19,
+        "control_passed": 18,
+        "archive_cli_passed": 1,
+        "live_smoke_passed": 5,
+        "historical_regressions": {
+          "archive": 43,
+          "faiss": 17,
+          "cache": 34,
+          "graph": 18,
+          "compiled_graph_controls": 15
+        },
+        "actual_smoke_embeddings": 3,
+        "actual_smoke_generation_requests": 3,
+        "new_formal_test_runs": 0,
+        "new_human_judgments": 0
+      },
+      "decision": "19 项缺口均有复现与修复证据，原测量保留。后续回归按修订门禁，历史完整门禁按原标签。",
+      "limitations": "仅本轮已复现的缺口和相关证据。Redis 服务端、生产量级吞吐及总体准确率待测。"
     }
   ],
-  "last_updated_at": "2026-11-16T10:17:27.991768+00:00"
+  "last_updated_at": "2026-11-16T10:47:44.165327+00:00"
 }

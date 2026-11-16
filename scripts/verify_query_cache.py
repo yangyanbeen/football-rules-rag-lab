@@ -10,6 +10,7 @@ from unittest.mock import patch
 
 from answer_eval_core import canonical, digest, read, record, write_new
 from cache_experiment import REPORT, ROOT, WORKLOAD, SemanticIndex, choose, nearest, source_records, summarize, workload
+from historical_evidence import git_record
 from query_cache import CONFIG, CacheUnavailable, ExactCache, MemoryBackend, RedisBackend, Scope, policy
 from run_cache_experiment import FREEZE, dev_records
 from run_cached_query import validator
@@ -103,7 +104,7 @@ def controls(check):
     check('oversized_answer_bypasses_store', lambda: (
         ExactCache(backend, scope, cache.validate, 100).store('oversized', {'id': 'x' * 256}) == 'not_cacheable'))
     source = {'chunk_id': 'ID-1', 'license_url': 'source'}
-    eligible = validator({'ID-1': source})
+    eligible = validator({'ID-1': source}, lambda _: ('fixture', [source]))
     check('answer_requires_validated_content_and_citation', lambda: (
         eligible({'status': 'answered', 'answer': 'fixture', 'citations': [source], 'refusal_reason': None})
         and not eligible({'status': 'answered', 'answer': 'fixture', 'citations': [{'chunk_id': 'ID-1'}],
@@ -163,8 +164,7 @@ def live_matches():
         and steps[2]['citation_ids'] == steps[3]['citation_ids']
         and steps[3]['private_trace'] is None
         and len({r['private_trace']['sha256'] for r in steps[:3]}) == 3
-        and source == 'scripts/run_cached_query.py' and record(ROOT / source) == live['source']
-        and digest(source_at(live['source_commit'], source)) == live['source']['sha256']
+        and source == 'scripts/run_cached_query.py' and git_record(live['source_commit'], source) == live['source']
         and live['configuration'] == record(CONFIG)
         and live['new_formal_test_runs'] == live['new_human_judgments'] == 0
     )
@@ -178,8 +178,8 @@ def measurement(split):
     pin = read(ROOT / 'config/dense_index.json')['model']
     return (
         canonical(summarize(workload(split), observations)) == canonical(summary)
-        and run['source_files'] == source_records()
-        and all(digest(source_at(run['source_commit'], p)) == r['sha256'] for p, r in run['source_files'].items())
+        and set(run['source_files']) == set(source_records())
+        and all(git_record(run['source_commit'], p) == r for p, r in run['source_files'].items())
         and run['observations'] == record(folder / 'observations.json')
         and run['summary'] == record(folder / 'summary.json')
         and run['split'] == split and run['status'] == 'COMPLETE' and run['backend'] == 'memory'
@@ -199,7 +199,8 @@ def freeze_matches():
     holdout = read(REPORT / 'holdout/run_manifest.json')
     times = (dev['completed_at'], grant['prepared_at'], holdout['started_at'], holdout['completed_at'])
     return (
-        grant['used_holdout_for_selection'] is False and grant['source_files'] == source_records()
+        grant['used_holdout_for_selection'] is False
+        and grant['source_files'] == dev['source_files'] == holdout['source_files']
         and grant['development'] == dev_records()
         and all(digest(source_at(grant['development_commit'], r['path'])) == r['sha256']
                 for r in grant['development'].values())

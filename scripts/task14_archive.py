@@ -4,8 +4,10 @@ import argparse,csv,io,json,math,re,subprocess
 from functools import lru_cache
 from pathlib import Path
 from answer_eval_core import ROOT,read,record,digest,canonical,write_new
+from historical_evidence import git_record
 
 BASE='5658f30ecaa714e2bdaca3085cc547414f478e36'
+ARCHIVE_V1_PRODUCER='4133771ca64e25b30a68c297d6514ee4f3595cfc'
 SPEC='config/task14_archive.json'
 SOURCES=('scripts/task14_archive.py',SPEC)
 FOLDER=ROOT/'reports/task14'
@@ -26,11 +28,25 @@ def base_ref(path):
 
 
 def pointer(value,path):
-    if not isinstance(path,str) or path and not path.startswith('/'):raise ValueError('Invalid JSON pointer')
-    if not path:return value
-    for key in path[1:].split('/'):
-        key=key.replace('~1','/').replace('~0','~')
-        value=value[int(key)] if isinstance(value,list) else value[key]
+    if not isinstance(path, str) or (path and not path.startswith('/')):
+        raise ValueError('Invalid JSON pointer')
+    if not path:
+        return value
+    for token in path[1:].split('/'):
+        if re.search(r'~(?![01])', token):
+            raise ValueError('Invalid JSON pointer escape')
+        key = token.replace('~1', '/').replace('~0', '~')
+        if isinstance(value, list):
+            if not re.fullmatch(r'0|[1-9][0-9]*', key):
+                raise ValueError('Invalid JSON pointer array index')
+            index = int(key)
+            if index >= len(value):
+                raise ValueError('JSON pointer array index does not exist')
+            value = value[index]
+        elif isinstance(value, dict) and key in value:
+            value = value[key]
+        else:
+            raise ValueError('JSON pointer does not resolve to an existing member')
     return value
 
 
@@ -84,11 +100,15 @@ def normalize(e,row,index):
     return result
 
 
-def build(source):
+def build(source, *, verify_historical=False):
     s=spec()
-    if not re.fullmatch('[a-f0-9]{40}',source) or subprocess.run(['git','merge-base','--is-ancestor',source,'HEAD'],cwd=ROOT,capture_output=True).returncode:raise ValueError('Invalid archive producer')
+    if not isinstance(source,str) or not re.fullmatch('[a-f0-9]{40}',source) or subprocess.run(['git','merge-base','--is-ancestor',source,'HEAD'],cwd=ROOT,capture_output=True).returncode:raise ValueError('Invalid archive producer')
+    producers=[]
     for p in SOURCES:
-        if git('show',source+':'+p,raw=True)!=(ROOT/p).read_bytes():raise ValueError('Commit archive generator/specification first')
+        ref=git_record(source,p)
+        if not (verify_historical and source==ARCHIVE_V1_PRODUCER and p==SOURCES[0]) and ref!=record(ROOT/p):
+            raise ValueError('Commit archive generator/specification first')
+        producers.append(ref)
     registry=json.loads(baseline('data/manifests/experiment_manifest.json'))
     csvrows=list(csv.DictReader(io.StringIO(baseline('reports/all_experiments_summary.csv').decode('utf-8-sig'))))
     if len(registry['experiments'])!=25 or [e['id'] for e in registry['experiments']]!=[r['experiment_id'] for r in csvrows]:raise ValueError('Historical registry and CSV disagree')
@@ -118,8 +138,8 @@ def build(source):
         if c['source'] not in g['sources']+g['parameters']:raise ValueError('Claim source is not in its evidence group')
         claims.append({**c,'status':'measured','value':value_of(c,values),'source_record':record(ROOT/c['source']),
             'lineage':{'experiment':g['experiment'],'raw_results':g['source_records'],'parameters':g['parameter_records'],'hardware_group':c['group'],'producer':g['producer'],'commands':g['commands'],'historical_commands':next(r['commands']['historical_record'] for r in records if r['id']==g['experiment']),'scope':g['scope']}})
-    records.append({'id':'TASK-014-FINAL-ARCHIVE','tasks':[14],'kind':'archive_only','goal':'将历史实验与简历数字闭环归档','control':BASE,'main_variable':'规范化档案/证据索引，不改变检索或回答策略','data_version':record(ROOT/'data/manifests/local_data_files.json'),'test_version':'无新增正式test，仅只读复算','code':{'source_commit':source,'sources':[record(ROOT/p) for p in SOURCES]},'model':'不适用：0新Embedding/答案请求','parameters':{'specification':record(ROOT/SPEC),'archive_version':'task14-evidence-1.0'},'hardware':{'status':'不适用','reason':'不报告硬件性能指标'},'commands':['python -S -B scripts/task14_archive.py build','python -S -B scripts/replay_task14.py --report <new.json>'],'raw_results':'reports/task14/archive.json及其逐条来源','metrics':{'new_model_requests':0,'new_formal_test_runs':0,'new_human_judgments':0},'conclusion':'真实记录、负收益和待测均保留；完整交付状态由独立门禁判定','limitations':'不新增或外推质量提升，早期缺失元数据如实标明','source':{'baseline_commit':BASE,'source_commit':source}})
-    return {'version':'task14-evidence-1.0','baseline_commit':BASE,'source_commit':source,'generator_sources':[record(ROOT/p) for p in SOURCES],
+    records.append({'id':'TASK-014-FINAL-ARCHIVE','tasks':[14],'kind':'archive_only','goal':'将历史实验与简历数字闭环归档','control':BASE,'main_variable':'规范化档案/证据索引，不改变检索或回答策略','data_version':record(ROOT/'data/manifests/local_data_files.json'),'test_version':'无新增正式test，仅只读复算','code':{'source_commit':source,'sources':producers},'model':'不适用：0新Embedding/答案请求','parameters':{'specification':record(ROOT/SPEC),'archive_version':'task14-evidence-1.0'},'hardware':{'status':'不适用','reason':'不报告硬件性能指标'},'commands':['python -S -B scripts/task14_archive.py build','python -S -B scripts/replay_task14.py --report <new.json>'],'raw_results':'reports/task14/archive.json及其逐条来源','metrics':{'new_model_requests':0,'new_formal_test_runs':0,'new_human_judgments':0},'conclusion':'真实记录、负收益和待测均保留；完整交付状态由独立门禁判定','limitations':'不新增或外推质量提升，早期缺失元数据如实标明','source':{'baseline_commit':BASE,'source_commit':source}})
+    return {'version':'task14-evidence-1.0','baseline_commit':BASE,'source_commit':source,'generator_sources':producers,
         'historical_registry_count':25,'records':records,'groups':groups,'claims':claims,
         'unmeasured':[{'name':n,'status':'待测','value':None,'resume_allowed':False} for n in s['unmeasured']],
         'policy':s['policy'],'new_model_requests':0,'new_formal_test_runs':0,'new_human_judgments':0}
@@ -179,7 +199,7 @@ def results_text(v):
 
 
 def verify_archive(v):
-    if canonical(v)!=canonical(build(v['source_commit'])):raise ValueError('Archive does not recompute exactly from frozen sources')
+    if canonical(v)!=canonical(build(v['source_commit'],verify_historical=True)):raise ValueError('Archive does not recompute exactly from frozen sources')
     if (FOLDER/'experiments.csv').read_text('utf-8')!=csv_text(v) or (FOLDER/'RESUME_FINAL.md').read_text('utf-8')!=resume_text(v) or (FOLDER/'RESULTS_FINAL.md').read_text('utf-8')!=results_text(v):raise ValueError('Rendered archive outputs differ')
     return True
 
@@ -198,5 +218,6 @@ if __name__=='__main__':
         if a.action=='verify':verify_archive(v);print(json.dumps({'status':'PASS','records':len(v['records']),'claims':len(v['claims'])}))
         else:
             if sum(bool(x) for x in (a.claim,a.group,a.experiment))!=1:raise ValueError('Select exactly one claim, group or experiment')
+            verify_archive(v)
             value=claim_map(v)[a.claim] if a.claim else v['groups'][a.group] if a.group else next(r for r in v['records'] if r['id']==a.experiment)
             print(json.dumps(value,ensure_ascii=False,indent=2))

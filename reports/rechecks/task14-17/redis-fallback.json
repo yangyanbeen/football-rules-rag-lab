@@ -1,0 +1,16 @@
+{
+  "adapter": {
+    "path": "scripts/query_cache.py",
+    "sha256": "e15b1e839899c5d1cb7232f5357c6cd0282ab1d05233ef70c5d852a546cad0b9",
+    "size_bytes": 8669
+  },
+  "checked_at": "2026-11-16T10:41:46.581371+00:00",
+  "connection": "ConnectionRefusedError",
+  "new_model_requests": 0,
+  "read": "read_bypass",
+  "redis_client_version": "5.2.1",
+  "redis_server_benchmarked": false,
+  "source_calls": 1,
+  "status": "PASS",
+  "write": "write_bypass"
+}

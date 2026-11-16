@@ -9,9 +9,10 @@ import sys
 
 from answer_eval_core import canonical, digest, read, record, rows, write_new
 from faiss_hnsw_eval import (
-    BASE, CONFIG, DATASET, DENSE, MAPPING, REPORT, ROOT,
-    config, questions, select, source_records, summarize,
+    BASE, CONFIG, DATASET, DENSE, MAPPING, POLICY_RELEASE, REPORT, ROOT, SOURCES, SOURCES_V1,
+    config, questions, select, summarize,
 )
+from historical_evidence import git_record
 from run_retrieval_metrics import authorize_test
 
 
@@ -39,11 +40,18 @@ def run_matches(split, run, question_file, labelled):
     cfg = config()
     folder = REPORT / split
     source = run['source_commit']
-    commit = lambda *args: subprocess.check_output(['git', *args], cwd=ROOT)
     if subprocess.run(['git', 'merge-base', '--is-ancestor', source, 'HEAD'],
                       cwd=ROOT, capture_output=True).returncode:
         return False
-    if any(commit('show', f'{source}:{p}') != (ROOT / p).read_bytes() for p in source_records()):
+    names = set(run['source_files'])
+    if names == set(SOURCES_V1):
+        path = folder / 'run_manifest.json'
+        if (canonical(run) != canonical(read(path))
+                or record(path) != git_record(POLICY_RELEASE, path.relative_to(ROOT).as_posix())):
+            return False
+    elif names != set(SOURCES):
+        return False
+    if any(git_record(source, p) != ref for p, ref in run['source_files'].items()):
         return False
     artifact_paths = {'run_started.json', 'builds.json', 'summary.json', 'predictions.jsonl'}
     if run['public_artifacts'] != {name: record(folder / name) for name in artifact_paths}:
@@ -64,7 +72,6 @@ def run_matches(split, run, question_file, labelled):
         and run['used_for_parameter_selection'] is (split == 'dev')
         and started['source_commit'] == source and started['freeze'] == run['freeze']
         and datetime.fromisoformat(started['started_at']) <= datetime.fromisoformat(run['completed_at'])
-        and run['source_files'] == source_records()
         and run['inputs'] == {**inputs, 'document_vectors': vector_file}
         and vector_file['path'] == cfg['corpus_vectors']
         and all(vector_file[k] == doc_vector[k] for k in ('size_bytes', 'sha256'))
@@ -100,7 +107,7 @@ def frozen_test(development, test, summary):
     start = read(REPORT / 'test/run_started.json')
     times = [development['completed_at'], grant['prepared_at'], start['started_at'], test['completed_at']]
     return (
-        grant['development'] == receipts and grant['source_files'] == source_records()
+        grant['development'] == receipts and grant['source_files'] == development['source_files'] == test['source_files']
         and grant['dataset_manifest'] == record(DATASET)
         and (grant['selection'] == test['frozen_selection'] == selection)
         and development['freeze'] is None and development['frozen_selection'] is None

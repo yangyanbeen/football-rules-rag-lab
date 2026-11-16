@@ -3,7 +3,7 @@ import argparse
 import json
 import os
 
-from answer_eval_core import ROOT, now, record, write_new
+from answer_eval_core import ROOT, canonical, digest, now, record, write_new
 from answer_eval_engine import pack
 from rag_langgraph import Flow, NODES
 from run_langgraph_flow import runtime_identity
@@ -27,7 +27,12 @@ class Fixture:
         self.retrieval_failure = retrieval_failure
         self.wrong_source = wrong_source
         self.chat_calls = 0
-        self.sources = {SOURCE['chunk_id']: SOURCE}
+        self.evidence = {**EVIDENCE, 'content_zh_sha256': digest(EVIDENCE['content_zh'].encode('utf-8'))}
+        self.evidence['record_sha256'] = digest(canonical(self.evidence))
+        self.sources = {SOURCE['chunk_id']: {
+            **SOURCE, 'content_zh_sha256': self.evidence['content_zh_sha256'],
+            'record_sha256': self.evidence['record_sha256'],
+        }}
         self.answer_policy = {'max_generation_attempts': 2, 'max_selected_chunks': 3,
                               'input_utf8_byte_budget': 6200, 'max_context_chunks': 5}
         self.prompt = 'synthetic controlled tests'
@@ -50,7 +55,7 @@ class Fixture:
         return candidates
 
     def expand(self, ids):
-        return [EVIDENCE for _ in ids]
+        return [self.evidence for _ in ids]
 
     def generate(self, messages, schema):
         item = self.queue.pop(0)
@@ -64,7 +69,7 @@ class Fixture:
         return {'message': {'content': text}}
 
     def render(self, ids, context):
-        cite = dict(SOURCE)
+        cite = dict(self.sources[ids[0]])
         if self.wrong_source:
             cite['source_lines'] = [1, 3]
         return 'controlled test answer', [cite]

@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-11-16T10:41:46.514024+00:00",
+  "claim": "reranker_top40_r5",
+  "current": {
+    "checkout_commit": "1dfc1fdccad7910a2db62862699ce8cd822c5e59",
+    "frozen_hash": "8dbac83ad9b3f1db160887eef86f16baa863c5b4cd09cb124c7c0505c5be0cc8",
+    "restored_clean": true,
+    "tampered_exit_code": 1,
+    "tampered_value_printed": null,
+    "valid_lookup": 1.0
+  },
+  "legacy": {
+    "checkout_commit": "a6aaca199ab420fca2af39e58e0fce32e03f1a23",
+    "frozen_hash": "8dbac83ad9b3f1db160887eef86f16baa863c5b4cd09cb124c7c0505c5be0cc8",
+    "restored_clean": true,
+    "tampered_exit_code": 0,
+    "tampered_value_printed": 0,
+    "valid_lookup": 1.0
+  },
+  "new_model_requests": 0,
+  "scope": "Only disposable worktrees were temporarily mutated.",
+  "status": "PASS"
+}

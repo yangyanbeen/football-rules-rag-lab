@@ -3,7 +3,7 @@
   "scope": "New public checkout: tracked files plus hash-only local corpus inventory; original local project manifest is preserved separately.",
   "self_hash_policy": "This manifest excludes itself to avoid recursion.",
   "runtime_policy": "External runtime, credentials, databases, caches, live logs and temporary fixtures are excluded.",
-  "file_count": 1007,
+  "file_count": 1027,
   "files": [
     {
       "path": ".env.example",
@@ -49,8 +49,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 14199,
-      "sha256": "c19d9bafb38ba997b99f0387dc878202020c9410edc0004b4db4328f1b6b487c",
+      "size_bytes": 14439,
+      "sha256": "42546c70c7e3da538577bf4f2829fe74797b207e2ea60626bec6e9178e90131b",
       "purpose": "仓库入口、许可证或 Git 配置",
       "distribution": "public-git"
     },
@@ -329,8 +329,8 @@
     },
     {
       "path": "data/manifests/experiment_manifest.json",
-      "size_bytes": 255923,
-      "sha256": "e1a557a38112c0e95686301592c0bf3224e59e91f5730be992e3d8b8c5642c76",
+      "size_bytes": 264847,
+      "sha256": "d1f9828c6a8ac2fada17955b26deb8acd56355bb619531ad1ccc107ca0f27f92",
       "purpose": "数据格式、来源或版本清单",
       "distribution": "public-git"
     },
@@ -882,8 +882,8 @@
     },
     {
       "path": "docs/DELIVERY_STATUS.md",
-      "size_bytes": 14248,
-      "sha256": "ae7c563c1e4e0a7283a5a03b11daddf332ce7c4d74437c2075e0c2b1f1b1658b",
+      "size_bytes": 14393,
+      "sha256": "a70808e42d56fd2c3d84fb2d4cdeabb0a3f53a4966da479795bfa8fdd3fa0f75",
       "purpose": "技术、执行或当前交付文档",
       "distribution": "public-git"
     },
@@ -917,8 +917,8 @@
     },
     {
       "path": "docs/EXPERIMENT_LOG.md",
-      "size_bytes": 65424,
-      "sha256": "e31d7ca00167946290ea62d9f0b2e991bda59badfc2b93e8fa84444e246abc01",
+      "size_bytes": 66536,
+      "sha256": "b1638ef4db0ab8cc527c515f65f7e47fc4959283968a87c3f0c6d1f8f0a7a790",
       "purpose": "技术、执行或当前交付文档",
       "distribution": "public-git"
     },
@@ -1231,6 +1231,13 @@
       "distribution": "public-git"
     },
     {
+      "path": "docs/TASK_14_17_AUDIT.md",
+      "size_bytes": 2752,
+      "sha256": "6458f48c540dda715d6660339be0602aef64baca0623cafaedb4823219deea16",
+      "purpose": "技术、执行或当前交付文档",
+      "distribution": "public-git"
+    },
+    {
       "path": "docs/TASK_14_ARCHIVE.md",
       "size_bytes": 2860,
       "sha256": "e0df036b372c87be13e553fb0b1d7dec6ff326712183bf4b81eecca73b8acea5",
@@ -1358,8 +1365,8 @@
     },
     {
       "path": "reports/README.md",
-      "size_bytes": 14059,
-      "sha256": "0c17c8c3e4184babc5d3d09c73cffa55e7555d2c42f63859dd9c6deb2b9cb55a",
+      "size_bytes": 14201,
+      "sha256": "d49d33081e4676ce3f55cfb805bcc3e8f8401c4e0b8b3ce200fe1d4aef00c90d",
       "purpose": "历史证据或本次补交付验收结果",
       "distribution": "public-git"
     },
@@ -1542,6 +1549,13 @@
       "path": "reports/TASK_13_SUPPLEMENT.md",
       "size_bytes": 5657,
       "sha256": "affe0cf7ec888a3710f68015050c85a6b11acbbb95646c64b45820446a1ef515",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/TASK_14_17_SUPPLEMENT.md",
+      "size_bytes": 2427,
+      "sha256": "96e92b76b66461e79919c488bc7d5e2d925c7f2d08ae449e95f1bcc2b365e440",
       "purpose": "历史证据或本次补交付验收结果",
       "distribution": "public-git"
     },
@@ -1764,8 +1778,8 @@
     },
     {
       "path": "reports/all_experiments_summary.csv",
-      "size_bytes": 22336,
-      "sha256": "5938eae6b2059d3a5a195dd548dda57cd32c582e3f8a674db51a6ec681ce7054",
+      "size_bytes": 23133,
+      "sha256": "814e269425068a64b9a34a6006d158435b3a241779da9bbab7c2982b40b38df6",
       "purpose": "历史证据或本次补交付验收结果",
       "distribution": "public-git"
     },
@@ -3212,6 +3226,97 @@
       "distribution": "public-git"
     },
     {
+      "path": "reports/rechecks/task14-17/archive-cli.json",
+      "size_bytes": 779,
+      "sha256": "2e8f66f8fc27006ea4ee4bea46e6fb0764c44b1c3800d919a4ad163c02da259e",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/rechecks/task14-17/archive-replay.json",
+      "size_bytes": 2649,
+      "sha256": "3a0b53b634c5ad08b050c3c3da5b515121bb3f713f14ba983d66563452ac51b3",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/rechecks/task14-17/before.json",
+      "size_bytes": 1630,
+      "sha256": "46a572c31ccbb54359442eb5ea8515f2a4fc4cf252e33cf12c0832108e1c8c24",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/rechecks/task14-17/cache-replay.json",
+      "size_bytes": 1960,
+      "sha256": "cbd533e6bb1296a0a5b8cc4217a2be8492a40b4b0c331349daa1a88bd7ec4567",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/rechecks/task14-17/delivery-final.json",
+      "size_bytes": 1850,
+      "sha256": "49d9da047574d30106d412c095e168bac818b5d6841debc3977be13de0466514",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/rechecks/task14-17/delivery-public.json",
+      "size_bytes": 1779,
+      "sha256": "4693c809b83a755e774eb282bf1aff021eca474828a81fa193ffc6bbe2315c86",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/rechecks/task14-17/faiss-replay.json",
+      "size_bytes": 1569,
+      "sha256": "686f6cf7b408a6339fe43bf15c74de74b99455764213733e4c1d3bd6603fbd1c",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/rechecks/task14-17/graph-controls.json",
+      "size_bytes": 36607,
+      "sha256": "23ea17be0fb45b9b1cf436b5cb598fcb5ce451244241085389f987e2463eb3c2",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/rechecks/task14-17/graph-replay.json",
+      "size_bytes": 1717,
+      "sha256": "62a3a83d010e6a2b3ed6895797f326a367123eebb1b353075e6923505aaf962b",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/rechecks/task14-17/live-smoke.json",
+      "size_bytes": 13184,
+      "sha256": "1bfc7dbeee90039f8146985471ccab4272f4af4c66761c74b6750c4715fe0701",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/rechecks/task14-17/native-prior.json",
+      "size_bytes": 217,
+      "sha256": "b8a862cd6a95a17e7e9a0e0d06b9253b8f9cfbbcb1c35dd1e786b8198f5bc641",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/rechecks/task14-17/redis-fallback.json",
+      "size_bytes": 452,
+      "sha256": "f536d809df5a7f35bca49104ff2d103912b7778766ee1af415db60df5c8fbcff",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/rechecks/task14-17/regressions-first.json",
+      "size_bytes": 1506,
+      "sha256": "e536ac51d174c85ffaf75b15f9f9659cadaef29ca9fee2c9c60d3254e0784616",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
       "path": "reports/rechecks/task45-20261111/acceptance/task45_final_integrity.json",
       "size_bytes": 1846,
       "sha256": "9b47bbaa4d485bab2c49d80f790cb177bcd3f432b139b43490a003ece14fc41b",
@@ -3843,8 +3948,8 @@
     },
     {
       "path": "reports/resume_evidence.md",
-      "size_bytes": 18252,
-      "sha256": "6c289961a69fb5bc3096ebb3b1dde194a6988fd6bbc7033f81eb532c9d018620",
+      "size_bytes": 18664,
+      "sha256": "b807f306990741d1391548e154bc8781346346956380947e3a7c6f67437bc6e2",
       "purpose": "历史证据或本次补交付验收结果",
       "distribution": "public-git"
     },
@@ -5964,8 +6069,8 @@
     },
     {
       "path": "scripts/faiss_hnsw_eval.py",
-      "size_bytes": 8188,
-      "sha256": "ae996eee762f549dbbb23777871ab5a4efb1ff974aee1ef58bd30eb9e5e3c352",
+      "size_bytes": 8925,
+      "sha256": "360771c7d432e59f6ba56324a3ab191ffea615b858a1b154a58a50ccc5037c4c",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
@@ -5987,6 +6092,13 @@
       "path": "scripts/freeze_eval_dataset.py",
       "size_bytes": 4221,
       "sha256": "b0ac10d24c275be516e4701195551ffb1bcdc70086f06b0c07e9d68b3f9e0a26",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/historical_evidence.py",
+      "size_bytes": 1303,
+      "sha256": "e255ae9d4f0005ff9203c03ee1e040a70889a4093a805d3f6f852e411e967c95",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
@@ -6083,8 +6195,8 @@
     },
     {
       "path": "scripts/query_cache.py",
-      "size_bytes": 6559,
-      "sha256": "05da9209c6a03e83305536f1106367bd8a58ade81f8aa4977fc35197aeb335fb",
+      "size_bytes": 8669,
+      "sha256": "e15b1e839899c5d1cb7232f5357c6cd0282ab1d05233ef70c5d852a546cad0b9",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
@@ -6153,8 +6265,8 @@
     },
     {
       "path": "scripts/rag_langgraph.py",
-      "size_bytes": 11973,
-      "sha256": "dd6d03bf76f1f1f820842b652408e97229bdd05deea10c8870f7fa95fa2b9eaa",
+      "size_bytes": 13160,
+      "sha256": "1608371efd159cd835efcda10b1499f61d09a6203f7d4f013c37a4fccf29d2aa",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
@@ -6293,8 +6405,8 @@
     },
     {
       "path": "scripts/run_cached_query.py",
-      "size_bytes": 5748,
-      "sha256": "119d2d5507f0a475f240e49f94f363e8b4a58b4e2598fd7976ecbc55411c8c21",
+      "size_bytes": 6496,
+      "sha256": "a112cce1985fec1f82433c63fec08d13ea856ff5273a5f4412502f70370a5ec4",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
@@ -6307,8 +6419,8 @@
     },
     {
       "path": "scripts/run_faiss_hnsw.py",
-      "size_bytes": 14244,
-      "sha256": "ee053aa9a440aa098d722eda58eb1bbbec59adfd36f4f7569dd1bcc2b62ed068",
+      "size_bytes": 14409,
+      "sha256": "1d93b0e040774d9ec36345a11580731c8c53abf37a57711b335fa32580e7d6eb",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
@@ -6386,6 +6498,13 @@
       "path": "scripts/run_task13_demo.py",
       "size_bytes": 2413,
       "sha256": "a628e2b9786884552772abca7bfeb6cf26203a70b8bb0865e0c055dbd4daff4f",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/run_task14_17_smoke.py",
+      "size_bytes": 4295,
+      "sha256": "2bcd8b302936d92206c22c5ad3b2a10c78a34b04fac399de9bdfbea938c703be",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
@@ -6545,8 +6664,8 @@
     },
     {
       "path": "scripts/task14_archive.py",
-      "size_bytes": 20933,
-      "sha256": "726265e02611ccfcbcc93d8fd15c2ffd390c4853d78fb7e939301fa861108c7b",
+      "size_bytes": 21815,
+      "sha256": "9019a9296cecb1b45559a1fb1cb13f54ea33beb8da14e3a6ecb31e7562f9c403",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
@@ -6713,8 +6832,8 @@
     },
     {
       "path": "scripts/verify_faiss_hnsw.py",
-      "size_bytes": 9747,
-      "sha256": "910e0fac5cff5e610213ea73805ca1a3e2cd29af8c8a444c38b1d61bdb4af618",
+      "size_bytes": 10046,
+      "sha256": "4e87c7cdd0fc33ed0b56b4fb3ee0246210ed5f69828189912c8b610d67f0ecd7",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
@@ -6748,22 +6867,22 @@
     },
     {
       "path": "scripts/verify_langgraph_controls.py",
-      "size_bytes": 8244,
-      "sha256": "2384234a52012fbde9e6dad50d3e0f141f003341bbd8f31238a995d9fab8ea9b",
+      "size_bytes": 8607,
+      "sha256": "bcd8f24af5b52b76f3ccc2201f1667752e92f021b9f940c4b882f60f3f1639b7",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
     {
       "path": "scripts/verify_langgraph_replay.py",
-      "size_bytes": 13132,
-      "sha256": "a0a34ff42f091cffb59e2517684c0731a40830e31bba515b6058e284e8b2a907",
+      "size_bytes": 13113,
+      "sha256": "89fde5a84c844d412ff4dd50d892682915404c4b9374e613c36a70dadc36cc5c",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
     {
       "path": "scripts/verify_query_cache.py",
-      "size_bytes": 13043,
-      "sha256": "142e1239e4b5cd906f171e57048f230d02548411b0e51774d635145f452d04c2",
+      "size_bytes": 13081,
+      "sha256": "85ba8ed85ca1f05202ced4c7198c0bcce65bd44f0f0e528b146e469e806fba17",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
@@ -6922,6 +7041,20 @@
       "distribution": "public-git"
     },
     {
+      "path": "scripts/verify_task14_17_delivery.py",
+      "size_bytes": 11966,
+      "sha256": "1f15c10ed04ab5656182577f265281a70b7740f2c5cfa83a3894eae1b2c77a74",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/verify_task14_17_regressions.py",
+      "size_bytes": 12050,
+      "sha256": "148fd6a642babe037ed4a71398c20d06419fe24661c2a17bd0ce5f20eaaec8ef",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
       "path": "scripts/verify_task14_archive.py",
       "size_bytes": 6749,
       "sha256": "af1a7d4697b2303708ebaedc9551f71f8c313eb4df0f7ffa46b32aa4d1e61d54",
@@ -6932,6 +7065,13 @@
       "path": "scripts/verify_task14_delivery.py",
       "size_bytes": 11035,
       "sha256": "ad97aa2a32ef4d21a203c17129a4c2de5b353fed0ec2f364a883b9aec01d96e2",
+      "purpose": "构建、运行或验收工具",
+      "distribution": "public-git"
+    },
+    {
+      "path": "scripts/verify_task14_show_cli.py",
+      "size_bytes": 2923,
+      "sha256": "2a5409ec7f4604b8afdb15bc258fcd6b3bbff098d4f5fa5b7db71e225e788c18",
       "purpose": "构建、运行或验收工具",
       "distribution": "public-git"
     },
