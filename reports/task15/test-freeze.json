@@ -1,0 +1,81 @@
+{
+  "config_sha256": "2f8f18d4f44c34bd956cbe8f468a314f956e1b283c7887be9cbf5293eaa4c436",
+  "dataset_manifest": {
+    "path": "data/eval/dataset_manifest.json",
+    "sha256": "778ffc31872d379dbd714cd4e085e075b0a308b7a67d1306e459e978f70a6c66",
+    "size_bytes": 2189
+  },
+  "dataset_version": "football-eval-0.1.0",
+  "development": {
+    "builds.json": {
+      "path": "reports/task15/dev/builds.json",
+      "sha256": "24cfbe27af4a3bc52882fc567891e09c5462fc2adca379b153f6dee042b5efb6",
+      "size_bytes": 3916
+    },
+    "predictions.jsonl": {
+      "path": "reports/task15/dev/predictions.jsonl",
+      "sha256": "c87117c7710c823a261a7cec0bb3c3e2c96e24e911be8dfec0c32e91b8f87c84",
+      "size_bytes": 103568
+    },
+    "run_manifest.json": {
+      "path": "reports/task15/dev/run_manifest.json",
+      "sha256": "ac2d44c6522b8dec363e67dbfae364ca62da984fff1b667a1cca910b6da61c6f",
+      "size_bytes": 7221
+    },
+    "summary.json": {
+      "path": "reports/task15/dev/summary.json",
+      "sha256": "092fa7f78060e7295f2d5b72b6630b29d3fa8653d05eeb0a366af1ea9b6003eb",
+      "size_bytes": 64838
+    }
+  },
+  "pre_freeze_commit": "2d44943b8b1d15d4d2343b4e2d4e57be3f16ed62",
+  "prepared_at": "2026-11-16T06:55:20.826787+00:00",
+  "purpose": "final_report",
+  "selection": {
+    "eligible_methods": [
+      "flat",
+      "hnsw_s64"
+    ],
+    "selected_method": "flat"
+  },
+  "source_files": {
+    "config/faiss_hnsw_experiment.json": {
+      "path": "config/faiss_hnsw_experiment.json",
+      "sha256": "2f8f18d4f44c34bd956cbe8f468a314f956e1b283c7887be9cbf5293eaa4c436",
+      "size_bytes": 1204
+    },
+    "scripts/dense_index.py": {
+      "path": "scripts/dense_index.py",
+      "sha256": "9e991910367987021e1ace250c5796c213ad53f14072ecbc4fe1539352f3d875",
+      "size_bytes": 22904
+    },
+    "scripts/dense_retrieval_eval.py": {
+      "path": "scripts/dense_retrieval_eval.py",
+      "sha256": "7a1a522f35c2b8ed8ffb5712b3ec5371b4fbb0b41450c5ef89d03f1c2cb40fd0",
+      "size_bytes": 21211
+    },
+    "scripts/faiss_hnsw_eval.py": {
+      "path": "scripts/faiss_hnsw_eval.py",
+      "sha256": "ae996eee762f549dbbb23777871ab5a4efb1ff974aee1ef58bd30eb9e5e3c352",
+      "size_bytes": 8188
+    },
+    "scripts/retrieval_metrics.py": {
+      "path": "scripts/retrieval_metrics.py",
+      "sha256": "350759f655b78e43f4d0c4114a4a2c7d03b87c7281ac0cae40678bae15341168",
+      "size_bytes": 3079
+    },
+    "scripts/run_faiss_hnsw.py": {
+      "path": "scripts/run_faiss_hnsw.py",
+      "sha256": "ee053aa9a440aa098d722eda58eb1bbbec59adfd36f4f7569dd1bcc2b62ed068",
+      "size_bytes": 14244
+    },
+    "scripts/run_retrieval_metrics.py": {
+      "path": "scripts/run_retrieval_metrics.py",
+      "sha256": "11021dfc06a8c6e3e765c051c594f598b6c2bea220ee78f7a96ce08d0d56eae5",
+      "size_bytes": 4121
+    }
+  },
+  "test_sha256": "269d49e7d65c4ad3a97b588f34093a65bbc483c7382f78b0e9cf466eaa759a62",
+  "used_for_parameter_selection": false,
+  "version": "faiss-hnsw-test-freeze-1.0"
+}
