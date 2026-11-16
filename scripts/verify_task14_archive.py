@@ -52,9 +52,9 @@ def verify():
         'wrong_comparison_scope':lambda a:a['groups']['reranker'].update(scope='same as old Dense'),
         'unmeasured_as_measured':lambda a:a['unmeasured'][0].update(status='measured',value=.35,resume_allowed=True),
         'zero_division_human_100_percent':lambda a:a['records'][-1]['metrics'].update(human_refusal_accuracy=1.),
-        'claim_as_human':lambda a:a['claims'][-10].update(role='human_sample'),
+        'claim_as_human':lambda a:next(c for c in a['claims'] if c['id']=='ai_condition_exception_retention').update(role='human_sample'),
         'extra_top_level_body':lambda a:a.update(answer='private body'),
-        'new_model_request':lambda a:a.update(new_model_requests=1),
+        'new_model_request':lambda a:a.update(new_model_requests=False),
         'new_formal_test':lambda a:a.update(new_formal_test_runs=1),
         'uncommitted_producer':lambda a:a.update(source_commit='0'*40)}
     for name,change in changes.items():

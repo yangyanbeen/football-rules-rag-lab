@@ -179,7 +179,7 @@ def results_text(v):
 
 
 def verify_archive(v):
-    if v!=build(v['source_commit']):raise ValueError('Archive does not recompute exactly from frozen sources')
+    if canonical(v)!=canonical(build(v['source_commit'])):raise ValueError('Archive does not recompute exactly from frozen sources')
     if (FOLDER/'experiments.csv').read_text('utf-8')!=csv_text(v) or (FOLDER/'RESUME_FINAL.md').read_text('utf-8')!=resume_text(v) or (FOLDER/'RESULTS_FINAL.md').read_text('utf-8')!=results_text(v):raise ValueError('Rendered archive outputs differ')
     return True
 
