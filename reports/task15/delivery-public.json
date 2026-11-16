@@ -1,0 +1,32 @@
+{
+  "captured_at": "2026-11-16T07:01:29.964257+00:00",
+  "checks": {
+    "26_original_registry_entries_equal": true,
+    "884_prior_public_paths_and_authority_documents_preserved": true,
+    "all_17_replay_checks_pass_with_current_code": true,
+    "clean_public_replay_passed": true,
+    "csv_order_matches_registry": true,
+    "current_file_inventory_exact": true,
+    "docs/EXPERIMENT_LOG.md_append_only": true,
+    "four_baseline_metrics_and_documentation_delivered": true,
+    "local_saved_replay_passed": true,
+    "new_artifact_hashes_and_paths_match": true,
+    "no_site_packages_or_private_artifacts_public_checkout": true,
+    "no_vector_model_or_private_payload_tracked": true,
+    "one_complete_new_registration": true,
+    "reports/all_experiments_summary.csv_append_only": true,
+    "reports/resume_evidence.md_append_only": true,
+    "task14_archive_is_still_reproducible": true
+  },
+  "clean_public_checkout": true,
+  "errors": [],
+  "new_embedding_requests": 0,
+  "new_test_runs": 0,
+  "passed": 16,
+  "public_only": true,
+  "source_sha256": "277d1cbc1765f1a79a12f440fedfc84dd8575ab5b19832d98db04eec0c74a307",
+  "status": "PASS",
+  "task15_fully_accepted": true,
+  "tested_commit": "0617d3d99f7af92f64fbc84ab8e8f35564de145b",
+  "total": 16
+}

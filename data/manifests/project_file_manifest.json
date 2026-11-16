@@ -3,7 +3,7 @@
   "scope": "New public checkout: tracked files plus hash-only local corpus inventory; original local project manifest is preserved separately.",
   "self_hash_policy": "This manifest excludes itself to avoid recursion.",
   "runtime_policy": "External runtime, credentials, databases, caches, live logs and temporary fixtures are excluded.",
-  "file_count": 965,
+  "file_count": 967,
   "files": [
     {
       "path": ".env.example",
@@ -889,8 +889,8 @@
     },
     {
       "path": "docs/EXPERIMENT_LOG.md",
-      "size_bytes": 62835,
-      "sha256": "12721a951420fb3c5c1629c49e378d6c33c9d259685f94d50cef6047617ee9b0",
+      "size_bytes": 63017,
+      "sha256": "792e71690cd07cf4f60fbb13f2ea5e2f6b3f26683708480eae09d5fa0970f0e6",
       "purpose": "技术、执行或当前交付文档",
       "distribution": "public-git"
     },
@@ -1498,8 +1498,8 @@
     },
     {
       "path": "reports/TASK_15_DELIVERY.md",
-      "size_bytes": 2627,
-      "sha256": "37c9218bdcf171d253ff02099c5a59300038fd689c3862d68e92d73e1653b313",
+      "size_bytes": 2880,
+      "sha256": "4744fcc655ffc20cd4f7799323ac1cbcd80f4340de2ba8600cc4304e6c3e225c",
       "purpose": "历史证据或本次补交付验收结果",
       "distribution": "public-git"
     },
@@ -5385,6 +5385,20 @@
       "path": "reports/task14/spec-first.json",
       "size_bytes": 568,
       "sha256": "1c4904cb9559a1a0e87c6c501c95d3c4883e95ca1aa27cc93ee41694dfd10b30",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/task15/delivery-final.json",
+      "size_bytes": 1328,
+      "sha256": "448ab0621229f03c007f7e2665f6602516f1d63965974602738b2ba653948f5e",
+      "purpose": "历史证据或本次补交付验收结果",
+      "distribution": "public-git"
+    },
+    {
+      "path": "reports/task15/delivery-public.json",
+      "size_bytes": 1258,
+      "sha256": "db5285e018085850cbbb37e384fb2aa40fbf44d0be4f4b5e258f8a6792fd7e34",
       "purpose": "历史证据或本次补交付验收结果",
       "distribution": "public-git"
     },

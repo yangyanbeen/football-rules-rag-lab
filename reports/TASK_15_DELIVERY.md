@@ -15,3 +15,5 @@ FAISS HNSW 独立基准已按原任务十五要求运行。使用原 Corpus B0 �
 编目记录新追加一项，原 26 项登记和旧文档保留。开发及测试合计 90 条查询向量、23 个 Embedding 批次。文档向量直接复用，新增文档编码和答案请求均为0。公开制品记录 ID、分数、读数和哈希。索引二进制和查询向量留在本机。 [实验登记](../data/manifests/experiment_manifest.json)
 
 回放在本机和独立公开副本各通过 17/17，核对两期质量、索引构建指标、计时和冻结溯源，并确认九种无效材料会被拒绝。公开副本使用 Python `-S -B`。 [本机回放](task15/replay-local.json) · [独立公开回放](task15/replay-public.json)
+
+完整交付验收本机 18/18、干净公开副本 16/16。最终发布标签为 v0.15.0-faiss-hnsw-benchmark，回执绑定到实际测试提交。 [本机完整验收](task15/delivery-final.json) · [公开完整验收](task15/delivery-public.json)

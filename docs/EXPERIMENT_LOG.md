@@ -435,3 +435,5 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 - 执行 scripts/run_faiss_hnsw.py 的 dev、freeze、test 三步。保留 [测试运行清单](../reports/task15/test/run_manifest.json)、[四张索引的12条构建读数](../reports/task15/dev/builds.json)、[两期逐题证据](../reports/task15)、[复跑命令](FAISS_HNSW_EXPERIMENT.md)。
 - 测试五组 Recall@5/@10 均为97.5%。HNSW 参考搜索 P50 7.7 µs，Flat 9.1 µs，精确 Top10 重合98.2%。S64 重合100%，P50 12.2 µs。Flat 为开发期选中方法。原应用继续使用现有配置，规模扩展和总体延迟仍待测。
 - 新90条查询向量、23个编码批次、一次锁定测试，原99条文档向量直接复用，0次答案请求。开发和测试均可只读复算。详见 [交付报告](../reports/TASK_15_DELIVERY.md)。
+
+- 本机完整验收 18/18、无私有数据的公开副本 16/16。 [本机回执](../reports/task15/delivery-final.json) · [公开回执](../reports/task15/delivery-public.json)
