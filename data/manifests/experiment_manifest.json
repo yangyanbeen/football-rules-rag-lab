@@ -5468,7 +5468,336 @@
       },
       "decision": "开发规则选中 Flat。测试所有组的标注召回持平，低 efSearch 降低精确结果重合，高 efSearch 增加延迟。实验保留，当前应用继续用原配置。",
       "limitations": "本机99条向量单线程微基准。规模扩展、应用端到端延迟和并发吞吐待测。"
+    },
+    {
+      "id": "TASK-016-EXACT-SEMANTIC-CACHE",
+      "date": "2026-11-16",
+      "task": 16,
+      "objective": "实现已校验回答的精确缓存，量化语义复用错误、查找时延和调用预算",
+      "control": "实际无缓存重复问答与独立留出集的精确缓存对照",
+      "main_variable": "缓存查找与复用策略。语义阈值从开发集选出，留出集单独报告",
+      "data_version": {
+        "corpus": "corpus-b0-rag-adapter-1.0.0",
+        "workload": {
+          "path": "data/eval/cache_query_workload_v1.json",
+          "size_bytes": 15100,
+          "sha256": "3a5e2c2d09450048e57e820c97bd8b480ce1e0aa3a980d0d76694f8aa9514188"
+        }
+      },
+      "evaluation_version": {
+        "source": "独立编写的同意图和难负例工作负载 v1",
+        "dev": 24,
+        "holdout": 24,
+        "freeze": {
+          "path": "reports/task16/holdout-freeze.json",
+          "size_bytes": 2559,
+          "sha256": "268e78017764a6c641d79c27aee33ef7f28f659ad22b43100d59641710991357"
+        },
+        "original_test_runs": 0
+      },
+      "producer_commits": {
+        "live_exact": "cb642cf29f5ac171f722024ce8a79e044676cb94",
+        "dev": "8d900c356be31435f203cd9635e1e16fed752ead",
+        "holdout": "c8eb4f930e66fd3b8633e34a9410282646a828ec"
+      },
+      "models": {
+        "semantic_embedding": {
+          "architecture": "bert",
+          "context_length": 8192,
+          "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+          "dimensions": 1024,
+          "name": "bge-m3:latest",
+          "ollama_version": "0.40.16",
+          "quantization": "F16"
+        },
+        "live_answer": {
+          "name": "qwen2.5:3b",
+          "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+          "ollama_version": "0.40.16",
+          "num_ctx": 8192,
+          "num_predict": 1024,
+          "num_gpu": 0,
+          "num_thread": 8,
+          "temperature": 0,
+          "seed": 42,
+          "keep_alive": "10m",
+          "timeout_seconds": 180
+        }
+      },
+      "hardware": {
+        "platform": "Windows-10-10.0.26200-SP0",
+        "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "python": "3.10.22"
+      },
+      "parameters": {
+        "config": {
+          "version": "football-query-cache-v1",
+          "ttl_ms": 300000,
+          "capacity": 128,
+          "max_payload_bytes": 65536,
+          "semantic_thresholds": [
+            0.85,
+            0.9,
+            0.95,
+            0.98
+          ],
+          "warm_probe_repetitions": 16
+        },
+        "experiment_backend": "memory",
+        "redis_client_probe": "5.2.1"
+      },
+      "commands": [
+        "python -B scripts/run_cached_query.py --live-report reports/task16/live-exact.json",
+        "python -B scripts/run_cache_experiment.py dev",
+        "python -S -B scripts/run_cache_experiment.py freeze",
+        "python -B scripts/run_cache_experiment.py holdout",
+        "python -S -B scripts/verify_query_cache.py --report .tmp/task16-replay-new.json"
+      ],
+      "artifacts": [
+        {
+          "path": "config/query_cache.json",
+          "size_bytes": 195,
+          "sha256": "e04b2e592af879af55f30d85639baa8db75e73f2dbdf69a756974fc034d1c8b5"
+        },
+        {
+          "path": "data/eval/cache_query_workload_v1.json",
+          "size_bytes": 15100,
+          "sha256": "3a5e2c2d09450048e57e820c97bd8b480ce1e0aa3a980d0d76694f8aa9514188"
+        },
+        {
+          "path": "docs/REDIS_CACHE_EXPERIMENT.md",
+          "size_bytes": 5865,
+          "sha256": "b65510ac3eb986fdc2606fb6042ffde1677f92726371b844e8924963af7710c0"
+        },
+        {
+          "path": "docs/TASK_16_SCOPE.md",
+          "size_bytes": 1255,
+          "sha256": "2243c76ea087788644cd73be1b9c3758ae997dcfb8d3cf9be503b5b63f93e32c"
+        },
+        {
+          "path": "reports/task16/dev/observations.json",
+          "size_bytes": 15186,
+          "sha256": "9740edb335855360fc4f2cbee9a9263ca73ec399dac1153a8e56a31abe01b565"
+        },
+        {
+          "path": "reports/task16/dev/run_manifest.json",
+          "size_bytes": 4671,
+          "sha256": "3b07027eeb21d19cb96f15d5f3eab58024700aede9cc5098e6bdad6bc9bc1293"
+        },
+        {
+          "path": "reports/task16/dev/summary.json",
+          "size_bytes": 16727,
+          "sha256": "fc783f1cf0d6fbe1319d6ae1e457e15062f27a1266fe9635de7f27a4df217e30"
+        },
+        {
+          "path": "reports/task16/holdout-freeze.json",
+          "size_bytes": 2559,
+          "sha256": "268e78017764a6c641d79c27aee33ef7f28f659ad22b43100d59641710991357"
+        },
+        {
+          "path": "reports/task16/holdout/observations.json",
+          "size_bytes": 15186,
+          "sha256": "4ee77271f708069337ae93674cabd93990f895a9237a5c9b5868d22dc5b66588"
+        },
+        {
+          "path": "reports/task16/holdout/run_manifest.json",
+          "size_bytes": 4977,
+          "sha256": "3833f9c69e16bf7b13530e87740ebee69a55b77cc20392de396f4c5745d878b7"
+        },
+        {
+          "path": "reports/task16/holdout/summary.json",
+          "size_bytes": 18847,
+          "sha256": "d495472ebeba101b2cc009102fc0d503113f79973cd4f14ab7e79c1e5909765a"
+        },
+        {
+          "path": "reports/task16/live-exact.json",
+          "size_bytes": 3528,
+          "sha256": "14205017f8012a020d74ba779039bbf55246a0a00043c86369a38ab203f6ba57"
+        },
+        {
+          "path": "reports/task16/redis-availability.json",
+          "size_bytes": 676,
+          "sha256": "a643dfd9ceb57b433f7df6524f16c7a3ee0413e918dbc225dcdeb41228df7940"
+        },
+        {
+          "path": "reports/task16/replay-local.json",
+          "size_bytes": 1960,
+          "sha256": "b92ba3608cc86b3eb5f611a5e1f103ac402e138a041a226fba1d3b99611225b6"
+        },
+        {
+          "path": "reports/task16/replay-public.json",
+          "size_bytes": 2238,
+          "sha256": "b24e86197ebcf0ddd1ba32d508041f64d7d32e93c7c72f074834c049172f2bfe"
+        },
+        {
+          "path": "scripts/cache_experiment.py",
+          "size_bytes": 8540,
+          "sha256": "29df1cca807f18014bd6ad3cf76e7132e1bbea23d93ee1eb924508b26df2687c"
+        },
+        {
+          "path": "scripts/query_cache.py",
+          "size_bytes": 6559,
+          "sha256": "05da9209c6a03e83305536f1106367bd8a58ade81f8aa4977fc35197aeb335fb"
+        },
+        {
+          "path": "scripts/run_cache_experiment.py",
+          "size_bytes": 6970,
+          "sha256": "d1df07451dce398b29cdd79e53c8d236583f22d386174059b4e2cbbfc1f0213b"
+        },
+        {
+          "path": "scripts/run_cached_query.py",
+          "size_bytes": 5748,
+          "sha256": "119d2d5507f0a475f240e49f94f363e8b4a58b4e2598fd7976ecbc55411c8c21"
+        },
+        {
+          "path": "scripts/verify_query_cache.py",
+          "size_bytes": 13043,
+          "sha256": "142e1239e4b5cd906f171e57048f230d02548411b0e51774d635145f452d04c2"
+        },
+        {
+          "path": "scripts/verify_task16_delivery.py",
+          "size_bytes": 9272,
+          "sha256": "6ffa27d5d2e2463775bd621c53edc885921b7a6961212862ffe8ce44e2e15b2d"
+        }
+      ],
+      "metrics": {
+        "live_exact_actual_saved": {
+          "embedding_queries": 1,
+          "generation_attempts": 1,
+          "reranked_pairs": 40,
+          "worker_invocations": 1
+        },
+        "holdout_rows": 24,
+        "selected_development_threshold": 0.9,
+        "holdout_methods": {
+          "0.85": {
+            "hits": 19,
+            "correct_hits": 13,
+            "wrong_hits": 6,
+            "hit_rate": 0.7916666666666666,
+            "wrong_hit_rate_among_hits": 0.3157894736842105,
+            "cache_only_hit_latency": {
+              "p50_ms": 0.45235,
+              "p95_ms": 0.6943849999999999,
+              "samples": 304
+            },
+            "cache_only_miss_latency": {
+              "p50_ms": 0.46825,
+              "p95_ms": 0.638875,
+              "samples": 80
+            },
+            "budget": {
+              "baseline_downstream_requests": 24,
+              "modeled_downstream_requests": 5,
+              "modeled_embedding_queries_with_reuse": 18,
+              "safe_downstream_requests_avoided": 13,
+              "unsafe_downstream_requests_avoided": 6
+            }
+          },
+          "0.9": {
+            "hits": 12,
+            "correct_hits": 8,
+            "wrong_hits": 4,
+            "hit_rate": 0.5,
+            "wrong_hit_rate_among_hits": 0.3333333333333333,
+            "cache_only_hit_latency": {
+              "p50_ms": 0.2426,
+              "p95_ms": 0.6519749999999999,
+              "samples": 192
+            },
+            "cache_only_miss_latency": {
+              "p50_ms": 0.47165,
+              "p95_ms": 0.667235,
+              "samples": 192
+            },
+            "budget": {
+              "baseline_downstream_requests": 24,
+              "modeled_downstream_requests": 12,
+              "modeled_embedding_queries_with_reuse": 18,
+              "safe_downstream_requests_avoided": 8,
+              "unsafe_downstream_requests_avoided": 4
+            }
+          },
+          "0.95": {
+            "hits": 8,
+            "correct_hits": 6,
+            "wrong_hits": 2,
+            "hit_rate": 0.3333333333333333,
+            "wrong_hit_rate_among_hits": 0.25,
+            "cache_only_hit_latency": {
+              "p50_ms": 0.00935,
+              "p95_ms": 0.5240549999999998,
+              "samples": 128
+            },
+            "cache_only_miss_latency": {
+              "p50_ms": 0.48125,
+              "p95_ms": 0.70375,
+              "samples": 256
+            },
+            "budget": {
+              "baseline_downstream_requests": 24,
+              "modeled_downstream_requests": 16,
+              "modeled_embedding_queries_with_reuse": 18,
+              "safe_downstream_requests_avoided": 6,
+              "unsafe_downstream_requests_avoided": 2
+            }
+          },
+          "0.98": {
+            "hits": 7,
+            "correct_hits": 6,
+            "wrong_hits": 1,
+            "hit_rate": 0.2916666666666667,
+            "wrong_hit_rate_among_hits": 0.14285714285714285,
+            "cache_only_hit_latency": {
+              "p50_ms": 0.0091,
+              "p95_ms": 0.4492,
+              "samples": 112
+            },
+            "cache_only_miss_latency": {
+              "p50_ms": 0.48125,
+              "p95_ms": 0.70285,
+              "samples": 272
+            },
+            "budget": {
+              "baseline_downstream_requests": 24,
+              "modeled_downstream_requests": 17,
+              "modeled_embedding_queries_with_reuse": 18,
+              "safe_downstream_requests_avoided": 6,
+              "unsafe_downstream_requests_avoided": 1
+            }
+          },
+          "exact": {
+            "hits": 6,
+            "correct_hits": 6,
+            "wrong_hits": 0,
+            "hit_rate": 0.25,
+            "wrong_hit_rate_among_hits": 0.0,
+            "cache_only_hit_latency": {
+              "p50_ms": 0.0089,
+              "p95_ms": 0.02965,
+              "samples": 96
+            },
+            "cache_only_miss_latency": {
+              "p50_ms": 0.0034,
+              "p95_ms": 0.01512499999999999,
+              "samples": 288
+            },
+            "budget": {
+              "baseline_downstream_requests": 24,
+              "modeled_downstream_requests": 18,
+              "modeled_embedding_queries_with_reuse": 18,
+              "safe_downstream_requests_avoided": 6,
+              "unsafe_downstream_requests_avoided": 0
+            }
+          }
+        },
+        "semantic_benchmark_embedding_inputs": 48,
+        "semantic_benchmark_embedding_requests": 12,
+        "live_exact_generation_attempts": 3
+      },
+      "decision": "保留精确缓存入口。0.90 在留出集错误复用 4/12，0.98 仍有错，语义仅用于离线评估。",
+      "limitations": "Redis 服务端未启用，延迟来自内存。语义工作负载用于评估复用条件，非真实请求流量或答案准确率。"
     }
   ],
-  "last_updated_at": "2026-11-16T07:00:57.386184+00:00"
+  "last_updated_at": "2026-11-16T07:28:16.743076+00:00"
 }

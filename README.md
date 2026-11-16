@@ -1,5 +1,7 @@
 # 足球规则 RAG Lab
 
+**任务十六已交付。** 精确缓存已通过真实重复问答，语义缓存留出样本发现错误复用。 [交付报告](reports/TASK_16_DELIVERY.md) · [使用、结果与复算](docs/REDIS_CACHE_EXPERIMENT.md)
+
 **任务十五已完成 FAISS HNSW 对照。** 固定 99 条向量，开发集预选精确 Flat。锁定测试五组标注召回一致，搜索深度改变了精确 Top10 重合率和延迟。 [交付报告](reports/TASK_15_DELIVERY.md) · [参数和复跑](docs/FAISS_HNSW_EXPERIMENT.md)
 
 **任务1–14已完成归档。** 先看[任务十四交付](reports/TASK_14_DELIVERY.md)、[可直接使用的简历稿](reports/task14/RESUME_FINAL.md)和[原实验结果与取舍](reports/task14/RESULTS_FINAL.md)。[复验说明](docs/TASK_14_ARCHIVE.md)可从证据编号查到原始逐题结果、参数和命令。本轮没有新模型调用。

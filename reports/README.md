@@ -1,5 +1,7 @@
 # 报告阅读说明
 
+任务十六保存真实重复问答、缓存过期和版本验收、语义留出逐题错误及 Redis 客户端旁路证据。 [交付报告](TASK_16_DELIVERY.md)
+
 任务十五材料包括两期逐题排名、查询计时、四种索引构建读数、冻结证明和独立复算。 [任务十五交付](TASK_15_DELIVERY.md) · [试验参数和解读](../docs/FAISS_HNSW_EXPERIMENT.md)
 
 任务十四当前入口：[完整交付](TASK_14_DELIVERY.md)、[简历稿](task14/RESUME_FINAL.md)、[结果对照](task14/RESULTS_FINAL.md)、[28条档案CSV](task14/experiments.csv)。旧报告及首次失败收录为历史证据。
