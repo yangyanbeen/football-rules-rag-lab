@@ -1,0 +1,33 @@
+{
+  "version": "faiss-hnsw-b0-1.0",
+  "corpus_vectors": "data/indexes/dense/embeddings.npy",
+  "dense_config": "config/dense_index.json",
+  "dependencies": {"faiss-cpu": "1.11.0", "numpy": "1.26.4", "packaging": "24.2", "psutil": "6.1.1"},
+  "dimensions": 1024,
+  "vector_count": 99,
+  "top_k": 10,
+  "threads": 1,
+  "build_repetitions": 3,
+  "warmup_rounds": 3,
+  "query_repetitions": 32,
+  "order_seed": 15,
+  "graphs": {
+    "flat": {"type": "IndexFlatIP"},
+    "hnsw_base": {"type": "IndexHNSWFlat", "M": 16, "efConstruction": 100},
+    "hnsw_m8": {"type": "IndexHNSWFlat", "M": 8, "efConstruction": 100},
+    "hnsw_c40": {"type": "IndexHNSWFlat", "M": 16, "efConstruction": 40}
+  },
+  "methods": {
+    "flat": {"graph": "flat", "efSearch": null},
+    "hnsw_base": {"graph": "hnsw_base", "efSearch": 16},
+    "hnsw_m8": {"graph": "hnsw_m8", "efSearch": 16},
+    "hnsw_c40": {"graph": "hnsw_c40", "efSearch": 16},
+    "hnsw_s64": {"graph": "hnsw_base", "efSearch": 64}
+  },
+  "selection": {
+    "min_mean_flat_overlap_at_10": 0.99,
+    "required_quality": ["Recall@5", "Recall@10", "MRR@10"],
+    "tie_break": "prefer flat, then method name",
+    "primary_cost": "development vector search P50"
+  }
+}
