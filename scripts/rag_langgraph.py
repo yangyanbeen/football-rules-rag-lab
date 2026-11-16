@@ -1,9 +1,10 @@
 """Explicit retrieval, generation and validation graph for football rule answers."""
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from functools import partial
 import operator
 import re
 import time
+from threading import RLock
 from typing import Annotated
 from typing_extensions import TypedDict
 import uuid
@@ -83,6 +84,7 @@ class Operations:
     answer_policy: dict
     prompt: str
     sources: dict
+    request_lock: object = field(default_factory=RLock, repr=False)
 
     def retrieval(self, question, depth):
         dense = self.retriever.dense.query(normalize_query(question), depth)
@@ -112,6 +114,10 @@ class Operations:
     def chat_calls(self):
         return self.chat.requests
 
+    @property
+    def completed_embeddings(self):
+        return len(self.retriever.embedder.observations)
+
 
 NODES = ('route', 'version_check', 'retrieve', 'fuse', 'rerank', 'expand_context',
          'check_evidence', 'answer', 'check_citations', 'refusal', 'finish')
@@ -123,6 +129,7 @@ class Flow:
         from langgraph.graph import END, START, StateGraph
 
         self.ops = operations
+        self.request_lock = getattr(operations, 'request_lock', None) or RLock()
         self.cfg = policy()
         self.citation_fault = citation_fault
         if self.ops.answer_policy['max_generation_attempts'] != self.cfg['max_generation_attempts']:
@@ -192,6 +199,13 @@ class Flow:
         evidence = self.ops.expand(ids)
         if [r['chunk_id'] for r in evidence] != ids or len(set(ids)) != len(ids):
             raise ValueError('Context does not match ranked source IDs')
+        for row in evidence:
+            source = self.ops.sources.get(row['chunk_id'], {})
+            content = digest(row['content_zh'].encode('utf-8'))
+            revision = digest(canonical({k: v for k, v in row.items() if k != 'record_sha256'}))
+            if (content != row.get('content_zh_sha256') or content != source.get('content_zh_sha256')
+                    or revision != row.get('record_sha256') or revision != source.get('record_sha256')):
+                return {'status': 'failed', 'reason': 'context_integrity_error'}
         return {'evidence': evidence}
 
     def check_evidence(self, state):
@@ -249,21 +263,27 @@ class Flow:
         return {}
 
     def invoke(self, question, request_id=None):
-        request_id = request_id or uuid.uuid4().hex
-        if not re.fullmatch('[0-9a-f]{32}', request_id):
+        if request_id is None:
+            request_id = uuid.uuid4().hex
+        if not isinstance(request_id, str) or not re.fullmatch('[0-9a-f]{32}', request_id):
             raise ValueError('Request ID must be 32 lowercase hex characters')
         question = normalize_question(question)
         started = time.perf_counter_ns()
-        before = self.ops.chat_calls
-        result = self.compiled.invoke({'request_id': request_id, 'question': question, 'events': []},
-                                      {'recursion_limit': self.cfg['recursion_limit']})
+        with self.request_lock:
+            before = self.ops.chat_calls
+            embeddings_before = getattr(self.ops, 'completed_embeddings', None)
+            result = self.compiled.invoke({'request_id': request_id, 'question': question, 'events': []},
+                                          {'recursion_limit': self.cfg['recursion_limit']})
+            calls = self.ops.chat_calls - before
+            embeddings = (result.get('embedding_queries', 0) if embeddings_before is None
+                          else self.ops.completed_embeddings - embeddings_before)
         return {
             'request_id': request_id, 'question_sha256': digest(question.encode('utf-8')),
             'status': result['status'], 'reason': result.get('reason'), 'error_kind': result.get('error_kind'),
             'answer': result['answer'], 'citations': result['citations'], 'selected_ids': result['selected_ids'],
             'retrieved_ids': result.get('retrieved_ids', []), 'offered_ids': result.get('offered_ids', []),
             'attempts': result.get('attempts', []), 'fault_applied': result.get('fault_applied', False),
-            'embedding_queries': result.get('embedding_queries', 0), 'reranked_pairs': result.get('reranked_pairs', 0),
-            'chat_calls': self.ops.chat_calls - before,
+            'embedding_queries': embeddings, 'reranked_pairs': result.get('reranked_pairs', 0),
+            'chat_calls': calls,
             'events': result['events'], 'wall_ns': time.perf_counter_ns() - started,
         }

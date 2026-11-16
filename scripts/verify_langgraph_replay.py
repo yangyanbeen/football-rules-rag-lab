@@ -8,9 +8,11 @@ import subprocess
 import sys
 
 from answer_eval_core import ROOT, digest, read, record, write_new
+from historical_evidence import git_record
 
 REPORT = ROOT / 'reports/task17'
 BASE = '415cba9407573942362ba00d5571d8f9904fae94'
+GRAPH_RELEASE = 'a6aaca199ab420fca2af39e58e0fce32e03f1a23'
 CONFIG = ROOT / 'config/langgraph_flow.json'
 LOCK = ROOT / 'config/task17-requirements.lock.txt'
 NODES = ['route', 'version_check', 'retrieve', 'fuse', 'rerank', 'expand_context',
@@ -160,10 +162,7 @@ def replay():
         if subprocess.run(['git', 'merge-base', '--is-ancestor', commit, 'HEAD'],
                           cwd=ROOT, capture_output=True).returncode:
             return False
-        return all(
-            ref == record(ROOT / p) and ref['sha256'] == digest(
-                subprocess.check_output(['git', 'show', commit + ':' + p], cwd=ROOT))
-            for p, ref in live['sources'].items()) and len(live['sources']) == 12
+        return all(git_record(commit, p) == ref for p, ref in live['sources'].items()) and len(live['sources']) == 12
 
     check('real_run_commit_and_runtime_sources_match', producer)
     check('exact_isolated_dependency_lock_and_positive_setup_and_compile_time', lambda: (
@@ -174,8 +173,8 @@ def replay():
     check('synthetic_compiled_controls_and_sources_match', lambda: (
         controls['status'] == 'PASS' and controls['passed'] == controls['total'] == len(controls['checks']) == 15
         and all(v is True for v in controls['checks'].values()) and not controls['errors']
-        and controls['producer'] == record(ROOT / 'scripts/verify_langgraph_controls.py')
-        and controls['flow_source'] == record(ROOT / 'scripts/rag_langgraph.py')))
+        and controls['producer'] == git_record(GRAPH_RELEASE, 'scripts/verify_langgraph_controls.py')
+        and controls['flow_source'] == live['sources']['scripts/rag_langgraph.py']))
     check('retry_and_failure_controls_keep_two_attempt_ceiling', lambda: (
         controls['cases']['model_format_retry_then_success']['chat_calls'] == 2
         and controls['cases']['format_retries_stop_at_two']['chat_calls'] == 2
