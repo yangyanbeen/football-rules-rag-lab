@@ -1,5 +1,7 @@
 # 报告阅读说明
 
+任务十四当前入口：[完整交付](TASK_14_DELIVERY.md)、[简历稿](task14/RESUME_FINAL.md)、[结果对照](task14/RESULTS_FINAL.md)、[28条档案CSV](task14/experiments.csv)。旧报告及首次失败收录为历史证据。
+
 任务十三最新依据：[TASK_13_SUPPLEMENT](TASK_13_SUPPLEMENT.md)及rechecks/task13-audit-20261114。原7/7缺口复现，最终54/54、公开47/47与后端/页面各5/5。早期43/52/45回归和首次真实演示均保留；最终本机完整28/28、干净公开完整25/25通过，分别保存在delivery-final与public-delivery新文件。
 
 当前阶段：[TASK_13_DELIVERY](TASK_13_DELIVERY.md)及task13目录；新环境/导入/索引/真实后端与页面演示、无模型复算和完整验收证据。本机完整39/39与干净公开副本33/33均通过。任务12先前质量指标不改写，本轮不声称整体准确率提升。

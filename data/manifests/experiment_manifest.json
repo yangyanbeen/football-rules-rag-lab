@@ -4940,7 +4940,158 @@
         }
       ],
       "artifact_policy": "Original24 experiment objects preserved. Final complete gate reports/delivery prose/global indices excluded from own hashes to avoid cycles; final global file manifest covers them."
+    },
+    {
+      "id": "TASK-014-FINAL-ARCHIVE",
+      "date": "2026-11-16",
+      "task": 14,
+      "objective": "按原任务14收口所有历史实验与简历证据",
+      "control": "5658f30ecaa714e2bdaca3085cc547414f478e36",
+      "main_variable": "增加档案索引、证据来源路径和只读校验；原检索和回答不变",
+      "dataset_version": {
+        "inventory": {
+          "path": "data/manifests/local_data_files.json",
+          "size_bytes": 11934,
+          "sha256": "f10c562de07cad7120ecd16593f2dd32df55fc88391dd74cb5a0d1c96bbee41b"
+        },
+        "documents": 5,
+        "chunks": 99
+      },
+      "evaluation_version": {
+        "split": "原锁定评测 dev40/test50 与原人工12题，无新测试",
+        "baseline_commit": "5658f30ecaa714e2bdaca3085cc547414f478e36"
+      },
+      "source_commit": "8c8fe7b3478c0e8424d09e6ee1c0d2e6578497f1",
+      "archive_producer": "4133771ca64e25b30a68c297d6514ee4f3595cfc",
+      "model": "归档不调用模型，逐方法原模型配置见档案",
+      "parameters": {
+        "scope_specification": {
+          "path": "config/task14_archive.json",
+          "size_bytes": 28000,
+          "sha256": "07cbee3c72e3bdc33d7e1ba0af37356f45facf0f94572f1a40ab75938c5b6fa8"
+        },
+        "groups": 9
+      },
+      "hardware": {
+        "status": "不适用",
+        "scope": "不新增硬件性能测量；各历史环境见归档"
+      },
+      "commands": [
+        "python -S -B scripts/task14_archive.py verify",
+        "python -S -B scripts/task14_archive.py show --claim reranker_top40_r5",
+        "python -S -B scripts/replay_task14.py --report .tmp/task14-replay-new.json",
+        "python -S -B scripts/verify_task14_archive.py --report .tmp/task14-regression-new.json",
+        "python -S -B scripts/verify_task14_delivery.py --public-only --report .tmp/task14-delivery-new.json"
+      ],
+      "artifacts": [
+        {
+          "path": "config/task14_archive.json",
+          "size_bytes": 28000,
+          "sha256": "07cbee3c72e3bdc33d7e1ba0af37356f45facf0f94572f1a40ab75938c5b6fa8"
+        },
+        {
+          "path": "docs/TASK_14_ARCHIVE.md",
+          "size_bytes": 2860,
+          "sha256": "e0df036b372c87be13e553fb0b1d7dec6ff326712183bf4b81eecca73b8acea5"
+        },
+        {
+          "path": "docs/TASK_14_SCOPE.md",
+          "size_bytes": 1517,
+          "sha256": "da47ba842d2f3456621531c3e2bf873b3ddcf7752c4fcab802d06cbd00f0070e"
+        },
+        {
+          "path": "reports/task14/RESULTS_FINAL.md",
+          "size_bytes": 3019,
+          "sha256": "863aec4457a5e224b980c3dba378afa040609fda3f7865c698ac88edace62861"
+        },
+        {
+          "path": "reports/task14/RESUME_FINAL.md",
+          "size_bytes": 2533,
+          "sha256": "d9473d21cfce0a0a4c232952992ad0b9a40c24c898330d9f27272b9e05dd5cb9"
+        },
+        {
+          "path": "reports/task14/archive.json",
+          "size_bytes": 556098,
+          "sha256": "8dbac83ad9b3f1db160887eef86f16baa863c5b4cd09cb124c7c0505c5be0cc8"
+        },
+        {
+          "path": "reports/task14/experiments.csv",
+          "size_bytes": 227279,
+          "sha256": "c5754b6351cf4b69b6f8afed510db6744af27ad461bf6dd1e7aad35e3df5845e"
+        },
+        {
+          "path": "reports/task14/formal-replay-first.json",
+          "size_bytes": 6653,
+          "sha256": "844e4faf44e0966a957eedc84674380a3ec8599d81610b690fc891396fed0d78"
+        },
+        {
+          "path": "reports/task14/prior-task13.json",
+          "size_bytes": 2183,
+          "sha256": "d7ce31869208ce133afee7cd51c2dfce42cf9ec7d79cc345bcdc4b6ff5a94329"
+        },
+        {
+          "path": "reports/task14/public-formal-replay.json",
+          "size_bytes": 6917,
+          "sha256": "d95c3d250069128a8d522e2fcfbc16f61ee9311c2cdc4fc0ede04cf4e01b3c8a"
+        },
+        {
+          "path": "reports/task14/public-regressions.json",
+          "size_bytes": 2913,
+          "sha256": "ac5dbc5c4080d4febf7736b55409d6b7be08b55ec470c2c63d9a9b3f09640f24"
+        },
+        {
+          "path": "reports/task14/regressions-final.json",
+          "size_bytes": 2649,
+          "sha256": "aaccf0c440a78b82c8b373161c2e9fb0113ef64087227cd08b6690ed44c72cdf"
+        },
+        {
+          "path": "reports/task14/regressions-first.json",
+          "size_bytes": 2749,
+          "sha256": "a841d8c8acfab5e615776e9d569469289c686705924a1ce4092d89d1608e1a27"
+        },
+        {
+          "path": "reports/task14/regressions-second.json",
+          "size_bytes": 2738,
+          "sha256": "1f306187745d28e4593d8c1a59477e47a226ac321901aff159d70364d3af963e"
+        },
+        {
+          "path": "scripts/replay_task14.py",
+          "size_bytes": 3273,
+          "sha256": "f9f7754d12526077f408b496bba2780118b90905a7a7a4b6c58f5ff63665118b"
+        },
+        {
+          "path": "scripts/task14_archive.py",
+          "size_bytes": 20933,
+          "sha256": "726265e02611ccfcbcc93d8fd15c2ffd390c4853d78fb7e939301fa861108c7b"
+        },
+        {
+          "path": "scripts/verify_task14_archive.py",
+          "size_bytes": 6749,
+          "sha256": "af1a7d4697b2303708ebaedc9551f71f8c313eb4df0f7ffa46b32aa4d1e61d54"
+        },
+        {
+          "path": "scripts/verify_task14_delivery.py",
+          "size_bytes": 11035,
+          "sha256": "ad97aa2a32ef4d21a203c17129a4c2de5b353fed0ec2f364a883b9aec01d96e2"
+        }
+      ],
+      "metrics": {
+        "archive_records": 28,
+        "numeric_claims": 78,
+        "evidence_groups": 9,
+        "unmeasured": 12,
+        "local_regressions": 43,
+        "public_regressions": 43,
+        "local_replays": 13,
+        "public_replays": 13,
+        "new_model_requests": 0,
+        "new_formal_test_runs": 0,
+        "new_human_judgments": 0
+      },
+      "decision": "保存原始正负收益、未测量指标、独立评分口径；简历仅取可核验结论",
+      "limitations": "固定Wikipedia快照中文整理的领域数据；无新增算法或总体准确率、吞吐量、部署表现结论",
+      "artifact_policy": "排除最终完整回执和全局文件清单避免递归；由全局清单统一记录它们。"
     }
   ],
-  "last_updated_at": "2026-11-14T15:04:53.417567+00:00"
+  "last_updated_at": "2026-11-16T06:36:30.057159+00:00"
 }
