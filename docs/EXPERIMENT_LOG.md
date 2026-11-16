@@ -425,3 +425,5 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/recheck_fresh_delive
 - 源码：本轮登记 8c8fe7b3478c0e8424d09e6ee1c0d2e6578497f1，档案生成器 4133771ca64e25b30a68c297d6514ee4f3595cfc。可运行 `python -S -B scripts/task14_archive.py verify`，再按 [复验说明](TASK_14_ARCHIVE.md)复算保存的逐题数据。
 - 原始结果与指标：[28条档案](../reports/task14/experiments.csv)、78项可追溯数字、12类待测；本机及公开副本分别完成43/43回归、13/13历史重算，任务13原完整28/28。本轮无新增模型调用、锁定测试或人工判断。
 - 取舍：[结果对照](../reports/task14/RESULTS_FINAL.md)保留RRF的MRR下降、子块的召回下降、父子块的上下文成本和原回答引用问题；未测HNSW/缓存/吞吐不写入简历。详见[任务14交付](../reports/TASK_14_DELIVERY.md)。
+
+- 完整验收：[本机28/28](../reports/task14/delivery-final.json)与[干净公开25/25](../reports/task14/delivery-public.json)，两份均按本阶段原标准通过。
