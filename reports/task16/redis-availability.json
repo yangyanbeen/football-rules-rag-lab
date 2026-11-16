@@ -1,0 +1,21 @@
+{
+  "adapter_source": {
+    "path": "scripts/query_cache.py",
+    "sha256": "05da9209c6a03e83305536f1106367bd8a58ade81f8aa4977fc35197aeb335fb",
+    "size_bytes": 6559
+  },
+  "benchmark_backend": "memory",
+  "captured_at": "2026-11-16T07:25:31.091939+00:00",
+  "connection_probe": "ConnectionRefusedError",
+  "docker_linux_daemon": "unavailable",
+  "live_redis_performance_measured": false,
+  "loopback_port": 6379,
+  "probe_wall_ns": 528741400,
+  "read_state": "read_bypass",
+  "redis_client_version": "5.2.1",
+  "redis_server_available": false,
+  "status": "PASS",
+  "upstream_control_invocations": 1,
+  "write_state": "write_bypass",
+  "wsl_distro": "docker-desktop only"
+}
