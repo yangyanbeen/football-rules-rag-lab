@@ -1,6 +1,7 @@
 """Build FAISS indices and compare them on the original Dense B0 evaluation."""
 import argparse
 import importlib.metadata
+import json
 import os
 from pathlib import Path
 import platform
@@ -12,9 +13,10 @@ import time
 from answer_eval_core import canonical, digest, git, now, read, record, rows, write_new
 from dense_retrieval_eval import normalize_query
 from faiss_hnsw_eval import (
-    CONFIG, DATASET, DENSE, MAPPING, REPORT, ROOT, SOURCES, config, questions,
+    BASE, CONFIG, DATASET, DENSE, MAPPING, REPORT, ROOT, SOURCES, config, mapping_rows, questions,
     select, source_records, summarize,
 )
+from historical_evidence import frozen_bytes
 from run_retrieval_metrics import authorize_test
 from validate_eval_receipt import require_receipt
 
@@ -36,7 +38,7 @@ def native(cfg):
 
 def checked_vectors(cfg, np):
     path = ROOT / cfg['corpus_vectors']
-    frozen = read(DENSE)
+    frozen = json.loads(frozen_bytes(DENSE, BASE))
     artifact = frozen['artifact_files']['embeddings.npy']
     actual = record(path)
     if any(artifact[k] != actual[k] for k in ('size_bytes', 'sha256')):
@@ -47,9 +49,7 @@ def checked_vectors(cfg, np):
             or not np.allclose(np.linalg.norm(vectors, axis=1), 1, atol=1e-6, rtol=0)
             or digest(vectors.tobytes(order='C')) != frozen['vector_fingerprint']):
         raise ValueError('Frozen unit document vector matrix differs')
-    mapping = read(MAPPING)
-    if [m['position'] for m in mapping] != list(range(len(vectors))):
-        raise ValueError('Invalid original vector row mapping')
+    mapping = mapping_rows()
     return vectors, [m['chunk_id'] for m in mapping]
 
 
@@ -181,12 +181,16 @@ def freeze():
         raise ValueError('This checkout already has a formal test freeze or attempt')
     cfg = config()
     folder = REPORT / 'dev'
-    _, labelled = questions('dev')
+    question_file, labelled = questions('dev')
     builds = read(folder / 'builds.json')
     summary = summarize(cfg, labelled, rows(folder / 'predictions.jsonl'), builds)
     if canonical(summary) != canonical(read(folder / 'summary.json')):
         raise ValueError('Development summary does not recompute')
     run = read(folder / 'run_manifest.json')
+    from verify_faiss_hnsw import run_matches
+
+    if not run_matches('dev', run, question_file, labelled):
+        raise ValueError('Development receipt or producer does not match')
     current = git('rev-parse', 'HEAD')
     require_source(current, (*SOURCES, *(item['path'] for item in development_receipts().values())))
     if run['source_files'] != source_records():
