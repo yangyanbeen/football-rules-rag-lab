@@ -1,0 +1,43 @@
+{
+  "baseline": "bcffd4e8c8566b5402e0009e0b3308e7b09ee043",
+  "checks": {
+    "dev_original_producer_and_inputs": true,
+    "dev_recall_overlap_clocks_and_resource_summary": true,
+    "development_selection_frozen_in_git_before_test": true,
+    "one_parameter_changed_per_hnsw_arm": true,
+    "original_task_14_acceptance": true,
+    "reject_boolean_elapsed": true,
+    "reject_cosine_over_one": true,
+    "reject_different_serialized_graph": true,
+    "reject_duplicate_chunk": true,
+    "reject_extra_vector_field": true,
+    "reject_invalid_build_rss": true,
+    "reject_missing_question": true,
+    "reject_negative_elapsed": true,
+    "reject_wrong_repeat_count": true,
+    "same_document_vectors_machine_settings_and_graphs": true,
+    "test_original_producer_and_inputs": true,
+    "test_recall_overlap_clocks_and_resource_summary": true
+  },
+  "errors": [],
+  "new_embedding_requests": 0,
+  "new_test_runs": 0,
+  "passed": 17,
+  "run_evidence": {
+    "dev": {
+      "path": "reports/task15/dev/run_manifest.json",
+      "sha256": "ac2d44c6522b8dec363e67dbfae364ca62da984fff1b667a1cca910b6da61c6f",
+      "size_bytes": 7221
+    },
+    "test": {
+      "path": "reports/task15/test/run_manifest.json",
+      "sha256": "a585a0a840a67a707456f5ed86eb8e14adfebde76b038a06ac7021ec934bc9a6",
+      "size_bytes": 8063
+    }
+  },
+  "scope": "Replay saved ranks and measurements without models or private vectors.",
+  "site_packages_disabled": true,
+  "source_sha256": "4e87c7cdd0fc33ed0b56b4fb3ee0246210ed5f69828189912c8b610d67f0ecd7",
+  "status": "PASS",
+  "total": 17
+}

@@ -1,5 +1,7 @@
 # 足球规则 RAG Lab
 
+**任务 14–17 已复查并补交付。** 修复归档数字校验、FAISS 输入冻结、精确缓存一致性和 LangGraph 请求追踪。 [缺陷与验收](reports/TASK_14_17_SUPPLEMENT.md) · [复验方式](docs/TASK_14_17_AUDIT.md)
+
 **原计划任务 1–17 已交付。** 任务十七新增独立 LangGraph 问答入口，提供真实普通链路对照、受控重试与引用失败记录。 [任务十七交付](reports/TASK_17_DELIVERY.md) · [流程与复跑](docs/LANGGRAPH_FLOW.md)
 
 **任务十六已交付。** 精确缓存已通过真实重复问答，语义缓存留出样本发现错误复用。 [交付报告](reports/TASK_16_DELIVERY.md) · [使用、结果与复算](docs/REDIS_CACHE_EXPERIMENT.md)
