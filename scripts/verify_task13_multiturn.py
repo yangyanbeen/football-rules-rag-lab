@@ -48,6 +48,16 @@ class ConversationTests(unittest.TestCase):
         generate.assert_not_called()
         self.assertEqual((question, 'unchanged'), (query, info['outcome']))
 
+    def test_unresolved_pronoun_is_retried_before_retrieval(self):
+        question = '那它的高度呢？'
+        rewritten = '足球球门开口的高度是多少？'
+        unchanged_reply = {'message': {'content': json.dumps({'query': question})}}
+        rewritten_reply = {'message': {'content': json.dumps({'query': rewritten})}}
+        with patch('answer_json_chat.generate', side_effect=[unchanged_reply, rewritten_reply]) as generate:
+            query, info = resolve_question(question, bounded_history(PREVIOUS), config())
+        self.assertEqual(2, generate.call_count)
+        self.assertEqual((rewritten, 'rewritten'), (query, info['outcome']))
+
     def test_worker_gets_bounded_history_on_stdin_and_validates_effective_query(self):
         ref = {'path': 'worker.json'}
         packet = {'status': 'answered', 'trace_id': 'trace', 'private_trace': ref}
