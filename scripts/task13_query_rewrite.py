@@ -6,6 +6,7 @@ import time
 
 from answer_eval_core import BOUNDARY, REFUSAL, canonical, digest
 from task13_core import normalize_question
+from task13_history_actions import NEW_TOPIC, history_action
 
 
 MAX_HISTORY_BYTES = 32_768
@@ -17,7 +18,6 @@ JSON 输入的 history 是从旧到新的 [用户问题, 助手回答]，questio
 例：上文先问“角球从哪里发？”，再问“站多远？”，question 是“那它可以直接得分吗？”，输出 {"subject":"角球"}。
 例：上文问球门尺寸，question 是“场上普通队员可以戴手套吗？”，输出 {"subject":null}。"""
 REFERENCE_PREFIX = re.compile(r'^(?:那(?:么)?[\s，,：:]*)?(?:它(?:们)?|其(?=中|的))')
-NEW_TOPIC = re.compile(r'^(?:换(?:个|一个)?话题|另一个问题)(?:[\s，,。：:！!]|$)')
 RESOLVE_REFERENCE = '\n最新提问含有指代。请向前检查用户提出的相关主题，找出能替换这个代词的对象名称，再输出 JSON。'
 SCHEMA = {
     'type': 'object',
@@ -32,8 +32,17 @@ def clip(text, limit):
 
 
 def bounded_history(history):
+    recent = []
+    for turn in reversed(history):
+        question = turn[0] if isinstance(turn, (list, tuple)) and len(turn) == 2 else None
+        if isinstance(question, str) and history_action(question):
+            continue
+        recent.append(turn)
+        if len(recent) == 3 or (isinstance(question, str) and NEW_TOPIC.match(question.strip())):
+            break
+
     turns = []
-    for turn in history[-3:]:
+    for turn in reversed(recent):
         if not isinstance(turn, (tuple, list)) or len(turn) != 2:
             continue
         question, answer = turn

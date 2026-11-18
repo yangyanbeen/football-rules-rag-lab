@@ -7,7 +7,10 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 from answer_eval_core import REFUSAL, canonical, config, digest
+from citation_catalog_guard import safe_render
 import task13_audit_client as client
+from task13_core import local_corpus
+from task13_history_actions import history_action, transform_previous_answer
 from task13_query_rewrite import MAX_HISTORY_BYTES, bounded_history, read_history, resolve_question
 
 
@@ -17,6 +20,37 @@ PREVIOUS = [('请说明足球球门的尺寸。', '球门宽7.32米，高2.44米
 
 
 class ConversationTests(unittest.TestCase):
+    def test_intent_route_leaves_new_questions_to_retrieval(self):
+        self.assertEqual('table', history_action('请把刚才的答案整理成表格。'))
+        self.assertEqual('points', history_action('把上一轮回答列成要点'))
+        self.assertEqual('sources', history_action('刚才的答案引用了哪些来源？'))
+        self.assertEqual('unsupported', history_action('把刚才的回答翻译成英文'))
+        self.assertIsNone(history_action('把越位规则整理成表格'))
+        self.assertIsNone(history_action('上一条回答里所说的球门有多高？'))
+
+    def test_previous_answer_formats_reuse_only_verified_evidence(self):
+        corpus = local_corpus()
+        answer, citations = safe_render(['L01-03'], corpus)
+        with patch('task13_history_actions.local_corpus', return_value=corpus):
+            result = transform_previous_answer('table', [(STANDALONE, answer)])
+            self.assertEqual('answered', result['status'])
+            self.assertEqual(citations, result['citations'])
+            self.assertIn('| L01-03 |', result['answer'])
+            self.assertIn('2.44', result['answer'])
+            points = transform_previous_answer('points', [('整理成表格', result['answer'])])
+            self.assertEqual(citations, points['citations'])
+            sources = transform_previous_answer('sources', [('列成要点', points['answer'])])
+            self.assertEqual(citations, sources['citations'])
+            self.assertIn(citations[0]['source_url'], sources['answer'])
+            for history in ([], [(STANDALONE, answer.replace('2.44', '24.4', 1))],
+                            [(STANDALONE, answer), ('别的问题', REFUSAL)]):
+                self.assertEqual('no_previous_evidence', transform_previous_answer('table', history)['status'])
+
+    def test_followups_skip_formatting_turns_and_stop_at_the_new_topic(self):
+        order = [*PREVIOUS, ('换个话题，越位位置是什么？', '新话题证据'),
+                 ('整理成表格', '表格'), ('列出来源', '来源')]
+        self.assertEqual([['换个话题，越位位置是什么？', '新话题证据']], bounded_history(order))
+
     def test_only_completed_recent_turns_enter_private_request(self):
         turns = bounded_history([('早期问题', '早期回答'), ('体育规则'*200, '正文'*700),
                                  ('这份知识库有球门尺寸吗？', REFUSAL), ('未完成', None)])
