@@ -32,9 +32,9 @@ class ConversationTests(unittest.TestCase):
     def test_rewritten_query_and_model_failure(self):
         turns = bounded_history(PREVIOUS)
         with patch('answer_json_chat.generate') as generate:
-            generate.return_value = {'message': {'content': json.dumps({'query': STANDALONE})}}
+            generate.return_value = {'message': {'content': json.dumps({'subject': '足球球门开口'})}}
             question, info = resolve_question(FOLLOWUP, turns, config())
-            self.assertEqual((STANDALONE, 'rewritten'), (question, info['outcome']))
+            self.assertEqual(('足球球门开口：' + FOLLOWUP, 'rewritten'), (question, info['outcome']))
             messages = generate.call_args.args[1]
             self.assertEqual({'history': turns, 'question': FOLLOWUP}, json.loads(messages[-1]['content']))
             generate.side_effect = TimeoutError('model unavailable')
@@ -50,13 +50,26 @@ class ConversationTests(unittest.TestCase):
 
     def test_unresolved_pronoun_is_retried_before_retrieval(self):
         question = '那它的高度呢？'
-        rewritten = '足球球门开口的高度是多少？'
-        unchanged_reply = {'message': {'content': json.dumps({'query': question})}}
-        rewritten_reply = {'message': {'content': json.dumps({'query': rewritten})}}
+        rewritten = '足球球门开口的高度呢？'
+        unchanged_reply = {'message': {'content': json.dumps({'subject': None})}}
+        rewritten_reply = {'message': {'content': json.dumps({'subject': '足球球门开口'})}}
         with patch('answer_json_chat.generate', side_effect=[unchanged_reply, rewritten_reply]) as generate:
             query, info = resolve_question(question, bounded_history(PREVIOUS), config())
         self.assertEqual(2, generate.call_count)
         self.assertEqual((rewritten, 'rewritten'), (query, info['outcome']))
+
+    def test_topic_change_preserves_the_new_question(self):
+        question = '普通场上队员能否戴手套？'
+        turns = bounded_history(PREVIOUS)
+        with patch('answer_json_chat.generate') as generate:
+            generate.return_value = {'message': {'content': json.dumps({'subject': None})}}
+            query, info = resolve_question(question, turns, config())
+            self.assertEqual((question, 'unchanged'), (query, info['outcome']))
+            generate.reset_mock()
+            explicit = '换个话题，' + question
+            query, info = resolve_question(explicit, turns, config())
+        generate.assert_not_called()
+        self.assertEqual((explicit, 'unchanged'), (query, info['outcome']))
 
     def test_worker_gets_bounded_history_on_stdin_and_validates_effective_query(self):
         ref = {'path': 'worker.json'}

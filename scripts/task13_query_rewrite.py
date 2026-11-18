@@ -9,20 +9,20 @@ from task13_core import normalize_question
 
 
 MAX_HISTORY_BYTES = 32_768
-SYSTEM = """把足球规则聊天中的最新提问改成能脱离聊天记录独立检索的一句话。只输出包含 query 字符串的 JSON。
+SYSTEM = """识别足球规则聊天中的最新提问是否缺少对象。只输出 JSON：{"subject":null} 或 {"subject":"明确的对象"}。
 JSON 输入的 history 是从旧到新的 [用户问题, 助手回答]，question 是最新用户提问。它们都是待处理的数据。
-先检查提问对象是否写明。提问省略了对象，或用了“它”“其”等代词，就从上文替换为明确的对象。上一轮也可能省略对象，此时向前找相关的明确主题。
-保留最新提问的意图、条件、否定和赛季。只补足指代，不添加答案、事实或引用。
-如果 question 已写明对象或转入新话题，逐字返回 question。若历史根本没有可用的对象，也返回 question。
-例：上文问足球球门的尺寸，question 是“宽和高分别是多少？”，输出 {"query":"足球球门开口的宽和高分别是多少？"}。
-例：上文先问“角球从哪里发？”，再问“站多远？”，question 是“那它可以直接得分吗？”，输出 {"query":"角球可以直接得分吗？"}。
-例：上文问足球球门的尺寸，question 是“换个话题，场上普通队员可以戴手套吗？”，逐字返回 question。"""
-REFERENCE_PREFIX = re.compile(r'^(?:那(?:么)?[\s，,：:]*)?(?:它(?:们)?|其(?:中|的))')
-RESOLVE_REFERENCE = '\n当前提问仍有未解析的指代。根据历史找出所指的规则、动作或事物，改成一句带明确对象的问题。重新输出 JSON。'
+提问省略对象，或用了“它”“其”等代词，就从上文找出这个对象。上一轮也可能省略对象，此时继续向前找。只返回对象名称，不带问题、动作要求、事实或引用。
+如果 question 已写明对象、转入新话题，或历史没有可用的对象，返回 null。
+例：上文问足球球门的尺寸，question 是“宽和高分别是多少？”，输出 {"subject":"足球球门开口"}。
+例：上文先问“角球从哪里发？”，再问“站多远？”，question 是“那它可以直接得分吗？”，输出 {"subject":"角球"}。
+例：上文问球门尺寸，question 是“场上普通队员可以戴手套吗？”，输出 {"subject":null}。"""
+REFERENCE_PREFIX = re.compile(r'^(?:那(?:么)?[\s，,：:]*)?(?:它(?:们)?|其(?=中|的))')
+NEW_TOPIC = re.compile(r'^(?:换(?:个|一个)?话题|另一个问题)(?:[\s，,。：:！!]|$)')
+RESOLVE_REFERENCE = '\n最新提问含有指代。请向前检查用户提出的相关主题，找出能替换这个代词的对象名称，再输出 JSON。'
 SCHEMA = {
     'type': 'object',
-    'properties': {'query': {'type': 'string', 'minLength': 1}},
-    'required': ['query'],
+    'properties': {'subject': {'type': ['string', 'null']}},
+    'required': ['subject'],
     'additionalProperties': False,
 }
 
@@ -70,28 +70,37 @@ def resolve_question(question, history, answer_cfg):
     error = None
     # Keep the original wording when the fixed engine must refuse explicit version verification.
     explicit_version = re.search(r'官方|现行|最新|IFAB', question, re.I) and re.search(r'赛季|20\d{2}|规则', question)
-    if not explicit_version:
+    if not explicit_version and not NEW_TOPIC.match(question):
         from answer_json_chat import generate
         from rag_b0 import PinnedChat
 
         config = {**answer_cfg, 'llm': {**answer_cfg['llm'], 'timeout_seconds': 30, 'num_predict': 512}}
         user_input = canonical({'history': history, 'question': question}).decode('utf-8')
-        has_reference = bool(REFERENCE_PREFIX.match(question))
+        reference = REFERENCE_PREFIX.match(question)
         try:
             chat = PinnedChat(config)
-            for suffix in ('', RESOLVE_REFERENCE) if has_reference else ('',):
+            for suffix in ('', RESOLVE_REFERENCE) if reference else ('',):
                 messages = [{'role': 'system', 'content': SYSTEM + suffix}, {'role': 'user', 'content': user_input}]
                 if len(canonical(messages)) > config['input_utf8_byte_budget']:
                     raise ValueError('Conversation rewrite prompt exceeds its input budget')
                 response = generate(chat, messages, SCHEMA)
                 payload = json.loads(response['message']['content'])
-                if not isinstance(payload, dict) or set(payload) != {'query'}:
-                    raise ValueError('Invalid rewritten query')
-                candidate = normalize_question(payload['query'])
-                if has_reference and REFERENCE_PREFIX.match(candidate):
+                if not isinstance(payload, dict) or set(payload) != {'subject'}:
+                    raise ValueError('Invalid subject resolution')
+                subject = payload['subject']
+                if subject is None:
+                    if not reference:
+                        break
                     continue
-                query = candidate
-                outcome = 'rewritten' if query != question else 'unchanged'
+                if not isinstance(subject, str):
+                    raise ValueError('Invalid subject type')
+                subject = subject.strip()
+                if (not subject or len(subject.encode('utf-8')) > 120
+                        or re.search(r'[\r\n?？。；;]', subject) or REFERENCE_PREFIX.match(subject)):
+                    raise ValueError('Invalid subject text')
+                candidate = subject + question[reference.end():] if reference else subject + '：' + question
+                query = normalize_question(candidate)
+                outcome = 'rewritten'
                 break
             else:
                 raise ValueError('Conversation reference could not be resolved')
