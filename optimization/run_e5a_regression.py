@@ -16,6 +16,7 @@ def write(p,v):
     with p.open('xb') as f:f.write(canonical(v))
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--mode',choices=['live'],required=True);p.add_argument('--out',type=Path,required=True);a=p.parse_args()
+    assert (ROOT/'scripts/answer_eval_engine.py').read_bytes()==subprocess.check_output(['git','show','ba48ba1:scripts/answer_eval_engine.py'],cwd=ROOT), 'E5-A candidate pack must be checked out; current tree may have been restored to A1'
     cfg=config();assert (ROOT/cfg['prompt_file']).read_bytes()==(ROOT/'optimization/baseline/e8b0fd6/prompt_A.txt').read_bytes()
     cases=questions('dev')+questions('test');assert len(cases)==90
     cases=sorted(cases,key=lambda q:({'T034':0,'D021':1,'T032':2,'D002':3,'D019':4,'D001':5}.get(q['question_id'],6),q['question_id']))
