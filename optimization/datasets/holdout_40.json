@@ -1,0 +1,1470 @@
+[
+  {
+    "question_id": "H001",
+    "split": "holdout",
+    "question": "按资料，最后触球的是守方队员，球整体从门柱间横梁下越过球门线，还可能算进球吗？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "可能构成乌龙进球",
+      "球须整体从两门柱间、横梁下越过球门线"
+    ],
+    "required_conditions": [
+      "可能构成乌龙进球",
+      "球须整体从两门柱间、横梁下越过球门线"
+    ],
+    "expected_chunk_ids": [
+      "L01-04"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L01-04",
+        "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+        "source_lines": [
+          192,
+          194
+        ],
+        "content_zh_sha256": "bb23094e588d3f34b3db1956520c137bbfbd2ab2263b9b166bb37ef69797cb77",
+        "record_sha256": "54c377f15097f4f617d98f658bff0e41bb77fb166cbcf887a21a545662d6c723",
+        "source_revision_id": "1384097820",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H002",
+    "split": "holdout",
+    "question": "资料中的中圈以什么为圆心、半径如何表述？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "以中点为圆心",
+      "10码，约9.14米"
+    ],
+    "required_conditions": [
+      "以中点为圆心",
+      "10码，约9.14米"
+    ],
+    "expected_chunk_ids": [
+      "L01-07"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L01-07",
+        "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+        "source_lines": [
+          217,
+          219
+        ],
+        "content_zh_sha256": "a9b6a663ac2e01caf8dddee39764bfcfd1f463bd3d921f311f5e8dac9da106f8",
+        "record_sha256": "cbb1224a6411540428205c50bbb22b6a06e97bc87f1b0839b296b6cb654e9324",
+        "source_revision_id": "1384097820",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H003",
+    "split": "holdout",
+    "question": "资料提到中线和边线交点附近的旗帜是必须设置的吗？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "可以设置可选的标志旗"
+    ],
+    "required_conditions": [
+      "可以设置可选的标志旗"
+    ],
+    "expected_chunk_ids": [
+      "L01-07"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L01-07",
+        "source_url": "https://en.wikipedia.org/wiki/Football_pitch",
+        "source_lines": [
+          217,
+          219
+        ],
+        "content_zh_sha256": "a9b6a663ac2e01caf8dddee39764bfcfd1f463bd3d921f311f5e8dac9da106f8",
+        "record_sha256": "cbb1224a6411540428205c50bbb22b6a06e97bc87f1b0839b296b6cb654e9324",
+        "source_revision_id": "1384097820",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H004",
+    "split": "holdout",
+    "question": "根据资料，手表和首饰这样的装备为什么不能戴进比赛？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "不得穿戴对本人或其他队员有危险的物品",
+      "首饰或手表是所列例子"
+    ],
+    "required_conditions": [
+      "不得穿戴对本人或其他队员有危险的物品",
+      "首饰或手表是所列例子"
+    ],
+    "expected_chunk_ids": [
+      "L03-02"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L03-02",
+        "source_url": "https://en.wikipedia.org/wiki/Association_football",
+        "source_lines": [
+          525,
+          527
+        ],
+        "content_zh_sha256": "ad3bb24660657d3868f116cf2c298022177fb5847786f8b876e3242e73dd15dc",
+        "record_sha256": "fea9545bab52835b4dfa2da2de17f7389080841e65f40d4c9f1430ff60025f8d",
+        "source_revision_id": "1384532641",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H005",
+    "split": "holdout",
+    "question": "守门员服装颜色必须与谁容易区分？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "其他队员",
+      "比赛官员"
+    ],
+    "required_conditions": [
+      "其他队员",
+      "比赛官员"
+    ],
+    "expected_chunk_ids": [
+      "L03-02"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L03-02",
+        "source_url": "https://en.wikipedia.org/wiki/Association_football",
+        "source_lines": [
+          525,
+          527
+        ],
+        "content_zh_sha256": "ad3bb24660657d3868f116cf2c298022177fb5847786f8b876e3242e73dd15dc",
+        "record_sha256": "fea9545bab52835b4dfa2da2de17f7389080841e65f40d4c9f1430ff60025f8d",
+        "source_revision_id": "1384532641",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H006",
+    "split": "holdout",
+    "question": "资料描述的球鞋鞋钉有哪两种与鞋底连接的方式？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "与鞋底一体成型",
+      "通过螺纹等方式拆卸"
+    ],
+    "required_conditions": [
+      "与鞋底一体成型",
+      "通过螺纹等方式拆卸"
+    ],
+    "expected_chunk_ids": [
+      "L04-04"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L04-04",
+        "source_url": "https://en.wikipedia.org/wiki/Kit_%28association_football%29",
+        "source_lines": [
+          186,
+          187
+        ],
+        "content_zh_sha256": "63a4cf0abe33118c04def38e665cda267937dae7518c80a1a2649e9d8f32e3a7",
+        "record_sha256": "a13e2782b282d197a8ec4b854a75b5adfa1c77fdf8e17e422560caa0423a2585",
+        "source_revision_id": "1384045144",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H007",
+    "split": "holdout",
+    "question": "助理裁判的旗子常见什么颜色组合，用它向哪些人传递判断？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "红色、黄色或两色组合",
+      "向裁判、队员和观众传递判断"
+    ],
+    "required_conditions": [
+      "红色、黄色或两色组合",
+      "向裁判、队员和观众传递判断"
+    ],
+    "expected_chunk_ids": [
+      "L06-03"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L06-03",
+        "source_url": "https://en.wikipedia.org/wiki/Assistant_referee_%28association_football%29",
+        "source_lines": [
+          195,
+          196
+        ],
+        "content_zh_sha256": "2efa6b722e0489e73eff69dda16da1236c6964cb2ff3bf30a934cb926c517f4d",
+        "record_sha256": "38db6384fbc51974de80214d5218da91a745858ae9edd95d79e678e58d2143b1",
+        "source_revision_id": "1380533934",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H008",
+    "split": "holdout",
+    "question": "较资深的助理裁判通常在哪一侧，为什么？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "技术区域所在一侧",
+      "帮助监督换人"
+    ],
+    "required_conditions": [
+      "技术区域所在一侧",
+      "帮助监督换人"
+    ],
+    "expected_chunk_ids": [
+      "L06-03"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L06-03",
+        "source_url": "https://en.wikipedia.org/wiki/Assistant_referee_%28association_football%29",
+        "source_lines": [
+          195,
+          196
+        ],
+        "content_zh_sha256": "2efa6b722e0489e73eff69dda16da1236c6964cb2ff3bf30a934cb926c517f4d",
+        "record_sha256": "38db6384fbc51974de80214d5218da91a745858ae9edd95d79e678e58d2143b1",
+        "source_revision_id": "1380533934",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H009",
+    "split": "holdout",
+    "question": "资料说由谁决定赛事是否使用视频助理裁判，VAR怎样和场上裁判联系？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "有关比赛组织方决定",
+      "通过耳机沟通"
+    ],
+    "required_conditions": [
+      "有关比赛组织方决定",
+      "通过耳机沟通"
+    ],
+    "expected_chunk_ids": [
+      "L06-05"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L06-05",
+        "source_url": "https://en.wikipedia.org/wiki/Assistant_referee_%28association_football%29",
+        "source_lines": [
+          231,
+          238
+        ],
+        "content_zh_sha256": "d1a2e84358f2fb1bd84f3cf065ad96f14b19c481317b60cf56e7e96a73d31a5e",
+        "record_sha256": "cc936b48699da21b98714a519c93760c1726cf7a3ace26ddf07b04e2121eab42",
+        "source_revision_id": "1380533934",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H010",
+    "split": "holdout",
+    "question": "只问资料中的历史记载：第五官员即使看到了电视画面，能据此通知场上漏判吗？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "历史上的第五官员不被允许据电视画面通知遗漏事件",
+      "不能将该历史职责当成当下VAR权限"
+    ],
+    "required_conditions": [
+      "历史上的第五官员不被允许据电视画面通知遗漏事件",
+      "不能将该历史职责当成当下VAR权限"
+    ],
+    "expected_chunk_ids": [
+      "L06-05"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L06-05",
+        "source_url": "https://en.wikipedia.org/wiki/Assistant_referee_%28association_football%29",
+        "source_lines": [
+          231,
+          238
+        ],
+        "content_zh_sha256": "d1a2e84358f2fb1bd84f3cf065ad96f14b19c481317b60cf56e7e96a73d31a5e",
+        "record_sha256": "cc936b48699da21b98714a519c93760c1726cf7a3ace26ddf07b04e2121eab42",
+        "source_revision_id": "1380533934",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H011",
+    "split": "holdout",
+    "question": "资料举例：VAR确认原判点球不应造成停赛并撤销判罚后，用什么恢复？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "可在有关误判位置以坠球恢复",
+      "属于来源带有2019及2020年版本背景的概述"
+    ],
+    "required_conditions": [
+      "可在有关误判位置以坠球恢复",
+      "属于来源带有2019及2020年版本背景的概述"
+    ],
+    "expected_chunk_ids": [
+      "L08B-01"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L08B-01",
+        "source_url": "https://en.wikipedia.org/wiki/Dropped-ball",
+        "source_lines": [
+          131,
+          138
+        ],
+        "content_zh_sha256": "c24d697ce2b63325ee6a6882e806c9416330612c7df476db2e0826b2f7262cf6",
+        "record_sha256": "56f65d8d22bc3be9d6361e030ef8bd702cbdf127c5b29418e6082b1dbfa642e4",
+        "source_revision_id": "1337401666",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H012",
+    "split": "holdout",
+    "question": "站在越位位置的人明显挡住对手视线，使其无法处理球，属于什么参与情形？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "干扰对方队员",
+      "须结合动作对比赛的实际影响判断"
+    ],
+    "required_conditions": [
+      "干扰对方队员",
+      "须结合动作对比赛的实际影响判断"
+    ],
+    "expected_chunk_ids": [
+      "L11-02"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L11-02",
+        "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+        "source_lines": [
+          221,
+          228
+        ],
+        "content_zh_sha256": "5df1e966b4b78568143b6060e652a824e2bc06bccaa2b0fd77c81d0a3e7478e3",
+        "record_sha256": "acc8fcd2ee028adee4539b71111493db9d5007ecd866e8a4ab881b2eb1114e1c",
+        "source_revision_id": "1380941115",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H013",
+    "split": "holdout",
+    "question": "越位位置队员触及队友传来的球，资料把这叫什么？光站在前面是否必罚？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "触及队友传来或触及的球属于干扰比赛",
+      "须实际参与比赛，不是站得靠前就一律处罚"
+    ],
+    "required_conditions": [
+      "触及队友传来或触及的球属于干扰比赛",
+      "须实际参与比赛，不是站得靠前就一律处罚"
+    ],
+    "expected_chunk_ids": [
+      "L11-02"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L11-02",
+        "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+        "source_lines": [
+          221,
+          228
+        ],
+        "content_zh_sha256": "5df1e966b4b78568143b6060e652a824e2bc06bccaa2b0fd77c81d0a3e7478e3",
+        "record_sha256": "acc8fcd2ee028adee4539b71111493db9d5007ecd866e8a4ab881b2eb1114e1c",
+        "source_revision_id": "1380941115",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H014",
+    "split": "holdout",
+    "question": "资料中，对方有意识处理球与有意识救球对之前越位位置的影响有什么区别？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "对方有意识处理球后传来通常不按此前越位位置判罚",
+      "有意识救球是例外，仍可能因获益构成越位犯规"
+    ],
+    "required_conditions": [
+      "对方有意识处理球后传来通常不按此前越位位置判罚",
+      "有意识救球是例外，仍可能因获益构成越位犯规"
+    ],
+    "expected_chunk_ids": [
+      "L11-03"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L11-03",
+        "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+        "source_lines": [
+          229,
+          234
+        ],
+        "content_zh_sha256": "b5992da7315efd1d1db4960317213f2782f2b8cc3727390a9d0a908357e11a22",
+        "record_sha256": "0a86e76ae75bfc91063d2c82f724228bd7f2a3b682ef47013860242b092463b3",
+        "source_revision_id": "1380941115",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H015",
+    "split": "holdout",
+    "question": "传球时不越位的人出球后跑到最后一名对手身后接球，资料为何说可以？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "判断时点是队友触球或踢球时",
+      "不是最终接球时刻"
+    ],
+    "required_conditions": [
+      "判断时点是队友触球或踢球时",
+      "不是最终接球时刻"
+    ],
+    "expected_chunk_ids": [
+      "L11-04"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L11-04",
+        "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+        "source_lines": [
+          235,
+          238
+        ],
+        "content_zh_sha256": "376f5869126fa03805575507e676a71485fe59951fc8700931ee0e73db2ae972",
+        "record_sha256": "82f5cc426d66885c26c930a4333f39a5aa7b58d977c721bcce83dab3322ff82c",
+        "source_revision_id": "1380941115",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H016",
+    "split": "holdout",
+    "question": "队员从越位位置跑回本方半场才参与比赛犯规，间接任意球在哪里执行？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "在实际犯规发生地点",
+      "即使该地点在本方半场也如此"
+    ],
+    "required_conditions": [
+      "在实际犯规发生地点",
+      "即使该地点在本方半场也如此"
+    ],
+    "expected_chunk_ids": [
+      "L11-05"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L11-05",
+        "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+        "source_lines": [
+          246,
+          246
+        ],
+        "content_zh_sha256": "4d25211c6c320b43c5ac9552b0fe72a750cc561ed652325e8f7d0ab19d89d9b4",
+        "record_sha256": "f7edc3e149b8f768e5e52a11cdb5e5398f51d46929ff2689ebfbba073bb4a2e2",
+        "source_revision_id": "1380941115",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H017",
+    "split": "holdout",
+    "question": "助理裁判没有与防守队员处于观察上的同一直线，会产生哪种观察误差风险？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "透视缩短效应提高误判风险",
+      "与攻守队员距离不同且没有准确处于观察同一直线时"
+    ],
+    "required_conditions": [
+      "透视缩短效应提高误判风险",
+      "与攻守队员距离不同且没有准确处于观察同一直线时"
+    ],
+    "expected_chunk_ids": [
+      "L11-07"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L11-07",
+        "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+        "source_lines": [
+          257,
+          259
+        ],
+        "content_zh_sha256": "a2f47802c6ffc710bcbc267c287f971633ca5d6be98bcab4e97a43369862bb12",
+        "record_sha256": "ba0f0deb089cf0b4ca64b22b9202e415b72c503c525f24196f38381500aa2d4f",
+        "source_revision_id": "1380941115",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H018",
+    "split": "holdout",
+    "question": "资料解释使用VAR时某些越位为何延迟举旗，能否据此推出所有不明显越位都等同一时刻？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "让有关进攻发展到自然结束点以便随后VAR复核",
+      "不能推出所有不明显越位必须等到同一时刻"
+    ],
+    "required_conditions": [
+      "让有关进攻发展到自然结束点以便随后VAR复核",
+      "不能推出所有不明显越位必须等到同一时刻"
+    ],
+    "expected_chunk_ids": [
+      "L11-08"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L11-08",
+        "source_url": "https://en.wikipedia.org/wiki/Offside_%28association_football%29",
+        "source_lines": [
+          266,
+          266
+        ],
+        "content_zh_sha256": "84338232c7dbad4b44c3059ad80f06ebf8e2da613caff49ddafd921eef973e38",
+        "record_sha256": "c7bba4431695b03d81f3d8bdf0c955e37b93bde7189ce120d82d6579345e2240",
+        "source_revision_id": "1380941115",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H019",
+    "split": "holdout",
+    "question": "资料怎样区分草率、鲁莽和使用过分力量的身体接触处罚？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "草率构成应处罚犯规",
+      "鲁莽还可能黄牌",
+      "使用过分力量可能红牌，具体由裁判判断"
+    ],
+    "required_conditions": [
+      "草率构成应处罚犯规",
+      "鲁莽还可能黄牌",
+      "使用过分力量可能红牌，具体由裁判判断"
+    ],
+    "expected_chunk_ids": [
+      "L12-01"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L12-01",
+        "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+        "source_lines": [
+          170,
+          177
+        ],
+        "content_zh_sha256": "8d52183d297d6cbf3a288a74ac88379af0344ddf7c6aed6e62eb44dc87088414",
+        "record_sha256": "b222b84e869da79fe5981bed0398a9bbe5e522bd6b69a07b36c7ffe446bb841d",
+        "source_revision_id": "1383054660",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H020",
+    "split": "holdout",
+    "question": "球员意外用手臂把球直接碰进对方球门，因接触无法避免就能算进吗？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "即使意外且无法避免也不能算进球"
+    ],
+    "required_conditions": [
+      "即使意外且无法避免也不能算进球"
+    ],
+    "expected_chunk_ids": [
+      "L12-02"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L12-02",
+        "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+        "source_lines": [
+          178,
+          180
+        ],
+        "content_zh_sha256": "64205bfa70529fd27a893b9c692e47c4dca0caf6021ba2fd6389d6ed297f3172",
+        "record_sha256": "79b923d57a743b3c22c4e0903601eb276e2a26549cd54d77749e6179f705dc66",
+        "source_revision_id": "1383054660",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H021",
+    "split": "holdout",
+    "question": "用手里拿着的物体去接触球，在资料的判罚分类中是什么？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "属于列举的直接任意球判罚情形"
+    ],
+    "required_conditions": [
+      "属于列举的直接任意球判罚情形"
+    ],
+    "expected_chunk_ids": [
+      "L12-03"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L12-03",
+        "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+        "source_lines": [
+          181,
+          181
+        ],
+        "content_zh_sha256": "051557c1d4fe00cf623f3b62088ea9302fffff84bf1f6d023b9c47a36f32893b",
+        "record_sha256": "74f1fc08f64edcfb8d142ac3873c4858571da09b4d6a11e455bef7cd152af2e0",
+        "source_revision_id": "1383054660",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H022",
+    "split": "holdout",
+    "question": "只根据来源记载，2017年认可的临时罚下可以用于哪些赛事，90分钟比赛原文给了多长时长？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "部分青少年、老年、残障和草根赛事可选用获准方案",
+      "原条目给出的90分钟比赛临时罚下时长为10分钟",
+      "不能自动当作当前任意赛事依据"
+    ],
+    "required_conditions": [
+      "部分青少年、老年、残障和草根赛事可选用获准方案",
+      "原条目给出的90分钟比赛临时罚下时长为10分钟",
+      "不能自动当作当前任意赛事依据"
+    ],
+    "expected_chunk_ids": [
+      "L12-09"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L12-09",
+        "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+        "source_lines": [
+          232,
+          235
+        ],
+        "content_zh_sha256": "c2ede674f54d2108d6942440c7d192d8820f3f2295445e382b94f532883756d4",
+        "record_sha256": "670340957efd92b146e453bb991f5ae399475158befd4505c78107583c6dbaaa",
+        "source_revision_id": "1383054660",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H023",
+    "split": "holdout",
+    "question": "同场比赛第二次受到黄牌，在来源列出的纪律类别中有什么后果？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "属于应罚令出场的行为类别"
+    ],
+    "required_conditions": [
+      "属于应罚令出场的行为类别"
+    ],
+    "expected_chunk_ids": [
+      "L12-11"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L12-11",
+        "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+        "source_lines": [
+          245,
+          254
+        ],
+        "content_zh_sha256": "2a02f0cd29c0c79b2ff930537e88774bc9bac52cbf69a92b95df67b7157b793d",
+        "record_sha256": "753d533ab0fc9a1b707468242c2829dfaaa056127241e1bd3cca1a290cd65ba3",
+        "source_revision_id": "1383054660",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H024",
+    "split": "holdout",
+    "question": "按资料的2020年疫情背景说明，故意向他人咳嗽可能如何处罚？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "可直接红牌罚下",
+      "情节较轻可能以违反体育精神黄牌处理",
+      "限于2020年背景，不能自动当作当前赛季独立条款"
+    ],
+    "required_conditions": [
+      "可直接红牌罚下",
+      "情节较轻可能以违反体育精神黄牌处理",
+      "限于2020年背景，不能自动当作当前赛季独立条款"
+    ],
+    "expected_chunk_ids": [
+      "L12-13"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L12-13",
+        "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+        "source_lines": [
+          259,
+          259
+        ],
+        "content_zh_sha256": "64110a27fb2d2e3a8b64e3263426a208228afbf088c167d798fe92119f1f47c0",
+        "record_sha256": "fe1532b820cf87f69171035e23c04a4c3a131f1e934d3c887ace392945d4c471",
+        "source_revision_id": "1383054660",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H025",
+    "split": "holdout",
+    "question": "球已出边线后才出现不当行为，会不会只因该行为改变最初的重启原因？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "球已处于比赛外，重启仍按最初停止比赛原因决定",
+      "行为仍可构成不当行为"
+    ],
+    "required_conditions": [
+      "球已处于比赛外，重启仍按最初停止比赛原因决定",
+      "行为仍可构成不当行为"
+    ],
+    "expected_chunk_ids": [
+      "L12-15"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L12-15",
+        "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+        "source_lines": [
+          296,
+          301
+        ],
+        "content_zh_sha256": "c49201212c5b1e5a46193f3cc5e50338d9884fe127a3247960065d12d9e4c596",
+        "record_sha256": "a5436858628839788ec6b951e727644ac7a1c5c44871f6e1238a3d49954ac470",
+        "source_revision_id": "1383054660",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H026",
+    "split": "holdout",
+    "question": "资料把对球队官员出示红黄牌的认可记在哪一年，同场两黄有何例子？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "2019年IFAB认可",
+      "同场两黄后出示红牌"
+    ],
+    "required_conditions": [
+      "2019年IFAB认可",
+      "同场两黄后出示红牌"
+    ],
+    "expected_chunk_ids": [
+      "L12-16"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L12-16",
+        "source_url": "https://en.wikipedia.org/wiki/Fouls_and_misconduct_%28association_football%29",
+        "source_lines": [
+          307,
+          309
+        ],
+        "content_zh_sha256": "1fcd4228ad41ddea7aa254de01ed0d294eac254718d38141e253f992df40b5cf",
+        "record_sha256": "3058db7e42942a038deb0f54042328010b252a8dee3ba62edaa7aa1ba176430b",
+        "source_revision_id": "1383054660",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H027",
+    "split": "holdout",
+    "question": "直接和间接任意球在能否直接攻入对方球门上有什么区别？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "直接任意球可直接攻入对方球门",
+      "间接任意球须先被另一名队员触及"
+    ],
+    "required_conditions": [
+      "直接任意球可直接攻入对方球门",
+      "间接任意球须先被另一名队员触及"
+    ],
+    "expected_chunk_ids": [
+      "L13-01"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L13-01",
+        "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+        "source_lines": [
+          189,
+          192
+        ],
+        "content_zh_sha256": "881ea0b9c259521180b30f24440bbbcaf97a1ca0a1e1c38de5dee9fdfe91c2b2",
+        "record_sha256": "a8f4525d7f200de27175a8872f85ee6fb6ab684b556e095ef79822033cba9950",
+        "source_revision_id": "1379099837",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H028",
+    "split": "holdout",
+    "question": "任意球执行时球还在移动，或者开球地点错误，资料要求怎么处理？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "重新执行任意球",
+      "故意用错误位置迫使重罚或过度拖延者可被警告"
+    ],
+    "required_conditions": [
+      "重新执行任意球",
+      "故意用错误位置迫使重罚或过度拖延者可被警告"
+    ],
+    "expected_chunk_ids": [
+      "L13-06"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L13-06",
+        "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+        "source_lines": [
+          240,
+          241
+        ],
+        "content_zh_sha256": "d8759b2aa19cca9500310072afcb4cad337e5265cf3dc7fbdf42a4a9afff4ea1",
+        "record_sha256": "43c555bd7bfa075968341d718c19302b94e8a9c0fbe4c328d419761644bad362",
+        "source_revision_id": "1379099837",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H029",
+    "split": "holdout",
+    "question": "主罚方主动快发后，被原先不足9.15米的对手截球，通常能只凭距离要求重罚吗？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "通常不能仅因不足9.15米对手截球要求重罚",
+      "快发须按现场条件由裁判判断，其他规则仍适用"
+    ],
+    "required_conditions": [
+      "通常不能仅因不足9.15米对手截球要求重罚",
+      "快发须按现场条件由裁判判断，其他规则仍适用"
+    ],
+    "expected_chunk_ids": [
+      "L13-08"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L13-08",
+        "source_url": "https://en.wikipedia.org/wiki/Free_kick_%28association_football%29",
+        "source_lines": [
+          248,
+          249
+        ],
+        "content_zh_sha256": "d7f3d5c900ea67e3c0215e4eaf809d5f71b6fe41e38e0f74b2e6b08de2c18f50",
+        "record_sha256": "33dfa893ee88601ede7cae3ccfa96a0cde6584fbfb877c37b75a7c4fde022df1",
+        "source_revision_id": "1379099837",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H030",
+    "split": "holdout",
+    "question": "资料说执行点球过程中持续违例，裁判可作什么纪律处理？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "可以因持续违例给予警告"
+    ],
+    "required_conditions": [
+      "可以因持续违例给予警告"
+    ],
+    "expected_chunk_ids": [
+      "L14-06"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L14-06",
+        "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29",
+        "source_lines": [
+          221,
+          223
+        ],
+        "content_zh_sha256": "120fccc83cbb0ea6ca43a96859c61c28c607621e6d8301954fb7eb0abbfa9733",
+        "record_sha256": "5ed70e9b1fee85d0ec3125d35f808cf55a670c1af0ce5c691775c971ed303822",
+        "source_revision_id": "1384120223",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H031",
+    "split": "holdout",
+    "question": "仅复述来源的点球表：只有守方违例且球进入球门时，表里写什么？这表能直接当现行完整判罚矩阵吗？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "表里写进球有效",
+      "表未完整表示违例优先级、影响及现行条件，不能不加条件使用"
+    ],
+    "required_conditions": [
+      "表里写进球有效",
+      "表未完整表示违例优先级、影响及现行条件，不能不加条件使用"
+    ],
+    "expected_chunk_ids": [
+      "L14-04"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L14-04",
+        "source_url": "https://en.wikipedia.org/wiki/Penalty_kick_%28association_football%29",
+        "source_lines": [
+          206,
+          214
+        ],
+        "content_zh_sha256": "4c1c5a093e08a763d8ccca3f04000e9197c9a5cc66574177bb864dbfc1cecb61",
+        "record_sha256": "327c63e7722b5e3b35a8d7b18eb9a1546512900547c38c141bd61bf657bbe570",
+        "source_revision_id": "1384120223",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H032",
+    "split": "holdout",
+    "question": "按来源归纳，界外球无人再触及就直接进本方球门，应如何重启？",
+    "answerable": true,
+    "must_refuse": false,
+    "expected_answer_points": [
+      "应判角球",
+      "大多数重启方式不能直接形成乌龙进球"
+    ],
+    "required_conditions": [
+      "应判角球",
+      "大多数重启方式不能直接形成乌龙进球"
+    ],
+    "expected_chunk_ids": [
+      "L17-06"
+    ],
+    "source_references": [
+      {
+        "chunk_id": "L17-06",
+        "source_url": "https://en.wikipedia.org/wiki/Corner_kick",
+        "source_lines": [
+          296,
+          297
+        ],
+        "content_zh_sha256": "2495dca5b236f243d2dd0dab8db4662611f2a5ac195f244c2dcbdc24102b9e5f",
+        "record_sha256": "8204eb13ad60a7d575c366d443bc1558d1bbb6941403cfb5856239f425be9a8f",
+        "source_revision_id": "1367102817",
+        "source_revision_verified": false,
+        "expert_reviewed": false,
+        "official_translation": false
+      }
+    ],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Read frozen Chinese source paragraph and its qualifications; no web verification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H033",
+    "split": "holdout",
+    "question": "明天的皇家马德里比赛会以几比几结束？",
+    "answerable": false,
+    "must_refuse": true,
+    "expected_answer_points": [],
+    "required_conditions": [],
+    "expected_chunk_ids": [],
+    "expected_refusal_reason": "insufficient_evidence",
+    "source_references": [],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Scope check against fixed corpus; absence/qualification assessment",
+      "rationale": "future prediction absent from static rules",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H034",
+    "split": "holdout",
+    "question": "给出本周英超所有比赛实时比分。",
+    "answerable": false,
+    "must_refuse": true,
+    "expected_answer_points": [],
+    "required_conditions": [],
+    "expected_chunk_ids": [],
+    "expected_refusal_reason": "insufficient_evidence",
+    "source_references": [],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Scope check against fixed corpus; absence/qualification assessment",
+      "rationale": "live results absent",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H035",
+    "split": "holdout",
+    "question": "现在买一双最高端足球鞋最低要多少钱？",
+    "answerable": false,
+    "must_refuse": true,
+    "expected_answer_points": [],
+    "required_conditions": [],
+    "expected_chunk_ids": [],
+    "expected_refusal_reason": "insufficient_evidence",
+    "source_references": [],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Scope check against fixed corpus; absence/qualification assessment",
+      "rationale": "current product price absent",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H036",
+    "split": "holdout",
+    "question": "确认2027/28官方规则中VAR新增的全部权限。",
+    "answerable": false,
+    "must_refuse": true,
+    "expected_answer_points": [],
+    "required_conditions": [],
+    "expected_chunk_ids": [],
+    "expected_refusal_reason": "version_unverified",
+    "source_references": [],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Scope check against fixed corpus; absence/qualification assessment",
+      "rationale": "future official season cannot be verified",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H037",
+    "split": "holdout",
+    "question": "助理裁判横向偏离几厘米就一定会误判越位？请给出精确阈值。",
+    "answerable": false,
+    "must_refuse": true,
+    "expected_answer_points": [],
+    "required_conditions": [],
+    "expected_chunk_ids": [],
+    "expected_refusal_reason": "insufficient_evidence",
+    "source_references": [],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Scope check against fixed corpus; absence/qualification assessment",
+      "rationale": "source explains perspective risk but provides no numeric threshold",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H038",
+    "split": "holdout",
+    "question": "资料提到的刀片鞋钉中，哪一个具体品牌型号已获今年所有联赛认证？",
+    "answerable": false,
+    "must_refuse": true,
+    "expected_answer_points": [],
+    "required_conditions": [],
+    "expected_chunk_ids": [],
+    "expected_refusal_reason": "insufficient_evidence",
+    "source_references": [],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Scope check against fixed corpus; absence/qualification assessment",
+      "rationale": "source has no model or universal current certification",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H039",
+    "split": "holdout",
+    "question": "给出全球所有青少年比赛统一强制采用的球门尺寸。",
+    "answerable": false,
+    "must_refuse": true,
+    "expected_answer_points": [],
+    "required_conditions": [],
+    "expected_chunk_ids": [],
+    "expected_refusal_reason": "insufficient_evidence",
+    "source_references": [],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Scope check against fixed corpus; absence/qualification assessment",
+      "rationale": "source says dimensions depend on competition, no universal standard",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  },
+  {
+    "question_id": "H040",
+    "split": "holdout",
+    "question": "确认今天所有采用临时罚下的比赛都必须停罚十分钟。",
+    "answerable": false,
+    "must_refuse": true,
+    "expected_answer_points": [],
+    "required_conditions": [],
+    "expected_chunk_ids": [],
+    "expected_refusal_reason": "insufficient_evidence",
+    "source_references": [],
+    "source_review": {
+      "reviewer": "Codex AI; not human or referee expert",
+      "reviewed_at": "2026-11-19T11:55:58.298037+00:00",
+      "method": "Scope check against fixed corpus; absence/qualification assessment",
+      "rationale": "source example has competition/version qualifications, cannot establish current universal mandate",
+      "human_review": "pending",
+      "official_source_verified": false
+    }
+  }
+]

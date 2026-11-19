@@ -1,0 +1,31 @@
+{
+  "version": "phase2-dataset-freeze-1",
+  "created_at": "2026-11-19T11:55:58.298037+00:00",
+  "baseline_commit": "e8b0fd6bbdb70b1144d9a4e7f03d811da593b0f5",
+  "author": "Codex AI",
+  "human_review": "pending for new holdout40",
+  "holdout_policy": "Sealed before E1 prompt experiments; do not use for tuning or E1 scoring. Same author has seen source; this is a provisional holdout, not a human-reviewed blind benchmark.",
+  "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+  "files": [
+    {
+      "path": "datasets/dev_40.json",
+      "sha256": "dde9560a6a6a64dc9b7aebc5b311bed7d1ac0183f641d669ea1b8e541f08dbc2",
+      "bytes": 81305
+    },
+    {
+      "path": "datasets/historical_errors_22.json",
+      "sha256": "eec06363baf8629239659e1e568b8ce3dcf5b5ccf7374f369289751e01708fbb",
+      "bytes": 51121
+    },
+    {
+      "path": "datasets/holdout_40.json",
+      "sha256": "a289d274475718619dccaf1c6661a9201dc33be06a84af9d550167160bf786bd",
+      "bytes": 52139
+    },
+    {
+      "path": "datasets/regression_50.json",
+      "sha256": "56f7d754ca64206696b5b7cccea55a733e72a619be619e025c93d10210fb513f",
+      "bytes": 105609
+    }
+  ]
+}
