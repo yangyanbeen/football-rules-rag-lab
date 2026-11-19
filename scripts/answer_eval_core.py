@@ -79,15 +79,25 @@ def questions(split):
 def normalized(s):return re.sub(r'\s+','',unicodedata.normalize('NFKC',s)).casefold()
 
 
+def normalize_chunk_ids(chunk_ids,offered):
+    """Only remove repeated, exact, already-offered IDs; never repair identity."""
+    if not isinstance(chunk_ids,list) or any(not isinstance(cid,str) or not cid.strip() for cid in chunk_ids):
+        raise ValueError('Empty/invalid chunk ID')
+    if any(cid not in offered for cid in chunk_ids):
+        raise ValueError('Unknown/unoffered chunk ID')
+    return list(dict.fromkeys(chunk_ids))
+
+
 def parse_selection(content,offered,cfg):
     p=json.loads(content)
     if not isinstance(p,dict) or set(p)!={'answerable','chunk_ids','reason'} or type(p['answerable']) is not bool or not isinstance(p['chunk_ids'],list):raise ValueError('Invalid selection schema')
-    ids=p['chunk_ids']
-    if not all(isinstance(cid,str) for cid in ids) or len(set(ids))!=len(ids):raise ValueError('Duplicate/invalid IDs')
+    ids=normalize_chunk_ids(p['chunk_ids'],offered)
+    # Preserve the existing schema's raw array cap as well as the final cap.
+    if len(p['chunk_ids'])>cfg['max_selected_chunks']:raise ValueError('Too many chunk IDs')
     if p['answerable']:
         if p['reason'] is not None or not 1<=len(ids)<=cfg['max_selected_chunks'] or not set(ids)<=set(offered):raise ValueError('Answer has unknown/unoffered evidence or reason')
     elif ids or p['reason'] not in ('insufficient_evidence','source_conflict','version_unverified'):raise ValueError('Invalid controlled refusal')
-    return p
+    return {**p,'chunk_ids':ids}
 
 
 def parse_grade(content,q,prediction):

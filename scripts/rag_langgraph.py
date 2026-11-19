@@ -51,6 +51,7 @@ class QueryState(TypedDict, total=False):
     offered_ids: list[str]
     prompt_bytes: int
     attempts: list
+    selection_audits: list
     retry: bool
     selection: dict | None
     answer: str
@@ -217,6 +218,7 @@ class Flow:
 
     def answer(self, state):
         attempts = list(state.get('attempts', []))
+        audits = list(state.get('selection_audits', []))
         messages = state['messages'] if not attempts else [*state['messages'], REPAIR]
         maximum = self.cfg['max_generation_attempts']
         budget = self.ops.answer_policy['input_utf8_byte_budget']
@@ -224,22 +226,27 @@ class Flow:
             return {'status': 'failed', 'reason': 'generation_budget_exhausted', 'retry': False}
         schema = selection_schema(state['offered_ids'], self.ops.answer_policy['max_selected_chunks'])
         before = self.ops.chat_calls
+        response = None
         try:
             response = self.ops.generate(messages, schema)
             selection = parse_selection(response['message']['content'], state['offered_ids'], self.ops.answer_policy)
         except POLICY_ERRORS as exc:
             requests = self.ops.chat_calls - before
+            audits.append({'attempt': len(attempts) + 1, 'response': getattr(exc, 'response', response),
+                           'normalized_selection': None, 'error': type(exc).__name__ + ': ' + str(exc)})
             attempts.append({'attempt': len(attempts) + 1, 'chat_calls': requests, 'outcome': type(exc).__name__})
             retry = (requests == 1 and getattr(exc, 'retryable', True) is True
                      and not isinstance(exc, (OSError, RuntimeError, TimeoutError))
                      and len(attempts) < maximum and len(canonical([*state['messages'], REPAIR])) <= budget)
-            return {'attempts': attempts, 'retry': retry, 'status': 'pending' if retry else 'failed',
+            return {'attempts': attempts, 'selection_audits': audits, 'retry': retry, 'status': 'pending' if retry else 'failed',
                     'reason': None if retry else 'generation_failed',
                     'error_kind': None if retry else type(exc).__name__}
+        audits.append({'attempt': len(attempts) + 1, 'response': response,
+                       'normalized_selection': selection, 'error': None})
         attempts.append({'attempt': len(attempts) + 1, 'chat_calls': self.ops.chat_calls - before, 'outcome': 'accepted'})
         if not selection['answerable']:
-            return {'attempts': attempts, 'retry': False, 'status': 'refused', 'reason': selection['reason']}
-        return {'attempts': attempts, 'retry': False, 'selection': selection}
+            return {'attempts': attempts, 'selection_audits': audits, 'retry': False, 'status': 'refused', 'reason': selection['reason']}
+        return {'attempts': attempts, 'selection_audits': audits, 'retry': False, 'selection': selection}
 
     def check_citations(self, state):
         ids = state['selection']['chunk_ids']
@@ -283,6 +290,7 @@ class Flow:
             'answer': result['answer'], 'citations': result['citations'], 'selected_ids': result['selected_ids'],
             'retrieved_ids': result.get('retrieved_ids', []), 'offered_ids': result.get('offered_ids', []),
             'attempts': result.get('attempts', []), 'fault_applied': result.get('fault_applied', False),
+            'selection_audits': result.get('selection_audits', []),
             'embedding_queries': embeddings, 'reranked_pairs': result.get('reranked_pairs', 0),
             'chat_calls': calls,
             'events': result['events'], 'wall_ns': time.perf_counter_ns() - started,
