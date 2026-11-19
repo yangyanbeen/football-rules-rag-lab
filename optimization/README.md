@@ -11,3 +11,11 @@ Run with the isolated Task17 Python and a local pinned Ollama service:
 `python -B optimization/run_experiments.py --trace-manifest <private baseline trace manifest> --out <new private run directory> --split dev --variants A B C`
 
 Order rotates ABC/BCA/CAB by question. Deterministic pre-generation refusals are copied from their frozen graph traces and recorded as zero model calls, rather than bypassing version guards. Raw messages, schemas, model responses, parsing results and hashes stay in the private run directory. A neutral warm-up is recorded separately and excluded from quality and latency metrics. Source-supported semantic scoring is a separate post-run step; model self-reported confidence is never a score.
+
+Raw baseline90 and E1 runs are archived locally under `.runtime/phase2/`. The ignored `baseline/e8b0fd6/trace_manifest.local.json` points to the archived baseline traces. A source-review ledger and scoring script are committed so metrics can be recomputed without another model call:
+
+`python -B optimization/score_experiments.py .runtime/phase2/e1-dev-1795089536973 --reviews optimization/experiments/E1_selection_prompt/source_reviews.tsv --out .runtime/phase2/recomputed-dev.json`
+
+`python -B optimization/score_experiments.py .runtime/phase2/e1-test-1795090942706 --reviews optimization/experiments/E1_selection_prompt/source_reviews.tsv --out .runtime/phase2/recomputed-test.json`
+
+The first run's replay adapter omitted the boundary suffix from the failed display message only. D016's raw responses, strict parsing failures and quality score are preserved unchanged; the adapter now includes the same failure notice and boundary as the graph. This presentation correction was made after measurement and does not retroactively modify the raw run or its producer hash.

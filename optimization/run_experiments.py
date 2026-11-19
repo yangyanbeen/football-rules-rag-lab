@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
-from answer_eval_core import canonical, config, parse_selection
+from answer_eval_core import BOUNDARY, canonical, config, parse_selection
 from answer_eval_engine import request_json
 from answer_json_chat import generate
 from citation_catalog_guard import safe_render
@@ -80,7 +80,7 @@ def main():
                 messages=copy.deepcopy(ats[0]['messages']);messages[0]['content']=prompts[variant]
                 selection,attempts,error=request_json(chat,messages,cfg,lambda s:parse_selection(s,base_result['offered_ids'],cfg),ats[0]['schema'])
                 if selection is None:
-                    result=dict(status='failed',reason=None,selected_ids=[],answer='本次问答校验未完成，请重试。',citations=[],error=error)
+                    result=dict(status='failed',reason='generation_failed',selected_ids=[],answer='本次问答校验未完成，请重试。\n'+BOUNDARY,citations=[],error=error)
                 else:
                     ids=selection['chunk_ids'];answer,cites=safe_render(ids,corpus)
                     result=dict(status='answered' if selection['answerable'] else 'refused',reason=selection['reason'],selected_ids=ids,answer=answer,citations=cites,error=None)

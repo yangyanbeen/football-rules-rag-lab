@@ -1,0 +1,1182 @@
+[
+  {
+    "question_id": "D001",
+    "grade": "false_refusal",
+    "point_mask": [
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "有绿色限制的标注证据，系统拒答。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D002",
+    "grade": "false_refusal",
+    "point_mask": [
+      false,
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "球门尺寸可答，系统拒答。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D003",
+    "grade": "false_refusal",
+    "point_mask": [
+      false,
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "5号球周长和重量可答，系统拒答。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D004",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L03-01"
+    ],
+    "note": "覆盖最多11人、不含替补及须有守门员。",
+    "result_identity_sha256": "2ce26bb4976558ea9082d0b1c208c72bf4748e66493b0624f2c9313ba27e59a5",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D005",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L04-01"
+    ],
+    "note": "五项基本装备齐全，并保留守门员长裤例外。",
+    "result_identity_sha256": "7ecd3d7737635acd5682c983571f5fa9f0eef8343c4ac093f94f263af09daa11",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D006",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L12-14"
+    ],
+    "note": "给出有利时继续以及未实现时按原违例处理，两点均在选中的证据里。",
+    "result_identity_sha256": "feb70351c41b325ba86f959ac6718ae3b3a62c8b4b58a39a810c8e6b7ed9d804",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D007",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L06-02"
+    ],
+    "note": "说明意见不约束主裁判，主裁判可以改变或不采纳。",
+    "result_identity_sha256": "0ccf95f92784c889f23518f22629d4ebad4c26b655ce68472a1969c7c9e392f4",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D008",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L07-01"
+    ],
+    "note": "给出每半场45分钟及出界不停表。",
+    "result_identity_sha256": "79411868e48279f60fd316971bd9c5cb09bf574dbd38ad84bb5cabe7fd594140",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D009",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L08A-02"
+    ],
+    "note": "直接规则给出本方半场与至少9.15米；附带场地原文注明了近似换算差异。",
+    "result_identity_sha256": "acf48d311b181436117d82af6e8bb479d6875ecd7e6ee8d88d0404da3a3c93a3",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D010",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L08B-02"
+    ],
+    "note": "在2019年程序的范围内给出至少4米、触地生效。",
+    "result_identity_sha256": "98bac3583078a6b5602b95b84554ca3fd6a2c28745346009e3c4dc47e78fa961",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D011",
+    "grade": "incorrect",
+    "point_mask": [
+      false,
+      false,
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "只说碰到官员并造成规定后果可用坠球，未列出三种具体后果。",
+    "result_identity_sha256": "908a74bdd580466752a42b6f8d31ad426fb39ddab9b1d2111b4fef0861920299",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D012",
+    "grade": "false_refusal",
+    "point_mask": [
+      false,
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "第10条主题可答，系统拒答。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D013",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L11-01"
+    ],
+    "note": "标注支持段明确列出头、身体、脚，排除手和手臂，守门员同样适用。",
+    "result_identity_sha256": "14590126d2bbf22121d3e63d708f9f4747d639fa5364d7185c0d61c66e9f7c3b",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D014",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L12-04"
+    ],
+    "note": "无身体接触的阻挡列为间接任意球。",
+    "result_identity_sha256": "715e79670c1cfc1563a9c390860a8d9e544941be0d79684b529776ea28325bbd",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D015",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L15-05"
+    ],
+    "note": "选中的界外球规则已覆盖直接从队友来球、罚球区内和间接任意球。",
+    "result_identity_sha256": "3b213782d051d2bbd1a5eff72ef19083c2dec27c926e19cae7f08990b3d1c8ee",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D016",
+    "grade": "runtime_error",
+    "point_mask": [
+      false,
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "模型返回重复或无效证据编号，校验未通过。",
+    "result_identity_sha256": "c42e474cdefd0cb9228aaa344e2c35771197cae284d76bbbb828cf4f43b96ca9",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D017",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L14-02"
+    ],
+    "note": "给出场内、罚球区外、点后，且至少9.15米。",
+    "result_identity_sha256": "5bf4eb3acc47f0a05118528d198dfea2c5289fe6396d6474aaca2a0e470f466f",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D018",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L15-01"
+    ],
+    "note": "给出整体越边线、归最后触球者的对方，有意及意外同样处理。",
+    "result_identity_sha256": "64a4c2190f0b7062e1599491f8193ae1d93cbe79f6b31e523bff470e66c472ec",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D019",
+    "grade": "incorrect",
+    "point_mask": [
+      false,
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "未给出球门球的生效时点或球无须离开罚球区；把角球和坠球的材料放进了回答。",
+    "result_identity_sha256": "3b86adef1a5eeda37b849957cad0c3af468d0f5675e388e042fd2ff433dc98a8",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D020",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L17-01",
+      "L16-01"
+    ],
+    "note": "给出最后守方触球、越过球门线且未进球时判角球。",
+    "result_identity_sha256": "28a0e5aa73a8b7db8745efc53b2efb8f0d6c8d0d70820ed72ac52b9b46d76bd8",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D021",
+    "grade": "partial",
+    "point_mask": [
+      false,
+      true
+    ],
+    "supported_citation_ids": [
+      "L11-03",
+      "L15-03"
+    ],
+    "note": "明确直接接界外球的越位例外，未明确说明直接接任意球仍可能越位。",
+    "result_identity_sha256": "431a046f8f469e815b13bba07db1b50dce000776e415d182655078de6e5140fa",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D022",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L16-03",
+      "L17-04"
+    ],
+    "note": "分别说明球门球无须离开罚球区、角球无须离开角球区。",
+    "result_identity_sha256": "c1de278d3865816b42228d5193844a24a5da8a48707de3a462f1c276a176ad69",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D023",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L12-12"
+    ],
+    "note": "直接比较严重犯规发生在争抢球时、暴力行为不限于争抢球。",
+    "result_identity_sha256": "8e03e18f420964cb41a8b3f75c8f6fbb7a19b7f6cb8d1c8bcfbe8136e483a815",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D024",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L09-04"
+    ],
+    "note": "交代原重启通常不变、后续纪律处罚及重启前可纠正决定。",
+    "result_identity_sha256": "18331041f42dc488d0b8b2fdffcbe4b2ff66bbeaf0319b7bb0108e996b13c494",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D025",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L04-01"
+    ],
+    "note": "包含适当材料、合理保护、球袜遮盖及队员的尺寸适用性责任。",
+    "result_identity_sha256": "7ecd3d7737635acd5682c983571f5fa9f0eef8343c4ac093f94f263af09daa11",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D026",
+    "grade": "partial",
+    "point_mask": [
+      false,
+      true
+    ],
+    "supported_citation_ids": [
+      "L10-02"
+    ],
+    "note": "给出按赛事规程进行的两个15分钟半场，没有说明正常补时的目的和裁判决定权。",
+    "result_identity_sha256": "b51f73cc2807c82e86c2a84947432779ad0541467eb87c2b9b3d0ba555479c83",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D027",
+    "grade": "correct",
+    "point_mask": [
+      true
+    ],
+    "supported_citation_ids": [
+      "L09-02",
+      "L14-04"
+    ],
+    "note": "说明球从门框或角旗反弹回场内仍在比赛中。",
+    "result_identity_sha256": "aab947d0f6a0e14028313246c636bd24c5c4245d065cb43f1bcde78c875727bf",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D028",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L05-01"
+    ],
+    "note": "给出计时、记录及提交报告，包含纪律处罚与赛前赛中赛后有关事件。",
+    "result_identity_sha256": "1396a43e7857e3cb777bf9bedef291bd99a69d93577b92678835f779da691396",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D029",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L08A-01"
+    ],
+    "note": "明确另一队选择进攻方向，并在下半场由上半场未先开球的一方开球。",
+    "result_identity_sha256": "6d4178a0cc48e97f5112a9b817d44b7bbd841a926a24cc7b3b51bccb394822c4",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D030",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L12-10",
+      "L03-01"
+    ],
+    "note": "三项齐全：必须有人守门，可由场上队员承担，且红牌人数缺额不能补回。",
+    "result_identity_sha256": "bc81721f2ceae0e58523e496718087b6aa1512325f2da46d92cd70d6071252b5",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D031",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L02-01"
+    ],
+    "note": "列出机缝、手缝、热黏合连接，以及乳胶或丁基橡胶球胆。",
+    "result_identity_sha256": "8a4be7e55b0454d99418cbb8924c8c4bb8948c391e2c3688f89d6d78f647d207",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D032",
+    "grade": "false_refusal",
+    "point_mask": [
+      false,
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "冻结资料给出赛事及版本适用条件，系统拒答。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D033",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "固定语料不提供即时赛果，系统拒答。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D034",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "固定语料无法核验指定赛季的普适规则，系统拒答。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D035",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "个人医疗与剂量超出足球规则知识库范围。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D036",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "缺少联赛与赛季，无法从语料确定停赛场次。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D037",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "固定语料不含指定比赛的VAR逐帧坐标。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D038",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "赛事未指明，且知识库不能核验指定赛季的官方精确尺寸。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D039",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "固定语料不提供即时价格与折扣信息。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "D040",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "冻结语料不能核验指定赛季的官方双触球规则。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T001",
+    "grade": "false_refusal",
+    "point_mask": [
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "标准球压范围在固定语料中，系统返回证据不足。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T002",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L01-02"
+    ],
+    "note": "包含标线宽度一致、不能超过12厘米以及四角角旗；另两段未直接支持这两个问题。",
+    "result_identity_sha256": "0d90d14d4f53c75baa0593736effdc2c7e20027271f8fe94788995c69998c49a",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T003",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L01-01"
+    ],
+    "note": "明确界线属于其划定区域，罚球区线上的相应犯规在区内。",
+    "result_identity_sha256": "ffbf0de7934f5de30cbf191a7c2b43fe4a8aa094193f6b7d889a951e8cb50191",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T004",
+    "grade": "partial",
+    "point_mask": [
+      false,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L14-02"
+    ],
+    "note": "说明执行前其他队员的位置限制，未明确罚球弧以罚球点为圆心。",
+    "result_identity_sha256": "5bf4eb3acc47f0a05118528d198dfea2c5289fe6396d6474aaca2a0e470f466f",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T005",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L03-01"
+    ],
+    "note": "规则不强制战术位置划分，教练可安排位置。",
+    "result_identity_sha256": "2ce26bb4976558ea9082d0b1c208c72bf4748e66493b0624f2c9313ba27e59a5",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T006",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L03-04"
+    ],
+    "note": "列出身份误认、进球与此前违例、直接红牌、点球判罚四类。",
+    "result_identity_sha256": "d34cc2bf395c3c88fcec9499e2a33bbe2fbaef7a83c5e0849a37f604836f3e6a",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T007",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L04-05"
+    ],
+    "note": "说明所有队员可戴手套、守门员通常使用专用手套；另两段未直接支持手套许可。",
+    "result_identity_sha256": "4399f53f9f5ec15353b354d89493df0b638db66cd156ceec24f6873f512609c9",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T008",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L04-02"
+    ],
+    "note": "说明两队颜色相互区分且与裁判和助理裁判区分，客场球衣也可在主场穿。",
+    "result_identity_sha256": "c735221d6261252a672bb49148c8500cba9e38d3d2174252e0bfcfa38a707919",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T009",
+    "grade": "false_refusal",
+    "point_mask": [
+      false,
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "队长袖标和常见左臂位置可答，系统拒答。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T010",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L05-04"
+    ],
+    "note": "包含技术区域最高级别教练的责任及无替代医疗人员时的留场例外。",
+    "result_identity_sha256": "15f14f553411b8aaefdac481b8188b9d9b7753902baefc49cf658652dbd79e6a",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T011",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L05-03"
+    ],
+    "note": "列出处罚、重启方式、接触严重程度和战术影响。",
+    "result_identity_sha256": "856cb48c3092a443d7076e13909454474234eccfd3a81f5f421c56527ac3bf7c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T012",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L06-01",
+      "L03-04",
+      "L06-06"
+    ],
+    "note": "明确主裁判最终决定，其他官员提供更清楚的观察意见；附加助理的报告是这一协作的具体例子。",
+    "result_identity_sha256": "0d14342cc40c376bda687162343f766721298b4fbeb8939b1caa9b5c8a312ca6",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T013",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L06-04",
+      "L07-01"
+    ],
+    "note": "包含补时公布和号码牌或电子屏的换人辅助。",
+    "result_identity_sha256": "35f07318c6a73059eb9e5c0c5dc68ad36b90dcab9e688eba7280dea4d17b9a20",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T014",
+    "grade": "incorrect",
+    "point_mask": [
+      false,
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "选中的段落未解释球门线附近附加助理裁判的职责及其非强制配备性质。",
+    "result_identity_sha256": "759d3ac86a223f179ac81fb853a81359c227b080380989a18b4b9c1ffd25c23d",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T015",
+    "grade": "false_refusal",
+    "point_mask": [
+      false,
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "可依据来源的限定背景作答，系统返回证据不足。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T016",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L07-01"
+    ],
+    "note": "明确补时可继续延长，且半场须延长到点球执行或重罚完成。",
+    "result_identity_sha256": "7de22edc32346b8e90acbed8858bc509c39105a4601d2fb5c531776ec2aa028a",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T017",
+    "grade": "false_refusal",
+    "point_mask": [
+      false,
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "固定语料可区分加时进球与点球决胜次数，系统拒答。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T018",
+    "grade": "incorrect",
+    "point_mask": [
+      false,
+      false,
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "引用的是角球二次触球规定，未按题设的开球情形提供相应规则证据。",
+    "result_identity_sha256": "e80e9f3753da4268ca72961da143075aa4d159f7b0950fd6727f9f642b96d169",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T019",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L08B-03",
+      "L17-06"
+    ],
+    "note": "给出至少两名不同队员及首次触球队员可继续触球，并保留本地资料边界。",
+    "result_identity_sha256": "cffb658dce8d289155c1a4e6fed06d6057ce25e646889831d5e7e5a8351a02bd",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T020",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L08B-04"
+    ],
+    "note": "明确2020年背景，并列出外部人员、额外物体或动物及观众哨声干扰。",
+    "result_identity_sha256": "11df71cda709f99022bbdeebc5e22de4fcc1d7d62ee9b7f86b16e79613a59a9c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T021",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L09-02",
+      "L15-01"
+    ],
+    "note": "明确整体在空中越过边线即出界，无须落地。",
+    "result_identity_sha256": "eb848c2f753600d15f4fcbdeb00034cb693ef1e5c5844395a7cbf3c8f08773cd",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T022",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L15-01",
+      "L16-01"
+    ],
+    "note": "界外球和球门球原段合计覆盖三类通常归属；补充的乌龙重启段与题设不同。",
+    "result_identity_sha256": "181187656f2750ee5965dae22d5b926ff01499ef25784e3514078536d087dab3",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T023",
+    "grade": "partial",
+    "point_mask": [
+      true,
+      false,
+      true
+    ],
+    "supported_citation_ids": [
+      "L07-03"
+    ],
+    "note": "说明规程和客场进球制度的适用限制，没有明确回答有些杯赛可省略加时直接点球。",
+    "result_identity_sha256": "61656ff1fc393adee4cf8667b23368ba2236dbe7c272e17f765569a84ac83ebc",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T024",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L11-06"
+    ],
+    "note": "先竖直举旗，停赛后平举对应场地中间。",
+    "result_identity_sha256": "b4e807d3d1feacc2a267ec0621882059af9fc95c32c9b613009069723e43601b",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T025",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L11-09",
+      "L03-04"
+    ],
+    "note": "说明高速摄像机、三维回放和辅助裁判的性质；纪律处罚段未支持该问题。",
+    "result_identity_sha256": "c3fccf4aceefe0a275b66845494b4980d11da0fad4dbba48f4dfc3c2ec990814",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T026",
+    "grade": "partial",
+    "point_mask": [
+      false,
+      false,
+      true
+    ],
+    "supported_citation_ids": [
+      "L12-15"
+    ],
+    "note": "说明不当行为可警告或罚令出场，未明确区分一般技术性违例与身体犯规。",
+    "result_identity_sha256": "d7f29881696265bbee27bb7e06e8838e593b228fe18e91a41ba956aa4ac37d48",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T027",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L12-07",
+      "L12-11"
+    ],
+    "note": "先再次出示黄牌，再出示红牌罚下；红牌类别段补充了第二次警告的结果。",
+    "result_identity_sha256": "19ec426f1cbfa0e423aa1472a6f0b96e4fd015e0ee61e10e35f88abb7494a478",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T028",
+    "grade": "incorrect",
+    "point_mask": [
+      false,
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "选中手球规则，没有回答脱衣庆祝的黄牌处理。",
+    "result_identity_sha256": "714201a4fa379f631866f1cb0ff2bee239d1545fc696057e5662a55a47ea3680",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T029",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L13-02",
+      "L13-05"
+    ],
+    "note": "包含间接任意球单臂过头与直接任意球伸臂指方向；保持举臂的段落补充间接球信号。",
+    "result_identity_sha256": "cecdfaabdc7f10ea709ab4d51f825d8aacb53c270d159de609b71b42a76f0c67",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T030",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L01-05"
+    ],
+    "note": "完整给出己方球门区内任一点与对方球门区线上最近点的差别。",
+    "result_identity_sha256": "9cf7f6eb46b0f7e5fa03ae7dead59db41bc7d1e20c6bb339fa4e2e4d8950fae1",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T031",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L13-07"
+    ],
+    "note": "至少3人人墙、至少1米及违例判守方间接任意球齐全。",
+    "result_identity_sha256": "24ba4eb4617e5a9b31581a261a161957d204d30c6da4c36e6468f71ae067ccae",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T032",
+    "grade": "partial",
+    "point_mask": [
+      true,
+      true,
+      true,
+      false
+    ],
+    "supported_citation_ids": [
+      "L14-05"
+    ],
+    "note": "说明完成助跑后假动作的间接任意球与警告后果，未区分仍允许的助跑中假动作。",
+    "result_identity_sha256": "3e696a45f3d8565d3b5478e8db0e943f45b18e097fcd0246ea01d9d5748191e1",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T033",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L14-03"
+    ],
+    "note": "明确只碰门柱且无人再碰时，主罚者不能直接补射。",
+    "result_identity_sha256": "5cbe0a83d4ca0188fcb6a067dc8fe57a86793391bf3a5e5f680c61b5fff0b633",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T034",
+    "grade": "false_refusal",
+    "point_mask": [
+      false,
+      false,
+      false
+    ],
+    "supported_citation_ids": [],
+    "note": "资料中有罚球点球与点球决胜的性质及计分区别，系统拒答。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T035",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L15-02"
+    ],
+    "note": "身体朝向、双脚位置及双手从头后经头顶掷出的动作齐全。",
+    "result_identity_sha256": "2550d850aa4088ccffd48a82d809b9ffc4899c0d50c177715a3743e5a92b9e0b",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T036",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L15-04"
+    ],
+    "note": "明确动作正确但球入场前碰地时，由原队原处重新掷球。",
+    "result_identity_sha256": "3e13ab6cd14ea183013de765a928eb94dbe00081561fdb38b6e80b580a17fe9b",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T037",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L16-04"
+    ],
+    "note": "明确二次触球、应处罚手球及非守门员在本方罚球区内可能点球的条件。",
+    "result_identity_sha256": "20e0d60b4936ea6a5e07df1388cee40233e92615e222dcf0088b1f7c506bba2c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T038",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L16-02"
+    ],
+    "note": "四种直接进入对方球门后判球门球的例子齐全；其他两段谈的是不同重启情形。",
+    "result_identity_sha256": "93ea3c7feaceb232df6523e1133a55d4b9fd54af5a30deac4aceaf5746464d4d",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T039",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L17-03"
+    ],
+    "note": "明确静止放在相应角球区，并给出至少9.15米；近似英制换算段不足以支持精确距离。",
+    "result_identity_sha256": "f8b035ee9f532cccd7decf101cd1243fb1348b71e3653af97205b4fe21c62cfb",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T040",
+    "grade": "correct",
+    "point_mask": [
+      true,
+      true,
+      true
+    ],
+    "supported_citation_ids": [
+      "L17-05"
+    ],
+    "note": "给出其他队员触球前再次触球，按违例地点判守方间接任意球。",
+    "result_identity_sha256": "e80e9f3753da4268ca72961da143075aa4d159f7b0950fd6727f9f642b96d169",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T041",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "固定规则语料不提供最新赛果。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T042",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "联赛未指明且要求核验指定赛季制度，系统拒答。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T043",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "语料不能证明官方逐字认证或专家审校，系统拒答。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T044",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "未指定赛事与处罚规定，固定语料没有确定罚款金额。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T045",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "冻结资料不能核验指定赛季所有赛事的无例外持球规则。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T046",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "固定规则资料不提供明日首发和即时伤停。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T047",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "个人受伤概率和医学诊断超出规则知识库范围。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T048",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "语料不能确认指定年份新增规则在所有赛事中的生效情况。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T049",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "固定规则资料不能保证预测下一场比赛红牌数量。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  },
+  {
+    "question_id": "T050",
+    "grade": "correct_refusal",
+    "point_mask": [],
+    "supported_citation_ids": [],
+    "note": "固定语料不含具体比赛VAR硬件型号和报价。",
+    "result_identity_sha256": "d83c4555c22f6cc7ba319ace5eb71296242c05625d6a513e7b76511022933f3c",
+    "reviewer": "Previous Codex source review; not new human adjudication"
+  }
+]

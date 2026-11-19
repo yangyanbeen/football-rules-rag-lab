@@ -1,0 +1,36 @@
+{
+  "status": "PASS with disclosed original experimental failed-display issue",
+  "raw_question_records": 170,
+  "actual_selection_requests": 167,
+  "pre_generation_guard_records": 7,
+  "warmups_excluded": 2,
+  "unchanged_source_files": 223,
+  "unchanged_data_files": 8,
+  "sealed_datasets_unchanged": true,
+  "exact_frozen_context_and_schema": true,
+  "model_parameters_unchanged": true,
+  "max_prompt_utf8_bytes": {
+    "A": 6194,
+    "B": 6069,
+    "C": 6182
+  },
+  "independent_score_recomputation": "identical",
+  "original_failed_display_notes": [
+    {
+      "question_id": "D016",
+      "variant": "A",
+      "issue": "Original experimental failed display omitted boundary suffix; raw unchanged; scoring unaffected; future adapter fixed"
+    },
+    {
+      "question_id": "D016",
+      "variant": "B",
+      "issue": "Original experimental failed display omitted boundary suffix; raw unchanged; scoring unaffected; future adapter fixed"
+    },
+    {
+      "question_id": "D016",
+      "variant": "C",
+      "issue": "Original experimental failed display omitted boundary suffix; raw unchanged; scoring unaffected; future adapter fixed"
+    }
+  ],
+  "production_A_restored": true
+}
