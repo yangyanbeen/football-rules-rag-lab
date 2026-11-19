@@ -11,8 +11,7 @@ def pack(question,evidence,cfg,prompt):
                'needs_rule_review':r['needs_rule_review'],'review_notes':r['review_notes']} for r in rows]
         return [{'role':'system','content':prompt},{'role':'user','content':json.dumps({'question':question,'evidence':body},ensure_ascii=False)}]
     if len(canonical(messages([])))>cfg['input_utf8_byte_budget']:raise ValueError('Question cannot fit whole prompt')
-    for r in evidence[:10]:
-        if len(selected)>=cfg['max_context_chunks']:break
+    for r in evidence[:cfg['max_context_chunks']]:
         if len(canonical(messages(selected+[r])))<=cfg['input_utf8_byte_budget']:selected.append(r)
     m=messages(selected)
     return selected,m,len(canonical(m))
