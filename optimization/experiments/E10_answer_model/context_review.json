@@ -1,0 +1,273 @@
+{
+  "cases": [
+    {
+      "case_id": "T026-expanded",
+      "question": "只说发生技术性违例，能否直接把它等同于身体犯规？资料怎样区分不当行为？",
+      "necessary_points": [
+        "并非所有违例都属于犯规",
+        "部分为技术性违例",
+        "不当行为可警告或罚令出场"
+      ],
+      "support_per_point": [
+        [
+          "L12-06"
+        ],
+        [
+          "L12-06"
+        ],
+        [
+          "L12-06",
+          "L12-15"
+        ]
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "source_trace": ".runtime\\phase2\\e5a-live90\\T026.json",
+      "source_sha256": "2128987a5fdb8b1feb71f9679235126da460a3dfc722e24fc44b3b862c6e7265"
+    },
+    {
+      "case_id": "T034-expanded",
+      "question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "necessary_points": [
+        "比赛中的罚球点球是重启",
+        "点球决胜用于定晋级或冠军",
+        "决胜罚中不计正常进球数"
+      ],
+      "support_per_point": [
+        [
+          "L14-01"
+        ],
+        [
+          "L07-03"
+        ],
+        [
+          "L07-03"
+        ]
+      ],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "source_trace": ".runtime\\phase2\\e5a-live90\\T034.json",
+      "source_sha256": "f802af666f2d09af0d7e7b4f1808062513bcfb2204f2a1bf253f408e1e5524e6"
+    },
+    {
+      "case_id": "D017-native",
+      "question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "necessary_points": [
+        "在场内和罚球区外",
+        "在罚球点后",
+        "至少9.15米"
+      ],
+      "support_per_point": [
+        [
+          "L14-02"
+        ],
+        [
+          "L14-02"
+        ],
+        [
+          "L14-02"
+        ]
+      ],
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "source_trace": ".runtime\\phase2\\d036-gate-live90-final\\D017.json",
+      "source_sha256": "ad6a82a62029b7b0e4e0c005ccbedb4bd215acfed2659a77365b7b52a070a135"
+    },
+    {
+      "case_id": "D021-native",
+      "question": "对比直接接任意球和直接接界外球的越位待遇。",
+      "necessary_points": [
+        "任意球可能越位",
+        "直接接界外球不因这一接球越位"
+      ],
+      "support_per_point": [
+        [
+          "L13-05"
+        ],
+        [
+          "L13-05",
+          "L11-03",
+          "L15-03"
+        ]
+      ],
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "source_trace": ".runtime\\phase2\\d036-gate-live90-final\\D021.json",
+      "source_sha256": "53c8e880925599c2884049fbbe967657d8293c324bc0fe344545bda38b9d1a37"
+    },
+    {
+      "case_id": "D001-native",
+      "question": "人工草坪的颜色有什么限制？",
+      "necessary_points": [
+        "人造场地应为绿色"
+      ],
+      "support_per_point": [
+        [
+          "L01-01"
+        ]
+      ],
+      "offered_ids": [
+        "L01-01",
+        "L01-03",
+        "L04-02",
+        "L06-03",
+        "L03-02"
+      ],
+      "source_trace": ".runtime\\phase2\\d036-gate-live90-final\\D001.json",
+      "source_sha256": "33e7bcf777c89329192dbb78606a8908fb17d236bf3e09adf1bcc6573d9f7ac1"
+    },
+    {
+      "case_id": "D002-native",
+      "question": "成人球门的内侧宽度和横梁离地高度分别是多少？",
+      "necessary_points": [
+        "内宽7.32米",
+        "横梁下沿高2.44米"
+      ],
+      "support_per_point": [
+        [
+          "L01-03"
+        ],
+        [
+          "L01-03"
+        ]
+      ],
+      "offered_ids": [
+        "L01-03",
+        "L01-02",
+        "L01-04",
+        "L02-02"
+      ],
+      "source_trace": ".runtime/phase2/d036-gate-live90-final/D002.json",
+      "source_sha256": "1f983ef6f4f304c4bfc62f586e299720c6018758b81301b98a79fd8531e7f3cc"
+    },
+    {
+      "case_id": "D003-native",
+      "question": "标准成人5号球的周长和重量范围是多少？",
+      "necessary_points": [
+        "周长68至70厘米",
+        "重量410至450克"
+      ],
+      "support_per_point": [
+        [
+          "L02-02"
+        ],
+        [
+          "L02-02"
+        ]
+      ],
+      "offered_ids": [
+        "L02-02",
+        "L01-02",
+        "L01-04",
+        "L01-05"
+      ],
+      "source_trace": ".runtime/phase2/d036-gate-live90-final/D003.json",
+      "source_sha256": "1a491aa0c5e8d4bae792ddc16cdcee4b3226b415cee2a78ac928284d4d330d34"
+    },
+    {
+      "case_id": "D012-native",
+      "question": "第10条主要处理哪两个问题？",
+      "necessary_points": [
+        "进球成立程序",
+        "必要时确定胜者"
+      ],
+      "support_per_point": [
+        [
+          "L10-01"
+        ],
+        [
+          "L10-01",
+          "L10-02"
+        ]
+      ],
+      "offered_ids": [
+        "L10-01",
+        "L10-02",
+        "L13-06",
+        "L12-06",
+        "L12-13"
+      ],
+      "source_trace": ".runtime/phase2/d036-gate-live90-final/D012.json",
+      "source_sha256": "e940574fc464b21d7ccc8924a9c40f1faa27e4295cc6494ebf17f70e1ea5ba1f"
+    },
+    {
+      "case_id": "D004-native",
+      "question": "球队最多上场多少人，其中哪个位置必须有一人？",
+      "necessary_points": [
+        "最多11人不含替补",
+        "必须有一名守门员"
+      ],
+      "support_per_point": [
+        [
+          "L03-01"
+        ],
+        [
+          "L03-01",
+          "L12-10"
+        ]
+      ],
+      "offered_ids": [
+        "L03-01",
+        "L12-10",
+        "L12-12",
+        "L03-03",
+        "L08A-02"
+      ],
+      "source_trace": ".runtime\\phase2\\d036-gate-live90-final\\D004.json",
+      "source_sha256": "c02aecc8aa0289619f3d5f7ec51e4a15be1fcb2157483b79e75b60bc536a378e"
+    },
+    {
+      "case_id": "D009-native",
+      "question": "开球前除主罚队员外，队员半场位置和对手距离有什么要求？",
+      "necessary_points": [
+        "除主罚者外均在本方半场",
+        "对手距球至少9.15米"
+      ],
+      "support_per_point": [
+        [
+          "L08A-02",
+          "L08A-03"
+        ],
+        [
+          "L08A-02"
+        ]
+      ],
+      "offered_ids": [
+        "L08A-02",
+        "L08A-03",
+        "L01-07",
+        "L15-02",
+        "L13-06"
+      ],
+      "source_trace": ".runtime\\phase2\\d036-gate-live90-final\\D009.json",
+      "source_sha256": "f8014be09624ceb8bfce94ee979c75b4179f3727105a2896ff057362ed12167e"
+    }
+  ],
+  "review": "Reuse frozen E7/E8 source judgments, including equivalent-source D004 reconciliation; Codex source review, not new human/expert review.",
+  "partial_source_sensitivity": {
+    "D017-native": [
+      "L01-06",
+      "L14-03"
+    ]
+  }
+}
