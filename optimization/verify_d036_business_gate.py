@@ -4,7 +4,7 @@ from pathlib import Path
 from types import SimpleNamespace
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from answer_eval_core import config,canonical,now
-from disciplinary_query_policy import evaluate_suspension_query,refusal_message,PUBLIC_REASON
+from disciplinary_query_policy import evaluate_suspension_query,refusal_message,PUBLIC_REASON,inherit_suspension_parameters
 from rag_langgraph import Flow,Operations
 from task13_audit import source_map,request_json,validate_private
 from task13_core import app_config
@@ -60,6 +60,20 @@ def main():
     # Requests already resolved from prior context must retain both parameters.
     for q in ('中超2025赛季累计黄牌：那累计三张停几场？','英超2024-2025赛季累计黄牌：累计五张禁赛多久？'):
         assert evaluate_suspension_query(q) is None
+    followup='那累计三张停几场？'
+    history=[['中超2025赛季累计黄牌制度为何因赛事而不同？','与赛事规程有关。']]
+    effective=inherit_suspension_parameters(followup,history,followup)
+    assert evaluate_suspension_query(effective) is None and '中超' in effective and '2025' in effective
+    for name,prior,current,expected in [
+        ('history_parameters',history,followup,None),
+        ('new_topic_no_inheritance',history,'换个话题，累计三张黄牌停赛几场？',['competition','season']),
+        ('assistant_parameters_ignored',[['累计黄牌由谁决定？','中超2025赛季']],followup,['competition','season']),
+        ('unrelated_latest_stops',history+[['球门有多宽？','7.32米']],followup,['competition','season']),
+        ('inherit_missing_season_only',history,'中超累计三张黄牌停赛几场？',None),
+    ]:
+        expanded=inherit_suspension_parameters(current,prior,current);d=evaluate_suspension_query(expanded)
+        assert (d['missing_fields'] if d else None)==expected,(name,expanded,d)
+        checks.append(dict(case_id=name,entry='effective_request_history_parameters',passed=True,effective_query=expanded))
     labels=list(map(json.loads,(ROOT/'data/eval/answer_eval.jsonl').read_text('utf8').splitlines()))
     assert [q['question_id'] for q in labels if evaluate_suspension_query(q['question'])]==['D036']
     checks.append(dict(case_id='formal90_only_intended_hit',entry='shared_policy',passed=True))

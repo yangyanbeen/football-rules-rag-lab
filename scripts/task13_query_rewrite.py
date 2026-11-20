@@ -118,6 +118,17 @@ def resolve_question(question, history, answer_cfg):
                 raise
             outcome = 'fallback'
             error = type(exc).__name__
+    # The existing subject model may leave a disciplinary count follow-up
+    # unchanged. Carry only user-explicit parameters for the shared gate.
+    from disciplinary_query_policy import inherit_suspension_parameters
+    contextual = inherit_suspension_parameters(query, history, question)
+    if contextual != query:
+        try:
+            query = normalize_question(contextual)
+            outcome = 'rewritten'
+            error = None
+        except ValueError:
+            pass  # Preserve the original bounded request if the prefix cannot fit.
     return query, {
         'original_question_sha256': digest(question.encode('utf-8')),
         'history_turns': len(history),

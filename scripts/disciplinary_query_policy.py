@@ -47,6 +47,15 @@ def evaluate_suspension_query(question):
     """Return a trace decision only for an unambiguous concrete missing-input query."""
     if not suspension_request(question):
         return None
+    fields = suspension_parameters(question)
+    missing = [key for key, value in fields.items() if value is None]
+    if not missing:
+        return None
+    return {'rule': RULE, 'intent': 'cross_match_yellow_suspension_count',
+            'missing_fields': missing, 'parameters': fields}
+
+
+def suspension_parameters(question):
     text = unicodedata.normalize('NFKC', question).strip()
     competition = None
     found = COMPETITIONS.search(text)
@@ -72,12 +81,36 @@ def evaluate_suspension_query(question):
         season = match.group() if match else None
     if _missing_explicitly(text, 'season'):
         season = None
-    fields = {'competition': competition, 'season': season}
-    missing = [key for key, value in fields.items() if value is None]
-    if not missing:
-        return None
-    return {'rule': RULE, 'intent': 'cross_match_yellow_suspension_count',
-            'missing_fields': missing, 'parameters': fields}
+    return {'competition': competition, 'season': season}
+
+
+def inherit_suspension_parameters(query, history, original_question):
+    """Carry explicit user parameters for this intent, within the caller's history.
+
+    Assistant replies are never used as parameter authority. A new topic or an
+    unrelated latest knowledge question stops inheritance.
+    """
+    from task13_history_actions import NEW_TOPIC, history_action
+    if NEW_TOPIC.match(original_question) or not suspension_request(original_question):
+        return query
+    current = suspension_parameters(query)
+    for pair in reversed(history[-3:]):
+        if not isinstance(pair, (list, tuple)) or len(pair) != 2 or not isinstance(pair[0], str):
+            continue
+        previous = pair[0].strip()
+        if history_action(previous):
+            continue
+        if not re.search(r'黄牌|黄卡|累计|累积', previous):
+            break
+        known = suspension_parameters(previous)
+        inherited = {key: value for key, value in known.items()
+                     if value and current[key] is None and not _missing_explicitly(original_question, key)}
+        if inherited:
+            prefix = '；'.join(('赛事：' if key == 'competition' else '赛季：') + value
+                              for key, value in inherited.items())
+            return prefix + '；' + query
+        break
+    return query
 
 
 def refusal_message(decision):
