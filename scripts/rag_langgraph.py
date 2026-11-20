@@ -16,6 +16,7 @@ from citation_catalog_guard import safe_render
 from dense_retrieval_eval import normalize_query
 from rrf import SOURCE_FIELDS, fuse
 from task13_core import normalize_question
+from disciplinary_query_policy import evaluate_suspension_query, refusal_message, PUBLIC_REASON
 
 CONFIG = ROOT / 'config/langgraph_flow.json'
 POLICY_ERRORS = (ValueError, KeyError, TypeError, OSError, RuntimeError, TimeoutError)
@@ -52,6 +53,7 @@ class QueryState(TypedDict, total=False):
     prompt_bytes: int
     attempts: list
     selection_audits: list
+    business_decision: dict
     retry: bool
     selection: dict | None
     answer: str
@@ -174,7 +176,12 @@ class Flow:
         return {**update, 'events': [event]}
 
     def route(self, state):
-        return {'question': normalize_question(state['question']), 'status': 'pending'}
+        question = normalize_question(state['question'])
+        decision = evaluate_suspension_query(question)
+        if decision:
+            return {'question': question, 'status': 'refused', 'reason': PUBLIC_REASON,
+                    'business_decision': decision}
+        return {'question': question, 'status': 'pending'}
 
     def version_check(self, state):
         q = state['question']
@@ -264,6 +271,8 @@ class Flow:
 
     def refusal(self, state):
         text = FAILURE if state['status'] == 'failed' else REFUSAL
+        if state.get('business_decision'):
+            text = refusal_message(state['business_decision'])
         return {'answer': text + '\n' + BOUNDARY, 'citations': [], 'selected_ids': []}
 
     def finish(self, state):
@@ -294,4 +303,5 @@ class Flow:
             'embedding_queries': embeddings, 'reranked_pairs': result.get('reranked_pairs', 0),
             'chat_calls': calls,
             'events': result['events'], 'wall_ns': time.perf_counter_ns() - started,
+            **({'business_decision': result['business_decision']} if result.get('business_decision') else {}),
         }

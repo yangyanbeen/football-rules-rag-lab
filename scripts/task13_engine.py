@@ -4,6 +4,7 @@ from task13_core import *
 from answer_eval_core import config as answer_config,parse_selection
 from answer_eval_engine import pack,request_json
 from citation_catalog_guard import safe_render
+from disciplinary_query_policy import evaluate_suspension_query, refusal_message, PUBLIC_REASON
 
 
 def index_snapshot(cfg):
@@ -70,6 +71,11 @@ class IntegratedEngine:
             'indexes':{n:record(ROOT/self.cfg[n]/'index_manifest.json') for n in ('dense_index','bm25_index')},
             'timing':{'retrieval_seconds':0.,'generation_seconds':0.}}
         try:
+            decision=evaluate_suspension_query(question)
+            if decision:
+                r.update(business_decision=decision,refusal_reason=PUBLIC_REASON,
+                         answer=refusal_message(decision)+'\n'+BOUNDARY)
+                return r
             if re.search(r'官方|现行|最新|IFAB',question,re.I) and re.search(r'赛季|20\d{2}|规则',question):
                 r['refusal_reason']='version_unverified';return r
             t=time.perf_counter()

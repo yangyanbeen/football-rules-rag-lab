@@ -14,6 +14,7 @@ from task13_core import normalize_question
 REPORT = ROOT / 'reports/task17'
 LOCK = ROOT / 'config/task17-requirements.lock.txt'
 FILES = (
+    'scripts/disciplinary_query_policy.py','scripts/task13_core.py',
     'config/langgraph_flow.json', 'config/task17-requirements.lock.txt',
     'scripts/rag_langgraph.py', 'scripts/run_langgraph_flow.py',
     'scripts/task13_engine.py', 'scripts/task13_audit.py', 'scripts/rrf.py',

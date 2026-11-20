@@ -4,6 +4,7 @@ from task13_core import *
 
 CONFIG='config/task13_audit.json'
 SOURCE_FILES=('scripts/task13_audit.py','scripts/query_task13_audit.py','scripts/task13_audit_client.py',
+    'scripts/disciplinary_query_policy.py','scripts/task13_engine.py','scripts/task13_core.py',
     'scripts/task13_audit_pipeline.py','scripts/run_integrated_rag_audit.py','scripts/prepare_task13_environment_checked.py',
     'scripts/export_task13_citation_sources.py','scripts/task13_query_rewrite.py','scripts/task13_history_actions.py',
     'config/task13_audit.json','data/manifests/task13_citation_sources.json')
@@ -56,6 +57,8 @@ def validate_public(v,revised=False):
     exact(v,PUBLIC_FIELDS|({'implementation'} if revised else set()),'public result')
     known=source_map()
     cfg=app_config();from task13_replay import file_ref
+    from disciplinary_query_policy import evaluate_suspension_query,refusal_message,PUBLIC_REASON
+    decision=evaluate_suspension_query(v['question'])
     if normalize_question(v['question'])!=v['question'] or v['profile']!=cfg['version'] or v['configuration']!=source_identity():raise ValueError('Public query/configuration differs')
     indexes={k:read(ROOT/'reports/task13/index-rebuild.json')[k] for k in ('dense_index','bm25_index')}
     if v['indexes']!=indexes or not re.fullmatch('[a-f0-9]{32}',v['trace_id']) or not re.fullmatch('[a-f0-9]{64}',v['answer_sha256']):raise ValueError('Public trace/index identity differs')
@@ -68,8 +71,11 @@ def validate_public(v,revised=False):
     if (v['refusal_reason'] is None)!=(v['status']=='answered') or (v['status']=='refused' and not isinstance(v['refusal_reason'],str)):raise ValueError('Public refusal reason differs')
     if type(v['prompt_utf8_bytes']) is not int or not 0<=v['prompt_utf8_bytes']<=6200 or not isinstance(v['attempts'],list) or len(v['attempts'])>2:raise ValueError('Public budget differs')
     if not v['retrieved_ids']:
-        if v['refusal_reason']!='version_unverified' or any(v[k] for k in ('attempts','offered_ids','selected_ids','prompt_utf8_bytes')):raise ValueError('Invalid zero-inference version refusal')
+        reason=PUBLIC_REASON if decision else 'version_unverified'
+        if v['status']!='refused' or v['refusal_reason']!=reason or any(v[k] for k in ('attempts','offered_ids','selected_ids','prompt_utf8_bytes')):raise ValueError('Invalid zero-inference refusal')
+        if decision and v['answer_sha256']!=digest((refusal_message(decision)+'\n'+BOUNDARY).encode()):raise ValueError('Business refusal message differs')
     elif not v['attempts']:raise ValueError('Public result missing actual generation')
+    if decision and v['retrieved_ids']:raise ValueError('Business refusal unexpectedly retrieved evidence')
     for i,a in enumerate(v['attempts']):
         exact(a,('attempt','error','prompt_eval_count','eval_count','done_reason'),'attempt')
         if type(a['attempt']) is not int or a['attempt']!=i+1:raise ValueError('Public attempt sequence differs')
@@ -90,7 +96,7 @@ def validate_private(v,question,revised=False):
     if revised:validate_implementation(v['implementation'])
     if v['offered_ids']!=[r['chunk_id'] for r in v['context']]:raise ValueError('Offered source order differs from actual prompt')
     if not v['error']:
-        if v['refusal_reason']=='version_unverified' and not v['retrieval']:
+        if (v['refusal_reason']=='version_unverified' or v.get('business_decision')) and not v['retrieval']:
             if any(v[k] for k in ('context','messages','attempts','retrieved_ids','offered_ids','selected_ids','prompt_utf8_bytes')):raise ValueError('Version refusal contains inference')
         elif not v['attempts'] and v['refusal_reason']!='no_whole_evidence_within_budget':raise ValueError('Successful request missing actual generation')
     known=source_map()

@@ -1,0 +1,212 @@
+[
+  {
+    "case_id": "B001",
+    "question": "某联赛累计三张黄牌一定停赛几场？",
+    "missing_fields": [
+      "competition",
+      "season"
+    ],
+    "expected": "refused_without_retrieval_or_model"
+  },
+  {
+    "case_id": "B002",
+    "question": "某联赛队员累计三张黄牌一定停赛几场？没有给联赛和赛季。",
+    "missing_fields": [
+      "competition",
+      "season"
+    ],
+    "expected": "refused_without_retrieval_or_model"
+  },
+  {
+    "case_id": "B003",
+    "question": "跨多场比赛累计3张黄牌后禁赛多少轮？",
+    "missing_fields": [
+      "competition",
+      "season"
+    ],
+    "expected": "refused_without_retrieval_or_model"
+  },
+  {
+    "case_id": "B004",
+    "question": "累计黄卡三张，具体停赛多久？",
+    "missing_fields": [
+      "competition",
+      "season"
+    ],
+    "expected": "refused_without_retrieval_or_model"
+  },
+  {
+    "case_id": "B005",
+    "question": "那累计三张停几场？",
+    "missing_fields": [
+      "competition",
+      "season"
+    ],
+    "expected": "refused_without_retrieval_or_model"
+  },
+  {
+    "case_id": "B006",
+    "question": "中超累计三张黄牌停赛几场？",
+    "missing_fields": [
+      "season"
+    ],
+    "expected": "refused_without_retrieval_or_model"
+  },
+  {
+    "case_id": "B007",
+    "question": "2025赛季累计三张黄牌停赛几场？",
+    "missing_fields": [
+      "competition"
+    ],
+    "expected": "refused_without_retrieval_or_model"
+  },
+  {
+    "case_id": "B008",
+    "question": "中超2025赛季累计三张黄牌停赛几场？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B009",
+    "question": "2025/26英超累计五张黄牌禁赛多少轮？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B010",
+    "question": "赛事：海港城市联赛，赛季：2025，累计黄牌三张停赛几场？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B011",
+    "question": "中国大学生足球联赛2025赛季累计三张黄牌停赛几场？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B012",
+    "question": "中超2025年，累计三张黄牌禁赛1场还是2场？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B013",
+    "question": "中超累计3张黄牌停赛几场？未提供赛季。",
+    "missing_fields": [
+      "season"
+    ],
+    "expected": "refused_without_retrieval_or_model"
+  },
+  {
+    "case_id": "B014",
+    "question": "2025赛季某联赛累计三张黄牌停赛几场？",
+    "missing_fields": [
+      "competition"
+    ],
+    "expected": "refused_without_retrieval_or_model"
+  },
+  {
+    "case_id": "B015",
+    "question": "为什么累计黄牌没有统一的停赛场数？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B016",
+    "question": "请解释累计黄牌停赛场数为什么因赛事不同而不同。",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B017",
+    "question": "累计黄牌停赛由谁决定，有没有统一标准？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B018",
+    "question": "同一场比赛吃到第二张黄牌会怎样？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B019",
+    "question": "同一场比赛拿到第二张黄牌时，牌示顺序和结果是什么？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B020",
+    "question": "单场两黄变一红会如何处理？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B021",
+    "question": "累计黄牌会怎样？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B022",
+    "question": "请介绍累计黄牌制度。",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B023",
+    "question": "黄牌有什么作用？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B024",
+    "question": "累计三张红牌停赛几场？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B025",
+    "question": "中超2025赛季累计黄牌：那累计三张停几场？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B026",
+    "question": "英超2024-2025赛季累计黄牌：累计五张禁赛多久？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B027",
+    "question": "换个话题，累计三张黄牌停赛几场？",
+    "missing_fields": [
+      "competition",
+      "season"
+    ],
+    "expected": "refused_without_retrieval_or_model"
+  },
+  {
+    "case_id": "B028",
+    "question": "未知联赛2025赛季累计三张黄牌停赛几场？",
+    "missing_fields": [
+      "competition"
+    ],
+    "expected": "refused_without_retrieval_or_model"
+  },
+  {
+    "case_id": "B029",
+    "question": "中超累计三张黄牌一定停赛2场吗？",
+    "missing_fields": [
+      "season"
+    ],
+    "expected": "refused_without_retrieval_or_model"
+  },
+  {
+    "case_id": "B030",
+    "question": "中超2025赛季为什么累计黄牌没有统一的停赛场数？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  }
+]
