@@ -1,0 +1,606 @@
+{
+  "control_commit": "59867813e8eb16709b0be1946708d8c03a33b9cb",
+  "experiment": "E7: explicit requirement mapping + deterministic selection, one candidate",
+  "contexts": 14,
+  "independent_questions": 12,
+  "scheduled_invocations": 112,
+  "repeats_per_arm_per_context": 4,
+  "schedule": [
+    {
+      "case_id": "T026-expanded",
+      "variant": "A",
+      "repeat": 1
+    },
+    {
+      "case_id": "T026-expanded",
+      "variant": "B",
+      "repeat": 1
+    },
+    {
+      "case_id": "D001-native",
+      "variant": "B",
+      "repeat": 1
+    },
+    {
+      "case_id": "D001-native",
+      "variant": "A",
+      "repeat": 1
+    },
+    {
+      "case_id": "D002-native",
+      "variant": "A",
+      "repeat": 1
+    },
+    {
+      "case_id": "D002-native",
+      "variant": "B",
+      "repeat": 1
+    },
+    {
+      "case_id": "D003-native",
+      "variant": "B",
+      "repeat": 1
+    },
+    {
+      "case_id": "D003-native",
+      "variant": "A",
+      "repeat": 1
+    },
+    {
+      "case_id": "D012-native",
+      "variant": "A",
+      "repeat": 1
+    },
+    {
+      "case_id": "D012-native",
+      "variant": "B",
+      "repeat": 1
+    },
+    {
+      "case_id": "T026-native",
+      "variant": "B",
+      "repeat": 1
+    },
+    {
+      "case_id": "T026-native",
+      "variant": "A",
+      "repeat": 1
+    },
+    {
+      "case_id": "D004-native",
+      "variant": "A",
+      "repeat": 1
+    },
+    {
+      "case_id": "D004-native",
+      "variant": "B",
+      "repeat": 1
+    },
+    {
+      "case_id": "D009-native",
+      "variant": "B",
+      "repeat": 1
+    },
+    {
+      "case_id": "D009-native",
+      "variant": "A",
+      "repeat": 1
+    },
+    {
+      "case_id": "D017-native",
+      "variant": "A",
+      "repeat": 1
+    },
+    {
+      "case_id": "D017-native",
+      "variant": "B",
+      "repeat": 1
+    },
+    {
+      "case_id": "T034-expanded",
+      "variant": "B",
+      "repeat": 1
+    },
+    {
+      "case_id": "T034-expanded",
+      "variant": "A",
+      "repeat": 1
+    },
+    {
+      "case_id": "T034-native",
+      "variant": "A",
+      "repeat": 1
+    },
+    {
+      "case_id": "T034-native",
+      "variant": "B",
+      "repeat": 1
+    },
+    {
+      "case_id": "T014-native",
+      "variant": "B",
+      "repeat": 1
+    },
+    {
+      "case_id": "T014-native",
+      "variant": "A",
+      "repeat": 1
+    },
+    {
+      "case_id": "D019-native",
+      "variant": "A",
+      "repeat": 1
+    },
+    {
+      "case_id": "D019-native",
+      "variant": "B",
+      "repeat": 1
+    },
+    {
+      "case_id": "D021-native",
+      "variant": "B",
+      "repeat": 1
+    },
+    {
+      "case_id": "D021-native",
+      "variant": "A",
+      "repeat": 1
+    },
+    {
+      "case_id": "T026-expanded",
+      "variant": "B",
+      "repeat": 2
+    },
+    {
+      "case_id": "T026-expanded",
+      "variant": "A",
+      "repeat": 2
+    },
+    {
+      "case_id": "D001-native",
+      "variant": "A",
+      "repeat": 2
+    },
+    {
+      "case_id": "D001-native",
+      "variant": "B",
+      "repeat": 2
+    },
+    {
+      "case_id": "D002-native",
+      "variant": "B",
+      "repeat": 2
+    },
+    {
+      "case_id": "D002-native",
+      "variant": "A",
+      "repeat": 2
+    },
+    {
+      "case_id": "D003-native",
+      "variant": "A",
+      "repeat": 2
+    },
+    {
+      "case_id": "D003-native",
+      "variant": "B",
+      "repeat": 2
+    },
+    {
+      "case_id": "D012-native",
+      "variant": "B",
+      "repeat": 2
+    },
+    {
+      "case_id": "D012-native",
+      "variant": "A",
+      "repeat": 2
+    },
+    {
+      "case_id": "T026-native",
+      "variant": "A",
+      "repeat": 2
+    },
+    {
+      "case_id": "T026-native",
+      "variant": "B",
+      "repeat": 2
+    },
+    {
+      "case_id": "D004-native",
+      "variant": "B",
+      "repeat": 2
+    },
+    {
+      "case_id": "D004-native",
+      "variant": "A",
+      "repeat": 2
+    },
+    {
+      "case_id": "D009-native",
+      "variant": "A",
+      "repeat": 2
+    },
+    {
+      "case_id": "D009-native",
+      "variant": "B",
+      "repeat": 2
+    },
+    {
+      "case_id": "D017-native",
+      "variant": "B",
+      "repeat": 2
+    },
+    {
+      "case_id": "D017-native",
+      "variant": "A",
+      "repeat": 2
+    },
+    {
+      "case_id": "T034-expanded",
+      "variant": "A",
+      "repeat": 2
+    },
+    {
+      "case_id": "T034-expanded",
+      "variant": "B",
+      "repeat": 2
+    },
+    {
+      "case_id": "T034-native",
+      "variant": "B",
+      "repeat": 2
+    },
+    {
+      "case_id": "T034-native",
+      "variant": "A",
+      "repeat": 2
+    },
+    {
+      "case_id": "T014-native",
+      "variant": "A",
+      "repeat": 2
+    },
+    {
+      "case_id": "T014-native",
+      "variant": "B",
+      "repeat": 2
+    },
+    {
+      "case_id": "D019-native",
+      "variant": "B",
+      "repeat": 2
+    },
+    {
+      "case_id": "D019-native",
+      "variant": "A",
+      "repeat": 2
+    },
+    {
+      "case_id": "D021-native",
+      "variant": "A",
+      "repeat": 2
+    },
+    {
+      "case_id": "D021-native",
+      "variant": "B",
+      "repeat": 2
+    },
+    {
+      "case_id": "T026-expanded",
+      "variant": "A",
+      "repeat": 3
+    },
+    {
+      "case_id": "T026-expanded",
+      "variant": "B",
+      "repeat": 3
+    },
+    {
+      "case_id": "D001-native",
+      "variant": "B",
+      "repeat": 3
+    },
+    {
+      "case_id": "D001-native",
+      "variant": "A",
+      "repeat": 3
+    },
+    {
+      "case_id": "D002-native",
+      "variant": "A",
+      "repeat": 3
+    },
+    {
+      "case_id": "D002-native",
+      "variant": "B",
+      "repeat": 3
+    },
+    {
+      "case_id": "D003-native",
+      "variant": "B",
+      "repeat": 3
+    },
+    {
+      "case_id": "D003-native",
+      "variant": "A",
+      "repeat": 3
+    },
+    {
+      "case_id": "D012-native",
+      "variant": "A",
+      "repeat": 3
+    },
+    {
+      "case_id": "D012-native",
+      "variant": "B",
+      "repeat": 3
+    },
+    {
+      "case_id": "T026-native",
+      "variant": "B",
+      "repeat": 3
+    },
+    {
+      "case_id": "T026-native",
+      "variant": "A",
+      "repeat": 3
+    },
+    {
+      "case_id": "D004-native",
+      "variant": "A",
+      "repeat": 3
+    },
+    {
+      "case_id": "D004-native",
+      "variant": "B",
+      "repeat": 3
+    },
+    {
+      "case_id": "D009-native",
+      "variant": "B",
+      "repeat": 3
+    },
+    {
+      "case_id": "D009-native",
+      "variant": "A",
+      "repeat": 3
+    },
+    {
+      "case_id": "D017-native",
+      "variant": "A",
+      "repeat": 3
+    },
+    {
+      "case_id": "D017-native",
+      "variant": "B",
+      "repeat": 3
+    },
+    {
+      "case_id": "T034-expanded",
+      "variant": "B",
+      "repeat": 3
+    },
+    {
+      "case_id": "T034-expanded",
+      "variant": "A",
+      "repeat": 3
+    },
+    {
+      "case_id": "T034-native",
+      "variant": "A",
+      "repeat": 3
+    },
+    {
+      "case_id": "T034-native",
+      "variant": "B",
+      "repeat": 3
+    },
+    {
+      "case_id": "T014-native",
+      "variant": "B",
+      "repeat": 3
+    },
+    {
+      "case_id": "T014-native",
+      "variant": "A",
+      "repeat": 3
+    },
+    {
+      "case_id": "D019-native",
+      "variant": "A",
+      "repeat": 3
+    },
+    {
+      "case_id": "D019-native",
+      "variant": "B",
+      "repeat": 3
+    },
+    {
+      "case_id": "D021-native",
+      "variant": "B",
+      "repeat": 3
+    },
+    {
+      "case_id": "D021-native",
+      "variant": "A",
+      "repeat": 3
+    },
+    {
+      "case_id": "T026-expanded",
+      "variant": "B",
+      "repeat": 4
+    },
+    {
+      "case_id": "T026-expanded",
+      "variant": "A",
+      "repeat": 4
+    },
+    {
+      "case_id": "D001-native",
+      "variant": "A",
+      "repeat": 4
+    },
+    {
+      "case_id": "D001-native",
+      "variant": "B",
+      "repeat": 4
+    },
+    {
+      "case_id": "D002-native",
+      "variant": "B",
+      "repeat": 4
+    },
+    {
+      "case_id": "D002-native",
+      "variant": "A",
+      "repeat": 4
+    },
+    {
+      "case_id": "D003-native",
+      "variant": "A",
+      "repeat": 4
+    },
+    {
+      "case_id": "D003-native",
+      "variant": "B",
+      "repeat": 4
+    },
+    {
+      "case_id": "D012-native",
+      "variant": "B",
+      "repeat": 4
+    },
+    {
+      "case_id": "D012-native",
+      "variant": "A",
+      "repeat": 4
+    },
+    {
+      "case_id": "T026-native",
+      "variant": "A",
+      "repeat": 4
+    },
+    {
+      "case_id": "T026-native",
+      "variant": "B",
+      "repeat": 4
+    },
+    {
+      "case_id": "D004-native",
+      "variant": "B",
+      "repeat": 4
+    },
+    {
+      "case_id": "D004-native",
+      "variant": "A",
+      "repeat": 4
+    },
+    {
+      "case_id": "D009-native",
+      "variant": "A",
+      "repeat": 4
+    },
+    {
+      "case_id": "D009-native",
+      "variant": "B",
+      "repeat": 4
+    },
+    {
+      "case_id": "D017-native",
+      "variant": "B",
+      "repeat": 4
+    },
+    {
+      "case_id": "D017-native",
+      "variant": "A",
+      "repeat": 4
+    },
+    {
+      "case_id": "T034-expanded",
+      "variant": "A",
+      "repeat": 4
+    },
+    {
+      "case_id": "T034-expanded",
+      "variant": "B",
+      "repeat": 4
+    },
+    {
+      "case_id": "T034-native",
+      "variant": "B",
+      "repeat": 4
+    },
+    {
+      "case_id": "T034-native",
+      "variant": "A",
+      "repeat": 4
+    },
+    {
+      "case_id": "T014-native",
+      "variant": "A",
+      "repeat": 4
+    },
+    {
+      "case_id": "T014-native",
+      "variant": "B",
+      "repeat": 4
+    },
+    {
+      "case_id": "D019-native",
+      "variant": "B",
+      "repeat": 4
+    },
+    {
+      "case_id": "D019-native",
+      "variant": "A",
+      "repeat": 4
+    },
+    {
+      "case_id": "D021-native",
+      "variant": "A",
+      "repeat": 4
+    },
+    {
+      "case_id": "D021-native",
+      "variant": "B",
+      "repeat": 4
+    }
+  ],
+  "gates": {
+    "T026_expanded": "B >= 3/4 fully correct with source support",
+    "T026_native": "B 4/4 at least partial",
+    "full_evidence_refusal": "At least one of D001/D002/D003/D012: A repeatedly refuses (>=2), B correct 4/4; report all cases",
+    "correct_controls": "D004/D009/D017 B correct 4/4, no new false refusals, citation numerator/denominator ratio >= same-round A, list each newly unsupported ID",
+    "T034_expanded": "B correct 4/4; native evaluated against available scope separately",
+    "technical": "All valid, <=2 attempts each; report schema failures, retries, budget, tokens and latency",
+    "D036": "Both arms refused before retrieval/generation; zero calls",
+    "overall_citation": "Full-evidence pilot citation support >= concurrent A",
+    "no_new_false_refusals": "No B refusal where paired A answered"
+  },
+  "full90_only_if_all_pilot_gates_pass": true,
+  "holdout_used": false,
+  "model": {
+    "name": "qwen2.5:3b",
+    "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+    "ollama_version": "0.40.16",
+    "num_ctx": 8192,
+    "num_predict": 1024,
+    "num_gpu": 0,
+    "num_thread": 8,
+    "temperature": 0,
+    "seed": 42,
+    "keep_alive": "10m",
+    "timeout_seconds": 180
+  },
+  "parser_max_requirements": 8,
+  "parser_requirement_max_chars": 120,
+  "selected_limit": 3,
+  "partial_contract": "At least one mapped supported point -> existing extractive answer; none -> insufficient_evidence. No additional synthesis call.",
+  "schema_refusal_limitation": "Mapping Schema has no source_conflict/version reason field; upstream version/business gates retained. Semantic conflicts must map no support and receive insufficient_evidence; score failures independently.",
+  "scoring_method": "Frozen point-source annotations plus Codex direct reading of model requirement text and source support. Program verifies IDs/coverage, never semantic truth. Not human/expert adjudication.",
+  "prompt_hashes": {
+    "A": "7441aac9b7f025ac006064b4d778d78ffb1f342f2fba7164567dfab1642aec5f",
+    "B": "ea5cc7f044a3ba2c669fbe03bf7148545be11adc7b47fea607ee5c958800c92c"
+  }
+}
