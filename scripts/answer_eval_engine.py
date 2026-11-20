@@ -13,6 +13,13 @@ def pack(question,evidence,cfg,prompt):
     if len(canonical(messages([])))>cfg['input_utf8_byte_budget']:raise ValueError('Question cannot fit whole prompt')
     for r in evidence[:cfg['max_context_chunks']]:
         if len(canonical(messages(selected+[r])))<=cfg['input_utf8_byte_budget']:selected.append(r)
+    # Keep the original context as a prefix, then fill spare slots and bytes.
+    selected_ids={r['chunk_id'] for r in selected}
+    for r in evidence[:10]:
+        if len(selected)>=cfg['max_context_chunks']:break
+        if r['chunk_id'] in selected_ids:continue
+        if len(canonical(messages(selected+[r])))<=cfg['input_utf8_byte_budget']:
+            selected.append(r);selected_ids.add(r['chunk_id'])
     m=messages(selected)
     return selected,m,len(canonical(m))
 

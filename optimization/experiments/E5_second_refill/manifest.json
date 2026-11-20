@@ -1,0 +1,32 @@
+{
+  "control_commit": "59867813e8eb16709b0be1946708d8c03a33b9cb",
+  "sealed_formal_producer": "86a01e938067f89bcc7dbbb1524d7e53426116f4",
+  "runtime_identical": true,
+  "variable": "Context pack only: preserve original prefix then fill spare capacity in original Top10 order",
+  "primary": [
+    "T034",
+    "T026",
+    "T014"
+  ],
+  "additional_controls": [
+    "D013",
+    "T002",
+    "T013"
+  ],
+  "rounds": {
+    "primary": 4,
+    "additional": 2
+  },
+  "order": "alternate AB/BA by round and case position",
+  "inference": "Real fixed Qwen calls, captured D036-baseline retrieval/rerank replayed identically in both arms",
+  "pilot_acceptance": {
+    "T034": "candidate complete on all four observed repetitions",
+    "T026": "candidate at least partial on all four observed repetitions; retain every output and diagnose any fluctuation",
+    "engineering": "no failures, no pilot new false refusals, D036 both arms zero retrieval and zero answer calls"
+  },
+  "full90_authorized_only_after_pilot": true,
+  "holdout_used": false,
+  "gate_failure_action": "Stop packing experiment and restore D036 pack; do not stack evidence-selection changes",
+  "historical_E5_A_retained": true,
+  "offline_candidate_equal_to_E5_A": true
+}
