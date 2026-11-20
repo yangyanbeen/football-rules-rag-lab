@@ -1,0 +1,61 @@
+{
+  "stage": "E9 small classification comparison",
+  "control_runtime": "5986781 + Prompt A",
+  "budget": {
+    "protocol_first_answers_max": 16,
+    "semantic_first_answers_max": 16,
+    "warmup_calls": 0,
+    "retries": 0,
+    "total_model_calls_max": 32
+  },
+  "variant_order": [
+    "P",
+    "S"
+  ],
+  "sample_order": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16"
+  ],
+  "output": "One JSON field relation with the same four-category enum for both arms; no quotes, explanations, or semantic retries.",
+  "model": {
+    "name": "qwen2.5:3b",
+    "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+    "ollama_version": "0.40.16",
+    "num_ctx": 8192,
+    "num_predict": 1024,
+    "num_gpu": 0,
+    "num_thread": 8,
+    "temperature": 0,
+    "seed": 42,
+    "keep_alive": "10m",
+    "timeout_seconds": 180
+  },
+  "gates": {
+    "first_answer_protocol": "16/16 valid",
+    "direct_support_recall": "at least 5/6",
+    "false_direct_support": "0/10 non-direct pairs",
+    "critical_L12_06": "S01 and S02 both direct_support",
+    "critical_L12_15": "S07 and S08 both partial_support",
+    "D021_polarity": "S12 refutation",
+    "four_class_agreement": "at least 13/16"
+  },
+  "selection": "Among passing arms: more correct four-class decisions, then higher direct recall; exact tie chooses P (fewer instruction changes). No passing arm => stop pairwise-verifier route; no T026-60 run.",
+  "conditional_expansion": "Only after small-sample pass: freeze selected classifier, run T026-expanded 60 pairs once each; require four technical completions, >=3/4 correct and no concept-definition direct support from L12-15; then four false-refusal questions and D021. Sentence-ID evidence experiment and batching require separate acceptance.",
+  "labels_used_only_for_scoring": true,
+  "holdout_used": false,
+  "full90_executed": false
+}

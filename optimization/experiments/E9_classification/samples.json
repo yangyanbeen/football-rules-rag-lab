@@ -1,0 +1,232 @@
+{
+  "source_review": ".runtime/phase2/e8-offline/source_review_matrix.json",
+  "source_review_sha256": "de5d7ca131152bfabd74272985473709e06aae8f92f4cf644d425c1647ec885d",
+  "reviewer": "Codex review of original paragraphs, not new human/expert adjudication",
+  "samples": [
+    {
+      "sample_id": "S01",
+      "case_id": "T026-expanded",
+      "requirement": "区分技术性违例与不当行为",
+      "chunk_id": "L12-06",
+      "reviewed_relation": "direct_support",
+      "reviewed_quotes": [
+        "某些行为按技术性违例处理，例如违反重启程序；另一些则属于不当行为，应给予警告或罚令出场。"
+      ],
+      "reviewed_note": "",
+      "profile": "technical_misconduct",
+      "body_sha256": "9d036805a65fba31f575b223fd0235f7a1a49b7b0794fb11d367527f3327d230",
+      "payload_sha256": "84341a4277047e5972a79907bcbef1576505793e48750c8f7e4d93623ebd3ba0"
+    },
+    {
+      "sample_id": "S02",
+      "case_id": "T026-expanded",
+      "requirement": "技术性违例与身体犯规的关系",
+      "chunk_id": "L12-06",
+      "reviewed_relation": "direct_support",
+      "reviewed_quotes": [
+        "并非所有违反《足球竞赛规则》的行为都属于“犯规”。",
+        "某些行为按技术性违例处理，例如违反重启程序；另一些则属于不当行为，应给予警告或罚令出场。"
+      ],
+      "reviewed_note": "",
+      "profile": "technical_physical",
+      "body_sha256": "9d036805a65fba31f575b223fd0235f7a1a49b7b0794fb11d367527f3327d230",
+      "payload_sha256": "86584191fcd2216066fc1f2b977c45fa2e9dddd3b5c71f957bae6c05f299c693"
+    },
+    {
+      "sample_id": "S03",
+      "case_id": "T026-expanded",
+      "requirement": "不当行为与身体犯规的关系",
+      "chunk_id": "L12-15",
+      "reviewed_relation": "direct_support",
+      "reviewed_quotes": [
+        "发生在比赛外状态下的违例可以构成不当行为，但不属于比赛进行中的身体犯规。"
+      ],
+      "reviewed_note": "",
+      "profile": "misconduct_physical",
+      "body_sha256": "c49201212c5b1e5a46193f3cc5e50338d9884fe127a3247960065d12d9e4c596",
+      "payload_sha256": "b69abe7f889926c3067c6c41f70580b59a9f27a1a4f314c61c9736b76fface31"
+    },
+    {
+      "sample_id": "S04",
+      "case_id": "D021-native",
+      "requirement": "直接接任意球的越位待遇",
+      "chunk_id": "L13-05",
+      "reviewed_relation": "direct_support",
+      "reviewed_quotes": [
+        "任意球踢出后，进攻队员可能构成越位犯规。这一点与直接接球门球、角球或界外球时的越位例外不同。"
+      ],
+      "reviewed_note": "",
+      "profile": "free_treatment",
+      "body_sha256": "0123e05b7155f2ac685b0d88e4580abc10dad2509d842aa455fb67b4334701b7",
+      "payload_sha256": "9d86a46b056253e42c65cc6d184759a89fb8a6faf5f12d39d725f4a2ffd2bc3c"
+    },
+    {
+      "sample_id": "S05",
+      "case_id": "D021-native",
+      "requirement": "直接接界外球不构成越位犯规。",
+      "chunk_id": "L15-03",
+      "reviewed_relation": "direct_support",
+      "reviewed_quotes": [
+        "队员直接接到界外球，不会因此被判越位犯规。"
+      ],
+      "reviewed_note": "",
+      "profile": "throw_treatment",
+      "body_sha256": "aebb784845e2e93ba403a592107606cbc2737c04f09fcefa243e0f00dbb96636",
+      "payload_sha256": "6d252ebad83d77a5077b5d82dbb8b0d26c4bcb3da8b81c3c95f629d1818f6a34"
+    },
+    {
+      "sample_id": "S06",
+      "case_id": "D017-native",
+      "requirement": "点球执行前，其他队员的位置条件。",
+      "chunk_id": "L14-02",
+      "reviewed_relation": "direct_support",
+      "reviewed_quotes": [
+        "其他队员必须留在场内、罚球区外、罚球点后方，并距罚球点至少9.15米。"
+      ],
+      "reviewed_note": "",
+      "profile": "all_other_positions",
+      "body_sha256": "b600377f16217e927b6cd3490608b43f46ad52568ab3b5a780862418520981d5",
+      "payload_sha256": "c86c908ff81d2e116216ef9111331deff928f30b1f74dee82b780ddd89c0216a"
+    },
+    {
+      "sample_id": "S07",
+      "case_id": "T026-expanded",
+      "requirement": "区分技术性违例与不当行为",
+      "chunk_id": "L12-15",
+      "reviewed_relation": "partial_support",
+      "reviewed_quotes": [
+        "发生在比赛外状态下的违例可以构成不当行为，但不属于比赛进行中的身体犯规。"
+      ],
+      "reviewed_note": "仅说明不当行为与身体犯规的界限，未说明技术性违例类别。",
+      "profile": "technical_misconduct",
+      "body_sha256": "c49201212c5b1e5a46193f3cc5e50338d9884fe127a3247960065d12d9e4c596",
+      "payload_sha256": "5b589f828cac09041216afc226da736c4c26a14420c52dcd250056336a40ee2b"
+    },
+    {
+      "sample_id": "S08",
+      "case_id": "T026-expanded",
+      "requirement": "技术性违例与身体犯规的关系",
+      "chunk_id": "L12-15",
+      "reviewed_relation": "partial_support",
+      "reviewed_quotes": [
+        "发生在比赛外状态下的违例可以构成不当行为，但不属于比赛进行中的身体犯规。"
+      ],
+      "reviewed_note": "并未讨论技术性违例，不能用不当行为替代该类别。",
+      "profile": "technical_physical",
+      "body_sha256": "c49201212c5b1e5a46193f3cc5e50338d9884fe127a3247960065d12d9e4c596",
+      "payload_sha256": "c74c38a3694787218acafcc6cf7c8e47cbdc833ad486edda7c061d3fbcd17636"
+    },
+    {
+      "sample_id": "S09",
+      "case_id": "T026-expanded",
+      "requirement": "不当行为与身体犯规的关系",
+      "chunk_id": "L12-01",
+      "reviewed_relation": "partial_support",
+      "reviewed_quotes": [
+        "多数这类犯规涉及双方身体接触。",
+        "草率行为构成应处罚的犯规；鲁莽行为还可能受到黄牌警告；使用过分力量则可能导致红牌罚令出场。"
+      ],
+      "reviewed_note": "描述身体犯规及出牌，未完整区分不当行为。",
+      "profile": "misconduct_physical",
+      "body_sha256": "8d52183d297d6cbf3a288a74ac88379af0344ddf7c6aed6e62eb44dc87088414",
+      "payload_sha256": "4a1ebbc5b7a079ae63085ead0e51de3503720bdb1dd0058e1a731d78e226eb31"
+    },
+    {
+      "sample_id": "S10",
+      "case_id": "T034-expanded",
+      "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+      "chunk_id": "L14-01",
+      "reviewed_relation": "partial_support",
+      "reviewed_quotes": [
+        "罚球点球是一种重启方式，由一名队员面对仅由对方守门员防守的球门射门。"
+      ],
+      "reviewed_note": "只支持比赛中罚球点球一侧，未说明点球决胜计分。",
+      "profile": "scoring_comparison",
+      "body_sha256": "106324acbf25de268323ebb6ed33e3dbffc5cbcbf1e728b817d90e9dc0fd1d21",
+      "payload_sha256": "2929ef800ed5db8c4848729c950f02106cc8411b486e68038bac03194082736d"
+    },
+    {
+      "sample_id": "S11",
+      "case_id": "T034-expanded",
+      "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+      "chunk_id": "L07-03",
+      "reviewed_relation": "partial_support",
+      "reviewed_quotes": [
+        "点球决胜的目的则是确定哪支球队晋级或夺冠，其罚中次数不作为本场比赛正常进球数的一部分。"
+      ],
+      "reviewed_note": "只支持点球决胜一侧，未说明比赛中罚球点球的性质。",
+      "profile": "scoring_comparison",
+      "body_sha256": "a4ed33f18947d574a89273ab2b1b0bdeb1ae4cacdb72f0f1155a621435d18f1a",
+      "payload_sha256": "be7f2e95e9d81f716ece567e35fc41c71f85032f6db579a77aed062e49bf25e9"
+    },
+    {
+      "sample_id": "S12",
+      "case_id": "D021-native",
+      "requirement": "直接接任意球不构成越位犯规。",
+      "chunk_id": "L13-05",
+      "reviewed_relation": "refutation",
+      "reviewed_quotes": [
+        "任意球踢出后，进攻队员可能构成越位犯规。这一点与直接接球门球、角球或界外球时的越位例外不同。"
+      ],
+      "reviewed_note": "“可能构成”直接反驳“任意球不构成越位”这一无条件否定。",
+      "profile": "free_negative",
+      "body_sha256": "0123e05b7155f2ac685b0d88e4580abc10dad2509d842aa455fb67b4334701b7",
+      "payload_sha256": "1867a69a96aff79eefdbb8741f9257cd90dc08172c1a96cd2a03d5d8310c2aef"
+    },
+    {
+      "sample_id": "S13",
+      "case_id": "T026-expanded",
+      "requirement": "区分技术性违例与不当行为",
+      "chunk_id": "L12-02",
+      "reviewed_relation": "unrelated",
+      "reviewed_quotes": [],
+      "reviewed_note": "该段不提供所问对象/关系的依据",
+      "profile": "technical_misconduct",
+      "body_sha256": "64205bfa70529fd27a893b9c692e47c4dca0caf6021ba2fd6389d6ed297f3172",
+      "payload_sha256": "16828b928345268b1263707ba0780bac49f1eabdbe1dd13b0ded05a0f46b066b"
+    },
+    {
+      "sample_id": "S14",
+      "case_id": "D021-native",
+      "requirement": "直接接界外球不构成越位犯规。",
+      "chunk_id": "L16-03",
+      "reviewed_relation": "unrelated",
+      "reviewed_quotes": [],
+      "reviewed_note": "L16-03只说明球门球，不说明界外球。",
+      "profile": "throw_treatment",
+      "body_sha256": "eafeb4e18f3040796c2c10471637bb5853758cbe0e7018c4820421d042c6859c",
+      "payload_sha256": "75b6c11b3ee5607a9f96182eeaede735134dc0e35819e835a57901fb48c49398"
+    },
+    {
+      "sample_id": "S15",
+      "case_id": "D017-native",
+      "requirement": "点球执行前，守门员的位置条件。",
+      "chunk_id": "L01-06",
+      "reviewed_relation": "unrelated",
+      "reviewed_quotes": [],
+      "reviewed_note": "该段不提供所问对象/关系的依据",
+      "profile": "keeper_position",
+      "body_sha256": "00d7714660f64f28374b8658030e569c1e83715e8351badb52a6f2f4296c5289",
+      "payload_sha256": "83c1a1ba9864b0e49cfc93df2a3102e5c1989ab5783ae2ec6b3dd77bc741d5bf"
+    },
+    {
+      "sample_id": "S16",
+      "case_id": "T034-expanded",
+      "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+      "chunk_id": "L05-03",
+      "reviewed_relation": "unrelated",
+      "reviewed_quotes": [],
+      "reviewed_note": "该段不提供所问对象/关系的依据",
+      "profile": "scoring_comparison",
+      "body_sha256": "ac8815f7d4f185049aec7046047fb3e19db269ee75af486fdb4367527194dc53",
+      "payload_sha256": "f2f8486e8cfa8336b44ca6d8eb06d18d1983afb9151cb6c45d97049fd717028a"
+    }
+  ],
+  "class_counts": {
+    "direct_support": 6,
+    "partial_support": 5,
+    "refutation": 1,
+    "unrelated": 4
+  },
+  "caveat": "16 distinct pairs, not 16 independent user questions. E8 contains only one distinct reviewed refutation pair; this sample cannot estimate general refutation recall. No new labels or holdout questions."
+}
