@@ -38,11 +38,12 @@ class Sampler:
     def end(self,begin):
         end=time.perf_counter();values=[v for v in self.rows if begin<=v['monotonic']<=end]
         return dict(samples=len(values),process_rss_peak_GiB=max([v['process_rss']/2**30 for v in values] or [0]),
-            available_min_GiB=min([v['available']/2**30 for v in values] or [float('inf')]),
+            available_min_GiB=min([v['available']/2**30 for v in values]) if values else None,
             client_rss_peak_GiB=max([v['client_rss']/2**30 for v in values] or [0]),resource_abort=self.aborted)
     def close(self):self.stop_event.set();self.thread.join(timeout=3)
 
 def snapshot():
     m=psutil.virtual_memory()
-    return dict(total_GiB=m.total/2**30,available_GiB=m.available/2**30,logical_cpus=psutil.cpu_count(),
+    import platform
+    return dict(total_GiB=m.total/2**30,available_GiB=m.available/2**30,logical_cpus=psutil.cpu_count(),processor=platform.processor(),
         psutil_version=psutil.__version__)
