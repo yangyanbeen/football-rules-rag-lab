@@ -1,0 +1,418 @@
+{
+  "control_commit": "59867813e8eb16709b0be1946708d8c03a33b9cb",
+  "production_runtime_unchanged": true,
+  "variable": "One selection-instruction paragraph only; minimal directly supporting evidence by requested points",
+  "cases": [
+    "D001-native",
+    "D019-native",
+    "D021-native",
+    "D004-native",
+    "D009-native",
+    "D017-native",
+    "T026-native",
+    "T026-expanded",
+    "T014-native",
+    "T034-native",
+    "T034-expanded"
+  ],
+  "schedule": [
+    {
+      "case_id": "T026-native",
+      "repeat": 1,
+      "variant": "A"
+    },
+    {
+      "case_id": "T026-native",
+      "repeat": 1,
+      "variant": "B"
+    },
+    {
+      "case_id": "T026-expanded",
+      "repeat": 1,
+      "variant": "B"
+    },
+    {
+      "case_id": "T026-expanded",
+      "repeat": 1,
+      "variant": "A"
+    },
+    {
+      "case_id": "T014-native",
+      "repeat": 1,
+      "variant": "A"
+    },
+    {
+      "case_id": "T014-native",
+      "repeat": 1,
+      "variant": "B"
+    },
+    {
+      "case_id": "T034-native",
+      "repeat": 1,
+      "variant": "B"
+    },
+    {
+      "case_id": "T034-native",
+      "repeat": 1,
+      "variant": "A"
+    },
+    {
+      "case_id": "T034-expanded",
+      "repeat": 1,
+      "variant": "A"
+    },
+    {
+      "case_id": "T034-expanded",
+      "repeat": 1,
+      "variant": "B"
+    },
+    {
+      "case_id": "D001-native",
+      "repeat": 1,
+      "variant": "B"
+    },
+    {
+      "case_id": "D001-native",
+      "repeat": 1,
+      "variant": "A"
+    },
+    {
+      "case_id": "D019-native",
+      "repeat": 1,
+      "variant": "A"
+    },
+    {
+      "case_id": "D019-native",
+      "repeat": 1,
+      "variant": "B"
+    },
+    {
+      "case_id": "D021-native",
+      "repeat": 1,
+      "variant": "B"
+    },
+    {
+      "case_id": "D021-native",
+      "repeat": 1,
+      "variant": "A"
+    },
+    {
+      "case_id": "D004-native",
+      "repeat": 1,
+      "variant": "A"
+    },
+    {
+      "case_id": "D004-native",
+      "repeat": 1,
+      "variant": "B"
+    },
+    {
+      "case_id": "D009-native",
+      "repeat": 1,
+      "variant": "B"
+    },
+    {
+      "case_id": "D009-native",
+      "repeat": 1,
+      "variant": "A"
+    },
+    {
+      "case_id": "D017-native",
+      "repeat": 1,
+      "variant": "A"
+    },
+    {
+      "case_id": "D017-native",
+      "repeat": 1,
+      "variant": "B"
+    },
+    {
+      "case_id": "T026-native",
+      "repeat": 2,
+      "variant": "B"
+    },
+    {
+      "case_id": "T026-native",
+      "repeat": 2,
+      "variant": "A"
+    },
+    {
+      "case_id": "T026-expanded",
+      "repeat": 2,
+      "variant": "A"
+    },
+    {
+      "case_id": "T026-expanded",
+      "repeat": 2,
+      "variant": "B"
+    },
+    {
+      "case_id": "T014-native",
+      "repeat": 2,
+      "variant": "B"
+    },
+    {
+      "case_id": "T014-native",
+      "repeat": 2,
+      "variant": "A"
+    },
+    {
+      "case_id": "T034-native",
+      "repeat": 2,
+      "variant": "A"
+    },
+    {
+      "case_id": "T034-native",
+      "repeat": 2,
+      "variant": "B"
+    },
+    {
+      "case_id": "T034-expanded",
+      "repeat": 2,
+      "variant": "B"
+    },
+    {
+      "case_id": "T034-expanded",
+      "repeat": 2,
+      "variant": "A"
+    },
+    {
+      "case_id": "D001-native",
+      "repeat": 2,
+      "variant": "A"
+    },
+    {
+      "case_id": "D001-native",
+      "repeat": 2,
+      "variant": "B"
+    },
+    {
+      "case_id": "D019-native",
+      "repeat": 2,
+      "variant": "B"
+    },
+    {
+      "case_id": "D019-native",
+      "repeat": 2,
+      "variant": "A"
+    },
+    {
+      "case_id": "D021-native",
+      "repeat": 2,
+      "variant": "A"
+    },
+    {
+      "case_id": "D021-native",
+      "repeat": 2,
+      "variant": "B"
+    },
+    {
+      "case_id": "D004-native",
+      "repeat": 2,
+      "variant": "B"
+    },
+    {
+      "case_id": "D004-native",
+      "repeat": 2,
+      "variant": "A"
+    },
+    {
+      "case_id": "D009-native",
+      "repeat": 2,
+      "variant": "A"
+    },
+    {
+      "case_id": "D009-native",
+      "repeat": 2,
+      "variant": "B"
+    },
+    {
+      "case_id": "D017-native",
+      "repeat": 2,
+      "variant": "B"
+    },
+    {
+      "case_id": "D017-native",
+      "repeat": 2,
+      "variant": "A"
+    },
+    {
+      "case_id": "T026-native",
+      "repeat": 3,
+      "variant": "A"
+    },
+    {
+      "case_id": "T026-native",
+      "repeat": 3,
+      "variant": "B"
+    },
+    {
+      "case_id": "T026-expanded",
+      "repeat": 3,
+      "variant": "B"
+    },
+    {
+      "case_id": "T026-expanded",
+      "repeat": 3,
+      "variant": "A"
+    },
+    {
+      "case_id": "T014-native",
+      "repeat": 3,
+      "variant": "A"
+    },
+    {
+      "case_id": "T014-native",
+      "repeat": 3,
+      "variant": "B"
+    },
+    {
+      "case_id": "T034-native",
+      "repeat": 3,
+      "variant": "B"
+    },
+    {
+      "case_id": "T034-native",
+      "repeat": 3,
+      "variant": "A"
+    },
+    {
+      "case_id": "T034-expanded",
+      "repeat": 3,
+      "variant": "A"
+    },
+    {
+      "case_id": "T034-expanded",
+      "repeat": 3,
+      "variant": "B"
+    },
+    {
+      "case_id": "D004-native",
+      "repeat": 3,
+      "variant": "B"
+    },
+    {
+      "case_id": "D004-native",
+      "repeat": 3,
+      "variant": "A"
+    },
+    {
+      "case_id": "D009-native",
+      "repeat": 3,
+      "variant": "A"
+    },
+    {
+      "case_id": "D009-native",
+      "repeat": 3,
+      "variant": "B"
+    },
+    {
+      "case_id": "D017-native",
+      "repeat": 3,
+      "variant": "B"
+    },
+    {
+      "case_id": "D017-native",
+      "repeat": 3,
+      "variant": "A"
+    },
+    {
+      "case_id": "T026-native",
+      "repeat": 4,
+      "variant": "B"
+    },
+    {
+      "case_id": "T026-native",
+      "repeat": 4,
+      "variant": "A"
+    },
+    {
+      "case_id": "T026-expanded",
+      "repeat": 4,
+      "variant": "A"
+    },
+    {
+      "case_id": "T026-expanded",
+      "repeat": 4,
+      "variant": "B"
+    },
+    {
+      "case_id": "T014-native",
+      "repeat": 4,
+      "variant": "B"
+    },
+    {
+      "case_id": "T014-native",
+      "repeat": 4,
+      "variant": "A"
+    },
+    {
+      "case_id": "T034-native",
+      "repeat": 4,
+      "variant": "A"
+    },
+    {
+      "case_id": "T034-native",
+      "repeat": 4,
+      "variant": "B"
+    },
+    {
+      "case_id": "T034-expanded",
+      "repeat": 4,
+      "variant": "B"
+    },
+    {
+      "case_id": "T034-expanded",
+      "repeat": 4,
+      "variant": "A"
+    },
+    {
+      "case_id": "D004-native",
+      "repeat": 4,
+      "variant": "A"
+    },
+    {
+      "case_id": "D004-native",
+      "repeat": 4,
+      "variant": "B"
+    },
+    {
+      "case_id": "D009-native",
+      "repeat": 4,
+      "variant": "B"
+    },
+    {
+      "case_id": "D009-native",
+      "repeat": 4,
+      "variant": "A"
+    },
+    {
+      "case_id": "D017-native",
+      "repeat": 4,
+      "variant": "A"
+    },
+    {
+      "case_id": "D017-native",
+      "repeat": 4,
+      "variant": "B"
+    }
+  ],
+  "prompt_sha256": {
+    "A": "7441aac9b7f025ac006064b4d778d78ffb1f342f2fba7164567dfab1642aec5f",
+    "B": "e7f5c9ead66795634802ecdac6920c9f07085a308520ddd34852955db3d2f951"
+  },
+  "annotation_sha256": "267c23b02828e4a0451dacad4e8d7988b7bdb0b246ab5fe3270096fbb368742d",
+  "pilot_gates": {
+    "technical": "all invocations valid and no source/render loss",
+    "native_T026": "B all four at least partial",
+    "expanded_T026": "B at least 3/4 complete, no zero-point result",
+    "expanded_T034": "B at least 3/4 complete",
+    "correct_dev_controls": "B correct count per case not below A; two or more B failures in a case is a stop",
+    "full_evidence_cases": "B requirement coverage and citation support not lower than A; false refusals not higher; strict improvement in coverage or false refusal",
+    "boundary_T034": "assess available points separately; never call unsupported scope a complete answer"
+  },
+  "full90_only_after_pilot": true,
+  "holdout_used": false,
+  "response_contract": "same Schema, at most three IDs and at most two answering calls; partial selection allowed as existing renderer contract, never invent unsupported claims",
+  "scope": "AI source review; no human/expert review claimed, no oracle metadata in model messages"
+}
