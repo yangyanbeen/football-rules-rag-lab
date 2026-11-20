@@ -21,7 +21,7 @@ def main():
     cases=sorted(cases,key=lambda q:({'D036':0,'T027':1,'D016':2}.get(q['question_id'],3),q['question_id']))
     corpus={r['chunk_id']:r for r in map(json.loads,(ROOT/'data/processed/rag_chunks_zh.jsonl').read_text('utf8').splitlines())}
     a.out.mkdir(parents=True,exist_ok=False);commit,inputs=committed_inputs();env=runtime_identity();upstream_clean()
-    for name in ('scripts/answer_eval_core.py','scripts/answer_eval_engine.py','scripts/disciplinary_query_policy.py','scripts/task13_core.py','optimization/run_d036_regression.py'):
+    for name in ('scripts/answer_eval_core.py','scripts/answer_eval_engine.py','scripts/disciplinary_query_policy.py','scripts/task13_core.py','scripts/task13_query_rewrite.py','optimization/run_d036_regression.py'):
         inputs[name]=record(ROOT/name)
     frozen=read(ROOT/'optimization/baseline/e8b0fd6/freeze.json')
     for name,ref in frozen['data'].items():assert record(ROOT/name)==ref
