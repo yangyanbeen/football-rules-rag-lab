@@ -1,0 +1,53 @@
+{
+  "A": {
+    "historical_whole_point_support": {
+      "numerator": 34,
+      "denominator": 86,
+      "value": 0.3953488372093023
+    },
+    "extra_partial_support": [],
+    "broader_direct_fragment_support": {
+      "numerator": 34,
+      "denominator": 86,
+      "value": 0.3953488372093023
+    }
+  },
+  "B": {
+    "historical_whole_point_support": {
+      "numerator": 48,
+      "denominator": 57,
+      "value": 0.8421052631578947
+    },
+    "extra_partial_support": [
+      {
+        "case_id": "D017-native",
+        "repeat": 1,
+        "chunk_id": "L01-06"
+      },
+      {
+        "case_id": "D017-native",
+        "repeat": 2,
+        "chunk_id": "L14-03"
+      },
+      {
+        "case_id": "D017-native",
+        "repeat": 3,
+        "chunk_id": "L14-03"
+      },
+      {
+        "case_id": "D017-native",
+        "repeat": 4,
+        "chunk_id": "L14-03"
+      }
+    ],
+    "broader_direct_fragment_support": {
+      "numerator": 52,
+      "denominator": 57,
+      "value": 0.9122807017543859
+    }
+  },
+  "review": "Post-run Codex source reading; no new human/expert adjudication.",
+  "reason": "D017 L01-06 and L14-03 support the outside-area/arc or entry-timing fragment, but not the complete frozen location point (in field AND outside area), position behind the mark, or exact 9.15m. Their source text is not wholly unrelated or fabricated. Keep completeness and polarity errors separate from fragment-level citation relevance.",
+  "original_grades_changed": false,
+  "adoption_decision_changed": false
+}

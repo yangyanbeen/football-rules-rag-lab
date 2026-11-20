@@ -1,0 +1,19 @@
+{
+  "raw_records_verified": 112,
+  "paired_evidence_packets_verified": 56,
+  "model_mapping_selection_bindings_verified": 56,
+  "original_renderer_bindings_verified": 112,
+  "source_and_data_unchanged": true,
+  "runtime_equal_to_5986781": true,
+  "D036_zero_call_arms": 2,
+  "actual_new_retrieval_calls": 0,
+  "formal90_executed": false,
+  "holdout_used": false,
+  "maximum_actual": {
+    "message_bytes": 6194,
+    "prompt_tokens": 1608,
+    "output_tokens": 155,
+    "prompt_output_reserve_tokens": 2147
+  },
+  "scope": "Archived retrieval and real answer-model calls; this is not fresh end-to-end retrieval latency."
+}

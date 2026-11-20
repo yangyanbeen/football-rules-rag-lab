@@ -1,0 +1,830 @@
+﻿case_id,variant,repeat,grade,point_mask,selected_ids,supported_ids,unsupported_ids,first_raw,input_tokens,output_tokens,wall_seconds,body_sha256,schema_sha256,trace_sha256
+D001-native,A,1,false_refusal,[false],[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1162,18,12.1643273,e850707fff143a0eb23311736352b87a6973adb64abb80a327c40def892ba212,c01ca92bbbd8396d21f6f69b1e49b853a2821a2546e1e6fd82eb93ccc0ad125f,daf1114f3317f90d51549061e9f0ba46196b23f9fdc4207e17cce57a57e67ae9
+D001-native,A,2,false_refusal,[false],[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1162,18,8.439692,e850707fff143a0eb23311736352b87a6973adb64abb80a327c40def892ba212,c01ca92bbbd8396d21f6f69b1e49b853a2821a2546e1e6fd82eb93ccc0ad125f,bec25b516666c1f456bb3f6683c627567a4e08761f9b1e1d786c357723fe27f2
+D001-native,A,3,false_refusal,[false],[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1162,18,8.6105954,e850707fff143a0eb23311736352b87a6973adb64abb80a327c40def892ba212,c01ca92bbbd8396d21f6f69b1e49b853a2821a2546e1e6fd82eb93ccc0ad125f,9ae133d8d9c34fe903a1451a0fae29b670a84e1c4e706883e5a642cb2f214ae8
+D001-native,A,4,false_refusal,[false],[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1162,18,1.1185084,e850707fff143a0eb23311736352b87a6973adb64abb80a327c40def892ba212,c01ca92bbbd8396d21f6f69b1e49b853a2821a2546e1e6fd82eb93ccc0ad125f,a2f4291fd5b18b057d20b98f9f04deeee874eded644a0bd7852926a3129d525e
+D001-native,B,1,correct,[true],"[""L01-01""]","[""L01-01""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""人工草坪的颜色有什么限制？"",
+      ""supporting_ids"": [""L01-01""]
+    }
+  ]
+}",1108,41,9.3410622,e850707fff143a0eb23311736352b87a6973adb64abb80a327c40def892ba212,5693aab572e1522e9080340296dda9b391fc14ff0da0671558a414b4a78cb4ac,a7fc47bc4081443a9b62477e0c6ffdcc2f07b0450e6429761f4b122980e35dab
+D001-native,B,2,correct,[true],"[""L01-01""]","[""L01-01""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""人工草坪的颜色有什么限制？"",
+      ""supporting_ids"": [""L01-01""]
+    }
+  ]
+}",1108,41,2.3163406,e850707fff143a0eb23311736352b87a6973adb64abb80a327c40def892ba212,5693aab572e1522e9080340296dda9b391fc14ff0da0671558a414b4a78cb4ac,2eaa7b56fb0c7dea990cc9229462670004de5c5a5a9ad9c0d68b3b0b73aa9774
+D001-native,B,3,correct,[true],"[""L01-01""]","[""L01-01""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""人工草坪的颜色有什么限制？"",
+      ""supporting_ids"": [""L01-01""]
+    }
+  ]
+}",1108,41,2.3598445,e850707fff143a0eb23311736352b87a6973adb64abb80a327c40def892ba212,5693aab572e1522e9080340296dda9b391fc14ff0da0671558a414b4a78cb4ac,5d012b3ad3868abb09d6d5890bfe6ceb851a311c520e2f0dd6615de0bc2af50b
+D001-native,B,4,correct,[true],"[""L01-01""]","[""L01-01""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""人工草坪的颜色有什么限制？"",
+      ""supporting_ids"": [""L01-01""]
+    }
+  ]
+}",1108,41,2.3570539,e850707fff143a0eb23311736352b87a6973adb64abb80a327c40def892ba212,5693aab572e1522e9080340296dda9b391fc14ff0da0671558a414b4a78cb4ac,f4558492e75c29c90ff97aaba52a576772fe989cc677f88a6befd68200f62eee
+D002-native,A,1,false_refusal,"[false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1380,18,11.2967044,23b64dad81872e8ae2345b4447e463e0c39542a97e87b7601843f9806d58addd,423c72a42e2ea2b7c905aa3827530066e9f0ccb6eaf3ade38c16aacdbec8416a,ebf9f77c429c12eacb468be8e1e8de0f6c9f73c2eac2a8abcb656feb4780e377
+D002-native,A,2,false_refusal,"[false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1380,18,1.1724832,23b64dad81872e8ae2345b4447e463e0c39542a97e87b7601843f9806d58addd,423c72a42e2ea2b7c905aa3827530066e9f0ccb6eaf3ade38c16aacdbec8416a,75cad7cf44ec3774e0ff2a55eb9a36f4d3ff82c83ea980b3626097a242840756
+D002-native,A,3,false_refusal,"[false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1380,18,1.1446056,23b64dad81872e8ae2345b4447e463e0c39542a97e87b7601843f9806d58addd,423c72a42e2ea2b7c905aa3827530066e9f0ccb6eaf3ade38c16aacdbec8416a,7bd4675de1f33b97bea824e6b7d268ae23a3bfc4b31a79c0092645d1d251c625
+D002-native,A,4,false_refusal,"[false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1380,18,1.1560974,23b64dad81872e8ae2345b4447e463e0c39542a97e87b7601843f9806d58addd,423c72a42e2ea2b7c905aa3827530066e9f0ccb6eaf3ade38c16aacdbec8416a,40fd6dbb613ae0a05fba48d14700c11573689681cd5df6f653f1543f5ec3718b
+D002-native,B,1,correct,"[true, true]","[""L01-03""]","[""L01-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""成人球门的内侧宽度是多少？"",
+      ""supporting_ids"": [""L01-03""]
+    },
+    {
+      ""requirement"": ""成人球门的横梁离地高度是多少？"",
+      ""supporting_ids"": [""L01-03""]
+    }
+  ]
+}",1326,80,17.3048812,23b64dad81872e8ae2345b4447e463e0c39542a97e87b7601843f9806d58addd,d74088b58f2525fa5e5a7dbd7dc0e9e65cb10ab5c64011cb17d3a9340e057ab7,f2405991a141044cd7b870bd2d1f0f951a9031822e289124ee22e4298b678d89
+D002-native,B,2,correct,"[true, true]","[""L01-03""]","[""L01-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""成人球门的内侧宽度是多少？"",
+      ""supporting_ids"": [""L01-03""]
+    },
+    {
+      ""requirement"": ""成人球门的横梁离地高度是多少？"",
+      ""supporting_ids"": [""L01-03""]
+    }
+  ]
+}",1326,80,4.535381,23b64dad81872e8ae2345b4447e463e0c39542a97e87b7601843f9806d58addd,d74088b58f2525fa5e5a7dbd7dc0e9e65cb10ab5c64011cb17d3a9340e057ab7,570893c31666187ee3f53307ab9e42dedd261be94f94744f32fe4dce4f163f7b
+D002-native,B,3,correct,"[true, true]","[""L01-03""]","[""L01-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""成人球门的内侧宽度是多少？"",
+      ""supporting_ids"": [""L01-03""]
+    },
+    {
+      ""requirement"": ""成人球门的横梁离地高度是多少？"",
+      ""supporting_ids"": [""L01-03""]
+    }
+  ]
+}",1326,80,4.4675814,23b64dad81872e8ae2345b4447e463e0c39542a97e87b7601843f9806d58addd,d74088b58f2525fa5e5a7dbd7dc0e9e65cb10ab5c64011cb17d3a9340e057ab7,5156b85fda797609fbfffb3d46695f06390a7b7dbeeefcab9602133ff59644cb
+D002-native,B,4,correct,"[true, true]","[""L01-03""]","[""L01-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""成人球门的内侧宽度是多少？"",
+      ""supporting_ids"": [""L01-03""]
+    },
+    {
+      ""requirement"": ""成人球门的横梁离地高度是多少？"",
+      ""supporting_ids"": [""L01-03""]
+    }
+  ]
+}",1326,80,4.4835922,23b64dad81872e8ae2345b4447e463e0c39542a97e87b7601843f9806d58addd,d74088b58f2525fa5e5a7dbd7dc0e9e65cb10ab5c64011cb17d3a9340e057ab7,6bf2fa6fa76ed0161a8a4a25b4abb5a5a6783c55de20dfc18fab3e1f9f8a5954
+D003-native,A,1,false_refusal,"[false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1608,18,13.8210946,e47ccbc089c360fe627dd3729910d9ed1f1ca4667ed184c2601da79ba4eb37d9,84d03235049cff6292ead23edcb13aa7bcfc839b378fbe6227b7947bad612276,b1338b047111c884dbb75e735712738fbb7e291273c715a3894b35fbbca73389
+D003-native,A,2,false_refusal,"[false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1608,18,1.240257,e47ccbc089c360fe627dd3729910d9ed1f1ca4667ed184c2601da79ba4eb37d9,84d03235049cff6292ead23edcb13aa7bcfc839b378fbe6227b7947bad612276,1c15a51a522f6adc2daa1b9eee285d2a36481622ad65ce57e6a5dd2bec145910
+D003-native,A,3,false_refusal,"[false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1608,18,1.2023967,e47ccbc089c360fe627dd3729910d9ed1f1ca4667ed184c2601da79ba4eb37d9,84d03235049cff6292ead23edcb13aa7bcfc839b378fbe6227b7947bad612276,1b1904ea11fd9d6b6f61c7d2c15f2c183bde886be6e25b49d7c9d4219b8c8732
+D003-native,A,4,false_refusal,"[false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1608,18,1.175626,e47ccbc089c360fe627dd3729910d9ed1f1ca4667ed184c2601da79ba4eb37d9,84d03235049cff6292ead23edcb13aa7bcfc839b378fbe6227b7947bad612276,e766d1df3154277f1587ba5a4279bd3d41966f99b4cf5f110ad01c591bc9d638
+D003-native,B,1,correct,"[true, true]","[""L02-02""]","[""L02-02""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""标准成人5号球的周长范围是多少？"",
+      ""supporting_ids"": [""L02-02""]
+    },
+    {
+      ""requirement"": ""标准成人5号球的重量范围是多少？"",
+      ""supporting_ids"": [""L02-02""]
+    }
+  ]
+}",1554,81,17.0416891,e47ccbc089c360fe627dd3729910d9ed1f1ca4667ed184c2601da79ba4eb37d9,e81356a37c48c98a91f280a925505be7be9ebce80bd83cba4b23abe3acd10966,c1575b608ee81d85c0e9d5380e5c9b92642d4c51669bfebb284042c278c5013c
+D003-native,B,2,correct,"[true, true]","[""L02-02""]","[""L02-02""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""标准成人5号球的周长范围是多少？"",
+      ""supporting_ids"": [""L02-02""]
+    },
+    {
+      ""requirement"": ""标准成人5号球的重量范围是多少？"",
+      ""supporting_ids"": [""L02-02""]
+    }
+  ]
+}",1554,81,4.6647868,e47ccbc089c360fe627dd3729910d9ed1f1ca4667ed184c2601da79ba4eb37d9,e81356a37c48c98a91f280a925505be7be9ebce80bd83cba4b23abe3acd10966,fa274e92053a2d559e08c2d75696cecd31ea5c02309f72b86a07dba93ca472df
+D003-native,B,3,correct,"[true, true]","[""L02-02""]","[""L02-02""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""标准成人5号球的周长范围是多少？"",
+      ""supporting_ids"": [""L02-02""]
+    },
+    {
+      ""requirement"": ""标准成人5号球的重量范围是多少？"",
+      ""supporting_ids"": [""L02-02""]
+    }
+  ]
+}",1554,81,4.7102655,e47ccbc089c360fe627dd3729910d9ed1f1ca4667ed184c2601da79ba4eb37d9,e81356a37c48c98a91f280a925505be7be9ebce80bd83cba4b23abe3acd10966,e6aedf53f1bdf001d9d7fbdbdd11cc9578bd94873f9f69ab137c6cb10cd2b823
+D003-native,B,4,correct,"[true, true]","[""L02-02""]","[""L02-02""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""标准成人5号球的周长范围是多少？"",
+      ""supporting_ids"": [""L02-02""]
+    },
+    {
+      ""requirement"": ""标准成人5号球的重量范围是多少？"",
+      ""supporting_ids"": [""L02-02""]
+    }
+  ]
+}",1554,81,4.671601,e47ccbc089c360fe627dd3729910d9ed1f1ca4667ed184c2601da79ba4eb37d9,e81356a37c48c98a91f280a925505be7be9ebce80bd83cba4b23abe3acd10966,a4e363c4d0a479e5bd32f1243c111e36e1c17b6d85f7db8f73d4e3becf75cda4
+D004-native,A,1,correct,"[true, true]","[""L03-01""]","[""L03-01""]",[],"{""answerable"":true,""chunk_ids"":[""L03-01""],""reason"":null}",1169,21,9.2976069,017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe,e30be6888b7d50292d048f33642215b831ad0c97f3f2b026d28294864720e807,362958c59e5075289e01d7d4307f37105bb7f21c450f6af468f2e653d3ef0315
+D004-native,A,2,correct,"[true, true]","[""L03-01""]","[""L03-01""]",[],"{""answerable"":true,""chunk_ids"":[""L03-01""],""reason"":null}",1169,21,8.7484021,017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe,e30be6888b7d50292d048f33642215b831ad0c97f3f2b026d28294864720e807,b7ba578794e36dfc0de885dcee9c38c96a4a5f11b57ac128b611d973cc0ff759
+D004-native,A,3,correct,"[true, true]","[""L03-01""]","[""L03-01""]",[],"{""answerable"":true,""chunk_ids"":[""L03-01""],""reason"":null}",1169,21,8.6564565,017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe,e30be6888b7d50292d048f33642215b831ad0c97f3f2b026d28294864720e807,d316128a9f76a2acde965eae9a47023d21f85a808d4427282e6648a0817579f6
+D004-native,A,4,correct,"[true, true]","[""L03-01""]","[""L03-01""]",[],"{""answerable"":true,""chunk_ids"":[""L03-01""],""reason"":null}",1169,21,1.4920877,017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe,e30be6888b7d50292d048f33642215b831ad0c97f3f2b026d28294864720e807,1a4df63513dd0b9161e5abab01da9cab3c3471cc396dbc161e62534f60e1c137
+D004-native,B,1,correct,"[true, true]","[""L03-01""]","[""L03-01""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""球队最多上场多少人，其中哪个位置必须有一人？"",
+      ""supporting_ids"": [""L03-01""]
+    }
+  ]
+}",1115,49,13.1944113,017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe,d9fac79d76e2b9235a79a511bb620f9f2b37571501a57ad5d55929ad9e5ca753,bec571924a8b368f501d2ea7f088a4e2c557a61e90c55d8575c86ecb0c269ae2
+D004-native,B,2,correct,"[true, true]","[""L03-01""]","[""L03-01""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""球队最多上场多少人，其中哪个位置必须有一人？"",
+      ""supporting_ids"": [""L03-01""]
+    }
+  ]
+}",1115,49,2.7966587,017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe,d9fac79d76e2b9235a79a511bb620f9f2b37571501a57ad5d55929ad9e5ca753,cb6026de3c74739b799a75adc69d393aec27269a6559a36531b12e6aaf1d9f77
+D004-native,B,3,correct,"[true, true]","[""L03-01""]","[""L03-01""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""球队最多上场多少人，其中哪个位置必须有一人？"",
+      ""supporting_ids"": [""L03-01""]
+    }
+  ]
+}",1115,49,2.7776266,017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe,d9fac79d76e2b9235a79a511bb620f9f2b37571501a57ad5d55929ad9e5ca753,0360b316f8004e9022e24774d9323ce8725ff5cd92eeddbff5e6c391885050b4
+D004-native,B,4,correct,"[true, true]","[""L03-01""]","[""L03-01""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""球队最多上场多少人，其中哪个位置必须有一人？"",
+      ""supporting_ids"": [""L03-01""]
+    }
+  ]
+}",1115,49,3.3433442,017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe,d9fac79d76e2b9235a79a511bb620f9f2b37571501a57ad5d55929ad9e5ca753,331f9db0902929ef482d809eb31ef1994ba1ee8a27aaab5fa89f29b6269ebdb2
+D009-native,A,1,correct,"[true, true]","[""L08A-02"", ""L08A-03"", ""L13-06""]","[""L08A-02"", ""L08A-03""]","[""L13-06""]","{""answerable"":true,""chunk_ids"":[""L08A-02"",""L08A-03"",""L13-06""],""reason"":null}",1288,37,11.5815039,4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666,58274d2b99ddb77fb9f94106b10774f4bc2538e07edb5ee94b45e02bbe59b5be,ce95b5b9ef06becce7726da2f61320e205ec0f7ec5db15bbdeafe81a1dfc81f5
+D009-native,A,2,correct,"[true, true]","[""L08A-02""]","[""L08A-02""]",[],"{""answerable"":true,""chunk_ids"":[""L08A-02""],""reason"":null}",1288,22,1.3542601,4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666,58274d2b99ddb77fb9f94106b10774f4bc2538e07edb5ee94b45e02bbe59b5be,8acf5885438b10d563b0e98d3426c4d115beb15c41c425c4f3714d1b25f8b2e9
+D009-native,A,3,correct,"[true, true]","[""L08A-02""]","[""L08A-02""]",[],"{""answerable"":true,""chunk_ids"":[""L08A-02""],""reason"":null}",1288,22,1.3468805,4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666,58274d2b99ddb77fb9f94106b10774f4bc2538e07edb5ee94b45e02bbe59b5be,897c9f6a228bdb024f1a085ad55d235875b07aceb8b23028ee6e9782bc5350b0
+D009-native,A,4,correct,"[true, true]","[""L08A-02""]","[""L08A-02""]",[],"{""answerable"":true,""chunk_ids"":[""L08A-02""],""reason"":null}",1288,22,1.5566266,4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666,58274d2b99ddb77fb9f94106b10774f4bc2538e07edb5ee94b45e02bbe59b5be,a0d50d22ee08a6ecc012b31b72c72b242b1ba383a71ec7c1b8bd76112217d4f7
+D009-native,B,1,correct,"[true, true]","[""L08A-02""]","[""L08A-02""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""开球前除主罚队员外，队员半场位置和对手距离有什么要求？"",
+      ""supporting_ids"": [
+        ""L08A-02"",
+        ""L08A-03"",
+        ""L15-02""
+      ]
+    }
+  ]
+}",1234,78,13.7004443,4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666,e9eee98fae9df1dca946d82386c537ceb35d108fdc42f766f6aee88829f0196d,1544818ee0aa0ff1cceaa394c8d8c529f149fb1872e801ed5f6fc98250d4cfc3
+D009-native,B,2,correct,"[true, true]","[""L08A-02""]","[""L08A-02""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""开球前除主罚队员外，队员半场位置和对手距离有什么要求？"",
+      ""supporting_ids"": [
+        ""L08A-02"",
+        ""L08A-03"",
+        ""L15-02""
+      ]
+    }
+  ]
+}",1234,78,4.3783942,4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666,e9eee98fae9df1dca946d82386c537ceb35d108fdc42f766f6aee88829f0196d,61805cd96dca59f531eaba50daec291c6a3e6b57af2bb2e4b28b364c837e2143
+D009-native,B,3,correct,"[true, true]","[""L08A-02""]","[""L08A-02""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""开球前除主罚队员外，队员半场位置和对手距离有什么要求？"",
+      ""supporting_ids"": [
+        ""L08A-02"",
+        ""L08A-03"",
+        ""L15-02""
+      ]
+    }
+  ]
+}",1234,78,4.3774734,4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666,e9eee98fae9df1dca946d82386c537ceb35d108fdc42f766f6aee88829f0196d,0c2b5dbbc5b911cfba497e463275f7db6548eab890b262a83bab8290ccbcffdc
+D009-native,B,4,correct,"[true, true]","[""L08A-02""]","[""L08A-02""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""开球前除主罚队员外，队员半场位置和对手距离有什么要求？"",
+      ""supporting_ids"": [
+        ""L08A-02"",
+        ""L08A-03"",
+        ""L15-02""
+      ]
+    }
+  ]
+}",1234,78,4.5570852,4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666,e9eee98fae9df1dca946d82386c537ceb35d108fdc42f766f6aee88829f0196d,bcb95b689282c89fd710703f6b175aa277809e3b369114d87b23e20cd40b9cdd
+D012-native,A,1,false_refusal,"[false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1134,18,8.8194022,7108bcfbb47286770b58dd79f3bcf9cd479f1f5616eb94463756f5e91ac169e9,85c53949352b9824781777431ff16cb39453be65fae0bfee58082925b8166708,7d938f7bdd9f18980ecd9118edc983ea69a609b74b21fff91a4ac63b7e95aee0
+D012-native,A,2,false_refusal,"[false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1134,18,8.423064,7108bcfbb47286770b58dd79f3bcf9cd479f1f5616eb94463756f5e91ac169e9,85c53949352b9824781777431ff16cb39453be65fae0bfee58082925b8166708,f193ad0431f65ac2d09cb8beccf2ec65c80af0cc1265ecfbed20dfdee4beebfb
+D012-native,A,3,false_refusal,"[false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1134,18,8.4807571,7108bcfbb47286770b58dd79f3bcf9cd479f1f5616eb94463756f5e91ac169e9,85c53949352b9824781777431ff16cb39453be65fae0bfee58082925b8166708,cdf7177425d364f1346fb839fa5218ae6edd9b7013a1c3647c15859ee4e7b553
+D012-native,A,4,false_refusal,"[false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1134,18,1.1152677,7108bcfbb47286770b58dd79f3bcf9cd479f1f5616eb94463756f5e91ac169e9,85c53949352b9824781777431ff16cb39453be65fae0bfee58082925b8166708,5867acbb12466ae1598f205277e611ebfb05ec33792271063396e7f6433ad805
+D012-native,B,1,correct,"[true, true]","[""L10-01""]","[""L10-01""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""第10条主要处理进球成立的程序问题。"",
+      ""supporting_ids"": [
+        ""L10-01""
+      ]
+    },
+    {
+      ""requirement"": ""第10条主要处理在必要时如何从双方正常时间进球数相同的比赛中确定胜者的问题。"",
+      ""supporting_ids"": [
+        ""L10-01""
+      ]
+    }
+  ]
+}",1080,101,16.1585502,7108bcfbb47286770b58dd79f3bcf9cd479f1f5616eb94463756f5e91ac169e9,88b9d18bae793116e497a427db6d55ee4b4551851905c4f5fc081644c2261dea,d6e012ad265748f50ab06ccb9874c62590999dd204f289808b0cb9d0d6532f33
+D012-native,B,2,correct,"[true, true]","[""L10-01""]","[""L10-01""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""第10条主要处理进球成立的程序问题。"",
+      ""supporting_ids"": [""L10-01""]
+    },
+    {
+      ""requirement"": ""第10条主要处理在必要时如何从双方正常时间进球数相同的比赛中确定胜者的问题。"",
+      ""supporting_ids"": [""L10-01""]
+    }
+  ]
+}",1080,93,5.186383,7108bcfbb47286770b58dd79f3bcf9cd479f1f5616eb94463756f5e91ac169e9,88b9d18bae793116e497a427db6d55ee4b4551851905c4f5fc081644c2261dea,35afe7a6b7d8ab646f24ecdc53d5b200e591c20327a464466d193bbef306fbc0
+D012-native,B,3,correct,"[true, true]","[""L10-01""]","[""L10-01""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""第10条主要处理进球成立的程序问题。"",
+      ""supporting_ids"": [""L10-01""]
+    },
+    {
+      ""requirement"": ""第10条主要处理在必要时如何从双方正常时间进球数相同的比赛中确定胜者的问题。"",
+      ""supporting_ids"": [""L10-01""]
+    }
+  ]
+}",1080,93,5.0881919,7108bcfbb47286770b58dd79f3bcf9cd479f1f5616eb94463756f5e91ac169e9,88b9d18bae793116e497a427db6d55ee4b4551851905c4f5fc081644c2261dea,18c9eb26280927a59ec80a094aa5263b5898f68d99ce78ea7151d8c5d6a0a3e2
+D012-native,B,4,correct,"[true, true]","[""L10-01""]","[""L10-01""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""第10条主要处理进球成立的程序问题。"",
+      ""supporting_ids"": [""L10-01""]
+    },
+    {
+      ""requirement"": ""第10条主要处理在必要时如何从双方正常时间进球数相同的比赛中确定胜者的问题。"",
+      ""supporting_ids"": [""L10-01""]
+    }
+  ]
+}",1080,93,5.0614042,7108bcfbb47286770b58dd79f3bcf9cd479f1f5616eb94463756f5e91ac169e9,88b9d18bae793116e497a427db6d55ee4b4551851905c4f5fc081644c2261dea,1af214a803577a6888bfd563deb44e9d46db9732cfe4804aedf87a6e968edb0f
+D017-native,A,1,correct,"[true, true, true]","[""L14-02""]","[""L14-02""]",[],"{""answerable"":true,""chunk_ids"":[""L14-02""],""reason"":null}",1447,21,12.4534902,bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681,503720df26a8c5f29d9229eac55dd8f355c8a59e8f9cf5b367e59d2f9a995b5f,61d7609fae01e627fdf38ff9d17c4687be38093ed82709c625d798c3ccb3b72f
+D017-native,A,2,correct,"[true, true, true]","[""L14-02""]","[""L14-02""]",[],"{""answerable"":true,""chunk_ids"":[""L14-02""],""reason"":null}",1447,21,1.2866947,bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681,503720df26a8c5f29d9229eac55dd8f355c8a59e8f9cf5b367e59d2f9a995b5f,9af7a1231551f51b6f39acdb1180fe7ae645305236a693befc259b6957390e60
+D017-native,A,3,correct,"[true, true, true]","[""L14-02""]","[""L14-02""]",[],"{""answerable"":true,""chunk_ids"":[""L14-02""],""reason"":null}",1447,21,1.2878036,bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681,503720df26a8c5f29d9229eac55dd8f355c8a59e8f9cf5b367e59d2f9a995b5f,ce3f01c2bb385f5ed2d3f872eae8dddbbdf8fca3ab5faa035441ac29cd8c2cbb
+D017-native,A,4,correct,"[true, true, true]","[""L14-02""]","[""L14-02""]",[],"{""answerable"":true,""chunk_ids"":[""L14-02""],""reason"":null}",1447,21,1.3189643,bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681,503720df26a8c5f29d9229eac55dd8f355c8a59e8f9cf5b367e59d2f9a995b5f,66102284df3a91f28d9a322b519e703aa63002a22abac804276c25467a14cbe1
+D017-native,B,1,correct,"[true, true, true]","[""L14-02"", ""L01-06""]","[""L14-02""]","[""L01-06""]","{
+  ""requirements"": [
+    {
+      ""requirement"": ""点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？"",
+      ""supporting_ids"": [
+        ""L14-02""
+      ]
+    },
+    {
+      ""requirement"": ""点球执行前，主罚者的位置例外见第二份文档。"",
+      ""supporting_ids"": [
+        ""L01-06""
+      ]
+    },
+    {
+      ""requirement"": ""点球执行前，罚球区与罚球弧共同划定了其他队员不得提前进入的范围。"",
+      ""supporting_ids"": [
+        ""L01-06""
+      ]
+    }
+  ]
+}",1393,155,22.4497519,bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681,53e6936614a824cb2e19a79f7b2b00131fa8d164804a3e4067ca68b117287003,5e946b73b360936a627ab80d8f678e1b7199b4db5f6b8f3137deff140bdeed61
+D017-native,B,2,incorrect,"[false, false, false]","[""L14-03""]",[],"[""L14-03""]","{
+  ""requirements"": [
+    {
+      ""requirement"": ""点球执行前，主罚者的位置条件。"",
+      ""supporting_ids"": [
+        ""L14-03""
+      ]
+    },
+    {
+      ""requirement"": ""点球执行前，守门员的位置条件。"",
+      ""supporting_ids"": [
+        ""L14-03""
+      ]
+    },
+    {
+      ""requirement"": ""点球执行前，其他队员的位置条件。"",
+      ""supporting_ids"": [
+        ""L14-03""
+      ]
+    }
+  ]
+}",1393,126,7.0534877,bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681,53e6936614a824cb2e19a79f7b2b00131fa8d164804a3e4067ca68b117287003,fe65a75945b478b3d2b78a85b824935dfffd3e091dac14d205d52182f2be49b1
+D017-native,B,3,incorrect,"[false, false, false]","[""L14-03""]",[],"[""L14-03""]","{
+  ""requirements"": [
+    {
+      ""requirement"": ""点球执行前，主罚者的位置条件。"",
+      ""supporting_ids"": [
+        ""L14-03""
+      ]
+    },
+    {
+      ""requirement"": ""点球执行前，守门员的位置条件。"",
+      ""supporting_ids"": [
+        ""L14-03""
+      ]
+    },
+    {
+      ""requirement"": ""点球执行前，其他队员的位置条件。"",
+      ""supporting_ids"": [
+        ""L14-03""
+      ]
+    }
+  ]
+}",1393,126,7.0080254,bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681,53e6936614a824cb2e19a79f7b2b00131fa8d164804a3e4067ca68b117287003,c357e15c92b74a8802f4086b45174578d45771a9e506ec69fc4ef7cb4363e2f6
+D017-native,B,4,incorrect,"[false, false, false]","[""L14-03""]",[],"[""L14-03""]","{
+  ""requirements"": [
+    {
+      ""requirement"": ""点球执行前，主罚者的位置条件。"",
+      ""supporting_ids"": [
+        ""L14-03""
+      ]
+    },
+    {
+      ""requirement"": ""点球执行前，守门员的位置条件。"",
+      ""supporting_ids"": [
+        ""L14-03""
+      ]
+    },
+    {
+      ""requirement"": ""点球执行前，其他队员的位置条件。"",
+      ""supporting_ids"": [
+        ""L14-03""
+      ]
+    }
+  ]
+}",1393,126,7.3686466,bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681,53e6936614a824cb2e19a79f7b2b00131fa8d164804a3e4067ca68b117287003,fddbf10972ce23769e1065851e4523c7ebfae11a53fac63bcae204b0954d683b
+D019-native,A,1,incorrect,"[false, false]","[""L16-04"", ""L17-04"", ""L08B-02""]",[],"[""L16-04"", ""L17-04"", ""L08B-02""]","{""answerable"":true,""chunk_ids"":[""L16-04"",""L17-04"",""L08B-02""],""reason"":null}",1418,36,12.0861128,3d4a35e21fac6f058031a91cdcdf7be9d51d38dff3e96173f8567a332f3b0a39,618fa2db45ed0e98f0d6f2171c58a644c978f8b68d9b5f0c3099bf21675c711b,e209dbfb47345675c6a3818366b970845b2a71df6eeb20e5664c1535a8ed8d3c
+D019-native,A,2,incorrect,"[false, false]","[""L16-04"", ""L17-04"", ""L08B-02""]",[],"[""L16-04"", ""L17-04"", ""L08B-02""]","{""answerable"":true,""chunk_ids"":[""L16-04"",""L17-04"",""L08B-02""],""reason"":null}",1418,36,2.1055948,3d4a35e21fac6f058031a91cdcdf7be9d51d38dff3e96173f8567a332f3b0a39,618fa2db45ed0e98f0d6f2171c58a644c978f8b68d9b5f0c3099bf21675c711b,47e96ca7cf832688a1634f053e2c70938220c045d2482a32c31ef67bfae76459
+D019-native,A,3,incorrect,"[false, false]","[""L16-04"", ""L17-04"", ""L08B-02""]",[],"[""L16-04"", ""L17-04"", ""L08B-02""]","{""answerable"":true,""chunk_ids"":[""L16-04"",""L17-04"",""L08B-02""],""reason"":null}",1418,36,2.1493734,3d4a35e21fac6f058031a91cdcdf7be9d51d38dff3e96173f8567a332f3b0a39,618fa2db45ed0e98f0d6f2171c58a644c978f8b68d9b5f0c3099bf21675c711b,92748475fd664e3a31a2bbadc7bf7eb24e2fbddd95fd5fa4a4810e9a58acbc44
+D019-native,A,4,incorrect,"[false, false]","[""L16-04"", ""L17-04"", ""L08B-02""]",[],"[""L16-04"", ""L17-04"", ""L08B-02""]","{""answerable"":true,""chunk_ids"":[""L16-04"",""L17-04"",""L08B-02""],""reason"":null}",1418,36,2.2415099,3d4a35e21fac6f058031a91cdcdf7be9d51d38dff3e96173f8567a332f3b0a39,618fa2db45ed0e98f0d6f2171c58a644c978f8b68d9b5f0c3099bf21675c711b,f470cd5177596615b3160a257b54580924e6d87050521011e0efeb893feef17a
+D019-native,B,1,correct,"[true, true]","[""L16-03""]","[""L16-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""球门球进入比赛的时点是什么"",
+      ""supporting_ids"": [""L16-03""]
+    },
+    {
+      ""requirement"": ""是否需要离开罚球区"",
+      ""supporting_ids"": [""L16-03""]
+    }
+  ]
+}",1364,75,16.608982,3d4a35e21fac6f058031a91cdcdf7be9d51d38dff3e96173f8567a332f3b0a39,18065fb149890c4bc393d81539a2e261ec4d9107c6c7c31ccfa05763654f9255,6e5e057dd6ed351a1ff19b3cb77c71162abea7994e4ad5e85defd84b6f4ea229
+D019-native,B,2,correct,"[true, true]","[""L16-03""]","[""L16-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""球门球进入比赛的时点是什么"",
+      ""supporting_ids"": [""L16-03""]
+    },
+    {
+      ""requirement"": ""是否需要离开罚球区"",
+      ""supporting_ids"": [""L16-03""]
+    }
+  ]
+}",1364,75,4.2556966,3d4a35e21fac6f058031a91cdcdf7be9d51d38dff3e96173f8567a332f3b0a39,18065fb149890c4bc393d81539a2e261ec4d9107c6c7c31ccfa05763654f9255,acbf52138839ebeb52b4c669a389bf7a5463665880de1fc0c55b61fac9f71eec
+D019-native,B,3,correct,"[true, true]","[""L16-03""]","[""L16-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""球门球进入比赛的时点是什么"",
+      ""supporting_ids"": [""L16-03""]
+    },
+    {
+      ""requirement"": ""是否需要离开罚球区"",
+      ""supporting_ids"": [""L16-03""]
+    }
+  ]
+}",1364,75,4.2540438,3d4a35e21fac6f058031a91cdcdf7be9d51d38dff3e96173f8567a332f3b0a39,18065fb149890c4bc393d81539a2e261ec4d9107c6c7c31ccfa05763654f9255,d06d2d8ab91bddf7294adb288d0051a84d0815e4af49656c1c99689918ea03d7
+D019-native,B,4,correct,"[true, true]","[""L16-03""]","[""L16-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""球门球进入比赛的时点是什么"",
+      ""supporting_ids"": [""L16-03""]
+    },
+    {
+      ""requirement"": ""是否需要离开罚球区"",
+      ""supporting_ids"": [""L16-03""]
+    }
+  ]
+}",1364,75,4.4157963,3d4a35e21fac6f058031a91cdcdf7be9d51d38dff3e96173f8567a332f3b0a39,18065fb149890c4bc393d81539a2e261ec4d9107c6c7c31ccfa05763654f9255,6a6c5a2fd31952104613a41bef40d83c04913c8a16a0c06d09ee3ee6429fe88d
+D021-native,A,1,partial,"[false, true]","[""L11-03"", ""L12-05"", ""L15-03""]","[""L11-03"", ""L15-03""]","[""L12-05""]","{""answerable"":true,""chunk_ids"":[""L11-03"",""L12-05"",""L15-03""],""reason"":null}",1339,35,13.989901,c0ec23990a156c608422717d9e5b44b07a25955fb16a2a78384edc0e023f6c53,bf6e606460bd1ceb0e2c143bf73ba6c157b21867be3a629f1d0f83ad36b3b010,cc200835b11ae43b5a30227bf6f5c0b51fefaf1ed6cd8ff0ec0a25b741a88c7b
+D021-native,A,2,partial,"[false, true]","[""L11-03"", ""L12-05"", ""L15-03""]","[""L11-03"", ""L15-03""]","[""L12-05""]","{""answerable"":true,""chunk_ids"":[""L11-03"",""L12-05"",""L15-03""],""reason"":null}",1339,35,2.0996278,c0ec23990a156c608422717d9e5b44b07a25955fb16a2a78384edc0e023f6c53,bf6e606460bd1ceb0e2c143bf73ba6c157b21867be3a629f1d0f83ad36b3b010,eef1f20d40c39edda5aa6fb7cabb3f80649aaa5651b276fb878177166ad28c2e
+D021-native,A,3,partial,"[false, true]","[""L11-03"", ""L12-05"", ""L15-03""]","[""L11-03"", ""L15-03""]","[""L12-05""]","{""answerable"":true,""chunk_ids"":[""L11-03"",""L12-05"",""L15-03""],""reason"":null}",1339,35,2.1175136,c0ec23990a156c608422717d9e5b44b07a25955fb16a2a78384edc0e023f6c53,bf6e606460bd1ceb0e2c143bf73ba6c157b21867be3a629f1d0f83ad36b3b010,76f7fde552e3ddb749b2adda8ec36afe217cdf9c8f32b5dda1adaeb02f51eda2
+D021-native,A,4,partial,"[false, true]","[""L11-03"", ""L12-05"", ""L15-03""]","[""L11-03"", ""L15-03""]","[""L12-05""]","{""answerable"":true,""chunk_ids"":[""L11-03"",""L12-05"",""L15-03""],""reason"":null}",1339,35,2.1404747,c0ec23990a156c608422717d9e5b44b07a25955fb16a2a78384edc0e023f6c53,bf6e606460bd1ceb0e2c143bf73ba6c157b21867be3a629f1d0f83ad36b3b010,40554ee461c52d98374c40b029fff96c3e698eb3b24c902178609103882cbbe3
+D021-native,B,1,correct,"[true, true]","[""L13-05"", ""L11-03""]","[""L13-05"", ""L11-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""直接接任意球的越位待遇"",
+      ""supporting_ids"": [
+        ""L13-05""
+      ]
+    },
+    {
+      ""requirement"": ""直接接界外球的越位待遇"",
+      ""supporting_ids"": [
+        ""L11-03"",
+        ""L15-03"",
+        ""L16-03""
+      ]
+    }
+  ]
+}",1285,103,14.6035587,c0ec23990a156c608422717d9e5b44b07a25955fb16a2a78384edc0e023f6c53,ef0d8c15dbed1a166076970697407f6d29128c29328d2090e50cbb7488609ecd,a0cc6edd5dfc7561bcbfdfd2fb4e86e04028f6e2105725f95dcd1b9e3c2642e8
+D021-native,B,2,correct,"[true, true]","[""L13-05"", ""L15-03""]","[""L13-05"", ""L15-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""直接接任意球不构成越位犯规。"",
+      ""supporting_ids"": [
+        ""L13-05""
+      ]
+    },
+    {
+      ""requirement"": ""直接接界外球不构成越位犯规。"",
+      ""supporting_ids"": [
+        ""L15-03"",
+        ""L16-03""
+      ]
+    }
+  ]
+}",1285,96,5.3858829,c0ec23990a156c608422717d9e5b44b07a25955fb16a2a78384edc0e023f6c53,ef0d8c15dbed1a166076970697407f6d29128c29328d2090e50cbb7488609ecd,c7cc2a9a7da7a7892657767bc8f6b593ba9f55eae6a1384272763e87777f3b91
+D021-native,B,3,correct,"[true, true]","[""L13-05"", ""L15-03""]","[""L13-05"", ""L15-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""直接接任意球不构成越位犯规。"",
+      ""supporting_ids"": [
+        ""L13-05""
+      ]
+    },
+    {
+      ""requirement"": ""直接接界外球不构成越位犯规。"",
+      ""supporting_ids"": [
+        ""L15-03"",
+        ""L16-03""
+      ]
+    }
+  ]
+}",1285,96,5.3928934,c0ec23990a156c608422717d9e5b44b07a25955fb16a2a78384edc0e023f6c53,ef0d8c15dbed1a166076970697407f6d29128c29328d2090e50cbb7488609ecd,17c8ccba86577dea91c5d25c38807928f7cbdafd17fad9c7091fa42b55df423d
+D021-native,B,4,correct,"[true, true]","[""L13-05"", ""L15-03""]","[""L13-05"", ""L15-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""直接接任意球不构成越位犯规。"",
+      ""supporting_ids"": [
+        ""L13-05""
+      ]
+    },
+    {
+      ""requirement"": ""直接接界外球不构成越位犯规。"",
+      ""supporting_ids"": [
+        ""L15-03"",
+        ""L16-03""
+      ]
+    }
+  ]
+}",1285,96,5.6911168,c0ec23990a156c608422717d9e5b44b07a25955fb16a2a78384edc0e023f6c53,ef0d8c15dbed1a166076970697407f6d29128c29328d2090e50cbb7488609ecd,1b3de79d3f9f2014ed31f6f3911ee12c1de9b6f5dc305f4f26bb0cb4fc1a7b6f
+T014-native,A,1,correct,"[true, true]","[""L06-06"", ""L06-04"", ""L03-04""]","[""L06-06""]","[""L06-04"", ""L03-04""]","{""answerable"":true,""chunk_ids"":[""L06-06"",""L06-04"",""L03-04""],""reason"":null}",1396,35,11.7519014,08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4,f688cb1fbae92135191ddf1d9c67d1647ffd00d75ecc02d70c0a76ee5d5eaf9b,f81219a58af8ab9c505e79a61afdceaa17e36e95a582eb9d62248713d583e959
+T014-native,A,2,incorrect,"[false, false]","[""L06-05"", ""L06-04"", ""L03-04""]",[],"[""L06-05"", ""L06-04"", ""L03-04""]","{""answerable"":true,""chunk_ids"":[""L06-05"",""L06-04"",""L03-04""],""reason"":null}",1396,35,2.1203301,08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4,f688cb1fbae92135191ddf1d9c67d1647ffd00d75ecc02d70c0a76ee5d5eaf9b,0b302e3d0928635f08b527f26382233d6a96710c861d95e174c8ee1536a53be5
+T014-native,A,3,incorrect,"[false, false]","[""L06-05"", ""L06-04"", ""L03-04""]",[],"[""L06-05"", ""L06-04"", ""L03-04""]","{""answerable"":true,""chunk_ids"":[""L06-05"",""L06-04"",""L03-04""],""reason"":null}",1396,35,2.059903,08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4,f688cb1fbae92135191ddf1d9c67d1647ffd00d75ecc02d70c0a76ee5d5eaf9b,ea9e39011a1de59831159447a28aa973dc1f5749fc854e38c33b41fa9aea3713
+T014-native,A,4,incorrect,"[false, false]","[""L06-05"", ""L06-04"", ""L03-04""]",[],"[""L06-05"", ""L06-04"", ""L03-04""]","{""answerable"":true,""chunk_ids"":[""L06-05"",""L06-04"",""L03-04""],""reason"":null}",1396,35,2.1624903,08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4,f688cb1fbae92135191ddf1d9c67d1647ffd00d75ecc02d70c0a76ee5d5eaf9b,f86e1b33e3dee5c950bceffbb2748b3a0d15af1a5c6d5a35119f697fa748537d
+T014-native,B,1,incorrect,"[false, false]","[""L06-05""]",[],"[""L06-05""]","{
+  ""requirements"": [
+    {
+      ""requirement"": ""站在球门线附近辅助观察罚球区的是哪类官员？"",
+      ""supporting_ids"": [""L06-05""]
+    },
+    {
+      ""requirement"": ""是否每项赛事都必须配备？"",
+      ""supporting_ids"": [""L06-05""]
+    }
+  ]
+}",1342,83,15.1619253,08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4,b16186a919c8f9eda255f2c03525f8012ecb86a25b70f3998fd5657be891c6f3,d91b4d63fe61d47f6bed11ca13b281d0637392ebb4b1672c002dc6ffe2923003
+T014-native,B,2,correct,"[true, true]","[""L06-06""]","[""L06-06""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""站在球门线附近辅助观察罚球区的是哪类官员？"",
+      ""supporting_ids"": [""L06-06""]
+    },
+    {
+      ""requirement"": ""是否每项赛事都必须配备？"",
+      ""supporting_ids"": [""L06-06""]
+    }
+  ]
+}",1342,83,4.6942218,08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4,b16186a919c8f9eda255f2c03525f8012ecb86a25b70f3998fd5657be891c6f3,17634380f9d08b74b8f5d0e7242bb78c5d008e18b9061817954d7d73a1892c15
+T014-native,B,3,correct,"[true, true]","[""L06-06""]","[""L06-06""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""站在球门线附近辅助观察罚球区的是哪类官员？"",
+      ""supporting_ids"": [""L06-06""]
+    },
+    {
+      ""requirement"": ""是否每项赛事都必须配备？"",
+      ""supporting_ids"": [""L06-06""]
+    }
+  ]
+}",1342,83,4.6874887,08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4,b16186a919c8f9eda255f2c03525f8012ecb86a25b70f3998fd5657be891c6f3,a2c550574b3a8dfa76d9878ceeb3e3e35910d029048a7dbba9f6af039dd2d652
+T014-native,B,4,correct,"[true, true]","[""L06-06""]","[""L06-06""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""站在球门线附近辅助观察罚球区的是哪类官员？"",
+      ""supporting_ids"": [""L06-06""]
+    },
+    {
+      ""requirement"": ""是否每项赛事都必须配备？"",
+      ""supporting_ids"": [""L06-06""]
+    }
+  ]
+}",1342,83,4.8991995,08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4,b16186a919c8f9eda255f2c03525f8012ecb86a25b70f3998fd5657be891c6f3,1c45e817b54172dc65ea994e10752b81be601884879ae20cdce87c8d49646dc1
+T026-expanded,A,1,incorrect,"[false, false, false]","[""L12-01"", ""L12-02"", ""L12-03""]",[],"[""L12-01"", ""L12-02"", ""L12-03""]","{""answerable"":true,""chunk_ids"":[""L12-01"",""L12-02"",""L12-03""],""reason"":null}",1349,35,13.5477323,89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6,84527d6c4f2f5abc43ce81ae1151ba5cd08a7b0753341d22fe340b40e5755223,4672ddb25a33d64625a0721031d4ddfef7853a03e056ea2e28085f9533a0cc6d
+T026-expanded,A,2,incorrect,"[false, false, false]","[""L12-01"", ""L12-02"", ""L12-03""]",[],"[""L12-01"", ""L12-02"", ""L12-03""]","{""answerable"":true,""chunk_ids"":[""L12-01"",""L12-02"",""L12-03""],""reason"":null}",1349,35,14.0710671,89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6,84527d6c4f2f5abc43ce81ae1151ba5cd08a7b0753341d22fe340b40e5755223,58af427fe8787d8b56328fada04bc4334bda177a788d879b46e6bedf8620b8d4
+T026-expanded,A,3,incorrect,"[false, false, false]","[""L12-01"", ""L12-02"", ""L12-03""]",[],"[""L12-01"", ""L12-02"", ""L12-03""]","{""answerable"":true,""chunk_ids"":[""L12-01"",""L12-02"",""L12-03""],""reason"":null}",1349,35,3.2016199,89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6,84527d6c4f2f5abc43ce81ae1151ba5cd08a7b0753341d22fe340b40e5755223,1f07109ce81171c29f012062fc65444a50765299dbd46c68b1d86902b2c01759
+T026-expanded,A,4,incorrect,"[false, false, false]","[""L12-01"", ""L12-02"", ""L12-03""]",[],"[""L12-01"", ""L12-02"", ""L12-03""]","{""answerable"":true,""chunk_ids"":[""L12-01"",""L12-02"",""L12-03""],""reason"":null}",1349,35,3.1923153,89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6,84527d6c4f2f5abc43ce81ae1151ba5cd08a7b0753341d22fe340b40e5755223,94ae5fc42b21a2d99f2ec5f9e260d2a447f9b6165e074864dd7d2b2aaec425a7
+T026-expanded,B,1,correct,"[true, true, true]","[""L12-06""]","[""L12-06""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""区分技术性违例与不当行为"",
+      ""supporting_ids"": [
+        ""L12-06"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""不当行为与身体犯规的区别"",
+      ""supporting_ids"": [
+        ""L12-06"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""技术性违例与身体犯规的关系"",
+      ""supporting_ids"": [
+        ""L12-06""
+      ]
+    }
+  ]
+}",1295,137,18.1999879,89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6,ba43069b855772508175456cd4633695fb0e6c5d0b6fd7988700ddfdb44795e8,524b6089e06beeb399af2d02791fb3278e5b1770328cec07447b196963c33486
+T026-expanded,B,2,partial,"[false, false, true]","[""L12-15""]","[""L12-15""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""区分技术性违例与不当行为"",
+      ""supporting_ids"": [
+        ""L12-02"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""技术性违例与不当行为的区别"",
+      ""supporting_ids"": [
+        ""L12-06"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""不当行为与身体犯规的关系"",
+      ""supporting_ids"": [
+        ""L12-15""
+      ]
+    }
+  ]
+}",1295,137,8.7285943,89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6,ba43069b855772508175456cd4633695fb0e6c5d0b6fd7988700ddfdb44795e8,65fe037b2de2d493830659a85387ee0c9a39933ceb7d5a1e5f994a2c2216a16e
+T026-expanded,B,3,partial,"[false, false, true]","[""L12-15""]","[""L12-15""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""区分技术性违例与不当行为"",
+      ""supporting_ids"": [
+        ""L12-02"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""技术性违例与不当行为的区别"",
+      ""supporting_ids"": [
+        ""L12-06"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""不当行为与身体犯规的关系"",
+      ""supporting_ids"": [
+        ""L12-15""
+      ]
+    }
+  ]
+}",1295,137,8.7026418,89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6,ba43069b855772508175456cd4633695fb0e6c5d0b6fd7988700ddfdb44795e8,238db9d4170c330bf23dcaf04effec5ce7b2124dd7ac9c30f3b6d55775bc75f2
+T026-expanded,B,4,partial,"[false, false, true]","[""L12-15""]","[""L12-15""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""区分技术性违例与不当行为"",
+      ""supporting_ids"": [
+        ""L12-02"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""技术性违例与不当行为的区别"",
+      ""supporting_ids"": [
+        ""L12-06"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""不当行为与身体犯规的关系"",
+      ""supporting_ids"": [
+        ""L12-15""
+      ]
+    }
+  ]
+}",1295,137,8.6738832,89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6,ba43069b855772508175456cd4633695fb0e6c5d0b6fd7988700ddfdb44795e8,f12f23e8bc6dea43efc7bbea87aa292a68ab2b302a8275fde17db4226c00f06b
+T026-native,A,1,partial,"[false, false, true]","[""L12-01"", ""L12-02"", ""L12-15""]","[""L12-15""]","[""L12-01"", ""L12-02""]","{""answerable"":true,""chunk_ids"":[""L12-01"",""L12-02"",""L12-15""],""reason"":null}",1251,35,2.1755509,08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb,18f7ab224bf5c5c1dea786df1885ae051881a10aac25f20db554a77edbf68950,0236f6dc67731ed5919bcf253563ecb4d50b7f037b06383645b376cbe112e1d9
+T026-native,A,2,partial,"[false, false, true]","[""L12-01"", ""L12-02"", ""L12-15""]","[""L12-15""]","[""L12-01"", ""L12-02""]","{""answerable"":true,""chunk_ids"":[""L12-01"",""L12-02"",""L12-15""],""reason"":null}",1251,35,2.1206876,08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb,18f7ab224bf5c5c1dea786df1885ae051881a10aac25f20db554a77edbf68950,a71a914d7bc254d77ca2829c343b444d46b256ffd369125194ccccf597beec01
+T026-native,A,3,partial,"[false, false, true]","[""L12-01"", ""L12-02"", ""L12-15""]","[""L12-15""]","[""L12-01"", ""L12-02""]","{""answerable"":true,""chunk_ids"":[""L12-01"",""L12-02"",""L12-15""],""reason"":null}",1251,35,2.0733626,08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb,18f7ab224bf5c5c1dea786df1885ae051881a10aac25f20db554a77edbf68950,a2c9c7789308cc817f284e277f8b5f50ca619beb9ef03d2eb426aa629acb0717
+T026-native,A,4,partial,"[false, false, true]","[""L12-01"", ""L12-02"", ""L12-15""]","[""L12-15""]","[""L12-01"", ""L12-02""]","{""answerable"":true,""chunk_ids"":[""L12-01"",""L12-02"",""L12-15""],""reason"":null}",1251,35,2.0811659,08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb,18f7ab224bf5c5c1dea786df1885ae051881a10aac25f20db554a77edbf68950,06b41b7270df7d46c8e97518e5af1d6cff76f0666e88c4d658c8f4e1c00760d7
+T026-native,B,1,correct,"[true, true, true]","[""L12-06""]","[""L12-06""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""区分不当行为与技术性违例"",
+      ""supporting_ids"": [
+        ""L12-06"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""不当行为与技术性违例的区别"",
+      ""supporting_ids"": [
+        ""L12-06"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""技术性违例与身体犯规的关系"",
+      ""supporting_ids"": [
+        ""L12-06""
+      ]
+    }
+  ]
+}",1197,139,7.98328,08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb,b73df500f343336c24958680a48cdda2cfaad32c635c5e8022c1ac653e84279c,c68a5e8994ff82d1bcb00eee0c83beda320fd72577965bd959482e84c29729bd
+T026-native,B,2,correct,"[true, true, true]","[""L12-06""]","[""L12-06""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""区分不当行为与技术性违例"",
+      ""supporting_ids"": [
+        ""L12-06"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""不当行为与技术性违例的区别"",
+      ""supporting_ids"": [
+        ""L12-06"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""技术性违例与身体犯规的关系"",
+      ""supporting_ids"": [
+        ""L12-06""
+      ]
+    }
+  ]
+}",1197,139,7.7872337,08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb,b73df500f343336c24958680a48cdda2cfaad32c635c5e8022c1ac653e84279c,8428302da9187b96f14d1122130604e2c479dd69be982a8421d8dc2dbe4c56e0
+T026-native,B,3,correct,"[true, true, true]","[""L12-06""]","[""L12-06""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""区分不当行为与技术性违例"",
+      ""supporting_ids"": [
+        ""L12-06"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""不当行为与技术性违例的区别"",
+      ""supporting_ids"": [
+        ""L12-06"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""技术性违例与身体犯规的关系"",
+      ""supporting_ids"": [
+        ""L12-06""
+      ]
+    }
+  ]
+}",1197,139,7.752182,08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb,b73df500f343336c24958680a48cdda2cfaad32c635c5e8022c1ac653e84279c,fb396d57f8e276447370b5590938c90172cabd98029fa4507260a55554e69bdd
+T026-native,B,4,correct,"[true, true, true]","[""L12-06""]","[""L12-06""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""区分不当行为与技术性违例"",
+      ""supporting_ids"": [
+        ""L12-06"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""不当行为与技术性违例的区别"",
+      ""supporting_ids"": [
+        ""L12-06"",
+        ""L12-15""
+      ]
+    },
+    {
+      ""requirement"": ""技术性违例与身体犯规的关系"",
+      ""supporting_ids"": [
+        ""L12-06""
+      ]
+    }
+  ]
+}",1197,139,8.1987648,08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb,b73df500f343336c24958680a48cdda2cfaad32c635c5e8022c1ac653e84279c,9d71efce8040f4f9b458c659819d2b95725351363a68e754410b8bbc9f02522d
+T034-expanded,A,1,correct,"[true, true, true]","[""L14-01"", ""L14-03"", ""L07-03""]","[""L14-01"", ""L07-03""]","[""L14-03""]","{""answerable"":true,""chunk_ids"":[""L14-01"",""L14-03"",""L07-03""],""reason"":null}",1492,35,13.5530254,8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f,4e78ff4cab08f67126c6f7a4ec216d4c56a7f12742697617ff1a5c6c84965a47,024b7cdf67d5a3026603313f926b1b7189c9096109fd108fe731d46b9c4da5b2
+T034-expanded,A,2,correct,"[true, true, true]","[""L14-01"", ""L14-03"", ""L07-03""]","[""L14-01"", ""L07-03""]","[""L14-03""]","{""answerable"":true,""chunk_ids"":[""L14-01"",""L14-03"",""L07-03""],""reason"":null}",1492,35,3.4887109,8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f,4e78ff4cab08f67126c6f7a4ec216d4c56a7f12742697617ff1a5c6c84965a47,830d3f115fc0c0da2a98465aba3249675663688db06f289a8579008dbc809c15
+T034-expanded,A,3,correct,"[true, true, true]","[""L14-01"", ""L14-03"", ""L07-03""]","[""L14-01"", ""L07-03""]","[""L14-03""]","{""answerable"":true,""chunk_ids"":[""L14-01"",""L14-03"",""L07-03""],""reason"":null}",1492,35,3.5200507,8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f,4e78ff4cab08f67126c6f7a4ec216d4c56a7f12742697617ff1a5c6c84965a47,d19ca21376655c6cd6cc0d9f007d854412cdfca231529c861315923b2f619d73
+T034-expanded,A,4,correct,"[true, true, true]","[""L14-01"", ""L14-03"", ""L07-03""]","[""L14-01"", ""L07-03""]","[""L14-03""]","{""answerable"":true,""chunk_ids"":[""L14-01"",""L14-03"",""L07-03""],""reason"":null}",1492,35,3.637907,8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f,4e78ff4cab08f67126c6f7a4ec216d4c56a7f12742697617ff1a5c6c84965a47,e22e55246ce1dced394a87c5cd784787c7cac7af0012415c1116e085b0548d29
+T034-expanded,B,1,incorrect,"[false, false, false]","[""L14-03""]",[],"[""L14-03""]","{
+  ""requirements"": [
+    {
+      ""requirement"": ""罚球点球与点球决胜在本场计分上有何区别？"",
+      ""supporting_ids"": [""L14-01"", ""L14-03""]
+    },
+    {
+      ""requirement"": ""罚球点球的执行规则是什么？"",
+      ""supporting_ids"": [""L14-03""]
+    }
+  ]
+}",1438,94,16.975613,8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f,f84b2e48e3b00b278b19876afa9ff5675ddf89c12e6ab250bd5dab5763afb5f0,91640faec0bfb9c924b4da85dedbd8c951a17295e8fb39f8f16c4994a994d0de
+T034-expanded,B,2,incorrect,"[false, false, false]","[""L14-03""]",[],"[""L14-03""]","{
+  ""requirements"": [
+    {
+      ""requirement"": ""罚球点球与点球决胜在本场计分上有何区别？"",
+      ""supporting_ids"": [""L14-01"", ""L14-03""]
+    }
+  ]
+}",1438,60,4.869621,8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f,f84b2e48e3b00b278b19876afa9ff5675ddf89c12e6ab250bd5dab5763afb5f0,28f5c0be369bb47b3dc636a654645ab25427b7633dac8e9512eefcce041e36d2
+T034-expanded,B,3,incorrect,"[false, false, false]","[""L14-03""]",[],"[""L14-03""]","{
+  ""requirements"": [
+    {
+      ""requirement"": ""罚球点球与点球决胜在本场计分上有何区别？"",
+      ""supporting_ids"": [""L14-01"", ""L14-03""]
+    }
+  ]
+}",1438,60,4.8452135,8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f,f84b2e48e3b00b278b19876afa9ff5675ddf89c12e6ab250bd5dab5763afb5f0,8ad990fbe8ce82023f3a5e8ff75881a9c82214c8a414cc657d9faf18d318a38e
+T034-expanded,B,4,incorrect,"[false, false, false]","[""L14-03""]",[],"[""L14-03""]","{
+  ""requirements"": [
+    {
+      ""requirement"": ""罚球点球与点球决胜在本场计分上有何区别？"",
+      ""supporting_ids"": [""L14-01"", ""L14-03""]
+    }
+  ]
+}",1438,60,4.982523,8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f,f84b2e48e3b00b278b19876afa9ff5675ddf89c12e6ab250bd5dab5763afb5f0,a86f08656f6d695ed04807eddda28e82d2b21187c56aaa0d0278fb64282f1f97
+T034-native,A,1,boundary_refusal,"[false, false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1369,18,1.2543165,8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3,0c15551bfaace670e1e8ca565033ef4020fdbf81520c2f569807d6425c8f3947,a08f04bc4a828e058cdf9a87df0e8fd9bf3b298e1c74791651ed84cda43bd781
+T034-native,A,2,boundary_refusal,"[false, false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1369,18,1.2169289,8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3,0c15551bfaace670e1e8ca565033ef4020fdbf81520c2f569807d6425c8f3947,cd68c0e2ff2ff99c9fcba6d1f4f643b5c251c2d4180505dedf24db6f6c824e8f
+T034-native,A,3,boundary_refusal,"[false, false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1369,18,1.2298246,8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3,0c15551bfaace670e1e8ca565033ef4020fdbf81520c2f569807d6425c8f3947,e59cfaf153c41e369ff8edfb95c6519ef0b52e89c03e19f1469d6dac9e63c8b4
+T034-native,A,4,boundary_refusal,"[false, false, false]",[],[],[],"{""answerable"":false,""chunk_ids"":[],""reason"":""insufficient_evidence""}",1369,18,1.2544122,8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3,0c15551bfaace670e1e8ca565033ef4020fdbf81520c2f569807d6425c8f3947,bf9acb84212f6b41bfaabf5d1af59005c5221f49281e73c854679218f1c27874
+T034-native,B,1,partial,"[false, true, true]","[""L07-03""]","[""L07-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""罚球点球与点球决胜在本场计分中有何区别？"",
+      ""supporting_ids"": [""L14-03"", ""L07-03""]
+    }
+  ]
+}",1315,60,3.6476064,8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3,ac35d9a119f1fb78f08dd8f8a38a8ab319cc1cc2aadd99bde4119360b842cdd1,7ca11b352ce5c7b7d9303d776750214e9c3ddcee6eecf56b021b7992221405db
+T034-native,B,2,partial,"[false, true, true]","[""L07-03""]","[""L07-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""罚球点球与点球决胜在本场计分中有何区别？"",
+      ""supporting_ids"": [""L14-03"", ""L07-03""]
+    }
+  ]
+}",1315,60,3.4841342,8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3,ac35d9a119f1fb78f08dd8f8a38a8ab319cc1cc2aadd99bde4119360b842cdd1,3ad6dfc838560067415f8241e591fd0be50cd01c9f03ea15cdc0b69232931422
+T034-native,B,3,partial,"[false, true, true]","[""L07-03""]","[""L07-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""罚球点球与点球决胜在本场计分中有何区别？"",
+      ""supporting_ids"": [""L14-03"", ""L07-03""]
+    }
+  ]
+}",1315,60,3.5544991,8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3,ac35d9a119f1fb78f08dd8f8a38a8ab319cc1cc2aadd99bde4119360b842cdd1,26a4102622a2d1845cfbaee980f30a1227d0a49fe5981696485e81064c13b9e5
+T034-native,B,4,partial,"[false, true, true]","[""L07-03""]","[""L07-03""]",[],"{
+  ""requirements"": [
+    {
+      ""requirement"": ""罚球点球与点球决胜在本场计分中有何区别？"",
+      ""supporting_ids"": [""L14-03"", ""L07-03""]
+    }
+  ]
+}",1315,60,3.6646399,8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3,ac35d9a119f1fb78f08dd8f8a38a8ab319cc1cc2aadd99bde4119360b842cdd1,840343ad2dafeeafd944ecfe926b0ec6688e36e438d82dbbe8ae6b73effcd9e2
