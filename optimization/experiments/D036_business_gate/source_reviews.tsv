@@ -1,0 +1,115 @@
+D004|L03-01,L12-10,L12-12	correct	11	L03-01,L12-10	L03-01覆盖11人及守门员；L12-10补充守门员被罚下仍须有人守门；L12-12的严重犯规说明不直接回答人数上限。
+D005|L04-01,L03-02,L04-05	correct	11	L04-01,L03-02	L04-01完整覆盖装备与长裤例外；L03-02支持装备要点；L04-05讲手套护目镜等，不支持所问五项和长裤例外。
+D006|L05-02,L12-14,L09-02	correct	11	L05-02,L12-14,L09-02	前两段直接解释有利未实现追究原违例；L09-02也直接支持有利时可继续比赛的要点。
+D006|L12-14,L09-02,L05-02	correct	11	L12-14,L09-02,L05-02	与B所选来源相同，仅顺序不同；三段均支持至少一个所需要点。
+D007|L06-02,L11-06,L06-04	correct	11	L06-02	L06-02给出建议不约束和主裁可不采纳；越位旗示和第四官员职责均未说明该约束关系。
+D008|L07-01,L09-01,L09-02	correct	11	L07-01	L07-01完整支持45分钟和连续计时；L09两段讨论球的比赛中外状态，不能据此推出时钟暂停与否。
+D009|L08A-02,L08A-03,L13-06	correct	11	L08A-02,L08A-03	开球两段分别直接规定或以违例说明位置距离要求；L13-06是任意球不同重启场景。
+D009|L08A-02,L01-07,L13-06	correct	11	L08A-02,L01-07	L08A-02完整给出主罚者例外及9.15米，L01-07补充半场与中圈并保留来源单位差异提示；L13-06讲任意球。
+D011|L09-01,L09-03,L08B-04	correct	111	L09-01,L08B-04	第9组正文和坠球2020来源都明确列出有希望进攻、直接进球、控球队改变三类；L09-03只说规定后果而未列出内容。
+D014|L12-04,L12-03	correct	11	L12-04	L12-04明确无身体接触阻挡为间接任意球；L12-03列身体接触的直接任意球，属于不同条件。
+D015|L15-05,L16-02,L12-05	correct	111	L15-05,L12-05	界外球专题和回传限制均支持所需事实；L16-02讲守门员掷入对方球门，不是接队友界外球。
+D017|L14-02,L01-06,L14-03	correct	111	L14-02,L01-06,L14-03	L14-02覆盖全部条件；L01-06划定进入限制；L14-03明确球进入比赛后其他队员才可进入该区域，均直接支持至少一个位置或时间条件。
+D018|L15-01,L15-05,L16-01	correct	111	L15-01	只有L15-01给出边线出界归属及最后触球故意与否；其余是掷球违例和球门线出界，不能替代。
+D019|L16-03,L16-04,L08B-02	correct	11	L16-03	L16-03明确被踢且明显移动，无须离开罚球区；L16-04无该时点定义，L08B-02讲坠球而非球门球。
+D020|L16-01,L17-01,L16-02	correct	111	L16-01,L17-01	前两段覆盖守方最后触球且未进球判攻方角球；L16-02讲禁止直接进球的特殊球门球，不支持本题条件。
+D023|L12-12,L12-01,L11-03	correct	11	L12-12	L12-12明确争抢球与不限于争抢球的差别；L12-01只说接触与力量分级，L11-03是越位，均未支持所问比较条件。
+D023|L12-12,L12-01,L11-02	correct	11	L12-12	核心段完整覆盖；直接任意球接触与越位干扰段不支持严重犯规和暴力行为的比较。
+D024|L09-04,L15-05,L09-02	correct	111	L09-04	L09-04含重启原因、打人处罚及原决定纠正三个要点；其他两段未处理停赛后打人场景。
+D025|L04-01,L04-05,L03-02	correct	111	L04-01	只有L04-01明确合理保护、球袜遮盖和本人负责；基本装备列举及其他护具均未给出这些护腿板条件。
+D027|L09-02,L14-04,L15-04	correct	1	L09-02,L14-04	L09-02直接说明反弹回场内仍比赛中；L14-04的无违例反弹继续比赛提供部分直接支持；L15-04界外球干扰不支持。
+D028|L05-01,L05-03,L12-07	correct	11	L05-01,L05-03,L12-07	L05-01覆盖全部；L05-03明确赛前不当行为须报告；L12-07直接说明警告要记录受罚队员信息，补充纪律记录但不能独立覆盖整题。
+D029|L08A-01,L15-02,L15-05	correct	11	L08A-01	开球段覆盖掷币选择和下半场开球；界外球程序及违例与所问选择无关。
+D029|L08A-01,L15-01,L08A-02	correct	11	L08A-01	只有L08A-01说明掷币与下半场开球归属；另两段没有该选择关系。
+D031|L02-01,L01-05,L04-04	correct	11	L02-01	L02-01完整支持足球面片连接方式及球胆材料；场地线和球鞋鞋钉不支持所问球的制造材料。
+D036|L12-09	incorrect		-	该题标注must_refuse=true，当前输出answered违反强制拒答契约。原段确实说明依赛事而定，未编造固定停赛数字；不能把该结果描述成凭空编造事实。
+T004|L01-06,L14-02,L01-07	correct	111	L01-06,L14-02	罚球弧定义段覆盖圆心、人员和时间条件，点球位置段补充人员；L01-07讲中圈和角球弧，不支持罚球弧圆心。
+T008|L04-01,L04-02	correct	11	L04-02	L04-02明确两队与裁判助理裁判区分，且主场可穿客场球衣；L04-01讲基本装备和守门员颜色，未支持所问两队服装关系。
+T010|L05-04,L12-16,L05-02	correct	11	L05-04	L05-04完整给出最高级别教练与无替代医疗人员例外；官员红黄牌历史和有利原则未支持这些特定条件。
+T011|L05-03,L05-04,L12-06	correct	111	L05-03	L05-03逐项列出处罚重启、接触严重程度及战术影响；其他段未给同时违例的选择标准。
+T014|L06-06,L06-04,L03-04	correct	11	L06-06	附加助理裁判段完整说明位置身份与非强制配备；第四官员及一般官员技术段不支持所问特定岗位。
+T018|L17-05,L15-05,L08A-03	correct	111	L08A-03	开球违例段完整支持他人触球前二触判对方间接任意球及地点；角球和界外球段属于不同重启对象。
+T020|L08B-04,L09-03,L08B-01	correct	111	L08B-04,L08B-01	L08B-04给出2020及外部人员物体动物、观众哨声；L08B-01支持来源2019/2020版本限定；L09-03泛称外部干扰，没有所问例子。
+T021|L09-02,L15-01,L12-15	correct	11	L09-02,L15-01	L09-02明确空中整体越线即出界不用等落地；L15-01支持整体越边线这一触发条件；L12-15不定义出界时点。
+T024|L11-06,L11-07,L11-08	correct	11	L11-06	只有L11-06给出先竖直及停赛后平行代表中间；观察误差和VAR延迟举旗不是所问旗角度含义。
+T026|L12-01,L12-06,L12-15	correct	111	L12-06,L12-15	L12-06覆盖违例不全是犯规、技术性违例和不当行为处罚；L12-15进一步区分比赛外不当行为与身体犯规；L12-01未说明技术性违例和不当行为区别。
+T027|L12-07,L12-11,L08B-03	correct	11	L12-07,L12-11	黄牌段给牌示顺序和罚下，红牌类别段支持第二次警告导致罚下；坠球反复触球黄牌不涉及两黄顺序。
+T028|L12-06,L12-02,L12-08	correct	11	L12-08	庆祝段明确不得过度及脱衣蒙脸警告；一般违例分类与手球条件不支持该具体庆祝行为。
+T029|L13-02,L12-02,L15-05	correct	11	L13-02	只有L13-02说明两类任意球的手臂姿势；手球和界外球违例并未描述裁判示意姿势。
+T030|L01-05,L13-01,L13-03	correct	11	L01-05,L13-03	两处均直接给球门区任一点和攻方最近线上点的差别；L13-01只区分进球及处罚类型，没有执行点例外。
+T031|L13-04,L13-07,L08A-02	correct	111	L13-04,L13-07	任意球程序和违例段共同覆盖三人、一米和间接任意球处罚；开球9.15米不是所问人墙距离。
+T032|L14-05,L14-06,L13-04	partial	1110	L14-05,L13-04	选段给完成助跑后的禁止、间接任意球和警告，但未给允许助跑中假动作的对照；持续违例警告并非本题一次假动作的条件。
+T033|L14-03,L08A-03,L14-05	correct	11	L14-03,L14-05	两点球段明确门柱反弹不是他人触球，主罚者不得补射；开球段属于不同重启。
+T035|L15-02,L15-04,L15-05	correct	111	L15-02	L15-02明确面向场地、双脚着地和双手过头；其余仅讲违例和接球，不给所问动作条件。
+T037|L16-04,L15-05,L12-05	correct	111	L16-04	球门球违例段给非守门员二次手球且本方罚球区内可点球；界外球和守门员回传限制不是本题对象。
+T039|L17-03,L01-07,L15-04	correct	11	L17-03,L01-07	L17-03直接给静止放球及9.15米；L01-07补充角球弧和带校核的近似换算，不能将其近似单位误写成正式精确值；界外球2米无关。
+T040|L17-05,L16-04,L15-05	correct	111	L17-05	仅角球段直接支持本题二触条件、守方间接任意球和地点，另两段是球门球和界外球场景。
+D016|L13-05,L17-01	correct	11	L13-05,L17-01	L13-05直接给间接任意球直接入对方球门判球门球和直接入本方球门判角球；L17-01进一步列明未被其他队员触及的间接任意球直接进本方球门判角球，两段均支持本题必要要点。
+T016|L07-01	correct	11	L07-01	L07-01明确已公布补时还可能进一步延长，且半场末需要执行或重罚点球时延长至程序完成，独立覆盖两个必要要点。
+T036|L15-04,L15-01,L15-05	correct	111	L15-04	L15-04明确动作本身正确、球入场前碰地时由原队原处重掷；L15-01的出界归属与L15-05的二触等违例不支持该重掷场景。
+T034|L14-01,L14-03,L07-03	correct	111	L14-01,L07-03	L14-01说明比赛中罚球点球是重启；L07-03说明点球决胜确定胜者且罚中数不计正常进球；L14-03执行程序未直接支持所问分类区别。
+D013|L11-01,L11-03,L12-10	correct	111	L11-01	L11-01完整支持头身体脚、不计手臂和守门员同样适用；L11-03的救球用手条件与L12-10红牌守门职责不支持越位位置的身体部位判定。
+D026|L07-03	partial	01	L07-03	L07-03给出赛事决胜加时两个15分钟半场，但没有正常补时补回中断损失且由裁判决定这一侧；仍仅覆盖第二要点。
+T013|L06-04	correct	11	L06-04	L06-04同时明确每半场末公布补时时间，以及使用号码牌或电子显示屏管理换人，单段覆盖全部必要要点。
+T026|L12-01,L12-02,L12-03	incorrect	000	-	三段分别为身体接触分级、手球和其他直接任意球犯规，均未区分技术性违例与犯规，也未直接说明不当行为分类；L12-01的一般黄红牌不等于本题不当行为定义，原A1由L12-15支持的第三要点本次漏选。
+D004|L03-01	correct	11	L03-01	Reuse prior source review for identical question and paragraph set; order may differ. 覆盖最多11人、不含替补及须有守门员。
+D005|L04-01	correct	11	L04-01	Reuse prior source review for identical question and paragraph set; order may differ. 五项基本装备齐全，并保留守门员长裤例外。
+D006|L12-14	correct	11	L12-14	Reuse prior source review for identical question and paragraph set; order may differ. 给出有利时继续以及未实现时按原违例处理，两点均在选中的证据里。
+D007|L06-02	correct	11	L06-02	Reuse prior source review for identical question and paragraph set; order may differ. 说明意见不约束主裁判，主裁判可以改变或不采纳。
+D008|L07-01	correct	11	L07-01	Reuse prior source review for identical question and paragraph set; order may differ. 给出每半场45分钟及出界不停表。
+T027|L12-07,L12-11	correct	11	L12-07,L12-11	Reuse prior source review for identical question and paragraph set; order may differ. 先再次出示黄牌，再出示红牌罚下；红牌类别段补充了第二次警告的结果。
+D010|L08B-02	correct	111	L08B-02	Reuse prior source review for identical question and paragraph set; order may differ. 在2019年程序的范围内给出至少4米、触地生效。
+D009|L08A-02,L01-07	correct	11	L08A-02	Byte-identical A0 result: inherit the frozen source-review mask (L08A-02 only). L01-07 is not counted under that frozen mask; do not substitute a review from a different paragraph combination. No reannotation.
+D011|L09-03	incorrect	000	-	Reuse prior source review for identical question and paragraph set; order may differ. 只说碰到官员并造成规定后果可用坠球，未列出三种具体后果。
+D013|L11-01,L11-03,L12-05	correct	111	L11-01	Reuse prior source review for identical question and paragraph set; order may differ. 标注支持段明确列出头、身体、脚，排除手和手臂，守门员同样适用。
+D014|L12-04	correct	11	L12-04	Reuse prior source review for identical question and paragraph set; order may differ. 无身体接触的阻挡列为间接任意球。
+D015|L15-05	correct	111	L15-05	Reuse prior source review for identical question and paragraph set; order may differ. 选中的界外球规则已覆盖直接从队友来球、罚球区内和间接任意球。
+D017|L14-02	correct	111	L14-02	Reuse prior source review for identical question and paragraph set; order may differ. 给出场内、罚球区外、点后，且至少9.15米。
+D018|L15-01,L16-01,L16-04	correct	111	L15-01	Reuse prior source review for identical question and paragraph set; order may differ. 给出整体越边线、归最后触球者的对方，有意及意外同样处理。
+D019|L16-04,L17-04,L08B-02	incorrect	00	-	Reuse prior source review for identical question and paragraph set; order may differ. 未给出球门球的生效时点或球无须离开罚球区；把角球和坠球的材料放进了回答。
+D020|L17-01,L16-01,L16-02	correct	111	L17-01,L16-01	Reuse prior source review for identical question and paragraph set; order may differ. 给出最后守方触球、越过球门线且未进球时判角球。
+D021|L11-03,L12-05,L15-03	partial	01	L11-03,L15-03	Reuse prior source review for identical question and paragraph set; order may differ. 明确直接接界外球的越位例外，未明确说明直接接任意球仍可能越位。
+D022|L16-03,L17-04,L17-05	correct	11	L16-03,L17-04	Reuse prior source review for identical question and paragraph set; order may differ. 分别说明球门球无须离开罚球区、角球无须离开角球区。
+D024|L09-04	correct	111	L09-04	Reuse prior source review for identical question and paragraph set; order may differ. 交代原重启通常不变、后续纪律处罚及重启前可纠正决定。
+D023|L12-11,L12-01,L12-12	correct	11	L12-12	Post-run Codex source review: L12-12 directly defines both conditions. L12-11 only lists red-card categories and L12-01 covers force/contact, not the requested distinction. No new human review.
+D025|L04-01	correct	111	L04-01	Reuse prior source review for identical question and paragraph set; order may differ. 包含适当材料、合理保护、球袜遮盖及队员的尺寸适用性责任。
+D026|L10-02	partial	01	L10-02	Reuse prior source review for identical question and paragraph set; order may differ. 给出按赛事规程进行的两个15分钟半场，没有说明正常补时的目的和裁判决定权。
+D028|L05-01	correct	11	L05-01	Reuse prior source review for identical question and paragraph set; order may differ. 给出计时、记录及提交报告，包含纪律处罚与赛前赛中赛后有关事件。
+D029|L08A-01	correct	11	L08A-01	Reuse prior source review for identical question and paragraph set; order may differ. 明确另一队选择进攻方向，并在下半场由上半场未先开球的一方开球。
+D030|L12-10,L03-01,L12-12	correct	111	L12-10,L03-01	Reuse prior source review for identical question and paragraph set; order may differ. 三项齐全：必须有人守门，可由场上队员承担，且红牌人数缺额不能补回。
+D031|L02-01	correct	11	L02-01	Reuse prior source review for identical question and paragraph set; order may differ. 列出机缝、手缝、热黏合连接，以及乳胶或丁基橡胶球胆。
+D027|L09-02,L08B-04,L14-04	correct	1	L09-02,L14-04	Post-run Codex source review: L09-02 directly answers and L14-04 supplies the qualified no-infringement rebound example, consistent with prior citation grading; L08B-04 concerns added external interference. No new human review.
+T002|L01-02,L17-03,L01-07	correct	11	L01-02	Reuse prior source review for identical question and paragraph set; order may differ. 包含标线宽度一致、不能超过12厘米以及四角角旗；另两段未直接支持这两个问题。
+T003|L01-01,L14-02,L16-03	correct	11	L01-01	Reuse prior source review for identical question and paragraph set; order may differ. 明确界线属于其划定区域，罚球区线上的相应犯规在区内。
+T004|L14-02	partial	011	L14-02	Reuse prior source review for identical question and paragraph set; order may differ. 说明执行前其他队员的位置限制，未明确罚球弧以罚球点为圆心。
+T005|L03-01	correct	11	L03-01	Post-run Codex source review: L03-01 explicitly allows coach-assigned tactical positions and says the Laws do not require one position division. Both points covered. No new human review.
+T006|L03-04	correct	1111	L03-04	Reuse prior source review for identical question and paragraph set; order may differ. 列出身份误认、进球与此前违例、直接红牌、点球判罚四类。
+T007|L04-05,L03-02,L11-03	correct	11	L04-05	Reuse prior source review for identical question and paragraph set; order may differ. 说明所有队员可戴手套、守门员通常使用专用手套；另两段未直接支持手套许可。
+T008|L04-02	correct	11	L04-02	Reuse prior source review for identical question and paragraph set; order may differ. 说明两队颜色相互区分且与裁判和助理裁判区分，客场球衣也可在主场穿。
+T010|L05-04,L12-15,L12-16	correct	11	L05-04	Reuse prior source review for identical question and paragraph set; order may differ. 包含技术区域最高级别教练的责任及无替代医疗人员时的留场例外。
+T011|L05-03	correct	111	L05-03	Reuse prior source review for identical question and paragraph set; order may differ. 列出处罚、重启方式、接触严重程度和战术影响。
+T012|L06-01,L03-04,L06-06	correct	11	L06-01,L03-04,L06-06	Reuse prior source review for identical question and paragraph set; order may differ. 明确主裁判最终决定，其他官员提供更清楚的观察意见；附加助理的报告是这一协作的具体例子。
+T013|L06-04,L07-01,L06-02	correct	11	L06-04,L07-01	Reuse prior source review for identical question and paragraph set; order may differ. 包含补时公布和号码牌或电子屏的换人辅助。
+T014|L06-05,L06-04,L03-04	incorrect	00	-	Post-run Codex source review: reserve/fourth-official and VAR paragraphs do not identify the goal-line additional assistant role or its nonmandatory competition scope. A passing mention of the role as a replacement is not the requested identification. Consistent with the frozen A0 failure; no new human review.
+T018|L17-05	incorrect	000	-	Reuse prior source review for identical question and paragraph set; order may differ. 引用的是角球二次触球规定，未按题设的开球情形提供相应规则证据。
+T019|L08B-03,L17-06,L17-04	correct	111	L08B-03,L17-06	Reuse prior source review for identical question and paragraph set; order may differ. 给出至少两名不同队员及首次触球队员可继续触球，并保留本地资料边界。
+T020|L08B-04	correct	111	L08B-04	Reuse prior source review for identical question and paragraph set; order may differ. 明确2020年背景，并列出外部人员、额外物体或动物及观众哨声干扰。
+T021|L09-02,L15-01,L16-01	correct	11	L09-02,L15-01	Reuse prior source review for identical question and paragraph set; order may differ. 明确整体在空中越过边线即出界，无须落地。
+T022|L15-01,L16-01,L17-06	correct	111	L15-01,L16-01	Reuse prior source review for identical question and paragraph set; order may differ. 界外球和球门球原段合计覆盖三类通常归属；补充的乌龙重启段与题设不同。
+T023|L07-03	partial	101	L07-03	Reuse prior source review for identical question and paragraph set; order may differ. 说明规程和客场进球制度的适用限制，没有明确回答有些杯赛可省略加时直接点球。
+T024|L11-06	correct	11	L11-06	Reuse prior source review for identical question and paragraph set; order may differ. 先竖直举旗，停赛后平举对应场地中间。
+T016|L07-01,L06-04,L14-03	correct	11	L07-01	Post-run Codex source review: L07-01 explicitly covers both extension after announced added time and completion of a penalty/re-take. L06-04 only announces time and L14-03 describes execution, not extension. No new human review.
+T025|L11-09,L03-04,L12-08	correct	111	L11-09,L03-04	Reuse prior source review for identical question and paragraph set; order may differ. 说明高速摄像机、三维回放和辅助裁判的性质；纪律处罚段未支持该问题。
+T026|L12-01,L12-02,L12-15	partial	001	L12-15	Reuse prior source review for identical question and paragraph set; order may differ. 说明不当行为可警告或罚令出场，未明确区分一般技术性违例与身体犯规。
+T028|L12-02	incorrect	00	-	Reuse prior source review for identical question and paragraph set; order may differ. 选中手球规则，没有回答脱衣庆祝的黄牌处理。
+T029|L13-02,L16-02,L13-05	correct	11	L13-02,L13-05	Reuse prior source review for identical question and paragraph set; order may differ. 包含间接任意球单臂过头与直接任意球伸臂指方向；保持举臂的段落补充间接球信号。
+T030|L01-05,L13-01,L13-05	correct	11	L01-05	Reuse prior source review for identical question and paragraph set; order may differ. 完整给出己方球门区内任一点与对方球门区线上最近点的差别。
+T031|L13-07	correct	111	L13-07	Reuse prior source review for identical question and paragraph set; order may differ. 至少3人人墙、至少1米及违例判守方间接任意球齐全。
+T032|L14-05	partial	1110	L14-05	Reuse prior source review for identical question and paragraph set; order may differ. 说明完成助跑后假动作的间接任意球与警告后果，未区分仍允许的助跑中假动作。
+T033|L14-03	correct	11	L14-03	Reuse prior source review for identical question and paragraph set; order may differ. 明确只碰门柱且无人再碰时，主罚者不能直接补射。
+T035|L15-02	correct	111	L15-02	Reuse prior source review for identical question and paragraph set; order may differ. 身体朝向、双脚位置及双手从头后经头顶掷出的动作齐全。
+T036|L15-04,L15-01,L15-02	correct	111	L15-04	Post-run Codex source review: L15-04 explicitly binds correct execution plus pre-entry ground contact to a same-team same-place re-take. L15-01 and L15-02 do not state that exception. No new human review.
+T037|L16-04	correct	111	L16-04	Reuse prior source review for identical question and paragraph set; order may differ. 明确二次触球、应处罚手球及非守门员在本方罚球区内可能点球的条件。
+T038|L16-02,L17-01,L16-03	correct	1111	L16-02	Reuse prior source review for identical question and paragraph set; order may differ. 四种直接进入对方球门后判球门球的例子齐全；其他两段谈的是不同重启情形。
+T039|L17-03,L01-07	correct	11	L17-03	Reuse prior source review for identical question and paragraph set; order may differ. 明确静止放在相应角球区，并给出至少9.15米；近似英制换算段不足以支持精确距离。
+T040|L17-05	correct	111	L17-05	Reuse prior source review for identical question and paragraph set; order may differ. 给出其他队员触球前再次触球，按违例地点判守方间接任意球。
