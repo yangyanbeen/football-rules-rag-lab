@@ -1,0 +1,24 @@
+{
+  "baseline": "5986781 + Prompt A",
+  "candidate": "Frozen E7 requirements plus independent one-requirement/one-paragraph verifier; unchanged E7 selector and original renderer",
+  "stage_order": ["offline two replay diagnostics", "T026-expanded 4 archived rounds x 3 requirements x 5 paragraphs", "only if minimal passes: D001/D002/D003/D012 and D021 frozen rounds"],
+  "minimal_pair_observations": 60,
+  "minimum_T026_fully_correct": 3,
+  "minimum_T026_repeats": 4,
+  "L12_15_definition_direct_false_positives_allowed": 0,
+  "parse_attempts_per_pair_max": 2,
+  "partial_support_enters_coverage": false,
+  "lexical_quote_check_proves_semantics": false,
+  "external_source_judgments_filter_live_relations": false,
+  "live_inference_uses_reviewed_neutral_requirements": false,
+  "new_decomposition_experiment_this_candidate": false,
+  "model_config": "unchanged config/answer_evaluation.json llm",
+  "expansion_gates": {
+    "D001_D002_D003_D012": "Each remains correct 4/4; report new false refusals",
+    "D021": "Archived reverse free-kick claim vs L13-05 must be refutation; no reverse assertion may pass as direct support",
+    "D036": "Shared business rule before retrieval, answering, or verification calls"
+  },
+  "full90_gates": "T026-expanded >=3/4, T034-expanded and D017 each 4/4, four false-refusal recoveries retained, D036 zero calls; then 18/18 refusal, 90/90 technical, >=51/72 correct",
+  "holdout_used": false,
+  "scope_note": "Reviewed offline questions and source labels are diagnostic ceilings and scoring material only. Do not promote an offline oracle score to model quality. Freeze this verifier before any later decomposition-only experiment."
+}
