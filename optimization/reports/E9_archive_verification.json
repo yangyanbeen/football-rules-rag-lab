@@ -1,0 +1,16 @@
+{
+  "input_freeze_precedes_prompt_commit": true,
+  "frozen_pairs_verified": 16,
+  "paired_inputs_and_schema_verified": 16,
+  "first_answer_records_verified": 32,
+  "actual_model_calls": 32,
+  "retries": 0,
+  "warmup": 0,
+  "max_message_bytes": 2364,
+  "max_input_tokens": 514,
+  "max_output_tokens": 7,
+  "model_and_runtime_unchanged": true,
+  "D036_zero_calls": true,
+  "holdout_used": false,
+  "full90_executed": false
+}

@@ -1,0 +1,167 @@
+{
+  "evidence_trimmed": false,
+  "overflow": [],
+  "rows": [
+    {
+      "message_bytes": 1662,
+      "sample_id": "S01",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 1796,
+      "sample_id": "S01",
+      "variant": "S"
+    },
+    {
+      "message_bytes": 1665,
+      "sample_id": "S02",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 1799,
+      "sample_id": "S02",
+      "variant": "S"
+    },
+    {
+      "message_bytes": 2227,
+      "sample_id": "S03",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 2361,
+      "sample_id": "S03",
+      "variant": "S"
+    },
+    {
+      "message_bytes": 1992,
+      "sample_id": "S04",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 2126,
+      "sample_id": "S04",
+      "variant": "S"
+    },
+    {
+      "message_bytes": 1608,
+      "sample_id": "S05",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 1742,
+      "sample_id": "S05",
+      "variant": "S"
+    },
+    {
+      "message_bytes": 1987,
+      "sample_id": "S06",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 2121,
+      "sample_id": "S06",
+      "variant": "S"
+    },
+    {
+      "message_bytes": 2227,
+      "sample_id": "S07",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 2361,
+      "sample_id": "S07",
+      "variant": "S"
+    },
+    {
+      "message_bytes": 2230,
+      "sample_id": "S08",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 2364,
+      "sample_id": "S08",
+      "variant": "S"
+    },
+    {
+      "message_bytes": 1992,
+      "sample_id": "S09",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 2126,
+      "sample_id": "S09",
+      "variant": "S"
+    },
+    {
+      "message_bytes": 1588,
+      "sample_id": "S10",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 1722,
+      "sample_id": "S10",
+      "variant": "S"
+    },
+    {
+      "message_bytes": 2140,
+      "sample_id": "S11",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 2274,
+      "sample_id": "S11",
+      "variant": "S"
+    },
+    {
+      "message_bytes": 2001,
+      "sample_id": "S12",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 2135,
+      "sample_id": "S12",
+      "variant": "S"
+    },
+    {
+      "message_bytes": 2156,
+      "sample_id": "S13",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 2290,
+      "sample_id": "S13",
+      "variant": "S"
+    },
+    {
+      "message_bytes": 1866,
+      "sample_id": "S14",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 2000,
+      "sample_id": "S14",
+      "variant": "S"
+    },
+    {
+      "message_bytes": 1681,
+      "sample_id": "S15",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 1815,
+      "sample_id": "S15",
+      "variant": "S"
+    },
+    {
+      "message_bytes": 2022,
+      "sample_id": "S16",
+      "variant": "P"
+    },
+    {
+      "message_bytes": 2156,
+      "sample_id": "S16",
+      "variant": "S"
+    }
+  ],
+  "schema_bytes": 183
+}

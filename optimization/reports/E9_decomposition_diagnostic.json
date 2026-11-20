@@ -1,0 +1,361 @@
+{
+  "new_model_calls": 0,
+  "reviewer": "Codex text review against frozen required dimensions; not new human/expert review.",
+  "reviewed_neutral_source": "optimization/e8_source_audit.py",
+  "reviewed_neutral_source_sha256": "5df999a6317aa36b6a4a0bef0726a5a3dc427c57417cce704dcd0901190f5f4a",
+  "E8_offline_reference_sha256": "91d3c4244c376c274d384a6783cbabd35a4fd6413a17dd9165e8aa8f8561dc4b",
+  "comparison": "Archived model text versus E8-reviewed neutral restatement. Not a new-versus-old model A/B and not end-to-end verification.",
+  "dimension_scoring": "Explicitly identified dimensions, not answer correctness. A combined restatement can retain a broad target while failing to split distinct subquestions.",
+  "records": [
+    {
+      "case_id": "T034-expanded",
+      "repeat": 1,
+      "original_question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "old_model_requirements": [
+        "罚球点球与点球决胜在本场计分上有何区别？",
+        "罚球点球的执行规则是什么？"
+      ],
+      "reviewed_neutral_questions": [
+        "比赛中判罚的罚球点球是什么性质的程序？",
+        "点球决胜用于决定什么比赛结果？",
+        "点球决胜罚中次数与本场正常进球数如何关联？"
+      ],
+      "necessary_dimensions": [
+        "比赛中罚球点球的程序性质",
+        "点球决胜的目的",
+        "点球决胜罚中次数与本场计分的关联"
+      ],
+      "old_dimensions_explicit": [
+        false,
+        false,
+        true
+      ],
+      "reviewed_dimensions_explicit": [
+        true,
+        true,
+        true
+      ],
+      "old_constraint_review": {
+        "two_procedures_named": true,
+        "in_match_scoring_scope_retained": true,
+        "unrelated_execution_rules_added": true
+      },
+      "reviewed_constraints": {
+        "scope_retained": true,
+        "unsupported_answer_values_prefilled": false,
+        "excluded_actors_reintroduced": false,
+        "exclusion_repeated_in_each_question": null
+      },
+      "review_note": "旧输出复述整个计分比较，确实保留了计分维度，不能说完全没看到问题；但未单列程序性质和决胜目的，首轮还新增执行规则。",
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r1.json",
+      "source_sha256": "91640faec0bfb9c924b4da85dedbd8c951a17295e8fb39f8f16c4994a994d0de"
+    },
+    {
+      "case_id": "T034-expanded",
+      "repeat": 2,
+      "original_question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "old_model_requirements": [
+        "罚球点球与点球决胜在本场计分上有何区别？"
+      ],
+      "reviewed_neutral_questions": [
+        "比赛中判罚的罚球点球是什么性质的程序？",
+        "点球决胜用于决定什么比赛结果？",
+        "点球决胜罚中次数与本场正常进球数如何关联？"
+      ],
+      "necessary_dimensions": [
+        "比赛中罚球点球的程序性质",
+        "点球决胜的目的",
+        "点球决胜罚中次数与本场计分的关联"
+      ],
+      "old_dimensions_explicit": [
+        false,
+        false,
+        true
+      ],
+      "reviewed_dimensions_explicit": [
+        true,
+        true,
+        true
+      ],
+      "old_constraint_review": {
+        "two_procedures_named": true,
+        "in_match_scoring_scope_retained": true,
+        "unrelated_execution_rules_added": false
+      },
+      "reviewed_constraints": {
+        "scope_retained": true,
+        "unsupported_answer_values_prefilled": false,
+        "excluded_actors_reintroduced": false,
+        "exclusion_repeated_in_each_question": null
+      },
+      "review_note": "旧输出复述整个计分比较，确实保留了计分维度，不能说完全没看到问题；但未单列程序性质和决胜目的，首轮还新增执行规则。",
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r2.json",
+      "source_sha256": "28f5c0be369bb47b3dc636a654645ab25427b7633dac8e9512eefcce041e36d2"
+    },
+    {
+      "case_id": "T034-expanded",
+      "repeat": 3,
+      "original_question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "old_model_requirements": [
+        "罚球点球与点球决胜在本场计分上有何区别？"
+      ],
+      "reviewed_neutral_questions": [
+        "比赛中判罚的罚球点球是什么性质的程序？",
+        "点球决胜用于决定什么比赛结果？",
+        "点球决胜罚中次数与本场正常进球数如何关联？"
+      ],
+      "necessary_dimensions": [
+        "比赛中罚球点球的程序性质",
+        "点球决胜的目的",
+        "点球决胜罚中次数与本场计分的关联"
+      ],
+      "old_dimensions_explicit": [
+        false,
+        false,
+        true
+      ],
+      "reviewed_dimensions_explicit": [
+        true,
+        true,
+        true
+      ],
+      "old_constraint_review": {
+        "two_procedures_named": true,
+        "in_match_scoring_scope_retained": true,
+        "unrelated_execution_rules_added": false
+      },
+      "reviewed_constraints": {
+        "scope_retained": true,
+        "unsupported_answer_values_prefilled": false,
+        "excluded_actors_reintroduced": false,
+        "exclusion_repeated_in_each_question": null
+      },
+      "review_note": "旧输出复述整个计分比较，确实保留了计分维度，不能说完全没看到问题；但未单列程序性质和决胜目的，首轮还新增执行规则。",
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r3.json",
+      "source_sha256": "8ad990fbe8ce82023f3a5e8ff75881a9c82214c8a414cc657d9faf18d318a38e"
+    },
+    {
+      "case_id": "T034-expanded",
+      "repeat": 4,
+      "original_question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "old_model_requirements": [
+        "罚球点球与点球决胜在本场计分上有何区别？"
+      ],
+      "reviewed_neutral_questions": [
+        "比赛中判罚的罚球点球是什么性质的程序？",
+        "点球决胜用于决定什么比赛结果？",
+        "点球决胜罚中次数与本场正常进球数如何关联？"
+      ],
+      "necessary_dimensions": [
+        "比赛中罚球点球的程序性质",
+        "点球决胜的目的",
+        "点球决胜罚中次数与本场计分的关联"
+      ],
+      "old_dimensions_explicit": [
+        false,
+        false,
+        true
+      ],
+      "reviewed_dimensions_explicit": [
+        true,
+        true,
+        true
+      ],
+      "old_constraint_review": {
+        "two_procedures_named": true,
+        "in_match_scoring_scope_retained": true,
+        "unrelated_execution_rules_added": false
+      },
+      "reviewed_constraints": {
+        "scope_retained": true,
+        "unsupported_answer_values_prefilled": false,
+        "excluded_actors_reintroduced": false,
+        "exclusion_repeated_in_each_question": null
+      },
+      "review_note": "旧输出复述整个计分比较，确实保留了计分维度，不能说完全没看到问题；但未单列程序性质和决胜目的，首轮还新增执行规则。",
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r4.json",
+      "source_sha256": "a86f08656f6d695ed04807eddda28e82d2b21187c56aaa0d0278fb64282f1f97"
+    },
+    {
+      "case_id": "D017-native",
+      "repeat": 1,
+      "original_question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "old_model_requirements": [
+        "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+        "点球执行前，主罚者的位置例外见第二份文档。",
+        "点球执行前，罚球区与罚球弧共同划定了其他队员不得提前进入的范围。"
+      ],
+      "reviewed_neutral_questions": [
+        "点球执行前，除主罚者和守门员外，其他队员相对场地边界及罚球区的位置有什么要求？",
+        "点球执行前，除主罚者和守门员外，其他队员相对罚球点的前后位置有什么要求？",
+        "点球执行前，除主罚者和守门员外，其他队员与罚球点的最小距离如何规定？"
+      ],
+      "necessary_dimensions": [
+        "相对场地边界及罚球区的区域位置",
+        "相对罚球点的前后位置",
+        "与罚球点的最小距离"
+      ],
+      "old_dimensions_explicit": [
+        false,
+        false,
+        false
+      ],
+      "reviewed_dimensions_explicit": [
+        true,
+        true,
+        true
+      ],
+      "old_constraint_review": {
+        "explicit_exclusion_text_present": true,
+        "excluded_kicker_added_as_requirement": true,
+        "excluded_goalkeeper_added_as_requirement": false,
+        "exclusion_preserved_consistently": false
+      },
+      "reviewed_constraints": {
+        "scope_retained": true,
+        "unsupported_answer_values_prefilled": false,
+        "excluded_actors_reintroduced": false,
+        "exclusion_repeated_in_each_question": true
+      },
+      "review_note": "首轮第一项保留排除条件，却又新增主罚者要求；后三轮把主罚者和守门员均作为要求。泛问其他队员位置未单列三个必要维度。",
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r1.json",
+      "source_sha256": "5e946b73b360936a627ab80d8f678e1b7199b4db5f6b8f3137deff140bdeed61"
+    },
+    {
+      "case_id": "D017-native",
+      "repeat": 2,
+      "original_question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "old_model_requirements": [
+        "点球执行前，主罚者的位置条件。",
+        "点球执行前，守门员的位置条件。",
+        "点球执行前，其他队员的位置条件。"
+      ],
+      "reviewed_neutral_questions": [
+        "点球执行前，除主罚者和守门员外，其他队员相对场地边界及罚球区的位置有什么要求？",
+        "点球执行前，除主罚者和守门员外，其他队员相对罚球点的前后位置有什么要求？",
+        "点球执行前，除主罚者和守门员外，其他队员与罚球点的最小距离如何规定？"
+      ],
+      "necessary_dimensions": [
+        "相对场地边界及罚球区的区域位置",
+        "相对罚球点的前后位置",
+        "与罚球点的最小距离"
+      ],
+      "old_dimensions_explicit": [
+        false,
+        false,
+        false
+      ],
+      "reviewed_dimensions_explicit": [
+        true,
+        true,
+        true
+      ],
+      "old_constraint_review": {
+        "explicit_exclusion_text_present": false,
+        "excluded_kicker_added_as_requirement": true,
+        "excluded_goalkeeper_added_as_requirement": true,
+        "exclusion_preserved_consistently": false
+      },
+      "reviewed_constraints": {
+        "scope_retained": true,
+        "unsupported_answer_values_prefilled": false,
+        "excluded_actors_reintroduced": false,
+        "exclusion_repeated_in_each_question": true
+      },
+      "review_note": "首轮第一项保留排除条件，却又新增主罚者要求；后三轮把主罚者和守门员均作为要求。泛问其他队员位置未单列三个必要维度。",
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r2.json",
+      "source_sha256": "fe65a75945b478b3d2b78a85b824935dfffd3e091dac14d205d52182f2be49b1"
+    },
+    {
+      "case_id": "D017-native",
+      "repeat": 3,
+      "original_question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "old_model_requirements": [
+        "点球执行前，主罚者的位置条件。",
+        "点球执行前，守门员的位置条件。",
+        "点球执行前，其他队员的位置条件。"
+      ],
+      "reviewed_neutral_questions": [
+        "点球执行前，除主罚者和守门员外，其他队员相对场地边界及罚球区的位置有什么要求？",
+        "点球执行前，除主罚者和守门员外，其他队员相对罚球点的前后位置有什么要求？",
+        "点球执行前，除主罚者和守门员外，其他队员与罚球点的最小距离如何规定？"
+      ],
+      "necessary_dimensions": [
+        "相对场地边界及罚球区的区域位置",
+        "相对罚球点的前后位置",
+        "与罚球点的最小距离"
+      ],
+      "old_dimensions_explicit": [
+        false,
+        false,
+        false
+      ],
+      "reviewed_dimensions_explicit": [
+        true,
+        true,
+        true
+      ],
+      "old_constraint_review": {
+        "explicit_exclusion_text_present": false,
+        "excluded_kicker_added_as_requirement": true,
+        "excluded_goalkeeper_added_as_requirement": true,
+        "exclusion_preserved_consistently": false
+      },
+      "reviewed_constraints": {
+        "scope_retained": true,
+        "unsupported_answer_values_prefilled": false,
+        "excluded_actors_reintroduced": false,
+        "exclusion_repeated_in_each_question": true
+      },
+      "review_note": "首轮第一项保留排除条件，却又新增主罚者要求；后三轮把主罚者和守门员均作为要求。泛问其他队员位置未单列三个必要维度。",
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r3.json",
+      "source_sha256": "c357e15c92b74a8802f4086b45174578d45771a9e506ec69fc4ef7cb4363e2f6"
+    },
+    {
+      "case_id": "D017-native",
+      "repeat": 4,
+      "original_question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "old_model_requirements": [
+        "点球执行前，主罚者的位置条件。",
+        "点球执行前，守门员的位置条件。",
+        "点球执行前，其他队员的位置条件。"
+      ],
+      "reviewed_neutral_questions": [
+        "点球执行前，除主罚者和守门员外，其他队员相对场地边界及罚球区的位置有什么要求？",
+        "点球执行前，除主罚者和守门员外，其他队员相对罚球点的前后位置有什么要求？",
+        "点球执行前，除主罚者和守门员外，其他队员与罚球点的最小距离如何规定？"
+      ],
+      "necessary_dimensions": [
+        "相对场地边界及罚球区的区域位置",
+        "相对罚球点的前后位置",
+        "与罚球点的最小距离"
+      ],
+      "old_dimensions_explicit": [
+        false,
+        false,
+        false
+      ],
+      "reviewed_dimensions_explicit": [
+        true,
+        true,
+        true
+      ],
+      "old_constraint_review": {
+        "explicit_exclusion_text_present": false,
+        "excluded_kicker_added_as_requirement": true,
+        "excluded_goalkeeper_added_as_requirement": true,
+        "exclusion_preserved_consistently": false
+      },
+      "reviewed_constraints": {
+        "scope_retained": true,
+        "unsupported_answer_values_prefilled": false,
+        "excluded_actors_reintroduced": false,
+        "exclusion_repeated_in_each_question": true
+      },
+      "review_note": "首轮第一项保留排除条件，却又新增主罚者要求；后三轮把主罚者和守门员均作为要求。泛问其他队员位置未单列三个必要维度。",
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r4.json",
+      "source_sha256": "fddbf10972ce23769e1065851e4523c7ebfae11a53fac63bcae204b0954d683b"
+    }
+  ],
+  "conclusion": "T034 has an independent decomposition target; D017 must preserve excluded actors in every subquestion and avoid reintroducing them. This can be diagnosed without a verifier, but no new decomposition model was run and no end-to-end improvement is claimed."
+}
