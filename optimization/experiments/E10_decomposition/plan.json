@@ -1,0 +1,16 @@
+{
+  "activation": "Only if no E10 answer candidate can be deployed or the model-quality pilot fails",
+  "model": "Existing pinned qwen2.5:3b, same deployment and generation settings",
+  "inputs": "Original user question only",
+  "questions": ["T034-expanded", "D017-native"],
+  "repeats": 3,
+  "maximum_first_answers": 6,
+  "retries": 0,
+  "scoring": {
+    "T034": "Explicitly represent program nature, shootout purpose, and score relationship without supplying answers; preserve both comparison objects and scope",
+    "D017": "Preserve exclusion of kicker and goalkeeper in each applicable subquestion; cover location dimensions without adding excluded actors",
+    "neutrality": "No answer values or facts absent from question may be invented",
+    "scope": "Text-level component assessment only; no retrieval, support verifier, or end-to-end QA claim"
+  },
+  "holdout_used": false
+}

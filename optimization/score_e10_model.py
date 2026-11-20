@@ -42,7 +42,7 @@ def main():
         for r in primary['B']:
             base=next(v for v in primary['A'] if v['case_id']==r['case_id'] and v['repeat']==r['repeat'])
             if base['score']['grade']=='correct' and r['score']['grade']!='correct':regressions.append(dict(case_id=r['case_id'],repeat=r['repeat'],A=base['score']['grade'],B=r['score']['grade']))
-            if r['score']['grade']=='false_refusal' and base['score']['grade']!='false_refusal':new_false.append(dict(case_id=r['case_id'],repeat=r['repeat']))
+            if r['score']['grade']=='false_refusal' and base['score']['grade'] in ('correct','partial','incorrect'):new_false.append(dict(case_id=r['case_id'],repeat=r['repeat']))
         for key in [q+'-native' for q in ('D001','D002','D003','D012')]:
             av=[r for r in records if r['case_id']==key and r['variant']=='A'];bv=[r for r in records if r['case_id']==key and r['variant']=='B']
             stable=len(bv)==3 and all(r['score']['grade']=='correct' for r in bv) and sum(r['score']['grade']=='false_refusal' for r in av)>=2
@@ -51,12 +51,13 @@ def main():
         if not a.partial:
             def correct(key):return group[key]['B']['grades'].get('correct',0)
             original=('D004-native','D009-native')
+            def not_worse(b,a):return b is not None and (a is None or b>=a)
             qg=dict(T026_at_least_2_of_3=correct('T026-expanded')>=2,T034_3_of_3=correct('T034-expanded')==3,
                 D017_3_of_3=correct('D017-native')==3,D021_3_of_3=correct('D021-native')==3,
                 stable_recovered_questions_at_least_2=sum(v['stable_recovery'] for v in recoveries)>=2,
                 original_controls_complete=all(correct(k)==1 for k in original),
-                original_control_citations_not_worse=all(group[k]['B']['citation_support']['value'] is not None and group[k]['B']['citation_support']['value']>=group[k]['A']['citation_support']['value'] for k in original),
-                primary_citations_not_worse=stats['B']['citation_support']['value'] is not None and stats['B']['citation_support']['value']>=stats['A']['citation_support']['value'],
+                original_control_citations_not_worse=all(not_worse(group[k]['B']['citation_support']['value'],group[k]['A']['citation_support']['value']) for k in original),
+                primary_citations_not_worse=not_worse(stats['B']['citation_support']['value'],stats['A']['citation_support']['value']),
                 technical_36_of_36=all(r['result']['status']!='failed' for r in records if r['phase']=='primary'))
             allb=primary['B']+confirmation['B'];resources=[r['resources'] for r in allb]+([probe['resources']] if probe else [])
             cg=dict(candidate_p95_at_most_60s=stats['B']['wall_p95_seconds']<=60,
@@ -69,6 +70,8 @@ def main():
             groups=group,stable_recovery_audit=recoveries,primary_correct_regressions=regressions,new_false_refusals=new_false,
             observations=records,model_identity=meta['models'],probe=probe,full90_executed=False,holdout_used=False,
             scoring='Frozen E7/E8 whole-point support and final extractive answers; primary metrics are not overwritten by adaptive confirmation. Not new human/expert adjudication.')
+        partial_ids=read(ROOT/'optimization/experiments/E10_answer_model/context_review.json')['partial_source_sensitivity']
+        result['partial_citation_sensitivity']={v:ratio(stats[v]['citation_support']['numerator']+sum(cid in partial_ids.get(r['case_id'],[]) and cid not in r['score']['supported_ids'] for r in primary[v] for cid in r['result']['selected_ids']),stats[v]['citation_support']['denominator']) for v in 'AB'}
         buf=io.StringIO();w=csv.writer(buf,lineterminator='\n');w.writerow(['phase','case','repeat','variant','grade','point_mask','selected','supported','calls','seconds','rss_GiB','available_GiB'])
         for r in records:w.writerow([r['phase'],r['case_id'],r['repeat'],r['variant'],r['score']['grade'],''.join(str(int(v)) for v in r['score']['point_mask']),','.join(r['result']['selected_ids']),','.join(r['score']['supported_ids']),r['result']['chat_calls'],r['result']['wall_ns']/1e9,r['resources']['process_rss_peak_GiB'],r['resources']['available_min_GiB']])
         (a.out/'cases.csv').write_bytes(b'\xef\xbb\xbf'+buf.getvalue().encode())
