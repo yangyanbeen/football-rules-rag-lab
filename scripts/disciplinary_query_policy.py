@@ -57,8 +57,9 @@ def evaluate_suspension_query(question):
         if named and not PLACEHOLDER.search(named.group(1)):
             competition = named.group(1)
         if competition is None:
+            name_text = re.sub(YEAR + r'\s*(?:赛季|年)?', ' ', text)
             named = re.search(r'(?:^|[，,:：；;\s]|请问|关于|针对|按)([\u4e00-\u9fffA-Za-z0-9·]{2,20}(?:联赛|杯赛|锦标赛|杯))'
-                              r'(?=的|中|[，,:：；;\s]|20\d{2}|累计|累积|跨场|赛季)', text)
+                              r'(?=的|中|[，,:：；;\s]|累计|累积|跨场|赛季)', name_text)
             if named and not PLACEHOLDER.search(named.group(1)) and named.group(1) not in ('足球联赛','足球杯赛','职业联赛'):
                 competition = named.group(1)
     if _missing_explicitly(text, 'competition'):

@@ -226,5 +226,21 @@
     "question": "累计黄牌与同场两张黄牌有什么区别，处罚分别由谁决定？",
     "missing_fields": null,
     "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B034",
+    "question": "2025赛季联赛累计三张黄牌停赛几场？",
+    "missing_fields": [
+      "competition"
+    ],
+    "expected": "refused_without_retrieval_or_model"
+  },
+  {
+    "case_id": "B035",
+    "question": "2025赛季足球联赛累计三张黄牌停赛几场？",
+    "missing_fields": [
+      "competition"
+    ],
+    "expected": "refused_without_retrieval_or_model"
   }
 ]
