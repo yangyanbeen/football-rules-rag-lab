@@ -29,7 +29,9 @@ def _missing_explicitly(text, field):
 
 def suspension_request(question):
     text = unicodedata.normalize('NFKC', question).strip()
-    if GENERAL.search(text):
+    if GENERAL.search(text) or re.search(r'取决于什么|由谁决定|谁来决定|有什么区别|有何区别|如何区分', text):
+        return False
+    if re.search(r'同一场|同场|一场比赛|本场', text) and not re.search(r'跨场|跨多场|多场比赛|不同比赛', text):
         return False
     cumulative = re.search(r'累计|累积|累計|跨场|跨多场|多场比赛', text)
     yellow = re.search(r'黄牌|黄卡', text)

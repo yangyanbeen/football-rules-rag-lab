@@ -208,5 +208,23 @@
     "question": "中超2025赛季为什么累计黄牌没有统一的停赛场数？",
     "missing_fields": null,
     "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B031",
+    "question": "同一场比赛累计两张黄牌，会停赛几场？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B032",
+    "question": "累计黄牌的停赛场数取决于什么？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
+  },
+  {
+    "case_id": "B033",
+    "question": "累计黄牌与同场两张黄牌有什么区别，处罚分别由谁决定？",
+    "missing_fields": null,
+    "expected": "continue_original_flow"
   }
 ]

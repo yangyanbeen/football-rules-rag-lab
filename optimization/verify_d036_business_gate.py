@@ -63,6 +63,19 @@ def main():
     labels=list(map(json.loads,(ROOT/'data/eval/answer_eval.jsonl').read_text('utf8').splitlines()))
     assert [q['question_id'] for q in labels if evaluate_suspension_query(q['question'])]==['D036']
     checks.append(dict(case_id='formal90_only_intended_hit',entry='shared_policy',passed=True))
+    # Both historical model decisions must stay unconsumed in both entries.
+    refs={v['question_id']:v for v in read(ROOT/'optimization/baseline/e8b0fd6/trace_manifest.local.json')}
+    for origin,path in [('A0',Path(refs['D036']['private_path'])),('A1',ROOT/'.runtime/phase2/e4-live90/D036.json')]:
+        raw=read(path)['observations']['model_attempts'][0]['response']
+        for entry in ('graph','linear'):
+            chat=Chat();q=cases[1]['question']
+            if entry=='graph':
+                ops=Ops(None,chat,cfg,prompt,source_map());ops.retrievals=0;r=Flow(ops).invoke(q)
+                assert ops.retrievals==0
+            else:
+                engine.chat=chat;r=engine.answer(q)
+            assert r['status']=='refused' and chat.requests==0 and chat.queue==[raw]
+            checks.append(dict(case_id='unconsumed_'+origin,entry=entry,passed=True,answer_model_calls=0))
     # The existing private contract must reject tampered decisions and fake inference.
     sample=results[('B001','linear')]
     for field in ('business_decision','answer','attempts','selected_ids'):
