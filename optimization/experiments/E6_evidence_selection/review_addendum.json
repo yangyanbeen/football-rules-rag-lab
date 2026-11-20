@@ -1,0 +1,18 @@
+{
+  "original_annotation_sha256": "267c23b02828e4a0451dacad4e8d7988b7bdb0b246ab5fe3270096fbb368742d",
+  "reason": "Pre-existing source review already counts L12-10 as direct support for retaining a goalkeeper after dismissal. Preserve the original pre-run annotation and add the equivalent support separately for both arms; no runtime or frozen formal labels changed.",
+  "cases": {
+    "D004-native": {
+      "extra_support_per_point": [
+        [],
+        [
+          "L12-10"
+        ]
+      ]
+    }
+  },
+  "source_ledger": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+  "source_ledger_sha256": "9f54b53c612589ab234a2d9edd1d975db3050e0ab020db65ffbf1b3b1204ddba",
+  "source_review_row": "D004|L03-01,L12-10,L12-12\tcorrect\t11\tL03-01,L12-10\tL03-01覆盖11人及守门员；L12-10补充守门员被罚下仍须有人守门；L12-12的严重犯规说明不直接回答人数上限。",
+  "review": "Codex reconciliation with existing review, no new human or expert review"
+}

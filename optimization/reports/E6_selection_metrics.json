@@ -1,0 +1,5329 @@
+{
+  "decision": "STOP_E6_CANDIDATE",
+  "pilot_gates": {
+    "technical": true,
+    "T026_native_all_at_least_partial": true,
+    "T026_expanded_recovery": false,
+    "T034_expanded_recovery": true,
+    "correct_dev_controls": true,
+    "coverage_not_lower": true,
+    "citation_not_lower": true,
+    "false_refusal_not_higher": true,
+    "useful_improvement": true
+  },
+  "groups": {
+    "D001-native": {
+      "A": {
+        "invocations": 2,
+        "grades": {
+          "false_refusal": 2
+        },
+        "covered_points": {
+          "numerator": 0,
+          "denominator": 2,
+          "value": 0.0
+        },
+        "available_point_coverage": {
+          "numerator": 0,
+          "denominator": 2,
+          "value": 0.0
+        },
+        "false_refusals": 2,
+        "citation_support": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "selected_count": 0,
+        "input_tokens": 2324,
+        "output_tokens": 36,
+        "answer_calls": 2,
+        "masks": [
+          "0",
+          "0"
+        ],
+        "selected_ids": [
+          [],
+          []
+        ]
+      },
+      "B": {
+        "invocations": 2,
+        "grades": {
+          "false_refusal": 2
+        },
+        "covered_points": {
+          "numerator": 0,
+          "denominator": 2,
+          "value": 0.0
+        },
+        "available_point_coverage": {
+          "numerator": 0,
+          "denominator": 2,
+          "value": 0.0
+        },
+        "false_refusals": 2,
+        "citation_support": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "selected_count": 0,
+        "input_tokens": 2324,
+        "output_tokens": 36,
+        "answer_calls": 2,
+        "masks": [
+          "0",
+          "0"
+        ],
+        "selected_ids": [
+          [],
+          []
+        ]
+      }
+    },
+    "D019-native": {
+      "A": {
+        "invocations": 2,
+        "grades": {
+          "incorrect": 2
+        },
+        "covered_points": {
+          "numerator": 0,
+          "denominator": 4,
+          "value": 0.0
+        },
+        "available_point_coverage": {
+          "numerator": 0,
+          "denominator": 4,
+          "value": 0.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 0,
+          "denominator": 6,
+          "value": 0.0
+        },
+        "selected_count": 6,
+        "input_tokens": 2836,
+        "output_tokens": 72,
+        "answer_calls": 2,
+        "masks": [
+          "00",
+          "00"
+        ],
+        "selected_ids": [
+          [
+            "L16-04",
+            "L17-04",
+            "L08B-02"
+          ],
+          [
+            "L16-04",
+            "L17-04",
+            "L08B-02"
+          ]
+        ]
+      },
+      "B": {
+        "invocations": 2,
+        "grades": {
+          "correct": 2
+        },
+        "covered_points": {
+          "numerator": 4,
+          "denominator": 4,
+          "value": 1.0
+        },
+        "available_point_coverage": {
+          "numerator": 4,
+          "denominator": 4,
+          "value": 1.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 2,
+          "denominator": 6,
+          "value": 0.3333333333333333
+        },
+        "selected_count": 6,
+        "input_tokens": 2836,
+        "output_tokens": 72,
+        "answer_calls": 2,
+        "masks": [
+          "11",
+          "11"
+        ],
+        "selected_ids": [
+          [
+            "L16-03",
+            "L16-04",
+            "L08B-02"
+          ],
+          [
+            "L16-03",
+            "L16-04",
+            "L08B-02"
+          ]
+        ]
+      }
+    },
+    "D021-native": {
+      "A": {
+        "invocations": 2,
+        "grades": {
+          "partial": 2
+        },
+        "covered_points": {
+          "numerator": 2,
+          "denominator": 4,
+          "value": 0.5
+        },
+        "available_point_coverage": {
+          "numerator": 2,
+          "denominator": 4,
+          "value": 0.5
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 4,
+          "denominator": 6,
+          "value": 0.6666666666666666
+        },
+        "selected_count": 6,
+        "input_tokens": 2678,
+        "output_tokens": 70,
+        "answer_calls": 2,
+        "masks": [
+          "01",
+          "01"
+        ],
+        "selected_ids": [
+          [
+            "L11-03",
+            "L12-05",
+            "L15-03"
+          ],
+          [
+            "L11-03",
+            "L12-05",
+            "L15-03"
+          ]
+        ]
+      },
+      "B": {
+        "invocations": 2,
+        "grades": {
+          "partial": 2
+        },
+        "covered_points": {
+          "numerator": 2,
+          "denominator": 4,
+          "value": 0.5
+        },
+        "available_point_coverage": {
+          "numerator": 2,
+          "denominator": 4,
+          "value": 0.5
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 4,
+          "denominator": 6,
+          "value": 0.6666666666666666
+        },
+        "selected_count": 6,
+        "input_tokens": 2678,
+        "output_tokens": 70,
+        "answer_calls": 2,
+        "masks": [
+          "01",
+          "01"
+        ],
+        "selected_ids": [
+          [
+            "L11-03",
+            "L12-05",
+            "L15-03"
+          ],
+          [
+            "L11-03",
+            "L12-05",
+            "L15-03"
+          ]
+        ]
+      }
+    },
+    "D004-native": {
+      "A": {
+        "invocations": 4,
+        "grades": {
+          "correct": 4
+        },
+        "covered_points": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1.0
+        },
+        "available_point_coverage": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 4,
+          "denominator": 4,
+          "value": 1.0
+        },
+        "selected_count": 4,
+        "input_tokens": 4676,
+        "output_tokens": 84,
+        "answer_calls": 4,
+        "masks": [
+          "11",
+          "11",
+          "11",
+          "11"
+        ],
+        "selected_ids": [
+          [
+            "L03-01"
+          ],
+          [
+            "L03-01"
+          ],
+          [
+            "L03-01"
+          ],
+          [
+            "L03-01"
+          ]
+        ]
+      },
+      "B": {
+        "invocations": 4,
+        "grades": {
+          "correct": 4
+        },
+        "covered_points": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1.0
+        },
+        "available_point_coverage": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 8,
+          "denominator": 12,
+          "value": 0.6666666666666666
+        },
+        "selected_count": 12,
+        "input_tokens": 4676,
+        "output_tokens": 140,
+        "answer_calls": 4,
+        "masks": [
+          "11",
+          "11",
+          "11",
+          "11"
+        ],
+        "selected_ids": [
+          [
+            "L03-01",
+            "L12-10",
+            "L12-12"
+          ],
+          [
+            "L03-01",
+            "L12-10",
+            "L12-12"
+          ],
+          [
+            "L03-01",
+            "L12-10",
+            "L12-12"
+          ],
+          [
+            "L03-01",
+            "L12-10",
+            "L12-12"
+          ]
+        ]
+      }
+    },
+    "D009-native": {
+      "A": {
+        "invocations": 4,
+        "grades": {
+          "correct": 4
+        },
+        "covered_points": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1.0
+        },
+        "available_point_coverage": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 5,
+          "denominator": 6,
+          "value": 0.8333333333333334
+        },
+        "selected_count": 6,
+        "input_tokens": 5152,
+        "output_tokens": 103,
+        "answer_calls": 4,
+        "masks": [
+          "11",
+          "11",
+          "11",
+          "11"
+        ],
+        "selected_ids": [
+          [
+            "L08A-02",
+            "L08A-03",
+            "L13-06"
+          ],
+          [
+            "L08A-02"
+          ],
+          [
+            "L08A-02"
+          ],
+          [
+            "L08A-02"
+          ]
+        ]
+      },
+      "B": {
+        "invocations": 4,
+        "grades": {
+          "correct": 4
+        },
+        "covered_points": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1.0
+        },
+        "available_point_coverage": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 8,
+          "denominator": 12,
+          "value": 0.6666666666666666
+        },
+        "selected_count": 12,
+        "input_tokens": 5152,
+        "output_tokens": 148,
+        "answer_calls": 4,
+        "masks": [
+          "11",
+          "11",
+          "11",
+          "11"
+        ],
+        "selected_ids": [
+          [
+            "L08A-02",
+            "L08A-03",
+            "L13-06"
+          ],
+          [
+            "L08A-02",
+            "L08A-03",
+            "L13-06"
+          ],
+          [
+            "L08A-02",
+            "L08A-03",
+            "L13-06"
+          ],
+          [
+            "L08A-02",
+            "L08A-03",
+            "L13-06"
+          ]
+        ]
+      }
+    },
+    "D017-native": {
+      "A": {
+        "invocations": 4,
+        "grades": {
+          "correct": 4
+        },
+        "covered_points": {
+          "numerator": 12,
+          "denominator": 12,
+          "value": 1.0
+        },
+        "available_point_coverage": {
+          "numerator": 12,
+          "denominator": 12,
+          "value": 1.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 4,
+          "denominator": 4,
+          "value": 1.0
+        },
+        "selected_count": 4,
+        "input_tokens": 5788,
+        "output_tokens": 84,
+        "answer_calls": 4,
+        "masks": [
+          "111",
+          "111",
+          "111",
+          "111"
+        ],
+        "selected_ids": [
+          [
+            "L14-02"
+          ],
+          [
+            "L14-02"
+          ],
+          [
+            "L14-02"
+          ],
+          [
+            "L14-02"
+          ]
+        ]
+      },
+      "B": {
+        "invocations": 4,
+        "grades": {
+          "correct": 4
+        },
+        "covered_points": {
+          "numerator": 12,
+          "denominator": 12,
+          "value": 1.0
+        },
+        "available_point_coverage": {
+          "numerator": 12,
+          "denominator": 12,
+          "value": 1.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 4,
+          "denominator": 4,
+          "value": 1.0
+        },
+        "selected_count": 4,
+        "input_tokens": 5788,
+        "output_tokens": 84,
+        "answer_calls": 4,
+        "masks": [
+          "111",
+          "111",
+          "111",
+          "111"
+        ],
+        "selected_ids": [
+          [
+            "L14-02"
+          ],
+          [
+            "L14-02"
+          ],
+          [
+            "L14-02"
+          ],
+          [
+            "L14-02"
+          ]
+        ]
+      }
+    },
+    "T026-native": {
+      "A": {
+        "invocations": 4,
+        "grades": {
+          "partial": 4
+        },
+        "covered_points": {
+          "numerator": 4,
+          "denominator": 12,
+          "value": 0.3333333333333333
+        },
+        "available_point_coverage": {
+          "numerator": 4,
+          "denominator": 12,
+          "value": 0.3333333333333333
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 4,
+          "denominator": 12,
+          "value": 0.3333333333333333
+        },
+        "selected_count": 12,
+        "input_tokens": 5004,
+        "output_tokens": 140,
+        "answer_calls": 4,
+        "masks": [
+          "001",
+          "001",
+          "001",
+          "001"
+        ],
+        "selected_ids": [
+          [
+            "L12-01",
+            "L12-02",
+            "L12-15"
+          ],
+          [
+            "L12-01",
+            "L12-02",
+            "L12-15"
+          ],
+          [
+            "L12-01",
+            "L12-02",
+            "L12-15"
+          ],
+          [
+            "L12-01",
+            "L12-02",
+            "L12-15"
+          ]
+        ]
+      },
+      "B": {
+        "invocations": 4,
+        "grades": {
+          "correct": 4
+        },
+        "covered_points": {
+          "numerator": 12,
+          "denominator": 12,
+          "value": 1.0
+        },
+        "available_point_coverage": {
+          "numerator": 12,
+          "denominator": 12,
+          "value": 1.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 8,
+          "denominator": 12,
+          "value": 0.6666666666666666
+        },
+        "selected_count": 12,
+        "input_tokens": 5004,
+        "output_tokens": 140,
+        "answer_calls": 4,
+        "masks": [
+          "111",
+          "111",
+          "111",
+          "111"
+        ],
+        "selected_ids": [
+          [
+            "L12-01",
+            "L12-06",
+            "L12-15"
+          ],
+          [
+            "L12-01",
+            "L12-06",
+            "L12-15"
+          ],
+          [
+            "L12-01",
+            "L12-06",
+            "L12-15"
+          ],
+          [
+            "L12-01",
+            "L12-06",
+            "L12-15"
+          ]
+        ]
+      }
+    },
+    "T026-expanded": {
+      "A": {
+        "invocations": 4,
+        "grades": {
+          "incorrect": 4
+        },
+        "covered_points": {
+          "numerator": 0,
+          "denominator": 12,
+          "value": 0.0
+        },
+        "available_point_coverage": {
+          "numerator": 0,
+          "denominator": 12,
+          "value": 0.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 0,
+          "denominator": 12,
+          "value": 0.0
+        },
+        "selected_count": 12,
+        "input_tokens": 5396,
+        "output_tokens": 140,
+        "answer_calls": 4,
+        "masks": [
+          "000",
+          "000",
+          "000",
+          "000"
+        ],
+        "selected_ids": [
+          [
+            "L12-01",
+            "L12-02",
+            "L12-03"
+          ],
+          [
+            "L12-01",
+            "L12-02",
+            "L12-03"
+          ],
+          [
+            "L12-01",
+            "L12-02",
+            "L12-03"
+          ],
+          [
+            "L12-01",
+            "L12-02",
+            "L12-03"
+          ]
+        ]
+      },
+      "B": {
+        "invocations": 4,
+        "grades": {
+          "incorrect": 4
+        },
+        "covered_points": {
+          "numerator": 0,
+          "denominator": 12,
+          "value": 0.0
+        },
+        "available_point_coverage": {
+          "numerator": 0,
+          "denominator": 12,
+          "value": 0.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 0,
+          "denominator": 12,
+          "value": 0.0
+        },
+        "selected_count": 12,
+        "input_tokens": 5396,
+        "output_tokens": 140,
+        "answer_calls": 4,
+        "masks": [
+          "000",
+          "000",
+          "000",
+          "000"
+        ],
+        "selected_ids": [
+          [
+            "L12-01",
+            "L12-02",
+            "L12-03"
+          ],
+          [
+            "L12-01",
+            "L12-02",
+            "L12-03"
+          ],
+          [
+            "L12-01",
+            "L12-02",
+            "L12-03"
+          ],
+          [
+            "L12-01",
+            "L12-02",
+            "L12-03"
+          ]
+        ]
+      }
+    },
+    "T014-native": {
+      "A": {
+        "invocations": 4,
+        "grades": {
+          "correct": 1,
+          "incorrect": 3
+        },
+        "covered_points": {
+          "numerator": 2,
+          "denominator": 8,
+          "value": 0.25
+        },
+        "available_point_coverage": {
+          "numerator": 2,
+          "denominator": 8,
+          "value": 0.25
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 1,
+          "denominator": 12,
+          "value": 0.08333333333333333
+        },
+        "selected_count": 12,
+        "input_tokens": 5584,
+        "output_tokens": 140,
+        "answer_calls": 4,
+        "masks": [
+          "11",
+          "00",
+          "00",
+          "00"
+        ],
+        "selected_ids": [
+          [
+            "L06-06",
+            "L06-04",
+            "L03-04"
+          ],
+          [
+            "L06-05",
+            "L06-04",
+            "L03-04"
+          ],
+          [
+            "L06-05",
+            "L06-04",
+            "L03-04"
+          ],
+          [
+            "L06-05",
+            "L06-04",
+            "L03-04"
+          ]
+        ]
+      },
+      "B": {
+        "invocations": 4,
+        "grades": {
+          "correct": 4
+        },
+        "covered_points": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1.0
+        },
+        "available_point_coverage": {
+          "numerator": 8,
+          "denominator": 8,
+          "value": 1.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 4,
+          "denominator": 12,
+          "value": 0.3333333333333333
+        },
+        "selected_count": 12,
+        "input_tokens": 5584,
+        "output_tokens": 140,
+        "answer_calls": 4,
+        "masks": [
+          "11",
+          "11",
+          "11",
+          "11"
+        ],
+        "selected_ids": [
+          [
+            "L06-06",
+            "L14-02",
+            "L06-04"
+          ],
+          [
+            "L06-06",
+            "L14-02",
+            "L06-04"
+          ],
+          [
+            "L06-06",
+            "L14-02",
+            "L06-04"
+          ],
+          [
+            "L06-06",
+            "L14-02",
+            "L06-04"
+          ]
+        ]
+      }
+    },
+    "T034-native": {
+      "A": {
+        "invocations": 4,
+        "grades": {
+          "boundary_refusal": 4
+        },
+        "covered_points": {
+          "numerator": 0,
+          "denominator": 12,
+          "value": 0.0
+        },
+        "available_point_coverage": {
+          "numerator": 0,
+          "denominator": 8,
+          "value": 0.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "selected_count": 0,
+        "input_tokens": 5476,
+        "output_tokens": 72,
+        "answer_calls": 4,
+        "masks": [
+          "000",
+          "000",
+          "000",
+          "000"
+        ],
+        "selected_ids": [
+          [],
+          [],
+          [],
+          []
+        ]
+      },
+      "B": {
+        "invocations": 4,
+        "grades": {
+          "boundary_refusal": 4
+        },
+        "covered_points": {
+          "numerator": 0,
+          "denominator": 12,
+          "value": 0.0
+        },
+        "available_point_coverage": {
+          "numerator": 0,
+          "denominator": 8,
+          "value": 0.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "selected_count": 0,
+        "input_tokens": 5476,
+        "output_tokens": 72,
+        "answer_calls": 4,
+        "masks": [
+          "000",
+          "000",
+          "000",
+          "000"
+        ],
+        "selected_ids": [
+          [],
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "T034-expanded": {
+      "A": {
+        "invocations": 4,
+        "grades": {
+          "correct": 4
+        },
+        "covered_points": {
+          "numerator": 12,
+          "denominator": 12,
+          "value": 1.0
+        },
+        "available_point_coverage": {
+          "numerator": 12,
+          "denominator": 12,
+          "value": 1.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 8,
+          "denominator": 12,
+          "value": 0.6666666666666666
+        },
+        "selected_count": 12,
+        "input_tokens": 5968,
+        "output_tokens": 140,
+        "answer_calls": 4,
+        "masks": [
+          "111",
+          "111",
+          "111",
+          "111"
+        ],
+        "selected_ids": [
+          [
+            "L14-01",
+            "L14-03",
+            "L07-03"
+          ],
+          [
+            "L14-01",
+            "L14-03",
+            "L07-03"
+          ],
+          [
+            "L14-01",
+            "L14-03",
+            "L07-03"
+          ],
+          [
+            "L14-01",
+            "L14-03",
+            "L07-03"
+          ]
+        ]
+      },
+      "B": {
+        "invocations": 4,
+        "grades": {
+          "correct": 4
+        },
+        "covered_points": {
+          "numerator": 12,
+          "denominator": 12,
+          "value": 1.0
+        },
+        "available_point_coverage": {
+          "numerator": 12,
+          "denominator": 12,
+          "value": 1.0
+        },
+        "false_refusals": 0,
+        "citation_support": {
+          "numerator": 8,
+          "denominator": 12,
+          "value": 0.6666666666666666
+        },
+        "selected_count": 12,
+        "input_tokens": 5968,
+        "output_tokens": 140,
+        "answer_calls": 4,
+        "masks": [
+          "111",
+          "111",
+          "111",
+          "111"
+        ],
+        "selected_ids": [
+          [
+            "L14-01",
+            "L14-03",
+            "L07-03"
+          ],
+          [
+            "L14-01",
+            "L14-03",
+            "L07-03"
+          ],
+          [
+            "L14-01",
+            "L14-03",
+            "L07-03"
+          ],
+          [
+            "L14-01",
+            "L14-03",
+            "L07-03"
+          ]
+        ]
+      }
+    }
+  },
+  "full_evidence_aggregate": {
+    "A": {
+      "invocations": 34,
+      "grades": {
+        "false_refusal": 2,
+        "correct": 17,
+        "incorrect": 9,
+        "partial": 6
+      },
+      "covered_points": {
+        "numerator": 48,
+        "denominator": 82,
+        "value": 0.5853658536585366
+      },
+      "available_point_coverage": {
+        "numerator": 48,
+        "denominator": 82,
+        "value": 0.5853658536585366
+      },
+      "false_refusals": 2,
+      "citation_support": {
+        "numerator": 30,
+        "denominator": 74,
+        "value": 0.40540540540540543
+      },
+      "selected_count": 74,
+      "input_tokens": 45406,
+      "output_tokens": 1009,
+      "answer_calls": 34
+    },
+    "B": {
+      "invocations": 34,
+      "grades": {
+        "false_refusal": 2,
+        "correct": 26,
+        "partial": 2,
+        "incorrect": 4
+      },
+      "covered_points": {
+        "numerator": 66,
+        "denominator": 82,
+        "value": 0.8048780487804879
+      },
+      "available_point_coverage": {
+        "numerator": 66,
+        "denominator": 82,
+        "value": 0.8048780487804879
+      },
+      "false_refusals": 2,
+      "citation_support": {
+        "numerator": 46,
+        "denominator": 88,
+        "value": 0.5227272727272727
+      },
+      "selected_count": 88,
+      "input_tokens": 45406,
+      "output_tokens": 1110,
+      "answer_calls": 34
+    }
+  },
+  "boundary_aggregate": {
+    "A": {
+      "invocations": 4,
+      "grades": {
+        "boundary_refusal": 4
+      },
+      "covered_points": {
+        "numerator": 0,
+        "denominator": 12,
+        "value": 0.0
+      },
+      "available_point_coverage": {
+        "numerator": 0,
+        "denominator": 8,
+        "value": 0.0
+      },
+      "false_refusals": 0,
+      "citation_support": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "selected_count": 0,
+      "input_tokens": 5476,
+      "output_tokens": 72,
+      "answer_calls": 4
+    },
+    "B": {
+      "invocations": 4,
+      "grades": {
+        "boundary_refusal": 4
+      },
+      "covered_points": {
+        "numerator": 0,
+        "denominator": 12,
+        "value": 0.0
+      },
+      "available_point_coverage": {
+        "numerator": 0,
+        "denominator": 8,
+        "value": 0.0
+      },
+      "false_refusals": 0,
+      "citation_support": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "selected_count": 0,
+      "input_tokens": 5476,
+      "output_tokens": 72,
+      "answer_calls": 4
+    }
+  },
+  "cases": [
+    {
+      "case_id": "D001-native",
+      "question_id": "D001",
+      "context": "native",
+      "variant": "A",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true
+      ],
+      "point_mask": [
+        false
+      ],
+      "grade": "false_refusal",
+      "original_annotation_point_mask": [
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [],
+      "offered_ids": [
+        "L01-01",
+        "L01-03",
+        "L04-02",
+        "L06-03",
+        "L03-02"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}",
+      "all_raw": [
+        "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}"
+      ],
+      "body_sha256": "e850707fff143a0eb23311736352b87a6973adb64abb80a327c40def892ba212",
+      "schema_sha256": "c01ca92bbbd8396d21f6f69b1e49b853a2821a2546e1e6fd82eb93ccc0ad125f",
+      "prompt_bytes": 4916,
+      "answer_calls": 1,
+      "input_tokens": 1162,
+      "output_tokens": 18,
+      "trace_file": "D001-native-A-r1.json",
+      "trace_sha256": "8f0c0a4b4fc7ca6f26068792d736dbcbd2023a44cd57cab2837d7fe50398bde7"
+    },
+    {
+      "case_id": "D001-native",
+      "question_id": "D001",
+      "context": "native",
+      "variant": "A",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true
+      ],
+      "point_mask": [
+        false
+      ],
+      "grade": "false_refusal",
+      "original_annotation_point_mask": [
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [],
+      "offered_ids": [
+        "L01-01",
+        "L01-03",
+        "L04-02",
+        "L06-03",
+        "L03-02"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}",
+      "all_raw": [
+        "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}"
+      ],
+      "body_sha256": "e850707fff143a0eb23311736352b87a6973adb64abb80a327c40def892ba212",
+      "schema_sha256": "c01ca92bbbd8396d21f6f69b1e49b853a2821a2546e1e6fd82eb93ccc0ad125f",
+      "prompt_bytes": 4916,
+      "answer_calls": 1,
+      "input_tokens": 1162,
+      "output_tokens": 18,
+      "trace_file": "D001-native-A-r2.json",
+      "trace_sha256": "2bc04b98c47e759c0200e2a378040277f1fbc756fd1f7c965eee9f5b18e68bea"
+    },
+    {
+      "case_id": "D001-native",
+      "question_id": "D001",
+      "context": "native",
+      "variant": "B",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true
+      ],
+      "point_mask": [
+        false
+      ],
+      "grade": "false_refusal",
+      "original_annotation_point_mask": [
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [],
+      "offered_ids": [
+        "L01-01",
+        "L01-03",
+        "L04-02",
+        "L06-03",
+        "L03-02"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}",
+      "all_raw": [
+        "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}"
+      ],
+      "body_sha256": "e850707fff143a0eb23311736352b87a6973adb64abb80a327c40def892ba212",
+      "schema_sha256": "c01ca92bbbd8396d21f6f69b1e49b853a2821a2546e1e6fd82eb93ccc0ad125f",
+      "prompt_bytes": 4914,
+      "answer_calls": 1,
+      "input_tokens": 1162,
+      "output_tokens": 18,
+      "trace_file": "D001-native-B-r1.json",
+      "trace_sha256": "266385958111dee77c9578b3ae85af2c0b240b0da7da1c756378fd29a68fd71f"
+    },
+    {
+      "case_id": "D001-native",
+      "question_id": "D001",
+      "context": "native",
+      "variant": "B",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true
+      ],
+      "point_mask": [
+        false
+      ],
+      "grade": "false_refusal",
+      "original_annotation_point_mask": [
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [],
+      "offered_ids": [
+        "L01-01",
+        "L01-03",
+        "L04-02",
+        "L06-03",
+        "L03-02"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}",
+      "all_raw": [
+        "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}"
+      ],
+      "body_sha256": "e850707fff143a0eb23311736352b87a6973adb64abb80a327c40def892ba212",
+      "schema_sha256": "c01ca92bbbd8396d21f6f69b1e49b853a2821a2546e1e6fd82eb93ccc0ad125f",
+      "prompt_bytes": 4914,
+      "answer_calls": 1,
+      "input_tokens": 1162,
+      "output_tokens": 18,
+      "trace_file": "D001-native-B-r2.json",
+      "trace_sha256": "9ebb14fffbfb2f02817cf282dea152b7f3f2e22dae245fc7e8c96ff332c04312"
+    },
+    {
+      "case_id": "D004-native",
+      "question_id": "D004",
+      "context": "native",
+      "variant": "A",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L03-01"
+      ],
+      "selected_ids": [
+        "L03-01"
+      ],
+      "offered_ids": [
+        "L03-01",
+        "L12-10",
+        "L12-12",
+        "L03-03",
+        "L08A-02"
+      ],
+      "supported_ids": [
+        "L03-01"
+      ],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L03-01\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L03-01\"],\"reason\":null}"
+      ],
+      "body_sha256": "017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe",
+      "schema_sha256": "e30be6888b7d50292d048f33642215b831ad0c97f3f2b026d28294864720e807",
+      "prompt_bytes": 4908,
+      "answer_calls": 1,
+      "input_tokens": 1169,
+      "output_tokens": 21,
+      "trace_file": "D004-native-A-r1.json",
+      "trace_sha256": "8a54ac92109eee9e03284d33f3c84668afb59accffb320c3af1e17126806a990"
+    },
+    {
+      "case_id": "D004-native",
+      "question_id": "D004",
+      "context": "native",
+      "variant": "A",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L03-01"
+      ],
+      "selected_ids": [
+        "L03-01"
+      ],
+      "offered_ids": [
+        "L03-01",
+        "L12-10",
+        "L12-12",
+        "L03-03",
+        "L08A-02"
+      ],
+      "supported_ids": [
+        "L03-01"
+      ],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L03-01\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L03-01\"],\"reason\":null}"
+      ],
+      "body_sha256": "017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe",
+      "schema_sha256": "e30be6888b7d50292d048f33642215b831ad0c97f3f2b026d28294864720e807",
+      "prompt_bytes": 4908,
+      "answer_calls": 1,
+      "input_tokens": 1169,
+      "output_tokens": 21,
+      "trace_file": "D004-native-A-r2.json",
+      "trace_sha256": "420a69074c53675ef1e00a813e9748f8401ac81382c017d171a7b2d99ea7233d"
+    },
+    {
+      "case_id": "D004-native",
+      "question_id": "D004",
+      "context": "native",
+      "variant": "A",
+      "repeat": 3,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L03-01"
+      ],
+      "selected_ids": [
+        "L03-01"
+      ],
+      "offered_ids": [
+        "L03-01",
+        "L12-10",
+        "L12-12",
+        "L03-03",
+        "L08A-02"
+      ],
+      "supported_ids": [
+        "L03-01"
+      ],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L03-01\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L03-01\"],\"reason\":null}"
+      ],
+      "body_sha256": "017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe",
+      "schema_sha256": "e30be6888b7d50292d048f33642215b831ad0c97f3f2b026d28294864720e807",
+      "prompt_bytes": 4908,
+      "answer_calls": 1,
+      "input_tokens": 1169,
+      "output_tokens": 21,
+      "trace_file": "D004-native-A-r3.json",
+      "trace_sha256": "43ba68e7174ca7f0b799a032846fa5f16588ad7efb486f690c6b81629948281c"
+    },
+    {
+      "case_id": "D004-native",
+      "question_id": "D004",
+      "context": "native",
+      "variant": "A",
+      "repeat": 4,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L03-01"
+      ],
+      "selected_ids": [
+        "L03-01"
+      ],
+      "offered_ids": [
+        "L03-01",
+        "L12-10",
+        "L12-12",
+        "L03-03",
+        "L08A-02"
+      ],
+      "supported_ids": [
+        "L03-01"
+      ],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L03-01\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L03-01\"],\"reason\":null}"
+      ],
+      "body_sha256": "017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe",
+      "schema_sha256": "e30be6888b7d50292d048f33642215b831ad0c97f3f2b026d28294864720e807",
+      "prompt_bytes": 4908,
+      "answer_calls": 1,
+      "input_tokens": 1169,
+      "output_tokens": 21,
+      "trace_file": "D004-native-A-r4.json",
+      "trace_sha256": "8f41c5951e03dd5e1f62d088ea9d34c65a4e51050b2c519a1d80babfb6a4042c"
+    },
+    {
+      "case_id": "D004-native",
+      "question_id": "D004",
+      "context": "native",
+      "variant": "B",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L03-01"
+      ],
+      "selected_ids": [
+        "L03-01",
+        "L12-10",
+        "L12-12"
+      ],
+      "offered_ids": [
+        "L03-01",
+        "L12-10",
+        "L12-12",
+        "L03-03",
+        "L08A-02"
+      ],
+      "supported_ids": [
+        "L03-01",
+        "L12-10"
+      ],
+      "unsupported_ids": [
+        "L12-12"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L03-01\",\"L12-10\",\"L12-12\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L03-01\",\"L12-10\",\"L12-12\"],\"reason\":null}"
+      ],
+      "body_sha256": "017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe",
+      "schema_sha256": "e30be6888b7d50292d048f33642215b831ad0c97f3f2b026d28294864720e807",
+      "prompt_bytes": 4906,
+      "answer_calls": 1,
+      "input_tokens": 1169,
+      "output_tokens": 35,
+      "trace_file": "D004-native-B-r1.json",
+      "trace_sha256": "f2421498d3516ca1ccdb0b847ed2857d81403dc4a1c1225e43a626df76da33ea"
+    },
+    {
+      "case_id": "D004-native",
+      "question_id": "D004",
+      "context": "native",
+      "variant": "B",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L03-01"
+      ],
+      "selected_ids": [
+        "L03-01",
+        "L12-10",
+        "L12-12"
+      ],
+      "offered_ids": [
+        "L03-01",
+        "L12-10",
+        "L12-12",
+        "L03-03",
+        "L08A-02"
+      ],
+      "supported_ids": [
+        "L03-01",
+        "L12-10"
+      ],
+      "unsupported_ids": [
+        "L12-12"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L03-01\",\"L12-10\",\"L12-12\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L03-01\",\"L12-10\",\"L12-12\"],\"reason\":null}"
+      ],
+      "body_sha256": "017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe",
+      "schema_sha256": "e30be6888b7d50292d048f33642215b831ad0c97f3f2b026d28294864720e807",
+      "prompt_bytes": 4906,
+      "answer_calls": 1,
+      "input_tokens": 1169,
+      "output_tokens": 35,
+      "trace_file": "D004-native-B-r2.json",
+      "trace_sha256": "7cd908e5d3e7b0746e55759597c5b7c5157d4a73d899e9a3af8262138ceb3676"
+    },
+    {
+      "case_id": "D004-native",
+      "question_id": "D004",
+      "context": "native",
+      "variant": "B",
+      "repeat": 3,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L03-01"
+      ],
+      "selected_ids": [
+        "L03-01",
+        "L12-10",
+        "L12-12"
+      ],
+      "offered_ids": [
+        "L03-01",
+        "L12-10",
+        "L12-12",
+        "L03-03",
+        "L08A-02"
+      ],
+      "supported_ids": [
+        "L03-01",
+        "L12-10"
+      ],
+      "unsupported_ids": [
+        "L12-12"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L03-01\",\"L12-10\",\"L12-12\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L03-01\",\"L12-10\",\"L12-12\"],\"reason\":null}"
+      ],
+      "body_sha256": "017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe",
+      "schema_sha256": "e30be6888b7d50292d048f33642215b831ad0c97f3f2b026d28294864720e807",
+      "prompt_bytes": 4906,
+      "answer_calls": 1,
+      "input_tokens": 1169,
+      "output_tokens": 35,
+      "trace_file": "D004-native-B-r3.json",
+      "trace_sha256": "61c7efb79efd4b08d70dfb387ed63ba27e8ac83c8ef0dc080cb8129cdf00dfc5"
+    },
+    {
+      "case_id": "D004-native",
+      "question_id": "D004",
+      "context": "native",
+      "variant": "B",
+      "repeat": 4,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L03-01"
+      ],
+      "selected_ids": [
+        "L03-01",
+        "L12-10",
+        "L12-12"
+      ],
+      "offered_ids": [
+        "L03-01",
+        "L12-10",
+        "L12-12",
+        "L03-03",
+        "L08A-02"
+      ],
+      "supported_ids": [
+        "L03-01",
+        "L12-10"
+      ],
+      "unsupported_ids": [
+        "L12-12"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L03-01\",\"L12-10\",\"L12-12\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L03-01\",\"L12-10\",\"L12-12\"],\"reason\":null}"
+      ],
+      "body_sha256": "017872d42c14ea5ebdc1b185b20a8bad366b48a70de42c4b126d6dc066ebccfe",
+      "schema_sha256": "e30be6888b7d50292d048f33642215b831ad0c97f3f2b026d28294864720e807",
+      "prompt_bytes": 4906,
+      "answer_calls": 1,
+      "input_tokens": 1169,
+      "output_tokens": 35,
+      "trace_file": "D004-native-B-r4.json",
+      "trace_sha256": "98a0c3d323fb7705377060b5722c7d2fd57efffedab8cbe5bae9e624f0123292"
+    },
+    {
+      "case_id": "D009-native",
+      "question_id": "D009",
+      "context": "native",
+      "variant": "A",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L08A-02",
+        "L08A-03"
+      ],
+      "selected_ids": [
+        "L08A-02",
+        "L08A-03",
+        "L13-06"
+      ],
+      "offered_ids": [
+        "L08A-02",
+        "L08A-03",
+        "L01-07",
+        "L15-02",
+        "L13-06"
+      ],
+      "supported_ids": [
+        "L08A-02",
+        "L08A-03"
+      ],
+      "unsupported_ids": [
+        "L13-06"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\",\"L08A-03\",\"L13-06\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\",\"L08A-03\",\"L13-06\"],\"reason\":null}"
+      ],
+      "body_sha256": "4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666",
+      "schema_sha256": "58274d2b99ddb77fb9f94106b10774f4bc2538e07edb5ee94b45e02bbe59b5be",
+      "prompt_bytes": 5085,
+      "answer_calls": 1,
+      "input_tokens": 1288,
+      "output_tokens": 37,
+      "trace_file": "D009-native-A-r1.json",
+      "trace_sha256": "8ab17d22a5d291ffe7460cf6c3292ae25d5a5134c25ab3759d0e7f0e3b817d56"
+    },
+    {
+      "case_id": "D009-native",
+      "question_id": "D009",
+      "context": "native",
+      "variant": "A",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L08A-02"
+      ],
+      "selected_ids": [
+        "L08A-02"
+      ],
+      "offered_ids": [
+        "L08A-02",
+        "L08A-03",
+        "L01-07",
+        "L15-02",
+        "L13-06"
+      ],
+      "supported_ids": [
+        "L08A-02"
+      ],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\"],\"reason\":null}"
+      ],
+      "body_sha256": "4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666",
+      "schema_sha256": "58274d2b99ddb77fb9f94106b10774f4bc2538e07edb5ee94b45e02bbe59b5be",
+      "prompt_bytes": 5085,
+      "answer_calls": 1,
+      "input_tokens": 1288,
+      "output_tokens": 22,
+      "trace_file": "D009-native-A-r2.json",
+      "trace_sha256": "9f749f1a76bb1a0c76111a7c14368301cae90b21e249ee91e23af88d3acce2e9"
+    },
+    {
+      "case_id": "D009-native",
+      "question_id": "D009",
+      "context": "native",
+      "variant": "A",
+      "repeat": 3,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L08A-02"
+      ],
+      "selected_ids": [
+        "L08A-02"
+      ],
+      "offered_ids": [
+        "L08A-02",
+        "L08A-03",
+        "L01-07",
+        "L15-02",
+        "L13-06"
+      ],
+      "supported_ids": [
+        "L08A-02"
+      ],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\"],\"reason\":null}"
+      ],
+      "body_sha256": "4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666",
+      "schema_sha256": "58274d2b99ddb77fb9f94106b10774f4bc2538e07edb5ee94b45e02bbe59b5be",
+      "prompt_bytes": 5085,
+      "answer_calls": 1,
+      "input_tokens": 1288,
+      "output_tokens": 22,
+      "trace_file": "D009-native-A-r3.json",
+      "trace_sha256": "4feca0ae1aa1579af2b949b14c7034d85f1c36807a1163a14f3d9c6a3dc09f97"
+    },
+    {
+      "case_id": "D009-native",
+      "question_id": "D009",
+      "context": "native",
+      "variant": "A",
+      "repeat": 4,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L08A-02"
+      ],
+      "selected_ids": [
+        "L08A-02"
+      ],
+      "offered_ids": [
+        "L08A-02",
+        "L08A-03",
+        "L01-07",
+        "L15-02",
+        "L13-06"
+      ],
+      "supported_ids": [
+        "L08A-02"
+      ],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\"],\"reason\":null}"
+      ],
+      "body_sha256": "4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666",
+      "schema_sha256": "58274d2b99ddb77fb9f94106b10774f4bc2538e07edb5ee94b45e02bbe59b5be",
+      "prompt_bytes": 5085,
+      "answer_calls": 1,
+      "input_tokens": 1288,
+      "output_tokens": 22,
+      "trace_file": "D009-native-A-r4.json",
+      "trace_sha256": "11e3cc0c6596ac3f0aa7b31008aea0d05e532ea25573f5b8885f42841b7d33bf"
+    },
+    {
+      "case_id": "D009-native",
+      "question_id": "D009",
+      "context": "native",
+      "variant": "B",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L08A-02",
+        "L08A-03"
+      ],
+      "selected_ids": [
+        "L08A-02",
+        "L08A-03",
+        "L13-06"
+      ],
+      "offered_ids": [
+        "L08A-02",
+        "L08A-03",
+        "L01-07",
+        "L15-02",
+        "L13-06"
+      ],
+      "supported_ids": [
+        "L08A-02",
+        "L08A-03"
+      ],
+      "unsupported_ids": [
+        "L13-06"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\",\"L08A-03\",\"L13-06\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\",\"L08A-03\",\"L13-06\"],\"reason\":null}"
+      ],
+      "body_sha256": "4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666",
+      "schema_sha256": "58274d2b99ddb77fb9f94106b10774f4bc2538e07edb5ee94b45e02bbe59b5be",
+      "prompt_bytes": 5083,
+      "answer_calls": 1,
+      "input_tokens": 1288,
+      "output_tokens": 37,
+      "trace_file": "D009-native-B-r1.json",
+      "trace_sha256": "46b0bf1ef67c9a5b98b8a6b215e9a0a352d6d0d72aaf2243d804cb6959e3623f"
+    },
+    {
+      "case_id": "D009-native",
+      "question_id": "D009",
+      "context": "native",
+      "variant": "B",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L08A-02",
+        "L08A-03"
+      ],
+      "selected_ids": [
+        "L08A-02",
+        "L08A-03",
+        "L13-06"
+      ],
+      "offered_ids": [
+        "L08A-02",
+        "L08A-03",
+        "L01-07",
+        "L15-02",
+        "L13-06"
+      ],
+      "supported_ids": [
+        "L08A-02",
+        "L08A-03"
+      ],
+      "unsupported_ids": [
+        "L13-06"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\",\"L08A-03\",\"L13-06\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\",\"L08A-03\",\"L13-06\"],\"reason\":null}"
+      ],
+      "body_sha256": "4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666",
+      "schema_sha256": "58274d2b99ddb77fb9f94106b10774f4bc2538e07edb5ee94b45e02bbe59b5be",
+      "prompt_bytes": 5083,
+      "answer_calls": 1,
+      "input_tokens": 1288,
+      "output_tokens": 37,
+      "trace_file": "D009-native-B-r2.json",
+      "trace_sha256": "34095d33e801bc4df24dc51897c57665e138f689318e41160f0566439365335a"
+    },
+    {
+      "case_id": "D009-native",
+      "question_id": "D009",
+      "context": "native",
+      "variant": "B",
+      "repeat": 3,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L08A-02",
+        "L08A-03"
+      ],
+      "selected_ids": [
+        "L08A-02",
+        "L08A-03",
+        "L13-06"
+      ],
+      "offered_ids": [
+        "L08A-02",
+        "L08A-03",
+        "L01-07",
+        "L15-02",
+        "L13-06"
+      ],
+      "supported_ids": [
+        "L08A-02",
+        "L08A-03"
+      ],
+      "unsupported_ids": [
+        "L13-06"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\",\"L08A-03\",\"L13-06\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\",\"L08A-03\",\"L13-06\"],\"reason\":null}"
+      ],
+      "body_sha256": "4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666",
+      "schema_sha256": "58274d2b99ddb77fb9f94106b10774f4bc2538e07edb5ee94b45e02bbe59b5be",
+      "prompt_bytes": 5083,
+      "answer_calls": 1,
+      "input_tokens": 1288,
+      "output_tokens": 37,
+      "trace_file": "D009-native-B-r3.json",
+      "trace_sha256": "3ace9e4826ec032b4a17c3918ac55081d007d72eb2501e33d21e962f4968e904"
+    },
+    {
+      "case_id": "D009-native",
+      "question_id": "D009",
+      "context": "native",
+      "variant": "B",
+      "repeat": 4,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L08A-02",
+        "L08A-03"
+      ],
+      "selected_ids": [
+        "L08A-02",
+        "L08A-03",
+        "L13-06"
+      ],
+      "offered_ids": [
+        "L08A-02",
+        "L08A-03",
+        "L01-07",
+        "L15-02",
+        "L13-06"
+      ],
+      "supported_ids": [
+        "L08A-02",
+        "L08A-03"
+      ],
+      "unsupported_ids": [
+        "L13-06"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\",\"L08A-03\",\"L13-06\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L08A-02\",\"L08A-03\",\"L13-06\"],\"reason\":null}"
+      ],
+      "body_sha256": "4c5608243b4538ebe0aa5b2fef16cb5ecfe7bd39a028a783e4d8aa8b0500a666",
+      "schema_sha256": "58274d2b99ddb77fb9f94106b10774f4bc2538e07edb5ee94b45e02bbe59b5be",
+      "prompt_bytes": 5083,
+      "answer_calls": 1,
+      "input_tokens": 1288,
+      "output_tokens": 37,
+      "trace_file": "D009-native-B-r4.json",
+      "trace_sha256": "7ea206ae7877fb56fedba82835d05c1935408d338f19a18de8bc1f6566148e3a"
+    },
+    {
+      "case_id": "D017-native",
+      "question_id": "D017",
+      "context": "native",
+      "variant": "A",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-02"
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}"
+      ],
+      "body_sha256": "bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681",
+      "schema_sha256": "503720df26a8c5f29d9229eac55dd8f355c8a59e8f9cf5b367e59d2f9a995b5f",
+      "prompt_bytes": 5608,
+      "answer_calls": 1,
+      "input_tokens": 1447,
+      "output_tokens": 21,
+      "trace_file": "D017-native-A-r1.json",
+      "trace_sha256": "93711af0dac643ec5e555fc31f1f4458958f3b1a0d6d33672b3903eee54a4ab9"
+    },
+    {
+      "case_id": "D017-native",
+      "question_id": "D017",
+      "context": "native",
+      "variant": "A",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-02"
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}"
+      ],
+      "body_sha256": "bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681",
+      "schema_sha256": "503720df26a8c5f29d9229eac55dd8f355c8a59e8f9cf5b367e59d2f9a995b5f",
+      "prompt_bytes": 5608,
+      "answer_calls": 1,
+      "input_tokens": 1447,
+      "output_tokens": 21,
+      "trace_file": "D017-native-A-r2.json",
+      "trace_sha256": "7c74d54dff0cbef17dfddf0175352590158978f84c2feb4475befc240cab4dbd"
+    },
+    {
+      "case_id": "D017-native",
+      "question_id": "D017",
+      "context": "native",
+      "variant": "A",
+      "repeat": 3,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-02"
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}"
+      ],
+      "body_sha256": "bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681",
+      "schema_sha256": "503720df26a8c5f29d9229eac55dd8f355c8a59e8f9cf5b367e59d2f9a995b5f",
+      "prompt_bytes": 5608,
+      "answer_calls": 1,
+      "input_tokens": 1447,
+      "output_tokens": 21,
+      "trace_file": "D017-native-A-r3.json",
+      "trace_sha256": "519b5e849d442e9d8053987aebb74e11cf8bbca7459a1faea661d1aa79d5b1d8"
+    },
+    {
+      "case_id": "D017-native",
+      "question_id": "D017",
+      "context": "native",
+      "variant": "A",
+      "repeat": 4,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-02"
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}"
+      ],
+      "body_sha256": "bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681",
+      "schema_sha256": "503720df26a8c5f29d9229eac55dd8f355c8a59e8f9cf5b367e59d2f9a995b5f",
+      "prompt_bytes": 5608,
+      "answer_calls": 1,
+      "input_tokens": 1447,
+      "output_tokens": 21,
+      "trace_file": "D017-native-A-r4.json",
+      "trace_sha256": "0eafc78e5feecc2556bc52eb5c88d87b7231c0f8a31b6f84e2f066c513512266"
+    },
+    {
+      "case_id": "D017-native",
+      "question_id": "D017",
+      "context": "native",
+      "variant": "B",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-02"
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}"
+      ],
+      "body_sha256": "bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681",
+      "schema_sha256": "503720df26a8c5f29d9229eac55dd8f355c8a59e8f9cf5b367e59d2f9a995b5f",
+      "prompt_bytes": 5606,
+      "answer_calls": 1,
+      "input_tokens": 1447,
+      "output_tokens": 21,
+      "trace_file": "D017-native-B-r1.json",
+      "trace_sha256": "5ee278448e7b05c528db923d03ac62c866922f4d0eadfd88325942f6e6b44eef"
+    },
+    {
+      "case_id": "D017-native",
+      "question_id": "D017",
+      "context": "native",
+      "variant": "B",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-02"
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}"
+      ],
+      "body_sha256": "bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681",
+      "schema_sha256": "503720df26a8c5f29d9229eac55dd8f355c8a59e8f9cf5b367e59d2f9a995b5f",
+      "prompt_bytes": 5606,
+      "answer_calls": 1,
+      "input_tokens": 1447,
+      "output_tokens": 21,
+      "trace_file": "D017-native-B-r2.json",
+      "trace_sha256": "0ba21a7e6541665eaf3e87025ad15bb1fe5f6d1006706aec6363ace2269b086a"
+    },
+    {
+      "case_id": "D017-native",
+      "question_id": "D017",
+      "context": "native",
+      "variant": "B",
+      "repeat": 3,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-02"
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}"
+      ],
+      "body_sha256": "bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681",
+      "schema_sha256": "503720df26a8c5f29d9229eac55dd8f355c8a59e8f9cf5b367e59d2f9a995b5f",
+      "prompt_bytes": 5606,
+      "answer_calls": 1,
+      "input_tokens": 1447,
+      "output_tokens": 21,
+      "trace_file": "D017-native-B-r3.json",
+      "trace_sha256": "37f0b5b6a47a18199c4342d3a54a63c73f7749c0f04690c5de31462ee6247ba0"
+    },
+    {
+      "case_id": "D017-native",
+      "question_id": "D017",
+      "context": "native",
+      "variant": "B",
+      "repeat": 4,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-02"
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-02\"],\"reason\":null}"
+      ],
+      "body_sha256": "bb5219c1111657e3d250f2205f18ef9cc3b5b9b346ec960ccae34ab646408681",
+      "schema_sha256": "503720df26a8c5f29d9229eac55dd8f355c8a59e8f9cf5b367e59d2f9a995b5f",
+      "prompt_bytes": 5606,
+      "answer_calls": 1,
+      "input_tokens": 1447,
+      "output_tokens": 21,
+      "trace_file": "D017-native-B-r4.json",
+      "trace_sha256": "8e216ae13fa7ee81b7562fabaab98166d34285cb42e6b6fc1a759f9359e5949a"
+    },
+    {
+      "case_id": "D019-native",
+      "question_id": "D019",
+      "context": "native",
+      "variant": "A",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false
+      ],
+      "grade": "incorrect",
+      "original_annotation_point_mask": [
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [
+        "L16-04",
+        "L17-04",
+        "L08B-02"
+      ],
+      "offered_ids": [
+        "L16-03",
+        "L16-04",
+        "L17-04",
+        "L08B-02",
+        "L13-04"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L16-04",
+        "L17-04",
+        "L08B-02"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L16-04\",\"L17-04\",\"L08B-02\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L16-04\",\"L17-04\",\"L08B-02\"],\"reason\":null}"
+      ],
+      "body_sha256": "3d4a35e21fac6f058031a91cdcdf7be9d51d38dff3e96173f8567a332f3b0a39",
+      "schema_sha256": "618fa2db45ed0e98f0d6f2171c58a644c978f8b68d9b5f0c3099bf21675c711b",
+      "prompt_bytes": 5679,
+      "answer_calls": 1,
+      "input_tokens": 1418,
+      "output_tokens": 36,
+      "trace_file": "D019-native-A-r1.json",
+      "trace_sha256": "52ee09167f9499a8cee0c94c0342633dd6867fdfa14dc6274c9fe3a8304ec7cb"
+    },
+    {
+      "case_id": "D019-native",
+      "question_id": "D019",
+      "context": "native",
+      "variant": "A",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false
+      ],
+      "grade": "incorrect",
+      "original_annotation_point_mask": [
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [
+        "L16-04",
+        "L17-04",
+        "L08B-02"
+      ],
+      "offered_ids": [
+        "L16-03",
+        "L16-04",
+        "L17-04",
+        "L08B-02",
+        "L13-04"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L16-04",
+        "L17-04",
+        "L08B-02"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L16-04\",\"L17-04\",\"L08B-02\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L16-04\",\"L17-04\",\"L08B-02\"],\"reason\":null}"
+      ],
+      "body_sha256": "3d4a35e21fac6f058031a91cdcdf7be9d51d38dff3e96173f8567a332f3b0a39",
+      "schema_sha256": "618fa2db45ed0e98f0d6f2171c58a644c978f8b68d9b5f0c3099bf21675c711b",
+      "prompt_bytes": 5679,
+      "answer_calls": 1,
+      "input_tokens": 1418,
+      "output_tokens": 36,
+      "trace_file": "D019-native-A-r2.json",
+      "trace_sha256": "babee04c655b31d387139d9e7d901a185c99f68c899fb02a9b21b571b15cdc15"
+    },
+    {
+      "case_id": "D019-native",
+      "question_id": "D019",
+      "context": "native",
+      "variant": "B",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L16-03"
+      ],
+      "selected_ids": [
+        "L16-03",
+        "L16-04",
+        "L08B-02"
+      ],
+      "offered_ids": [
+        "L16-03",
+        "L16-04",
+        "L17-04",
+        "L08B-02",
+        "L13-04"
+      ],
+      "supported_ids": [
+        "L16-03"
+      ],
+      "unsupported_ids": [
+        "L16-04",
+        "L08B-02"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L16-03\",\"L16-04\",\"L08B-02\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L16-03\",\"L16-04\",\"L08B-02\"],\"reason\":null}"
+      ],
+      "body_sha256": "3d4a35e21fac6f058031a91cdcdf7be9d51d38dff3e96173f8567a332f3b0a39",
+      "schema_sha256": "618fa2db45ed0e98f0d6f2171c58a644c978f8b68d9b5f0c3099bf21675c711b",
+      "prompt_bytes": 5677,
+      "answer_calls": 1,
+      "input_tokens": 1418,
+      "output_tokens": 36,
+      "trace_file": "D019-native-B-r1.json",
+      "trace_sha256": "8984974b8170657031a10edbf3e0c6486bb08630f3be6b1c46ceab9997eb0a16"
+    },
+    {
+      "case_id": "D019-native",
+      "question_id": "D019",
+      "context": "native",
+      "variant": "B",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L16-03"
+      ],
+      "selected_ids": [
+        "L16-03",
+        "L16-04",
+        "L08B-02"
+      ],
+      "offered_ids": [
+        "L16-03",
+        "L16-04",
+        "L17-04",
+        "L08B-02",
+        "L13-04"
+      ],
+      "supported_ids": [
+        "L16-03"
+      ],
+      "unsupported_ids": [
+        "L16-04",
+        "L08B-02"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L16-03\",\"L16-04\",\"L08B-02\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L16-03\",\"L16-04\",\"L08B-02\"],\"reason\":null}"
+      ],
+      "body_sha256": "3d4a35e21fac6f058031a91cdcdf7be9d51d38dff3e96173f8567a332f3b0a39",
+      "schema_sha256": "618fa2db45ed0e98f0d6f2171c58a644c978f8b68d9b5f0c3099bf21675c711b",
+      "prompt_bytes": 5677,
+      "answer_calls": 1,
+      "input_tokens": 1418,
+      "output_tokens": 36,
+      "trace_file": "D019-native-B-r2.json",
+      "trace_sha256": "67b6fa8423610cbf12b57aa7eebd5a68e3c9871cf846bd94dbcd9db65c70708c"
+    },
+    {
+      "case_id": "D021-native",
+      "question_id": "D021",
+      "context": "native",
+      "variant": "A",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        true
+      ],
+      "grade": "partial",
+      "original_annotation_point_mask": [
+        false,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L11-03",
+        "L15-03"
+      ],
+      "selected_ids": [
+        "L11-03",
+        "L12-05",
+        "L15-03"
+      ],
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "supported_ids": [
+        "L11-03",
+        "L15-03"
+      ],
+      "unsupported_ids": [
+        "L12-05"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L11-03\",\"L12-05\",\"L15-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L11-03\",\"L12-05\",\"L15-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "c0ec23990a156c608422717d9e5b44b07a25955fb16a2a78384edc0e023f6c53",
+      "schema_sha256": "bf6e606460bd1ceb0e2c143bf73ba6c157b21867be3a629f1d0f83ad36b3b010",
+      "prompt_bytes": 5477,
+      "answer_calls": 1,
+      "input_tokens": 1339,
+      "output_tokens": 35,
+      "trace_file": "D021-native-A-r1.json",
+      "trace_sha256": "0bb5997bc1e0ed19b6af670f3d1858d29c89ef0aa41a0b99d9bc48c202f5f2ac"
+    },
+    {
+      "case_id": "D021-native",
+      "question_id": "D021",
+      "context": "native",
+      "variant": "A",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        true
+      ],
+      "grade": "partial",
+      "original_annotation_point_mask": [
+        false,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L11-03",
+        "L15-03"
+      ],
+      "selected_ids": [
+        "L11-03",
+        "L12-05",
+        "L15-03"
+      ],
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "supported_ids": [
+        "L11-03",
+        "L15-03"
+      ],
+      "unsupported_ids": [
+        "L12-05"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L11-03\",\"L12-05\",\"L15-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L11-03\",\"L12-05\",\"L15-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "c0ec23990a156c608422717d9e5b44b07a25955fb16a2a78384edc0e023f6c53",
+      "schema_sha256": "bf6e606460bd1ceb0e2c143bf73ba6c157b21867be3a629f1d0f83ad36b3b010",
+      "prompt_bytes": 5477,
+      "answer_calls": 1,
+      "input_tokens": 1339,
+      "output_tokens": 35,
+      "trace_file": "D021-native-A-r2.json",
+      "trace_sha256": "6fb8d5c645cf940a40f67104a7feb3a95c3cd5e1f8f9073edc5ea106fc8b8599"
+    },
+    {
+      "case_id": "D021-native",
+      "question_id": "D021",
+      "context": "native",
+      "variant": "B",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        true
+      ],
+      "grade": "partial",
+      "original_annotation_point_mask": [
+        false,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L11-03",
+        "L15-03"
+      ],
+      "selected_ids": [
+        "L11-03",
+        "L12-05",
+        "L15-03"
+      ],
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "supported_ids": [
+        "L11-03",
+        "L15-03"
+      ],
+      "unsupported_ids": [
+        "L12-05"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L11-03\",\"L12-05\",\"L15-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L11-03\",\"L12-05\",\"L15-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "c0ec23990a156c608422717d9e5b44b07a25955fb16a2a78384edc0e023f6c53",
+      "schema_sha256": "bf6e606460bd1ceb0e2c143bf73ba6c157b21867be3a629f1d0f83ad36b3b010",
+      "prompt_bytes": 5475,
+      "answer_calls": 1,
+      "input_tokens": 1339,
+      "output_tokens": 35,
+      "trace_file": "D021-native-B-r1.json",
+      "trace_sha256": "ec30e54f815ebdc0f93bf2ddb3d67bc54f69d55558f55741d16b12a208bd9d21"
+    },
+    {
+      "case_id": "D021-native",
+      "question_id": "D021",
+      "context": "native",
+      "variant": "B",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        true
+      ],
+      "grade": "partial",
+      "original_annotation_point_mask": [
+        false,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L11-03",
+        "L15-03"
+      ],
+      "selected_ids": [
+        "L11-03",
+        "L12-05",
+        "L15-03"
+      ],
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "supported_ids": [
+        "L11-03",
+        "L15-03"
+      ],
+      "unsupported_ids": [
+        "L12-05"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L11-03\",\"L12-05\",\"L15-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L11-03\",\"L12-05\",\"L15-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "c0ec23990a156c608422717d9e5b44b07a25955fb16a2a78384edc0e023f6c53",
+      "schema_sha256": "bf6e606460bd1ceb0e2c143bf73ba6c157b21867be3a629f1d0f83ad36b3b010",
+      "prompt_bytes": 5475,
+      "answer_calls": 1,
+      "input_tokens": 1339,
+      "output_tokens": 35,
+      "trace_file": "D021-native-B-r2.json",
+      "trace_sha256": "ad61c15f905c10c795589adb645c7b02507b7f9fea0c14a8c15253a99f469f9b"
+    },
+    {
+      "case_id": "T014-native",
+      "question_id": "T014",
+      "context": "native",
+      "variant": "A",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L06-06"
+      ],
+      "selected_ids": [
+        "L06-06",
+        "L06-04",
+        "L03-04"
+      ],
+      "offered_ids": [
+        "L06-06",
+        "L14-02",
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "supported_ids": [
+        "L06-06"
+      ],
+      "unsupported_ids": [
+        "L06-04",
+        "L03-04"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L06-06\",\"L06-04\",\"L03-04\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L06-06\",\"L06-04\",\"L03-04\"],\"reason\":null}"
+      ],
+      "body_sha256": "08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4",
+      "schema_sha256": "f688cb1fbae92135191ddf1d9c67d1647ffd00d75ecc02d70c0a76ee5d5eaf9b",
+      "prompt_bytes": 6030,
+      "answer_calls": 1,
+      "input_tokens": 1396,
+      "output_tokens": 35,
+      "trace_file": "T014-native-A-r1.json",
+      "trace_sha256": "fe2f3758733f80c90531e01ab7329552291265d86fc6f5b403729291525b9c2f"
+    },
+    {
+      "case_id": "T014-native",
+      "question_id": "T014",
+      "context": "native",
+      "variant": "A",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false
+      ],
+      "grade": "incorrect",
+      "original_annotation_point_mask": [
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "offered_ids": [
+        "L06-06",
+        "L14-02",
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L06-05\",\"L06-04\",\"L03-04\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L06-05\",\"L06-04\",\"L03-04\"],\"reason\":null}"
+      ],
+      "body_sha256": "08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4",
+      "schema_sha256": "f688cb1fbae92135191ddf1d9c67d1647ffd00d75ecc02d70c0a76ee5d5eaf9b",
+      "prompt_bytes": 6030,
+      "answer_calls": 1,
+      "input_tokens": 1396,
+      "output_tokens": 35,
+      "trace_file": "T014-native-A-r2.json",
+      "trace_sha256": "14b5adfcbe9d7b3785be25833cbc5b579fd66c26b1f1282f76f305d2ce98e07a"
+    },
+    {
+      "case_id": "T014-native",
+      "question_id": "T014",
+      "context": "native",
+      "variant": "A",
+      "repeat": 3,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false
+      ],
+      "grade": "incorrect",
+      "original_annotation_point_mask": [
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "offered_ids": [
+        "L06-06",
+        "L14-02",
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L06-05\",\"L06-04\",\"L03-04\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L06-05\",\"L06-04\",\"L03-04\"],\"reason\":null}"
+      ],
+      "body_sha256": "08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4",
+      "schema_sha256": "f688cb1fbae92135191ddf1d9c67d1647ffd00d75ecc02d70c0a76ee5d5eaf9b",
+      "prompt_bytes": 6030,
+      "answer_calls": 1,
+      "input_tokens": 1396,
+      "output_tokens": 35,
+      "trace_file": "T014-native-A-r3.json",
+      "trace_sha256": "2a9ba098de1c8d91f139d7e79608788035f8c1e3d0d5f67a3031e8950c762fa1"
+    },
+    {
+      "case_id": "T014-native",
+      "question_id": "T014",
+      "context": "native",
+      "variant": "A",
+      "repeat": 4,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false
+      ],
+      "grade": "incorrect",
+      "original_annotation_point_mask": [
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "offered_ids": [
+        "L06-06",
+        "L14-02",
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L06-05\",\"L06-04\",\"L03-04\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L06-05\",\"L06-04\",\"L03-04\"],\"reason\":null}"
+      ],
+      "body_sha256": "08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4",
+      "schema_sha256": "f688cb1fbae92135191ddf1d9c67d1647ffd00d75ecc02d70c0a76ee5d5eaf9b",
+      "prompt_bytes": 6030,
+      "answer_calls": 1,
+      "input_tokens": 1396,
+      "output_tokens": 35,
+      "trace_file": "T014-native-A-r4.json",
+      "trace_sha256": "a3fe0f8d1b679e08880992403e87fe9cd6d56b0baab0fb2cba2864199cec3939"
+    },
+    {
+      "case_id": "T014-native",
+      "question_id": "T014",
+      "context": "native",
+      "variant": "B",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L06-06"
+      ],
+      "selected_ids": [
+        "L06-06",
+        "L14-02",
+        "L06-04"
+      ],
+      "offered_ids": [
+        "L06-06",
+        "L14-02",
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "supported_ids": [
+        "L06-06"
+      ],
+      "unsupported_ids": [
+        "L14-02",
+        "L06-04"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L06-06\",\"L14-02\",\"L06-04\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L06-06\",\"L14-02\",\"L06-04\"],\"reason\":null}"
+      ],
+      "body_sha256": "08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4",
+      "schema_sha256": "f688cb1fbae92135191ddf1d9c67d1647ffd00d75ecc02d70c0a76ee5d5eaf9b",
+      "prompt_bytes": 6028,
+      "answer_calls": 1,
+      "input_tokens": 1396,
+      "output_tokens": 35,
+      "trace_file": "T014-native-B-r1.json",
+      "trace_sha256": "80212796a0c25abb44012b43c104fc025dc42fce8e56f10862fcd3d8753ce149"
+    },
+    {
+      "case_id": "T014-native",
+      "question_id": "T014",
+      "context": "native",
+      "variant": "B",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L06-06"
+      ],
+      "selected_ids": [
+        "L06-06",
+        "L14-02",
+        "L06-04"
+      ],
+      "offered_ids": [
+        "L06-06",
+        "L14-02",
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "supported_ids": [
+        "L06-06"
+      ],
+      "unsupported_ids": [
+        "L14-02",
+        "L06-04"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L06-06\",\"L14-02\",\"L06-04\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L06-06\",\"L14-02\",\"L06-04\"],\"reason\":null}"
+      ],
+      "body_sha256": "08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4",
+      "schema_sha256": "f688cb1fbae92135191ddf1d9c67d1647ffd00d75ecc02d70c0a76ee5d5eaf9b",
+      "prompt_bytes": 6028,
+      "answer_calls": 1,
+      "input_tokens": 1396,
+      "output_tokens": 35,
+      "trace_file": "T014-native-B-r2.json",
+      "trace_sha256": "cc1fc06dc8b7bacd1c413fa4a57e0ac2d8ec9a99f8cdca61ba9ba2f37f3eaede"
+    },
+    {
+      "case_id": "T014-native",
+      "question_id": "T014",
+      "context": "native",
+      "variant": "B",
+      "repeat": 3,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L06-06"
+      ],
+      "selected_ids": [
+        "L06-06",
+        "L14-02",
+        "L06-04"
+      ],
+      "offered_ids": [
+        "L06-06",
+        "L14-02",
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "supported_ids": [
+        "L06-06"
+      ],
+      "unsupported_ids": [
+        "L14-02",
+        "L06-04"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L06-06\",\"L14-02\",\"L06-04\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L06-06\",\"L14-02\",\"L06-04\"],\"reason\":null}"
+      ],
+      "body_sha256": "08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4",
+      "schema_sha256": "f688cb1fbae92135191ddf1d9c67d1647ffd00d75ecc02d70c0a76ee5d5eaf9b",
+      "prompt_bytes": 6028,
+      "answer_calls": 1,
+      "input_tokens": 1396,
+      "output_tokens": 35,
+      "trace_file": "T014-native-B-r3.json",
+      "trace_sha256": "8b98c3eb27f4c5ee0b25de1a8d94dff467cb80f18c34667af92446834872180d"
+    },
+    {
+      "case_id": "T014-native",
+      "question_id": "T014",
+      "context": "native",
+      "variant": "B",
+      "repeat": 4,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L06-06"
+      ],
+      "selected_ids": [
+        "L06-06",
+        "L14-02",
+        "L06-04"
+      ],
+      "offered_ids": [
+        "L06-06",
+        "L14-02",
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "supported_ids": [
+        "L06-06"
+      ],
+      "unsupported_ids": [
+        "L14-02",
+        "L06-04"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L06-06\",\"L14-02\",\"L06-04\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L06-06\",\"L14-02\",\"L06-04\"],\"reason\":null}"
+      ],
+      "body_sha256": "08714f3f2efa6a4d4d11ec6991a68a8a1026f328b7f918ee577603403f7d44b4",
+      "schema_sha256": "f688cb1fbae92135191ddf1d9c67d1647ffd00d75ecc02d70c0a76ee5d5eaf9b",
+      "prompt_bytes": 6028,
+      "answer_calls": 1,
+      "input_tokens": 1396,
+      "output_tokens": 35,
+      "trace_file": "T014-native-B-r4.json",
+      "trace_sha256": "f7e3a96d68ab1544d81a6b6333461a93e4092802f4a7eaa15afc06ee83b5173b"
+    },
+    {
+      "case_id": "T026-expanded",
+      "question_id": "T026",
+      "context": "expanded",
+      "variant": "A",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "incorrect",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6",
+      "schema_sha256": "84527d6c4f2f5abc43ce81ae1151ba5cd08a7b0753341d22fe340b40e5755223",
+      "prompt_bytes": 5795,
+      "answer_calls": 1,
+      "input_tokens": 1349,
+      "output_tokens": 35,
+      "trace_file": "T026-expanded-A-r1.json",
+      "trace_sha256": "dbc53d648e966b76b14e5e9398552e4c84ee4e77b991de8f08df9c56267ca15b"
+    },
+    {
+      "case_id": "T026-expanded",
+      "question_id": "T026",
+      "context": "expanded",
+      "variant": "A",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "incorrect",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6",
+      "schema_sha256": "84527d6c4f2f5abc43ce81ae1151ba5cd08a7b0753341d22fe340b40e5755223",
+      "prompt_bytes": 5795,
+      "answer_calls": 1,
+      "input_tokens": 1349,
+      "output_tokens": 35,
+      "trace_file": "T026-expanded-A-r2.json",
+      "trace_sha256": "e10832ca18d875bc16811c280857fbf33cfaaf923d0accfa8a8c16ed647a511c"
+    },
+    {
+      "case_id": "T026-expanded",
+      "question_id": "T026",
+      "context": "expanded",
+      "variant": "A",
+      "repeat": 3,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "incorrect",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6",
+      "schema_sha256": "84527d6c4f2f5abc43ce81ae1151ba5cd08a7b0753341d22fe340b40e5755223",
+      "prompt_bytes": 5795,
+      "answer_calls": 1,
+      "input_tokens": 1349,
+      "output_tokens": 35,
+      "trace_file": "T026-expanded-A-r3.json",
+      "trace_sha256": "f1be73f287c1e3a6a950e28fc51b0c888528ba454388edc3883b2229e1698988"
+    },
+    {
+      "case_id": "T026-expanded",
+      "question_id": "T026",
+      "context": "expanded",
+      "variant": "A",
+      "repeat": 4,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "incorrect",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6",
+      "schema_sha256": "84527d6c4f2f5abc43ce81ae1151ba5cd08a7b0753341d22fe340b40e5755223",
+      "prompt_bytes": 5795,
+      "answer_calls": 1,
+      "input_tokens": 1349,
+      "output_tokens": 35,
+      "trace_file": "T026-expanded-A-r4.json",
+      "trace_sha256": "c877ba75258e83b968d021f573cbb98c1c1597c042ae334ed48796f11bbda570"
+    },
+    {
+      "case_id": "T026-expanded",
+      "question_id": "T026",
+      "context": "expanded",
+      "variant": "B",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "incorrect",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6",
+      "schema_sha256": "84527d6c4f2f5abc43ce81ae1151ba5cd08a7b0753341d22fe340b40e5755223",
+      "prompt_bytes": 5793,
+      "answer_calls": 1,
+      "input_tokens": 1349,
+      "output_tokens": 35,
+      "trace_file": "T026-expanded-B-r1.json",
+      "trace_sha256": "1aae17674d7d257dcbd4efb6caa2faa11e8ae4491754ee525665a97e41c8b4a1"
+    },
+    {
+      "case_id": "T026-expanded",
+      "question_id": "T026",
+      "context": "expanded",
+      "variant": "B",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "incorrect",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6",
+      "schema_sha256": "84527d6c4f2f5abc43ce81ae1151ba5cd08a7b0753341d22fe340b40e5755223",
+      "prompt_bytes": 5793,
+      "answer_calls": 1,
+      "input_tokens": 1349,
+      "output_tokens": 35,
+      "trace_file": "T026-expanded-B-r2.json",
+      "trace_sha256": "d20a1598945e33f5a706552435f437e2ba59d72ac9ab1605d62fe23f508cabcd"
+    },
+    {
+      "case_id": "T026-expanded",
+      "question_id": "T026",
+      "context": "expanded",
+      "variant": "B",
+      "repeat": 3,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "incorrect",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6",
+      "schema_sha256": "84527d6c4f2f5abc43ce81ae1151ba5cd08a7b0753341d22fe340b40e5755223",
+      "prompt_bytes": 5793,
+      "answer_calls": 1,
+      "input_tokens": 1349,
+      "output_tokens": 35,
+      "trace_file": "T026-expanded-B-r3.json",
+      "trace_sha256": "3f8d9cf3718bba4516017594a70c181ed8f98874b38fac999a7c7645c5aa783a"
+    },
+    {
+      "case_id": "T026-expanded",
+      "question_id": "T026",
+      "context": "expanded",
+      "variant": "B",
+      "repeat": 4,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "incorrect",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "89a8b23d8a0368184fcf043cf612cda45cbf4baa693334a819ddd2df326d25b6",
+      "schema_sha256": "84527d6c4f2f5abc43ce81ae1151ba5cd08a7b0753341d22fe340b40e5755223",
+      "prompt_bytes": 5793,
+      "answer_calls": 1,
+      "input_tokens": 1349,
+      "output_tokens": 35,
+      "trace_file": "T026-expanded-B-r4.json",
+      "trace_sha256": "94a3a934ecf943b75e75ae9ddaf98f6d54fbf38d9234392ebaadfeed7a55579c"
+    },
+    {
+      "case_id": "T026-native",
+      "question_id": "T026",
+      "context": "native",
+      "variant": "A",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        true
+      ],
+      "grade": "partial",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L12-15"
+      ],
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-15"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01"
+      ],
+      "supported_ids": [
+        "L12-15"
+      ],
+      "unsupported_ids": [
+        "L12-01",
+        "L12-02"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-15\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-15\"],\"reason\":null}"
+      ],
+      "body_sha256": "08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb",
+      "schema_sha256": "18f7ab224bf5c5c1dea786df1885ae051881a10aac25f20db554a77edbf68950",
+      "prompt_bytes": 5421,
+      "answer_calls": 1,
+      "input_tokens": 1251,
+      "output_tokens": 35,
+      "trace_file": "T026-native-A-r1.json",
+      "trace_sha256": "19e20a7ca8394f1ea8b68e4cbd901417edd34b30b89e72f37f288614becf75ac"
+    },
+    {
+      "case_id": "T026-native",
+      "question_id": "T026",
+      "context": "native",
+      "variant": "A",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        true
+      ],
+      "grade": "partial",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L12-15"
+      ],
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-15"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01"
+      ],
+      "supported_ids": [
+        "L12-15"
+      ],
+      "unsupported_ids": [
+        "L12-01",
+        "L12-02"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-15\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-15\"],\"reason\":null}"
+      ],
+      "body_sha256": "08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb",
+      "schema_sha256": "18f7ab224bf5c5c1dea786df1885ae051881a10aac25f20db554a77edbf68950",
+      "prompt_bytes": 5421,
+      "answer_calls": 1,
+      "input_tokens": 1251,
+      "output_tokens": 35,
+      "trace_file": "T026-native-A-r2.json",
+      "trace_sha256": "661e511c1880573ef7c7cad56d84e6aff8e979a17d4165ed45fadfdf7d28fff7"
+    },
+    {
+      "case_id": "T026-native",
+      "question_id": "T026",
+      "context": "native",
+      "variant": "A",
+      "repeat": 3,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        true
+      ],
+      "grade": "partial",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L12-15"
+      ],
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-15"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01"
+      ],
+      "supported_ids": [
+        "L12-15"
+      ],
+      "unsupported_ids": [
+        "L12-01",
+        "L12-02"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-15\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-15\"],\"reason\":null}"
+      ],
+      "body_sha256": "08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb",
+      "schema_sha256": "18f7ab224bf5c5c1dea786df1885ae051881a10aac25f20db554a77edbf68950",
+      "prompt_bytes": 5421,
+      "answer_calls": 1,
+      "input_tokens": 1251,
+      "output_tokens": 35,
+      "trace_file": "T026-native-A-r3.json",
+      "trace_sha256": "bed2e6474f9b57c01f102907d6f4f2458386240e59179a67a6ddc39e82b907e5"
+    },
+    {
+      "case_id": "T026-native",
+      "question_id": "T026",
+      "context": "native",
+      "variant": "A",
+      "repeat": 4,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        true
+      ],
+      "grade": "partial",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L12-15"
+      ],
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-15"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01"
+      ],
+      "supported_ids": [
+        "L12-15"
+      ],
+      "unsupported_ids": [
+        "L12-01",
+        "L12-02"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-15\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-02\",\"L12-15\"],\"reason\":null}"
+      ],
+      "body_sha256": "08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb",
+      "schema_sha256": "18f7ab224bf5c5c1dea786df1885ae051881a10aac25f20db554a77edbf68950",
+      "prompt_bytes": 5421,
+      "answer_calls": 1,
+      "input_tokens": 1251,
+      "output_tokens": 35,
+      "trace_file": "T026-native-A-r4.json",
+      "trace_sha256": "9a621f12b82e4b73f4ee26a18d855afff295896efa4698de5c8b1f5c92db0876"
+    },
+    {
+      "case_id": "T026-native",
+      "question_id": "T026",
+      "context": "native",
+      "variant": "B",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L12-06",
+        "L12-15"
+      ],
+      "selected_ids": [
+        "L12-01",
+        "L12-06",
+        "L12-15"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01"
+      ],
+      "supported_ids": [
+        "L12-06",
+        "L12-15"
+      ],
+      "unsupported_ids": [
+        "L12-01"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-06\",\"L12-15\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-06\",\"L12-15\"],\"reason\":null}"
+      ],
+      "body_sha256": "08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb",
+      "schema_sha256": "18f7ab224bf5c5c1dea786df1885ae051881a10aac25f20db554a77edbf68950",
+      "prompt_bytes": 5419,
+      "answer_calls": 1,
+      "input_tokens": 1251,
+      "output_tokens": 35,
+      "trace_file": "T026-native-B-r1.json",
+      "trace_sha256": "c2622e04574a96440dfc9fd1ff05ed88c5f70b85a70e923c7cb6578001a6df0e"
+    },
+    {
+      "case_id": "T026-native",
+      "question_id": "T026",
+      "context": "native",
+      "variant": "B",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L12-06",
+        "L12-15"
+      ],
+      "selected_ids": [
+        "L12-01",
+        "L12-06",
+        "L12-15"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01"
+      ],
+      "supported_ids": [
+        "L12-06",
+        "L12-15"
+      ],
+      "unsupported_ids": [
+        "L12-01"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-06\",\"L12-15\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-06\",\"L12-15\"],\"reason\":null}"
+      ],
+      "body_sha256": "08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb",
+      "schema_sha256": "18f7ab224bf5c5c1dea786df1885ae051881a10aac25f20db554a77edbf68950",
+      "prompt_bytes": 5419,
+      "answer_calls": 1,
+      "input_tokens": 1251,
+      "output_tokens": 35,
+      "trace_file": "T026-native-B-r2.json",
+      "trace_sha256": "0cc603ca9116ab92341b4f978774b9eb0e29b95931ac04af5c898862cdcca2ac"
+    },
+    {
+      "case_id": "T026-native",
+      "question_id": "T026",
+      "context": "native",
+      "variant": "B",
+      "repeat": 3,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L12-06",
+        "L12-15"
+      ],
+      "selected_ids": [
+        "L12-01",
+        "L12-06",
+        "L12-15"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01"
+      ],
+      "supported_ids": [
+        "L12-06",
+        "L12-15"
+      ],
+      "unsupported_ids": [
+        "L12-01"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-06\",\"L12-15\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-06\",\"L12-15\"],\"reason\":null}"
+      ],
+      "body_sha256": "08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb",
+      "schema_sha256": "18f7ab224bf5c5c1dea786df1885ae051881a10aac25f20db554a77edbf68950",
+      "prompt_bytes": 5419,
+      "answer_calls": 1,
+      "input_tokens": 1251,
+      "output_tokens": 35,
+      "trace_file": "T026-native-B-r3.json",
+      "trace_sha256": "6eec372c36a0927a4072282d12f80fd99513ae395c1a73f6e074adb9cf8113a6"
+    },
+    {
+      "case_id": "T026-native",
+      "question_id": "T026",
+      "context": "native",
+      "variant": "B",
+      "repeat": 4,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L12-06",
+        "L12-15"
+      ],
+      "selected_ids": [
+        "L12-01",
+        "L12-06",
+        "L12-15"
+      ],
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01"
+      ],
+      "supported_ids": [
+        "L12-06",
+        "L12-15"
+      ],
+      "unsupported_ids": [
+        "L12-01"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-06\",\"L12-15\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L12-01\",\"L12-06\",\"L12-15\"],\"reason\":null}"
+      ],
+      "body_sha256": "08cf9c8090fd15686576b18db3175610c12f1e324caa71e60eb97c7c0df1d1bb",
+      "schema_sha256": "18f7ab224bf5c5c1dea786df1885ae051881a10aac25f20db554a77edbf68950",
+      "prompt_bytes": 5419,
+      "answer_calls": 1,
+      "input_tokens": 1251,
+      "output_tokens": 35,
+      "trace_file": "T026-native-B-r4.json",
+      "trace_sha256": "af148ba6ec8609327203ed0da102ea899cc70df27e0ee805ebf11db6af4c62e2"
+    },
+    {
+      "case_id": "T034-expanded",
+      "question_id": "T034",
+      "context": "expanded",
+      "variant": "A",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "selected_ids": [
+        "L14-01",
+        "L14-03",
+        "L07-03"
+      ],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "unsupported_ids": [
+        "L14-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f",
+      "schema_sha256": "4e78ff4cab08f67126c6f7a4ec216d4c56a7f12742697617ff1a5c6c84965a47",
+      "prompt_bytes": 6069,
+      "answer_calls": 1,
+      "input_tokens": 1492,
+      "output_tokens": 35,
+      "trace_file": "T034-expanded-A-r1.json",
+      "trace_sha256": "d1a4f0445e43c0584af5ef3e82ea3a5f401c4be1fdef647e1c0db726b168a3ca"
+    },
+    {
+      "case_id": "T034-expanded",
+      "question_id": "T034",
+      "context": "expanded",
+      "variant": "A",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "selected_ids": [
+        "L14-01",
+        "L14-03",
+        "L07-03"
+      ],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "unsupported_ids": [
+        "L14-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f",
+      "schema_sha256": "4e78ff4cab08f67126c6f7a4ec216d4c56a7f12742697617ff1a5c6c84965a47",
+      "prompt_bytes": 6069,
+      "answer_calls": 1,
+      "input_tokens": 1492,
+      "output_tokens": 35,
+      "trace_file": "T034-expanded-A-r2.json",
+      "trace_sha256": "e5822ddb1f65a0e20bc0a09ac3e599b11dc3bfe02982d9f5e1126645607333c2"
+    },
+    {
+      "case_id": "T034-expanded",
+      "question_id": "T034",
+      "context": "expanded",
+      "variant": "A",
+      "repeat": 3,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "selected_ids": [
+        "L14-01",
+        "L14-03",
+        "L07-03"
+      ],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "unsupported_ids": [
+        "L14-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f",
+      "schema_sha256": "4e78ff4cab08f67126c6f7a4ec216d4c56a7f12742697617ff1a5c6c84965a47",
+      "prompt_bytes": 6069,
+      "answer_calls": 1,
+      "input_tokens": 1492,
+      "output_tokens": 35,
+      "trace_file": "T034-expanded-A-r3.json",
+      "trace_sha256": "8f97746f22f2ee7f86ad48e62fef28e47360d57e665652783dfe9e3d985e6e6c"
+    },
+    {
+      "case_id": "T034-expanded",
+      "question_id": "T034",
+      "context": "expanded",
+      "variant": "A",
+      "repeat": 4,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "selected_ids": [
+        "L14-01",
+        "L14-03",
+        "L07-03"
+      ],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "unsupported_ids": [
+        "L14-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f",
+      "schema_sha256": "4e78ff4cab08f67126c6f7a4ec216d4c56a7f12742697617ff1a5c6c84965a47",
+      "prompt_bytes": 6069,
+      "answer_calls": 1,
+      "input_tokens": 1492,
+      "output_tokens": 35,
+      "trace_file": "T034-expanded-A-r4.json",
+      "trace_sha256": "562ee0f08fcf4d453da3112bbbb202accb5b5e45095d6289b04b2b187b110460"
+    },
+    {
+      "case_id": "T034-expanded",
+      "question_id": "T034",
+      "context": "expanded",
+      "variant": "B",
+      "repeat": 1,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "selected_ids": [
+        "L14-01",
+        "L14-03",
+        "L07-03"
+      ],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "unsupported_ids": [
+        "L14-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f",
+      "schema_sha256": "4e78ff4cab08f67126c6f7a4ec216d4c56a7f12742697617ff1a5c6c84965a47",
+      "prompt_bytes": 6067,
+      "answer_calls": 1,
+      "input_tokens": 1492,
+      "output_tokens": 35,
+      "trace_file": "T034-expanded-B-r1.json",
+      "trace_sha256": "fbb2bb747ee917245e95e2cb819e7d02d4e7f78d3f1a62f192b3ceb0871c4248"
+    },
+    {
+      "case_id": "T034-expanded",
+      "question_id": "T034",
+      "context": "expanded",
+      "variant": "B",
+      "repeat": 2,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "selected_ids": [
+        "L14-01",
+        "L14-03",
+        "L07-03"
+      ],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "unsupported_ids": [
+        "L14-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f",
+      "schema_sha256": "4e78ff4cab08f67126c6f7a4ec216d4c56a7f12742697617ff1a5c6c84965a47",
+      "prompt_bytes": 6067,
+      "answer_calls": 1,
+      "input_tokens": 1492,
+      "output_tokens": 35,
+      "trace_file": "T034-expanded-B-r2.json",
+      "trace_sha256": "888261c90d41129546833a15a1cac93a5872e58ed022483f86680c5b68757541"
+    },
+    {
+      "case_id": "T034-expanded",
+      "question_id": "T034",
+      "context": "expanded",
+      "variant": "B",
+      "repeat": 3,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "selected_ids": [
+        "L14-01",
+        "L14-03",
+        "L07-03"
+      ],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "unsupported_ids": [
+        "L14-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f",
+      "schema_sha256": "4e78ff4cab08f67126c6f7a4ec216d4c56a7f12742697617ff1a5c6c84965a47",
+      "prompt_bytes": 6067,
+      "answer_calls": 1,
+      "input_tokens": 1492,
+      "output_tokens": 35,
+      "trace_file": "T034-expanded-B-r3.json",
+      "trace_sha256": "26e0322e7244fe2d2511310edfca036200efaa807537e3e83c23f76c74b714fc"
+    },
+    {
+      "case_id": "T034-expanded",
+      "question_id": "T034",
+      "context": "expanded",
+      "variant": "B",
+      "repeat": 4,
+      "full_evidence": true,
+      "available_mask": [
+        true,
+        true,
+        true
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "grade": "correct",
+      "original_annotation_point_mask": [
+        true,
+        true,
+        true
+      ],
+      "original_annotation_supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "selected_ids": [
+        "L14-01",
+        "L14-03",
+        "L07-03"
+      ],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "supported_ids": [
+        "L14-01",
+        "L07-03"
+      ],
+      "unsupported_ids": [
+        "L14-03"
+      ],
+      "first_raw": "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}",
+      "all_raw": [
+        "{\"answerable\":true,\"chunk_ids\":[\"L14-01\",\"L14-03\",\"L07-03\"],\"reason\":null}"
+      ],
+      "body_sha256": "8a8b37fd69933f54f1cc7c69f127996f44f6757b5336cdf8d88d35712e5bff7f",
+      "schema_sha256": "4e78ff4cab08f67126c6f7a4ec216d4c56a7f12742697617ff1a5c6c84965a47",
+      "prompt_bytes": 6067,
+      "answer_calls": 1,
+      "input_tokens": 1492,
+      "output_tokens": 35,
+      "trace_file": "T034-expanded-B-r4.json",
+      "trace_sha256": "86ee892fac41bbe837c20679dc922541744089bf04a52be4ac2cfb23eda466fe"
+    },
+    {
+      "case_id": "T034-native",
+      "question_id": "T034",
+      "context": "native",
+      "variant": "A",
+      "repeat": 1,
+      "full_evidence": false,
+      "available_mask": [
+        false,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "boundary_refusal",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}",
+      "all_raw": [
+        "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}"
+      ],
+      "body_sha256": "8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3",
+      "schema_sha256": "0c15551bfaace670e1e8ca565033ef4020fdbf81520c2f569807d6425c8f3947",
+      "prompt_bytes": 5631,
+      "answer_calls": 1,
+      "input_tokens": 1369,
+      "output_tokens": 18,
+      "trace_file": "T034-native-A-r1.json",
+      "trace_sha256": "00358e187d52bf44df4a82cd5ac1a254480950ab55d124730819a0624b1adb0e"
+    },
+    {
+      "case_id": "T034-native",
+      "question_id": "T034",
+      "context": "native",
+      "variant": "A",
+      "repeat": 2,
+      "full_evidence": false,
+      "available_mask": [
+        false,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "boundary_refusal",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}",
+      "all_raw": [
+        "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}"
+      ],
+      "body_sha256": "8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3",
+      "schema_sha256": "0c15551bfaace670e1e8ca565033ef4020fdbf81520c2f569807d6425c8f3947",
+      "prompt_bytes": 5631,
+      "answer_calls": 1,
+      "input_tokens": 1369,
+      "output_tokens": 18,
+      "trace_file": "T034-native-A-r2.json",
+      "trace_sha256": "bc7c52c7d5121fc2e686a17e83fda56df4b36f849205b5077f23d47c5071eeb2"
+    },
+    {
+      "case_id": "T034-native",
+      "question_id": "T034",
+      "context": "native",
+      "variant": "A",
+      "repeat": 3,
+      "full_evidence": false,
+      "available_mask": [
+        false,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "boundary_refusal",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}",
+      "all_raw": [
+        "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}"
+      ],
+      "body_sha256": "8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3",
+      "schema_sha256": "0c15551bfaace670e1e8ca565033ef4020fdbf81520c2f569807d6425c8f3947",
+      "prompt_bytes": 5631,
+      "answer_calls": 1,
+      "input_tokens": 1369,
+      "output_tokens": 18,
+      "trace_file": "T034-native-A-r3.json",
+      "trace_sha256": "b85d81dc140ae3e9990fe2b0b62d7925407b7f86e98f3c5c1510ec13abe0b02d"
+    },
+    {
+      "case_id": "T034-native",
+      "question_id": "T034",
+      "context": "native",
+      "variant": "A",
+      "repeat": 4,
+      "full_evidence": false,
+      "available_mask": [
+        false,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "boundary_refusal",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}",
+      "all_raw": [
+        "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}"
+      ],
+      "body_sha256": "8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3",
+      "schema_sha256": "0c15551bfaace670e1e8ca565033ef4020fdbf81520c2f569807d6425c8f3947",
+      "prompt_bytes": 5631,
+      "answer_calls": 1,
+      "input_tokens": 1369,
+      "output_tokens": 18,
+      "trace_file": "T034-native-A-r4.json",
+      "trace_sha256": "3b9d6529928167f10906b7aefc2edaf8f9d93eb15594c9dfd1cae4bd8dbe387d"
+    },
+    {
+      "case_id": "T034-native",
+      "question_id": "T034",
+      "context": "native",
+      "variant": "B",
+      "repeat": 1,
+      "full_evidence": false,
+      "available_mask": [
+        false,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "boundary_refusal",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}",
+      "all_raw": [
+        "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}"
+      ],
+      "body_sha256": "8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3",
+      "schema_sha256": "0c15551bfaace670e1e8ca565033ef4020fdbf81520c2f569807d6425c8f3947",
+      "prompt_bytes": 5629,
+      "answer_calls": 1,
+      "input_tokens": 1369,
+      "output_tokens": 18,
+      "trace_file": "T034-native-B-r1.json",
+      "trace_sha256": "d2bf33d60c10b41ba0538a56af7b03b6ad6ab210c83b01ae31c1eb11ead4bc2c"
+    },
+    {
+      "case_id": "T034-native",
+      "question_id": "T034",
+      "context": "native",
+      "variant": "B",
+      "repeat": 2,
+      "full_evidence": false,
+      "available_mask": [
+        false,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "boundary_refusal",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}",
+      "all_raw": [
+        "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}"
+      ],
+      "body_sha256": "8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3",
+      "schema_sha256": "0c15551bfaace670e1e8ca565033ef4020fdbf81520c2f569807d6425c8f3947",
+      "prompt_bytes": 5629,
+      "answer_calls": 1,
+      "input_tokens": 1369,
+      "output_tokens": 18,
+      "trace_file": "T034-native-B-r2.json",
+      "trace_sha256": "58f9fda6a165126f7679f139cdacb0d864f24be10d2ba4077e1da0cd61611e0a"
+    },
+    {
+      "case_id": "T034-native",
+      "question_id": "T034",
+      "context": "native",
+      "variant": "B",
+      "repeat": 3,
+      "full_evidence": false,
+      "available_mask": [
+        false,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "boundary_refusal",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}",
+      "all_raw": [
+        "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}"
+      ],
+      "body_sha256": "8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3",
+      "schema_sha256": "0c15551bfaace670e1e8ca565033ef4020fdbf81520c2f569807d6425c8f3947",
+      "prompt_bytes": 5629,
+      "answer_calls": 1,
+      "input_tokens": 1369,
+      "output_tokens": 18,
+      "trace_file": "T034-native-B-r3.json",
+      "trace_sha256": "5ab42e0959de419d8ddd9c5bc32df166000d58c39e3869ed4f186afa4381b509"
+    },
+    {
+      "case_id": "T034-native",
+      "question_id": "T034",
+      "context": "native",
+      "variant": "B",
+      "repeat": 4,
+      "full_evidence": false,
+      "available_mask": [
+        false,
+        true,
+        true
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "grade": "boundary_refusal",
+      "original_annotation_point_mask": [
+        false,
+        false,
+        false
+      ],
+      "original_annotation_supported_ids": [],
+      "selected_ids": [],
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "first_raw": "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}",
+      "all_raw": [
+        "{\"answerable\":false,\"chunk_ids\":[],\"reason\":\"insufficient_evidence\"}"
+      ],
+      "body_sha256": "8d1e1650af4110851b3841b27ecdac17cbb8042d4cda36157915ef9c2337eef3",
+      "schema_sha256": "0c15551bfaace670e1e8ca565033ef4020fdbf81520c2f569807d6425c8f3947",
+      "prompt_bytes": 5629,
+      "answer_calls": 1,
+      "input_tokens": 1369,
+      "output_tokens": 18,
+      "trace_file": "T034-native-B-r4.json",
+      "trace_sha256": "8066df4c5ef1469bb5d3081cd2fb327dd68891c2535e8a3f408cffa2868d8bbb"
+    }
+  ],
+  "full90_executed": false,
+  "holdout_used": false,
+  "review_addendum": {
+    "original_annotation_sha256": "267c23b02828e4a0451dacad4e8d7988b7bdb0b246ab5fe3270096fbb368742d",
+    "reason": "Pre-existing source review already counts L12-10 as direct support for retaining a goalkeeper after dismissal. Preserve the original pre-run annotation and add the equivalent support separately for both arms; no runtime or frozen formal labels changed.",
+    "cases": {
+      "D004-native": {
+        "extra_support_per_point": [
+          [],
+          [
+            "L12-10"
+          ]
+        ]
+      }
+    },
+    "source_ledger": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+    "source_ledger_sha256": "9f54b53c612589ab234a2d9edd1d975db3050e0ab020db65ffbf1b3b1204ddba",
+    "source_review_row": "D004|L03-01,L12-10,L12-12\tcorrect\t11\tL03-01,L12-10\tL03-01覆盖11人及守门员；L12-10补充守门员被罚下仍须有人守门；L12-12的严重犯规说明不直接回答人数上限。",
+    "review": "Codex reconciliation with existing review, no new human or expert review"
+  },
+  "review_scope": "Pre-run Codex source reading plus explicitly logged equivalent-source reconciliation, not new human/expert adjudication; T034-native assessed separately because supplied context is incomplete.",
+  "addendum_sensitivity": {
+    "point_masks_changed": 0,
+    "original_annotation_citation": {
+      "A": {
+        "numerator": 30,
+        "denominator": 74,
+        "value": 0.40540540540540543
+      },
+      "B": {
+        "numerator": 42,
+        "denominator": 88,
+        "value": 0.4772727272727273
+      }
+    }
+  },
+  "verification": {
+    "decision": "STOP_E6_CANDIDATE",
+    "control_commit": "59867813e8eb16709b0be1946708d8c03a33b9cb",
+    "actual_run_commit": "e950e608537a2852ee6daee1581e9be5722626ec",
+    "total_contexts": 11,
+    "distinct_questions": 9,
+    "actual_invocations": 76,
+    "paired_comparisons": 38,
+    "identical_question_body_order_schema_pairs": 38,
+    "parses_verified": 76,
+    "full_source_renders_verified": 76,
+    "correctly_selected_support_but_render_lost": 0,
+    "D036_answer_calls": {
+      "A": 0,
+      "B": 0
+    },
+    "production_runtime_and_prompt_unchanged": true,
+    "candidate_promoted": false,
+    "full90_new_runs": 0,
+    "holdout_used": false,
+    "new_human_reviews": 0,
+    "model": {
+      "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "keep_alive": "10m",
+      "name": "qwen2.5:3b",
+      "num_ctx": 8192,
+      "num_gpu": 0,
+      "num_predict": 1024,
+      "num_thread": 8,
+      "ollama_version": "0.40.16",
+      "seed": 42,
+      "temperature": 0,
+      "timeout_seconds": 180
+    },
+    "annotation_sha256": "267c23b02828e4a0451dacad4e8d7988b7bdb0b246ab5fe3270096fbb368742d",
+    "prompt_sha256": {
+      "A": "7441aac9b7f025ac006064b4d778d78ffb1f342f2fba7164567dfab1642aec5f",
+      "B": "e7f5c9ead66795634802ecdac6920c9f07085a308520ddd34852955db3d2f951"
+    },
+    "scoring_sources": {
+      "optimization/score_e6_selection.py": {
+        "path": "optimization/score_e6_selection.py",
+        "size_bytes": 8032,
+        "sha256": "1f963160f403a3ea9232b1f42bb52e3630e3fa0a0e3a1ceaf7f31677c4d63159"
+      },
+      "optimization/experiments/E6_evidence_selection/review_addendum.json": {
+        "path": "optimization/experiments/E6_evidence_selection/review_addendum.json",
+        "size_bytes": 999,
+        "sha256": "9a133633abb9fd96088a84d1436d54b143f1989c836dc5357ba4687646a06464"
+      }
+    },
+    "scope": "Repeated fixed-context actual model selection test, not a new full90 or fresh retrieval benchmark"
+  }
+}
