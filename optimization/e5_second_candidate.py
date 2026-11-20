@@ -14,6 +14,7 @@ from run_langgraph_flow import runtime_identity
 
 BASE='59867813e8eb16709b0be1946708d8c03a33b9cb'
 FORMAL='86a01e938067f89bcc7dbbb1524d7e53426116f4'
+CANDIDATE='99ef600'
 RUN=ROOT/'.runtime/phase2/d036-gate-live90-final'
 PRIMARY=['T034','T026','T014'];CONTROLS=['D013','T002','T013']
 
@@ -33,6 +34,9 @@ def inputs():
     return refs
 def check_refs(refs):assert all(record(ROOT/n)==v for n,v in refs.items())
 def packers():
+    expected=subprocess.check_output(['git','show',CANDIDATE+':scripts/answer_eval_engine.py'],cwd=ROOT)
+    if (ROOT/'scripts/answer_eval_engine.py').read_bytes()!=expected:
+        raise ValueError('Candidate was rolled back. Reproduce in an isolated checkout of 99ef600; do not label the restored D036 pack as a candidate.')
     from answer_eval_engine import pack
     return {'control':module(BASE,'scripts/answer_eval_engine.py','e5_refill_control_pack').pack,'candidate':pack}
 def audit(out):
