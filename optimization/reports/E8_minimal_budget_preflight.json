@@ -1,0 +1,368 @@
+{
+  "evidence_trimmed": false,
+  "overflow": [],
+  "pairs": 60,
+  "rows": [
+    {
+      "message_bytes": 1838,
+      "pair_id": "T026-expanded-r1-p0-L12-06",
+      "retry_bytes": 2055,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2403,
+      "pair_id": "T026-expanded-r1-p0-L12-15",
+      "retry_bytes": 2620,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2332,
+      "pair_id": "T026-expanded-r1-p0-L12-02",
+      "retry_bytes": 2549,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2168,
+      "pair_id": "T026-expanded-r1-p0-L12-01",
+      "retry_bytes": 2385,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1676,
+      "pair_id": "T026-expanded-r1-p0-L12-03",
+      "retry_bytes": 1893,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1838,
+      "pair_id": "T026-expanded-r1-p1-L12-06",
+      "retry_bytes": 2055,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2403,
+      "pair_id": "T026-expanded-r1-p1-L12-15",
+      "retry_bytes": 2620,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2332,
+      "pair_id": "T026-expanded-r1-p1-L12-02",
+      "retry_bytes": 2549,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2168,
+      "pair_id": "T026-expanded-r1-p1-L12-01",
+      "retry_bytes": 2385,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1676,
+      "pair_id": "T026-expanded-r1-p1-L12-03",
+      "retry_bytes": 1893,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1841,
+      "pair_id": "T026-expanded-r1-p2-L12-06",
+      "retry_bytes": 2058,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2406,
+      "pair_id": "T026-expanded-r1-p2-L12-15",
+      "retry_bytes": 2623,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2335,
+      "pair_id": "T026-expanded-r1-p2-L12-02",
+      "retry_bytes": 2552,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2171,
+      "pair_id": "T026-expanded-r1-p2-L12-01",
+      "retry_bytes": 2388,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1679,
+      "pair_id": "T026-expanded-r1-p2-L12-03",
+      "retry_bytes": 1896,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1838,
+      "pair_id": "T026-expanded-r2-p0-L12-06",
+      "retry_bytes": 2055,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2403,
+      "pair_id": "T026-expanded-r2-p0-L12-15",
+      "retry_bytes": 2620,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2332,
+      "pair_id": "T026-expanded-r2-p0-L12-02",
+      "retry_bytes": 2549,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2168,
+      "pair_id": "T026-expanded-r2-p0-L12-01",
+      "retry_bytes": 2385,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1676,
+      "pair_id": "T026-expanded-r2-p0-L12-03",
+      "retry_bytes": 1893,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1841,
+      "pair_id": "T026-expanded-r2-p1-L12-06",
+      "retry_bytes": 2058,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2406,
+      "pair_id": "T026-expanded-r2-p1-L12-15",
+      "retry_bytes": 2623,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2335,
+      "pair_id": "T026-expanded-r2-p1-L12-02",
+      "retry_bytes": 2552,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2171,
+      "pair_id": "T026-expanded-r2-p1-L12-01",
+      "retry_bytes": 2388,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1679,
+      "pair_id": "T026-expanded-r2-p1-L12-03",
+      "retry_bytes": 1896,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1838,
+      "pair_id": "T026-expanded-r2-p2-L12-06",
+      "retry_bytes": 2055,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2403,
+      "pair_id": "T026-expanded-r2-p2-L12-15",
+      "retry_bytes": 2620,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2332,
+      "pair_id": "T026-expanded-r2-p2-L12-02",
+      "retry_bytes": 2549,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2168,
+      "pair_id": "T026-expanded-r2-p2-L12-01",
+      "retry_bytes": 2385,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1676,
+      "pair_id": "T026-expanded-r2-p2-L12-03",
+      "retry_bytes": 1893,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1838,
+      "pair_id": "T026-expanded-r3-p0-L12-06",
+      "retry_bytes": 2055,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2403,
+      "pair_id": "T026-expanded-r3-p0-L12-15",
+      "retry_bytes": 2620,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2332,
+      "pair_id": "T026-expanded-r3-p0-L12-02",
+      "retry_bytes": 2549,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2168,
+      "pair_id": "T026-expanded-r3-p0-L12-01",
+      "retry_bytes": 2385,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1676,
+      "pair_id": "T026-expanded-r3-p0-L12-03",
+      "retry_bytes": 1893,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1841,
+      "pair_id": "T026-expanded-r3-p1-L12-06",
+      "retry_bytes": 2058,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2406,
+      "pair_id": "T026-expanded-r3-p1-L12-15",
+      "retry_bytes": 2623,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2335,
+      "pair_id": "T026-expanded-r3-p1-L12-02",
+      "retry_bytes": 2552,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2171,
+      "pair_id": "T026-expanded-r3-p1-L12-01",
+      "retry_bytes": 2388,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1679,
+      "pair_id": "T026-expanded-r3-p1-L12-03",
+      "retry_bytes": 1896,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1838,
+      "pair_id": "T026-expanded-r3-p2-L12-06",
+      "retry_bytes": 2055,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2403,
+      "pair_id": "T026-expanded-r3-p2-L12-15",
+      "retry_bytes": 2620,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2332,
+      "pair_id": "T026-expanded-r3-p2-L12-02",
+      "retry_bytes": 2549,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2168,
+      "pair_id": "T026-expanded-r3-p2-L12-01",
+      "retry_bytes": 2385,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1676,
+      "pair_id": "T026-expanded-r3-p2-L12-03",
+      "retry_bytes": 1893,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1838,
+      "pair_id": "T026-expanded-r4-p0-L12-06",
+      "retry_bytes": 2055,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2403,
+      "pair_id": "T026-expanded-r4-p0-L12-15",
+      "retry_bytes": 2620,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2332,
+      "pair_id": "T026-expanded-r4-p0-L12-02",
+      "retry_bytes": 2549,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2168,
+      "pair_id": "T026-expanded-r4-p0-L12-01",
+      "retry_bytes": 2385,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1676,
+      "pair_id": "T026-expanded-r4-p0-L12-03",
+      "retry_bytes": 1893,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1841,
+      "pair_id": "T026-expanded-r4-p1-L12-06",
+      "retry_bytes": 2058,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2406,
+      "pair_id": "T026-expanded-r4-p1-L12-15",
+      "retry_bytes": 2623,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2335,
+      "pair_id": "T026-expanded-r4-p1-L12-02",
+      "retry_bytes": 2552,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2171,
+      "pair_id": "T026-expanded-r4-p1-L12-01",
+      "retry_bytes": 2388,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1679,
+      "pair_id": "T026-expanded-r4-p1-L12-03",
+      "retry_bytes": 1896,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1838,
+      "pair_id": "T026-expanded-r4-p2-L12-06",
+      "retry_bytes": 2055,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2403,
+      "pair_id": "T026-expanded-r4-p2-L12-15",
+      "retry_bytes": 2620,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2332,
+      "pair_id": "T026-expanded-r4-p2-L12-02",
+      "retry_bytes": 2549,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 2168,
+      "pair_id": "T026-expanded-r4-p2-L12-01",
+      "retry_bytes": 2385,
+      "schema_bytes": 366
+    },
+    {
+      "message_bytes": 1676,
+      "pair_id": "T026-expanded-r4-p2-L12-03",
+      "retry_bytes": 1893,
+      "schema_bytes": 366
+    }
+  ],
+  "stage": "minimal"
+}

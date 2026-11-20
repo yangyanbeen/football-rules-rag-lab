@@ -1,0 +1,4626 @@
+{
+  "contexts_fit_within_3": {
+    "D017-native": {
+      "minimum_full_support_ids": [
+        "L14-02"
+      ],
+      "within_existing_cap": true
+    },
+    "D021-native": {
+      "minimum_full_support_ids": [
+        "L13-05"
+      ],
+      "within_existing_cap": true
+    },
+    "T026-expanded": {
+      "minimum_full_support_ids": [
+        "L12-06"
+      ],
+      "within_existing_cap": true
+    },
+    "T034-expanded": {
+      "minimum_full_support_ids": [
+        "L07-03",
+        "L14-01"
+      ],
+      "within_existing_cap": true
+    }
+  },
+  "decomposition_necessary_for_recovery": [
+    "T034-expanded"
+  ],
+  "full90_executed": false,
+  "groups": {
+    "D017-native": {
+      "original": {
+        "grades": {
+          "correct": 1,
+          "incorrect": 3
+        },
+        "point_masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false
+          ]
+        ],
+        "selected_ids": [
+          [
+            "L14-02",
+            "L01-06"
+          ],
+          [
+            "L14-03"
+          ],
+          [
+            "L14-03"
+          ],
+          [
+            "L14-03"
+          ]
+        ]
+      },
+      "relations_and_decomposition": {
+        "grades": {
+          "correct": 4
+        },
+        "point_masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "selected_ids": [
+          [
+            "L14-02"
+          ],
+          [
+            "L14-02"
+          ],
+          [
+            "L14-02"
+          ],
+          [
+            "L14-02"
+          ]
+        ]
+      },
+      "relations_only": {
+        "grades": {
+          "correct": 4
+        },
+        "point_masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "selected_ids": [
+          [
+            "L14-02"
+          ],
+          [
+            "L14-02"
+          ],
+          [
+            "L14-02"
+          ],
+          [
+            "L14-02"
+          ]
+        ]
+      }
+    },
+    "D021-native": {
+      "original": {
+        "grades": {
+          "correct": 4
+        },
+        "point_masks": [
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ]
+        ],
+        "selected_ids": [
+          [
+            "L13-05",
+            "L11-03"
+          ],
+          [
+            "L13-05",
+            "L15-03"
+          ],
+          [
+            "L13-05",
+            "L15-03"
+          ],
+          [
+            "L13-05",
+            "L15-03"
+          ]
+        ]
+      },
+      "relations_and_decomposition": {
+        "grades": {
+          "correct": 4
+        },
+        "point_masks": [
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ]
+        ],
+        "selected_ids": [
+          [
+            "L13-05"
+          ],
+          [
+            "L13-05"
+          ],
+          [
+            "L13-05"
+          ],
+          [
+            "L13-05"
+          ]
+        ]
+      },
+      "relations_only": {
+        "grades": {
+          "correct": 4
+        },
+        "point_masks": [
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ]
+        ],
+        "selected_ids": [
+          [
+            "L13-05"
+          ],
+          [
+            "L13-05"
+          ],
+          [
+            "L13-05"
+          ],
+          [
+            "L13-05"
+          ]
+        ]
+      }
+    },
+    "T026-expanded": {
+      "original": {
+        "grades": {
+          "correct": 1,
+          "partial": 3
+        },
+        "point_masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            false,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            true
+          ]
+        ],
+        "selected_ids": [
+          [
+            "L12-06"
+          ],
+          [
+            "L12-15"
+          ],
+          [
+            "L12-15"
+          ],
+          [
+            "L12-15"
+          ]
+        ]
+      },
+      "relations_and_decomposition": {
+        "grades": {
+          "correct": 4
+        },
+        "point_masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "selected_ids": [
+          [
+            "L12-06"
+          ],
+          [
+            "L12-06"
+          ],
+          [
+            "L12-06"
+          ],
+          [
+            "L12-06"
+          ]
+        ]
+      },
+      "relations_only": {
+        "grades": {
+          "correct": 4
+        },
+        "point_masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "selected_ids": [
+          [
+            "L12-06"
+          ],
+          [
+            "L12-06"
+          ],
+          [
+            "L12-06"
+          ],
+          [
+            "L12-06"
+          ]
+        ]
+      }
+    },
+    "T034-expanded": {
+      "original": {
+        "grades": {
+          "incorrect": 4
+        },
+        "point_masks": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false
+          ]
+        ],
+        "selected_ids": [
+          [
+            "L14-03"
+          ],
+          [
+            "L14-03"
+          ],
+          [
+            "L14-03"
+          ],
+          [
+            "L14-03"
+          ]
+        ]
+      },
+      "relations_and_decomposition": {
+        "grades": {
+          "correct": 4
+        },
+        "point_masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "selected_ids": [
+          [
+            "L07-03",
+            "L14-01"
+          ],
+          [
+            "L07-03",
+            "L14-01"
+          ],
+          [
+            "L07-03",
+            "L14-01"
+          ],
+          [
+            "L07-03",
+            "L14-01"
+          ]
+        ]
+      },
+      "relations_only": {
+        "grades": {
+          "false_refusal": 3,
+          "incorrect": 1
+        },
+        "point_masks": [
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false
+          ]
+        ],
+        "selected_ids": [
+          [
+            "L14-03"
+          ],
+          [],
+          [],
+          []
+        ]
+      }
+    }
+  },
+  "holdout_used": false,
+  "network_attempts": 0,
+  "new_model_calls": 0,
+  "not_model_quality": true,
+  "offline_replay_records": 32,
+  "original_control_replays": 16,
+  "records": [
+    {
+      "case_id": "T026-expanded",
+      "grade": "correct",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "只说发生技术性违例，能否直接把它等同于身体犯规？资料怎样区分不当行为？",
+      "question_id": "T026",
+      "repeat": 1,
+      "requirements": [
+        {
+          "requirement": "区分技术性违例与不当行为",
+          "supporting_ids": [
+            "L12-06",
+            "L12-15"
+          ]
+        },
+        {
+          "requirement": "不当行为与身体犯规的区别",
+          "supporting_ids": [
+            "L12-06",
+            "L12-15"
+          ]
+        },
+        {
+          "requirement": "技术性违例与身体犯规的关系",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L12-06"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "区分技术性违例与不当行为",
+            "supporting_ids": [
+              "L12-06",
+              "L12-15"
+            ]
+          },
+          {
+            "requirement": "不当行为与身体犯规的区别",
+            "supporting_ids": [
+              "L12-06",
+              "L12-15"
+            ]
+          },
+          {
+            "requirement": "技术性违例与身体犯规的关系",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L12-06"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L12-06"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T026-expanded-B-r1.json",
+      "source_trace_sha256": "524b6089e06beeb399af2d02791fb3278e5b1770328cec07447b196963c33486",
+      "supported_ids": [
+        "L12-06"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T026-expanded",
+      "grade": "correct",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "只说发生技术性违例，能否直接把它等同于身体犯规？资料怎样区分不当行为？",
+      "question_id": "T026",
+      "repeat": 1,
+      "requirements": [
+        {
+          "requirement": "区分技术性违例与不当行为",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        },
+        {
+          "requirement": "不当行为与身体犯规的区别",
+          "supporting_ids": [
+            "L12-06",
+            "L12-15"
+          ]
+        },
+        {
+          "requirement": "技术性违例与身体犯规的关系",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L12-06"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "区分技术性违例与不当行为",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          },
+          {
+            "requirement": "不当行为与身体犯规的区别",
+            "supporting_ids": [
+              "L12-06",
+              "L12-15"
+            ]
+          },
+          {
+            "requirement": "技术性违例与身体犯规的关系",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L12-06"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L12-06"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T026-expanded-B-r1.json",
+      "source_trace_sha256": "524b6089e06beeb399af2d02791fb3278e5b1770328cec07447b196963c33486",
+      "supported_ids": [
+        "L12-06"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T026-expanded",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "只说发生技术性违例，能否直接把它等同于身体犯规？资料怎样区分不当行为？",
+      "question_id": "T026",
+      "repeat": 1,
+      "requirements": [
+        {
+          "requirement": "只说发生技术性违例时，能否直接认定发生了身体犯规？",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        },
+        {
+          "requirement": "资料在术语分类上怎样区分技术性违例与不当行为？",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        },
+        {
+          "requirement": "不当行为可能受到哪些纪律处罚？",
+          "supporting_ids": [
+            "L12-06",
+            "L12-15"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L12-06"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "只说发生技术性违例时，能否直接认定发生了身体犯规？",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          },
+          {
+            "requirement": "资料在术语分类上怎样区分技术性违例与不当行为？",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          },
+          {
+            "requirement": "不当行为可能受到哪些纪律处罚？",
+            "supporting_ids": [
+              "L12-06",
+              "L12-15"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L12-06"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L12-06"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T026-expanded-B-r1.json",
+      "source_trace_sha256": "524b6089e06beeb399af2d02791fb3278e5b1770328cec07447b196963c33486",
+      "supported_ids": [
+        "L12-06"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T026-expanded",
+      "grade": "partial",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "point_mask": [
+        false,
+        false,
+        true
+      ],
+      "question": "只说发生技术性违例，能否直接把它等同于身体犯规？资料怎样区分不当行为？",
+      "question_id": "T026",
+      "repeat": 2,
+      "requirements": [
+        {
+          "requirement": "区分技术性违例与不当行为",
+          "supporting_ids": [
+            "L12-02",
+            "L12-15"
+          ]
+        },
+        {
+          "requirement": "技术性违例与不当行为的区别",
+          "supporting_ids": [
+            "L12-06",
+            "L12-15"
+          ]
+        },
+        {
+          "requirement": "不当行为与身体犯规的关系",
+          "supporting_ids": [
+            "L12-15"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L12-15"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "区分技术性违例与不当行为",
+            "supporting_ids": [
+              "L12-02",
+              "L12-15"
+            ]
+          },
+          {
+            "requirement": "技术性违例与不当行为的区别",
+            "supporting_ids": [
+              "L12-06",
+              "L12-15"
+            ]
+          },
+          {
+            "requirement": "不当行为与身体犯规的关系",
+            "supporting_ids": [
+              "L12-15"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L12-15"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L12-15"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T026-expanded-B-r2.json",
+      "source_trace_sha256": "65fe037b2de2d493830659a85387ee0c9a39933ceb7d5a1e5f994a2c2216a16e",
+      "supported_ids": [
+        "L12-15"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T026-expanded",
+      "grade": "correct",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "只说发生技术性违例，能否直接把它等同于身体犯规？资料怎样区分不当行为？",
+      "question_id": "T026",
+      "repeat": 2,
+      "requirements": [
+        {
+          "requirement": "区分技术性违例与不当行为",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        },
+        {
+          "requirement": "技术性违例与不当行为的区别",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        },
+        {
+          "requirement": "不当行为与身体犯规的关系",
+          "supporting_ids": [
+            "L12-06",
+            "L12-15"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L12-06"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "区分技术性违例与不当行为",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          },
+          {
+            "requirement": "技术性违例与不当行为的区别",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          },
+          {
+            "requirement": "不当行为与身体犯规的关系",
+            "supporting_ids": [
+              "L12-06",
+              "L12-15"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L12-06"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L12-06"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T026-expanded-B-r2.json",
+      "source_trace_sha256": "65fe037b2de2d493830659a85387ee0c9a39933ceb7d5a1e5f994a2c2216a16e",
+      "supported_ids": [
+        "L12-06"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T026-expanded",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "只说发生技术性违例，能否直接把它等同于身体犯规？资料怎样区分不当行为？",
+      "question_id": "T026",
+      "repeat": 2,
+      "requirements": [
+        {
+          "requirement": "只说发生技术性违例时，能否直接认定发生了身体犯规？",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        },
+        {
+          "requirement": "资料在术语分类上怎样区分技术性违例与不当行为？",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        },
+        {
+          "requirement": "不当行为可能受到哪些纪律处罚？",
+          "supporting_ids": [
+            "L12-06",
+            "L12-15"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L12-06"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "只说发生技术性违例时，能否直接认定发生了身体犯规？",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          },
+          {
+            "requirement": "资料在术语分类上怎样区分技术性违例与不当行为？",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          },
+          {
+            "requirement": "不当行为可能受到哪些纪律处罚？",
+            "supporting_ids": [
+              "L12-06",
+              "L12-15"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L12-06"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L12-06"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T026-expanded-B-r2.json",
+      "source_trace_sha256": "65fe037b2de2d493830659a85387ee0c9a39933ceb7d5a1e5f994a2c2216a16e",
+      "supported_ids": [
+        "L12-06"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T026-expanded",
+      "grade": "partial",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "point_mask": [
+        false,
+        false,
+        true
+      ],
+      "question": "只说发生技术性违例，能否直接把它等同于身体犯规？资料怎样区分不当行为？",
+      "question_id": "T026",
+      "repeat": 3,
+      "requirements": [
+        {
+          "requirement": "区分技术性违例与不当行为",
+          "supporting_ids": [
+            "L12-02",
+            "L12-15"
+          ]
+        },
+        {
+          "requirement": "技术性违例与不当行为的区别",
+          "supporting_ids": [
+            "L12-06",
+            "L12-15"
+          ]
+        },
+        {
+          "requirement": "不当行为与身体犯规的关系",
+          "supporting_ids": [
+            "L12-15"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L12-15"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "区分技术性违例与不当行为",
+            "supporting_ids": [
+              "L12-02",
+              "L12-15"
+            ]
+          },
+          {
+            "requirement": "技术性违例与不当行为的区别",
+            "supporting_ids": [
+              "L12-06",
+              "L12-15"
+            ]
+          },
+          {
+            "requirement": "不当行为与身体犯规的关系",
+            "supporting_ids": [
+              "L12-15"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L12-15"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L12-15"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T026-expanded-B-r3.json",
+      "source_trace_sha256": "238db9d4170c330bf23dcaf04effec5ce7b2124dd7ac9c30f3b6d55775bc75f2",
+      "supported_ids": [
+        "L12-15"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T026-expanded",
+      "grade": "correct",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "只说发生技术性违例，能否直接把它等同于身体犯规？资料怎样区分不当行为？",
+      "question_id": "T026",
+      "repeat": 3,
+      "requirements": [
+        {
+          "requirement": "区分技术性违例与不当行为",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        },
+        {
+          "requirement": "技术性违例与不当行为的区别",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        },
+        {
+          "requirement": "不当行为与身体犯规的关系",
+          "supporting_ids": [
+            "L12-06",
+            "L12-15"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L12-06"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "区分技术性违例与不当行为",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          },
+          {
+            "requirement": "技术性违例与不当行为的区别",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          },
+          {
+            "requirement": "不当行为与身体犯规的关系",
+            "supporting_ids": [
+              "L12-06",
+              "L12-15"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L12-06"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L12-06"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T026-expanded-B-r3.json",
+      "source_trace_sha256": "238db9d4170c330bf23dcaf04effec5ce7b2124dd7ac9c30f3b6d55775bc75f2",
+      "supported_ids": [
+        "L12-06"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T026-expanded",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "只说发生技术性违例，能否直接把它等同于身体犯规？资料怎样区分不当行为？",
+      "question_id": "T026",
+      "repeat": 3,
+      "requirements": [
+        {
+          "requirement": "只说发生技术性违例时，能否直接认定发生了身体犯规？",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        },
+        {
+          "requirement": "资料在术语分类上怎样区分技术性违例与不当行为？",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        },
+        {
+          "requirement": "不当行为可能受到哪些纪律处罚？",
+          "supporting_ids": [
+            "L12-06",
+            "L12-15"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L12-06"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "只说发生技术性违例时，能否直接认定发生了身体犯规？",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          },
+          {
+            "requirement": "资料在术语分类上怎样区分技术性违例与不当行为？",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          },
+          {
+            "requirement": "不当行为可能受到哪些纪律处罚？",
+            "supporting_ids": [
+              "L12-06",
+              "L12-15"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L12-06"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L12-06"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T026-expanded-B-r3.json",
+      "source_trace_sha256": "238db9d4170c330bf23dcaf04effec5ce7b2124dd7ac9c30f3b6d55775bc75f2",
+      "supported_ids": [
+        "L12-06"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T026-expanded",
+      "grade": "partial",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "point_mask": [
+        false,
+        false,
+        true
+      ],
+      "question": "只说发生技术性违例，能否直接把它等同于身体犯规？资料怎样区分不当行为？",
+      "question_id": "T026",
+      "repeat": 4,
+      "requirements": [
+        {
+          "requirement": "区分技术性违例与不当行为",
+          "supporting_ids": [
+            "L12-02",
+            "L12-15"
+          ]
+        },
+        {
+          "requirement": "技术性违例与不当行为的区别",
+          "supporting_ids": [
+            "L12-06",
+            "L12-15"
+          ]
+        },
+        {
+          "requirement": "不当行为与身体犯规的关系",
+          "supporting_ids": [
+            "L12-15"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L12-15"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "区分技术性违例与不当行为",
+            "supporting_ids": [
+              "L12-02",
+              "L12-15"
+            ]
+          },
+          {
+            "requirement": "技术性违例与不当行为的区别",
+            "supporting_ids": [
+              "L12-06",
+              "L12-15"
+            ]
+          },
+          {
+            "requirement": "不当行为与身体犯规的关系",
+            "supporting_ids": [
+              "L12-15"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L12-15"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L12-15"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T026-expanded-B-r4.json",
+      "source_trace_sha256": "f12f23e8bc6dea43efc7bbea87aa292a68ab2b302a8275fde17db4226c00f06b",
+      "supported_ids": [
+        "L12-15"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T026-expanded",
+      "grade": "correct",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "只说发生技术性违例，能否直接把它等同于身体犯规？资料怎样区分不当行为？",
+      "question_id": "T026",
+      "repeat": 4,
+      "requirements": [
+        {
+          "requirement": "区分技术性违例与不当行为",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        },
+        {
+          "requirement": "技术性违例与不当行为的区别",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        },
+        {
+          "requirement": "不当行为与身体犯规的关系",
+          "supporting_ids": [
+            "L12-06",
+            "L12-15"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L12-06"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "区分技术性违例与不当行为",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          },
+          {
+            "requirement": "技术性违例与不当行为的区别",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          },
+          {
+            "requirement": "不当行为与身体犯规的关系",
+            "supporting_ids": [
+              "L12-06",
+              "L12-15"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L12-06"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L12-06"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T026-expanded-B-r4.json",
+      "source_trace_sha256": "f12f23e8bc6dea43efc7bbea87aa292a68ab2b302a8275fde17db4226c00f06b",
+      "supported_ids": [
+        "L12-06"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T026-expanded",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L12-06",
+        "L12-15",
+        "L12-02",
+        "L12-01",
+        "L12-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "只说发生技术性违例，能否直接把它等同于身体犯规？资料怎样区分不当行为？",
+      "question_id": "T026",
+      "repeat": 4,
+      "requirements": [
+        {
+          "requirement": "只说发生技术性违例时，能否直接认定发生了身体犯规？",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        },
+        {
+          "requirement": "资料在术语分类上怎样区分技术性违例与不当行为？",
+          "supporting_ids": [
+            "L12-06"
+          ]
+        },
+        {
+          "requirement": "不当行为可能受到哪些纪律处罚？",
+          "supporting_ids": [
+            "L12-06",
+            "L12-15"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L12-06"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "只说发生技术性违例时，能否直接认定发生了身体犯规？",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          },
+          {
+            "requirement": "资料在术语分类上怎样区分技术性违例与不当行为？",
+            "supporting_ids": [
+              "L12-06"
+            ]
+          },
+          {
+            "requirement": "不当行为可能受到哪些纪律处罚？",
+            "supporting_ids": [
+              "L12-06",
+              "L12-15"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L12-06"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L12-06"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T026-expanded-B-r4.json",
+      "source_trace_sha256": "f12f23e8bc6dea43efc7bbea87aa292a68ab2b302a8275fde17db4226c00f06b",
+      "supported_ids": [
+        "L12-06"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T034-expanded",
+      "grade": "incorrect",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "question_id": "T034",
+      "repeat": 1,
+      "requirements": [
+        {
+          "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+          "supporting_ids": [
+            "L14-01",
+            "L14-03"
+          ]
+        },
+        {
+          "requirement": "罚球点球的执行规则是什么？",
+          "supporting_ids": [
+            "L14-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-03"
+      ],
+      "selection_audit": {
+        "covered_count": 2,
+        "model_requirement_coverage": [
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 2,
+        "requirements": [
+          {
+            "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+            "supporting_ids": [
+              "L14-01",
+              "L14-03"
+            ]
+          },
+          {
+            "requirement": "罚球点球的执行规则是什么？",
+            "supporting_ids": [
+              "L14-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-03"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-03"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r1.json",
+      "source_trace_sha256": "91640faec0bfb9c924b4da85dedbd8c951a17295e8fb39f8f16c4994a994d0de",
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L14-03"
+      ]
+    },
+    {
+      "case_id": "T034-expanded",
+      "grade": "incorrect",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "question_id": "T034",
+      "repeat": 1,
+      "requirements": [
+        {
+          "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+          "supporting_ids": []
+        },
+        {
+          "requirement": "罚球点球的执行规则是什么？",
+          "supporting_ids": [
+            "L14-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-03"
+      ],
+      "selection_audit": {
+        "covered_count": 1,
+        "model_requirement_coverage": [
+          false,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 2,
+        "requirements": [
+          {
+            "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+            "supporting_ids": []
+          },
+          {
+            "requirement": "罚球点球的执行规则是什么？",
+            "supporting_ids": [
+              "L14-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-03"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-03"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r1.json",
+      "source_trace_sha256": "91640faec0bfb9c924b4da85dedbd8c951a17295e8fb39f8f16c4994a994d0de",
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L14-03"
+      ]
+    },
+    {
+      "case_id": "T034-expanded",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "question_id": "T034",
+      "repeat": 1,
+      "requirements": [
+        {
+          "requirement": "比赛中判罚的罚球点球是什么性质的程序？",
+          "supporting_ids": [
+            "L14-01"
+          ]
+        },
+        {
+          "requirement": "点球决胜用于决定什么比赛结果？",
+          "supporting_ids": [
+            "L07-03"
+          ]
+        },
+        {
+          "requirement": "点球决胜罚中次数与本场正常进球数如何关联？",
+          "supporting_ids": [
+            "L07-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L07-03",
+        "L14-01"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "比赛中判罚的罚球点球是什么性质的程序？",
+            "supporting_ids": [
+              "L14-01"
+            ]
+          },
+          {
+            "requirement": "点球决胜用于决定什么比赛结果？",
+            "supporting_ids": [
+              "L07-03"
+            ]
+          },
+          {
+            "requirement": "点球决胜罚中次数与本场正常进球数如何关联？",
+            "supporting_ids": [
+              "L07-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L07-03",
+          "L14-01"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L07-03",
+            "L14-01"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r1.json",
+      "source_trace_sha256": "91640faec0bfb9c924b4da85dedbd8c951a17295e8fb39f8f16c4994a994d0de",
+      "supported_ids": [
+        "L07-03",
+        "L14-01"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T034-expanded",
+      "grade": "incorrect",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "question_id": "T034",
+      "repeat": 2,
+      "requirements": [
+        {
+          "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+          "supporting_ids": [
+            "L14-01",
+            "L14-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-03"
+      ],
+      "selection_audit": {
+        "covered_count": 1,
+        "model_requirement_coverage": [
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 1,
+        "requirements": [
+          {
+            "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+            "supporting_ids": [
+              "L14-01",
+              "L14-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-03"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-03"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r2.json",
+      "source_trace_sha256": "28f5c0be369bb47b3dc636a654645ab25427b7633dac8e9512eefcce041e36d2",
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L14-03"
+      ]
+    },
+    {
+      "case_id": "T034-expanded",
+      "grade": "false_refusal",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "question_id": "T034",
+      "repeat": 2,
+      "requirements": [
+        {
+          "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+          "supporting_ids": []
+        }
+      ],
+      "selected_ids": [],
+      "selection_audit": {
+        "covered_count": 0,
+        "model_requirement_coverage": [
+          false
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 1,
+        "requirements": [
+          {
+            "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+            "supporting_ids": []
+          }
+        ],
+        "selected_ids": [],
+        "selection": {
+          "answerable": false,
+          "chunk_ids": [],
+          "reason": "insufficient_evidence"
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r2.json",
+      "source_trace_sha256": "28f5c0be369bb47b3dc636a654645ab25427b7633dac8e9512eefcce041e36d2",
+      "supported_ids": [],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T034-expanded",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "question_id": "T034",
+      "repeat": 2,
+      "requirements": [
+        {
+          "requirement": "比赛中判罚的罚球点球是什么性质的程序？",
+          "supporting_ids": [
+            "L14-01"
+          ]
+        },
+        {
+          "requirement": "点球决胜用于决定什么比赛结果？",
+          "supporting_ids": [
+            "L07-03"
+          ]
+        },
+        {
+          "requirement": "点球决胜罚中次数与本场正常进球数如何关联？",
+          "supporting_ids": [
+            "L07-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L07-03",
+        "L14-01"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "比赛中判罚的罚球点球是什么性质的程序？",
+            "supporting_ids": [
+              "L14-01"
+            ]
+          },
+          {
+            "requirement": "点球决胜用于决定什么比赛结果？",
+            "supporting_ids": [
+              "L07-03"
+            ]
+          },
+          {
+            "requirement": "点球决胜罚中次数与本场正常进球数如何关联？",
+            "supporting_ids": [
+              "L07-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L07-03",
+          "L14-01"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L07-03",
+            "L14-01"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r2.json",
+      "source_trace_sha256": "28f5c0be369bb47b3dc636a654645ab25427b7633dac8e9512eefcce041e36d2",
+      "supported_ids": [
+        "L07-03",
+        "L14-01"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T034-expanded",
+      "grade": "incorrect",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "question_id": "T034",
+      "repeat": 3,
+      "requirements": [
+        {
+          "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+          "supporting_ids": [
+            "L14-01",
+            "L14-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-03"
+      ],
+      "selection_audit": {
+        "covered_count": 1,
+        "model_requirement_coverage": [
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 1,
+        "requirements": [
+          {
+            "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+            "supporting_ids": [
+              "L14-01",
+              "L14-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-03"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-03"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r3.json",
+      "source_trace_sha256": "8ad990fbe8ce82023f3a5e8ff75881a9c82214c8a414cc657d9faf18d318a38e",
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L14-03"
+      ]
+    },
+    {
+      "case_id": "T034-expanded",
+      "grade": "false_refusal",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "question_id": "T034",
+      "repeat": 3,
+      "requirements": [
+        {
+          "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+          "supporting_ids": []
+        }
+      ],
+      "selected_ids": [],
+      "selection_audit": {
+        "covered_count": 0,
+        "model_requirement_coverage": [
+          false
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 1,
+        "requirements": [
+          {
+            "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+            "supporting_ids": []
+          }
+        ],
+        "selected_ids": [],
+        "selection": {
+          "answerable": false,
+          "chunk_ids": [],
+          "reason": "insufficient_evidence"
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r3.json",
+      "source_trace_sha256": "8ad990fbe8ce82023f3a5e8ff75881a9c82214c8a414cc657d9faf18d318a38e",
+      "supported_ids": [],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T034-expanded",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "question_id": "T034",
+      "repeat": 3,
+      "requirements": [
+        {
+          "requirement": "比赛中判罚的罚球点球是什么性质的程序？",
+          "supporting_ids": [
+            "L14-01"
+          ]
+        },
+        {
+          "requirement": "点球决胜用于决定什么比赛结果？",
+          "supporting_ids": [
+            "L07-03"
+          ]
+        },
+        {
+          "requirement": "点球决胜罚中次数与本场正常进球数如何关联？",
+          "supporting_ids": [
+            "L07-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L07-03",
+        "L14-01"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "比赛中判罚的罚球点球是什么性质的程序？",
+            "supporting_ids": [
+              "L14-01"
+            ]
+          },
+          {
+            "requirement": "点球决胜用于决定什么比赛结果？",
+            "supporting_ids": [
+              "L07-03"
+            ]
+          },
+          {
+            "requirement": "点球决胜罚中次数与本场正常进球数如何关联？",
+            "supporting_ids": [
+              "L07-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L07-03",
+          "L14-01"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L07-03",
+            "L14-01"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r3.json",
+      "source_trace_sha256": "8ad990fbe8ce82023f3a5e8ff75881a9c82214c8a414cc657d9faf18d318a38e",
+      "supported_ids": [
+        "L07-03",
+        "L14-01"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T034-expanded",
+      "grade": "incorrect",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "question_id": "T034",
+      "repeat": 4,
+      "requirements": [
+        {
+          "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+          "supporting_ids": [
+            "L14-01",
+            "L14-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-03"
+      ],
+      "selection_audit": {
+        "covered_count": 1,
+        "model_requirement_coverage": [
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 1,
+        "requirements": [
+          {
+            "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+            "supporting_ids": [
+              "L14-01",
+              "L14-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-03"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-03"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r4.json",
+      "source_trace_sha256": "a86f08656f6d695ed04807eddda28e82d2b21187c56aaa0d0278fb64282f1f97",
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L14-03"
+      ]
+    },
+    {
+      "case_id": "T034-expanded",
+      "grade": "false_refusal",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "question_id": "T034",
+      "repeat": 4,
+      "requirements": [
+        {
+          "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+          "supporting_ids": []
+        }
+      ],
+      "selected_ids": [],
+      "selection_audit": {
+        "covered_count": 0,
+        "model_requirement_coverage": [
+          false
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 1,
+        "requirements": [
+          {
+            "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+            "supporting_ids": []
+          }
+        ],
+        "selected_ids": [],
+        "selection": {
+          "answerable": false,
+          "chunk_ids": [],
+          "reason": "insufficient_evidence"
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r4.json",
+      "source_trace_sha256": "a86f08656f6d695ed04807eddda28e82d2b21187c56aaa0d0278fb64282f1f97",
+      "supported_ids": [],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "T034-expanded",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L01-07",
+        "L07-03",
+        "L14-03",
+        "L05-03",
+        "L14-01"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "question_id": "T034",
+      "repeat": 4,
+      "requirements": [
+        {
+          "requirement": "比赛中判罚的罚球点球是什么性质的程序？",
+          "supporting_ids": [
+            "L14-01"
+          ]
+        },
+        {
+          "requirement": "点球决胜用于决定什么比赛结果？",
+          "supporting_ids": [
+            "L07-03"
+          ]
+        },
+        {
+          "requirement": "点球决胜罚中次数与本场正常进球数如何关联？",
+          "supporting_ids": [
+            "L07-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L07-03",
+        "L14-01"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "比赛中判罚的罚球点球是什么性质的程序？",
+            "supporting_ids": [
+              "L14-01"
+            ]
+          },
+          {
+            "requirement": "点球决胜用于决定什么比赛结果？",
+            "supporting_ids": [
+              "L07-03"
+            ]
+          },
+          {
+            "requirement": "点球决胜罚中次数与本场正常进球数如何关联？",
+            "supporting_ids": [
+              "L07-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L07-03",
+          "L14-01"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L07-03",
+            "L14-01"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/T034-expanded-B-r4.json",
+      "source_trace_sha256": "a86f08656f6d695ed04807eddda28e82d2b21187c56aaa0d0278fb64282f1f97",
+      "supported_ids": [
+        "L07-03",
+        "L14-01"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D017-native",
+      "grade": "correct",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "question_id": "D017",
+      "repeat": 1,
+      "requirements": [
+        {
+          "requirement": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，主罚者的位置例外见第二份文档。",
+          "supporting_ids": [
+            "L01-06"
+          ]
+        },
+        {
+          "requirement": "点球执行前，罚球区与罚球弧共同划定了其他队员不得提前进入的范围。",
+          "supporting_ids": [
+            "L01-06"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-02",
+        "L01-06"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，主罚者的位置例外见第二份文档。",
+            "supporting_ids": [
+              "L01-06"
+            ]
+          },
+          {
+            "requirement": "点球执行前，罚球区与罚球弧共同划定了其他队员不得提前进入的范围。",
+            "supporting_ids": [
+              "L01-06"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-02",
+          "L01-06"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-02",
+            "L01-06"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r1.json",
+      "source_trace_sha256": "5e946b73b360936a627ab80d8f678e1b7199b4db5f6b8f3137deff140bdeed61",
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": [
+        "L01-06"
+      ]
+    },
+    {
+      "case_id": "D017-native",
+      "grade": "correct",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "question_id": "D017",
+      "repeat": 1,
+      "requirements": [
+        {
+          "requirement": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，主罚者的位置例外见第二份文档。",
+          "supporting_ids": []
+        },
+        {
+          "requirement": "点球执行前，罚球区与罚球弧共同划定了其他队员不得提前进入的范围。",
+          "supporting_ids": [
+            "L14-02",
+            "L14-03",
+            "L01-06"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "selection_audit": {
+        "covered_count": 2,
+        "model_requirement_coverage": [
+          true,
+          false,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，主罚者的位置例外见第二份文档。",
+            "supporting_ids": []
+          },
+          {
+            "requirement": "点球执行前，罚球区与罚球弧共同划定了其他队员不得提前进入的范围。",
+            "supporting_ids": [
+              "L14-02",
+              "L14-03",
+              "L01-06"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-02"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-02"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r1.json",
+      "source_trace_sha256": "5e946b73b360936a627ab80d8f678e1b7199b4db5f6b8f3137deff140bdeed61",
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D017-native",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "question_id": "D017",
+      "repeat": 1,
+      "requirements": [
+        {
+          "requirement": "点球执行前，除主罚者和守门员外，其他队员相对场地边界及罚球区的位置有什么要求？",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，除主罚者和守门员外，其他队员相对罚球点的前后位置有什么要求？",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，除主罚者和守门员外，其他队员与罚球点的最小距离如何规定？",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "点球执行前，除主罚者和守门员外，其他队员相对场地边界及罚球区的位置有什么要求？",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，除主罚者和守门员外，其他队员相对罚球点的前后位置有什么要求？",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，除主罚者和守门员外，其他队员与罚球点的最小距离如何规定？",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-02"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-02"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r1.json",
+      "source_trace_sha256": "5e946b73b360936a627ab80d8f678e1b7199b4db5f6b8f3137deff140bdeed61",
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D017-native",
+      "grade": "incorrect",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "question_id": "D017",
+      "repeat": 2,
+      "requirements": [
+        {
+          "requirement": "点球执行前，主罚者的位置条件。",
+          "supporting_ids": [
+            "L14-03"
+          ]
+        },
+        {
+          "requirement": "点球执行前，守门员的位置条件。",
+          "supporting_ids": [
+            "L14-03"
+          ]
+        },
+        {
+          "requirement": "点球执行前，其他队员的位置条件。",
+          "supporting_ids": [
+            "L14-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-03"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "点球执行前，主罚者的位置条件。",
+            "supporting_ids": [
+              "L14-03"
+            ]
+          },
+          {
+            "requirement": "点球执行前，守门员的位置条件。",
+            "supporting_ids": [
+              "L14-03"
+            ]
+          },
+          {
+            "requirement": "点球执行前，其他队员的位置条件。",
+            "supporting_ids": [
+              "L14-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-03"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-03"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r2.json",
+      "source_trace_sha256": "fe65a75945b478b3d2b78a85b824935dfffd3e091dac14d205d52182f2be49b1",
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L14-03"
+      ]
+    },
+    {
+      "case_id": "D017-native",
+      "grade": "correct",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "question_id": "D017",
+      "repeat": 2,
+      "requirements": [
+        {
+          "requirement": "点球执行前，主罚者的位置条件。",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，守门员的位置条件。",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，其他队员的位置条件。",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "点球执行前，主罚者的位置条件。",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，守门员的位置条件。",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，其他队员的位置条件。",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-02"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-02"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r2.json",
+      "source_trace_sha256": "fe65a75945b478b3d2b78a85b824935dfffd3e091dac14d205d52182f2be49b1",
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D017-native",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "question_id": "D017",
+      "repeat": 2,
+      "requirements": [
+        {
+          "requirement": "点球执行前，除主罚者和守门员外，其他队员相对场地边界及罚球区的位置有什么要求？",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，除主罚者和守门员外，其他队员相对罚球点的前后位置有什么要求？",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，除主罚者和守门员外，其他队员与罚球点的最小距离如何规定？",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "点球执行前，除主罚者和守门员外，其他队员相对场地边界及罚球区的位置有什么要求？",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，除主罚者和守门员外，其他队员相对罚球点的前后位置有什么要求？",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，除主罚者和守门员外，其他队员与罚球点的最小距离如何规定？",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-02"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-02"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r2.json",
+      "source_trace_sha256": "fe65a75945b478b3d2b78a85b824935dfffd3e091dac14d205d52182f2be49b1",
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D017-native",
+      "grade": "incorrect",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "question_id": "D017",
+      "repeat": 3,
+      "requirements": [
+        {
+          "requirement": "点球执行前，主罚者的位置条件。",
+          "supporting_ids": [
+            "L14-03"
+          ]
+        },
+        {
+          "requirement": "点球执行前，守门员的位置条件。",
+          "supporting_ids": [
+            "L14-03"
+          ]
+        },
+        {
+          "requirement": "点球执行前，其他队员的位置条件。",
+          "supporting_ids": [
+            "L14-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-03"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "点球执行前，主罚者的位置条件。",
+            "supporting_ids": [
+              "L14-03"
+            ]
+          },
+          {
+            "requirement": "点球执行前，守门员的位置条件。",
+            "supporting_ids": [
+              "L14-03"
+            ]
+          },
+          {
+            "requirement": "点球执行前，其他队员的位置条件。",
+            "supporting_ids": [
+              "L14-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-03"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-03"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r3.json",
+      "source_trace_sha256": "c357e15c92b74a8802f4086b45174578d45771a9e506ec69fc4ef7cb4363e2f6",
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L14-03"
+      ]
+    },
+    {
+      "case_id": "D017-native",
+      "grade": "correct",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "question_id": "D017",
+      "repeat": 3,
+      "requirements": [
+        {
+          "requirement": "点球执行前，主罚者的位置条件。",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，守门员的位置条件。",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，其他队员的位置条件。",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "点球执行前，主罚者的位置条件。",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，守门员的位置条件。",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，其他队员的位置条件。",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-02"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-02"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r3.json",
+      "source_trace_sha256": "c357e15c92b74a8802f4086b45174578d45771a9e506ec69fc4ef7cb4363e2f6",
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D017-native",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "question_id": "D017",
+      "repeat": 3,
+      "requirements": [
+        {
+          "requirement": "点球执行前，除主罚者和守门员外，其他队员相对场地边界及罚球区的位置有什么要求？",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，除主罚者和守门员外，其他队员相对罚球点的前后位置有什么要求？",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，除主罚者和守门员外，其他队员与罚球点的最小距离如何规定？",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "点球执行前，除主罚者和守门员外，其他队员相对场地边界及罚球区的位置有什么要求？",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，除主罚者和守门员外，其他队员相对罚球点的前后位置有什么要求？",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，除主罚者和守门员外，其他队员与罚球点的最小距离如何规定？",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-02"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-02"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r3.json",
+      "source_trace_sha256": "c357e15c92b74a8802f4086b45174578d45771a9e506ec69fc4ef7cb4363e2f6",
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D017-native",
+      "grade": "incorrect",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "question_id": "D017",
+      "repeat": 4,
+      "requirements": [
+        {
+          "requirement": "点球执行前，主罚者的位置条件。",
+          "supporting_ids": [
+            "L14-03"
+          ]
+        },
+        {
+          "requirement": "点球执行前，守门员的位置条件。",
+          "supporting_ids": [
+            "L14-03"
+          ]
+        },
+        {
+          "requirement": "点球执行前，其他队员的位置条件。",
+          "supporting_ids": [
+            "L14-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-03"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "点球执行前，主罚者的位置条件。",
+            "supporting_ids": [
+              "L14-03"
+            ]
+          },
+          {
+            "requirement": "点球执行前，守门员的位置条件。",
+            "supporting_ids": [
+              "L14-03"
+            ]
+          },
+          {
+            "requirement": "点球执行前，其他队员的位置条件。",
+            "supporting_ids": [
+              "L14-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-03"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-03"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r4.json",
+      "source_trace_sha256": "fddbf10972ce23769e1065851e4523c7ebfae11a53fac63bcae204b0954d683b",
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L14-03"
+      ]
+    },
+    {
+      "case_id": "D017-native",
+      "grade": "correct",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "question_id": "D017",
+      "repeat": 4,
+      "requirements": [
+        {
+          "requirement": "点球执行前，主罚者的位置条件。",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，守门员的位置条件。",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，其他队员的位置条件。",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "点球执行前，主罚者的位置条件。",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，守门员的位置条件。",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，其他队员的位置条件。",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-02"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-02"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r4.json",
+      "source_trace_sha256": "fddbf10972ce23769e1065851e4523c7ebfae11a53fac63bcae204b0954d683b",
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D017-native",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L14-02",
+        "L01-07",
+        "L14-03",
+        "L01-06",
+        "L08A-03"
+      ],
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "question_id": "D017",
+      "repeat": 4,
+      "requirements": [
+        {
+          "requirement": "点球执行前，除主罚者和守门员外，其他队员相对场地边界及罚球区的位置有什么要求？",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，除主罚者和守门员外，其他队员相对罚球点的前后位置有什么要求？",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        },
+        {
+          "requirement": "点球执行前，除主罚者和守门员外，其他队员与罚球点的最小距离如何规定？",
+          "supporting_ids": [
+            "L14-02"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "selection_audit": {
+        "covered_count": 3,
+        "model_requirement_coverage": [
+          true,
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 3,
+        "requirements": [
+          {
+            "requirement": "点球执行前，除主罚者和守门员外，其他队员相对场地边界及罚球区的位置有什么要求？",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，除主罚者和守门员外，其他队员相对罚球点的前后位置有什么要求？",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          },
+          {
+            "requirement": "点球执行前，除主罚者和守门员外，其他队员与罚球点的最小距离如何规定？",
+            "supporting_ids": [
+              "L14-02"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L14-02"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L14-02"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D017-native-B-r4.json",
+      "source_trace_sha256": "fddbf10972ce23769e1065851e4523c7ebfae11a53fac63bcae204b0954d683b",
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D021-native",
+      "grade": "correct",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "question": "对比直接接任意球和直接接界外球的越位待遇。",
+      "question_id": "D021",
+      "repeat": 1,
+      "requirements": [
+        {
+          "requirement": "直接接任意球的越位待遇",
+          "supporting_ids": [
+            "L13-05"
+          ]
+        },
+        {
+          "requirement": "直接接界外球的越位待遇",
+          "supporting_ids": [
+            "L11-03",
+            "L15-03",
+            "L16-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L13-05",
+        "L11-03"
+      ],
+      "selection_audit": {
+        "covered_count": 2,
+        "model_requirement_coverage": [
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 2,
+        "requirements": [
+          {
+            "requirement": "直接接任意球的越位待遇",
+            "supporting_ids": [
+              "L13-05"
+            ]
+          },
+          {
+            "requirement": "直接接界外球的越位待遇",
+            "supporting_ids": [
+              "L11-03",
+              "L15-03",
+              "L16-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L13-05",
+          "L11-03"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L13-05",
+            "L11-03"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D021-native-B-r1.json",
+      "source_trace_sha256": "a0cc6edd5dfc7561bcbfdfd2fb4e86e04028f6e2105725f95dcd1b9e3c2642e8",
+      "supported_ids": [
+        "L13-05",
+        "L11-03"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D021-native",
+      "grade": "correct",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "question": "对比直接接任意球和直接接界外球的越位待遇。",
+      "question_id": "D021",
+      "repeat": 1,
+      "requirements": [
+        {
+          "requirement": "直接接任意球的越位待遇",
+          "supporting_ids": [
+            "L13-05"
+          ]
+        },
+        {
+          "requirement": "直接接界外球的越位待遇",
+          "supporting_ids": [
+            "L13-05",
+            "L11-03",
+            "L15-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L13-05"
+      ],
+      "selection_audit": {
+        "covered_count": 2,
+        "model_requirement_coverage": [
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 2,
+        "requirements": [
+          {
+            "requirement": "直接接任意球的越位待遇",
+            "supporting_ids": [
+              "L13-05"
+            ]
+          },
+          {
+            "requirement": "直接接界外球的越位待遇",
+            "supporting_ids": [
+              "L13-05",
+              "L11-03",
+              "L15-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L13-05"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L13-05"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D021-native-B-r1.json",
+      "source_trace_sha256": "a0cc6edd5dfc7561bcbfdfd2fb4e86e04028f6e2105725f95dcd1b9e3c2642e8",
+      "supported_ids": [
+        "L13-05"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D021-native",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "question": "对比直接接任意球和直接接界外球的越位待遇。",
+      "question_id": "D021",
+      "repeat": 1,
+      "requirements": [
+        {
+          "requirement": "直接接到任意球时，越位待遇如何，是否存在不因直接接球而判越位的例外？",
+          "supporting_ids": [
+            "L13-05"
+          ]
+        },
+        {
+          "requirement": "直接接到界外球时，越位待遇如何？",
+          "supporting_ids": [
+            "L13-05",
+            "L11-03",
+            "L15-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L13-05"
+      ],
+      "selection_audit": {
+        "covered_count": 2,
+        "model_requirement_coverage": [
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 2,
+        "requirements": [
+          {
+            "requirement": "直接接到任意球时，越位待遇如何，是否存在不因直接接球而判越位的例外？",
+            "supporting_ids": [
+              "L13-05"
+            ]
+          },
+          {
+            "requirement": "直接接到界外球时，越位待遇如何？",
+            "supporting_ids": [
+              "L13-05",
+              "L11-03",
+              "L15-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L13-05"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L13-05"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D021-native-B-r1.json",
+      "source_trace_sha256": "a0cc6edd5dfc7561bcbfdfd2fb4e86e04028f6e2105725f95dcd1b9e3c2642e8",
+      "supported_ids": [
+        "L13-05"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D021-native",
+      "grade": "correct",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "question": "对比直接接任意球和直接接界外球的越位待遇。",
+      "question_id": "D021",
+      "repeat": 2,
+      "requirements": [
+        {
+          "requirement": "直接接任意球不构成越位犯规。",
+          "supporting_ids": [
+            "L13-05"
+          ]
+        },
+        {
+          "requirement": "直接接界外球不构成越位犯规。",
+          "supporting_ids": [
+            "L15-03",
+            "L16-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L13-05",
+        "L15-03"
+      ],
+      "selection_audit": {
+        "covered_count": 2,
+        "model_requirement_coverage": [
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 2,
+        "requirements": [
+          {
+            "requirement": "直接接任意球不构成越位犯规。",
+            "supporting_ids": [
+              "L13-05"
+            ]
+          },
+          {
+            "requirement": "直接接界外球不构成越位犯规。",
+            "supporting_ids": [
+              "L15-03",
+              "L16-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L13-05",
+          "L15-03"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L13-05",
+            "L15-03"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D021-native-B-r2.json",
+      "source_trace_sha256": "c7cc2a9a7da7a7892657767bc8f6b593ba9f55eae6a1384272763e87777f3b91",
+      "supported_ids": [
+        "L13-05",
+        "L15-03"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D021-native",
+      "grade": "correct",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "question": "对比直接接任意球和直接接界外球的越位待遇。",
+      "question_id": "D021",
+      "repeat": 2,
+      "requirements": [
+        {
+          "requirement": "直接接任意球不构成越位犯规。",
+          "supporting_ids": []
+        },
+        {
+          "requirement": "直接接界外球不构成越位犯规。",
+          "supporting_ids": [
+            "L13-05",
+            "L11-03",
+            "L15-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L13-05"
+      ],
+      "selection_audit": {
+        "covered_count": 1,
+        "model_requirement_coverage": [
+          false,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 2,
+        "requirements": [
+          {
+            "requirement": "直接接任意球不构成越位犯规。",
+            "supporting_ids": []
+          },
+          {
+            "requirement": "直接接界外球不构成越位犯规。",
+            "supporting_ids": [
+              "L13-05",
+              "L11-03",
+              "L15-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L13-05"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L13-05"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D021-native-B-r2.json",
+      "source_trace_sha256": "c7cc2a9a7da7a7892657767bc8f6b593ba9f55eae6a1384272763e87777f3b91",
+      "supported_ids": [
+        "L13-05"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D021-native",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "question": "对比直接接任意球和直接接界外球的越位待遇。",
+      "question_id": "D021",
+      "repeat": 2,
+      "requirements": [
+        {
+          "requirement": "直接接到任意球时，越位待遇如何，是否存在不因直接接球而判越位的例外？",
+          "supporting_ids": [
+            "L13-05"
+          ]
+        },
+        {
+          "requirement": "直接接到界外球时，越位待遇如何？",
+          "supporting_ids": [
+            "L13-05",
+            "L11-03",
+            "L15-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L13-05"
+      ],
+      "selection_audit": {
+        "covered_count": 2,
+        "model_requirement_coverage": [
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 2,
+        "requirements": [
+          {
+            "requirement": "直接接到任意球时，越位待遇如何，是否存在不因直接接球而判越位的例外？",
+            "supporting_ids": [
+              "L13-05"
+            ]
+          },
+          {
+            "requirement": "直接接到界外球时，越位待遇如何？",
+            "supporting_ids": [
+              "L13-05",
+              "L11-03",
+              "L15-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L13-05"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L13-05"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D021-native-B-r2.json",
+      "source_trace_sha256": "c7cc2a9a7da7a7892657767bc8f6b593ba9f55eae6a1384272763e87777f3b91",
+      "supported_ids": [
+        "L13-05"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D021-native",
+      "grade": "correct",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "question": "对比直接接任意球和直接接界外球的越位待遇。",
+      "question_id": "D021",
+      "repeat": 3,
+      "requirements": [
+        {
+          "requirement": "直接接任意球不构成越位犯规。",
+          "supporting_ids": [
+            "L13-05"
+          ]
+        },
+        {
+          "requirement": "直接接界外球不构成越位犯规。",
+          "supporting_ids": [
+            "L15-03",
+            "L16-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L13-05",
+        "L15-03"
+      ],
+      "selection_audit": {
+        "covered_count": 2,
+        "model_requirement_coverage": [
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 2,
+        "requirements": [
+          {
+            "requirement": "直接接任意球不构成越位犯规。",
+            "supporting_ids": [
+              "L13-05"
+            ]
+          },
+          {
+            "requirement": "直接接界外球不构成越位犯规。",
+            "supporting_ids": [
+              "L15-03",
+              "L16-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L13-05",
+          "L15-03"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L13-05",
+            "L15-03"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D021-native-B-r3.json",
+      "source_trace_sha256": "17c8ccba86577dea91c5d25c38807928f7cbdafd17fad9c7091fa42b55df423d",
+      "supported_ids": [
+        "L13-05",
+        "L15-03"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D021-native",
+      "grade": "correct",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "question": "对比直接接任意球和直接接界外球的越位待遇。",
+      "question_id": "D021",
+      "repeat": 3,
+      "requirements": [
+        {
+          "requirement": "直接接任意球不构成越位犯规。",
+          "supporting_ids": []
+        },
+        {
+          "requirement": "直接接界外球不构成越位犯规。",
+          "supporting_ids": [
+            "L13-05",
+            "L11-03",
+            "L15-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L13-05"
+      ],
+      "selection_audit": {
+        "covered_count": 1,
+        "model_requirement_coverage": [
+          false,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 2,
+        "requirements": [
+          {
+            "requirement": "直接接任意球不构成越位犯规。",
+            "supporting_ids": []
+          },
+          {
+            "requirement": "直接接界外球不构成越位犯规。",
+            "supporting_ids": [
+              "L13-05",
+              "L11-03",
+              "L15-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L13-05"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L13-05"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D021-native-B-r3.json",
+      "source_trace_sha256": "17c8ccba86577dea91c5d25c38807928f7cbdafd17fad9c7091fa42b55df423d",
+      "supported_ids": [
+        "L13-05"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D021-native",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "question": "对比直接接任意球和直接接界外球的越位待遇。",
+      "question_id": "D021",
+      "repeat": 3,
+      "requirements": [
+        {
+          "requirement": "直接接到任意球时，越位待遇如何，是否存在不因直接接球而判越位的例外？",
+          "supporting_ids": [
+            "L13-05"
+          ]
+        },
+        {
+          "requirement": "直接接到界外球时，越位待遇如何？",
+          "supporting_ids": [
+            "L13-05",
+            "L11-03",
+            "L15-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L13-05"
+      ],
+      "selection_audit": {
+        "covered_count": 2,
+        "model_requirement_coverage": [
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 2,
+        "requirements": [
+          {
+            "requirement": "直接接到任意球时，越位待遇如何，是否存在不因直接接球而判越位的例外？",
+            "supporting_ids": [
+              "L13-05"
+            ]
+          },
+          {
+            "requirement": "直接接到界外球时，越位待遇如何？",
+            "supporting_ids": [
+              "L13-05",
+              "L11-03",
+              "L15-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L13-05"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L13-05"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D021-native-B-r3.json",
+      "source_trace_sha256": "17c8ccba86577dea91c5d25c38807928f7cbdafd17fad9c7091fa42b55df423d",
+      "supported_ids": [
+        "L13-05"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D021-native",
+      "grade": "correct",
+      "group": "original",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "question": "对比直接接任意球和直接接界外球的越位待遇。",
+      "question_id": "D021",
+      "repeat": 4,
+      "requirements": [
+        {
+          "requirement": "直接接任意球不构成越位犯规。",
+          "supporting_ids": [
+            "L13-05"
+          ]
+        },
+        {
+          "requirement": "直接接界外球不构成越位犯规。",
+          "supporting_ids": [
+            "L15-03",
+            "L16-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L13-05",
+        "L15-03"
+      ],
+      "selection_audit": {
+        "covered_count": 2,
+        "model_requirement_coverage": [
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 2,
+        "requirements": [
+          {
+            "requirement": "直接接任意球不构成越位犯规。",
+            "supporting_ids": [
+              "L13-05"
+            ]
+          },
+          {
+            "requirement": "直接接界外球不构成越位犯规。",
+            "supporting_ids": [
+              "L15-03",
+              "L16-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L13-05",
+          "L15-03"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L13-05",
+            "L15-03"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D021-native-B-r4.json",
+      "source_trace_sha256": "1b3de79d3f9f2014ed31f6f3911ee12c1de9b6f5dc305f4f26bb0cb4fc1a7b6f",
+      "supported_ids": [
+        "L13-05",
+        "L15-03"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D021-native",
+      "grade": "correct",
+      "group": "relations_only",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "question": "对比直接接任意球和直接接界外球的越位待遇。",
+      "question_id": "D021",
+      "repeat": 4,
+      "requirements": [
+        {
+          "requirement": "直接接任意球不构成越位犯规。",
+          "supporting_ids": []
+        },
+        {
+          "requirement": "直接接界外球不构成越位犯规。",
+          "supporting_ids": [
+            "L13-05",
+            "L11-03",
+            "L15-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L13-05"
+      ],
+      "selection_audit": {
+        "covered_count": 1,
+        "model_requirement_coverage": [
+          false,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 2,
+        "requirements": [
+          {
+            "requirement": "直接接任意球不构成越位犯规。",
+            "supporting_ids": []
+          },
+          {
+            "requirement": "直接接界外球不构成越位犯规。",
+            "supporting_ids": [
+              "L13-05",
+              "L11-03",
+              "L15-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L13-05"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L13-05"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D021-native-B-r4.json",
+      "source_trace_sha256": "1b3de79d3f9f2014ed31f6f3911ee12c1de9b6f5dc305f4f26bb0cb4fc1a7b6f",
+      "supported_ids": [
+        "L13-05"
+      ],
+      "unsupported_ids": []
+    },
+    {
+      "case_id": "D021-native",
+      "grade": "correct",
+      "group": "relations_and_decomposition",
+      "new_model_calls": 0,
+      "offered_ids": [
+        "L13-05",
+        "L12-05",
+        "L11-03",
+        "L15-03",
+        "L16-03"
+      ],
+      "point_mask": [
+        true,
+        true
+      ],
+      "question": "对比直接接任意球和直接接界外球的越位待遇。",
+      "question_id": "D021",
+      "repeat": 4,
+      "requirements": [
+        {
+          "requirement": "直接接到任意球时，越位待遇如何，是否存在不因直接接球而判越位的例外？",
+          "supporting_ids": [
+            "L13-05"
+          ]
+        },
+        {
+          "requirement": "直接接到界外球时，越位待遇如何？",
+          "supporting_ids": [
+            "L13-05",
+            "L11-03",
+            "L15-03"
+          ]
+        }
+      ],
+      "selected_ids": [
+        "L13-05"
+      ],
+      "selection_audit": {
+        "covered_count": 2,
+        "model_requirement_coverage": [
+          true,
+          true
+        ],
+        "objective": "maximum mapped requirements; fewer IDs; original offered order",
+        "requirement_count": 2,
+        "requirements": [
+          {
+            "requirement": "直接接到任意球时，越位待遇如何，是否存在不因直接接球而判越位的例外？",
+            "supporting_ids": [
+              "L13-05"
+            ]
+          },
+          {
+            "requirement": "直接接到界外球时，越位待遇如何？",
+            "supporting_ids": [
+              "L13-05",
+              "L11-03",
+              "L15-03"
+            ]
+          }
+        ],
+        "selected_ids": [
+          "L13-05"
+        ],
+        "selection": {
+          "answerable": true,
+          "chunk_ids": [
+            "L13-05"
+          ],
+          "reason": null
+        },
+        "semantics_verified_by_program": false
+      },
+      "source_trace": ".runtime/phase2/e7-pilot/D021-native-B-r4.json",
+      "source_trace_sha256": "1b3de79d3f9f2014ed31f6f3911ee12c1de9b6f5dc305f4f26bb0cb4fc1a7b6f",
+      "supported_ids": [
+        "L13-05"
+      ],
+      "unsupported_ids": []
+    }
+  ],
+  "reviewed_pair_observations": 405,
+  "reviewer": "Codex review of original paragraphs, not new human/expert adjudication",
+  "scope": "Offline diagnostic ceiling under reviewed relations/questions; labels never supplied to an answering model.",
+  "unique_reviewed_pairs": 140
+}

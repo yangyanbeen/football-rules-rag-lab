@@ -1,0 +1,642 @@
+[
+  {
+    "added": [],
+    "case_id": "T026-expanded",
+    "new_ids": [
+      "L12-06"
+    ],
+    "old_ids": [
+      "L12-06",
+      "L12-15"
+    ],
+    "removed": [
+      "L12-15"
+    ],
+    "repeat": 1,
+    "requirement": "区分技术性违例与不当行为",
+    "requirement_index": 0
+  },
+  {
+    "added": [],
+    "case_id": "T026-expanded",
+    "new_ids": [
+      "L12-06",
+      "L12-15"
+    ],
+    "old_ids": [
+      "L12-06",
+      "L12-15"
+    ],
+    "removed": [],
+    "repeat": 1,
+    "requirement": "不当行为与身体犯规的区别",
+    "requirement_index": 1
+  },
+  {
+    "added": [],
+    "case_id": "T026-expanded",
+    "new_ids": [
+      "L12-06"
+    ],
+    "old_ids": [
+      "L12-06"
+    ],
+    "removed": [],
+    "repeat": 1,
+    "requirement": "技术性违例与身体犯规的关系",
+    "requirement_index": 2
+  },
+  {
+    "added": [
+      "L12-06"
+    ],
+    "case_id": "T026-expanded",
+    "new_ids": [
+      "L12-06"
+    ],
+    "old_ids": [
+      "L12-02",
+      "L12-15"
+    ],
+    "removed": [
+      "L12-02",
+      "L12-15"
+    ],
+    "repeat": 2,
+    "requirement": "区分技术性违例与不当行为",
+    "requirement_index": 0
+  },
+  {
+    "added": [],
+    "case_id": "T026-expanded",
+    "new_ids": [
+      "L12-06"
+    ],
+    "old_ids": [
+      "L12-06",
+      "L12-15"
+    ],
+    "removed": [
+      "L12-15"
+    ],
+    "repeat": 2,
+    "requirement": "技术性违例与不当行为的区别",
+    "requirement_index": 1
+  },
+  {
+    "added": [
+      "L12-06"
+    ],
+    "case_id": "T026-expanded",
+    "new_ids": [
+      "L12-06",
+      "L12-15"
+    ],
+    "old_ids": [
+      "L12-15"
+    ],
+    "removed": [],
+    "repeat": 2,
+    "requirement": "不当行为与身体犯规的关系",
+    "requirement_index": 2
+  },
+  {
+    "added": [
+      "L12-06"
+    ],
+    "case_id": "T026-expanded",
+    "new_ids": [
+      "L12-06"
+    ],
+    "old_ids": [
+      "L12-02",
+      "L12-15"
+    ],
+    "removed": [
+      "L12-02",
+      "L12-15"
+    ],
+    "repeat": 3,
+    "requirement": "区分技术性违例与不当行为",
+    "requirement_index": 0
+  },
+  {
+    "added": [],
+    "case_id": "T026-expanded",
+    "new_ids": [
+      "L12-06"
+    ],
+    "old_ids": [
+      "L12-06",
+      "L12-15"
+    ],
+    "removed": [
+      "L12-15"
+    ],
+    "repeat": 3,
+    "requirement": "技术性违例与不当行为的区别",
+    "requirement_index": 1
+  },
+  {
+    "added": [
+      "L12-06"
+    ],
+    "case_id": "T026-expanded",
+    "new_ids": [
+      "L12-06",
+      "L12-15"
+    ],
+    "old_ids": [
+      "L12-15"
+    ],
+    "removed": [],
+    "repeat": 3,
+    "requirement": "不当行为与身体犯规的关系",
+    "requirement_index": 2
+  },
+  {
+    "added": [
+      "L12-06"
+    ],
+    "case_id": "T026-expanded",
+    "new_ids": [
+      "L12-06"
+    ],
+    "old_ids": [
+      "L12-02",
+      "L12-15"
+    ],
+    "removed": [
+      "L12-02",
+      "L12-15"
+    ],
+    "repeat": 4,
+    "requirement": "区分技术性违例与不当行为",
+    "requirement_index": 0
+  },
+  {
+    "added": [],
+    "case_id": "T026-expanded",
+    "new_ids": [
+      "L12-06"
+    ],
+    "old_ids": [
+      "L12-06",
+      "L12-15"
+    ],
+    "removed": [
+      "L12-15"
+    ],
+    "repeat": 4,
+    "requirement": "技术性违例与不当行为的区别",
+    "requirement_index": 1
+  },
+  {
+    "added": [
+      "L12-06"
+    ],
+    "case_id": "T026-expanded",
+    "new_ids": [
+      "L12-06",
+      "L12-15"
+    ],
+    "old_ids": [
+      "L12-15"
+    ],
+    "removed": [],
+    "repeat": 4,
+    "requirement": "不当行为与身体犯规的关系",
+    "requirement_index": 2
+  },
+  {
+    "added": [],
+    "case_id": "T034-expanded",
+    "new_ids": [],
+    "old_ids": [
+      "L14-01",
+      "L14-03"
+    ],
+    "removed": [
+      "L14-01",
+      "L14-03"
+    ],
+    "repeat": 1,
+    "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+    "requirement_index": 0
+  },
+  {
+    "added": [],
+    "case_id": "T034-expanded",
+    "new_ids": [
+      "L14-03"
+    ],
+    "old_ids": [
+      "L14-03"
+    ],
+    "removed": [],
+    "repeat": 1,
+    "requirement": "罚球点球的执行规则是什么？",
+    "requirement_index": 1
+  },
+  {
+    "added": [],
+    "case_id": "T034-expanded",
+    "new_ids": [],
+    "old_ids": [
+      "L14-01",
+      "L14-03"
+    ],
+    "removed": [
+      "L14-01",
+      "L14-03"
+    ],
+    "repeat": 2,
+    "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+    "requirement_index": 0
+  },
+  {
+    "added": [],
+    "case_id": "T034-expanded",
+    "new_ids": [],
+    "old_ids": [
+      "L14-01",
+      "L14-03"
+    ],
+    "removed": [
+      "L14-01",
+      "L14-03"
+    ],
+    "repeat": 3,
+    "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+    "requirement_index": 0
+  },
+  {
+    "added": [],
+    "case_id": "T034-expanded",
+    "new_ids": [],
+    "old_ids": [
+      "L14-01",
+      "L14-03"
+    ],
+    "removed": [
+      "L14-01",
+      "L14-03"
+    ],
+    "repeat": 4,
+    "requirement": "罚球点球与点球决胜在本场计分上有何区别？",
+    "requirement_index": 0
+  },
+  {
+    "added": [],
+    "case_id": "D017-native",
+    "new_ids": [
+      "L14-02"
+    ],
+    "old_ids": [
+      "L14-02"
+    ],
+    "removed": [],
+    "repeat": 1,
+    "requirement": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+    "requirement_index": 0
+  },
+  {
+    "added": [],
+    "case_id": "D017-native",
+    "new_ids": [],
+    "old_ids": [
+      "L01-06"
+    ],
+    "removed": [
+      "L01-06"
+    ],
+    "repeat": 1,
+    "requirement": "点球执行前，主罚者的位置例外见第二份文档。",
+    "requirement_index": 1
+  },
+  {
+    "added": [
+      "L14-02",
+      "L14-03"
+    ],
+    "case_id": "D017-native",
+    "new_ids": [
+      "L14-02",
+      "L14-03",
+      "L01-06"
+    ],
+    "old_ids": [
+      "L01-06"
+    ],
+    "removed": [],
+    "repeat": 1,
+    "requirement": "点球执行前，罚球区与罚球弧共同划定了其他队员不得提前进入的范围。",
+    "requirement_index": 2
+  },
+  {
+    "added": [
+      "L14-02"
+    ],
+    "case_id": "D017-native",
+    "new_ids": [
+      "L14-02"
+    ],
+    "old_ids": [
+      "L14-03"
+    ],
+    "removed": [
+      "L14-03"
+    ],
+    "repeat": 2,
+    "requirement": "点球执行前，主罚者的位置条件。",
+    "requirement_index": 0
+  },
+  {
+    "added": [
+      "L14-02"
+    ],
+    "case_id": "D017-native",
+    "new_ids": [
+      "L14-02"
+    ],
+    "old_ids": [
+      "L14-03"
+    ],
+    "removed": [
+      "L14-03"
+    ],
+    "repeat": 2,
+    "requirement": "点球执行前，守门员的位置条件。",
+    "requirement_index": 1
+  },
+  {
+    "added": [
+      "L14-02"
+    ],
+    "case_id": "D017-native",
+    "new_ids": [
+      "L14-02"
+    ],
+    "old_ids": [
+      "L14-03"
+    ],
+    "removed": [
+      "L14-03"
+    ],
+    "repeat": 2,
+    "requirement": "点球执行前，其他队员的位置条件。",
+    "requirement_index": 2
+  },
+  {
+    "added": [
+      "L14-02"
+    ],
+    "case_id": "D017-native",
+    "new_ids": [
+      "L14-02"
+    ],
+    "old_ids": [
+      "L14-03"
+    ],
+    "removed": [
+      "L14-03"
+    ],
+    "repeat": 3,
+    "requirement": "点球执行前，主罚者的位置条件。",
+    "requirement_index": 0
+  },
+  {
+    "added": [
+      "L14-02"
+    ],
+    "case_id": "D017-native",
+    "new_ids": [
+      "L14-02"
+    ],
+    "old_ids": [
+      "L14-03"
+    ],
+    "removed": [
+      "L14-03"
+    ],
+    "repeat": 3,
+    "requirement": "点球执行前，守门员的位置条件。",
+    "requirement_index": 1
+  },
+  {
+    "added": [
+      "L14-02"
+    ],
+    "case_id": "D017-native",
+    "new_ids": [
+      "L14-02"
+    ],
+    "old_ids": [
+      "L14-03"
+    ],
+    "removed": [
+      "L14-03"
+    ],
+    "repeat": 3,
+    "requirement": "点球执行前，其他队员的位置条件。",
+    "requirement_index": 2
+  },
+  {
+    "added": [
+      "L14-02"
+    ],
+    "case_id": "D017-native",
+    "new_ids": [
+      "L14-02"
+    ],
+    "old_ids": [
+      "L14-03"
+    ],
+    "removed": [
+      "L14-03"
+    ],
+    "repeat": 4,
+    "requirement": "点球执行前，主罚者的位置条件。",
+    "requirement_index": 0
+  },
+  {
+    "added": [
+      "L14-02"
+    ],
+    "case_id": "D017-native",
+    "new_ids": [
+      "L14-02"
+    ],
+    "old_ids": [
+      "L14-03"
+    ],
+    "removed": [
+      "L14-03"
+    ],
+    "repeat": 4,
+    "requirement": "点球执行前，守门员的位置条件。",
+    "requirement_index": 1
+  },
+  {
+    "added": [
+      "L14-02"
+    ],
+    "case_id": "D017-native",
+    "new_ids": [
+      "L14-02"
+    ],
+    "old_ids": [
+      "L14-03"
+    ],
+    "removed": [
+      "L14-03"
+    ],
+    "repeat": 4,
+    "requirement": "点球执行前，其他队员的位置条件。",
+    "requirement_index": 2
+  },
+  {
+    "added": [],
+    "case_id": "D021-native",
+    "new_ids": [
+      "L13-05"
+    ],
+    "old_ids": [
+      "L13-05"
+    ],
+    "removed": [],
+    "repeat": 1,
+    "requirement": "直接接任意球的越位待遇",
+    "requirement_index": 0
+  },
+  {
+    "added": [
+      "L13-05"
+    ],
+    "case_id": "D021-native",
+    "new_ids": [
+      "L13-05",
+      "L11-03",
+      "L15-03"
+    ],
+    "old_ids": [
+      "L11-03",
+      "L15-03",
+      "L16-03"
+    ],
+    "removed": [
+      "L16-03"
+    ],
+    "repeat": 1,
+    "requirement": "直接接界外球的越位待遇",
+    "requirement_index": 1
+  },
+  {
+    "added": [],
+    "case_id": "D021-native",
+    "new_ids": [],
+    "old_ids": [
+      "L13-05"
+    ],
+    "removed": [
+      "L13-05"
+    ],
+    "repeat": 2,
+    "requirement": "直接接任意球不构成越位犯规。",
+    "requirement_index": 0
+  },
+  {
+    "added": [
+      "L13-05",
+      "L11-03"
+    ],
+    "case_id": "D021-native",
+    "new_ids": [
+      "L13-05",
+      "L11-03",
+      "L15-03"
+    ],
+    "old_ids": [
+      "L15-03",
+      "L16-03"
+    ],
+    "removed": [
+      "L16-03"
+    ],
+    "repeat": 2,
+    "requirement": "直接接界外球不构成越位犯规。",
+    "requirement_index": 1
+  },
+  {
+    "added": [],
+    "case_id": "D021-native",
+    "new_ids": [],
+    "old_ids": [
+      "L13-05"
+    ],
+    "removed": [
+      "L13-05"
+    ],
+    "repeat": 3,
+    "requirement": "直接接任意球不构成越位犯规。",
+    "requirement_index": 0
+  },
+  {
+    "added": [
+      "L13-05",
+      "L11-03"
+    ],
+    "case_id": "D021-native",
+    "new_ids": [
+      "L13-05",
+      "L11-03",
+      "L15-03"
+    ],
+    "old_ids": [
+      "L15-03",
+      "L16-03"
+    ],
+    "removed": [
+      "L16-03"
+    ],
+    "repeat": 3,
+    "requirement": "直接接界外球不构成越位犯规。",
+    "requirement_index": 1
+  },
+  {
+    "added": [],
+    "case_id": "D021-native",
+    "new_ids": [],
+    "old_ids": [
+      "L13-05"
+    ],
+    "removed": [
+      "L13-05"
+    ],
+    "repeat": 4,
+    "requirement": "直接接任意球不构成越位犯规。",
+    "requirement_index": 0
+  },
+  {
+    "added": [
+      "L13-05",
+      "L11-03"
+    ],
+    "case_id": "D021-native",
+    "new_ids": [
+      "L13-05",
+      "L11-03",
+      "L15-03"
+    ],
+    "old_ids": [
+      "L15-03",
+      "L16-03"
+    ],
+    "removed": [
+      "L16-03"
+    ],
+    "repeat": 4,
+    "requirement": "直接接界外球不构成越位犯规。",
+    "requirement_index": 1
+  }
+]

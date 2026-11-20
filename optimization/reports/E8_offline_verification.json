@@ -1,0 +1,12 @@
+{
+  "offline_selection_render_bindings": 48,
+  "diagnostic_replays": 32,
+  "original_controls": 16,
+  "source_pairs": 405,
+  "unique_source_pairs": 140,
+  "D021_negative_claims_refuted": 3,
+  "new_model_calls": 0,
+  "hashes_verified": true,
+  "production_runtime_unchanged": true,
+  "holdout_used": false
+}

@@ -1,0 +1,17 @@
+{
+  "single_requirement_paragraph_inputs_verified": 60,
+  "frozen_requirement_rounds_verified": 4,
+  "actual_verifier_calls": 79,
+  "attempts_verified": 79,
+  "protocol_accepted_attempts": 52,
+  "protocol_rejected_attempts": 27,
+  "max_message_bytes": 2623,
+  "max_prompt_tokens": 579,
+  "max_output_tokens": 221,
+  "model_and_runtime_inputs_unchanged": true,
+  "actual_new_retrieval_calls": 0,
+  "new_answer_synthesis_calls": 0,
+  "D036_experimental_and_graph_zero_calls": true,
+  "holdout_used": false,
+  "full90_executed": false
+}

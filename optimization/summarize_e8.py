@@ -1,0 +1,128 @@
+"""Archive E8 offline ceilings and the halted minimal live verifier pilot."""
+import csv
+import io
+import json
+import subprocess
+from pathlib import Path
+from score_e7_mapping import ROOT,read,sha
+
+OFF=ROOT/'.runtime/phase2/e8-offline'
+LIVE=ROOT/'.runtime/phase2/e8-live-minimal'
+SCORED=ROOT/'.runtime/phase2/e8-minimal-scored'
+OUTPUT=ROOT.parent/'2026-11-18/handoff-md-x20-2/outputs'
+
+def dump(p,v):p.write_bytes((json.dumps(v,ensure_ascii=False,indent=2)+'\n').encode())
+def grade(g):return f"{g['grades'].get('correct',0)}/4"
+
+def main():
+    off=read(OFF/'metrics.json');m=read(SCORED/'metrics.json');check=read(SCORED/'archive_verification.json');proj=read(SCORED/'quote_protocol_projection.json')
+    assert m['decision']=='STOP_E8_VERIFIER' and off['new_model_calls']==0
+    assert len(m['pair_results'])==60 and check['actual_verifier_calls']==m['cost']['model_calls']
+    OUTPUT.mkdir(exist_ok=True);cost=m['cost']
+    rows=[
+      '# E8：离线上限诊断与逐段核验最小专项', '',
+      '**结论：两组离线回放已完成；真实逐段核验候选未通过，停止扩大。** 当前不能把该核验器接入运行链路或冻结后开展拆解优化。运行基线仍为 `5986781 + Prompt A`。', '',
+      '## 先回答离线诊断的问题', '',
+      '复用 E7 四轮候选输出。16 条原映射控制回放、16 条只纠正支持关系回放、16 条同时纠正拆解和关系回放，共 48 条确定性渲染，其中两组新诊断共 32 条。新增模型调用为 0；离线进程禁止 socket 活动。', '',
+      '| 上下文 | E7 原映射：完整正确 | 只纠正支持关系 | 同时纠正拆解及关系 |',
+      '| --- | --- | --- | --- |']
+    for key,g in off['groups'].items():rows.append(f"| {key} | {grade(g['original'])} | {grade(g['relations_only'])} | {grade(g['relations_and_decomposition'])} |")
+    rows += ['',
+      '- **T026-expanded：证据判断有足够修复空间。** 保留四轮原要点，纠正全部候选段的关系后，四轮都选 L12-06；原段直接覆盖三个冻结必要要点。L12-15 对技术性违例分类只算部分支持，不进入直接覆盖。并未用新要点替换原要点。',
+      '- **T034-expanded：当前单段直接支持契约下需要单独验证拆解。** 原泛化比较要点没有任何单段完整支持，L14-01 与 L07-03 分别支持两侧。只修关系的首轮仍因新增执行动作要点选 L14-03，后三轮全为空而误拒答。中性问句分出程序性质、决胜目的与计分关联后，选择 L07-03 + L14-01，四轮完整。',
+      '- **D017：不能预先认定必须改拆解才能恢复最终回答。** 原错误拆解仍包含主罚者和守门员，但 L14-02 也解释这些位置，且完整包含其他队员的位置条件。补齐真实关系后，最少段数选择 L14-02，四轮恢复。这不说明拆解正确，只说明完整原段顺带覆盖所问条件；角色排除错误仍在中间状态中。',
+      '- **D021：后三轮反向断言与 L13-05 的关系为反驳，不是支持。** 清除反向支持关系后，该段还因正确支持界外球例外而获选，完整原文顺带覆盖任意球部分，所以最终仍 4/4 正确。最终分数没有变化，不能据此说极性错误无害。', '',
+      '上述“上限”是按本轮原文审查和中性问句生成的诊断结果，不是模型质量或独立人审结论。审查由 Codex 读取原文完成，没有新增真人或裁判专家裁定；审核问句和关系标签没有进入真实核验器。', '',
+      '对每个旧要点和全部五段候选重审，而非只审旧映射。两组共 405 次关系观测、140 个不同的要点—段组合，直接支持/部分支持/反驳均保留原文短引；所有短引均验证为连续子串。既有 3 段上限足够：T026 需 1 段、T034 需 2 段、D017 需 1 段、D021 需 1 段。没有证据要求提高 Top-K、增加段数或重切 Chunk。', '',
+      '中性问句仅提出待查维度，不预填答案：例如 T034“比赛中判罚的罚球点球是什么性质的程序？”；D017 每项均保留“执行前，除主罚者和守门员外”，分别查区域、相对前后位置和最小距离。问句用于诊断，不是已验证的新拆解算法。', '',
+      '## 真实专项的唯一改动', '',
+      '使用 E7 四轮原有的三项要点，逐轮对五段候选重新核验，共 4×3×5 = 60 个任务。每次模型输入只有一个要点和一个完整段；不提供原映射、标准答案、冻结必要要点、原文审查标签或其他候选段。两边沿用 E7 的穷举选择器与现有原文渲染。对照是归档 E7 映射的固定回放，不是本轮另调模型生成的同期对照。', '',
+      'Qwen2.5:3b、Ollama 0.40.16、CPU 8 线程、temperature=0、seed=42、num_ctx=8192、num_predict=1024 与运行基线一致。核验器单独输出 relation/quotes/reason。只有程序校验通过的 direct_support 进入覆盖；外部原文审查只在事后评分，不用审核标签替模型修正关系。部分支持始终不入选段覆盖。', '',
+      '## 最小专项实际结果', '',
+      '| 项目 | 实际结果 |', '| --- | --- |',
+      f"| 登记逐对任务 | {m['pair_observations']}，来自 1 道独立题的 4 轮输出 |",
+      '| E7 控制回放 | 1 轮完整正确、3 轮部分正确 |',
+      '| E8 正式输出 | 4/4 核验流程技术失败；完整正确 0/4 |',
+      f"| 协议有效的逐对结果 | {check['protocol_accepted_attempts']}/60；其余 8 对两次尝试后失败 |",
+      '| 有效关系类别 | 部分支持 45；反驳 7；直接支持 0；无关 0 |',
+      f"| 相对原文审查标签的一致率 | {m['relation_agreement']['numerator']}/{m['relation_agreement']['denominator']}（20.00%，含协议失败） |",
+      f"| 真正直接支持关系被漏判 | {m['missed_direct_support']} 次 |",
+      '| L12-15 的概念定义错误直接支持 | 0/8，但核验器也没有给任何正确段直接支持，不能据此宣布修好 |',
+      '| D036 | 实验入口与原 Graph 均在检索、回答和核验前拒答，调用均为 0 |', '',
+      '四轮中只要有一对最终未通过协议，该轮便记技术失败，未把失败对丢弃后继续宣称成功。没有有效候选答案或引用，因此本轮不能给出候选引用支持率，也不能把四轮技术失败计为正确拒答或误拒答。', '',
+      '语义过严有可定位样例：对“区分技术性违例与不当行为”和 L12-06，模型认出了两类及其区别，却以“没有详细说明不当行为的具体表现形式”为由判部分支持。它给要点增加了未要求的完整性条件。另有关系问句被当作可反驳的断言，不能把这些输出当作可信的支持判定。', '',
+      '## 引文协议与语义问题分开看', '',
+      '本轮候选还要求 partial_support 和 refutation 也附引文，并要求 unrelated 的引文为空；这强于原方案“直接支持必须附引文”的最低要求，给技术完成增加了额外约束，不能把所有协议失败都归因于逐段核验方向。该约束已在推理前的 Prompt 和校验器中封存，本轮中途未更改。', '',
+      '79 次实际模型响应中，27 次未通过协议：14 次原文短引不逐字匹配，13 次关系与引文数量不符。例如把真实分号改成句号后引用，严格子串检查正确拒绝，未自动改写原文救分。19 次重试后仍有 8 个失败对。', '',
+      '另做一次 **零模型调用的覆盖投影诊断**：读取同一批归档响应，不再让非直接支持的引文问题阻止读取其分类；错误引文继续标记为未通过，不被当作有效依据。直接支持仍必须有精确短引，任何非直接支持均不进入覆盖。投影仍是直接支持 0 条、四轮全部空覆盖拒答。', '',
+      '因此，额外引文约束确实影响正式技术完成，但不能单独解释该批响应中的支持关系漏判。此投影不是新真实候选，也不替换正式结果、成本或验收分数；不能据此预测修改 Prompt 后的新运行结果。', '',
+      '## 核验成本和预算', '',
+      '| 指标 | 实际值 |', '| --- | --- |',
+      f"| 逐对任务 / 实际核验模型调用 | 60 / {cost['model_calls']} |",
+      f"| 重试调用 | {cost['retries']} |",
+      '| 额外预热 | 1 次，排除在质量与下列成本统计外；本次实际模型请求合计 80 次 |',
+      f"| 输入 / 输出 Token（含被拒响应与重试） | {cost['input_tokens']} / {cost['output_tokens']} |",
+      f"| 核验累计墙钟秒数 | {cost['total_pair_seconds']:.3f}（约 {cost['total_pair_seconds']/60:.2f} 分钟） |",
+      f"| 单对 P50 / P95 秒 | {cost['pair_latency_p50_seconds']:.3f} / {cost['pair_latency_p95_seconds']:.3f} |",
+      f"| 每轮平均核验调用 / 秒数 | {cost['model_calls']/4:.2f} / {cost['total_pair_seconds']/4:.3f} |",
+      f"| 实际最大 messages 字节 / 输入 Token / 输出 Token | {check['max_message_bytes']} / {check['max_prompt_tokens']} / {check['max_output_tokens']} |",
+      '| 新检索 / 新要点生成 / 新回答合成 | 0 / 0 / 0 |', '',
+      '成本来自本机真实核验调用，不包含重新检索或回答合成，不是完整用户链路 P95。正式推理未删段、截断上下文、提高预算或更换模型。每个要点—段最多两次尝试，60 个任务最多 120 次核验调用，不是把原来的整题两次上限悄悄应用成无限重试。实验入口独立于默认 UI/Worker。', '',
+      '## 门槛和后续边界', '',
+      '| 门槛 | 结果 |', '| --- | --- |']
+    for key,value in m['gates'].items():rows.append(f"| {key} | {'通过' if value else '未通过'} |")
+    rows += ['',
+      '**停止 E8 当前核验器候选，不投入扩大或全量。** D001/D002/D003/D012 的新真实核验、D021 反向断言的新真实核验均未启动；它们在 E7 的恢复不等于已由 E8 守住。D021 当前只有离线反驳关系验证。', '',
+      'T034 的离线回放已满足“拆解是瓶颈”的启动依据，但真实核验器本身尚未验收，尚不具备冻结后开展拆解单变量实验的条件。D017 的问题拆解仍需审查对象和排除条件，当前资料下最终答复却可被完整段顺带救回，不能把该题分数恢复直接当作拆解修复。', '',
+      '下一轮应先将最低引文协议稳定性与语义支持阈值分开验证，保留本失败候选，再决定是否冻结核验器做 T034 拆解对照。本轮没有添加第二个 Prompt/模型候选，没有把审核问句装进真实推理，也没有开始新拆解模型、增加 Top-K 或改装配。', '',
+      '全量前门槛继续是 T026-expanded 至少 3/4 完整、T034-expanded 和 D017 各 4/4、四道误拒答恢复保留、D036 零调用。90 题的 18/18 正确拒答、90/90 技术完成和至少 51/72 完整正确均未在本轮重跑，不声称达到；40 题独立留出集继续封存。', '',
+      '## 版本、验证与交付', '',
+      '- 分支：`optimization/e8-pair-verification`，仅本地保留，未合并或推送。生产 scripts/config 与 `5986781` 完全一致。',
+      '- 离线回放快照：`f2e1d1e`；真实核验快照：`1e74a93`。后续报告与评分代码另行归档。',
+      '- 33 项核验协议测试通过；48 条离线选段/渲染绑定、16 份 E7 原始响应哈希及反向断言检查通过；60 份实际单要点/单段输入、79 次原始响应与失败记录全部核对。测试通过不代表模型质量通过。',
+      '- 所有审核标签与问句仅诊断/评分使用，正文、要点来源及模型配置逐项哈希校验。', '',
+      '复算命令：', '', '```powershell',
+      '.runtime/task17/venv/Scripts/python.exe -B optimization/verify_e8_pair_verifier.py',
+      '.runtime/task17/venv/Scripts/python.exe -B optimization/verify_e8_offline.py',
+      '.runtime/task17/venv/Scripts/python.exe -B optimization/score_e8_pairs.py --run .runtime/phase2/e8-live-minimal --prepared .runtime/phase2/e8-minimal-prepared/prepared.json --out .runtime/phase2/e8-minimal-scored',
+      '.runtime/task17/venv/Scripts/python.exe -B optimization/verify_e8_live_archive.py',
+      '.runtime/task17/venv/Scripts/python.exe -B optimization/e8_quote_protocol_replay.py --run .runtime/phase2/e8-live-minimal --prepared .runtime/phase2/e8-minimal-prepared/prepared.json --out .runtime/phase2/e8-minimal-scored',
+      '```', '',
+      '离线原件：`.runtime/phase2/e8-offline/`；真实响应：`.runtime/phase2/e8-live-minimal/`；每个目录的 completed.json 记录哈希。真实复跑使用新输出目录，禁止覆盖本次原件。', '',
+      '源资料边界沿用系统：固定 Wikipedia 快照的 AI 中文整理，非官方赛季规则，未经过裁判专家审校。直接支持表示对这批原文的支持，不是对现实规则现行有效性的背书。', '']
+    report='\n'.join(rows)
+    (ROOT/'optimization/experiments/E8_pair_verification.md').write_bytes(report.encode())
+    (OUTPUT/'E8_report.md').write_bytes(report.encode())
+    offline_report='\n'.join(rows[:rows.index('## 真实专项的唯一改动')])+'\n'
+    (OUTPUT/'E8_offline_replay_report.md').write_bytes(offline_report.encode())
+    buf=io.StringIO();w=csv.writer(buf,lineterminator='\n');w.writerow(['case','repeat','group','grade','selected','point_mask','new_model_calls','source_trace_sha256'])
+    for r in off['records']:w.writerow([r['case_id'],r['repeat'],r['group'],r['grade'],','.join(r['selected_ids']),''.join(str(int(v)) for v in r['point_mask']),0,r['source_trace_sha256']])
+    (OFF/'cases.csv').write_bytes(b'\xef\xbb\xbf'+buf.getvalue().encode())
+    copies={
+      OFF/'metrics.json':('optimization/reports/E8_offline_metrics.json','E8_offline_metrics.json'),
+      OFF/'cases.csv':('optimization/reports/E8_offline_cases.csv','E8_offline_cases.csv'),
+      OFF/'source_review_matrix.json':('optimization/experiments/E8_pair_verification/offline_source_review.json','E8_source_review_matrix.json'),
+      OFF/'verification.json':('optimization/reports/E8_offline_verification.json','E8_offline_verification.json'),
+      OFF/'relation_changes.json':('optimization/reports/E8_offline_relation_changes.json','E8_offline_relation_changes.json'),
+      SCORED/'metrics.json':('optimization/reports/E8_minimal_metrics.json','E8_minimal_metrics.json'),
+      SCORED/'pair_audit.csv':('optimization/reports/E8_minimal_pair_audit.csv','E8_minimal_pair_audit.csv'),
+      SCORED/'archive_verification.json':('optimization/reports/E8_minimal_archive_verification.json','E8_minimal_archive_verification.json'),
+      SCORED/'quote_protocol_projection.json':('optimization/reports/E8_quote_protocol_projection.json','E8_quote_protocol_projection.json'),
+      ROOT/'.runtime/phase2/e8-minimal-prepared/budget_preflight.json':('optimization/reports/E8_minimal_budget_preflight.json','E8_minimal_budget_preflight.json')}
+    for source,(repo,dest) in copies.items():
+        body=((json.dumps(read(source),ensure_ascii=False,indent=2)+'\n').encode()
+              if source.suffix=='.json' else source.read_bytes())
+        (ROOT/repo).write_bytes(body);(OUTPUT/dest).write_bytes(body)
+    (OUTPUT/'E8_verifier_prompt.txt').write_bytes((ROOT/'optimization/experiments/E8_pair_verification/verifier_prompt.txt').read_bytes())
+    dump(OUTPUT/'E8_receipt.json',dict(decision=m['decision'],branch='optimization/e8-pair-verification',
+        offline_commit=read(OFF/'metadata.json')['source_commit'],live_commit=read(LIVE/'metadata.json')['source_commit'],
+        delivery_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+        runtime_baseline='5986781 + Prompt A',runtime_unchanged=True,
+        offline_new_model_calls=0,offline_diagnostic_replays=32,offline_control_replays=16,
+        live_pair_observations=60,actual_verifier_calls=cost['model_calls'],warmup_calls_excluded=1,
+        expanded_live_executed=False,new_decomposition_live_executed=False,full90_executed=False,holdout_used=False,
+        pushed=False,merged=False,offline_hash_manifest=sha(OFF/'completed.json'),live_hash_manifest=sha(LIVE/'completed.json'),
+        outputs={p.name:sha(p) for p in OUTPUT.glob('E8_*') if p.name!='E8_receipt.json'}))
+    print(json.dumps(dict(decision=m['decision'],report=str(OUTPUT/'E8_report.md'),offline_report=str(OUTPUT/'E8_offline_replay_report.md')),ensure_ascii=False))
+
+if __name__=='__main__':main()
