@@ -1,0 +1,23 @@
+{
+  "control": "5986781 + Prompt A + pinned qwen2.5:3b",
+  "candidate": "E10 official Qwen2.5-7B-Instruct Q4_K_M; unchanged model digest",
+  "startup_available_GiB": 6.5,
+  "startup_measurement": "After default UI is listening and actual retrieval worker dependencies are resident",
+  "startup_wait_seconds_max": 600,
+  "resident_services": ["Pinned Ollama 0.40.16, one loaded model, one parallel request", "Unmodified default Kotaemon/Gradio 7867 UI", "Actual IntegratedEngine holding Chroma/BM25/BGE CPU ONNX dependencies; no query/model generation in resident sidecar"],
+  "generation": {"num_thread": 8, "num_gpu": 0, "num_ctx": 8192, "num_predict": 1024, "temperature": 0, "seed": 42, "keep_alive": "10m", "max_attempts": 2},
+  "preflights": [
+    {"name": "generic_ready", "max_calls": 1, "model": "B", "quality_denominator": false, "memory_gate": true},
+    {"name": "representative_development_prompt", "selection": "Largest archived first-attempt prompt among D-series development questions; no grade or labels used", "min_prompt_bytes": 5580, "max_prompt_bytes": 6200, "model": "B", "wall_seconds_max": 90, "max_attempts": 2, "existing_schema_required": true, "quality_denominator": false, "memory_gate": true}
+  ],
+  "memory_gates": {"model_service_process_tree_sampled_rss_peak_GiB_max": 6.5, "system_available_GiB_min": 1, "sample_interval_seconds": 0.5, "emergency_available_GiB": 0.35, "emergency_consecutive_samples": 3},
+  "primary": "Only after both preflights pass; exactly reuse E10 frozen 10 contexts and 36-observation interleaved schedule, prompts, schema, scoring and bounded paired confirmations",
+  "timing": "Record Graph wall time, each response load_duration, total_duration minus load_duration, prompt/gen durations and tokens for both arms. Frozen retrieval means no fresh embedding/rerank latency; actual retrieval dependencies remain resident.",
+  "quality_and_cost_gates": "Inherit E10 unchanged: T026 >=2/3 full; T034,D017,D021 3/3 full; >=2 stable false-refusal recoveries; D004/D009 remain full; citation support not worse; technical36/36; D036 zero calls. B P95<=60s, every B<=90s, same memory gates including representative probe.",
+  "stop": "No startup memory, failed generic, failed representative or sampled resource failure => stop current run; no primary continuation or unregistered retry. Quality failure => no full90.",
+  "next": "Quality and cost pass => concurrent fixed90 A/B; otherwise archive exact stage and leave answer quality unknown when no QA. No repeated 3B verifier or decomposition experiment in E11.",
+  "full90_gates": {"correct_refusals": "18/18", "technical": "90/90", "full_answerable": ">=51/72", "citation": "Compare same-run A and B numerators/denominators and per-question regressions"},
+  "holdout40_used": false,
+  "default_configuration_changed": false,
+  "only_task_owned_processes_may_be_stopped": true
+}
