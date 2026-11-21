@@ -1,0 +1,82 @@
+{
+  "inference_commit": "dc3a9b7b21ef2aaf3606c38507721317b8bd8903",
+  "status": "STARTUP_MEMORY_NOT_READY",
+  "business_unchanged": true,
+  "source_reference_checks": true,
+  "default_services_closed": true,
+  "actual_model_calls": 0,
+  "full90_executed": false,
+  "holdout_used": false,
+  "raw_files": {
+    ".runtime/phase2/e11-live/completed.json": {
+      "sha256": "34565837995d0589d233c5c2c7d6457582052277582d914b285b2f1c35f23872",
+      "size_bytes": 229
+    },
+    ".runtime/phase2/e11-live/metadata.json": {
+      "sha256": "ac14124d84d9a50f99ec6f0eddff99ab16cd6534286d90d7ddabd68c67f1c520",
+      "size_bytes": 54996
+    },
+    ".runtime/phase2/e11-live/resources.jsonl": {
+      "sha256": "1f1e6a58367e6737049c73cbe2fff6d16e7f85ceeb853b244fd0bfc2fd5a3631",
+      "size_bytes": 436541
+    },
+    ".runtime/phase2/e11-live/startup_memory.json": {
+      "sha256": "bcad793fdbe70d0fdf8d4fa9b9218535903b25e9c45ac691d9588b48db013a7f",
+      "size_bytes": 7464
+    },
+    ".runtime/phase2/e11-prepared/prepared.json": {
+      "sha256": "2041e610c950ab5e1eaf0f5d618f17a902f31ca18895a252e03c98fbd21ee1c3",
+      "size_bytes": 177468
+    },
+    ".runtime/phase2/e11-score/metrics.json": {
+      "sha256": "2917c131d6101c901a51ea61a362475aa2512254ee1292a6289d4a7c7216b3de",
+      "size_bytes": 13347
+    },
+    ".runtime/phase2/e11-services/ollama.stderr.log": {
+      "sha256": "bfe51b32e3e67470598088be0c9a9e4484891523d3ce49cb0abdec8136626534",
+      "size_bytes": 2488
+    },
+    ".runtime/phase2/e11-services/ollama.stdout.log": {
+      "sha256": "89f62543f2085c685defe626b5a1e746b6ea2de3ee576e677d10e6d63666c944",
+      "size_bytes": 1050
+    },
+    ".runtime/phase2/e11-services/owned-services.json": {
+      "sha256": "ae0fe8c114b85999a40ad0d8e0bd266182a59b14d23ec59340770b4b7703b296",
+      "size_bytes": 284
+    },
+    ".runtime/phase2/e11-services/ui.stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    ".runtime/phase2/e11-services/ui.stdout.log": {
+      "sha256": "72b5712f0315f2c34683b88fc54adde8c4ffcb2ef059790a261aadab87b8abc2",
+      "size_bytes": 492
+    },
+    ".runtime/phase2/e11-services/worker-ready.json": {
+      "sha256": "6ac234a6ecc9a58a92c785ade914f319fac5e1078ccbb5ac516a6e5aecc607de",
+      "size_bytes": 3669
+    },
+    ".runtime/phase2/e11-services/worker.stderr.log": {
+      "sha256": "2eb1f6056cf13de0b29fcc810a67088a86e12fac3deed6bd6fa874a1c51a6909",
+      "size_bytes": 367
+    },
+    ".runtime/phase2/e11-services/worker.stdout.log": {
+      "sha256": "dc461983ec86d9f038819bd4f2f5d37783485c59f39caea951dfc2f87b8a8434",
+      "size_bytes": 100
+    }
+  },
+  "public_files": {
+    "optimization/reports/E11_deployment_metrics.json": {
+      "sha256": "f859904896dda7b8159d2620a953027f913aa58726a5febb538b35b70736423a",
+      "size_bytes": 2877
+    },
+    "optimization/reports/E11_deployment_revalidation.md": {
+      "sha256": "2be19e4b5c77a72f59cbb750f133f505c51464e08d656192bccfcf073157304d",
+      "size_bytes": 4681
+    },
+    "optimization/reports/E11_mechanism_checks.json": {
+      "sha256": "13843cd597cc5b3cfd8ea579889833a0f4ae1d56d7432f8faff9a8d3e4928f98",
+      "size_bytes": 609
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "passed": 8,
+  "model_inference_calls": 0,
+  "checks": [
+    "generic_memory",
+    "generic_protocol",
+    "representative_memory",
+    "representative_protocol",
+    "representative_latency",
+    "pass",
+    "frozen_36_and_inputs_identical",
+    "representative_real_development_packet"
+  ],
+  "evidence": "Exact successful pre-launch tool output retained in chat; no repeated model-free run at archive time.",
+  "command": ".runtime/task17/venv/Scripts/python.exe -X utf8 -B optimization/verify_e11_deployment.py",
+  "script_sha256": "c594eeaf950163dcbb7d1bccd584e2f4ec3a4e3d7d584878d5ed7ea98b9158ec"
+}
