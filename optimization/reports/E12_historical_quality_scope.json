@@ -1,0 +1,2037 @@
+{
+  "source": "optimization\\reports\\D036_business_gate_metrics.json",
+  "source_sha256": "1872476a1c970fe0ead9e3b74d15a9d86c4b18cbc7104ed8e09c11066671e726",
+  "historical_runtime": "5986781; original actual Graph producer 86a01e9",
+  "original_counts": {
+    "false_refusal": 10,
+    "correct": 51,
+    "incorrect": 5,
+    "partial": 6,
+    "correct_refusal": 18
+  },
+  "groups": {
+    "single_fact": {
+      "complete_or_correct_refusal": 1,
+      "total": 3,
+      "value": 0.3333333333333333,
+      "grades": {
+        "false_refusal": 2,
+        "correct": 1
+      },
+      "citation_support": {
+        "numerator": 2,
+        "denominator": 3,
+        "value": 0.6666666666666666
+      },
+      "loss_ids": [
+        "D001",
+        "T001"
+      ],
+      "citation_issue_ids": [
+        "D027"
+      ]
+    },
+    "multiple_requirements": {
+      "complete_or_correct_refusal": 42,
+      "total": 56,
+      "value": 0.75,
+      "grades": {
+        "false_refusal": 6,
+        "correct": 42,
+        "incorrect": 5,
+        "partial": 3
+      },
+      "citation_support": {
+        "numerator": 54,
+        "denominator": 85,
+        "value": 0.6352941176470588
+      },
+      "loss_ids": [
+        "D002",
+        "D003",
+        "D011",
+        "D012",
+        "D019",
+        "D032",
+        "T004",
+        "T009",
+        "T014",
+        "T015",
+        "T018",
+        "T023",
+        "T028",
+        "T032"
+      ],
+      "citation_issue_ids": [
+        "D009",
+        "D011",
+        "D018",
+        "D019",
+        "D020",
+        "D030",
+        "T002",
+        "T003",
+        "T010",
+        "T013",
+        "T014",
+        "T016",
+        "T018",
+        "T019",
+        "T021",
+        "T025",
+        "T028",
+        "T036",
+        "T038",
+        "T039"
+      ]
+    },
+    "comparison": {
+      "complete_or_correct_refusal": 8,
+      "total": 13,
+      "value": 0.6153846153846154,
+      "grades": {
+        "correct": 8,
+        "partial": 3,
+        "false_refusal": 2
+      },
+      "citation_support": {
+        "numerator": 16,
+        "denominator": 30,
+        "value": 0.5333333333333333
+      },
+      "loss_ids": [
+        "D021",
+        "D026",
+        "T017",
+        "T026",
+        "T034"
+      ],
+      "citation_issue_ids": [
+        "D013",
+        "D021",
+        "D022",
+        "D023",
+        "T007",
+        "T022",
+        "T026",
+        "T029",
+        "T030"
+      ]
+    },
+    "must_refuse": {
+      "complete_or_correct_refusal": 18,
+      "total": 18,
+      "value": 1.0,
+      "grades": {
+        "correct_refusal": 18
+      },
+      "citation_support": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "loss_ids": [],
+      "citation_issue_ids": []
+    }
+  },
+  "cases": [
+    {
+      "question_id": "D001",
+      "question": "人工草坪的颜色有什么限制？",
+      "category": "single_fact",
+      "classification_reason": "One necessary point in the frozen rubric; not determined by answer grade.",
+      "necessary_points": 1,
+      "grade": "false_refusal",
+      "point_mask": [
+        false
+      ],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "有绿色限制的标注证据，系统拒答。",
+      "raw_trace_sha256": "33e7bcf777c89329192dbb78606a8908fb17d236bf3e09adf1bcc6573d9f7ac1"
+    },
+    {
+      "question_id": "D002",
+      "question": "成人球门的内侧宽度和横梁离地高度分别是多少？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "球门尺寸可答，系统拒答。",
+      "raw_trace_sha256": "1f983ef6f4f304c4bfc62f586e299720c6018758b81301b98a79fd8531e7f3cc"
+    },
+    {
+      "question_id": "D003",
+      "question": "标准成人5号球的周长和重量范围是多少？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "5号球周长和重量可答，系统拒答。",
+      "raw_trace_sha256": "1a491aa0c5e8d4bae792ddc16cdcee4b3226b415cee2a78ac928284d4d330d34"
+    },
+    {
+      "question_id": "D004",
+      "question": "球队最多上场多少人，其中哪个位置必须有一人？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L03-01"
+      ],
+      "supported_ids": [
+        "L03-01"
+      ],
+      "unsupported_ids": [],
+      "note": "覆盖最多11人、不含替补及须有守门员。",
+      "raw_trace_sha256": "c02aecc8aa0289619f3d5f7ec51e4a15be1fcb2157483b79e75b60bc536a378e"
+    },
+    {
+      "question_id": "D005",
+      "question": "资料列出的五项基本装备有哪些？守门员裤装有什么例外？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L04-01"
+      ],
+      "supported_ids": [
+        "L04-01"
+      ],
+      "unsupported_ids": [],
+      "note": "五项基本装备齐全，并保留守门员长裤例外。",
+      "raw_trace_sha256": "52e143e265fc7da64a636e6b648fbd28f001382d01651c1bb7699f1c16ff2bac"
+    },
+    {
+      "question_id": "D006",
+      "question": "有利原则下，如果预期利益在数秒内没有实现，裁判如何处理？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L12-14"
+      ],
+      "supported_ids": [
+        "L12-14"
+      ],
+      "unsupported_ids": [],
+      "note": "给出有利时继续以及未实现时按原违例处理，两点均在选中的证据里。",
+      "raw_trace_sha256": "a53ee2817a3ace19029c1074c33c2ee476c3e7b6bd9cc6c90c65bdfcfe7dd8f4"
+    },
+    {
+      "question_id": "D007",
+      "question": "助理裁判的建议是否约束主裁判？请说明资料中的依据。",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L06-02"
+      ],
+      "supported_ids": [
+        "L06-02"
+      ],
+      "unsupported_ids": [],
+      "note": "说明意见不约束主裁判，主裁判可以改变或不采纳。",
+      "raw_trace_sha256": "5e33c4dc4c63689709b207dc58cf1891680edde075c204c7dd1cbe3b8cda5895"
+    },
+    {
+      "question_id": "D008",
+      "question": "标准成人比赛每半场多长？球出界时比赛时钟是否暂停？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L07-01"
+      ],
+      "supported_ids": [
+        "L07-01"
+      ],
+      "unsupported_ids": [],
+      "note": "给出每半场45分钟及出界不停表。",
+      "raw_trace_sha256": "60541194f9a5736f6bfa4dc04ac93fca1e376b9206b3d502cc621c5299574e1e"
+    },
+    {
+      "question_id": "D009",
+      "question": "开球前除主罚队员外，队员半场位置和对手距离有什么要求？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L08A-02",
+        "L01-07"
+      ],
+      "supported_ids": [
+        "L08A-02"
+      ],
+      "unsupported_ids": [
+        "L01-07"
+      ],
+      "note": "直接规则给出本方半场与至少9.15米；附带场地原文注明了近似换算差异。",
+      "raw_trace_sha256": "f8014be09624ceb8bfce94ee979c75b4179f3727105a2896ff057362ed12167e"
+    },
+    {
+      "question_id": "D010",
+      "question": "资料所述2019年坠球程序中，其他队员要离多远，何时进入比赛？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L08B-02"
+      ],
+      "supported_ids": [
+        "L08B-02"
+      ],
+      "unsupported_ids": [],
+      "note": "在2019年程序的范围内给出至少4米、触地生效。",
+      "raw_trace_sha256": "ea6668cfa8b89d7e10f759111bfcc5ad192bd879492600e8ca2cfcc6fbb890b3"
+    },
+    {
+      "question_id": "D011",
+      "question": "球碰到裁判后出现哪三类后果，会导致球不再处于比赛中？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "incorrect",
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "selected_ids": [
+        "L09-03"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L09-03"
+      ],
+      "note": "只说碰到官员并造成规定后果可用坠球，未列出三种具体后果。",
+      "raw_trace_sha256": "02fb5f32aff8052bf54fbc06074a493d90b671e4e1bbcc7f99b4a52d8315eeb0"
+    },
+    {
+      "question_id": "D012",
+      "question": "第10条主要处理哪两个问题？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "第10条主题可答，系统拒答。",
+      "raw_trace_sha256": "e940574fc464b21d7ccc8924a9c40f1faa27e4295cc6494ebf17f70e1ea5ba1f"
+    },
+    {
+      "question_id": "D013",
+      "question": "判断越位位置时是否把手臂计入？守门员有不同待遇吗？",
+      "category": "comparison",
+      "classification_reason": "Question explicitly contrasts objects, rules or restart circumstances; Codex intent review.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L11-01",
+        "L11-03",
+        "L12-05"
+      ],
+      "supported_ids": [
+        "L11-01"
+      ],
+      "unsupported_ids": [
+        "L11-03",
+        "L12-05"
+      ],
+      "note": "标注支持段明确列出头、身体、脚，排除手和手臂，守门员同样适用。",
+      "raw_trace_sha256": "d33ad4b614bd30e2df62fdf5c82495951386e4e80be3d0fdc40b5cb5d654ff10"
+    },
+    {
+      "question_id": "D014",
+      "question": "在没有身体接触时阻挡对手前进，资料将重启归为哪类任意球？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L12-04"
+      ],
+      "supported_ids": [
+        "L12-04"
+      ],
+      "unsupported_ids": [],
+      "note": "无身体接触的阻挡列为间接任意球。",
+      "raw_trace_sha256": "a5c068c96180354416faed0f850db9756f2ec9834865ba3c7b7d559a02e99eb2"
+    },
+    {
+      "question_id": "D015",
+      "question": "守门员直接用手接队友掷来的界外球，在本方罚球区内如何重启？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L15-05"
+      ],
+      "supported_ids": [
+        "L15-05"
+      ],
+      "unsupported_ids": [],
+      "note": "选中的界外球规则已覆盖直接从队友来球、罚球区内和间接任意球。",
+      "raw_trace_sha256": "41f178d58abfe314916f331358527036d6038a17c72b3dc903b3f98943acd7cd"
+    },
+    {
+      "question_id": "D016",
+      "question": "间接任意球未经别人触球进入对方球门，与直接进入本方球门如何区分？",
+      "category": "comparison",
+      "classification_reason": "Question explicitly contrasts objects, rules or restart circumstances; Codex intent review.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L13-05",
+        "L17-01"
+      ],
+      "supported_ids": [
+        "L13-05",
+        "L17-01"
+      ],
+      "unsupported_ids": [],
+      "note": "L13-05直接给间接任意球直接入对方球门判球门球和直接入本方球门判角球；L17-01进一步列明未被其他队员触及的间接任意球直接进本方球门判角球，两段均支持本题必要要点。",
+      "raw_trace_sha256": "fa5b02b5086bbf5731af1a317b14a3d59dff87761c4245a027b619111b6465d8"
+    },
+    {
+      "question_id": "D017",
+      "question": "点球执行前，除主罚者和守门员外的队员要满足哪些位置条件？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": [],
+      "note": "给出场内、罚球区外、点后，且至少9.15米。",
+      "raw_trace_sha256": "ad6a82a62029b7b0e4e0c005ccbedb4bd215acfed2659a77365b7b52a070a135"
+    },
+    {
+      "question_id": "D018",
+      "question": "界外球应判给哪队，最后一次触球是否故意会改变归属吗？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L15-01",
+        "L16-01",
+        "L16-04"
+      ],
+      "supported_ids": [
+        "L15-01"
+      ],
+      "unsupported_ids": [
+        "L16-01",
+        "L16-04"
+      ],
+      "note": "给出整体越边线、归最后触球者的对方，有意及意外同样处理。",
+      "raw_trace_sha256": "888d9e341407f9f77d31a5f419e2b118d0b10edb5438716fa617346c046f309c"
+    },
+    {
+      "question_id": "D019",
+      "question": "球门球进入比赛的时点是什么，是否需要离开罚球区？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "incorrect",
+      "point_mask": [
+        false,
+        false
+      ],
+      "selected_ids": [
+        "L16-04",
+        "L17-04",
+        "L08B-02"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L16-04",
+        "L17-04",
+        "L08B-02"
+      ],
+      "note": "未给出球门球的生效时点或球无须离开罚球区；把角球和坠球的材料放进了回答。",
+      "raw_trace_sha256": "f71179b727dda1a43568735da2055a456008dd0f880dec7eb937921df46cf0f8"
+    },
+    {
+      "question_id": "D020",
+      "question": "球最后被守方触及并整体越过球门线但没有得分，一般如何重启？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L17-01",
+        "L16-01",
+        "L16-02"
+      ],
+      "supported_ids": [
+        "L17-01",
+        "L16-01"
+      ],
+      "unsupported_ids": [
+        "L16-02"
+      ],
+      "note": "给出最后守方触球、越过球门线且未进球时判角球。",
+      "raw_trace_sha256": "cdf78d78fad5be9f43fdef43235fbd7f280942d8d48eee9cc028a5356a28000f"
+    },
+    {
+      "question_id": "D021",
+      "question": "对比直接接任意球和直接接界外球的越位待遇。",
+      "category": "comparison",
+      "classification_reason": "Question explicitly contrasts objects, rules or restart circumstances; Codex intent review.",
+      "necessary_points": 2,
+      "grade": "partial",
+      "point_mask": [
+        false,
+        true
+      ],
+      "selected_ids": [
+        "L11-03",
+        "L12-05",
+        "L15-03"
+      ],
+      "supported_ids": [
+        "L11-03",
+        "L15-03"
+      ],
+      "unsupported_ids": [
+        "L12-05"
+      ],
+      "note": "明确直接接界外球的越位例外，未明确说明直接接任意球仍可能越位。",
+      "raw_trace_sha256": "53c8e880925599c2884049fbbe967657d8293c324bc0fe344545bda38b9d1a37"
+    },
+    {
+      "question_id": "D022",
+      "question": "同样是被踢且明显移动，球门球和角球还须先离开各自放球区域吗？",
+      "category": "comparison",
+      "classification_reason": "Question explicitly contrasts objects, rules or restart circumstances; Codex intent review.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L16-03",
+        "L17-04",
+        "L17-05"
+      ],
+      "supported_ids": [
+        "L16-03",
+        "L17-04"
+      ],
+      "unsupported_ids": [
+        "L17-05"
+      ],
+      "note": "分别说明球门球无须离开罚球区、角球无须离开角球区。",
+      "raw_trace_sha256": "0bac780e72a25150da86fa0dae1900f582115f2e26b2effed933205cc88289c5"
+    },
+    {
+      "question_id": "D023",
+      "question": "严重犯规与暴力行为在争抢球这一条件上有何差别？",
+      "category": "comparison",
+      "classification_reason": "Question explicitly contrasts objects, rules or restart circumstances; Codex intent review.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L12-11",
+        "L12-01",
+        "L12-12"
+      ],
+      "supported_ids": [
+        "L12-12"
+      ],
+      "unsupported_ids": [
+        "L12-11",
+        "L12-01"
+      ],
+      "note": "直接比较严重犯规发生在争抢球时、暴力行为不限于争抢球。",
+      "raw_trace_sha256": "65b31c49e08e9617429db4e53225c41aae3840b5478fba349f6c87fbd355f198"
+    },
+    {
+      "question_id": "D024",
+      "question": "比赛已因犯规停止，之后受害方队员打人，原重启必然改变吗？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L09-04"
+      ],
+      "supported_ids": [
+        "L09-04"
+      ],
+      "unsupported_ids": [],
+      "note": "交代原重启通常不变、后续纪律处罚及重启前可纠正决定。",
+      "raw_trace_sha256": "305fe34f8c504c4a6c193c0a7be9a176450553721ac4887add3b07f3a7fc48df"
+    },
+    {
+      "question_id": "D025",
+      "question": "护腿板需要怎样穿戴，尺寸和适用性由谁负责？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L04-01"
+      ],
+      "supported_ids": [
+        "L04-01"
+      ],
+      "unsupported_ids": [],
+      "note": "包含适当材料、合理保护、球袜遮盖及队员的尺寸适用性责任。",
+      "raw_trace_sha256": "3cee966e50412c37e8421aba4370c1139bd8ce3f4746cabf8815ed85728d796d"
+    },
+    {
+      "question_id": "D026",
+      "question": "所谓正常补时和两个15分钟的加时赛，是同一种计时安排吗？",
+      "category": "comparison",
+      "classification_reason": "Question explicitly contrasts objects, rules or restart circumstances; Codex intent review.",
+      "necessary_points": 2,
+      "grade": "partial",
+      "point_mask": [
+        false,
+        true
+      ],
+      "selected_ids": [
+        "L10-02"
+      ],
+      "supported_ids": [
+        "L10-02"
+      ],
+      "unsupported_ids": [],
+      "note": "给出按赛事规程进行的两个15分钟半场，没有说明正常补时的目的和裁判决定权。",
+      "raw_trace_sha256": "0e59d3564202fa8a053e53a580ffbb63c2e9a4e2428b8d6227a86a20d906d357"
+    },
+    {
+      "question_id": "D027",
+      "question": "球从门框或角旗反弹回场内，是否必然停止比赛？",
+      "category": "single_fact",
+      "classification_reason": "One necessary point in the frozen rubric; not determined by answer grade.",
+      "necessary_points": 1,
+      "grade": "correct",
+      "point_mask": [
+        true
+      ],
+      "selected_ids": [
+        "L09-02",
+        "L08B-04",
+        "L14-04"
+      ],
+      "supported_ids": [
+        "L09-02",
+        "L14-04"
+      ],
+      "unsupported_ids": [
+        "L08B-04"
+      ],
+      "note": "说明球从门框或角旗反弹回场内仍在比赛中。",
+      "raw_trace_sha256": "960eec134561aa664104293296589fe00f536c025d66d573cfd5bfe3d74c5bea"
+    },
+    {
+      "question_id": "D028",
+      "question": "裁判员记录比赛和提交报告时，资料列出哪些内容？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L05-01"
+      ],
+      "supported_ids": [
+        "L05-01"
+      ],
+      "unsupported_ids": [],
+      "note": "给出计时、记录及提交报告，包含纪律处罚与赛前赛中赛后有关事件。",
+      "raw_trace_sha256": "fecd3d2cb629c3c109def05c55de60902226033200bb967d9febf04c94fb2003"
+    },
+    {
+      "question_id": "D029",
+      "question": "掷币获胜者选择先开球时，另一队可以选择什么？下半场谁先开球？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L08A-01"
+      ],
+      "supported_ids": [
+        "L08A-01"
+      ],
+      "unsupported_ids": [],
+      "note": "明确另一队选择进攻方向，并在下半场由上半场未先开球的一方开球。",
+      "raw_trace_sha256": "e32dfd5933360dbedeac4c480b84a4095ae45731bf7c746c8dd81367d78cde99"
+    },
+    {
+      "question_id": "D030",
+      "question": "守门员被红牌罚下后是否必须用替补守门员上场，球队人数能补回吗？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L12-10",
+        "L03-01",
+        "L12-12"
+      ],
+      "supported_ids": [
+        "L12-10",
+        "L03-01"
+      ],
+      "unsupported_ids": [
+        "L12-12"
+      ],
+      "note": "三项齐全：必须有人守门，可由场上队员承担，且红牌人数缺额不能补回。",
+      "raw_trace_sha256": "1c26b031cdeb56d049c07cb7d00c8ae1e322eb1fa384279c50b5159d8330d6b9"
+    },
+    {
+      "question_id": "D031",
+      "question": "球的面片可以用哪些连接方式，球胆常用什么材料？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L02-01"
+      ],
+      "supported_ids": [
+        "L02-01"
+      ],
+      "unsupported_ids": [],
+      "note": "列出机缝、手缝、热黏合连接，以及乳胶或丁基橡胶球胆。",
+      "raw_trace_sha256": "88d785aecce0d43d570d867acc687963cee05fa674ffe758d94da4eae73f0c2a"
+    },
+    {
+      "question_id": "D032",
+      "question": "资料为什么不能把固定换5人和加时额外名额当成所有赛事统一规则？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "冻结资料给出赛事及版本适用条件，系统拒答。",
+      "raw_trace_sha256": "7ebf71cae9658b771258f785bd61850ee6ae4fe28f9b891782eee614dcea437d"
+    },
+    {
+      "question_id": "D033",
+      "question": "今晚皇马比赛现在几比几？",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "固定语料不提供即时赛果，系统拒答。",
+      "raw_trace_sha256": "7ec574a1953355bb2e163caf801e2781c4dfaa798573082f89ed51ee7199753b"
+    },
+    {
+      "question_id": "D034",
+      "question": "这批资料能权威确认2026/27赛季所有比赛都适用的球门球5秒规则吗？",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "固定语料无法核验指定赛季的普适规则，系统拒答。",
+      "raw_trace_sha256": "4f7fa139cfef4e0425afc4d379f092040f0409a6acb07cf03c4bc7ab941fe9e3"
+    },
+    {
+      "question_id": "D035",
+      "question": "我踢球后膝盖肿了，应吃多少药？",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "个人医疗与剂量超出足球规则知识库范围。",
+      "raw_trace_sha256": "19730eea74391b04248d6ed754f221e48f649d8e54bd73ac0d70ed0a4d65b479"
+    },
+    {
+      "question_id": "D036",
+      "question": "某联赛队员累计三张黄牌一定停赛几场？没有给联赛和赛季。",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "Compare expected answerability; refusal reason separate",
+      "raw_trace_sha256": "a243a0cefedfe2584bcf4e1a83ca59fedc2b66ea0343438ef2ff19c116f55f82"
+    },
+    {
+      "question_id": "D037",
+      "question": "请给出某次争议手球判罚的VAR视频逐帧坐标。",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "固定语料不含指定比赛的VAR逐帧坐标。",
+      "raw_trace_sha256": "774db20be85adbed5ccaef844d06e18c08cf8b4314439ff74c80e53a467667d0"
+    },
+    {
+      "question_id": "D038",
+      "question": "未指明的某项青少年杯赛，本赛季球门宽和高的官方精确数值是多少？",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "赛事未指明，且知识库不能核验指定赛季的官方精确尺寸。",
+      "raw_trace_sha256": "dfbb5e3e8d66a09d92e787e32bcdff1d6ca3fbae8b20feb0199303ec207d8253"
+    },
+    {
+      "question_id": "D039",
+      "question": "哪款足球鞋最近打折，价格最低？",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "固定语料不提供即时价格与折扣信息。",
+      "raw_trace_sha256": "0929dad31c370a5eb4fa2a33adcd66bcccfe392447fbc47c60b96bb6a7af2b9c"
+    },
+    {
+      "question_id": "D040",
+      "question": "2026/27官方点球意外双触球在所有进球与未进球情形都一律重罚吗？",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "冻结语料不能核验指定赛季的官方双触球规则。",
+      "raw_trace_sha256": "52d1e39ee25248dfa80b87bbffca64c2661920308c82517171d7a1c359b02c43"
+    },
+    {
+      "question_id": "T001",
+      "question": "根据本地资料，标准成人足球充气压力的千帕范围是多少？",
+      "category": "single_fact",
+      "classification_reason": "One necessary point in the frozen rubric; not determined by answer grade.",
+      "necessary_points": 1,
+      "grade": "false_refusal",
+      "point_mask": [
+        false
+      ],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "标准球压范围在固定语料中，系统返回证据不足。",
+      "raw_trace_sha256": "26a70068582122b90a4595d76a1babcbda6373bced16d58e6b2be9bd7801ee5a"
+    },
+    {
+      "question_id": "T002",
+      "question": "一条场地边线的宽度能超过12厘米吗？四角还要设置什么？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L01-02",
+        "L17-03",
+        "L01-07"
+      ],
+      "supported_ids": [
+        "L01-02"
+      ],
+      "unsupported_ids": [
+        "L17-03",
+        "L01-07"
+      ],
+      "note": "包含标线宽度一致、不能超过12厘米以及四角角旗；另两段未直接支持这两个问题。",
+      "raw_trace_sha256": "3eba13d516469ca1a734f141e9d7de0d3a6d481950d0867b5a1620d1b05b1870"
+    },
+    {
+      "question_id": "T003",
+      "question": "发生在罚球区边界线上的相应犯规，应算区内还是区外？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L01-01",
+        "L14-02",
+        "L16-03"
+      ],
+      "supported_ids": [
+        "L01-01"
+      ],
+      "unsupported_ids": [
+        "L14-02",
+        "L16-03"
+      ],
+      "note": "明确界线属于其划定区域，罚球区线上的相应犯规在区内。",
+      "raw_trace_sha256": "a99d1173b43a9db4b0ee2e5ce780223eedde07556ebddb9a2ce802cbc333d557"
+    },
+    {
+      "question_id": "T004",
+      "question": "资料中的罚球弧以哪里为圆心，它限制哪些人的提前进入？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "partial",
+      "point_mask": [
+        false,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L14-02"
+      ],
+      "supported_ids": [
+        "L14-02"
+      ],
+      "unsupported_ids": [],
+      "note": "说明执行前其他队员的位置限制，未明确罚球弧以罚球点为圆心。",
+      "raw_trace_sha256": "8b3618b225c3e34f43609ef69f68e359974dd9cbf2d5b793dbdba4277bba791a"
+    },
+    {
+      "question_id": "T005",
+      "question": "足球竞赛规则本身是否强制球队必须安排后卫、中场等固定战术位置？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L03-01"
+      ],
+      "supported_ids": [
+        "L03-01"
+      ],
+      "unsupported_ids": [],
+      "note": "规则不强制战术位置划分，教练可安排位置。",
+      "raw_trace_sha256": "b6beccd644b08feb8c13971b4618bd81f27617bf24e1399c0723f51cbc7d8a61"
+    },
+    {
+      "question_id": "T006",
+      "question": "资料列出的VAR可复核事件中，是否包含身份误认？另外三类是什么？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 4,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L03-04"
+      ],
+      "supported_ids": [
+        "L03-04"
+      ],
+      "unsupported_ids": [],
+      "note": "列出身份误认、进球与此前违例、直接红牌、点球判罚四类。",
+      "raw_trace_sha256": "0764951ab42aa14312fdf1f138e7e6290ba3cfbca2050f26a796cb037da1d4b3"
+    },
+    {
+      "question_id": "T007",
+      "question": "守门员能佩戴手套，其他队员是否也被允许戴手套？",
+      "category": "comparison",
+      "classification_reason": "Question explicitly contrasts objects, rules or restart circumstances; Codex intent review.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L04-05",
+        "L03-02",
+        "L11-03"
+      ],
+      "supported_ids": [
+        "L04-05"
+      ],
+      "unsupported_ids": [
+        "L03-02",
+        "L11-03"
+      ],
+      "note": "说明所有队员可戴手套、守门员通常使用专用手套；另两段未直接支持手套许可。",
+      "raw_trace_sha256": "c161d00102531423abca9955f68f1f27ac1d97f26746c9661d849eba6712f79f"
+    },
+    {
+      "question_id": "T008",
+      "question": "两队球衣颜色需要与谁区分？客场球衣是否只能在客场穿？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L04-02"
+      ],
+      "supported_ids": [
+        "L04-02"
+      ],
+      "unsupported_ids": [],
+      "note": "说明两队颜色相互区分且与裁判和助理裁判区分，客场球衣也可在主场穿。",
+      "raw_trace_sha256": "e7dfc67bbb57adfb329916748e644afd349cebcfdeac0dc6c0316e9b0a3b9f45"
+    },
+    {
+      "question_id": "T009",
+      "question": "队长通常佩戴什么标志，常见位置在哪里？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "队长袖标和常见左臂位置可答，系统拒答。",
+      "raw_trace_sha256": "06aa5c95fdb9b373ff20cb72d0b7429e2342b6e7807b73a7272a84dbd38c94e2"
+    },
+    {
+      "question_id": "T010",
+      "question": "球队官员违例却无法确定具体是谁，资料规定处罚哪位教练？医疗官员有什么留场例外？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L05-04",
+        "L12-15",
+        "L12-16"
+      ],
+      "supported_ids": [
+        "L05-04"
+      ],
+      "unsupported_ids": [
+        "L12-15",
+        "L12-16"
+      ],
+      "note": "包含技术区域最高级别教练的责任及无替代医疗人员时的留场例外。",
+      "raw_trace_sha256": "a2d4724d81c2ffa57dde3bf061caac0e90207a1146e861b659c9613a683bbd12"
+    },
+    {
+      "question_id": "T011",
+      "question": "裁判同时面对多项违例，要结合哪些方面选择处罚较严重的一项？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L05-03"
+      ],
+      "supported_ids": [
+        "L05-03"
+      ],
+      "unsupported_ids": [],
+      "note": "列出处罚、重启方式、接触严重程度和战术影响。",
+      "raw_trace_sha256": "4cb3ea6dd75b3f2fc5d8e2c599da6f15844d04988210d4bae279d6df8f75f7ea"
+    },
+    {
+      "question_id": "T012",
+      "question": "执法团队中谁作最终决定？观察角度更清楚的官员应怎样做？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L06-01",
+        "L03-04",
+        "L06-06"
+      ],
+      "supported_ids": [
+        "L06-01",
+        "L03-04",
+        "L06-06"
+      ],
+      "unsupported_ids": [],
+      "note": "明确主裁判最终决定，其他官员提供更清楚的观察意见；附加助理的报告是这一协作的具体例子。",
+      "raw_trace_sha256": "187810b5550751b2cf19df017cc9dbbbd7f86690d8dc85d0f7665f96e6dacd42"
+    },
+    {
+      "question_id": "T013",
+      "question": "第四官员在半场末通常公布什么信息，还负责哪类换人辅助？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L06-04",
+        "L07-01",
+        "L06-02"
+      ],
+      "supported_ids": [
+        "L06-04",
+        "L07-01"
+      ],
+      "unsupported_ids": [
+        "L06-02"
+      ],
+      "note": "包含补时公布和号码牌或电子屏的换人辅助。",
+      "raw_trace_sha256": "e58223718335a04b4dbd56fa177877ecc46d0591858dbd889ea2215f521aac3a"
+    },
+    {
+      "question_id": "T014",
+      "question": "站在球门线附近辅助观察罚球区的是哪类官员？是否每项赛事都必须配备？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "incorrect",
+      "point_mask": [
+        false,
+        false
+      ],
+      "selected_ids": [
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "note": "选中的段落未解释球门线附近附加助理裁判的职责及其非强制配备性质。",
+      "raw_trace_sha256": "e6f018003868bf564a4235f7d2a360adaafcb5d924804a1849db3ba569f3a0c1"
+    },
+    {
+      "question_id": "T015",
+      "question": "资料所举降温休息安排，能否直接推广成所有赛事统一的温度和时点标准？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "可依据来源的限定背景作答，系统返回证据不足。",
+      "raw_trace_sha256": "d64113737f24231b0836a4475f2af47410d809c83f977f8f504f5e5d5fdfb59e"
+    },
+    {
+      "question_id": "T016",
+      "question": "半场末公布的补时是否还可能延长？半场结束前需执行点球怎么办？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L07-01",
+        "L06-04",
+        "L14-03"
+      ],
+      "supported_ids": [
+        "L07-01"
+      ],
+      "unsupported_ids": [
+        "L06-04",
+        "L14-03"
+      ],
+      "note": "明确补时可继续延长，且半场须延长到点球执行或重罚完成。",
+      "raw_trace_sha256": "a1f7ea8376063dac8a5f67c44aef5f3680a211cd0380e71a12442d1f4ebed805"
+    },
+    {
+      "question_id": "T017",
+      "question": "点球决胜罚中次数是否算入正常进球数？与加时赛进球有什么不同？",
+      "category": "comparison",
+      "classification_reason": "Question explicitly contrasts objects, rules or restart circumstances; Codex intent review.",
+      "necessary_points": 2,
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "固定语料可区分加时进球与点球决胜次数，系统拒答。",
+      "raw_trace_sha256": "f9849c0e824b8d1d7d78759b62bc5b533c587945c6b8977a202aff880a1ce39d"
+    },
+    {
+      "question_id": "T018",
+      "question": "开球者在他人触球前再次碰球而未构成手球时，应如何重启？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "incorrect",
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "selected_ids": [
+        "L17-05"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L17-05"
+      ],
+      "note": "引用的是角球二次触球规定，未按题设的开球情形提供相应规则证据。",
+      "raw_trace_sha256": "022cfb1d2883444207e9e004760a9c505682918e2f8a7ba019c9ebc772f84cc9"
+    },
+    {
+      "question_id": "T019",
+      "question": "依资料所述坠球规则，最少多少名不同队员碰球后才可能进球？首次触球者能连续触球吗？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L08B-03",
+        "L17-06",
+        "L17-04"
+      ],
+      "supported_ids": [
+        "L08B-03",
+        "L17-06"
+      ],
+      "unsupported_ids": [
+        "L17-04"
+      ],
+      "note": "给出至少两名不同队员及首次触球队员可继续触球，并保留本地资料边界。",
+      "raw_trace_sha256": "0dad6fbd4c2acf2e5d4c82972bdc012c4ff341b33b3efdf548e9a855fc5831b9"
+    },
+    {
+      "question_id": "T020",
+      "question": "资料以2020年为背景列出的坠球事件，有哪些外部干扰例子？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L08B-04"
+      ],
+      "supported_ids": [
+        "L08B-04"
+      ],
+      "unsupported_ids": [],
+      "note": "明确2020年背景，并列出外部人员、额外物体或动物及观众哨声干扰。",
+      "raw_trace_sha256": "531738bd552257fada1eb896d96aa07ed22642ab02cee8e1bb4864e515eebdf1"
+    },
+    {
+      "question_id": "T021",
+      "question": "球在空中整体飞越边线但还没落地，是否仍能在界外空中把它救回继续比赛？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L09-02",
+        "L15-01",
+        "L16-01"
+      ],
+      "supported_ids": [
+        "L09-02",
+        "L15-01"
+      ],
+      "unsupported_ids": [
+        "L16-01"
+      ],
+      "note": "明确整体在空中越过边线即出界，无须落地。",
+      "raw_trace_sha256": "5c0a9132400d76306d1b2f4eeb93b36b82efd1392402d6d6e3e33ce3175c2022"
+    },
+    {
+      "question_id": "T022",
+      "question": "请按出界位置与最后触球队，区分界外球、球门球和角球的通常归属。",
+      "category": "comparison",
+      "classification_reason": "Question explicitly contrasts objects, rules or restart circumstances; Codex intent review.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L15-01",
+        "L16-01",
+        "L17-06"
+      ],
+      "supported_ids": [
+        "L15-01",
+        "L16-01"
+      ],
+      "unsupported_ids": [
+        "L17-06"
+      ],
+      "note": "界外球和球门球原段合计覆盖三类通常归属；补充的乌龙重启段与题设不同。",
+      "raw_trace_sha256": "0c6d66de6f63eab6fc74cb3f0fa462eb84ca493fd2c225dee5ce12f220af9c7c"
+    },
+    {
+      "question_id": "T023",
+      "question": "所有杯赛战平后都必须先踢加时才能点球决胜吗？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "partial",
+      "point_mask": [
+        true,
+        false,
+        true
+      ],
+      "selected_ids": [
+        "L07-03"
+      ],
+      "supported_ids": [
+        "L07-03"
+      ],
+      "unsupported_ids": [],
+      "note": "说明规程和客场进球制度的适用限制，没有明确回答有些杯赛可省略加时直接点球。",
+      "raw_trace_sha256": "bac447b9d1a8357f9986d0704119190b7c8b5c7f51b65b891630da441a8f4b05"
+    },
+    {
+      "question_id": "T024",
+      "question": "示意越位时，助理裁判先如何举旗，横向平举通常表示哪个区域？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L11-06"
+      ],
+      "supported_ids": [
+        "L11-06"
+      ],
+      "unsupported_ids": [],
+      "note": "先竖直举旗，停赛后平举对应场地中间。",
+      "raw_trace_sha256": "e4d1f370d14479fd4e68a2dbab95745a5ce0009cc165f3ef0495dbde0e7c67e0"
+    },
+    {
+      "question_id": "T025",
+      "question": "半自动越位系统使用哪些技术帮助复核，是否意味着取消裁判判断？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L11-09",
+        "L03-04",
+        "L12-08"
+      ],
+      "supported_ids": [
+        "L11-09",
+        "L03-04"
+      ],
+      "unsupported_ids": [
+        "L12-08"
+      ],
+      "note": "说明高速摄像机、三维回放和辅助裁判的性质；纪律处罚段未支持该问题。",
+      "raw_trace_sha256": "9745c1b475b18b05d011ff361703b22f163beaed48baf1ef4d2366af251a1356"
+    },
+    {
+      "question_id": "T026",
+      "question": "只说发生技术性违例，能否直接把它等同于身体犯规？资料怎样区分不当行为？",
+      "category": "comparison",
+      "classification_reason": "Question explicitly contrasts objects, rules or restart circumstances; Codex intent review.",
+      "necessary_points": 3,
+      "grade": "partial",
+      "point_mask": [
+        false,
+        false,
+        true
+      ],
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-15"
+      ],
+      "supported_ids": [
+        "L12-15"
+      ],
+      "unsupported_ids": [
+        "L12-01",
+        "L12-02"
+      ],
+      "note": "说明不当行为可警告或罚令出场，未明确区分一般技术性违例与身体犯规。",
+      "raw_trace_sha256": "e9c134d3507ca84958194b36c1b2cdb386ace7a4e301746a7456dec2df64b45f"
+    },
+    {
+      "question_id": "T027",
+      "question": "同一场比赛拿到第二张黄牌时，牌示顺序和结果是什么？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L12-07",
+        "L12-11"
+      ],
+      "supported_ids": [
+        "L12-07",
+        "L12-11"
+      ],
+      "unsupported_ids": [],
+      "note": "先再次出示黄牌，再出示红牌罚下；红牌类别段补充了第二次警告的结果。",
+      "raw_trace_sha256": "e9d95c7552e564a725e5cd5afe0c4dbea7beba634a21c2d1dc26a8dd0c313709"
+    },
+    {
+      "question_id": "T028",
+      "question": "庆祝进球时脱下球衣或用它蒙住头脸，资料给出的纪律处理是什么？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "incorrect",
+      "point_mask": [
+        false,
+        false
+      ],
+      "selected_ids": [
+        "L12-02"
+      ],
+      "supported_ids": [],
+      "unsupported_ids": [
+        "L12-02"
+      ],
+      "note": "选中手球规则，没有回答脱衣庆祝的黄牌处理。",
+      "raw_trace_sha256": "369a52ec4ff8ac16dc52a33f2e0fd36cbd3dd5128427f7c88ac1d94a3664e081"
+    },
+    {
+      "question_id": "T029",
+      "question": "裁判示意间接任意球时手臂是什么姿势？直接任意球又怎样示意？",
+      "category": "comparison",
+      "classification_reason": "Question explicitly contrasts objects, rules or restart circumstances; Codex intent review.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L13-02",
+        "L16-02",
+        "L13-05"
+      ],
+      "supported_ids": [
+        "L13-02",
+        "L13-05"
+      ],
+      "unsupported_ids": [
+        "L16-02"
+      ],
+      "note": "包含间接任意球单臂过头与直接任意球伸臂指方向；保持举臂的段落补充间接球信号。",
+      "raw_trace_sha256": "b27a7bc6d52155e1ca515d94fbe4351e7e68b4ed1afa2274ec765c651ee56c6e"
+    },
+    {
+      "question_id": "T030",
+      "question": "主罚方在己方球门区获任意球，与攻方在对手球门区获间接任意球的执行点有何差别？",
+      "category": "comparison",
+      "classification_reason": "Question explicitly contrasts objects, rules or restart circumstances; Codex intent review.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L01-05",
+        "L13-01",
+        "L13-05"
+      ],
+      "supported_ids": [
+        "L01-05"
+      ],
+      "unsupported_ids": [
+        "L13-01",
+        "L13-05"
+      ],
+      "note": "完整给出己方球门区内任一点与对方球门区线上最近点的差别。",
+      "raw_trace_sha256": "fdd1db3d85cbb847a90bf31148d52321bd0e80a760e166a7f2cdfba2dab89d62"
+    },
+    {
+      "question_id": "T031",
+      "question": "防守人墙有至少三人时，进攻队员在球入赛前需要离人墙多远？违例怎样处理？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L13-07"
+      ],
+      "supported_ids": [
+        "L13-07"
+      ],
+      "unsupported_ids": [],
+      "note": "至少3人人墙、至少1米及违例判守方间接任意球齐全。",
+      "raw_trace_sha256": "0926b3cca737ba617c4af5e4594aac14b0be2b25729be0fffd07c0cb7269582d"
+    },
+    {
+      "question_id": "T032",
+      "question": "队友完成点球助跑后还做踢球假动作，资料说明的重启和纪律后果是什么？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 4,
+      "grade": "partial",
+      "point_mask": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "selected_ids": [
+        "L14-05"
+      ],
+      "supported_ids": [
+        "L14-05"
+      ],
+      "unsupported_ids": [],
+      "note": "说明完成助跑后假动作的间接任意球与警告后果，未区分仍允许的助跑中假动作。",
+      "raw_trace_sha256": "2f1ad275f7d7ef7b4f70ec0bf8898916517a2fde903c158a6a0efcb728c43977"
+    },
+    {
+      "question_id": "T033",
+      "question": "点球只碰门柱弹回且无人再触球，主罚者能马上补射吗？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L14-03"
+      ],
+      "supported_ids": [
+        "L14-03"
+      ],
+      "unsupported_ids": [],
+      "note": "明确只碰门柱且无人再碰时，主罚者不能直接补射。",
+      "raw_trace_sha256": "cfb0acbea32ebb418d1c16f9db0b972f28af0440e7ebf37bd13edac9bcb73c3a"
+    },
+    {
+      "question_id": "T034",
+      "question": "罚球点球与点球决胜在本场计分中有何区别？",
+      "category": "comparison",
+      "classification_reason": "Question explicitly contrasts objects, rules or restart circumstances; Codex intent review.",
+      "necessary_points": 3,
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "资料中有罚球点球与点球决胜的性质及计分区别，系统拒答。",
+      "raw_trace_sha256": "3de43a3f9fd5161f43b87b82d6489dcc585bc5d4dc988513e5d97fffa2c33b85"
+    },
+    {
+      "question_id": "T035",
+      "question": "掷界外球时脚、身体朝向和手部动作要满足哪些条件？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L15-02"
+      ],
+      "supported_ids": [
+        "L15-02"
+      ],
+      "unsupported_ids": [],
+      "note": "身体朝向、双脚位置及双手从头后经头顶掷出的动作齐全。",
+      "raw_trace_sha256": "6206882cd9de42a73a86adcf412d534d5f7fc48b35c17ac54cf6393cd2861d77"
+    },
+    {
+      "question_id": "T036",
+      "question": "掷界外球动作正确但球入场前先碰地，应换给对方还是原队重掷？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L15-04",
+        "L15-01",
+        "L15-02"
+      ],
+      "supported_ids": [
+        "L15-04"
+      ],
+      "unsupported_ids": [
+        "L15-01",
+        "L15-02"
+      ],
+      "note": "明确动作正确但球入场前碰地时，由原队原处重新掷球。",
+      "raw_trace_sha256": "b19e7a37c4dd591c22f8949fe96bea8f8e17ff935256dd6d33fd16b7238954d2"
+    },
+    {
+      "question_id": "T037",
+      "question": "球门球主罚者故意第二次用手触球，若其不是守门员且在本方罚球区内，可能如何判罚？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L16-04"
+      ],
+      "supported_ids": [
+        "L16-04"
+      ],
+      "unsupported_ids": [],
+      "note": "明确二次触球、应处罚手球及非守门员在本方罚球区内可能点球的条件。",
+      "raw_trace_sha256": "d442ec398bb09828651711cd5769f3b201ad148ae8d66d58291e4d7ff9c6d6cb"
+    },
+    {
+      "question_id": "T038",
+      "question": "当一种重启不允许直接攻入对方球门时，资料列举了哪几种直接入门后判球门球的例子？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 4,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L16-02",
+        "L17-01",
+        "L16-03"
+      ],
+      "supported_ids": [
+        "L16-02"
+      ],
+      "unsupported_ids": [
+        "L17-01",
+        "L16-03"
+      ],
+      "note": "四种直接进入对方球门后判球门球的例子齐全；其他两段谈的是不同重启情形。",
+      "raw_trace_sha256": "617d2e8e357ea7ddadb1f8591bd2f8028ad50ab4b08e40e0c473e8adb23f0c77"
+    },
+    {
+      "question_id": "T039",
+      "question": "角球放在哪个区域，对方在球入赛前至少距该区域多少米？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 2,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L17-03",
+        "L01-07"
+      ],
+      "supported_ids": [
+        "L17-03"
+      ],
+      "unsupported_ids": [
+        "L01-07"
+      ],
+      "note": "明确静止放在相应角球区，并给出至少9.15米；近似英制换算段不足以支持精确距离。",
+      "raw_trace_sha256": "8fe78fe3c558c279b30278a7303d94fdc65c10b3e4d2e66c9aad545e895fcc97"
+    },
+    {
+      "question_id": "T040",
+      "question": "角球由主罚者在其他队员碰球前再次用脚触球，怎样重启？",
+      "category": "multiple_requirements",
+      "classification_reason": "At least two frozen necessary points, excluding reviewed comparisons.",
+      "necessary_points": 3,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "selected_ids": [
+        "L17-05"
+      ],
+      "supported_ids": [
+        "L17-05"
+      ],
+      "unsupported_ids": [],
+      "note": "给出其他队员触球前再次触球，按违例地点判守方间接任意球。",
+      "raw_trace_sha256": "80a5635fbe2dd990dc7974ade80f041a2b6491dbae0c0e6a7febe5f054760972"
+    },
+    {
+      "question_id": "T041",
+      "question": "今年世界杯决赛冠军是哪队，请给最新赛果。",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "固定规则语料不提供最新赛果。",
+      "raw_trace_sha256": "5cecaa71b326de961b6b99c11f826ad76e4d1ea36a0c4358cd6881bd1945f402"
+    },
+    {
+      "question_id": "T042",
+      "question": "请确认2026/27赛季某个未指明联赛是否仍使用客场进球制度，并给确定晋级依据。",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "联赛未指明且要求核验指定赛季制度，系统拒答。",
+      "raw_trace_sha256": "4790e131cd2ca97e1b8d7977964ef4eefa2e59f29c69a86ebe3dc067220ef642"
+    },
+    {
+      "question_id": "T043",
+      "question": "请提供IFAB官方中文规则全文逐字认证，并确认这份翻译已经裁判专家审校。",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "语料不能证明官方逐字认证或专家审校，系统拒答。",
+      "raw_trace_sha256": "f6223c70059f554e90d8c494e051734dbe6b0c189a9082c6f5b61521cb4407ae"
+    },
+    {
+      "question_id": "T044",
+      "question": "某职业教练被红牌后一定罚款多少人民币？",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "未指定赛事与处罚规定，固定语料没有确定罚款金额。",
+      "raw_trace_sha256": "0e50f49ec1cde8b6e32aec8cf60d6f5556354c1c114c6eda2ae9e72c260ddbe1"
+    },
+    {
+      "question_id": "T045",
+      "question": "2026/27赛季所有足球比赛守门员持球超8秒都无例外给角球吗？",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "冻结资料不能核验指定赛季所有赛事的无例外持球规则。",
+      "raw_trace_sha256": "e9c5392f7b09bcf18a4acdf7293656b891f9c98fc0321f497cb0063e22c62764"
+    },
+    {
+      "question_id": "T046",
+      "question": "明晚某队首发名单和球员伤停情况是什么？",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "固定规则资料不提供明日首发和即时伤停。",
+      "raw_trace_sha256": "1e7d13790a9dc754caf1603497e6759ee8ce1b384d5912089e77f21d146ad9ef"
+    },
+    {
+      "question_id": "T047",
+      "question": "请计算我刚才那次铲球的受伤概率，并给医学诊断。",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "个人受伤概率和医学诊断超出规则知识库范围。",
+      "raw_trace_sha256": "7aa3816a5a995cb925e9ec6c9d753ff4e010c3a496188392a5c63c6bddeed796"
+    },
+    {
+      "question_id": "T048",
+      "question": "这份资料是否足以确认2026年新增的每一项规则已经在全部赛事生效？",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "语料不能确认指定年份新增规则在所有赛事中的生效情况。",
+      "raw_trace_sha256": "23adb8eed49ab919d4e94bc9ccc80234da9f8ed9d699e1637189460a45fa520c"
+    },
+    {
+      "question_id": "T049",
+      "question": "请预测下一场比赛会有几张红牌，给出百分百保证。",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "固定规则资料不能保证预测下一场比赛红牌数量。",
+      "raw_trace_sha256": "d9326e3d0857c7d1ae3f5c31989c384d984d4afb2f8acaeb03b319eb4e4ce247"
+    },
+    {
+      "question_id": "T050",
+      "question": "某场比赛使用哪家公司的哪一款VAR服务器，设备价格是多少？",
+      "category": "must_refuse",
+      "classification_reason": "Frozen expected-unanswerable label takes priority.",
+      "necessary_points": 0,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "selected_ids": [],
+      "supported_ids": [],
+      "unsupported_ids": [],
+      "note": "固定语料不含具体比赛VAR硬件型号和报价。",
+      "raw_trace_sha256": "e825322399fda98ee4c32903e774ed1452e73a4a96376f62077cc8d9bc1a5c46"
+    }
+  ],
+  "new_model_calls": 0,
+  "holdout_used": false,
+  "method": "Mutually exclusive categories: frozen refusal label, reviewed explicit comparison, one frozen necessary point, remaining multiple requirements. Reuses frozen point/citation judgments; not new human/expert review.",
+  "limitations": [
+    "Historical per-question single observations cannot establish stability guarantees.",
+    "The one-point category has only three questions; do not generalize its fraction to all simple facts.",
+    "Citation support counts support of frozen necessary points, distinct from verbatim/source integrity.",
+    "No rerun of the 90; new browser/load observations must retain separate denominators."
+  ]
+}

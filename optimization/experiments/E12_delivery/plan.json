@@ -1,0 +1,24 @@
+{
+  "baseline": "5986781 + Prompt A + pinned qwen2.5:3b",
+  "E11_disposition": "Close local 7B retry route: current resident environment did not meet startup condition; 7B QA unknown. Preserve D003 6194-byte fixture for a future suitable environment.",
+  "historical_quality": "Reuse frozen D036 live90-final judgments (51/72 full,18/18 refuse,90/90 technical,72/118 citation support); no 90-question rerun.",
+  "quality_categories": "Mutually exclusive: frozen must-refuse -> explicit comparison reviewed by intent -> one frozen necessary point -> remaining multiple requirements. Include denominators and per-question ledger; historical single observations are not reliability promises.",
+  "normal_entry": "Unmodified 7867 UI and default call_worker/query_task13_audit engine. Only isolated SQLite chat profile and observational lock/function clocks; preserve original lock and worker behavior.",
+  "functional_browser": ["D036 first turn missing parameters: zero retrieval and answer attempts", "ordinary answer with source panel", "prior answer source presentation", "topic switch", "new independent conversation has no prior evidence", "explicit competition/season followed by missing-parameter follow-up: inherited query enters original evidence path; grade unsupported season-specific answers separately"],
+  "load_requests": [
+    {"id":"D004","question":"球队最多上场多少人，其中哪个位置必须有一人？","support_per_point":[["L03-01"],["L03-01","L12-10"]]},
+    {"id":"D008","question":"标准成人比赛每半场多长？球出界时比赛时钟是否暂停？","support_per_point":[["L07-01"],["L07-01"]]},
+    {"id":"D027","question":"球从门框或角旗反弹回场内，是否必然停止比赛？","support_per_point":[["L09-02","L14-04"]]},
+    {"id":"D031","question":"球的面片可以用哪些连接方式，球胆常用什么材料？","support_per_point":[["L02-01"],["L02-01"]]}
+  ],
+  "load_schedule": {"concurrency":[1,2,4],"observations_per_level":4,"waves":"same ordered four questions partitioned into waves of N; one request per new independent browser conversation","paired_retests":0},
+  "additional_single_fact_observations": {"id":"D001","question":"人工草坪的颜色有什么限制？","repetitions":2,"scope":"Two fresh independent browser conversations; observational quality check, no prompt tuning or retries."},
+  "operational_acceptance": {"every_request_wall_seconds_max":60,"failures":0,"timeouts":0,"system_available_GiB_min":1,"client_observation_timeout_seconds":120,"worker_timeout_seconds_unchanged":420},
+  "capacity_claim": "Highest tested simultaneous-submission level satisfying all four observations and resource/technical gates; distinct from parallel model execution and not a sustained-load SLA. Report each latency and max, queue lock wait and frontend dispatch separately; no population P95 claim.",
+  "resource_scope": "Default web process, its actual subprocess worker retrieval dependencies and 3B service; no extra persistent retriever sidecar. Real retrieval runs. Include browser/client overhead in system memory.",
+  "deployment": {"ollama_version":"0.40.16","cpu_threads":8,"num_gpu":0,"num_ctx":8192,"max_loaded_models":1,"parallel_requests":1,"model_cache":"E10 isolated pinned 3B and BGE; never request 7B","model_reload_cost":"Included in normal end-to-end time; BGE and Qwen alternate under the one-loaded-model setting."},
+  "observability": "Pass-through call_worker wrapper and delegated original RLock in experiment UI process. Measure actual lock acquisition wait; submit-to-worker delay includes frontend/Gradio dispatch and is labeled accordingly. Original production sources unchanged.",
+  "emergency_stop": "Inherited monitor: <0.35 GiB available for three 0.5-second samples stops only owned model process tree; finish/record affected requests and stop higher levels.",
+  "holdout40_used": false,
+  "new_quality_tuning": false
+}
