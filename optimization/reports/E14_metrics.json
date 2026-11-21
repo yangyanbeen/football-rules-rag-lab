@@ -1,0 +1,1575 @@
+{
+  "baseline": {
+    "run": ".runtime/phase2/e14-baseline02",
+    "producer_commit": "3ee17ad54bb6dfe7b37133c12dd388a575fbeabc",
+    "status": "COMPLETED",
+    "observations": 10,
+    "rows": [
+      {
+        "entry": "worker",
+        "name": "D036_first",
+        "error": null,
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 11.529300500002137,
+        "before_available_GiB": 5.579509735107422,
+        "after_2s_available_GiB": 5.597957611083984,
+        "available_min_GiB": 3.4044570922851562,
+        "worker_peak_RSS_GiB": 2.1510581970214844,
+        "role_peaks": {
+          "worker": 2.1510581970214844,
+          "ui": 0.4055595397949219,
+          "ollama": 0.054759979248046875,
+          "chrome": 0.0,
+          "observer": 0.0332489013671875
+        },
+        "low_time_ns": 1795262834022901100,
+        "low_latest_worker_stage": "reranker_construction_start",
+        "low_models": [],
+        "stage_seconds": {
+          "module_import": 0.17994480000197655,
+          "source_environment_validation": 1.2712925000014366,
+          "engine_module_import": 0.01364580000154092,
+          "engine_construction": 6.7346455000006245,
+          "retrieval_import": 0.06925110000156565,
+          "bm25_construction": 1.5661835000028077,
+          "dense_construction": 1.6809241999981168,
+          "reranker_construction": 2.8903768000018317,
+          "chat_identity_validation": 0.0886635999995633,
+          "answer": 0.044004600000334904,
+          "result_validation": 1.0455341000015324,
+          "engine_close": 0.09062379999886616,
+          "result_write": 0.020523799998045433
+        },
+        "selected_ids": [],
+        "model_calls": 0,
+        "recovery": null,
+        "messages_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "context_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "entry": "worker",
+        "name": "players",
+        "error": null,
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 33.16548800000237,
+        "before_available_GiB": 5.5944671630859375,
+        "after_2s_available_GiB": 3.3649635314941406,
+        "available_min_GiB": 1.0807876586914062,
+        "worker_peak_RSS_GiB": 2.2897377014160156,
+        "role_peaks": {
+          "worker": 2.2897377014160156,
+          "ui": 0.4055595397949219,
+          "ollama": 2.367290496826172,
+          "chrome": 0.0,
+          "observer": 0.08368301391601562
+        },
+        "low_time_ns": 1795262866709372200,
+        "low_latest_worker_stage": "answer_model_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.16417779999756021,
+          "source_environment_validation": 1.2794656999976723,
+          "engine_module_import": 0.01461360000030254,
+          "engine_construction": 7.096323799996753,
+          "retrieval_import": 0.07934089999980642,
+          "bm25_construction": 1.5946431000011216,
+          "dense_construction": 1.874059900001157,
+          "reranker_construction": 2.982515499999863,
+          "chat_identity_validation": 0.08256809999875259,
+          "answer": 21.027046399998653,
+          "retrieval_query": 7.70572909999828,
+          "answer_model": 13.263974499997857,
+          "result_validation": 1.1642508000004455,
+          "engine_close": 0.0891436000019894,
+          "result_write": 0.02034980000098585
+        },
+        "selected_ids": [
+          "L03-01"
+        ],
+        "model_calls": 1,
+        "recovery": null,
+        "messages_sha256": "cec885d2df89caa99a711b3158ba46b8400e7b6e7a6a55560fcc7a3614c363e5",
+        "context_sha256": "42495f2bf6fb5ecaa02ffc0b6b53273f8e54a3dd3b2632994d34fb0dc3a3e061"
+      },
+      {
+        "entry": "worker",
+        "name": "D036_resident",
+        "error": null,
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 12.601301499998954,
+        "before_available_GiB": 3.3668899536132812,
+        "after_2s_available_GiB": 3.385913848876953,
+        "available_min_GiB": 1.0997161865234375,
+        "worker_peak_RSS_GiB": 2.286945343017578,
+        "role_peaks": {
+          "worker": 2.286945343017578,
+          "ui": 0.4054832458496094,
+          "ollama": 2.3671913146972656,
+          "chrome": 0.0,
+          "observer": 0.037548065185546875
+        },
+        "low_time_ns": 1795262883683742100,
+        "low_latest_worker_stage": "reranker_construction_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.24970699999903445,
+          "source_environment_validation": 1.1893398000029265,
+          "engine_module_import": 0.019029700000828598,
+          "engine_construction": 7.487327999999252,
+          "retrieval_import": 0.06428569999843603,
+          "bm25_construction": 1.5669318000000203,
+          "dense_construction": 1.8944149000017205,
+          "reranker_construction": 3.3083107999991626,
+          "chat_identity_validation": 0.09684009999909904,
+          "answer": 0.026556900000286987,
+          "result_validation": 1.3971746000024723,
+          "engine_close": 0.06239889999778825,
+          "result_write": 0.031062499998370185
+        },
+        "selected_ids": [],
+        "model_calls": 0,
+        "recovery": null,
+        "messages_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "context_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "entry": "worker",
+        "name": "fact_A",
+        "error": null,
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 33.05789670000013,
+        "before_available_GiB": 3.385021209716797,
+        "after_2s_available_GiB": 3.3175697326660156,
+        "available_min_GiB": 1.2288360595703125,
+        "worker_peak_RSS_GiB": 2.0903358459472656,
+        "role_peaks": {
+          "worker": 2.0903358459472656,
+          "ui": 0.4054832458496094,
+          "ollama": 2.367279052734375,
+          "chrome": 0.0,
+          "observer": 0.037109375
+        },
+        "low_time_ns": 1795262916596141400,
+        "low_latest_worker_stage": "answer_model_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.17583290000038687,
+          "source_environment_validation": 1.2993394000004628,
+          "engine_module_import": 0.0376734999990731,
+          "engine_construction": 7.399005399998714,
+          "retrieval_import": 0.1560185000016645,
+          "bm25_construction": 1.6505011999979615,
+          "dense_construction": 1.718347400001221,
+          "reranker_construction": 3.285413499997958,
+          "chat_identity_validation": 0.11903249999886611,
+          "answer": 20.55831440000111,
+          "retrieval_query": 7.818545099999028,
+          "answer_model": 12.677091500001552,
+          "result_validation": 1.0988041999989946,
+          "engine_close": 0.06630269999732263,
+          "result_write": 0.021237699998891912
+        },
+        "selected_ids": [],
+        "model_calls": 1,
+        "recovery": null,
+        "messages_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+        "context_sha256": "965fae48e136e3183f116550f8a0dd98c748310d88edb044b90f0ccb70bc1f2f"
+      },
+      {
+        "entry": "worker",
+        "name": "fact_B",
+        "error": null,
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 33.092420500001026,
+        "before_available_GiB": 3.318958282470703,
+        "after_2s_available_GiB": 3.4486846923828125,
+        "available_min_GiB": 1.21142578125,
+        "worker_peak_RSS_GiB": 2.100597381591797,
+        "role_peaks": {
+          "worker": 2.100597381591797,
+          "ui": 0.4054832458496094,
+          "ollama": 2.3670578002929688,
+          "chrome": 0.0,
+          "observer": 0.039196014404296875
+        },
+        "low_time_ns": 1795262934171623200,
+        "low_latest_worker_stage": "engine_construction_end",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.2299310999987938,
+          "source_environment_validation": 1.3698889000006602,
+          "engine_module_import": 0.01494490000186488,
+          "engine_construction": 7.661869100000331,
+          "retrieval_import": 0.07186329999967711,
+          "bm25_construction": 1.7186987000022782,
+          "dense_construction": 1.8920152999999118,
+          "reranker_construction": 3.378646499997558,
+          "chat_identity_validation": 0.10624370000005001,
+          "answer": 20.44059390000257,
+          "retrieval_query": 7.866401699997368,
+          "answer_model": 12.479846899997938,
+          "fact_binding": 0.016225600000325358,
+          "result_validation": 1.04766440000094,
+          "engine_close": 0.11478740000165999,
+          "result_write": 0.02465920000031474
+        },
+        "selected_ids": [
+          "L01-01"
+        ],
+        "model_calls": 1,
+        "recovery": {
+          "applied": true,
+          "base_prompt_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+          "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+          "fact_ids": [
+            "artificial_surface_color"
+          ],
+          "matched_object": "artificial_football_surface",
+          "proof": [
+            {
+              "body_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+              "chunk_id": "L01-01",
+              "fact_id": "artificial_surface_color",
+              "prompt_position": 1,
+              "property": "color",
+              "quote_sha256": "78fe43cf1676ccba848a36cfc1adec601f193df625c6778936555164441cd191",
+              "record_sha256": "44f2b8c87a8ffe41304f8d45d35109eff500e629a07e6479af35062b57e57491"
+            }
+          ],
+          "reason": "reviewed_facts_fully_supported_in_prompt",
+          "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+          "requested_properties": [
+            "color"
+          ],
+          "selected_ids": [
+            "L01-01"
+          ],
+          "version": "source-bound-fact-recovery-1.0"
+        },
+        "messages_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+        "context_sha256": "965fae48e136e3183f116550f8a0dd98c748310d88edb044b90f0ccb70bc1f2f"
+      },
+      {
+        "entry": "browser",
+        "name": "D036_first",
+        "error": null,
+        "semantic_ok": true,
+        "visible": true,
+        "seconds": 13.27586169999995,
+        "before_available_GiB": 3.0239105224609375,
+        "after_2s_available_GiB": 2.943073272705078,
+        "available_min_GiB": 0.9497261047363281,
+        "worker_peak_RSS_GiB": 2.2704010009765625,
+        "role_peaks": {
+          "worker": 2.2704010009765625,
+          "ui": 0.41603851318359375,
+          "ollama": 2.367145538330078,
+          "chrome": 0.8253822326660156,
+          "observer": 0.034397125244140625
+        },
+        "low_time_ns": 1795262976766590900,
+        "low_latest_worker_stage": "result_validation_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.17145789999995031,
+          "source_environment_validation": 1.4193301999985124,
+          "engine_module_import": 0.01612599999862141,
+          "engine_construction": 7.827312500001426,
+          "retrieval_import": 0.07122029999663937,
+          "bm25_construction": 1.5988412000006065,
+          "dense_construction": 2.047838700000284,
+          "reranker_construction": 3.522749899999326,
+          "chat_identity_validation": 0.09442109999872628,
+          "answer": 0.02918119999958435,
+          "result_validation": 1.2125158999988344,
+          "engine_close": 0.058221300001605414,
+          "result_write": 0.025673899999674177
+        },
+        "selected_ids": [],
+        "model_calls": 0,
+        "recovery": null,
+        "messages_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "context_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "entry": "browser",
+        "name": "players",
+        "error": null,
+        "semantic_ok": true,
+        "visible": true,
+        "seconds": 34.48144999999931,
+        "before_available_GiB": 2.9511566162109375,
+        "after_2s_available_GiB": 3.1110382080078125,
+        "available_min_GiB": 1.0149726867675781,
+        "worker_peak_RSS_GiB": 2.1082992553710938,
+        "role_peaks": {
+          "worker": 2.1082992553710938,
+          "ui": 0.4165153503417969,
+          "ollama": 2.3674583435058594,
+          "chrome": 0.8191337585449219,
+          "observer": 0.09412002563476562
+        },
+        "low_time_ns": 1795263014273459500,
+        "low_latest_worker_stage": "result_validation_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.22059599999920465,
+          "source_environment_validation": 1.4429126999966684,
+          "engine_module_import": 0.01865410000027623,
+          "engine_construction": 7.539122400001361,
+          "retrieval_import": 0.06233570000040345,
+          "bm25_construction": 1.7224325999995926,
+          "dense_construction": 1.833345900002314,
+          "reranker_construction": 3.349580699999933,
+          "chat_identity_validation": 0.09532809999655001,
+          "answer": 21.07217899999887,
+          "retrieval_query": 8.063949799998227,
+          "answer_model": 12.939392899999802,
+          "result_validation": 1.3926458000023558,
+          "engine_close": 0.07658639999863226,
+          "result_write": 0.021894800000154646
+        },
+        "selected_ids": [
+          "L03-01"
+        ],
+        "model_calls": 1,
+        "recovery": null,
+        "messages_sha256": "cec885d2df89caa99a711b3158ba46b8400e7b6e7a6a55560fcc7a3614c363e5",
+        "context_sha256": "42495f2bf6fb5ecaa02ffc0b6b53273f8e54a3dd3b2632994d34fb0dc3a3e061"
+      },
+      {
+        "entry": "browser",
+        "name": "D036_resident",
+        "error": null,
+        "semantic_ok": true,
+        "visible": true,
+        "seconds": 13.145786699999007,
+        "before_available_GiB": 3.109111785888672,
+        "after_2s_available_GiB": 3.095897674560547,
+        "available_min_GiB": 1.1256675720214844,
+        "worker_peak_RSS_GiB": 2.0649566650390625,
+        "role_peaks": {
+          "worker": 2.0649566650390625,
+          "ui": 0.41751861572265625,
+          "ollama": 2.3675155639648438,
+          "chrome": 0.6863327026367188,
+          "observer": 0.036052703857421875
+        },
+        "low_time_ns": 1795263031709380200,
+        "low_latest_worker_stage": "result_validation_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.21746089999942342,
+          "source_environment_validation": 1.3607702999979665,
+          "engine_module_import": 0.01644060000035097,
+          "engine_construction": 7.780082600002061,
+          "retrieval_import": 0.06272570000146516,
+          "bm25_construction": 1.6602426999997988,
+          "dense_construction": 2.014695899997605,
+          "reranker_construction": 3.4491339000014705,
+          "chat_identity_validation": 0.11235899999883259,
+          "answer": 0.03301189999911003,
+          "result_validation": 1.3900819000009506,
+          "engine_close": 0.09692850000283215,
+          "result_write": 0.03272279999873717
+        },
+        "selected_ids": [],
+        "model_calls": 0,
+        "recovery": null,
+        "messages_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "context_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "entry": "browser",
+        "name": "fact_A",
+        "error": null,
+        "semantic_ok": true,
+        "visible": true,
+        "seconds": 33.43590100000074,
+        "before_available_GiB": 3.097442626953125,
+        "after_2s_available_GiB": 3.076091766357422,
+        "available_min_GiB": 0.7560043334960938,
+        "worker_peak_RSS_GiB": 2.3414344787597656,
+        "role_peaks": {
+          "worker": 2.3414344787597656,
+          "ui": 0.4175453186035156,
+          "ollama": 2.367687225341797,
+          "chrome": 0.6839942932128906,
+          "observer": 0.037143707275390625
+        },
+        "low_time_ns": 1795263068726027100,
+        "low_latest_worker_stage": "result_validation_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.20884300000034273,
+          "source_environment_validation": 1.332819200000813,
+          "engine_module_import": 0.014999600000010105,
+          "engine_construction": 7.553881200001342,
+          "retrieval_import": 0.06907489999866812,
+          "bm25_construction": 1.6859709999989718,
+          "dense_construction": 2.036681099998532,
+          "reranker_construction": 3.2118067999981577,
+          "chat_identity_validation": 0.0584601999980805,
+          "answer": 20.560778399998526,
+          "retrieval_query": 7.704872400001477,
+          "answer_model": 12.791619699997682,
+          "result_validation": 1.3379100999991351,
+          "engine_close": 0.07633650000207126,
+          "result_write": 0.027655300000333227
+        },
+        "selected_ids": [],
+        "model_calls": 1,
+        "recovery": null,
+        "messages_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+        "context_sha256": "965fae48e136e3183f116550f8a0dd98c748310d88edb044b90f0ccb70bc1f2f"
+      },
+      {
+        "entry": "browser",
+        "name": "fact_B",
+        "error": null,
+        "semantic_ok": true,
+        "visible": true,
+        "seconds": 34.654849400001694,
+        "before_available_GiB": 3.0751495361328125,
+        "after_2s_available_GiB": 3.2115554809570312,
+        "available_min_GiB": 1.1492500305175781,
+        "worker_peak_RSS_GiB": 2.443572998046875,
+        "role_peaks": {
+          "worker": 2.443572998046875,
+          "ui": 0.41839599609375,
+          "ollama": 2.368213653564453,
+          "chrome": 0.7095146179199219,
+          "observer": 0.0384063720703125
+        },
+        "low_time_ns": 1795263096476726600,
+        "low_latest_worker_stage": "answer_model_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.18161809999946854,
+          "source_environment_validation": 1.2343580999986443,
+          "engine_module_import": 0.01720239999849582,
+          "engine_construction": 7.981793099999777,
+          "retrieval_import": 0.06739160000142874,
+          "bm25_construction": 1.7110768999991706,
+          "dense_construction": 2.171598700002505,
+          "reranker_construction": 3.4622071999983746,
+          "chat_identity_validation": 0.08569699999861768,
+          "answer": 21.794163300000946,
+          "retrieval_query": 7.961746400000266,
+          "answer_model": 13.73756730000241,
+          "fact_binding": 0.020660899997892557,
+          "result_validation": 1.173761399997602,
+          "engine_close": 0.07548139999926207,
+          "result_write": 0.027687900001183152
+        },
+        "selected_ids": [
+          "L01-01"
+        ],
+        "model_calls": 1,
+        "recovery": {
+          "applied": true,
+          "base_prompt_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+          "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+          "fact_ids": [
+            "artificial_surface_color"
+          ],
+          "matched_object": "artificial_football_surface",
+          "proof": [
+            {
+              "body_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+              "chunk_id": "L01-01",
+              "fact_id": "artificial_surface_color",
+              "prompt_position": 1,
+              "property": "color",
+              "quote_sha256": "78fe43cf1676ccba848a36cfc1adec601f193df625c6778936555164441cd191",
+              "record_sha256": "44f2b8c87a8ffe41304f8d45d35109eff500e629a07e6479af35062b57e57491"
+            }
+          ],
+          "reason": "reviewed_facts_fully_supported_in_prompt",
+          "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+          "requested_properties": [
+            "color"
+          ],
+          "selected_ids": [
+            "L01-01"
+          ],
+          "version": "source-bound-fact-recovery-1.0"
+        },
+        "messages_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+        "context_sha256": "965fae48e136e3183f116550f8a0dd98c748310d88edb044b90f0ccb70bc1f2f"
+      }
+    ],
+    "gate_passed": false
+  },
+  "candidate": {
+    "run": ".runtime/phase2/e14-lazy01",
+    "producer_commit": "3ee17ad54bb6dfe7b37133c12dd388a575fbeabc",
+    "status": "COMPLETED",
+    "observations": 10,
+    "rows": [
+      {
+        "entry": "worker",
+        "name": "D036_first",
+        "error": null,
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 4.684302599998773,
+        "before_available_GiB": 5.904560089111328,
+        "after_2s_available_GiB": 5.844215393066406,
+        "available_min_GiB": 5.808311462402344,
+        "worker_peak_RSS_GiB": 0.04312896728515625,
+        "role_peaks": {
+          "worker": 0.04312896728515625,
+          "ui": 0.4029350280761719,
+          "ollama": 0.0562744140625,
+          "chrome": 0.0,
+          "observer": 0.040767669677734375
+        },
+        "low_time_ns": 1795263158696500000,
+        "low_latest_worker_stage": "result_validation_start",
+        "low_models": [],
+        "stage_seconds": {
+          "module_import": 0.17351269999926444,
+          "source_environment_validation": 1.2815894999985176,
+          "engine_module_import": 0.014911599999322789,
+          "engine_construction": 0.49879670000154874,
+          "chat_identity_validation": 0.12008029999924474,
+          "answer": 0.02925840000170865,
+          "result_validation": 0.9545163000002503,
+          "engine_close": 0.03420149999874411,
+          "result_write": 0.031219500000588596
+        },
+        "selected_ids": [],
+        "model_calls": 0,
+        "recovery": null,
+        "messages_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "context_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "entry": "worker",
+        "name": "players",
+        "error": null,
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 33.12056310000116,
+        "before_available_GiB": 5.836723327636719,
+        "after_2s_available_GiB": 3.6103782653808594,
+        "available_min_GiB": 1.5027008056640625,
+        "worker_peak_RSS_GiB": 2.1030960083007812,
+        "role_peaks": {
+          "worker": 2.1030960083007812,
+          "ui": 0.4029350280761719,
+          "ollama": 2.367198944091797,
+          "chrome": 0.0,
+          "observer": 0.03412628173828125
+        },
+        "low_time_ns": 1795263182104248100,
+        "low_latest_worker_stage": "answer_model_start",
+        "low_models": [],
+        "stage_seconds": {
+          "module_import": 0.18211370000062743,
+          "source_environment_validation": 1.2605944000024465,
+          "engine_module_import": 0.015969899999618065,
+          "engine_construction": 0.4915766000012809,
+          "retrieval_import": 0.06960649999746238,
+          "bm25_construction": 1.562429499997961,
+          "dense_construction": 1.917199100000289,
+          "reranker_construction": 2.9460451000013563,
+          "chat_identity_validation": 0.09640289999879315,
+          "lazy_retrieval_construction": 6.560255899999902,
+          "answer": 27.69671930000186,
+          "retrieval_query": 7.8453971999988426,
+          "answer_model": 13.235375100000965,
+          "result_validation": 1.0909400999989884,
+          "engine_close": 0.0851234999972803,
+          "result_write": 0.022935799999686424
+        },
+        "selected_ids": [
+          "L03-01"
+        ],
+        "model_calls": 1,
+        "recovery": null,
+        "messages_sha256": "cec885d2df89caa99a711b3158ba46b8400e7b6e7a6a55560fcc7a3614c363e5",
+        "context_sha256": "42495f2bf6fb5ecaa02ffc0b6b53273f8e54a3dd3b2632994d34fb0dc3a3e061"
+      },
+      {
+        "entry": "worker",
+        "name": "D036_resident",
+        "error": null,
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 4.7645379999994475,
+        "before_available_GiB": 3.6175689697265625,
+        "after_2s_available_GiB": 3.5879974365234375,
+        "available_min_GiB": 3.5397796630859375,
+        "worker_peak_RSS_GiB": 0.044189453125,
+        "role_peaks": {
+          "worker": 0.044189453125,
+          "ui": 0.40287017822265625,
+          "ollama": 2.3672027587890625,
+          "chrome": 0.0,
+          "observer": 0.037403106689453125
+        },
+        "low_time_ns": 1795263200626973300,
+        "low_latest_worker_stage": "result_validation_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.17952390000209562,
+          "source_environment_validation": 1.2693045000014536,
+          "engine_module_import": 0.015746400000352878,
+          "engine_construction": 0.4793169999975362,
+          "chat_identity_validation": 0.07624270000087563,
+          "answer": 0.027208699997572694,
+          "result_validation": 0.9299303999978292,
+          "engine_close": 0.046010199999727774,
+          "result_write": 0.023862199999712175
+        },
+        "selected_ids": [],
+        "model_calls": 0,
+        "recovery": null,
+        "messages_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "context_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "entry": "worker",
+        "name": "fact_A",
+        "error": null,
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 32.354366700001265,
+        "before_available_GiB": 3.5894241333007812,
+        "after_2s_available_GiB": 3.596851348876953,
+        "available_min_GiB": 1.5420455932617188,
+        "worker_peak_RSS_GiB": 2.076007843017578,
+        "role_peaks": {
+          "worker": 2.076007843017578,
+          "ui": 0.40287017822265625,
+          "ollama": 2.3672714233398438,
+          "chrome": 0.0,
+          "observer": 0.045536041259765625
+        },
+        "low_time_ns": 1795263224046924900,
+        "low_latest_worker_stage": "answer_model_start",
+        "low_models": [],
+        "stage_seconds": {
+          "module_import": 0.18805480000082753,
+          "source_environment_validation": 1.2375479999973322,
+          "engine_module_import": 0.015429700000822777,
+          "engine_construction": 0.45169040000109817,
+          "retrieval_import": 0.06670200000007753,
+          "bm25_construction": 1.5424314999982016,
+          "dense_construction": 2.011656500002573,
+          "reranker_construction": 3.139574300003005,
+          "chat_identity_validation": 0.07326380000085919,
+          "lazy_retrieval_construction": 6.828728599997703,
+          "answer": 27.110500599999796,
+          "retrieval_query": 7.653242699998373,
+          "answer_model": 12.567828400002327,
+          "result_validation": 1.035972199999378,
+          "engine_close": 0.08241689999704249,
+          "result_write": 0.036632599996664794
+        },
+        "selected_ids": [],
+        "model_calls": 1,
+        "recovery": null,
+        "messages_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+        "context_sha256": "965fae48e136e3183f116550f8a0dd98c748310d88edb044b90f0ccb70bc1f2f"
+      },
+      {
+        "entry": "worker",
+        "name": "fact_B",
+        "error": null,
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 33.40716560000146,
+        "before_available_GiB": 3.597015380859375,
+        "after_2s_available_GiB": 3.5953292846679688,
+        "available_min_GiB": 1.556793212890625,
+        "worker_peak_RSS_GiB": 2.1210708618164062,
+        "role_peaks": {
+          "worker": 2.1210708618164062,
+          "ui": 0.40287017822265625,
+          "ollama": 2.368152618408203,
+          "chrome": 0.0,
+          "observer": 0.038455963134765625
+        },
+        "low_time_ns": 1795263248121547700,
+        "low_latest_worker_stage": "reranker_construction_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.17885190000015427,
+          "source_environment_validation": 1.267543999998452,
+          "engine_module_import": 0.015488199998799246,
+          "engine_construction": 0.5041703999995661,
+          "retrieval_import": 0.06751369999983581,
+          "bm25_construction": 1.5926077000003716,
+          "dense_construction": 2.0359093000006396,
+          "reranker_construction": 3.2836571000007098,
+          "chat_identity_validation": 0.10152989999915008,
+          "lazy_retrieval_construction": 7.050877200003015,
+          "answer": 28.06508010000107,
+          "retrieval_query": 7.970461299999442,
+          "answer_model": 12.952075799999875,
+          "fact_binding": 0.01994879999983823,
+          "result_validation": 1.031168900000921,
+          "engine_close": 0.07751070000085747,
+          "result_write": 0.02437149999968824
+        },
+        "selected_ids": [
+          "L01-01"
+        ],
+        "model_calls": 1,
+        "recovery": {
+          "applied": true,
+          "base_prompt_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+          "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+          "fact_ids": [
+            "artificial_surface_color"
+          ],
+          "matched_object": "artificial_football_surface",
+          "proof": [
+            {
+              "body_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+              "chunk_id": "L01-01",
+              "fact_id": "artificial_surface_color",
+              "prompt_position": 1,
+              "property": "color",
+              "quote_sha256": "78fe43cf1676ccba848a36cfc1adec601f193df625c6778936555164441cd191",
+              "record_sha256": "44f2b8c87a8ffe41304f8d45d35109eff500e629a07e6479af35062b57e57491"
+            }
+          ],
+          "reason": "reviewed_facts_fully_supported_in_prompt",
+          "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+          "requested_properties": [
+            "color"
+          ],
+          "selected_ids": [
+            "L01-01"
+          ],
+          "version": "source-bound-fact-recovery-1.0"
+        },
+        "messages_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+        "context_sha256": "965fae48e136e3183f116550f8a0dd98c748310d88edb044b90f0ccb70bc1f2f"
+      },
+      {
+        "entry": "browser",
+        "name": "D036_first",
+        "error": null,
+        "semantic_ok": true,
+        "visible": true,
+        "seconds": 5.577551499998663,
+        "before_available_GiB": 3.1840858459472656,
+        "after_2s_available_GiB": 3.136566162109375,
+        "available_min_GiB": 3.1040077209472656,
+        "worker_peak_RSS_GiB": 0.043239593505859375,
+        "role_peaks": {
+          "worker": 0.043239593505859375,
+          "ui": 0.4132575988769531,
+          "ollama": 2.3679733276367188,
+          "chrome": 0.8028182983398438,
+          "observer": 0.034236907958984375
+        },
+        "low_time_ns": 1795263283380356800,
+        "low_latest_worker_stage": "chat_identity_validation_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.21978569999919273,
+          "source_environment_validation": 1.5597813000022143,
+          "engine_module_import": 0.02531250000174623,
+          "engine_construction": 0.5904450999987603,
+          "chat_identity_validation": 0.08659400000033202,
+          "answer": 0.04224739999699523,
+          "result_validation": 1.2358587000016996,
+          "engine_close": 0.03108810000048834,
+          "result_write": 0.01965829999971902
+        },
+        "selected_ids": [],
+        "model_calls": 0,
+        "recovery": null,
+        "messages_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "context_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "entry": "browser",
+        "name": "players",
+        "error": null,
+        "semantic_ok": true,
+        "visible": true,
+        "seconds": 35.3575450999997,
+        "before_available_GiB": 3.1368179321289062,
+        "after_2s_available_GiB": 3.5057373046875,
+        "available_min_GiB": 1.1427192687988281,
+        "worker_peak_RSS_GiB": 2.365997314453125,
+        "role_peaks": {
+          "worker": 2.365997314453125,
+          "ui": 0.4141120910644531,
+          "ollama": 2.3679351806640625,
+          "chrome": 0.8178939819335938,
+          "observer": 0.09387588500976562
+        },
+        "low_time_ns": 1795263311039990000,
+        "low_latest_worker_stage": "answer_model_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.17110139999931562,
+          "source_environment_validation": 1.2364243999982136,
+          "engine_module_import": 0.016531200002646074,
+          "engine_construction": 0.45704639999894425,
+          "retrieval_import": 0.06166810000286205,
+          "bm25_construction": 1.731300800001918,
+          "dense_construction": 2.2242731000005733,
+          "reranker_construction": 3.6183359999995446,
+          "chat_identity_validation": 0.07201219999842579,
+          "lazy_retrieval_construction": 7.705760400000145,
+          "answer": 29.814336299998104,
+          "retrieval_query": 8.067564699998911,
+          "answer_model": 13.984463000000687,
+          "result_validation": 1.0601610999983677,
+          "engine_close": 0.07000669999979436,
+          "result_write": 0.024123399998643436
+        },
+        "selected_ids": [
+          "L03-01"
+        ],
+        "model_calls": 1,
+        "recovery": null,
+        "messages_sha256": "cec885d2df89caa99a711b3158ba46b8400e7b6e7a6a55560fcc7a3614c363e5",
+        "context_sha256": "42495f2bf6fb5ecaa02ffc0b6b53273f8e54a3dd3b2632994d34fb0dc3a3e061"
+      },
+      {
+        "entry": "browser",
+        "name": "D036_resident",
+        "error": null,
+        "semantic_ok": true,
+        "visible": true,
+        "seconds": 4.7859075000014855,
+        "before_available_GiB": 3.6483192443847656,
+        "after_2s_available_GiB": 3.6665115356445312,
+        "available_min_GiB": 3.6690330505371094,
+        "worker_peak_RSS_GiB": 0.04290771484375,
+        "role_peaks": {
+          "worker": 0.04290771484375,
+          "ui": 0.4116401672363281,
+          "ollama": 2.116180419921875,
+          "chrome": 0.6778602600097656,
+          "observer": 0.035305023193359375
+        },
+        "low_time_ns": 1795263332778419100,
+        "low_latest_worker_stage": "result_validation_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.20013620000099763,
+          "source_environment_validation": 1.229881100000057,
+          "engine_module_import": 0.015332700000726618,
+          "engine_construction": 0.5490489000003436,
+          "chat_identity_validation": 0.07696489999943879,
+          "answer": 0.022490999999718042,
+          "result_validation": 0.9682360000006156,
+          "engine_close": 0.04002829999808455,
+          "result_write": 0.023383799998555332
+        },
+        "selected_ids": [],
+        "model_calls": 0,
+        "recovery": null,
+        "messages_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "context_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "entry": "browser",
+        "name": "fact_A",
+        "error": null,
+        "semantic_ok": true,
+        "visible": true,
+        "seconds": 33.18281890000071,
+        "before_available_GiB": 3.66143798828125,
+        "after_2s_available_GiB": 3.469219207763672,
+        "available_min_GiB": 1.1533851623535156,
+        "worker_peak_RSS_GiB": 2.336700439453125,
+        "role_peaks": {
+          "worker": 2.336700439453125,
+          "ui": 0.4116058349609375,
+          "ollama": 2.365924835205078,
+          "chrome": 0.6815986633300781,
+          "observer": 0.03649139404296875
+        },
+        "low_time_ns": 1795263368296748300,
+        "low_latest_worker_stage": "result_validation_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.19158940000124858,
+          "source_environment_validation": 1.151033300000563,
+          "engine_module_import": 0.025045500002306653,
+          "engine_construction": 0.5144565999980841,
+          "retrieval_import": 0.08654240000032587,
+          "bm25_construction": 1.6861199000013585,
+          "dense_construction": 1.960033499999554,
+          "reranker_construction": 3.2567535000016505,
+          "chat_identity_validation": 0.1151398000001791,
+          "lazy_retrieval_construction": 7.064696199999162,
+          "answer": 27.727556499998173,
+          "retrieval_query": 7.744820599997183,
+          "answer_model": 12.856647900000098,
+          "result_validation": 1.20014639999863,
+          "engine_close": 0.08049169999867445,
+          "result_write": 0.02701080000042566
+        },
+        "selected_ids": [],
+        "model_calls": 1,
+        "recovery": null,
+        "messages_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+        "context_sha256": "965fae48e136e3183f116550f8a0dd98c748310d88edb044b90f0ccb70bc1f2f"
+      },
+      {
+        "entry": "browser",
+        "name": "fact_B",
+        "error": null,
+        "semantic_ok": true,
+        "visible": true,
+        "seconds": 34.81238079999821,
+        "before_available_GiB": 3.479328155517578,
+        "after_2s_available_GiB": 3.3220443725585938,
+        "available_min_GiB": 1.10498046875,
+        "worker_peak_RSS_GiB": 2.0963363647460938,
+        "role_peaks": {
+          "worker": 2.0963363647460938,
+          "ui": 0.4116020202636719,
+          "ollama": 2.3663711547851562,
+          "chrome": 0.671844482421875,
+          "observer": 0.03777313232421875
+        },
+        "low_time_ns": 1795263397048389800,
+        "low_latest_worker_stage": "answer_model_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.1569383000023663,
+          "source_environment_validation": 1.2689041999983601,
+          "engine_module_import": 0.014288500002294313,
+          "engine_construction": 0.510079499999847,
+          "retrieval_import": 0.06407060000128695,
+          "bm25_construction": 1.6334176000018488,
+          "dense_construction": 2.1933967000004486,
+          "reranker_construction": 3.2394513999970513,
+          "chat_identity_validation": 0.08939769999778946,
+          "lazy_retrieval_construction": 7.201012300000002,
+          "answer": 29.489543100000446,
+          "retrieval_query": 8.109058400001231,
+          "answer_model": 14.082216000002518,
+          "fact_binding": 0.019646700002340367,
+          "result_validation": 1.0596694000014395,
+          "engine_close": 0.07066430000122637,
+          "result_write": 0.021811199996591313
+        },
+        "selected_ids": [
+          "L01-01"
+        ],
+        "model_calls": 1,
+        "recovery": {
+          "applied": true,
+          "base_prompt_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+          "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+          "fact_ids": [
+            "artificial_surface_color"
+          ],
+          "matched_object": "artificial_football_surface",
+          "proof": [
+            {
+              "body_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+              "chunk_id": "L01-01",
+              "fact_id": "artificial_surface_color",
+              "prompt_position": 1,
+              "property": "color",
+              "quote_sha256": "78fe43cf1676ccba848a36cfc1adec601f193df625c6778936555164441cd191",
+              "record_sha256": "44f2b8c87a8ffe41304f8d45d35109eff500e629a07e6479af35062b57e57491"
+            }
+          ],
+          "reason": "reviewed_facts_fully_supported_in_prompt",
+          "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+          "requested_properties": [
+            "color"
+          ],
+          "selected_ids": [
+            "L01-01"
+          ],
+          "version": "source-bound-fact-recovery-1.0"
+        },
+        "messages_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+        "context_sha256": "965fae48e136e3183f116550f8a0dd98c748310d88edb044b90f0ccb70bc1f2f"
+      }
+    ],
+    "gate_passed": true
+  },
+  "initial_preserved": {
+    "run": ".runtime/phase2/e14-baseline01",
+    "producer_commit": "7b9cef8ae91db71c6cd41e30b034e654be521688",
+    "status": "ENTRY_ERROR",
+    "observations": 9,
+    "rows": [
+      {
+        "entry": "worker",
+        "name": "D036_first",
+        "error": null,
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 12.154547899997851,
+        "before_available_GiB": 5.296730041503906,
+        "after_2s_available_GiB": 4.882240295410156,
+        "available_min_GiB": 3.2704391479492188,
+        "worker_peak_RSS_GiB": 2.0690078735351562,
+        "role_peaks": {
+          "worker": 2.0690078735351562,
+          "ui": 0.405242919921875,
+          "ollama": 0.0552520751953125,
+          "chrome": 0.0,
+          "observer": 0.033786773681640625
+        },
+        "low_time_ns": 1795262307459953500,
+        "low_latest_worker_stage": "result_validation_start",
+        "low_models": [],
+        "stage_seconds": {
+          "module_import": 0.17397260000143433,
+          "source_environment_validation": 1.1425801000004867,
+          "engine_module_import": 0.014955700000427896,
+          "engine_construction": 7.338473700001487,
+          "retrieval_import": 0.0673294000007445,
+          "bm25_construction": 1.6230058999972243,
+          "dense_construction": 1.7788431000008131,
+          "reranker_construction": 3.3303558000006888,
+          "chat_identity_validation": 0.10431340000286582,
+          "answer": 0.026364000001194654,
+          "result_validation": 1.0129718000025605,
+          "engine_close": 0.07285989999945741,
+          "result_write": 0.029879000001528766
+        },
+        "selected_ids": [],
+        "model_calls": 0,
+        "recovery": null,
+        "messages_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "context_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "entry": "worker",
+        "name": "players",
+        "error": null,
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 33.686045299997204,
+        "before_available_GiB": 4.873802185058594,
+        "after_2s_available_GiB": 3.0319786071777344,
+        "available_min_GiB": 0.7150535583496094,
+        "worker_peak_RSS_GiB": 2.2867469787597656,
+        "role_peaks": {
+          "worker": 2.2867469787597656,
+          "ui": 0.405242919921875,
+          "ollama": 2.3664474487304688,
+          "chrome": 0.0,
+          "observer": 0.033580780029296875
+        },
+        "low_time_ns": 1795262334569729000,
+        "low_latest_worker_stage": "answer_model_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.22736219999933382,
+          "source_environment_validation": 1.3504726999999548,
+          "engine_module_import": 0.014943700000003446,
+          "engine_construction": 7.203840899997886,
+          "retrieval_import": 0.09274740000182646,
+          "bm25_construction": 1.6822870999967563,
+          "dense_construction": 1.6802103000009083,
+          "reranker_construction": 3.1529074999998556,
+          "chat_identity_validation": 0.09622069999750238,
+          "answer": 21.094960400001582,
+          "retrieval_query": 7.962762899998779,
+          "answer_model": 13.079530500002875,
+          "result_validation": 1.1813884000002872,
+          "engine_close": 0.08407230000011623,
+          "result_write": 0.03488130000187084
+        },
+        "selected_ids": [
+          "L03-01"
+        ],
+        "model_calls": 1,
+        "recovery": null,
+        "messages_sha256": "cec885d2df89caa99a711b3158ba46b8400e7b6e7a6a55560fcc7a3614c363e5",
+        "context_sha256": "42495f2bf6fb5ecaa02ffc0b6b53273f8e54a3dd3b2632994d34fb0dc3a3e061"
+      },
+      {
+        "entry": "worker",
+        "name": "D036_resident",
+        "error": null,
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 12.936948800001119,
+        "before_available_GiB": 3.033557891845703,
+        "after_2s_available_GiB": 3.0826416015625,
+        "available_min_GiB": 0.8131484985351562,
+        "worker_peak_RSS_GiB": 2.2703895568847656,
+        "role_peaks": {
+          "worker": 2.2703895568847656,
+          "ui": 0.40517425537109375,
+          "ollama": 2.3664627075195312,
+          "chrome": 0.0,
+          "observer": 0.044498443603515625
+        },
+        "low_time_ns": 1795262356726778400,
+        "low_latest_worker_stage": "reranker_construction_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.2285059000023466,
+          "source_environment_validation": 1.3362072999989323,
+          "engine_module_import": 0.015419899998960318,
+          "engine_construction": 7.619249100000161,
+          "retrieval_import": 0.11106650000147056,
+          "bm25_construction": 1.6637584999989485,
+          "dense_construction": 2.0802775000011025,
+          "reranker_construction": 3.161336199998914,
+          "chat_identity_validation": 0.09604140000010375,
+          "answer": 0.029513100002077408,
+          "result_validation": 1.4473098999987997,
+          "engine_close": 0.09483910000199103,
+          "result_write": 0.019976200001110556
+        },
+        "selected_ids": [],
+        "model_calls": 0,
+        "recovery": null,
+        "messages_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "context_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "entry": "worker",
+        "name": "fact_A",
+        "error": null,
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 32.78509330000088,
+        "before_available_GiB": 3.0835037231445312,
+        "after_2s_available_GiB": 3.0451393127441406,
+        "available_min_GiB": 0.9045829772949219,
+        "worker_peak_RSS_GiB": 2.3913345336914062,
+        "role_peaks": {
+          "worker": 2.3913345336914062,
+          "ui": 0.40517425537109375,
+          "ollama": 2.366710662841797,
+          "chrome": 0.0,
+          "observer": 0.04557037353515625
+        },
+        "low_time_ns": 1795262371417800800,
+        "low_latest_worker_stage": "reranker_construction_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.15380130000266945,
+          "source_environment_validation": 1.3196845000020403,
+          "engine_module_import": 0.01792550000027404,
+          "engine_construction": 7.335699299997941,
+          "retrieval_import": 0.07898700000077952,
+          "bm25_construction": 1.5737606000002415,
+          "dense_construction": 1.8827726999988954,
+          "reranker_construction": 3.059583600002952,
+          "chat_identity_validation": 0.08475520000138204,
+          "answer": 20.396392700000433,
+          "retrieval_query": 7.607991500000935,
+          "answer_model": 12.71699929999886,
+          "result_validation": 1.2584736999997403,
+          "engine_close": 0.07561940000232426,
+          "result_write": 0.02337009999973816
+        },
+        "selected_ids": [],
+        "model_calls": 1,
+        "recovery": null,
+        "messages_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+        "context_sha256": "965fae48e136e3183f116550f8a0dd98c748310d88edb044b90f0ccb70bc1f2f"
+      },
+      {
+        "entry": "worker",
+        "name": "fact_B",
+        "error": null,
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 33.045203599998786,
+        "before_available_GiB": 3.0445785522460938,
+        "after_2s_available_GiB": 3.248699188232422,
+        "available_min_GiB": 0.6413993835449219,
+        "worker_peak_RSS_GiB": 2.37762451171875,
+        "role_peaks": {
+          "worker": 2.37762451171875,
+          "ui": 0.40517425537109375,
+          "ollama": 2.3669166564941406,
+          "chrome": 0.0,
+          "observer": 0.039276123046875
+        },
+        "low_time_ns": 1795262406262723000,
+        "low_latest_worker_stage": "reranker_construction_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.18217179999919608,
+          "source_environment_validation": 1.3328641000007337,
+          "engine_module_import": 0.014259899999160552,
+          "engine_construction": 7.3864251999984845,
+          "retrieval_import": 0.0674323999992339,
+          "bm25_construction": 1.6131913999997778,
+          "dense_construction": 1.900333600002341,
+          "reranker_construction": 3.2420271999981196,
+          "chat_identity_validation": 0.08427669999946374,
+          "answer": 20.79032290000032,
+          "retrieval_query": 7.6905361999997695,
+          "answer_model": 13.015390199998365,
+          "fact_binding": 0.018462699998053722,
+          "result_validation": 1.0395226000000548,
+          "engine_close": 0.07913130000088131,
+          "result_write": 0.030032499998924322
+        },
+        "selected_ids": [
+          "L01-01"
+        ],
+        "model_calls": 1,
+        "recovery": {
+          "applied": true,
+          "base_prompt_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+          "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+          "fact_ids": [
+            "artificial_surface_color"
+          ],
+          "matched_object": "artificial_football_surface",
+          "proof": [
+            {
+              "body_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+              "chunk_id": "L01-01",
+              "fact_id": "artificial_surface_color",
+              "prompt_position": 1,
+              "property": "color",
+              "quote_sha256": "78fe43cf1676ccba848a36cfc1adec601f193df625c6778936555164441cd191",
+              "record_sha256": "44f2b8c87a8ffe41304f8d45d35109eff500e629a07e6479af35062b57e57491"
+            }
+          ],
+          "reason": "reviewed_facts_fully_supported_in_prompt",
+          "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+          "requested_properties": [
+            "color"
+          ],
+          "selected_ids": [
+            "L01-01"
+          ],
+          "version": "source-bound-fact-recovery-1.0"
+        },
+        "messages_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+        "context_sha256": "965fae48e136e3183f116550f8a0dd98c748310d88edb044b90f0ccb70bc1f2f"
+      },
+      {
+        "entry": "browser",
+        "name": "D036_first",
+        "error": null,
+        "semantic_ok": true,
+        "visible": true,
+        "seconds": 13.03431460000138,
+        "before_available_GiB": 2.86138916015625,
+        "after_2s_available_GiB": 2.8838424682617188,
+        "available_min_GiB": 0.8288917541503906,
+        "worker_peak_RSS_GiB": 2.076507568359375,
+        "role_peaks": {
+          "worker": 2.076507568359375,
+          "ui": 0.4151878356933594,
+          "ollama": 2.366863250732422,
+          "chrome": 0.78131103515625,
+          "observer": 0.034412384033203125
+        },
+        "low_time_ns": 1795262457640499300,
+        "low_latest_worker_stage": "result_validation_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.22277119999853312,
+          "source_environment_validation": 1.2344903999983217,
+          "engine_module_import": 0.02155329999732203,
+          "engine_construction": 7.987392200000613,
+          "retrieval_import": 0.06853989999945043,
+          "bm25_construction": 1.6536764999982552,
+          "dense_construction": 2.1080103000022063,
+          "reranker_construction": 3.5754611999982444,
+          "chat_identity_validation": 0.09180530000230647,
+          "answer": 0.029976899997564033,
+          "result_validation": 1.0708817000013369,
+          "engine_close": 0.06893249999848194,
+          "result_write": 0.02302380000037374
+        },
+        "selected_ids": [],
+        "model_calls": 0,
+        "recovery": null,
+        "messages_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "context_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "entry": "browser",
+        "name": "players",
+        "error": null,
+        "semantic_ok": true,
+        "visible": true,
+        "seconds": 34.121877100002166,
+        "before_available_GiB": 2.916942596435547,
+        "after_2s_available_GiB": 3.0625839233398438,
+        "available_min_GiB": 0.5658187866210938,
+        "worker_peak_RSS_GiB": 2.104480743408203,
+        "role_peaks": {
+          "worker": 2.104480743408203,
+          "ui": 0.4165611267089844,
+          "ollama": 2.3671340942382812,
+          "chrome": 0.6850852966308594,
+          "observer": 0.09707260131835938
+        },
+        "low_time_ns": 1795262473250863300,
+        "low_latest_worker_stage": "reranker_construction_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.17767989999993006,
+          "source_environment_validation": 1.2973338999981934,
+          "engine_module_import": 0.014585600001737475,
+          "engine_construction": 7.4566856999990705,
+          "retrieval_import": 0.0707103000022471,
+          "bm25_construction": 1.7104935999996087,
+          "dense_construction": 1.8347824000011315,
+          "reranker_construction": 3.271798800000397,
+          "chat_identity_validation": 0.106268600000476,
+          "answer": 21.445473399999173,
+          "retrieval_query": 8.177066500000365,
+          "answer_model": 13.21283460000268,
+          "result_validation": 1.1531400999992911,
+          "engine_close": 0.08375840000007884,
+          "result_write": 0.023832300001231488
+        },
+        "selected_ids": [
+          "L03-01"
+        ],
+        "model_calls": 1,
+        "recovery": null,
+        "messages_sha256": "cec885d2df89caa99a711b3158ba46b8400e7b6e7a6a55560fcc7a3614c363e5",
+        "context_sha256": "42495f2bf6fb5ecaa02ffc0b6b53273f8e54a3dd3b2632994d34fb0dc3a3e061"
+      },
+      {
+        "entry": "browser",
+        "name": "D036_resident",
+        "error": null,
+        "semantic_ok": true,
+        "visible": true,
+        "seconds": 12.691857599998912,
+        "before_available_GiB": 3.064037322998047,
+        "after_2s_available_GiB": 3.0830307006835938,
+        "available_min_GiB": 1.0467376708984375,
+        "worker_peak_RSS_GiB": 2.1409645080566406,
+        "role_peaks": {
+          "worker": 2.1409645080566406,
+          "ui": 0.4175262451171875,
+          "ollama": 2.3674964904785156,
+          "chrome": 0.6595878601074219,
+          "observer": 0.036174774169921875
+        },
+        "low_time_ns": 1795262512497661200,
+        "low_latest_worker_stage": "result_validation_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.19550899999740068,
+          "source_environment_validation": 1.2984050999984902,
+          "engine_module_import": 0.01594430000113789,
+          "engine_construction": 7.6109280999990006,
+          "retrieval_import": 0.06824159999814583,
+          "bm25_construction": 1.596596600000339,
+          "dense_construction": 2.020393899998453,
+          "reranker_construction": 3.3417270999998436,
+          "chat_identity_validation": 0.10076070000286563,
+          "answer": 0.030885800002579344,
+          "result_validation": 1.0257870999994338,
+          "engine_close": 0.09634120000191615,
+          "result_write": 0.02434460000222316
+        },
+        "selected_ids": [],
+        "model_calls": 0,
+        "recovery": null,
+        "messages_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "context_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "entry": "browser",
+        "name": "fact_A",
+        "error": "TimeoutError: fact_A visible response",
+        "semantic_ok": true,
+        "visible": false,
+        "seconds": 45.52510370000164,
+        "before_available_GiB": 3.076824188232422,
+        "after_2s_available_GiB": 3.144184112548828,
+        "available_min_GiB": 1.1110343933105469,
+        "worker_peak_RSS_GiB": 2.3981475830078125,
+        "role_peaks": {
+          "worker": 2.3981475830078125,
+          "ui": 0.4175758361816406,
+          "ollama": 2.367748260498047,
+          "chrome": 0.6614112854003906,
+          "observer": 0.06327438354492188
+        },
+        "low_time_ns": 1795262549751705900,
+        "low_latest_worker_stage": "result_validation_start",
+        "low_models": [
+          "qwen2.5:3b"
+        ],
+        "stage_seconds": {
+          "module_import": 0.18288250000114203,
+          "source_environment_validation": 1.276697699999204,
+          "engine_module_import": 0.014830100000835955,
+          "engine_construction": 7.356056799999351,
+          "retrieval_import": 0.06008500000098138,
+          "bm25_construction": 1.5549467000018922,
+          "dense_construction": 1.9387327000004007,
+          "reranker_construction": 3.2963289999970584,
+          "chat_identity_validation": 0.07933780000166735,
+          "answer": 20.759973100000934,
+          "retrieval_query": 7.923255600002449,
+          "answer_model": 12.78271130000212,
+          "result_validation": 1.1516867999998794,
+          "engine_close": 0.09093900000152644,
+          "result_write": 0.029993200001626974
+        },
+        "selected_ids": [],
+        "model_calls": 1,
+        "recovery": null,
+        "messages_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+        "context_sha256": "965fae48e136e3183f116550f8a0dd98c748310d88edb044b90f0ccb70bc1f2f"
+      }
+    ],
+    "gate_passed": false
+  },
+  "pairs": [
+    {
+      "entry": "worker",
+      "name": "D036_first",
+      "same_actual_context": true,
+      "same_messages": true,
+      "wall_delta_seconds": -6.844997900003364,
+      "worker_RSS_delta_GiB": -2.107929229736328
+    },
+    {
+      "entry": "worker",
+      "name": "players",
+      "same_actual_context": true,
+      "same_messages": true,
+      "wall_delta_seconds": -0.04492490000120597,
+      "worker_RSS_delta_GiB": -0.18664169311523438
+    },
+    {
+      "entry": "worker",
+      "name": "D036_resident",
+      "same_actual_context": true,
+      "same_messages": true,
+      "wall_delta_seconds": -7.836763499999506,
+      "worker_RSS_delta_GiB": -2.242755889892578
+    },
+    {
+      "entry": "worker",
+      "name": "fact_A",
+      "same_actual_context": true,
+      "same_messages": true,
+      "wall_delta_seconds": -0.7035299999988638,
+      "worker_RSS_delta_GiB": -0.0143280029296875
+    },
+    {
+      "entry": "worker",
+      "name": "fact_B",
+      "same_actual_context": true,
+      "same_messages": true,
+      "wall_delta_seconds": 0.31474510000043665,
+      "worker_RSS_delta_GiB": 0.020473480224609375
+    },
+    {
+      "entry": "browser",
+      "name": "D036_first",
+      "same_actual_context": true,
+      "same_messages": true,
+      "wall_delta_seconds": -7.698310200001288,
+      "worker_RSS_delta_GiB": -2.227161407470703
+    },
+    {
+      "entry": "browser",
+      "name": "players",
+      "same_actual_context": true,
+      "same_messages": true,
+      "wall_delta_seconds": 0.8760951000003843,
+      "worker_RSS_delta_GiB": 0.25769805908203125
+    },
+    {
+      "entry": "browser",
+      "name": "D036_resident",
+      "same_actual_context": true,
+      "same_messages": true,
+      "wall_delta_seconds": -8.359879199997522,
+      "worker_RSS_delta_GiB": -2.0220489501953125
+    },
+    {
+      "entry": "browser",
+      "name": "fact_A",
+      "same_actual_context": true,
+      "same_messages": true,
+      "wall_delta_seconds": -0.25308210000002873,
+      "worker_RSS_delta_GiB": -0.004734039306640625
+    },
+    {
+      "entry": "browser",
+      "name": "fact_B",
+      "same_actual_context": true,
+      "same_messages": true,
+      "wall_delta_seconds": 0.15753139999651466,
+      "worker_RSS_delta_GiB": -0.34723663330078125
+    }
+  ],
+  "engineering_resource_gate": true,
+  "E13_revalidation_executed": false,
+  "full90_executed": false,
+  "holdout_used": false,
+  "freeze_hashes_unchanged": true,
+  "decision": "ELIGIBLE_FOR_E13_SPECIAL",
+  "warning": "RSS is sampled working set, not exclusive physical memory; global availability also depends on other applications. Endpoints measured2s after response. API ps1s snapshots can miss brief overlap. No causal claim from A/B global minima alone."
+}
