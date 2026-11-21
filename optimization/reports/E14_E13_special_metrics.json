@@ -1,0 +1,2450 @@
+{
+  "quality_gates": {
+    "registered_originals_and_paraphrases": true,
+    "no_incorrect_supplement": true,
+    "original_correct_controls": true,
+    "every_added_citation_supported": true,
+    "technical_complete": true,
+    "D036_zero_calls": true
+  },
+  "runtime_gates": {
+    "all_candidate_requests_at_most_60s": true,
+    "all_candidate_available_at_least_1GiB": true
+  },
+  "browser": {
+    "status": "COMPLETED",
+    "error": null,
+    "observations": 7,
+    "quality_passed": true,
+    "runtime_passed": true,
+    "all_gates_passed": true,
+    "hashes": {
+      "grass_original.json": "2e0335b1b866152494268fb0e376ff86652d54674efe2d6251b11351fb2e9626",
+      "grass_paraphrase.json": "e18effed122b81ca8df280d9b4cf25ffdb16a08fdb3a4174bf4df2e9c0348a35",
+      "pressure_original.json": "c1d0bfc2067349a7de7ed5713d1a623cf02224a14b6abc80ced43d10c74f5f31",
+      "pressure_paraphrase.json": "e7938bd8bb0094c5733fab9cdb1d5060c90c8883781a0e7803c0b9677f92469b",
+      "goal_both_paraphrase.json": "43656c2c5f54f05bac2bf4a916dc104721bb1c76167307eac2205b7b74c139d7",
+      "players.json": "c47d036c4fe1b1cd93f6b3526e71ab8612653ea8c0f3608e23480b62ba69a249",
+      "D036_gate.json": "564ae60687422bb1cb86e4e7c5581061e220627b5fe0192d148abc47b7c49500"
+    },
+    "holdout_used": false,
+    "per_observation": [
+      {
+        "name": "grass_original",
+        "status": "answered",
+        "selected_ids": [
+          "L01-01"
+        ],
+        "score": {
+          "grade": "correct",
+          "point_mask": [
+            true
+          ],
+          "citation_numerator": 1,
+          "citation_denominator": 1,
+          "wrong_supplement": false
+        },
+        "error": null,
+        "seconds": 33.46488020000106,
+        "resources": {
+          "samples": 68,
+          "process_rss_peak_GiB": 6.012596130371094,
+          "available_min_GiB": 1.3997039794921875,
+          "client_rss_peak_GiB": 0.05126953125,
+          "cpu_seconds_observed": 166.046875,
+          "mean_logical_cores_observed": 4.961824073888042,
+          "sample_window_seconds": 33.46488560000216,
+          "resource_abort": false,
+          "low_point": {
+            "monotonic": 24878.1230802,
+            "wall_ns": 1795265255386955500,
+            "label": "grass_original",
+            "available": 1502920704,
+            "total": 16858472448,
+            "processes": [
+              {
+                "pid": 32300,
+                "parent_pid": 31016,
+                "role": "ollama",
+                "rss": 52944896,
+                "private": 106553344,
+                "native_peak_rss": 56496128,
+                "cpu_seconds": 15.46875
+              },
+              {
+                "pid": 12056,
+                "parent_pid": 32300,
+                "role": "ollama",
+                "rss": 10309632,
+                "private": 1777664,
+                "native_peak_rss": 10371072,
+                "cpu_seconds": 0.078125
+              },
+              {
+                "pid": 2724,
+                "parent_pid": 32300,
+                "role": "ollama",
+                "rss": 2470416384,
+                "private": 2568970240,
+                "native_peak_rss": 2470416384,
+                "cpu_seconds": 85.203125
+              },
+              {
+                "pid": 25768,
+                "parent_pid": 2724,
+                "role": "ollama",
+                "rss": 7434240,
+                "private": 1306624,
+                "native_peak_rss": 7434240,
+                "cpu_seconds": 0.015625
+              },
+              {
+                "pid": 15216,
+                "parent_pid": 31016,
+                "role": "ui",
+                "rss": 4526080,
+                "private": 811008,
+                "native_peak_rss": 4587520,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 4012,
+                "parent_pid": 15216,
+                "role": "ui",
+                "rss": 10362880,
+                "private": 1789952,
+                "native_peak_rss": 10448896,
+                "cpu_seconds": 0.046875
+              },
+              {
+                "pid": 18512,
+                "parent_pid": 15216,
+                "role": "ui",
+                "rss": 418598912,
+                "private": 1711386624,
+                "native_peak_rss": 419770368,
+                "cpu_seconds": 20.53125
+              },
+              {
+                "pid": 18100,
+                "parent_pid": 18512,
+                "role": "worker",
+                "rss": 4521984,
+                "private": 839680,
+                "native_peak_rss": 4550656,
+                "cpu_seconds": 0.015625
+              },
+              {
+                "pid": 15456,
+                "parent_pid": 18100,
+                "role": "ui",
+                "rss": 7593984,
+                "private": 1282048,
+                "native_peak_rss": 7614464,
+                "cpu_seconds": 0.0
+              },
+              {
+                "pid": 25580,
+                "parent_pid": 18100,
+                "role": "worker",
+                "rss": 2249863168,
+                "private": 3363864576,
+                "native_peak_rss": 2647617536,
+                "cpu_seconds": 52.984375
+              },
+              {
+                "pid": 32860,
+                "parent_pid": 5104,
+                "role": "observer",
+                "rss": 54276096,
+                "private": 43671552,
+                "native_peak_rss": 56479744,
+                "cpu_seconds": 307.046875
+              },
+              {
+                "pid": 29892,
+                "parent_pid": 32860,
+                "role": "chrome",
+                "rss": 207204352,
+                "private": 94666752,
+                "native_peak_rss": 207253504,
+                "cpu_seconds": 5.125
+              },
+              {
+                "pid": 13820,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 10469376,
+                "private": 2662400,
+                "native_peak_rss": 10506240,
+                "cpu_seconds": 0.0
+              },
+              {
+                "pid": 22168,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 111366144,
+                "private": 92168192,
+                "native_peak_rss": 143757312,
+                "cpu_seconds": 4.15625
+              },
+              {
+                "pid": 7336,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 38744064,
+                "private": 15675392,
+                "native_peak_rss": 41496576,
+                "cpu_seconds": 0.40625
+              },
+              {
+                "pid": 9008,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 18161664,
+                "private": 7991296,
+                "native_peak_rss": 18161664,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 4200,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 67993600,
+                "private": 30105600,
+                "native_peak_rss": 71266304,
+                "cpu_seconds": 0.109375
+              },
+              {
+                "pid": 32492,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 144449536,
+                "private": 81776640,
+                "native_peak_rss": 177868800,
+                "cpu_seconds": 3.375
+              },
+              {
+                "pid": 32288,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 42532864,
+                "private": 17444864,
+                "native_peak_rss": 42532864,
+                "cpu_seconds": 0.046875
+              },
+              {
+                "pid": 31920,
+                "parent_pid": 29892,
+                "role": "observer",
+                "rss": 16596992,
+                "private": 3551232,
+                "native_peak_rss": 16617472,
+                "cpu_seconds": 0.09375
+              },
+              {
+                "pid": 17692,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 33820672,
+                "private": 17895424,
+                "native_peak_rss": 33820672,
+                "cpu_seconds": 0.046875
+              },
+              {
+                "pid": 22556,
+                "parent_pid": 31920,
+                "role": "observer",
+                "rss": 15638528,
+                "private": 3260416,
+                "native_peak_rss": 15638528,
+                "cpu_seconds": 0.0
+              },
+              {
+                "pid": 15524,
+                "parent_pid": 31920,
+                "role": "observer",
+                "rss": 18903040,
+                "private": 3784704,
+                "native_peak_rss": 18903040,
+                "cpu_seconds": 0.046875
+              },
+              {
+                "pid": 12492,
+                "parent_pid": 15524,
+                "role": "observer",
+                "rss": 15577088,
+                "private": 3170304,
+                "native_peak_rss": 15577088,
+                "cpu_seconds": 0.015625
+              }
+            ],
+            "process_rss": 6032306176,
+            "client_rss": 54972416,
+            "loaded_models": [
+              {
+                "name": "qwen2.5:3b",
+                "model": "qwen2.5:3b",
+                "size": 2420574780,
+                "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+                "details": {
+                  "parent_model": "",
+                  "format": "gguf",
+                  "family": "qwen2",
+                  "families": [
+                    "qwen2"
+                  ],
+                  "parameter_size": "3.1B",
+                  "quantization_level": "Q4_K_M"
+                },
+                "expires_at": "2026-11-21T20:57:34.8848889+08:00",
+                "size_vram": 0,
+                "context_length": 8192,
+                "runner": "llamacpp"
+              }
+            ]
+          },
+          "role_peak_rss_GiB": {
+            "worker": 2.4211196899414062,
+            "ui": 0.4110450744628906,
+            "ollama": 2.3677139282226562,
+            "chrome": 0.7815132141113281,
+            "observer": 0.11338043212890625
+          }
+        },
+        "zero_call_gate": null,
+        "visible_answer_verified": true
+      },
+      {
+        "name": "grass_paraphrase",
+        "status": "answered",
+        "selected_ids": [
+          "L01-01"
+        ],
+        "score": {
+          "grade": "correct",
+          "point_mask": [
+            true
+          ],
+          "citation_numerator": 1,
+          "citation_denominator": 1,
+          "wrong_supplement": false
+        },
+        "error": null,
+        "seconds": 32.8938476000003,
+        "resources": {
+          "samples": 71,
+          "process_rss_peak_GiB": 5.729042053222656,
+          "available_min_GiB": 1.2083854675292969,
+          "client_rss_peak_GiB": 0.0516815185546875,
+          "cpu_seconds_observed": 159.984375,
+          "mean_logical_cores_observed": 4.863655858022752,
+          "sample_window_seconds": 32.89385179999954,
+          "resource_abort": false,
+          "low_point": {
+            "monotonic": 24902.5408706,
+            "wall_ns": 1795265279806058800,
+            "label": "grass_paraphrase",
+            "available": 1297494016,
+            "total": 16858472448,
+            "processes": [
+              {
+                "pid": 32300,
+                "parent_pid": 31016,
+                "role": "ollama",
+                "rss": 52502528,
+                "private": 106106880,
+                "native_peak_rss": 56496128,
+                "cpu_seconds": 15.96875
+              },
+              {
+                "pid": 12056,
+                "parent_pid": 32300,
+                "role": "ollama",
+                "rss": 10309632,
+                "private": 1777664,
+                "native_peak_rss": 10371072,
+                "cpu_seconds": 0.078125
+              },
+              {
+                "pid": 10564,
+                "parent_pid": 32300,
+                "role": "ollama",
+                "rss": 2373677056,
+                "private": 2567176192,
+                "native_peak_rss": 2373677056,
+                "cpu_seconds": 5.25
+              },
+              {
+                "pid": 27996,
+                "parent_pid": 10564,
+                "role": "ollama",
+                "rss": 7430144,
+                "private": 1302528,
+                "native_peak_rss": 7430144,
+                "cpu_seconds": 0.015625
+              },
+              {
+                "pid": 15216,
+                "parent_pid": 31016,
+                "role": "ui",
+                "rss": 4526080,
+                "private": 811008,
+                "native_peak_rss": 4587520,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 4012,
+                "parent_pid": 15216,
+                "role": "ui",
+                "rss": 10362880,
+                "private": 1789952,
+                "native_peak_rss": 10448896,
+                "cpu_seconds": 0.046875
+              },
+              {
+                "pid": 18512,
+                "parent_pid": 15216,
+                "role": "ui",
+                "rss": 420585472,
+                "private": 1713463296,
+                "native_peak_rss": 421556224,
+                "cpu_seconds": 20.90625
+              },
+              {
+                "pid": 12704,
+                "parent_pid": 18512,
+                "role": "worker",
+                "rss": 4546560,
+                "private": 888832,
+                "native_peak_rss": 4546560,
+                "cpu_seconds": 0.015625
+              },
+              {
+                "pid": 15332,
+                "parent_pid": 12704,
+                "role": "ui",
+                "rss": 7626752,
+                "private": 1327104,
+                "native_peak_rss": 7626752,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 4336,
+                "parent_pid": 12704,
+                "role": "worker",
+                "rss": 2416123904,
+                "private": 3081093120,
+                "native_peak_rss": 2638917632,
+                "cpu_seconds": 50.703125
+              },
+              {
+                "pid": 32860,
+                "parent_pid": 5104,
+                "role": "observer",
+                "rss": 55492608,
+                "private": 45740032,
+                "native_peak_rss": 56479744,
+                "cpu_seconds": 317.28125
+              },
+              {
+                "pid": 29892,
+                "parent_pid": 32860,
+                "role": "chrome",
+                "rss": 207216640,
+                "private": 92958720,
+                "native_peak_rss": 215781376,
+                "cpu_seconds": 5.3125
+              },
+              {
+                "pid": 13820,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 10469376,
+                "private": 2662400,
+                "native_peak_rss": 10506240,
+                "cpu_seconds": 0.0
+              },
+              {
+                "pid": 22168,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 112492544,
+                "private": 92741632,
+                "native_peak_rss": 179097600,
+                "cpu_seconds": 4.71875
+              },
+              {
+                "pid": 7336,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 38838272,
+                "private": 14213120,
+                "native_peak_rss": 41496576,
+                "cpu_seconds": 0.453125
+              },
+              {
+                "pid": 9008,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 18386944,
+                "private": 7954432,
+                "native_peak_rss": 18415616,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 4200,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 68333568,
+                "private": 30101504,
+                "native_peak_rss": 71266304,
+                "cpu_seconds": 0.125
+              },
+              {
+                "pid": 32492,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 154525696,
+                "private": 89931776,
+                "native_peak_rss": 177868800,
+                "cpu_seconds": 4.140625
+              },
+              {
+                "pid": 32288,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 43556864,
+                "private": 18010112,
+                "native_peak_rss": 43556864,
+                "cpu_seconds": 0.0625
+              },
+              {
+                "pid": 17692,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 34365440,
+                "private": 18202624,
+                "native_peak_rss": 34365440,
+                "cpu_seconds": 0.0625
+              }
+            ],
+            "process_rss": 6051368960,
+            "client_rss": 55492608,
+            "loaded_models": [
+              {
+                "name": "qwen2.5:3b",
+                "model": "qwen2.5:3b",
+                "size": 2420574780,
+                "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+                "details": {
+                  "parent_model": "",
+                  "format": "gguf",
+                  "family": "qwen2",
+                  "families": [
+                    "qwen2"
+                  ],
+                  "parameter_size": "3.1B",
+                  "quantization_level": "Q4_K_M"
+                },
+                "expires_at": "2026-11-21T20:57:59.8055539+08:00",
+                "size_vram": 0,
+                "context_length": 8192,
+                "runner": "llamacpp"
+              }
+            ]
+          },
+          "role_peak_rss_GiB": {
+            "worker": 2.2563323974609375,
+            "ui": 0.4126701354980469,
+            "ollama": 2.3674087524414062,
+            "chrome": 0.6947097778320312,
+            "observer": 0.0516815185546875
+          }
+        },
+        "zero_call_gate": null,
+        "visible_answer_verified": true
+      },
+      {
+        "name": "pressure_original",
+        "status": "answered",
+        "selected_ids": [
+          "L02-02"
+        ],
+        "score": {
+          "grade": "correct",
+          "point_mask": [
+            true
+          ],
+          "citation_numerator": 1,
+          "citation_denominator": 1,
+          "wrong_supplement": false
+        },
+        "error": null,
+        "seconds": 36.00086789999841,
+        "resources": {
+          "samples": 77,
+          "process_rss_peak_GiB": 5.551692962646484,
+          "available_min_GiB": 1.4139175415039062,
+          "client_rss_peak_GiB": 0.051822662353515625,
+          "cpu_seconds_observed": 184.875,
+          "mean_logical_cores_observed": 5.135292335533702,
+          "sample_window_seconds": 36.00087159999748,
+          "resource_abort": false,
+          "low_point": {
+            "monotonic": 24951.5945143,
+            "wall_ns": 1795265328858727800,
+            "label": "pressure_original",
+            "available": 1518182400,
+            "total": 16858472448,
+            "processes": [
+              {
+                "pid": 32300,
+                "parent_pid": 31016,
+                "role": "ollama",
+                "rss": 52785152,
+                "private": 106303488,
+                "native_peak_rss": 56496128,
+                "cpu_seconds": 16.796875
+              },
+              {
+                "pid": 12056,
+                "parent_pid": 32300,
+                "role": "ollama",
+                "rss": 10309632,
+                "private": 1777664,
+                "native_peak_rss": 10371072,
+                "cpu_seconds": 0.09375
+              },
+              {
+                "pid": 12928,
+                "parent_pid": 32300,
+                "role": "ollama",
+                "rss": 2471141376,
+                "private": 2568843264,
+                "native_peak_rss": 2471141376,
+                "cpu_seconds": 108.421875
+              },
+              {
+                "pid": 32880,
+                "parent_pid": 12928,
+                "role": "ollama",
+                "rss": 7430144,
+                "private": 1290240,
+                "native_peak_rss": 7430144,
+                "cpu_seconds": 0.015625
+              },
+              {
+                "pid": 15216,
+                "parent_pid": 31016,
+                "role": "ui",
+                "rss": 4526080,
+                "private": 811008,
+                "native_peak_rss": 4587520,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 4012,
+                "parent_pid": 15216,
+                "role": "ui",
+                "rss": 10362880,
+                "private": 1789952,
+                "native_peak_rss": 10448896,
+                "cpu_seconds": 0.046875
+              },
+              {
+                "pid": 18512,
+                "parent_pid": 15216,
+                "role": "ui",
+                "rss": 420626432,
+                "private": 1713463296,
+                "native_peak_rss": 421556224,
+                "cpu_seconds": 21.546875
+              },
+              {
+                "pid": 25556,
+                "parent_pid": 18512,
+                "role": "worker",
+                "rss": 4521984,
+                "private": 839680,
+                "native_peak_rss": 4550656,
+                "cpu_seconds": 0.0
+              },
+              {
+                "pid": 33620,
+                "parent_pid": 25556,
+                "role": "ui",
+                "rss": 7598080,
+                "private": 1286144,
+                "native_peak_rss": 7618560,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 10508,
+                "parent_pid": 25556,
+                "role": "worker",
+                "rss": 2230104064,
+                "private": 2878160896,
+                "native_peak_rss": 2632699904,
+                "cpu_seconds": 52.875
+              },
+              {
+                "pid": 32860,
+                "parent_pid": 5104,
+                "role": "observer",
+                "rss": 55451648,
+                "private": 45715456,
+                "native_peak_rss": 56602624,
+                "cpu_seconds": 339.484375
+              },
+              {
+                "pid": 29892,
+                "parent_pid": 32860,
+                "role": "chrome",
+                "rss": 207216640,
+                "private": 92905472,
+                "native_peak_rss": 215781376,
+                "cpu_seconds": 5.59375
+              },
+              {
+                "pid": 13820,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 10469376,
+                "private": 2662400,
+                "native_peak_rss": 10506240,
+                "cpu_seconds": 0.0
+              },
+              {
+                "pid": 22168,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 112685056,
+                "private": 92971008,
+                "native_peak_rss": 179097600,
+                "cpu_seconds": 5.125
+              },
+              {
+                "pid": 7336,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 39141376,
+                "private": 14188544,
+                "native_peak_rss": 41496576,
+                "cpu_seconds": 0.5
+              },
+              {
+                "pid": 9008,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 18386944,
+                "private": 7954432,
+                "native_peak_rss": 18415616,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 4200,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 67022848,
+                "private": 28516352,
+                "native_peak_rss": 71266304,
+                "cpu_seconds": 0.140625
+              },
+              {
+                "pid": 32492,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 153350144,
+                "private": 88948736,
+                "native_peak_rss": 177868800,
+                "cpu_seconds": 4.859375
+              },
+              {
+                "pid": 32288,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 43556864,
+                "private": 18010112,
+                "native_peak_rss": 43556864,
+                "cpu_seconds": 0.0625
+              },
+              {
+                "pid": 17692,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 34398208,
+                "private": 18202624,
+                "native_peak_rss": 34398208,
+                "cpu_seconds": 0.0625
+              }
+            ],
+            "process_rss": 5961084928,
+            "client_rss": 55451648,
+            "loaded_models": [
+              {
+                "name": "qwen2.5:3b",
+                "model": "qwen2.5:3b",
+                "size": 2420574780,
+                "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+                "details": {
+                  "parent_model": "",
+                  "format": "gguf",
+                  "family": "qwen2",
+                  "families": [
+                    "qwen2"
+                  ],
+                  "parameter_size": "3.1B",
+                  "quantization_level": "Q4_K_M"
+                },
+                "expires_at": "2026-11-21T20:58:47.7738543+08:00",
+                "size_vram": 0,
+                "context_length": 8192,
+                "runner": "llamacpp"
+              }
+            ]
+          },
+          "role_peak_rss_GiB": {
+            "worker": 2.081157684326172,
+            "ui": 0.4127006530761719,
+            "ollama": 2.367420196533203,
+            "chrome": 0.6801681518554688,
+            "observer": 0.051822662353515625
+          }
+        },
+        "zero_call_gate": null,
+        "visible_answer_verified": true
+      },
+      {
+        "name": "pressure_paraphrase",
+        "status": "answered",
+        "selected_ids": [
+          "L02-02"
+        ],
+        "score": {
+          "grade": "correct",
+          "point_mask": [
+            true
+          ],
+          "citation_numerator": 1,
+          "citation_denominator": 1,
+          "wrong_supplement": false
+        },
+        "error": null,
+        "seconds": 36.131086200002756,
+        "resources": {
+          "samples": 77,
+          "process_rss_peak_GiB": 5.561187744140625,
+          "available_min_GiB": 1.4515151977539062,
+          "client_rss_peak_GiB": 0.0518798828125,
+          "cpu_seconds_observed": 186.46875,
+          "mean_logical_cores_observed": 5.16089470403947,
+          "sample_window_seconds": 36.131089800001064,
+          "resource_abort": false,
+          "low_point": {
+            "monotonic": 24989.7579547,
+            "wall_ns": 1795265367018340600,
+            "label": "pressure_paraphrase",
+            "available": 1558552576,
+            "total": 16858472448,
+            "processes": [
+              {
+                "pid": 32300,
+                "parent_pid": 31016,
+                "role": "ollama",
+                "rss": 52989952,
+                "private": 106516480,
+                "native_peak_rss": 56496128,
+                "cpu_seconds": 17.578125
+              },
+              {
+                "pid": 12056,
+                "parent_pid": 32300,
+                "role": "ollama",
+                "rss": 10309632,
+                "private": 1777664,
+                "native_peak_rss": 10371072,
+                "cpu_seconds": 0.09375
+              },
+              {
+                "pid": 32540,
+                "parent_pid": 32300,
+                "role": "ollama",
+                "rss": 2470977536,
+                "private": 2568900608,
+                "native_peak_rss": 2470977536,
+                "cpu_seconds": 113.171875
+              },
+              {
+                "pid": 22264,
+                "parent_pid": 32540,
+                "role": "ollama",
+                "rss": 7430144,
+                "private": 1294336,
+                "native_peak_rss": 7430144,
+                "cpu_seconds": 0.0
+              },
+              {
+                "pid": 15216,
+                "parent_pid": 31016,
+                "role": "ui",
+                "rss": 4526080,
+                "private": 811008,
+                "native_peak_rss": 4587520,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 4012,
+                "parent_pid": 15216,
+                "role": "ui",
+                "rss": 10362880,
+                "private": 1789952,
+                "native_peak_rss": 10448896,
+                "cpu_seconds": 0.0625
+              },
+              {
+                "pid": 18512,
+                "parent_pid": 15216,
+                "role": "ui",
+                "rss": 420700160,
+                "private": 1713463296,
+                "native_peak_rss": 421605376,
+                "cpu_seconds": 22.140625
+              },
+              {
+                "pid": 31684,
+                "parent_pid": 18512,
+                "role": "worker",
+                "rss": 4521984,
+                "private": 831488,
+                "native_peak_rss": 4546560,
+                "cpu_seconds": 0.0
+              },
+              {
+                "pid": 17636,
+                "parent_pid": 31684,
+                "role": "ui",
+                "rss": 7606272,
+                "private": 1290240,
+                "native_peak_rss": 7626752,
+                "cpu_seconds": 0.015625
+              },
+              {
+                "pid": 12876,
+                "parent_pid": 31684,
+                "role": "worker",
+                "rss": 2244300800,
+                "private": 3093368832,
+                "native_peak_rss": 2640265216,
+                "cpu_seconds": 49.546875
+              },
+              {
+                "pid": 32860,
+                "parent_pid": 5104,
+                "role": "observer",
+                "rss": 55578624,
+                "private": 45834240,
+                "native_peak_rss": 56655872,
+                "cpu_seconds": 356.4375
+              },
+              {
+                "pid": 29892,
+                "parent_pid": 32860,
+                "role": "chrome",
+                "rss": 207073280,
+                "private": 92606464,
+                "native_peak_rss": 215781376,
+                "cpu_seconds": 5.671875
+              },
+              {
+                "pid": 13820,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 10469376,
+                "private": 2662400,
+                "native_peak_rss": 10506240,
+                "cpu_seconds": 0.0
+              },
+              {
+                "pid": 22168,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 112869376,
+                "private": 93081600,
+                "native_peak_rss": 179097600,
+                "cpu_seconds": 5.53125
+              },
+              {
+                "pid": 7336,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 39288832,
+                "private": 14036992,
+                "native_peak_rss": 41496576,
+                "cpu_seconds": 0.515625
+              },
+              {
+                "pid": 9008,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 18350080,
+                "private": 7917568,
+                "native_peak_rss": 18415616,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 4200,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 67035136,
+                "private": 28516352,
+                "native_peak_rss": 71266304,
+                "cpu_seconds": 0.140625
+              },
+              {
+                "pid": 32492,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 148922368,
+                "private": 87543808,
+                "native_peak_rss": 177868800,
+                "cpu_seconds": 5.625
+              },
+              {
+                "pid": 32288,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 43569152,
+                "private": 18010112,
+                "native_peak_rss": 43569152,
+                "cpu_seconds": 0.0625
+              },
+              {
+                "pid": 17692,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 34398208,
+                "private": 18202624,
+                "native_peak_rss": 34398208,
+                "cpu_seconds": 0.0625
+              }
+            ],
+            "process_rss": 5971279872,
+            "client_rss": 55578624,
+            "loaded_models": [
+              {
+                "name": "qwen2.5:3b",
+                "model": "qwen2.5:3b",
+                "size": 2420574780,
+                "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+                "details": {
+                  "parent_model": "",
+                  "format": "gguf",
+                  "family": "qwen2",
+                  "families": [
+                    "qwen2"
+                  ],
+                  "parameter_size": "3.1B",
+                  "quantization_level": "Q4_K_M"
+                },
+                "expires_at": "2026-11-21T20:59:25.8849141+08:00",
+                "size_vram": 0,
+                "context_length": 8192,
+                "runner": "llamacpp"
+              }
+            ]
+          },
+          "role_peak_rss_GiB": {
+            "worker": 2.094379425048828,
+            "ui": 0.4127769470214844,
+            "ollama": 2.3674468994140625,
+            "chrome": 0.6701736450195312,
+            "observer": 0.0518798828125
+          }
+        },
+        "zero_call_gate": null,
+        "visible_answer_verified": true
+      },
+      {
+        "name": "goal_both_paraphrase",
+        "status": "answered",
+        "selected_ids": [
+          "L01-03"
+        ],
+        "score": {
+          "grade": "correct",
+          "point_mask": [
+            true,
+            true
+          ],
+          "citation_numerator": 1,
+          "citation_denominator": 1,
+          "wrong_supplement": false
+        },
+        "error": null,
+        "seconds": 37.192844299999706,
+        "resources": {
+          "samples": 79,
+          "process_rss_peak_GiB": 5.912593841552734,
+          "available_min_GiB": 1.1197090148925781,
+          "client_rss_peak_GiB": 0.052112579345703125,
+          "cpu_seconds_observed": 196.5,
+          "mean_logical_cores_observed": 5.283273759693823,
+          "sample_window_seconds": 37.19284840000182,
+          "resource_abort": false,
+          "low_point": {
+            "monotonic": 25014.2768084,
+            "wall_ns": 1795265391537254300,
+            "label": "goal_both_paraphrase",
+            "available": 1202278400,
+            "total": 16858472448,
+            "processes": [
+              {
+                "pid": 32300,
+                "parent_pid": 31016,
+                "role": "ollama",
+                "rss": 52408320,
+                "private": 105902080,
+                "native_peak_rss": 56496128,
+                "cpu_seconds": 18.078125
+              },
+              {
+                "pid": 12056,
+                "parent_pid": 32300,
+                "role": "ollama",
+                "rss": 10309632,
+                "private": 1777664,
+                "native_peak_rss": 10371072,
+                "cpu_seconds": 0.109375
+              },
+              {
+                "pid": 20916,
+                "parent_pid": 32300,
+                "role": "ollama",
+                "rss": 2469228544,
+                "private": 2567114752,
+                "native_peak_rss": 2469228544,
+                "cpu_seconds": 8.078125
+              },
+              {
+                "pid": 3732,
+                "parent_pid": 20916,
+                "role": "ollama",
+                "rss": 7426048,
+                "private": 1282048,
+                "native_peak_rss": 7426048,
+                "cpu_seconds": 0.015625
+              },
+              {
+                "pid": 15216,
+                "parent_pid": 31016,
+                "role": "ui",
+                "rss": 4526080,
+                "private": 811008,
+                "native_peak_rss": 4587520,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 4012,
+                "parent_pid": 15216,
+                "role": "ui",
+                "rss": 10362880,
+                "private": 1789952,
+                "native_peak_rss": 10448896,
+                "cpu_seconds": 0.0625
+              },
+              {
+                "pid": 18512,
+                "parent_pid": 15216,
+                "role": "ui",
+                "rss": 420786176,
+                "private": 1713483776,
+                "native_peak_rss": 421683200,
+                "cpu_seconds": 22.578125
+              },
+              {
+                "pid": 10640,
+                "parent_pid": 18512,
+                "role": "worker",
+                "rss": 4558848,
+                "private": 905216,
+                "native_peak_rss": 4558848,
+                "cpu_seconds": 0.0
+              },
+              {
+                "pid": 10460,
+                "parent_pid": 10640,
+                "role": "ui",
+                "rss": 7618560,
+                "private": 1318912,
+                "native_peak_rss": 7618560,
+                "cpu_seconds": 0.015625
+              },
+              {
+                "pid": 13712,
+                "parent_pid": 10640,
+                "role": "worker",
+                "rss": 2411417600,
+                "private": 3359367168,
+                "native_peak_rss": 2648145920,
+                "cpu_seconds": 51.25
+              },
+              {
+                "pid": 32860,
+                "parent_pid": 5104,
+                "role": "observer",
+                "rss": 55566336,
+                "private": 45785088,
+                "native_peak_rss": 56905728,
+                "cpu_seconds": 366.453125
+              },
+              {
+                "pid": 29892,
+                "parent_pid": 32860,
+                "role": "chrome",
+                "rss": 207433728,
+                "private": 92528640,
+                "native_peak_rss": 215781376,
+                "cpu_seconds": 5.6875
+              },
+              {
+                "pid": 13820,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 10469376,
+                "private": 2662400,
+                "native_peak_rss": 10506240,
+                "cpu_seconds": 0.0
+              },
+              {
+                "pid": 22168,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 112967680,
+                "private": 93147136,
+                "native_peak_rss": 179097600,
+                "cpu_seconds": 5.921875
+              },
+              {
+                "pid": 7336,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 39256064,
+                "private": 14016512,
+                "native_peak_rss": 41496576,
+                "cpu_seconds": 0.53125
+              },
+              {
+                "pid": 9008,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 18350080,
+                "private": 7917568,
+                "native_peak_rss": 18415616,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 4200,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 67035136,
+                "private": 28516352,
+                "native_peak_rss": 71266304,
+                "cpu_seconds": 0.140625
+              },
+              {
+                "pid": 32492,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 153190400,
+                "private": 91774976,
+                "native_peak_rss": 177868800,
+                "cpu_seconds": 6.5625
+              },
+              {
+                "pid": 32288,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 43569152,
+                "private": 18010112,
+                "native_peak_rss": 43569152,
+                "cpu_seconds": 0.0625
+              },
+              {
+                "pid": 17692,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 34398208,
+                "private": 18202624,
+                "native_peak_rss": 34398208,
+                "cpu_seconds": 0.0625
+              },
+              {
+                "pid": 6228,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 186073088,
+                "private": 235622400,
+                "native_peak_rss": 186073088,
+                "cpu_seconds": 0.8125
+              }
+            ],
+            "process_rss": 6326951936,
+            "client_rss": 55566336,
+            "loaded_models": [
+              {
+                "name": "qwen2.5:3b",
+                "model": "qwen2.5:3b",
+                "size": 2420574780,
+                "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+                "details": {
+                  "parent_model": "",
+                  "format": "gguf",
+                  "family": "qwen2",
+                  "families": [
+                    "qwen2"
+                  ],
+                  "parameter_size": "3.1B",
+                  "quantization_level": "Q4_K_M"
+                },
+                "expires_at": "2026-11-21T20:59:51.0226969+08:00",
+                "size_vram": 0,
+                "context_length": 8192,
+                "runner": "llamacpp"
+              }
+            ]
+          },
+          "role_peak_rss_GiB": {
+            "worker": 2.2522010803222656,
+            "ui": 0.41284942626953125,
+            "ollama": 2.3671493530273438,
+            "chrome": 0.8329658508300781,
+            "observer": 0.052112579345703125
+          }
+        },
+        "zero_call_gate": null,
+        "visible_answer_verified": true
+      },
+      {
+        "name": "players",
+        "status": "answered",
+        "selected_ids": [
+          "L03-01"
+        ],
+        "score": {
+          "grade": "correct",
+          "point_mask": [
+            true,
+            true
+          ],
+          "citation_numerator": 1,
+          "citation_denominator": 1,
+          "wrong_supplement": false
+        },
+        "error": null,
+        "seconds": 33.918853399998625,
+        "resources": {
+          "samples": 72,
+          "process_rss_peak_GiB": 5.570171356201172,
+          "available_min_GiB": 1.3865852355957031,
+          "client_rss_peak_GiB": 0.051876068115234375,
+          "cpu_seconds_observed": 166.65625,
+          "mean_logical_cores_observed": 4.9133804688246245,
+          "sample_window_seconds": 33.91885710000133,
+          "resource_abort": false,
+          "low_point": {
+            "monotonic": 25063.9091217,
+            "wall_ns": 1795265441169512300,
+            "label": "players",
+            "available": 1488834560,
+            "total": 16858472448,
+            "processes": [
+              {
+                "pid": 32300,
+                "parent_pid": 31016,
+                "role": "ollama",
+                "rss": 52944896,
+                "private": 106450944,
+                "native_peak_rss": 56496128,
+                "cpu_seconds": 18.96875
+              },
+              {
+                "pid": 12056,
+                "parent_pid": 32300,
+                "role": "ollama",
+                "rss": 10309632,
+                "private": 1777664,
+                "native_peak_rss": 10371072,
+                "cpu_seconds": 0.125
+              },
+              {
+                "pid": 17264,
+                "parent_pid": 32300,
+                "role": "ollama",
+                "rss": 2471469056,
+                "private": 2569048064,
+                "native_peak_rss": 2471469056,
+                "cpu_seconds": 92.375
+              },
+              {
+                "pid": 31552,
+                "parent_pid": 17264,
+                "role": "ollama",
+                "rss": 7438336,
+                "private": 1298432,
+                "native_peak_rss": 7438336,
+                "cpu_seconds": 0.015625
+              },
+              {
+                "pid": 15216,
+                "parent_pid": 31016,
+                "role": "ui",
+                "rss": 4526080,
+                "private": 811008,
+                "native_peak_rss": 4587520,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 4012,
+                "parent_pid": 15216,
+                "role": "ui",
+                "rss": 10362880,
+                "private": 1789952,
+                "native_peak_rss": 10448896,
+                "cpu_seconds": 0.09375
+              },
+              {
+                "pid": 18512,
+                "parent_pid": 15216,
+                "role": "ui",
+                "rss": 420769792,
+                "private": 1713467392,
+                "native_peak_rss": 421687296,
+                "cpu_seconds": 23.296875
+              },
+              {
+                "pid": 30676,
+                "parent_pid": 18512,
+                "role": "worker",
+                "rss": 4521984,
+                "private": 843776,
+                "native_peak_rss": 4550656,
+                "cpu_seconds": 0.0
+              },
+              {
+                "pid": 12348,
+                "parent_pid": 30676,
+                "role": "ui",
+                "rss": 7602176,
+                "private": 1298432,
+                "native_peak_rss": 7622656,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 30828,
+                "parent_pid": 30676,
+                "role": "worker",
+                "rss": 2245844992,
+                "private": 3360808960,
+                "native_peak_rss": 2647453696,
+                "cpu_seconds": 53.390625
+              },
+              {
+                "pid": 32860,
+                "parent_pid": 5104,
+                "role": "observer",
+                "rss": 55676928,
+                "private": 46010368,
+                "native_peak_rss": 56905728,
+                "cpu_seconds": 389.25
+              },
+              {
+                "pid": 29892,
+                "parent_pid": 32860,
+                "role": "chrome",
+                "rss": 207310848,
+                "private": 92528640,
+                "native_peak_rss": 215781376,
+                "cpu_seconds": 5.828125
+              },
+              {
+                "pid": 13820,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 10469376,
+                "private": 2662400,
+                "native_peak_rss": 10506240,
+                "cpu_seconds": 0.0
+              },
+              {
+                "pid": 22168,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 113057792,
+                "private": 93270016,
+                "native_peak_rss": 179097600,
+                "cpu_seconds": 6.34375
+              },
+              {
+                "pid": 7336,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 39292928,
+                "private": 13950976,
+                "native_peak_rss": 41496576,
+                "cpu_seconds": 0.5625
+              },
+              {
+                "pid": 9008,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 18350080,
+                "private": 7917568,
+                "native_peak_rss": 18415616,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 4200,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 67035136,
+                "private": 28516352,
+                "native_peak_rss": 71266304,
+                "cpu_seconds": 0.140625
+              },
+              {
+                "pid": 32492,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 155963392,
+                "private": 94846976,
+                "native_peak_rss": 177868800,
+                "cpu_seconds": 7.359375
+              },
+              {
+                "pid": 32288,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 43569152,
+                "private": 18010112,
+                "native_peak_rss": 43569152,
+                "cpu_seconds": 0.0625
+              },
+              {
+                "pid": 17692,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 34398208,
+                "private": 18202624,
+                "native_peak_rss": 34398208,
+                "cpu_seconds": 0.078125
+              }
+            ],
+            "process_rss": 5980913664,
+            "client_rss": 55676928,
+            "loaded_models": [
+              {
+                "name": "qwen2.5:3b",
+                "model": "qwen2.5:3b",
+                "size": 2420574780,
+                "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+                "details": {
+                  "parent_model": "",
+                  "format": "gguf",
+                  "family": "qwen2",
+                  "families": [
+                    "qwen2"
+                  ],
+                  "parameter_size": "3.1B",
+                  "quantization_level": "Q4_K_M"
+                },
+                "expires_at": "2026-11-21T21:00:40.2391298+08:00",
+                "size_vram": 0,
+                "context_length": 8192,
+                "runner": "llamacpp"
+              }
+            ]
+          },
+          "role_peak_rss_GiB": {
+            "worker": 2.0958175659179688,
+            "ui": 0.4128379821777344,
+            "ollama": 2.3677024841308594,
+            "chrome": 0.6713218688964844,
+            "observer": 0.051876068115234375
+          }
+        },
+        "zero_call_gate": null,
+        "visible_answer_verified": true
+      },
+      {
+        "name": "D036_gate",
+        "status": "refused",
+        "selected_ids": [],
+        "score": {
+          "grade": "boundary_observation",
+          "wrong_supplement": false
+        },
+        "error": null,
+        "seconds": 4.832418599999073,
+        "resources": {
+          "samples": 12,
+          "process_rss_peak_GiB": 3.540904998779297,
+          "available_min_GiB": 3.391551971435547,
+          "client_rss_peak_GiB": 0.0518951416015625,
+          "cpu_seconds_observed": 4.078125,
+          "mean_logical_cores_observed": 0.8439091729106242,
+          "sample_window_seconds": 4.832421699997212,
+          "resource_abort": false,
+          "low_point": {
+            "monotonic": 25071.7247899,
+            "wall_ns": 1795265448997798100,
+            "label": "D036_gate",
+            "available": 3641651200,
+            "total": 16858472448,
+            "processes": [
+              {
+                "pid": 32300,
+                "parent_pid": 31016,
+                "role": "ollama",
+                "rss": 52944896,
+                "private": 106450944,
+                "native_peak_rss": 56496128,
+                "cpu_seconds": 19.0625
+              },
+              {
+                "pid": 12056,
+                "parent_pid": 32300,
+                "role": "ollama",
+                "rss": 10309632,
+                "private": 1777664,
+                "native_peak_rss": 10371072,
+                "cpu_seconds": 0.125
+              },
+              {
+                "pid": 17264,
+                "parent_pid": 32300,
+                "role": "ollama",
+                "rss": 2471469056,
+                "private": 2569048064,
+                "native_peak_rss": 2471469056,
+                "cpu_seconds": 92.390625
+              },
+              {
+                "pid": 31552,
+                "parent_pid": 17264,
+                "role": "ollama",
+                "rss": 7438336,
+                "private": 1298432,
+                "native_peak_rss": 7438336,
+                "cpu_seconds": 0.015625
+              },
+              {
+                "pid": 15216,
+                "parent_pid": 31016,
+                "role": "ui",
+                "rss": 4526080,
+                "private": 811008,
+                "native_peak_rss": 4587520,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 4012,
+                "parent_pid": 15216,
+                "role": "ui",
+                "rss": 10362880,
+                "private": 1789952,
+                "native_peak_rss": 10448896,
+                "cpu_seconds": 0.09375
+              },
+              {
+                "pid": 18512,
+                "parent_pid": 15216,
+                "role": "ui",
+                "rss": 420728832,
+                "private": 1713446912,
+                "native_peak_rss": 421687296,
+                "cpu_seconds": 23.578125
+              },
+              {
+                "pid": 32016,
+                "parent_pid": 18512,
+                "role": "worker",
+                "rss": 4562944,
+                "private": 888832,
+                "native_peak_rss": 4562944,
+                "cpu_seconds": 0.015625
+              },
+              {
+                "pid": 17536,
+                "parent_pid": 32016,
+                "role": "ui",
+                "rss": 7622656,
+                "private": 1327104,
+                "native_peak_rss": 7622656,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 14968,
+                "parent_pid": 32016,
+                "role": "worker",
+                "rss": 41648128,
+                "private": 668770304,
+                "native_peak_rss": 48410624,
+                "cpu_seconds": 1.1875
+              },
+              {
+                "pid": 32860,
+                "parent_pid": 5104,
+                "role": "observer",
+                "rss": 55721984,
+                "private": 46067712,
+                "native_peak_rss": 56905728,
+                "cpu_seconds": 392.140625
+              },
+              {
+                "pid": 29892,
+                "parent_pid": 32860,
+                "role": "chrome",
+                "rss": 207441920,
+                "private": 92659712,
+                "native_peak_rss": 215781376,
+                "cpu_seconds": 5.828125
+              },
+              {
+                "pid": 13820,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 10469376,
+                "private": 2662400,
+                "native_peak_rss": 10506240,
+                "cpu_seconds": 0.0
+              },
+              {
+                "pid": 22168,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 139448320,
+                "private": 120315904,
+                "native_peak_rss": 179097600,
+                "cpu_seconds": 6.671875
+              },
+              {
+                "pid": 7336,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 39321600,
+                "private": 13959168,
+                "native_peak_rss": 41496576,
+                "cpu_seconds": 0.578125
+              },
+              {
+                "pid": 9008,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 18350080,
+                "private": 7917568,
+                "native_peak_rss": 18415616,
+                "cpu_seconds": 0.03125
+              },
+              {
+                "pid": 4200,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 67035136,
+                "private": 28516352,
+                "native_peak_rss": 71266304,
+                "cpu_seconds": 0.140625
+              },
+              {
+                "pid": 32492,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 153513984,
+                "private": 92352512,
+                "native_peak_rss": 177868800,
+                "cpu_seconds": 8.015625
+              },
+              {
+                "pid": 32288,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 43569152,
+                "private": 18010112,
+                "native_peak_rss": 43569152,
+                "cpu_seconds": 0.0625
+              },
+              {
+                "pid": 17692,
+                "parent_pid": 29892,
+                "role": "chrome",
+                "rss": 34398208,
+                "private": 18202624,
+                "native_peak_rss": 34398208,
+                "cpu_seconds": 0.078125
+              }
+            ],
+            "process_rss": 3800883200,
+            "client_rss": 55721984,
+            "loaded_models": [
+              {
+                "name": "qwen2.5:3b",
+                "model": "qwen2.5:3b",
+                "size": 2420574780,
+                "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+                "details": {
+                  "parent_model": "",
+                  "format": "gguf",
+                  "family": "qwen2",
+                  "families": [
+                    "qwen2"
+                  ],
+                  "parameter_size": "3.1B",
+                  "quantization_level": "Q4_K_M"
+                },
+                "expires_at": "2026-11-21T21:00:40.5366622+08:00",
+                "size_vram": 0,
+                "context_length": 8192,
+                "runner": "llamacpp"
+              }
+            ]
+          },
+          "role_peak_rss_GiB": {
+            "worker": 0.044094085693359375,
+            "ui": 0.4127998352050781,
+            "ollama": 2.367572784423828,
+            "chrome": 0.6672821044921875,
+            "observer": 0.0518951416015625
+          }
+        },
+        "zero_call_gate": true,
+        "visible_answer_verified": true
+      }
+    ]
+  },
+  "all_gates_passed": true,
+  "positive_unique_wordings": 6,
+  "registered_attributes": 4,
+  "independent_objects": 3,
+  "worker_observations": 26,
+  "recovered_wordings": [
+    "grass_original",
+    "pressure_original",
+    "pressure_paraphrase",
+    "goal_both_original"
+  ],
+  "per_observation": [
+    {
+      "name": "grass_original",
+      "variant": "A",
+      "seconds": 35.60694610000064,
+      "available_min_GiB": 1.6712799072265625,
+      "status": "refused",
+      "selected_ids": [],
+      "score": {
+        "grade": "false_refusal",
+        "point_mask": [
+          false
+        ],
+        "citation_numerator": 0,
+        "citation_denominator": 0,
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "grass_original",
+      "variant": "B",
+      "seconds": 36.11284130000058,
+      "available_min_GiB": 1.4402923583984375,
+      "status": "answered",
+      "selected_ids": [
+        "L01-01"
+      ],
+      "score": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "citation_numerator": 1,
+        "citation_denominator": 1,
+        "wrong_supplement": false
+      },
+      "recovery": {
+        "applied": true,
+        "base_prompt_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+        "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "fact_ids": [
+          "artificial_surface_color"
+        ],
+        "matched_object": "artificial_football_surface",
+        "proof": [
+          {
+            "body_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+            "chunk_id": "L01-01",
+            "fact_id": "artificial_surface_color",
+            "prompt_position": 1,
+            "property": "color",
+            "quote_sha256": "78fe43cf1676ccba848a36cfc1adec601f193df625c6778936555164441cd191",
+            "record_sha256": "44f2b8c87a8ffe41304f8d45d35109eff500e629a07e6479af35062b57e57491"
+          }
+        ],
+        "reason": "reviewed_facts_fully_supported_in_prompt",
+        "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+        "requested_properties": [
+          "color"
+        ],
+        "selected_ids": [
+          "L01-01"
+        ],
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "error": null
+    },
+    {
+      "name": "grass_paraphrase",
+      "variant": "B",
+      "seconds": 37.1533926000011,
+      "available_min_GiB": 1.4906845092773438,
+      "status": "answered",
+      "selected_ids": [
+        "L01-01"
+      ],
+      "score": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "citation_numerator": 1,
+        "citation_denominator": 1,
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "grass_paraphrase",
+      "variant": "A",
+      "seconds": 36.62816229999953,
+      "available_min_GiB": 1.5523605346679688,
+      "status": "answered",
+      "selected_ids": [
+        "L01-01"
+      ],
+      "score": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "citation_numerator": 1,
+        "citation_denominator": 1,
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "pressure_original",
+      "variant": "A",
+      "seconds": 40.06571819999954,
+      "available_min_GiB": 1.6672439575195312,
+      "status": "refused",
+      "selected_ids": [],
+      "score": {
+        "grade": "false_refusal",
+        "point_mask": [
+          false
+        ],
+        "citation_numerator": 0,
+        "citation_denominator": 0,
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "pressure_original",
+      "variant": "B",
+      "seconds": 39.4853002000018,
+      "available_min_GiB": 1.5875473022460938,
+      "status": "answered",
+      "selected_ids": [
+        "L02-02"
+      ],
+      "score": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "citation_numerator": 1,
+        "citation_denominator": 1,
+        "wrong_supplement": false
+      },
+      "recovery": {
+        "applied": true,
+        "base_prompt_sha256": "68f26e9733380c507ac939ec8477ca476962e4ae4d3a85e6693092f26730184d",
+        "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "fact_ids": [
+          "adult_ball_pressure_kpa"
+        ],
+        "matched_object": "standard_adult_size5_ball",
+        "proof": [
+          {
+            "body_sha256": "aaf69e77f266fa144df20549ff0a7286853d7556d2f558dcd86e3d7039e23129",
+            "chunk_id": "L02-02",
+            "fact_id": "adult_ball_pressure_kpa",
+            "prompt_position": 1,
+            "property": "pressure_kpa",
+            "quote_sha256": "4047227222090c0b0e384822212a5eed48a2cb732924af8e6174f7d94fab705f",
+            "record_sha256": "6c65f30e691befa68a7ed4781c18b63ec23f02508c3d0d6e98856a875106f05e"
+          }
+        ],
+        "reason": "reviewed_facts_fully_supported_in_prompt",
+        "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+        "requested_properties": [
+          "pressure_kpa"
+        ],
+        "selected_ids": [
+          "L02-02"
+        ],
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "error": null
+    },
+    {
+      "name": "pressure_paraphrase",
+      "variant": "B",
+      "seconds": 39.523905099998956,
+      "available_min_GiB": 1.6740036010742188,
+      "status": "answered",
+      "selected_ids": [
+        "L02-02"
+      ],
+      "score": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "citation_numerator": 1,
+        "citation_denominator": 1,
+        "wrong_supplement": false
+      },
+      "recovery": {
+        "applied": true,
+        "base_prompt_sha256": "6d2f084214e6b53e41863b487a7098c9951d3f63ba1e3a4128fcc83cb3846047",
+        "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "fact_ids": [
+          "adult_ball_pressure_kpa"
+        ],
+        "matched_object": "standard_adult_size5_ball",
+        "proof": [
+          {
+            "body_sha256": "aaf69e77f266fa144df20549ff0a7286853d7556d2f558dcd86e3d7039e23129",
+            "chunk_id": "L02-02",
+            "fact_id": "adult_ball_pressure_kpa",
+            "prompt_position": 1,
+            "property": "pressure_kpa",
+            "quote_sha256": "4047227222090c0b0e384822212a5eed48a2cb732924af8e6174f7d94fab705f",
+            "record_sha256": "6c65f30e691befa68a7ed4781c18b63ec23f02508c3d0d6e98856a875106f05e"
+          }
+        ],
+        "reason": "reviewed_facts_fully_supported_in_prompt",
+        "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+        "requested_properties": [
+          "pressure_kpa"
+        ],
+        "selected_ids": [
+          "L02-02"
+        ],
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "error": null
+    },
+    {
+      "name": "pressure_paraphrase",
+      "variant": "A",
+      "seconds": 39.24486720000277,
+      "available_min_GiB": 1.5086135864257812,
+      "status": "refused",
+      "selected_ids": [],
+      "score": {
+        "grade": "false_refusal",
+        "point_mask": [
+          false
+        ],
+        "citation_numerator": 0,
+        "citation_denominator": 0,
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "goal_both_original",
+      "variant": "A",
+      "seconds": 39.24108599999818,
+      "available_min_GiB": 1.5022048950195312,
+      "status": "refused",
+      "selected_ids": [],
+      "score": {
+        "grade": "false_refusal",
+        "point_mask": [
+          false,
+          false
+        ],
+        "citation_numerator": 0,
+        "citation_denominator": 0,
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "goal_both_original",
+      "variant": "B",
+      "seconds": 39.98757939999996,
+      "available_min_GiB": 1.6302680969238281,
+      "status": "answered",
+      "selected_ids": [
+        "L01-03"
+      ],
+      "score": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "citation_numerator": 1,
+        "citation_denominator": 1,
+        "wrong_supplement": false
+      },
+      "recovery": {
+        "applied": true,
+        "base_prompt_sha256": "15ef0343fe8ab90fd4217be787b81bf01c1d3380c0c92c628b54403baca3e117",
+        "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "fact_ids": [
+          "adult_goal_inside_width_m",
+          "adult_goal_crossbar_lower_edge_height_m"
+        ],
+        "matched_object": "standard_adult_goal",
+        "proof": [
+          {
+            "body_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+            "chunk_id": "L01-03",
+            "fact_id": "adult_goal_inside_width_m",
+            "prompt_position": 1,
+            "property": "inside_width_m",
+            "quote_sha256": "e5f062b17892e3c2c151c6256b27ce2b14139abd5b509bcf782aa835d7126e92",
+            "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836"
+          },
+          {
+            "body_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+            "chunk_id": "L01-03",
+            "fact_id": "adult_goal_crossbar_lower_edge_height_m",
+            "prompt_position": 1,
+            "property": "crossbar_lower_edge_height_m",
+            "quote_sha256": "014c3eefc6843b9d5cf373566762baa2c9ad0156bf85267f8bc4112d7042d940",
+            "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836"
+          }
+        ],
+        "reason": "reviewed_facts_fully_supported_in_prompt",
+        "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+        "requested_properties": [
+          "inside_width_m",
+          "crossbar_lower_edge_height_m"
+        ],
+        "selected_ids": [
+          "L01-03"
+        ],
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "error": null
+    },
+    {
+      "name": "goal_both_paraphrase",
+      "variant": "B",
+      "seconds": 41.182390099998884,
+      "available_min_GiB": 1.6451950073242188,
+      "status": "answered",
+      "selected_ids": [
+        "L01-03"
+      ],
+      "score": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "citation_numerator": 1,
+        "citation_denominator": 1,
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "goal_both_paraphrase",
+      "variant": "A",
+      "seconds": 40.37473900000259,
+      "available_min_GiB": 1.542572021484375,
+      "status": "answered",
+      "selected_ids": [
+        "L01-03"
+      ],
+      "score": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "citation_numerator": 1,
+        "citation_denominator": 1,
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "players",
+      "variant": "A",
+      "seconds": 37.51328409999769,
+      "available_min_GiB": 1.68463134765625,
+      "status": "answered",
+      "selected_ids": [
+        "L03-01"
+      ],
+      "score": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "citation_numerator": 1,
+        "citation_denominator": 1,
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "players",
+      "variant": "B",
+      "seconds": 36.972363799999584,
+      "available_min_GiB": 1.6712837219238281,
+      "status": "answered",
+      "selected_ids": [
+        "L03-01"
+      ],
+      "score": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "citation_numerator": 1,
+        "citation_denominator": 1,
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "half_time",
+      "variant": "B",
+      "seconds": 39.89179910000166,
+      "available_min_GiB": 1.6452407836914062,
+      "status": "answered",
+      "selected_ids": [
+        "L07-01"
+      ],
+      "score": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "citation_numerator": 1,
+        "citation_denominator": 1,
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "half_time",
+      "variant": "A",
+      "seconds": 39.646485099998245,
+      "available_min_GiB": 1.6812858581542969,
+      "status": "answered",
+      "selected_ids": [
+        "L07-01"
+      ],
+      "score": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "citation_numerator": 1,
+        "citation_denominator": 1,
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "material",
+      "variant": "A",
+      "seconds": 38.78387389999989,
+      "available_min_GiB": 1.6363945007324219,
+      "status": "refused",
+      "selected_ids": [],
+      "score": {
+        "grade": "boundary_observation",
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "material",
+      "variant": "B",
+      "seconds": 38.335197600001266,
+      "available_min_GiB": 1.6582679748535156,
+      "status": "refused",
+      "selected_ids": [],
+      "score": {
+        "grade": "boundary_observation",
+        "wrong_supplement": false
+      },
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "error": null
+    },
+    {
+      "name": "ambiguous",
+      "variant": "B",
+      "seconds": 37.70288680000158,
+      "available_min_GiB": 1.6423301696777344,
+      "status": "refused",
+      "selected_ids": [],
+      "score": {
+        "grade": "boundary_observation",
+        "wrong_supplement": false
+      },
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "error": null
+    },
+    {
+      "name": "ambiguous",
+      "variant": "A",
+      "seconds": 37.759341199998744,
+      "available_min_GiB": 1.4703712463378906,
+      "status": "refused",
+      "selected_ids": [],
+      "score": {
+        "grade": "boundary_observation",
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "version",
+      "variant": "A",
+      "seconds": 8.566374000001815,
+      "available_min_GiB": 3.6596450805664062,
+      "status": "refused",
+      "selected_ids": [],
+      "score": {
+        "grade": "boundary_observation",
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "version",
+      "variant": "B",
+      "seconds": 8.131405000000086,
+      "available_min_GiB": 3.6693954467773438,
+      "status": "refused",
+      "selected_ids": [],
+      "score": {
+        "grade": "boundary_observation",
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "extra_attribute",
+      "variant": "B",
+      "seconds": 38.868975800000044,
+      "available_min_GiB": 1.6836318969726562,
+      "status": "refused",
+      "selected_ids": [],
+      "score": {
+        "grade": "boundary_observation",
+        "wrong_supplement": false
+      },
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "error": null
+    },
+    {
+      "name": "extra_attribute",
+      "variant": "A",
+      "seconds": 38.70553120000113,
+      "available_min_GiB": 1.7847137451171875,
+      "status": "refused",
+      "selected_ids": [],
+      "score": {
+        "grade": "boundary_observation",
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "D036_gate",
+      "variant": "A",
+      "seconds": 8.637066100000084,
+      "available_min_GiB": 3.753063201904297,
+      "status": "refused",
+      "selected_ids": [],
+      "score": {
+        "grade": "boundary_observation",
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    },
+    {
+      "name": "D036_gate",
+      "variant": "B",
+      "seconds": 8.27607160000116,
+      "available_min_GiB": 3.7089767456054688,
+      "status": "refused",
+      "selected_ids": [],
+      "score": {
+        "grade": "boundary_observation",
+        "wrong_supplement": false
+      },
+      "recovery": null,
+      "error": null
+    }
+  ],
+  "holdout_used": false,
+  "full90_executed": false
+}

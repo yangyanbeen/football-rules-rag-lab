@@ -26,7 +26,7 @@ def content_score(result,case,facts):
         wrong_supplement=bool(result.get('fact_recovery',{}).get('applied')) and
             (not all(mask) or any(i not in support for i in ids)))
 
-def run(out,pid,mode):
+def run(out,pid,mode,gate=None):
     assert not out.exists();out.mkdir(parents=True)
     plan=read(PLAN);refs=source_refs()
     for n in ('optimization/e13_live.py','optimization/experiments/E13_source_facts/plan.json'):
@@ -41,7 +41,7 @@ def run(out,pid,mode):
     if mode=='special':
         schedule=[dict(case=c,variant=v) for i,c in enumerate(cases) for v in ('AB' if i%2==0 else 'BA')]
     else:
-        assert read(ROOT/'optimization/reports/E13_special_metrics.json')['all_gates_passed']
+        assert read(gate or ROOT/'optimization/reports/E13_special_metrics.json')['all_gates_passed']
         labels=read(ROOT/'optimization/datasets/dev_40.json')+read(ROOT/'optimization/datasets/regression_50.json')
         assert len(labels)==90
         schedule=[dict(case=dict(name=c['question_id'],question=c['question']),variant='B') for c in labels]
