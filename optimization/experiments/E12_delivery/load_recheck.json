@@ -1,0 +1,10 @@
+{
+  "reason": "Initial level-2 D004 timed out without any matching worker_enter; only D008 reached the Worker. Do not attribute an unconfirmed browser submission to RAG timeout.",
+  "initial_records": "Retain e12-live unchanged. Its four level-1 samples remain valid; original level-2 client timeout is not a confirmed backend concurrency failure.",
+  "diagnostic": "Two local plain-textarea pages accepted both keyboard submissions; zero model calls. Thus a blanket claim that CDP drops inactive-tab keys is unsupported.",
+  "recheck_change": "Independent headless browser with background timer/render throttling disabled, explicit viewport, and network/DOM submission evidence. Original normal UI, lock, Worker, model, prompts, batch and SLO unchanged.",
+  "precondition": "Two simultaneous missing-parameter disciplinary requests must both reach observed normal Worker within 5 seconds, return valid zero-answer/zero-retrieval refusals, and show their own question on their page. No answer-model calls in this transport precondition.",
+  "load": "If transport precondition passes, rerun fixed four-request batch at submission concurrency 1,2,4, four observations per level; client deadline120s and acceptance60s, available>=1GiB unchanged.",
+  "reporting": "Separate initial and controlled-recheck cohorts, retain every timeout and protocol failure. No new question tuning or hidden semantic retry.",
+  "holdout_used": false
+}
