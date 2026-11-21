@@ -1,0 +1,70 @@
+{
+  "decision": "NO_DEPLOYABLE_CANDIDATE",
+  "quality_evaluated": false,
+  "primary_observations": 0,
+  "probe": {
+    "error": null,
+    "excluded_from_quality": true,
+    "resources": {
+      "available_min_GiB": 0.10583114624023438,
+      "client_rss_peak_GiB": 0.089630126953125,
+      "cpu_seconds_observed": 16.0,
+      "mean_logical_cores_observed": 2.5073246396343785,
+      "process_rss_peak_GiB": 4.924945831298828,
+      "resource_abort": false,
+      "sample_window_seconds": 6.3813036999999895,
+      "samples": 13
+    },
+    "response": {
+      "created_at": "2026-11-21T06:28:17.7991823Z",
+      "done": true,
+      "done_reason": "stop",
+      "eval_count": 6,
+      "eval_duration": 521452000,
+      "load_duration": 5097128400,
+      "message": {
+        "content": "{\"ready\":true}",
+        "role": "assistant"
+      },
+      "model": "e10-qwen2.5-7b-instruct-q4km:official",
+      "prompt_eval_cached_count": 0,
+      "prompt_eval_count": 24,
+      "prompt_eval_duration": 583636000,
+      "total_duration": 6217154900
+    }
+  },
+  "model_identity": {
+    "A": {
+      "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "keep_alive": "10m",
+      "name": "qwen2.5:3b",
+      "num_ctx": 8192,
+      "num_gpu": 0,
+      "num_predict": 1024,
+      "num_thread": 8,
+      "ollama_version": "0.40.16",
+      "seed": 42,
+      "temperature": 0,
+      "timeout_seconds": 180
+    },
+    "B": {
+      "digest": "e37527f9177acc41127500df7522a0687d21cc844f9b8ed3c87d5b47bdeeb208",
+      "keep_alive": "10m",
+      "name": "e10-qwen2.5-7b-instruct-q4km:official",
+      "num_ctx": 8192,
+      "num_gpu": 0,
+      "num_predict": 1024,
+      "num_thread": 8,
+      "ollama_version": "0.40.16",
+      "seed": 42,
+      "temperature": 0,
+      "timeout_seconds": 180
+    }
+  },
+  "quality_gates": null,
+  "cost_gates": {
+    "deployment_preflight": false
+  },
+  "full90_executed": false,
+  "holdout_used": false
+}

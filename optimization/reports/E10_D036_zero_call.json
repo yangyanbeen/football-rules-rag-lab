@@ -1,0 +1,20 @@
+{
+  "A": {
+    "graph_status": "refused",
+    "graph_model_calls": 0,
+    "graph_retrieved_ids": [],
+    "linear_status": "refused",
+    "linear_model_attempts": [],
+    "linear_retrieval": null,
+    "scope": "Original normal methods; dependencies injected into linear constructor. No fresh browser/worker-process test."
+  },
+  "B": {
+    "graph_status": "refused",
+    "graph_model_calls": 0,
+    "graph_retrieved_ids": [],
+    "linear_status": "refused",
+    "linear_model_attempts": [],
+    "linear_retrieval": null,
+    "scope": "Original normal methods; dependencies injected into linear constructor. No fresh browser/worker-process test."
+  }
+}

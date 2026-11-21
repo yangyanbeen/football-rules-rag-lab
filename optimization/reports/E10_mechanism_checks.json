@@ -1,0 +1,9 @@
+{
+  "command": ".runtime/task17/venv/Scripts/python.exe -B optimization/verify_e10_comparison.py",
+  "exit_code": 0,
+  "passed": 10,
+  "model_inference_calls": 0,
+  "fixed_payload_and_gates_verified": true,
+  "script_sha256": "7c2be166ebdfc8a86e4ad4e4f7299b62df88688720a658b742bc620cb85a076e",
+  "inference_code_commit": "ac43ec300bbf534fd56d9462701ada1d0916b269"
+}

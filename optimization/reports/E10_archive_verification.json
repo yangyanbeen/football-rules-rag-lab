@@ -1,0 +1,94 @@
+{
+  "inference_commit": "ac43ec300bbf534fd56d9462701ada1d0916b269",
+  "original_business_commit": "5986781",
+  "source_reference_checks": true,
+  "original_scripts_config_unchanged": true,
+  "base_environment_packages": 112,
+  "model_port_11434_listening": false,
+  "primary_model_comparison_observations": 0,
+  "deployment_probe_calls": 1,
+  "decomposition_observations": 6,
+  "total_new_inference_calls": 7,
+  "full90_executed": false,
+  "holdout_used": false,
+  "raw_files": {
+    ".runtime/phase2/e10-decomposition-live/completed.json": {
+      "sha256": "be0dd11d04ceafd97ab71e451b2c3519852c83b44048f01ee4486682522389b9",
+      "size_bytes": 613
+    },
+    ".runtime/phase2/e10-decomposition-live/D017-native-r1.json": {
+      "sha256": "4171f5eabb1cdb7e80e06eba2dc7a6d196f5feda58e0a642c3e9535bbef17f6d",
+      "size_bytes": 2515
+    },
+    ".runtime/phase2/e10-decomposition-live/D017-native-r2.json": {
+      "sha256": "ef4f939c0f4f9822b1ab38e40950daa2af7b6085df6f1cb7033c6fcaf2e646a7",
+      "size_bytes": 2515
+    },
+    ".runtime/phase2/e10-decomposition-live/D017-native-r3.json": {
+      "sha256": "374df2a5e7c213410856bd47600b581198a09d95d4882cd90735c317f4d9d89f",
+      "size_bytes": 2516
+    },
+    ".runtime/phase2/e10-decomposition-live/metadata.json": {
+      "sha256": "700dcd0b3098b6f2da0b41877f07d03e7bc55c83fea2eb699571d7aa427f136a",
+      "size_bytes": 3372
+    },
+    ".runtime/phase2/e10-decomposition-live/T034-expanded-r1.json": {
+      "sha256": "2fcc721173149533ab07e7ffd3f95b9f3d44595007eb28f88687961e3dd9f255",
+      "size_bytes": 4341
+    },
+    ".runtime/phase2/e10-decomposition-live/T034-expanded-r2.json": {
+      "sha256": "4568b437b4dfc664211ecbfc6b0908d4313c3951171d857067f9d3b44cc9ce4b",
+      "size_bytes": 4225
+    },
+    ".runtime/phase2/e10-decomposition-live/T034-expanded-r3.json": {
+      "sha256": "bdf1d59ae8cce0bb2a4bcf33485e63212c91e8645d7e07c62def89f43e8047e8",
+      "size_bytes": 4225
+    },
+    ".runtime/phase2/e10-pilot/completed.json": {
+      "sha256": "018ceda63fc649fc4c8d55ab4481e9ce4c53d7ed9b43b35a4df6b625b511d76b",
+      "size_bytes": 114
+    },
+    ".runtime/phase2/e10-pilot/D036_zero_call.json": {
+      "sha256": "b17c8c2d240f82fa0bd1073bae14b01229c3d6284cb4eb28af45f71f82d736e3",
+      "size_bytes": 7764
+    },
+    ".runtime/phase2/e10-pilot/deployment_probe.json": {
+      "sha256": "6ae69d44e6bf87b79d9e3a20a0f5e13b99ce67ba56ffddf0e86bb4759ebc6937",
+      "size_bytes": 713
+    },
+    ".runtime/phase2/e10-pilot/metadata.json": {
+      "sha256": "4057b4bfd7445ce58ac4f6f6744780374f30adc224fed50657a9ea9dea664c33",
+      "size_bytes": 50015
+    },
+    ".runtime/phase2/e10-pilot/resources.jsonl": {
+      "sha256": "cde3d2ddfab53e6271ceaf69eca0c23281f66bbb8ea916617817297e005d42e9",
+      "size_bytes": 9447
+    }
+  },
+  "public_files": {
+    "optimization/reports/E10_model_metrics.json": {
+      "sha256": "d54963730fd67b33edce7c866e5043e06ad331dad82154b26cbeb346bb17b37c",
+      "size_bytes": 1953
+    },
+    "optimization/reports/E10_decomposition_metrics.json": {
+      "sha256": "48d57c64e87a2a984bd0f5cd4abae5dadd36027659d4465c8020753562fcf5a5",
+      "size_bytes": 6682
+    },
+    "optimization/reports/E10_D036_zero_call.json": {
+      "sha256": "c94206d74a147b58cb5beaa2a55e1ebf1924263a52d1b2384188e654d00405a2",
+      "size_bytes": 651
+    },
+    "optimization/reports/E10_model_and_decomposition.md": {
+      "sha256": "98e1aa6099f3166371bd9a20d4f6b8151150742590c9e78abde57b9af5257c57",
+      "size_bytes": 7566
+    },
+    "optimization/reports/E10_mechanism_checks.json": {
+      "sha256": "c405205cf65ec311331cd275dd46d54c1cb0730ec3f386107ae67685f3ac428d",
+      "size_bytes": 366
+    },
+    "optimization/experiments/E10_answer_model/model_provenance.json": {
+      "sha256": "e803a7c5ff69f5d48b4fe529c2101b0a13078de79222be4cd2b02c3db12c24c2",
+      "size_bytes": 3390
+    }
+  }
+}
