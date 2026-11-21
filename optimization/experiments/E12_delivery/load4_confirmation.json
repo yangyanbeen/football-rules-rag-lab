@@ -1,0 +1,10 @@
+{
+  "reason": "The controlled four-tab run contained a Worker entry at +69.741s for D008. The five-second Worker-entry check wrongly ended that client's observation early. That record is not a five-second RAG timeout.",
+  "change": "Use per-page normal textarea input and visible submit-button clicks. Confirm the actual question POST to normal Gradio submit_msg within five seconds. Then observe Worker admission and final UI outcome within the original total120s client deadline; do not require Worker admission within five seconds.",
+  "validation": "First four distinct missing-parameter requests, all zero answer-model and retrieval calls; confirm all four real question packets and normal Worker refusals.",
+  "load_scope": "Only the already-registered four-request batch at concurrency4; retain accepted concurrency1/2 from e12-load2 and all prior failures. No rerun/tuning of quality cases.",
+  "unchanged": "Normal 7867 UI, original delegated lock, default subprocess Worker, same 3B/BGE fingerprints, prompts, corpus, scoring, acceptance60s and memory1GiB.",
+  "raw_outputs": ".runtime/phase2/e12-load4",
+  "timing": "Client observation timeout is120s, original Worker timeout420s unchanged. Preserve backend state if client expires; do not reinterpret it as a Worker timeout.",
+  "holdout_used": false
+}
