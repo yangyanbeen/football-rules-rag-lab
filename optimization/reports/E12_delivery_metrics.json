@@ -1,0 +1,855 @@
+{
+  "run_status": "CONFIRMED_LOAD_COHORTS_COMPLETED",
+  "cohort_status": {
+    "initial": "COMPLETED",
+    "load12": "HARNESS_SUBMISSION_FAILED",
+    "load4": "COMPLETED"
+  },
+  "historical_quality_source": "optimization/reports/E12_historical_quality_scope.json",
+  "functional_checks": {
+    "D036_normal_browser_and_worker": true,
+    "ordinary_answer": true,
+    "visible_source_links": true,
+    "source_presentation": true,
+    "topic_switch": true,
+    "empty_new_conversation": true,
+    "explicit_parameters_enter_retrieval": true,
+    "history_parameters_carried": true,
+    "all_load_conversations_history_free": true
+  },
+  "functional_passed": 9,
+  "functional_total": 9,
+  "D036_observations": 2,
+  "D036_worker_walls": [
+    10.760672799999156,
+    41.65822250000019
+  ],
+  "concurrent_zero_model_transport": {
+    "observations": 6,
+    "passed": 6
+  },
+  "functional_observations": [
+    {
+      "name": "ordinary",
+      "seconds": 33.04605690000062,
+      "status": "answered",
+      "selected_ids": [
+        "L03-01"
+      ],
+      "queue_timing": {
+        "frontend_dispatch_seconds": 0.1765897,
+        "worker_lock_wait_seconds": 0.0,
+        "worker_locked_service_seconds": 31.7613386,
+        "worker_function_seconds": 32.6734707
+      },
+      "query_resolution": null,
+      "effective_query": "球队最多上场多少人，其中哪个位置必须有一人？",
+      "minimum_available_GiB": 0.6668472290039062,
+      "trace_record": {
+        "path": ".runtime/task13-audit/workers/80c23b773c414912bfc294cf2c5ef688.json",
+        "sha256": "17a8a9fa1f226e12d06545fb18385e9c5c4149caf3cb2cfa2b2913da932ae027",
+        "size_bytes": 91417
+      }
+    },
+    {
+      "name": "sources",
+      "seconds": 0.24462599999969825,
+      "status": "answered",
+      "selected_ids": [
+        "L03-01"
+      ],
+      "queue_timing": null,
+      "query_resolution": null,
+      "effective_query": null,
+      "minimum_available_GiB": 2.715972900390625,
+      "trace_record": null
+    },
+    {
+      "name": "topic_switch",
+      "seconds": 35.04583340000136,
+      "status": "answered",
+      "selected_ids": [
+        "L02-01"
+      ],
+      "queue_timing": {
+        "frontend_dispatch_seconds": 0.1629895,
+        "worker_lock_wait_seconds": 0.0,
+        "worker_locked_service_seconds": 33.8295799,
+        "worker_function_seconds": 34.6679706
+      },
+      "query_resolution": {
+        "error": null,
+        "history_turns": 1,
+        "original_question_sha256": "1e9b22d56cea187bd574d1b8a4f169251e67e79df6ffb7eb1241c98bcd2a96a9",
+        "outcome": "unchanged",
+        "seconds": 0.00014369999917107634
+      },
+      "effective_query": "换个话题，球的面片可以用哪些连接方式，球胆常用什么材料？",
+      "minimum_available_GiB": 0.7627830505371094,
+      "trace_record": {
+        "path": ".runtime/task13-audit/workers/8dc6e52064ff4e3bb1f4196752bb1668.json",
+        "sha256": "b7538573cb6d371a251538aabd293f010807740da05578a7f8579b4caf180914",
+        "size_bytes": 95189
+      }
+    },
+    {
+      "name": "isolation_empty",
+      "seconds": 0.24593319999985397,
+      "status": "no_previous_evidence",
+      "selected_ids": [],
+      "queue_timing": null,
+      "query_resolution": null,
+      "effective_query": null,
+      "minimum_available_GiB": 2.836029052734375,
+      "trace_record": null
+    },
+    {
+      "name": "parameters_explicit",
+      "seconds": 35.8339904000004,
+      "status": "refused",
+      "selected_ids": [],
+      "queue_timing": {
+        "frontend_dispatch_seconds": 0.1755188,
+        "worker_lock_wait_seconds": 0.0,
+        "worker_locked_service_seconds": 34.6679364,
+        "worker_function_seconds": 35.561676
+      },
+      "query_resolution": null,
+      "effective_query": "中超2025赛季累计三张黄牌停赛几场？",
+      "minimum_available_GiB": 0.4356117248535156,
+      "trace_record": {
+        "path": ".runtime/task13-audit/workers/712a665168c74fc8a9136f3226f5bc06.json",
+        "sha256": "142c21805b57616db14e303c9f1c98024f3a7e052d6b56c25b91d430801fc35e",
+        "size_bytes": 89540
+      }
+    },
+    {
+      "name": "parameters_followup",
+      "seconds": 39.049315000000206,
+      "status": "refused",
+      "selected_ids": [],
+      "queue_timing": {
+        "frontend_dispatch_seconds": 0.1644745,
+        "worker_lock_wait_seconds": 0.0,
+        "worker_locked_service_seconds": 37.8050081,
+        "worker_function_seconds": 38.6600739
+      },
+      "query_resolution": {
+        "error": null,
+        "history_turns": 1,
+        "original_question_sha256": "7d7b412351bf98df0bc19d5c4ae6afc549a8a141962782c249ea9b6259bf8d6b",
+        "outcome": "rewritten",
+        "seconds": 2.460352399999465
+      },
+      "effective_query": "赛事：中超；赛季：2025；那累计三张停几场？",
+      "minimum_available_GiB": 0.8095474243164062,
+      "trace_record": {
+        "path": ".runtime/task13-audit/workers/de58a5fae69047318ff6ae76b5011401.json",
+        "sha256": "4ccdf64d416ab2522709ec4e33c42f7a5c9d54108bab630f7ed1a30710ff532b",
+        "size_bytes": 90058
+      }
+    },
+    {
+      "name": "single_fact_r1",
+      "seconds": 42.28446620000068,
+      "status": "refused",
+      "selected_ids": [],
+      "queue_timing": {
+        "frontend_dispatch_seconds": 0.138813,
+        "worker_lock_wait_seconds": 8.2833551,
+        "worker_locked_service_seconds": 32.8896437,
+        "worker_function_seconds": 41.9782845
+      },
+      "query_resolution": null,
+      "effective_query": "人工草坪的颜色有什么限制？",
+      "minimum_available_GiB": 0.7451896667480469,
+      "trace_record": {
+        "path": ".runtime/task13-audit/workers/bc37cd57a5374d2582661300548a73c4.json",
+        "sha256": "8002dcecffa9be77db6e4d9fe4b1a6329f90077be35c398600ba44f9f71a442d",
+        "size_bytes": 83661
+      }
+    },
+    {
+      "name": "single_fact_r2",
+      "seconds": 32.99608400000034,
+      "status": "refused",
+      "selected_ids": [],
+      "queue_timing": {
+        "frontend_dispatch_seconds": 0.1225386,
+        "worker_lock_wait_seconds": 0.0,
+        "worker_locked_service_seconds": 31.6418964,
+        "worker_function_seconds": 32.7835381
+      },
+      "query_resolution": null,
+      "effective_query": "人工草坪的颜色有什么限制？",
+      "minimum_available_GiB": 0.8822898864746094,
+      "trace_record": {
+        "path": ".runtime/task13-audit/workers/d193ca15ca7e4c2285ff7ae38ca65125.json",
+        "sha256": "0d9186002a04c18843283fa8a9fa074c81b97cce1c591ca29733477e713074ef",
+        "size_bytes": 83661
+      }
+    }
+  ],
+  "single_fact_observation": {
+    "observations": 2,
+    "false_refusals": 2,
+    "correct_support_in_prompt": 2,
+    "per_observation": [
+      {
+        "name": "single_fact_r1",
+        "status": "refused",
+        "score": {
+          "grade": "false_refusal",
+          "point_mask": [
+            false
+          ],
+          "citation_numerator": 0,
+          "citation_denominator": 0
+        },
+        "selected_ids": [],
+        "offered_ids": [
+          "L01-01",
+          "L01-03",
+          "L04-02",
+          "L06-03",
+          "L03-02"
+        ],
+        "seconds": 42.28446620000068
+      },
+      {
+        "name": "single_fact_r2",
+        "status": "refused",
+        "score": {
+          "grade": "false_refusal",
+          "point_mask": [
+            false
+          ],
+          "citation_numerator": 0,
+          "citation_denominator": 0
+        },
+        "selected_ids": [],
+        "offered_ids": [
+          "L01-01",
+          "L01-03",
+          "L04-02",
+          "L06-03",
+          "L03-02"
+        ],
+        "seconds": 32.99608400000034
+      }
+    ]
+  },
+  "load": {
+    "1": {
+      "counts": {
+        "completed_observations": 4,
+        "technical_complete": 4,
+        "backend_completed": 4,
+        "client_timeouts": 0,
+        "render_verification_timeouts": 0,
+        "operational_or_automation_errors": 0
+      },
+      "gates": {
+        "four_observations": true,
+        "all_technical": true,
+        "every_latency_at_most_60": true,
+        "available_at_least_1GiB": false
+      },
+      "passed": false,
+      "per_request": [
+        {
+          "name": "load-c1-D004",
+          "question": "球队最多上场多少人，其中哪个位置必须有一人？",
+          "seconds": 33.21895009999935,
+          "status": "answered",
+          "technical_complete": true,
+          "client_timeout": false,
+          "error": null,
+          "raw_timeout_flag": false,
+          "render_verification_timeout": false,
+          "backend_completed": true,
+          "visible_reply_seconds": 33.21895009999935,
+          "observation_end_seconds": 33.21895009999935,
+          "queue_timing": {
+            "frontend_dispatch_seconds": 0.1481676,
+            "worker_lock_wait_seconds": 0.0,
+            "worker_locked_service_seconds": 32.0358619,
+            "worker_function_seconds": 32.9768781
+          },
+          "selected_ids": [
+            "L03-01"
+          ],
+          "semantic_score": {
+            "grade": "correct",
+            "point_mask": [
+              true,
+              true
+            ],
+            "citation_numerator": 1,
+            "citation_denominator": 1
+          },
+          "available_min_GiB": 0.9866867065429688,
+          "rss_peak_GiB": 2.3662986755371094,
+          "backend_return_seconds": 33.1250457,
+          "stage_timing": {
+            "generation_seconds": 14.03749869999956,
+            "retrieval_seconds": 7.928838199999518,
+            "total_seconds": 21.982685400000264,
+            "outside_answer_locked_seconds": 10.053176499999736,
+            "model_loading_seconds": 2.649605
+          }
+        },
+        {
+          "name": "load-c1-D008",
+          "question": "标准成人比赛每半场多长？球出界时比赛时钟是否暂停？",
+          "seconds": 34.267918599998666,
+          "status": "answered",
+          "technical_complete": true,
+          "client_timeout": false,
+          "error": null,
+          "raw_timeout_flag": false,
+          "render_verification_timeout": false,
+          "backend_completed": true,
+          "visible_reply_seconds": 34.267918599998666,
+          "observation_end_seconds": 34.267918599998666,
+          "queue_timing": {
+            "frontend_dispatch_seconds": 0.1620236,
+            "worker_lock_wait_seconds": 0.0,
+            "worker_locked_service_seconds": 33.0243582,
+            "worker_function_seconds": 34.0150972
+          },
+          "selected_ids": [
+            "L07-01"
+          ],
+          "semantic_score": {
+            "grade": "correct",
+            "point_mask": [
+              true,
+              true
+            ],
+            "citation_numerator": 1,
+            "citation_denominator": 1
+          },
+          "available_min_GiB": 1.2354736328125,
+          "rss_peak_GiB": 2.367156982421875,
+          "backend_return_seconds": 34.1771208,
+          "stage_timing": {
+            "generation_seconds": 14.708906500000012,
+            "retrieval_seconds": 7.610183099999631,
+            "total_seconds": 22.33512129999872,
+            "outside_answer_locked_seconds": 10.689236900001283,
+            "model_loading_seconds": 2.392741
+          }
+        },
+        {
+          "name": "load-c1-D027",
+          "question": "球从门框或角旗反弹回场内，是否必然停止比赛？",
+          "seconds": 36.108204999998634,
+          "status": "answered",
+          "technical_complete": true,
+          "client_timeout": false,
+          "error": null,
+          "raw_timeout_flag": false,
+          "render_verification_timeout": false,
+          "backend_completed": true,
+          "visible_reply_seconds": 36.108204999998634,
+          "observation_end_seconds": 36.108204999998634,
+          "queue_timing": {
+            "frontend_dispatch_seconds": 0.1861774,
+            "worker_lock_wait_seconds": 0.0014606,
+            "worker_locked_service_seconds": 34.7588419,
+            "worker_function_seconds": 35.6966336
+          },
+          "selected_ids": [
+            "L09-02",
+            "L08B-04",
+            "L14-04"
+          ],
+          "semantic_score": {
+            "grade": "correct",
+            "point_mask": [
+              true
+            ],
+            "citation_numerator": 2,
+            "citation_denominator": 3
+          },
+          "available_min_GiB": 1.0462112426757812,
+          "rss_peak_GiB": 2.3672256469726562,
+          "backend_return_seconds": 35.882811,
+          "stage_timing": {
+            "generation_seconds": 16.439664900000935,
+            "retrieval_seconds": 8.137475199999244,
+            "total_seconds": 24.59907639999983,
+            "outside_answer_locked_seconds": 10.15976550000017,
+            "model_loading_seconds": 2.3737475
+          }
+        },
+        {
+          "name": "load-c1-D031",
+          "question": "球的面片可以用哪些连接方式，球胆常用什么材料？",
+          "seconds": 34.851751899999726,
+          "status": "answered",
+          "technical_complete": true,
+          "client_timeout": false,
+          "error": null,
+          "raw_timeout_flag": false,
+          "render_verification_timeout": false,
+          "backend_completed": true,
+          "visible_reply_seconds": 34.851751899999726,
+          "observation_end_seconds": 34.851751899999726,
+          "queue_timing": {
+            "frontend_dispatch_seconds": 0.1665592,
+            "worker_lock_wait_seconds": 0.0,
+            "worker_locked_service_seconds": 33.5054803,
+            "worker_function_seconds": 34.4723119
+          },
+          "selected_ids": [
+            "L02-01"
+          ],
+          "semantic_score": {
+            "grade": "correct",
+            "point_mask": [
+              true,
+              true
+            ],
+            "citation_numerator": 1,
+            "citation_denominator": 1
+          },
+          "available_min_GiB": 1.1117286682128906,
+          "rss_peak_GiB": 2.3677291870117188,
+          "backend_return_seconds": 34.6388711,
+          "stage_timing": {
+            "generation_seconds": 15.72512579999966,
+            "retrieval_seconds": 7.310266599999522,
+            "total_seconds": 23.055620299999646,
+            "outside_answer_locked_seconds": 10.449860000000356,
+            "model_loading_seconds": 2.3846461
+          }
+        }
+      ],
+      "max_seconds": 36.108204999998634,
+      "min_available_GiB": 0.9866867065429688,
+      "full_correct": 4,
+      "citation_support": {
+        "numerator": 5,
+        "denominator": 6
+      },
+      "observations_are_small_sample": true
+    },
+    "2": {
+      "counts": {
+        "completed_observations": 4,
+        "technical_complete": 4,
+        "backend_completed": 4,
+        "client_timeouts": 0,
+        "render_verification_timeouts": 0,
+        "operational_or_automation_errors": 0
+      },
+      "gates": {
+        "four_observations": true,
+        "all_technical": true,
+        "every_latency_at_most_60": false,
+        "available_at_least_1GiB": true
+      },
+      "passed": false,
+      "per_request": [
+        {
+          "name": "load-c2-D004",
+          "question": "球队最多上场多少人，其中哪个位置必须有一人？",
+          "seconds": 68.99079410000013,
+          "status": "answered",
+          "technical_complete": true,
+          "client_timeout": false,
+          "error": null,
+          "raw_timeout_flag": false,
+          "render_verification_timeout": false,
+          "backend_completed": true,
+          "visible_reply_seconds": 68.99079410000013,
+          "observation_end_seconds": 68.99079410000013,
+          "queue_timing": {
+            "frontend_dispatch_seconds": 1.0752431,
+            "worker_lock_wait_seconds": 32.9882963,
+            "worker_locked_service_seconds": 33.51218,
+            "worker_function_seconds": 67.3905424
+          },
+          "selected_ids": [
+            "L03-01"
+          ],
+          "semantic_score": {
+            "grade": "correct",
+            "point_mask": [
+              true,
+              true
+            ],
+            "citation_numerator": 1,
+            "citation_denominator": 1
+          },
+          "available_min_GiB": 1.1239471435546875,
+          "rss_peak_GiB": 2.3891220092773438,
+          "backend_return_seconds": 68.4657855,
+          "stage_timing": {
+            "generation_seconds": 14.231296699999803,
+            "retrieval_seconds": 7.919018599999617,
+            "total_seconds": 22.165847600001143,
+            "outside_answer_locked_seconds": 11.346332399998857,
+            "model_loading_seconds": 2.3886263
+          }
+        },
+        {
+          "name": "load-c2-D008",
+          "question": "标准成人比赛每半场多长？球出界时比赛时钟是否暂停？",
+          "seconds": 35.23343650000061,
+          "status": "answered",
+          "technical_complete": true,
+          "client_timeout": false,
+          "error": null,
+          "raw_timeout_flag": false,
+          "render_verification_timeout": false,
+          "backend_completed": true,
+          "visible_reply_seconds": 35.23343650000061,
+          "observation_end_seconds": 35.23343650000061,
+          "queue_timing": {
+            "frontend_dispatch_seconds": 0.1465687,
+            "worker_lock_wait_seconds": 0.0,
+            "worker_locked_service_seconds": 33.9161261,
+            "worker_function_seconds": 35.0147147
+          },
+          "selected_ids": [
+            "L07-01"
+          ],
+          "semantic_score": {
+            "grade": "correct",
+            "point_mask": [
+              true,
+              true
+            ],
+            "citation_numerator": 1,
+            "citation_denominator": 1
+          },
+          "available_min_GiB": 1.1239471435546875,
+          "rss_peak_GiB": 2.3677330017089844,
+          "backend_return_seconds": 35.1612834,
+          "stage_timing": {
+            "generation_seconds": 15.153216299999258,
+            "retrieval_seconds": 7.5749667000000045,
+            "total_seconds": 22.74609910000072,
+            "outside_answer_locked_seconds": 11.17002699999928,
+            "model_loading_seconds": 2.3848732
+          }
+        },
+        {
+          "name": "load-c2-D027",
+          "question": "球从门框或角旗反弹回场内，是否必然停止比赛？",
+          "seconds": 70.6753617000013,
+          "status": "answered",
+          "technical_complete": true,
+          "client_timeout": false,
+          "error": null,
+          "raw_timeout_flag": false,
+          "render_verification_timeout": false,
+          "backend_completed": true,
+          "visible_reply_seconds": 70.6753617000013,
+          "observation_end_seconds": 70.6753617000013,
+          "queue_timing": {
+            "frontend_dispatch_seconds": 1.1055406,
+            "worker_lock_wait_seconds": 31.9868395,
+            "worker_locked_service_seconds": 36.2765817,
+            "worker_function_seconds": 69.110659
+          },
+          "selected_ids": [
+            "L09-02",
+            "L08B-04",
+            "L14-04"
+          ],
+          "semantic_score": {
+            "grade": "correct",
+            "point_mask": [
+              true
+            ],
+            "citation_numerator": 2,
+            "citation_denominator": 3
+          },
+          "available_min_GiB": 1.0251541137695312,
+          "rss_peak_GiB": 2.3894309997558594,
+          "backend_return_seconds": 70.2161996,
+          "stage_timing": {
+            "generation_seconds": 17.453289700000823,
+            "retrieval_seconds": 8.084024799998588,
+            "total_seconds": 25.55894460000127,
+            "outside_answer_locked_seconds": 10.717637099998733,
+            "model_loading_seconds": 2.3870395
+          }
+        },
+        {
+          "name": "load-c2-D031",
+          "question": "球的面片可以用哪些连接方式，球胆常用什么材料？",
+          "seconds": 34.2371288000013,
+          "status": "answered",
+          "technical_complete": true,
+          "client_timeout": false,
+          "error": null,
+          "raw_timeout_flag": false,
+          "render_verification_timeout": false,
+          "backend_completed": true,
+          "visible_reply_seconds": 34.2371288000013,
+          "observation_end_seconds": 34.2371288000013,
+          "queue_timing": {
+            "frontend_dispatch_seconds": 0.1777859,
+            "worker_lock_wait_seconds": 0.0009909,
+            "worker_locked_service_seconds": 32.9186486,
+            "worker_function_seconds": 33.8246919
+          },
+          "selected_ids": [
+            "L02-01"
+          ],
+          "semantic_score": {
+            "grade": "correct",
+            "point_mask": [
+              true,
+              true
+            ],
+            "citation_numerator": 1,
+            "citation_denominator": 1
+          },
+          "available_min_GiB": 1.2199974060058594,
+          "rss_peak_GiB": 2.3894309997558594,
+          "backend_return_seconds": 34.0024778,
+          "stage_timing": {
+            "generation_seconds": 15.332843700000012,
+            "retrieval_seconds": 7.4649762000008195,
+            "total_seconds": 22.824432499999602,
+            "outside_answer_locked_seconds": 10.094216100000395,
+            "model_loading_seconds": 2.375318
+          }
+        }
+      ],
+      "max_seconds": 70.6753617000013,
+      "min_available_GiB": 1.0251541137695312,
+      "full_correct": 4,
+      "citation_support": {
+        "numerator": 5,
+        "denominator": 6
+      },
+      "observations_are_small_sample": true
+    },
+    "4": {
+      "counts": {
+        "completed_observations": 4,
+        "technical_complete": 2,
+        "backend_completed": 3,
+        "client_timeouts": 1,
+        "render_verification_timeouts": 1,
+        "operational_or_automation_errors": 0
+      },
+      "gates": {
+        "four_observations": true,
+        "all_technical": false,
+        "every_latency_at_most_60": false,
+        "available_at_least_1GiB": false
+      },
+      "passed": false,
+      "per_request": [
+        {
+          "name": "load-c4-D004",
+          "question": "球队最多上场多少人，其中哪个位置必须有一人？",
+          "seconds": 120.11129690000053,
+          "status": null,
+          "technical_complete": false,
+          "client_timeout": true,
+          "error": "load-c4-D004 UI outcome",
+          "raw_timeout_flag": true,
+          "render_verification_timeout": false,
+          "backend_completed": false,
+          "visible_reply_seconds": null,
+          "observation_end_seconds": 120.11129690000053,
+          "queue_timing": {
+            "worker_lock_wait_seconds": 102.094913,
+            "worker_service_completed": false,
+            "derived_from_post_run_observer": true,
+            "frontend_dispatch_seconds": 1.1302577
+          },
+          "selected_ids": null,
+          "semantic_score": null,
+          "available_min_GiB": 0.8643264770507812,
+          "rss_peak_GiB": 2.3671188354492188
+        },
+        {
+          "name": "load-c4-D008",
+          "question": "标准成人比赛每半场多长？球出界时比赛时钟是否暂停？",
+          "seconds": 79.78987720000077,
+          "status": "answered",
+          "technical_complete": false,
+          "client_timeout": false,
+          "error": "load-c4-D008 answer rendered",
+          "raw_timeout_flag": true,
+          "render_verification_timeout": true,
+          "backend_completed": true,
+          "visible_reply_seconds": null,
+          "observation_end_seconds": 79.78987720000077,
+          "queue_timing": {
+            "worker_lock_wait_seconds": 31.9014282,
+            "worker_service_completed": true,
+            "derived_from_post_run_observer": true,
+            "frontend_dispatch_seconds": 1.1246396,
+            "worker_locked_service_seconds": 33.78336,
+            "backend_returned_ns": 1795253027924536000
+          },
+          "selected_ids": [
+            "L07-01"
+          ],
+          "semantic_score": {
+            "grade": "correct",
+            "point_mask": [
+              true,
+              true
+            ],
+            "citation_numerator": 1,
+            "citation_denominator": 1,
+            "derived_from_validated_backend_trace": true
+          },
+          "available_min_GiB": 0.9489936828613281,
+          "rss_peak_GiB": 2.3669776916503906,
+          "backend_return_seconds": 67.6252921
+        },
+        {
+          "name": "load-c4-D027",
+          "question": "球从门框或角旗反弹回场内，是否必然停止比赛？",
+          "seconds": 104.30267789999925,
+          "status": "answered",
+          "technical_complete": true,
+          "client_timeout": false,
+          "error": null,
+          "raw_timeout_flag": false,
+          "render_verification_timeout": false,
+          "backend_completed": true,
+          "visible_reply_seconds": 104.30267789999925,
+          "observation_end_seconds": 104.30267789999925,
+          "queue_timing": {
+            "frontend_dispatch_seconds": 1.1271974,
+            "worker_lock_wait_seconds": 65.6847882,
+            "worker_locked_service_seconds": 36.4124635,
+            "worker_function_seconds": 102.975017
+          },
+          "selected_ids": [
+            "L09-02",
+            "L08B-04",
+            "L14-04"
+          ],
+          "semantic_score": {
+            "grade": "correct",
+            "point_mask": [
+              true
+            ],
+            "citation_numerator": 2,
+            "citation_denominator": 3
+          },
+          "available_min_GiB": 0.9489936828613281,
+          "rss_peak_GiB": 2.3671188354492188,
+          "backend_return_seconds": 104.1022144,
+          "stage_timing": {
+            "generation_seconds": 18.651669399998354,
+            "retrieval_seconds": 7.5845681999999215,
+            "total_seconds": 26.251673000000665,
+            "outside_answer_locked_seconds": 10.160790499999337,
+            "model_loading_seconds": 2.3875943
+          }
+        },
+        {
+          "name": "load-c4-D031",
+          "question": "球的面片可以用哪些连接方式，球胆常用什么材料？",
+          "seconds": 34.29589730000043,
+          "status": "answered",
+          "technical_complete": true,
+          "client_timeout": false,
+          "error": null,
+          "raw_timeout_flag": false,
+          "render_verification_timeout": false,
+          "backend_completed": true,
+          "visible_reply_seconds": 34.29589730000043,
+          "observation_end_seconds": 34.29589730000043,
+          "queue_timing": {
+            "frontend_dispatch_seconds": 0.1680701,
+            "worker_lock_wait_seconds": 0.0,
+            "worker_locked_service_seconds": 32.8638651,
+            "worker_function_seconds": 33.9112467
+          },
+          "selected_ids": [
+            "L02-01"
+          ],
+          "semantic_score": {
+            "grade": "correct",
+            "point_mask": [
+              true,
+              true
+            ],
+            "citation_numerator": 1,
+            "citation_denominator": 1
+          },
+          "available_min_GiB": 0.9489936828613281,
+          "rss_peak_GiB": 2.3669471740722656,
+          "backend_return_seconds": 34.0793168,
+          "stage_timing": {
+            "generation_seconds": 16.087999099998342,
+            "retrieval_seconds": 6.748398599998836,
+            "total_seconds": 22.84967400000096,
+            "outside_answer_locked_seconds": 10.014191099999039,
+            "model_loading_seconds": 2.6513598
+          }
+        }
+      ],
+      "max_seconds": 120.11129690000053,
+      "min_available_GiB": 0.8643264770507812,
+      "full_correct": 3,
+      "citation_support": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "observations_are_small_sample": true
+    }
+  },
+  "highest_tested_submission_concurrency_passing_all_gates": null,
+  "highest_tested_submission_concurrency_passing_latency_and_technical": 1,
+  "original_worker_model_execution_serialized": true,
+  "capacity_is_not_sustained_SLA": true,
+  "global_available_min_GiB": 0.8643264770507812,
+  "initial_functional_cohort_available_min_GiB": 0.4356117248535156,
+  "global_model_process_rss_peak_GiB": 2.3894309997558594,
+  "full90_rerun": false,
+  "holdout40_used": false,
+  "inference_source_commit": "01ab3f140c48a5a8bdb9d5f9677bc3e24a2f7a53",
+  "functional_source_commit": "36294e3091ed85b93a319887c2b95e3d44c5b252",
+  "load4_source_commit": "bf81f6ac7f8ec28852fdbaf33298c9e914a9a4cd",
+  "initial_measurement_cohort": {
+    "valid_serial_samples": [
+      {
+        "name": "load-c1-D004",
+        "seconds": 32.73936610000055
+      },
+      {
+        "name": "load-c1-D008",
+        "seconds": 35.07818589999988
+      },
+      {
+        "name": "load-c1-D027",
+        "seconds": 36.21628609999971
+      },
+      {
+        "name": "load-c1-D031",
+        "seconds": 35.14580400000159
+      }
+    ],
+    "unconfirmed_concurrent_submission": [
+      "load-c2-D004"
+    ],
+    "disposition": "Retained; initial level-2 timeout without Worker entry is a measurement/admission uncertainty, excluded from confirmed backend timeout claims. Controlled recheck is a separate cohort."
+  },
+  "interpretation": "Normal UI and real retrieval/worker boundary. Timeout means 120-second client observation deadline, distinct from unchanged 420-second worker timeout. No first result replaced with a retry; semantic and runtime failures separated.",
+  "limitations": [
+    "First single-fact observation overlapped the second zero-model D036 rendering recheck; actual lock wait retained. Formal load waves start after functional phase.",
+    "D036 second observation was required to capture visible refusal after browser file-export path restrictions; both raw records are retained.",
+    "The intermediate four-tab D008 Worker entry at +69.741s was later than its five-second observation. That row is not a five-second model timeout; final four-request confirmation uses actual question POST and the full120s deadline.",
+    "Final C4 D008 has a valid answered backend trace but its twelve-second DOM-render verification expired. Preserve the raw timeout flag while deriving a render-verification category, distinct from the 120-second client deadline and420-second Worker timeout.",
+    "Quoted source identity/integrity is distinct from frozen-point citation relevance.",
+    "History isolation test does not establish account authorization security."
+  ]
+}

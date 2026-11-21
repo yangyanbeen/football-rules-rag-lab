@@ -1,0 +1,12 @@
+{
+  "passed": 4,
+  "model_calls": 0,
+  "return_identity_preserved": true,
+  "exception_preserved": true,
+  "original_lock_serialization_preserved": true,
+  "independent_request_clocks": true,
+  "max_observed_wait_seconds": 0.0830249,
+  "command": ".runtime/task13/venv-final/Scripts/python.exe -B optimization/verify_e12_observer.py",
+  "scope": "Actual successful prelaunch result; not rerun at archive time.",
+  "script_sha256": "9b9704f3337c0e433425b452bd71da5f177c421673053f2ca3bba7df5c365cf8"
+}
