@@ -1,0 +1,99 @@
+{
+  "models": {
+    "A": {
+      "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "keep_alive": "10m",
+      "name": "qwen2.5:3b",
+      "num_ctx": 8192,
+      "num_gpu": 0,
+      "num_predict": 1024,
+      "num_thread": 8,
+      "ollama_version": "0.40.16",
+      "seed": 42,
+      "temperature": 0,
+      "timeout_seconds": 180
+    },
+    "B": {
+      "digest": "e37527f9177acc41127500df7522a0687d21cc844f9b8ed3c87d5b47bdeeb208",
+      "keep_alive": "10m",
+      "name": "e10-qwen2.5-7b-instruct-q4km:official",
+      "num_ctx": 8192,
+      "num_gpu": 0,
+      "num_predict": 1024,
+      "num_thread": 8,
+      "ollama_version": "0.40.16",
+      "seed": 42,
+      "temperature": 0,
+      "timeout_seconds": 180
+    }
+  },
+  "candidate_details": {
+    "families": [
+      "qwen2"
+    ],
+    "family": "qwen2",
+    "format": "gguf",
+    "parameter_size": "7.6B",
+    "parent_model": "qwen2.5-7b-instruct-q4_k_m.gguf",
+    "quantization_level": "Q4_K_M",
+    "runner": "llamacpp"
+  },
+  "candidate_source": "https://modelscope.cn/models/qwen/Qwen2.5-7B-Instruct-GGUF",
+  "shards": [
+    {
+      "name": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+      "sha256": "dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db",
+      "size_bytes": 3993201344,
+      "revision": "a6df5b898bfd48f46cbc7ec856fba0c4b9d0a34c"
+    },
+    {
+      "name": "qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+      "sha256": "539cf93f78e887edea1c04e2d7d8cdaca9d01dae9c9025bcb8accbe29df3d72a",
+      "size_bytes": 689872288,
+      "revision": "9532e0c95f30394d0bb1e3c9ca422dbadb4f0da9"
+    }
+  ],
+  "merged_verified": {
+    "output": ".runtime\\phase2\\e10-download\\qwen2.5-7b-instruct-q4_k_m.gguf",
+    "sha256": "9cee521fb0e89ce49931bc467efdc5bf85946da0a603ef25c473fd4de62f454a",
+    "tensors_verified": 339,
+    "metadata_verified": 26,
+    "requantized": false,
+    "parameter_name": "qwen2.5-7b-instruct",
+    "file_type": 15
+  },
+  "template_sha256": "eb4402837c7829a690fa845de4d7f3fd842c2adee476d5341da8a46ea9255175",
+  "weights_changed_without_requantization": true,
+  "system_template_parameters_equal": true,
+  "source_application_commit": "59867813e8eb16709b0be1946708d8c03a33b9cb",
+  "pre_inference_experiment_commit": "e97f73d",
+  "locked_base_packages": 112,
+  "extra_tools_not_installed_into_base": {
+    "gguf": {
+      "version": "0.19.0",
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "PySide6<7.0,>=6.9; (python_version >= \"3.9\" and python_version < \"3.14\") and extra == \"gui\"",
+        "numpy>=1.17",
+        "pyyaml>=5.1",
+        "requests>=2.25",
+        "tqdm>=4.27"
+      ],
+      "wheel": "gguf-0.19.0-py3-none-any.whl",
+      "sha256": "70bcd10edfe697fb2dad6e40af2234b9d8ece9a41a99761405121ebda1c3c1cd"
+    },
+    "psutil": {
+      "version": "7.2.2",
+      "wheel": "psutil-7.2.2-cp37-abi3-win_amd64.whl",
+      "sha256": "eb7e81434c8d223ec4a219b5fc1c47d0417b12be7ea866e24fb5ad6e84b3d988",
+      "requires_python": ">=3.6"
+    }
+  },
+  "baseline_manifest_restored_from_pinned_blob": {
+    "source_outer_manifest_sha256": "cd232a7a8d590449a99eb8fe29b614ef9bf3624d2d17faa496e1135ba4188be0",
+    "restored_frozen_manifest_sha256": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+    "original_cache_changed": false
+  },
+  "QA_not_started_when_written": true,
+  "holdout_used": false
+}
