@@ -1,0 +1,13 @@
+{
+  "baseline": "d5198c9 E13 code plus opt-in stdlib stage markers only; no inference/retrieval behavior change",
+  "measurement": "Default Worker subprocess and normal browser, sequential D036 first, players, D036 with prior model residency, D001 feature off/on. Same original sources, Prompt A, pinned Qwen3B and BGE/Reranker, CPU8 and ctx8192, one Ollama model/parallel request.",
+  "memory": "External 250ms system availability and per-process RSS/private/native peak for Worker/UI/Chrome/Ollama/controller trees. API ps sampled about1s, no inference added. Before request, global minimum time aligned with Worker events, after exit2s recovery.",
+  "stages": "Parent subprocess launch/return, Worker module import, package/source checks, engine module import/construction, retrieval dependency import, BM25/dense/reranker construction, model identity check, retrieval query, answer model, fact binding, result validation/cleanup/write, parent validation",
+  "first_probe": "D036 zero query/answer calls. Test both before and after a normal request to preserve observed model residency instead of silently unloading the deployment.",
+  "candidate": "Choose one shared-chain change only after baseline memory/time evidence. Prefer lazy heavy retrieval construction if D036 reaches the low point. If model switching is responsible verify actual overlap before adjusting it. Persistent Worker remains a separate experiment.",
+  "stops": "Any wrong supplement stops expansion. Critical availability under0.35GiB for3 samples stops owned model server. No full90 until serial normal-entry resource gate and original E13 special both pass.",
+  "resource_gates": {"visible_request_seconds_max":60,"system_available_GiB_min":1,"first_and_continuous_requests":true},
+  "E13_revalidation": "Original six fact wordings, five boundaries, two correct controls, actual normal UI, all added source citations, D036 zero calls. Same frozen schedule; archive baseline E13 report is never overwritten.",
+  "full90_if_both_pass": {"correct_refusal":"18/18","technical":"90/90","complete_answerable":">51/72","review":"Per-question gains, regressions and direct citation support. Actual latest results only."},
+  "holdout40_used":false,"concurrency_changed":false,"merge_or_push":false
+}

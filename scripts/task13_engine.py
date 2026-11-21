@@ -1,5 +1,6 @@
 """Integrated rebuilt indexes -> fixed Top40 -> pinned Qwen -> verified source display."""
 import sys,time,re
+from runtime_observation import mark
 from task13_core import *
 from answer_eval_core import config as answer_config,parse_selection
 from answer_eval_engine import pack,request_json
@@ -12,21 +13,25 @@ def index_snapshot(cfg):
 
 
 def retriever(cfg):
+    mark('retrieval_import_start')
     from reranker_live import RerankerRetriever
     from reranker_eval import config as reranker_config
     from hybrid_live import index_files
     from bm25_index import Bm25Index
     from dense_index import PinnedEmbedder,DenseIndex
     from bge_reranker import BgeReranker
+    mark('retrieval_import_end')
     class RebuiltRetriever(RerankerRetriever):
         def __init__(self):
             self.cfg=reranker_config();self.before=index_files();self.dense=None
             try:
-                self.bm25=Bm25Index(ROOT/cfg['bm25_index'])
+                mark('bm25_construction_start');self.bm25=Bm25Index(ROOT/cfg['bm25_index']);mark('bm25_construction_end')
                 if self.bm25.manifest['template']!='title_body':raise ValueError('Expected dev-selected BM25 template')
+                mark('dense_construction_start')
                 self.embedder=PinnedEmbedder(read(ROOT/'config/dense_index.json'))
                 self.dense=DenseIndex(ROOT/cfg['dense_index'],embedder=self.embedder)
-                self.reranker=BgeReranker(self.cfg)
+                mark('dense_construction_end');mark('reranker_construction_start')
+                self.reranker=BgeReranker(self.cfg);mark('reranker_construction_end')
             except BaseException:
                 if self.dense is not None:self.dense.close()
                 raise
@@ -40,7 +45,9 @@ class IntegratedEngine:
         self.before=index_snapshot(self.cfg)
         try:
             self.retriever=retriever(self.cfg);self.chat=PinnedChat(self.answer_cfg)
+            mark('chat_identity_validation_start')
             self.chat.verify_model();self.prompt=(ROOT/'config/answer_evaluation_system.txt').read_text('utf-8')
+            mark('chat_identity_validation_end')
         except BaseException:
             if self.retriever is not None:
                 try:self.retriever.close()
@@ -79,7 +86,8 @@ class IntegratedEngine:
             if re.search(r'官方|现行|最新|IFAB',question,re.I) and re.search(r'赛季|20\d{2}|规则',question):
                 r['refusal_reason']='version_unverified';return r
             t=time.perf_counter()
-            try:r['retrieval']=self.retriever.query(question,'top40')
+            try:
+                mark('retrieval_query_start');r['retrieval']=self.retriever.query(question,'top40');mark('retrieval_query_end')
             finally:r['timing']['retrieval_seconds']=time.perf_counter()-t
             evidence=[self.retriever.dense.by_id[v['chunk_id']] for v in r['retrieval']['results']]
             context,messages,size=pack(question,evidence,self.answer_cfg,self.prompt)
@@ -89,15 +97,17 @@ class IntegratedEngine:
             from answer_json_chat import selection_schema
             t=time.perf_counter()
             try:
+                mark('answer_model_start')
                 selection,attempts,error=request_json(self.chat,messages,self.answer_cfg,
                     lambda s:parse_selection(s,r['offered_ids'],self.answer_cfg),selection_schema(r['offered_ids'],3))
+                mark('answer_model_end')
                 r['attempts']=attempts
             finally:r['timing']['generation_seconds']=time.perf_counter()-t
             if error:raise ValueError(error)
             if not selection['answerable'] and selection['reason']=='insufficient_evidence':
                 from source_bound_facts import enabled, evaluate
                 if enabled() and getattr(self,'fact_recovery_allowed',True):
-                    recovery=evaluate(question,selection,context,messages)
+                    mark('fact_binding_start');recovery=evaluate(question,selection,context,messages);mark('fact_binding_end')
                     r['fact_recovery']=recovery
                     if recovery['applied']:
                         answer,cites=safe_render(recovery['selected_ids'],{v['chunk_id']:v for v in context})

@@ -1,5 +1,6 @@
 """Timeout-safe revised worker boundary; operational errors cannot become semantic refusals."""
 import os,threading,time
+from runtime_observation import mark
 from task13_audit import *
 from task13_query_rewrite import bounded_history
 
@@ -23,7 +24,9 @@ def call_worker(question=None,check=False, *, history=()):
         raise RuntimeError('本次问答未完成；请检查本机服务。详细信息已保存在本机。')
     with LOCK:
         try:
+            mark('subprocess_start',question_sha256=digest((question or '').encode()))
             proc=subprocess.run(command,cwd=ROOT,env={**os.environ,'PYTHONIOENCODING':'utf-8','PYTHONDONTWRITEBYTECODE':'1'},capture_output=True,text=True,encoding='utf-8',timeout=cfg['worker_timeout_seconds'],creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0),**worker_input)
+            mark('subprocess_end')
         except subprocess.TimeoutExpired as exc:fail('timeout',exc.stdout,exc.stderr)
         except OSError as exc:fail('launch_failed','',str(exc))
     if proc.returncode:fail('worker_failed',proc.stdout,proc.stderr)
@@ -53,7 +56,7 @@ def call_worker(question=None,check=False, *, history=()):
                 raise ValueError('Worker query resolution differs from request')
         elif 'query_resolution' in result:
             raise ValueError('Unexpected worker query resolution')
-        validate_private(result, effective_question, True)
+        mark('parent_validation_start');validate_private(result, effective_question, True);mark('parent_validation_end')
         if packet['trace_id']!=result['trace_id'] or packet['status']!=result['status']:raise ValueError('Worker status differs')
         if result['error'] is not None:fail('runtime_or_validation_error',proc.stdout,proc.stderr)
         return result,record(trace),time.perf_counter()-start
