@@ -37,7 +37,9 @@ def prepare(out):
     assert sa['template']==sb['template'] and sa.get('system')==sb.get('system') and sa.get('parameters')==sb.get('parameters')
     assert sb['details']['quantization_level']=='Q4_K_M'
     merged=read(ROOT/'.runtime/phase2/e10-download/qwen2.5-7b-instruct-q4_k_m.verified.json')
-    manifest_path=ROOT/'.runtime/phase2/e10-models/manifests/registry.ollama.ai/library/e10-qwen2.5-7b-instruct-q4km/official'
+    stores=ROOT/'.runtime/phase2/e10-models'
+    manifests=[stores/p/'library/e10-qwen2.5-7b-instruct-q4km/official' for p in ('manifests-v2/ollama.com','manifests/registry.ollama.ai')]
+    manifest_path=next(p for p in manifests if p.is_file() and sha(p)==b['digest'])
     imported=read(manifest_path)
     layer=next(v for v in imported['layers'] if v['mediaType']=='application/vnd.ollama.image.model')
     assert layer['digest']=='sha256:'+merged['sha256']
