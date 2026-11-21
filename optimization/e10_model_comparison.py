@@ -9,7 +9,7 @@ from rag_b0 import PinnedChat
 from rag_langgraph import CountingChat,Operations
 from citation_catalog_guard import safe_render
 from e5_second_candidate import module,BASE
-from e10_resources import Sampler
+from e10_resources import Sampler,snapshot
 
 D=ROOT/'optimization/experiments/E10_answer_model'
 FROZEN=ROOT/'.runtime/phase2/e10-frozen/inputs.json'
@@ -31,6 +31,8 @@ def prepare(out):
     assert sha(D/'plan.json')==f['plan_sha256'] and sha(D/'context_review.json')==f['review_sha256']
     tags=read(DEPLOY/'tags.json')['models'];a=next(v for v in tags if v['name']=='qwen2.5:3b');b=next(v for v in tags if v['name']==CANDIDATE)
     ca=config();assert a['digest']==ca['llm']['digest'];cb=copy.deepcopy(ca);cb['llm'].update(name=CANDIDATE,digest=b['digest'])
+    baseline_manifest=ROOT/'.runtime/phase2/e10-models/manifests/registry.ollama.ai/library/qwen2.5/3b'
+    assert sha(baseline_manifest)==ca['llm']['digest']
     sa=read(DEPLOY/'baseline-show.json');sb=read(DEPLOY/'candidate-show.json')
     assert sa['template']==sb['template'] and sa.get('system')==sb.get('system') and sa.get('parameters')==sb.get('parameters')
     assert sb['details']['quantization_level']=='Q4_K_M'
@@ -41,7 +43,7 @@ def prepare(out):
     assert layer['digest']=='sha256:'+merged['sha256']
     assert set(k for k in ca['llm'] if ca['llm'][k]!=cb['llm'][k])=={'name','digest'}
     refs=dict(f['source_files'])
-    for p in [FROZEN,Path(__file__),ROOT/'optimization/e10_resources.py',D/'plan.json',D/'context_review.json',DEPLOY/'tags.json',DEPLOY/'baseline-show.json',DEPLOY/'candidate-show.json',manifest_path,ROOT/'.runtime/phase2/e10-download/qwen2.5-7b-instruct-q4_k_m.verified.json']:
+    for p in [FROZEN,Path(__file__),ROOT/'optimization/e10_resources.py',D/'plan.json',D/'context_review.json',DEPLOY/'tags.json',DEPLOY/'baseline-show.json',DEPLOY/'candidate-show.json',baseline_manifest,manifest_path,ROOT/'.runtime/phase2/e10-download/qwen2.5-7b-instruct-q4_k_m.verified.json']:
         refs[p.relative_to(ROOT).as_posix()]=record(p)
     write(out/'prepared.json',dict(cases=f['cases'],schedule=f['schedule'],configs={'A':ca,'B':cb},
         source_files=refs,plan=read(D/'plan.json'),candidate_details=sb['details'],candidate_model_info=sb.get('model_info'),
@@ -100,7 +102,7 @@ def run(out,prepared,pid):
     write(out/'metadata.json',dict(source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
         prepared_sha256=sha(prepared),models={v:data['configs'][v]['llm'] for v in 'AB'},environment=environment,
         primary_schedule=data['schedule'],maximum_extra_observations=24,actual_new_retrieval_calls=0,
-        latency_scope=data['plan']['latency_scope'],source_files=data['source_files'],server_pid=pid,holdout_used=False))
+        latency_scope=data['plan']['latency_scope'],source_files=data['source_files'],server_pid=pid,hardware_at_run=snapshot(),holdout_used=False))
     try:
         gates={v:normal_gates(*engines[v],data['configs'][v]) for v in 'AB'};write(out/'D036_zero_call.json',gates)
         begin=sampler.begin('deployment-probe-B')
@@ -110,6 +112,9 @@ def run(out,prepared,pid):
             probe=dict(response=response,error=None,resources=sampler.end(begin),excluded_from_quality=True)
         except Exception as exc:
             probe=dict(error=type(exc).__name__+': '+str(exc),resources=sampler.end(begin),excluded_from_quality=True)
+            if hasattr(exc,'read'):
+                try:probe['server_error_body']=json.loads(exc.read().decode('utf8'))
+                except (ValueError,TypeError,UnicodeError):pass
         write(out/'deployment_probe.json',probe)
         resource=probe['resources']
         feasible=(probe['error'] is None and resource['samples']>0 and not sampler.aborted and .25<resource['process_rss_peak_GiB']<=6.5

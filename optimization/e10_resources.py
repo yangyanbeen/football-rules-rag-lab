@@ -21,7 +21,7 @@ class Sampler:
                 for p in processes:
                     try:
                         m=p.memory_info();cpu=p.cpu_times()
-                        details.append(dict(pid=p.pid,rss=m.rss,private=getattr(m,'private',None),cpu_seconds=cpu.user+cpu.system))
+                        details.append(dict(pid=p.pid,rss=m.rss,native_peak_rss=getattr(m,'peak_wset',m.rss),private=getattr(m,'private',None),cpu_seconds=cpu.user+cpu.system))
                     except (psutil.NoSuchProcess,psutil.AccessDenied):pass
                 memory=psutil.virtual_memory()
                 row=dict(monotonic=time.perf_counter(),label=self.label,available=memory.available,total=memory.total,
@@ -37,9 +37,16 @@ class Sampler:
     def begin(self,label):self.label=label;return time.perf_counter()
     def end(self,begin):
         end=time.perf_counter();values=[v for v in self.rows if begin<=v['monotonic']<=end]
+        previous=[v for v in self.rows if v['monotonic']<begin]
+        old={v['pid']:v['cpu_seconds'] for v in previous[-1]['processes']} if previous else {}
+        latest={}
+        for row in values:
+            for process in row['processes']:latest[process['pid']]=max(latest.get(process['pid'],0),process['cpu_seconds'])
+        cpu=sum(max(0,v-old.get(pid,0)) for pid,v in latest.items())
         return dict(samples=len(values),process_rss_peak_GiB=max([v['process_rss']/2**30 for v in values] or [0]),
             available_min_GiB=min([v['available']/2**30 for v in values]) if values else None,
-            client_rss_peak_GiB=max([v['client_rss']/2**30 for v in values] or [0]),resource_abort=self.aborted)
+            client_rss_peak_GiB=max([v['client_rss']/2**30 for v in values] or [0]),
+            cpu_seconds_observed=cpu,mean_logical_cores_observed=cpu/max(.001,end-begin),sample_window_seconds=end-begin,resource_abort=self.aborted)
     def close(self):self.stop_event.set();self.thread.join(timeout=3)
 
 def snapshot():
