@@ -12,6 +12,23 @@ def index_snapshot(cfg):
     return {p.relative_to(ROOT).as_posix():record(p) for k in ('dense_index','bm25_index') for p in (ROOT/cfg[k]).rglob('*') if p.is_file()}
 
 
+class StageReranker:
+    """Own the unchanged pinned cross-encoder only when scoring actually starts."""
+    def __init__(self,cfg):self.cfg=cfg;self._owner=None
+    def ensure_loaded(self):
+        if self._owner is None:
+            from bge_reranker import BgeReranker
+            mark('jit_reranker_construction_start')
+            self._owner=BgeReranker(self.cfg)
+            mark('jit_reranker_construction_end')
+        return self._owner
+    def score(self,*args,**kwargs):return self.ensure_loaded().score(*args,**kwargs)
+    @property
+    def session(self):return self.ensure_loaded().session
+    @property
+    def inputs(self):return self.ensure_loaded().inputs
+
+
 def retriever(cfg):
     mark('retrieval_import_start')
     from reranker_live import RerankerRetriever
@@ -30,8 +47,12 @@ def retriever(cfg):
                 mark('dense_construction_start')
                 self.embedder=PinnedEmbedder(read(ROOT/'config/dense_index.json'))
                 self.dense=DenseIndex(ROOT/cfg['dense_index'],embedder=self.embedder)
-                mark('dense_construction_end');mark('reranker_construction_start')
-                self.reranker=BgeReranker(self.cfg);mark('reranker_construction_end')
+                mark('dense_construction_end')
+                if os.environ.get('FOOTBALL_JIT_RERANKER','0')=='1':
+                    self.reranker=StageReranker(self.cfg);mark('reranker_deferred')
+                else:
+                    mark('reranker_construction_start')
+                    self.reranker=BgeReranker(self.cfg);mark('reranker_construction_end')
             except BaseException:
                 if self.dense is not None:self.dense.close()
                 raise
@@ -64,7 +85,7 @@ class IntegratedEngine:
               and hasattr(self.retriever,'reranker') and self.retriever.reranker is None):
             from bge_reranker import BgeReranker
             mark('reranker_reconstruction_start')
-            self.retriever.reranker=BgeReranker(self.retriever.cfg)
+            self.retriever.reranker=StageReranker(self.retriever.cfg) if os.environ.get('FOOTBALL_JIT_RERANKER','0')=='1' else BgeReranker(self.retriever.cfg)
             mark('reranker_reconstruction_end')
         return self.retriever
 
@@ -73,12 +94,15 @@ class IntegratedEngine:
         if self.retriever is None or getattr(self.retriever,'reranker',None) is None:return
         import gc,weakref
         mark('reranker_release_start')
-        observed=weakref.ref(self.retriever.reranker)
+        # For the stage owner, verify collection of the actual cross-encoder.
+        owner=getattr(self.retriever.reranker,'_owner',self.retriever.reranker)
+        observed=weakref.ref(owner) if owner is not None else None
+        del owner
         self.retriever.reranker=None
         gc.collect()
         # This says whether the Python owner is gone; OS memory is measured
         # independently and is never inferred from object collection.
-        mark('reranker_release_end',object_collected=observed() is None)
+        mark('reranker_release_end',object_collected=observed is None or observed() is None)
 
     def close(self):
         if self.closed:return

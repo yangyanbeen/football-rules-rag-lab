@@ -9,7 +9,11 @@ def main():
     original=client.call_worker
     def call(*args,**kwargs):
         flag=json.loads((a.out/'release-flag.json').read_text('utf8'))['enabled'];assert type(flag) is bool
-        os.environ['FOOTBALL_RELEASE_RERANKER']='1' if flag else '0';return original(*args,**kwargs)
+        if os.environ.get('FOOTBALL_E15_MODE')=='jit':
+            os.environ['FOOTBALL_RELEASE_RERANKER']='1';os.environ['FOOTBALL_JIT_RERANKER']='1' if flag else '0'
+        else:
+            os.environ['FOOTBALL_RELEASE_RERANKER']='1' if flag else '0';os.environ['FOOTBALL_JIT_RERANKER']='0'
+        return original(*args,**kwargs)
     client.call_worker=call
     import run_integrated_rag_audit as launch
     load=launch.load_config

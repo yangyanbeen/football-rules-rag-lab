@@ -27,6 +27,7 @@ if __name__=='__main__':
         mark('engine_construction_end')
         if a.check:
             engine.ensure_retriever()
+            if hasattr(engine.retriever.reranker,'ensure_loaded'):engine.retriever.reranker.ensure_loaded()
             packet={'status':'READY','profile':cfg['version'],'records':99,'implementation':identity}
         else:
             resolution = None
