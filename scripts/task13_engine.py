@@ -1,5 +1,5 @@
 """Integrated rebuilt indexes -> fixed Top40 -> pinned Qwen -> verified source display."""
-import sys,time,re
+import os,sys,time,re
 from runtime_observation import mark
 from task13_core import *
 from answer_eval_core import config as answer_config,parse_selection
@@ -44,7 +44,8 @@ class IntegratedEngine:
         self.cfg=app_config();self.answer_cfg=answer_config();self.retriever=None;self.closed=False
         self.before=index_snapshot(self.cfg)
         try:
-            self.retriever=retriever(self.cfg);self.chat=PinnedChat(self.answer_cfg)
+            if os.environ.get('FOOTBALL_LAZY_RETRIEVAL','0')!='1':self.retriever=retriever(self.cfg)
+            self.chat=PinnedChat(self.answer_cfg)
             mark('chat_identity_validation_start')
             self.chat.verify_model();self.prompt=(ROOT/'config/answer_evaluation_system.txt').read_text('utf-8')
             mark('chat_identity_validation_end')
@@ -53,6 +54,13 @@ class IntegratedEngine:
                 try:self.retriever.close()
                 except BaseException as e:print('Secondary cleanup error: '+type(e).__name__,file=sys.stderr)
             raise
+
+    def ensure_retriever(self):
+        if self.retriever is None:
+            mark('lazy_retrieval_construction_start')
+            self.retriever=retriever(self.cfg)
+            mark('lazy_retrieval_construction_end')
+        return self.retriever
 
     def close(self):
         if self.closed:return
@@ -85,6 +93,7 @@ class IntegratedEngine:
                 return r
             if re.search(r'官方|现行|最新|IFAB',question,re.I) and re.search(r'赛季|20\d{2}|规则',question):
                 r['refusal_reason']='version_unverified';return r
+            self.ensure_retriever()
             t=time.perf_counter()
             try:
                 mark('retrieval_query_start');r['retrieval']=self.retriever.query(question,'top40');mark('retrieval_query_end')

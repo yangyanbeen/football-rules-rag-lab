@@ -26,6 +26,7 @@ if __name__=='__main__':
     with task13_engine.IntegratedEngine() as engine:
         mark('engine_construction_end')
         if a.check:
+            engine.ensure_retriever()
             packet={'status':'READY','profile':cfg['version'],'records':99,'implementation':identity}
         else:
             resolution = None

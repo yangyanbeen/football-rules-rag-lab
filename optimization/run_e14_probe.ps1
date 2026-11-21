@@ -1,4 +1,4 @@
-param([string]$RunName='e14-baseline01')
+param([string]$RunName='e14-baseline01',[switch]$Lazy)
 $Phase='probe'
 $ErrorActionPreference='Stop'
 if ($RunName -notmatch '^e14-[a-z0-9-]+$') {throw 'Use a bounded E14 run name.'}
@@ -10,6 +10,7 @@ $workerPython=Join-Path $root '.runtime/task13/venv-final/Scripts/python.exe'
 $exe=Join-Path $original '.runtime/ollama/ollama.exe'
 $server=$null;$ui=$null
 $env:PYTHONIOENCODING='utf-8';$env:PYTHONDONTWRITEBYTECODE='1';$env:NO_PROXY='127.0.0.1,localhost'
+$env:FOOTBALL_LAZY_RETRIEVAL=if ($Lazy) {'1'} else {'0'}
 foreach ($key in @('HTTP_PROXY','HTTPS_PROXY','ALL_PROXY','http_proxy','https_proxy','all_proxy')) {[Environment]::SetEnvironmentVariable($key,$null,'Process')}
 function Test-Loopback([int]$Port) {
     $client=[Net.Sockets.TcpClient]::new()

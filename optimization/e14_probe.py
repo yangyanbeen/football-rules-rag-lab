@@ -36,7 +36,7 @@ def main(a):
                         reference=event['private_trace'];assert record(ROOT/reference['path'])==reference;r=read(ROOT/reference['path'])
                         def rendered():
                             answers=page.answers()
-                            return answers and (('赛事' in answers[-1] and '赛季' in answers[-1]) if name.startswith('D036') else all(cid in answers[-1] for cid in r['selected_ids']) and ('绿色' in answers[-1] if name.startswith('fact') and r['status']=='answered' else '11' in answers[-1] if name=='players' else '证据' in answers[-1]))
+                            return answers and (('赛事' in answers[-1] and '赛季' in answers[-1]) if name.startswith('D036') else all(cid in answers[-1] for cid in r['selected_ids']) and ('绿色' in answers[-1] if name.startswith('fact') and r['status']=='answered' else '11' in answers[-1] if name=='players' else '现有资料不足以可靠回答' in answers[-1]))
                         wait(rendered,12,name+' visible response');visible=True
                 except Exception as exc:error=type(exc).__name__+': '+str(exc)
                 seconds=time.perf_counter()-start;resources=sampler.end(start);time.sleep(2);after=snapshot()
