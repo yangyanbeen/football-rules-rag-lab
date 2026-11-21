@@ -23,6 +23,9 @@ if __name__=='__main__':
             resolution = None
             if history:
                 question, resolution = resolve_question(question, history, engine.answer_cfg)
+            # A model-resolved subject must not silently authorize a fact
+            # supplement for a different original user object.
+            engine.fact_recovery_allowed = resolution is None or resolution['outcome']=='unchanged'
             result = engine.answer(question)
             if resolution is not None:
                 result['query_resolution'] = resolution

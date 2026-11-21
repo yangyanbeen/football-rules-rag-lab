@@ -25,7 +25,8 @@ def app_config(path=None):
 
 def source_identity():
     paths=('config/task13_app.json','config/answer_evaluation.json','config/answer_evaluation_system.txt',
-        'config/reranker_experiment.json','config/dense_index.json','config/citation_catalog_notes.json')
+        'config/reranker_experiment.json','config/dense_index.json','config/citation_catalog_notes.json',
+        'config/source_bound_facts.json')
     return {p:record(ROOT/p) for p in paths}
 
 
@@ -79,9 +80,27 @@ def validate_result(value,question):
         from answer_audit_v2 import validate_attempts
         from answer_json_chat import selection_schema
         selected=validate_attempts(attempts,value['messages'],selection_schema(value['offered_ids'],3),lambda s:parse_selection(s,value['offered_ids'],answer_config()))
-        if selected is None or selected['chunk_ids']!=value['selected_ids'] or selected['answerable']!=(value['status']=='answered'):raise ValueError('Actual generation did not select displayed evidence')
-        if value['status']=='refused' and selected['reason']!=value['refusal_reason']:raise ValueError('Actual refusal reason differs')
+        if selected is None:raise ValueError('No completed actual selection')
+        recovery=value.get('fact_recovery')
+        if recovery is not None:
+            from source_bound_facts import evaluate
+            expected_recovery=evaluate(q,selected,value['context'],value['messages'])
+            if recovery!=expected_recovery:raise ValueError('Source-bound recovery proof differs')
+        if recovery and recovery['applied']:
+            if decision or selected['answerable'] or selected['reason']!='insufficient_evidence':
+                raise ValueError('Fact recovery cannot replace another decision')
+            resolution=value.get('query_resolution')
+            if resolution is not None and (resolution.get('outcome')!='unchanged'
+                    or resolution.get('original_question_sha256')!=digest(q.encode('utf-8'))):
+                raise ValueError('Fact recovery requires explicit original user object')
+            if value['status']!='answered' or value['selected_ids']!=recovery['selected_ids']:
+                raise ValueError('Fact recovery differs from displayed evidence')
+        else:
+            if selected['chunk_ids']!=value['selected_ids'] or selected['answerable']!=(value['status']=='answered'):raise ValueError('Actual generation did not select displayed evidence')
+            if value['status']=='refused' and selected['reason']!=value['refusal_reason']:raise ValueError('Actual refusal reason differs')
     elif value['status']=='answered':raise ValueError('Answered without completed generation')
+    if value.get('fact_recovery') is not None and (decision or not attempts or value['error']):
+        raise ValueError('Recovery requires completed ordinary model refusal')
     if set(value['timing'])!={'retrieval_seconds','generation_seconds','total_seconds'} or any(type(v) not in (int,float) or not math.isfinite(v) or v<0 for v in value['timing'].values()):raise ValueError('Invalid timing')
     if value['timing']['total_seconds']+0.01<sum(value['timing'][k] for k in ('retrieval_seconds','generation_seconds')):raise ValueError('Incomplete stage clock')
     return True

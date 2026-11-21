@@ -94,6 +94,16 @@ class IntegratedEngine:
                 r['attempts']=attempts
             finally:r['timing']['generation_seconds']=time.perf_counter()-t
             if error:raise ValueError(error)
+            if not selection['answerable'] and selection['reason']=='insufficient_evidence':
+                from source_bound_facts import enabled, evaluate
+                if enabled() and getattr(self,'fact_recovery_allowed',True):
+                    recovery=evaluate(question,selection,context,messages)
+                    r['fact_recovery']=recovery
+                    if recovery['applied']:
+                        answer,cites=safe_render(recovery['selected_ids'],{v['chunk_id']:v for v in context})
+                        r.update(status='answered',answer=answer,citations=cites,
+                                 selected_ids=recovery['selected_ids'],refusal_reason=None)
+                        return r
             if selection['answerable']:
                 answer,cites=safe_render(selection['chunk_ids'],{v['chunk_id']:v for v in context})
                 r.update(status='answered',answer=answer,citations=cites,selected_ids=selection['chunk_ids'])

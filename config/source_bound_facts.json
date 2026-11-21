@@ -1,0 +1,68 @@
+{
+  "version": "source-bound-facts-1.0",
+  "scope": "local_frozen_standard_adult_association_football",
+  "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+  "default_enabled": false,
+  "enable_environment": "FOOTBALL_SOURCE_FACTS=1",
+  "policy": "Only after ordinary insufficient_evidence; uniquely matched registered object/properties; every property covered and original source already in the actual Prompt. Emit existing full-original paragraph and citation, no new model request.",
+  "reviewed_conflict_scope": "Inspected frozen99 paragraphs for artificial-surface color, ball-pressure and goal-dimension assertions. Relevant values occur only in L01-01/L02-02/L01-03. Unknown, changed or newly added corpus/Prompt sources fail closed pending review; this is not a general semantic conflict detector.",
+  "adult_pitch_scope_source": {
+    "chunk_id": "L01-01",
+    "body_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+    "quote": "以下场地说明针对成人比赛。"
+  },
+  "facts": [
+    {
+      "fact_id": "artificial_surface_color",
+      "object": "artificial_football_surface",
+      "property": "color",
+      "scope": "local_frozen_standard_adult_association_football",
+      "value_text": "绿色",
+      "source_chunk_id": "L01-01",
+      "body_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+      "record_sha256": "44f2b8c87a8ffe41304f8d45d35109eff500e629a07e6479af35062b57e57491",
+      "source_quote": "人造表面只允许使用绿色。",
+      "quote_sha256": "78fe43cf1676ccba848a36cfc1adec601f193df625c6778936555164441cd191",
+      "review": "Codex source-text review, not expert certification; preserve original approximation, adult scope and existing source boundary."
+    },
+    {
+      "fact_id": "adult_ball_pressure_kpa",
+      "object": "standard_adult_size5_ball",
+      "property": "pressure_kpa",
+      "scope": "local_frozen_standard_adult_association_football",
+      "value_text": "约59—108千帕",
+      "source_chunk_id": "L02-02",
+      "body_sha256": "aaf69e77f266fa144df20549ff0a7286853d7556d2f558dcd86e3d7039e23129",
+      "record_sha256": "6c65f30e691befa68a7ed4781c18b63ec23f02508c3d0d6e98856a875106f05e",
+      "source_quote": "约59—108千帕",
+      "quote_sha256": "4047227222090c0b0e384822212a5eed48a2cb732924af8e6174f7d94fab705f",
+      "review": "Codex source-text review, not expert certification; preserve original approximation, adult scope and existing source boundary."
+    },
+    {
+      "fact_id": "adult_goal_inside_width_m",
+      "object": "standard_adult_goal",
+      "property": "inside_width_m",
+      "scope": "local_frozen_standard_adult_association_football",
+      "value_text": "7.32米",
+      "source_chunk_id": "L01-03",
+      "body_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+      "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836",
+      "source_quote": "两门柱内侧相距8码，即7.32米",
+      "quote_sha256": "e5f062b17892e3c2c151c6256b27ce2b14139abd5b509bcf782aa835d7126e92",
+      "review": "Codex source-text review, not expert certification; preserve original approximation, adult scope and existing source boundary."
+    },
+    {
+      "fact_id": "adult_goal_crossbar_lower_edge_height_m",
+      "object": "standard_adult_goal",
+      "property": "crossbar_lower_edge_height_m",
+      "scope": "local_frozen_standard_adult_association_football",
+      "value_text": "2.44米",
+      "source_chunk_id": "L01-03",
+      "body_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+      "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836",
+      "source_quote": "横梁下沿距离地面8英尺，即2.44米",
+      "quote_sha256": "014c3eefc6843b9d5cf373566762baa2c9ad0156bf85267f8bc4112d7042d940",
+      "review": "Codex source-text review, not expert certification; preserve original approximation, adult scope and existing source boundary."
+    }
+  ]
+}

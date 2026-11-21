@@ -1,0 +1,39 @@
+{
+  "control": "5986781-equivalent default Worker with source fact feature off, Prompt A, pinned Qwen2.5:3b",
+  "candidate": "Only opt-in source-bound deterministic fallback after parsed ordinary insufficient_evidence; no extra model call",
+  "registry": "Four attributes: artificial surface color, standard adult size5 ball pressure kPa, adult goal inner width, adult goal crossbar lower-edge height. Frozen corpus/source/record/quote hashes.",
+  "scope": "Local frozen corpus claims only; adult football scope, no current/official season, named competition, youth/other sports or conversions. Full-question grammar; ambiguous, compound unknown attributes or incomplete coverage preserve original result.",
+  "protocol": "Keep raw model selection/attempts unchanged. Private fact_recovery proof separates source-bound supplement from model selection. Final citations/rendering use existing safe_render; verifier recomputes complete proof. Public result field set unchanged.",
+  "default": "FOOTBALL_SOURCE_FACTS absent/0 leaves baseline behavior; =1 only in isolated candidate worker/UI environment. Never enable from user input.",
+  "history_object_guard": "When original history handling rewrites or falls back, keep original answer result and disable supplement. Only an unchanged explicit original question may enter fact recovery; validators reject proofs over a model-rewritten subject.",
+  "replay": "Archived D001/T001/D002 native model refusals, full boundary matrix and all90 archive scan; zero new model calls. No evaluation IDs/labels in runtime matcher.",
+  "live_special": "Sequential normal Worker, real original-question/paraphrase A/B in alternating order; single browser tab validation of candidate. At least D001/T001 originals and independent paraphrases complete, multiattribute goal complete, no incorrect supplement or original-correct regression, all added citations support facts.",
+  "pressure_questions": [
+    {"name":"grass_original","question":"人工草坪的颜色有什么限制？","facts":["artificial_surface_color"]},
+    {"name":"grass_paraphrase","question":"按资料，人造草皮应是什么颜色？","facts":["artificial_surface_color"]},
+    {"name":"pressure_original","question":"根据本地资料，标准成人足球充气压力的千帕范围是多少？","facts":["adult_ball_pressure_kpa"]},
+    {"name":"pressure_paraphrase","question":"请问标准成人5号球的球压是多少千帕？","facts":["adult_ball_pressure_kpa"]},
+    {"name":"goal_both_original","question":"成人球门的内侧宽度和横梁离地高度分别是多少？","facts":["adult_goal_inside_width_m","adult_goal_crossbar_lower_edge_height_m"]},
+    {"name":"goal_both_paraphrase","question":"标准成人球门的内宽与横梁下沿高度各是多少米？","facts":["adult_goal_inside_width_m","adult_goal_crossbar_lower_edge_height_m"]},
+    {"name":"goal_width","question":"标准成人球门内侧宽度是多少米？","facts":["adult_goal_inside_width_m"],"replay_only":true},
+    {"name":"goal_height","question":"标准成人球门的横梁下沿高度是多少米？","facts":["adult_goal_crossbar_lower_edge_height_m"],"replay_only":true}
+  ],
+  "correct_controls": [
+    {"name":"players","question":"球队最多上场多少人，其中哪个位置必须有一人？","support":[["L03-01"],["L03-01","L12-10"]]},
+    {"name":"half_time","question":"标准成人比赛每半场多长？球出界时比赛时钟是否暂停？","support":[["L07-01"],["L07-01"]]}
+  ],
+  "boundary_controls": [
+    {"name":"material","question":"人工草坪通常使用什么材料？"},
+    {"name":"ambiguous","question":"它的颜色有什么限制？"},
+    {"name":"version","question":"2026/27官方赛季标准成人足球球压范围是多少？"},
+    {"name":"extra_attribute","question":"成人球门的内侧宽度、横梁高度和球网材质分别是什么？"},
+    {"name":"D036_gate","question":"某联赛队员累计三张黄牌一定停赛几场？没有给联赛和赛季。"}
+  ],
+  "fixed_boundary_injections": ["source removed from actual Prompt","source present only in candidate list, absent from Prompt","Prompt/context mismatch","changed body or record hash","unknown or conflicting paragraph","two requested attributes but only one registry attribute verified","source_conflict or version_unverified model reason","parse/runtime error cannot recover","forged recovery proof cannot validate"],
+  "stop": "Any incorrect supplement stops candidate expansion. No live90 unless all special quality, citation, actual-entry and runtime resource gates pass.",
+  "runtime_acceptance": {"sequential":true,"request_wall_seconds_max":60,"system_available_GiB_min":1,"emergency":"0.35GiB for three 0.5-second samples stops owned model service only"},
+  "full90_if_special_passes": "Normal Worker candidate run, real retrieval and one original model flow per question. Preserve parsed pre-recovery control from the same actual response for deterministic paired comparison, plus historical51/72. Do not describe shared-response shadow A as a second independent model run or report synthetic A wall time.",
+  "full90_gates": {"correct_refusal":"18/18","technical":"90/90","full_answerable":">51/72","no_wrong_supplement":true,"citation":"Report added/unsupported numerator+denominator and per-question gains/regressions"},
+  "holdout40_used":false,
+  "merge_or_push":false
+}
