@@ -60,7 +60,25 @@ class IntegratedEngine:
             mark('lazy_retrieval_construction_start')
             self.retriever=retriever(self.cfg)
             mark('lazy_retrieval_construction_end')
+        elif (os.environ.get('FOOTBALL_RELEASE_RERANKER','0')=='1'
+              and hasattr(self.retriever,'reranker') and self.retriever.reranker is None):
+            from bge_reranker import BgeReranker
+            mark('reranker_reconstruction_start')
+            self.retriever.reranker=BgeReranker(self.retriever.cfg)
+            mark('reranker_reconstruction_end')
         return self.retriever
+
+    def release_reranker(self):
+        """Drop only the finished cross-encoder; preserve ranked data and sources."""
+        if self.retriever is None or getattr(self.retriever,'reranker',None) is None:return
+        import gc,weakref
+        mark('reranker_release_start')
+        observed=weakref.ref(self.retriever.reranker)
+        self.retriever.reranker=None
+        gc.collect()
+        # This says whether the Python owner is gone; OS memory is measured
+        # independently and is never inferred from object collection.
+        mark('reranker_release_end',object_collected=observed() is None)
 
     def close(self):
         if self.closed:return
@@ -102,6 +120,8 @@ class IntegratedEngine:
             context,messages,size=pack(question,evidence,self.answer_cfg,self.prompt)
             r.update(retrieved_ids=[v['chunk_id'] for v in evidence],context=context,messages=messages,
                 offered_ids=[v['chunk_id'] for v in context],prompt_utf8_bytes=size)
+            mark('context_packed')
+            if os.environ.get('FOOTBALL_RELEASE_RERANKER','0')=='1':self.release_reranker()
             if not context:r['refusal_reason']='no_whole_evidence_within_budget';return r
             from answer_json_chat import selection_schema
             t=time.perf_counter()

@@ -6,7 +6,10 @@ def mark(stage,**details):
     target=os.environ.get('FOOTBALL_RUNTIME_EVENTS')
     if not target:return
     path=Path(target).resolve();root=Path(__file__).resolve().parents[1]/'.runtime/phase2'
-    if not path.is_relative_to(root) or not path.parent.name.startswith('e14-') or path.name!='events':
-        raise ValueError('Use an experiment-owned E14 events directory')
+    if not path.is_relative_to(root) or not path.parent.name.startswith(('e14-','e15-')) or path.name!='events':
+        raise ValueError('Use an experiment-owned E14/E15 events directory')
     value=dict(stage=stage,pid=os.getpid(),parent_pid=os.getppid(),monotonic=time.perf_counter(),wall_ns=time.time_ns(),**details)
+    if os.environ.get('FOOTBALL_RUNTIME_MEMORY','0')=='1':
+        from runtime_memory_snapshot import snapshot
+        value['memory']=snapshot()
     with (path/(str(os.getpid())+'.jsonl')).open('a',encoding='utf8') as f:f.write(json.dumps(value)+'\n')

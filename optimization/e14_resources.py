@@ -9,8 +9,8 @@ def models():
     except Exception:return None
 
 class Sampler(Base):
-    def __init__(self,pid,path,ui_pid):
-        self.ui_pid=ui_pid;self.process_labels={};super().__init__(pid,path)
+    def __init__(self,pid,path,ui_pid,interval_seconds=.25):
+        self.interval_seconds=interval_seconds;self.ui_pid=ui_pid;self.process_labels={};super().__init__(pid,path)
     def loop(self):
         critical=0;loaded=None;last=0
         with self.path.open('x',encoding='utf8') as f:
@@ -39,7 +39,7 @@ class Sampler(Base):
                 critical=critical+1 if memory.available<.35*2**30 else 0
                 if critical>=3:
                     self.aborted=True;subprocess.run(['taskkill','/PID',str(self.pid),'/T','/F'],capture_output=True);break
-                self.stop_event.wait(.25)
+                self.stop_event.wait(self.interval_seconds)
     def end(self,begin):
         value=super().end(begin);rows=[r for r in self.rows if r['monotonic']>=begin]
         if rows:
