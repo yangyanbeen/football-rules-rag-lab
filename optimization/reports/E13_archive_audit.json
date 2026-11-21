@@ -1,0 +1,821 @@
+{
+  "producer_commit": "a475c77cec92a5900c3032092b26cbaf9a8f89d0",
+  "worker_A": {
+    "observations": 13,
+    "supplements": 0,
+    "supplement_names": [],
+    "added_citation_numerator": 0,
+    "added_citation_denominator": 0,
+    "real_answer_model_calls": 11,
+    "max_seconds": 38.20253120000052,
+    "min_available_GiB": 0.8953514099121094
+  },
+  "worker_B": {
+    "observations": 13,
+    "supplements": 4,
+    "supplement_names": [
+      "grass_original",
+      "pressure_original",
+      "pressure_paraphrase",
+      "goal_both_original"
+    ],
+    "added_citation_numerator": 4,
+    "added_citation_denominator": 4,
+    "real_answer_model_calls": 11,
+    "max_seconds": 39.89276290000089,
+    "min_available_GiB": 0.8867111206054688
+  },
+  "browser_B": {
+    "observations": 7,
+    "supplements": 3,
+    "supplement_names": [
+      "grass_original",
+      "pressure_original",
+      "pressure_paraphrase"
+    ],
+    "added_citation_numerator": 3,
+    "added_citation_denominator": 3,
+    "real_answer_model_calls": 6,
+    "max_seconds": 35.39343490000101,
+    "min_available_GiB": 0.8866119384765625
+  },
+  "pairs": [
+    {
+      "name": "grass_original",
+      "question": "人工草坪的颜色有什么限制？",
+      "A_grade": "false_refusal",
+      "B_grade": "correct",
+      "A_ids": [],
+      "B_ids": [
+        "L01-01"
+      ],
+      "identical_question_and_actual_context": true,
+      "A_seconds": 35.44694359999994,
+      "B_seconds": 34.30208270000003,
+      "A_attempts": 1,
+      "B_attempts": 1,
+      "A_raw_selection": {
+        "answerable": false,
+        "chunk_ids": [],
+        "reason": "insufficient_evidence"
+      },
+      "B_raw_selection": {
+        "answerable": false,
+        "chunk_ids": [],
+        "reason": "insufficient_evidence"
+      },
+      "recovery": {
+        "applied": true,
+        "base_prompt_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+        "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "fact_ids": [
+          "artificial_surface_color"
+        ],
+        "matched_object": "artificial_football_surface",
+        "proof": [
+          {
+            "body_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+            "chunk_id": "L01-01",
+            "fact_id": "artificial_surface_color",
+            "prompt_position": 1,
+            "property": "color",
+            "quote_sha256": "78fe43cf1676ccba848a36cfc1adec601f193df625c6778936555164441cd191",
+            "record_sha256": "44f2b8c87a8ffe41304f8d45d35109eff500e629a07e6479af35062b57e57491"
+          }
+        ],
+        "reason": "reviewed_facts_fully_supported_in_prompt",
+        "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+        "requested_properties": [
+          "color"
+        ],
+        "selected_ids": [
+          "L01-01"
+        ],
+        "version": "source-bound-fact-recovery-1.0"
+      }
+    },
+    {
+      "name": "grass_paraphrase",
+      "question": "按资料，人造草皮应是什么颜色？",
+      "A_grade": "correct",
+      "B_grade": "correct",
+      "A_ids": [
+        "L01-01"
+      ],
+      "B_ids": [
+        "L01-01"
+      ],
+      "identical_question_and_actual_context": true,
+      "A_seconds": 33.94175350000114,
+      "B_seconds": 34.25812210000004,
+      "A_attempts": 1,
+      "B_attempts": 1,
+      "A_raw_selection": {
+        "answerable": true,
+        "chunk_ids": [
+          "L01-01"
+        ],
+        "reason": null
+      },
+      "B_raw_selection": {
+        "answerable": true,
+        "chunk_ids": [
+          "L01-01"
+        ],
+        "reason": null
+      },
+      "recovery": null
+    },
+    {
+      "name": "pressure_original",
+      "question": "根据本地资料，标准成人足球充气压力的千帕范围是多少？",
+      "A_grade": "false_refusal",
+      "B_grade": "correct",
+      "A_ids": [],
+      "B_ids": [
+        "L02-02"
+      ],
+      "identical_question_and_actual_context": true,
+      "A_seconds": 37.009251100000256,
+      "B_seconds": 36.2246367000007,
+      "A_attempts": 1,
+      "B_attempts": 1,
+      "A_raw_selection": {
+        "answerable": false,
+        "chunk_ids": [],
+        "reason": "insufficient_evidence"
+      },
+      "B_raw_selection": {
+        "answerable": false,
+        "chunk_ids": [],
+        "reason": "insufficient_evidence"
+      },
+      "recovery": {
+        "applied": true,
+        "base_prompt_sha256": "68f26e9733380c507ac939ec8477ca476962e4ae4d3a85e6693092f26730184d",
+        "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "fact_ids": [
+          "adult_ball_pressure_kpa"
+        ],
+        "matched_object": "standard_adult_size5_ball",
+        "proof": [
+          {
+            "body_sha256": "aaf69e77f266fa144df20549ff0a7286853d7556d2f558dcd86e3d7039e23129",
+            "chunk_id": "L02-02",
+            "fact_id": "adult_ball_pressure_kpa",
+            "prompt_position": 1,
+            "property": "pressure_kpa",
+            "quote_sha256": "4047227222090c0b0e384822212a5eed48a2cb732924af8e6174f7d94fab705f",
+            "record_sha256": "6c65f30e691befa68a7ed4781c18b63ec23f02508c3d0d6e98856a875106f05e"
+          }
+        ],
+        "reason": "reviewed_facts_fully_supported_in_prompt",
+        "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+        "requested_properties": [
+          "pressure_kpa"
+        ],
+        "selected_ids": [
+          "L02-02"
+        ],
+        "version": "source-bound-fact-recovery-1.0"
+      }
+    },
+    {
+      "name": "pressure_paraphrase",
+      "question": "请问标准成人5号球的球压是多少千帕？",
+      "A_grade": "false_refusal",
+      "B_grade": "correct",
+      "A_ids": [],
+      "B_ids": [
+        "L02-02"
+      ],
+      "identical_question_and_actual_context": true,
+      "A_seconds": 36.793014400000175,
+      "B_seconds": 37.58393570000044,
+      "A_attempts": 1,
+      "B_attempts": 1,
+      "A_raw_selection": {
+        "answerable": false,
+        "chunk_ids": [],
+        "reason": "insufficient_evidence"
+      },
+      "B_raw_selection": {
+        "answerable": false,
+        "chunk_ids": [],
+        "reason": "insufficient_evidence"
+      },
+      "recovery": {
+        "applied": true,
+        "base_prompt_sha256": "6d2f084214e6b53e41863b487a7098c9951d3f63ba1e3a4128fcc83cb3846047",
+        "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "fact_ids": [
+          "adult_ball_pressure_kpa"
+        ],
+        "matched_object": "standard_adult_size5_ball",
+        "proof": [
+          {
+            "body_sha256": "aaf69e77f266fa144df20549ff0a7286853d7556d2f558dcd86e3d7039e23129",
+            "chunk_id": "L02-02",
+            "fact_id": "adult_ball_pressure_kpa",
+            "prompt_position": 1,
+            "property": "pressure_kpa",
+            "quote_sha256": "4047227222090c0b0e384822212a5eed48a2cb732924af8e6174f7d94fab705f",
+            "record_sha256": "6c65f30e691befa68a7ed4781c18b63ec23f02508c3d0d6e98856a875106f05e"
+          }
+        ],
+        "reason": "reviewed_facts_fully_supported_in_prompt",
+        "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+        "requested_properties": [
+          "pressure_kpa"
+        ],
+        "selected_ids": [
+          "L02-02"
+        ],
+        "version": "source-bound-fact-recovery-1.0"
+      }
+    },
+    {
+      "name": "goal_both_original",
+      "question": "成人球门的内侧宽度和横梁离地高度分别是多少？",
+      "A_grade": "false_refusal",
+      "B_grade": "correct",
+      "A_ids": [],
+      "B_ids": [
+        "L01-03"
+      ],
+      "identical_question_and_actual_context": true,
+      "A_seconds": 36.31377969999994,
+      "B_seconds": 38.24598970000079,
+      "A_attempts": 1,
+      "B_attempts": 1,
+      "A_raw_selection": {
+        "answerable": false,
+        "chunk_ids": [],
+        "reason": "insufficient_evidence"
+      },
+      "B_raw_selection": {
+        "answerable": false,
+        "chunk_ids": [],
+        "reason": "insufficient_evidence"
+      },
+      "recovery": {
+        "applied": true,
+        "base_prompt_sha256": "15ef0343fe8ab90fd4217be787b81bf01c1d3380c0c92c628b54403baca3e117",
+        "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "fact_ids": [
+          "adult_goal_inside_width_m",
+          "adult_goal_crossbar_lower_edge_height_m"
+        ],
+        "matched_object": "standard_adult_goal",
+        "proof": [
+          {
+            "body_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+            "chunk_id": "L01-03",
+            "fact_id": "adult_goal_inside_width_m",
+            "prompt_position": 1,
+            "property": "inside_width_m",
+            "quote_sha256": "e5f062b17892e3c2c151c6256b27ce2b14139abd5b509bcf782aa835d7126e92",
+            "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836"
+          },
+          {
+            "body_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+            "chunk_id": "L01-03",
+            "fact_id": "adult_goal_crossbar_lower_edge_height_m",
+            "prompt_position": 1,
+            "property": "crossbar_lower_edge_height_m",
+            "quote_sha256": "014c3eefc6843b9d5cf373566762baa2c9ad0156bf85267f8bc4112d7042d940",
+            "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836"
+          }
+        ],
+        "reason": "reviewed_facts_fully_supported_in_prompt",
+        "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+        "requested_properties": [
+          "inside_width_m",
+          "crossbar_lower_edge_height_m"
+        ],
+        "selected_ids": [
+          "L01-03"
+        ],
+        "version": "source-bound-fact-recovery-1.0"
+      }
+    },
+    {
+      "name": "goal_both_paraphrase",
+      "question": "标准成人球门的内宽与横梁下沿高度各是多少米？",
+      "A_grade": "correct",
+      "B_grade": "correct",
+      "A_ids": [
+        "L01-03"
+      ],
+      "B_ids": [
+        "L01-03"
+      ],
+      "identical_question_and_actual_context": true,
+      "A_seconds": 38.16889740000079,
+      "B_seconds": 38.317915300000095,
+      "A_attempts": 1,
+      "B_attempts": 1,
+      "A_raw_selection": {
+        "answerable": true,
+        "chunk_ids": [
+          "L01-03"
+        ],
+        "reason": null
+      },
+      "B_raw_selection": {
+        "answerable": true,
+        "chunk_ids": [
+          "L01-03"
+        ],
+        "reason": null
+      },
+      "recovery": null
+    },
+    {
+      "name": "players",
+      "question": "球队最多上场多少人，其中哪个位置必须有一人？",
+      "A_grade": "correct",
+      "B_grade": "correct",
+      "A_ids": [
+        "L03-01"
+      ],
+      "B_ids": [
+        "L03-01"
+      ],
+      "identical_question_and_actual_context": true,
+      "A_seconds": 35.08810369999992,
+      "B_seconds": 35.64129989999856,
+      "A_attempts": 1,
+      "B_attempts": 1,
+      "A_raw_selection": {
+        "answerable": true,
+        "chunk_ids": [
+          "L03-01"
+        ],
+        "reason": null
+      },
+      "B_raw_selection": {
+        "answerable": true,
+        "chunk_ids": [
+          "L03-01"
+        ],
+        "reason": null
+      },
+      "recovery": null
+    },
+    {
+      "name": "half_time",
+      "question": "标准成人比赛每半场多长？球出界时比赛时钟是否暂停？",
+      "A_grade": "correct",
+      "B_grade": "correct",
+      "A_ids": [
+        "L07-01"
+      ],
+      "B_ids": [
+        "L07-01"
+      ],
+      "identical_question_and_actual_context": true,
+      "A_seconds": 38.20253120000052,
+      "B_seconds": 39.89276290000089,
+      "A_attempts": 1,
+      "B_attempts": 1,
+      "A_raw_selection": {
+        "answerable": true,
+        "chunk_ids": [
+          "L07-01"
+        ],
+        "reason": null
+      },
+      "B_raw_selection": {
+        "answerable": true,
+        "chunk_ids": [
+          "L07-01"
+        ],
+        "reason": null
+      },
+      "recovery": null
+    },
+    {
+      "name": "material",
+      "question": "人工草坪通常使用什么材料？",
+      "A_grade": "boundary_observation",
+      "B_grade": "boundary_observation",
+      "A_ids": [],
+      "B_ids": [],
+      "identical_question_and_actual_context": true,
+      "A_seconds": 36.05354979999902,
+      "B_seconds": 36.36899330000051,
+      "A_attempts": 1,
+      "B_attempts": 1,
+      "A_raw_selection": {
+        "answerable": false,
+        "chunk_ids": [],
+        "reason": "insufficient_evidence"
+      },
+      "B_raw_selection": {
+        "answerable": false,
+        "chunk_ids": [],
+        "reason": "insufficient_evidence"
+      },
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      }
+    },
+    {
+      "name": "ambiguous",
+      "question": "它的颜色有什么限制？",
+      "A_grade": "boundary_observation",
+      "B_grade": "boundary_observation",
+      "A_ids": [],
+      "B_ids": [],
+      "identical_question_and_actual_context": true,
+      "A_seconds": 35.88595449999957,
+      "B_seconds": 36.00011050000103,
+      "A_attempts": 1,
+      "B_attempts": 1,
+      "A_raw_selection": {
+        "answerable": false,
+        "chunk_ids": [],
+        "reason": "insufficient_evidence"
+      },
+      "B_raw_selection": {
+        "answerable": false,
+        "chunk_ids": [],
+        "reason": "insufficient_evidence"
+      },
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      }
+    },
+    {
+      "name": "version",
+      "question": "2026/27官方赛季标准成人足球球压范围是多少？",
+      "A_grade": "boundary_observation",
+      "B_grade": "boundary_observation",
+      "A_ids": [],
+      "B_ids": [],
+      "identical_question_and_actual_context": true,
+      "A_seconds": 14.486653800000568,
+      "B_seconds": 14.358549399999902,
+      "A_attempts": 0,
+      "B_attempts": 0,
+      "A_raw_selection": null,
+      "B_raw_selection": null,
+      "recovery": null
+    },
+    {
+      "name": "extra_attribute",
+      "question": "成人球门的内侧宽度、横梁高度和球网材质分别是什么？",
+      "A_grade": "boundary_observation",
+      "B_grade": "boundary_observation",
+      "A_ids": [],
+      "B_ids": [],
+      "identical_question_and_actual_context": true,
+      "A_seconds": 37.854162100000394,
+      "B_seconds": 36.50665100000151,
+      "A_attempts": 1,
+      "B_attempts": 1,
+      "A_raw_selection": {
+        "answerable": false,
+        "chunk_ids": [],
+        "reason": "insufficient_evidence"
+      },
+      "B_raw_selection": {
+        "answerable": false,
+        "chunk_ids": [],
+        "reason": "insufficient_evidence"
+      },
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      }
+    },
+    {
+      "name": "D036_gate",
+      "question": "某联赛队员累计三张黄牌一定停赛几场？没有给联赛和赛季。",
+      "A_grade": "boundary_observation",
+      "B_grade": "boundary_observation",
+      "A_ids": [],
+      "B_ids": [],
+      "identical_question_and_actual_context": true,
+      "A_seconds": 15.111530500000299,
+      "B_seconds": 14.384871599999315,
+      "A_attempts": 0,
+      "B_attempts": 0,
+      "A_raw_selection": null,
+      "B_raw_selection": null,
+      "recovery": null
+    }
+  ],
+  "positive_wordings": 6,
+  "positive_correct": {
+    "A": 2,
+    "B": 6
+  },
+  "datasets_and_holdout_hashes_unchanged": true,
+  "holdout_used": false,
+  "full90_executed": false,
+  "source_hashes_unchanged": true,
+  "raw_worker_files": {
+    "grass_original-A.json": "c1cb9973b17121b8b054d6f48a0e762189fb1b61876cc0a0b3bdaf7cc8bcae31",
+    "grass_original-B.json": "6683930dd69b2f6b2c2bb9902169912f1ad635c6854605895988b23833b8aa81",
+    "grass_paraphrase-B.json": "74dce34d1390992df3ff77d14dc3ccebcd5fa6863feb28b0718d777ea125d93e",
+    "grass_paraphrase-A.json": "9e8eaf552f9a80499975e9b6b791a1e64f9944e73f759ef2e629a5b2bea199ab",
+    "pressure_original-A.json": "7f43f5a9077f291a64fd54be60ce9afb75b7148e8ade1c79ed16538a517b7d23",
+    "pressure_original-B.json": "7dc188784c4a994090aef544e56654ea6963758b43b23c6e6928dbb9307c2701",
+    "pressure_paraphrase-B.json": "47a76ee2d60b19faee555c4b6e996a0349322b408ca67aaa2cd219221fbd8256",
+    "pressure_paraphrase-A.json": "9b1083a8877bc11d07c38509bc5d2196347ba97f740232867d3c4d4d3405525a",
+    "goal_both_original-A.json": "a5c02c2747bd00bb61b9059f4139ba1538c97919dc27193347bc9381c31e561b",
+    "goal_both_original-B.json": "c1f96ee2c20e72753d51bd6a4daf4cb3edf3c27066c96e3e13b7924f332b023c",
+    "goal_both_paraphrase-B.json": "d49e3c1c01b131ac21a303128a49e2320b952719b2b639711f73c1e9a70b7822",
+    "goal_both_paraphrase-A.json": "0fa4524be9aecd317c17461fb830d8837ac8d1a196a568acc93adc263657f4d2",
+    "players-A.json": "6b4f10861f53d44e20d60d157c96beeceecc571ae450022d459e24a5ec42b442",
+    "players-B.json": "3356482d99fc8e7693d8b048d698250164f84b6bf8ef0f9a64bb6d997350333a",
+    "half_time-B.json": "26fea90c857ba63545b9a3e6401124a74140a860cddfc70b47b2af5b4c445cbc",
+    "half_time-A.json": "160c97bd1a80b29b8b303da48848ca776cdbed7f4f91efd76ca227aa06784cd1",
+    "material-A.json": "f4ee0fe65b76190eca3fbb4c8698ea7d3037119fbc0ec1831098c0520a3716b6",
+    "material-B.json": "8c6da4fc5bfd3d1c51c392be87ffc1f63f9cb2c2fb7fe2549c4b89ab9f2b29ef",
+    "ambiguous-B.json": "052268c838255008d92a5bd2da32db9dd43b43c01b67569544a7724ad63d9282",
+    "ambiguous-A.json": "e104db7572c07c670a7781a1d2947b774dbc2842cc0249836a41808b311865ec",
+    "version-A.json": "e645d746ab2d5879f7404215c45c1e9ab575b38576c9575a744af2a79a479858",
+    "version-B.json": "db726a84a78c581f665b8460768dd0bab5ecd208ff6f96862afb3eb80d4a6cc1",
+    "extra_attribute-B.json": "6fdb60f9d5bb4a97e47e5f7d4185ddf97ec595ce959d025c4ea546f934b1f884",
+    "extra_attribute-A.json": "67935eb8f066d0481f3cd7ac792200f8c8b30d0be6bf94e991b3337cf0692116",
+    "D036_gate-A.json": "9ceaa384cd0eec176c8df455f056b206a5faf675b2a5ce6b9bbd021f62b4676e",
+    "D036_gate-B.json": "a6f7193df33af71005ab71bf027d9f01037135091cc263904b25c1cb49dbe964"
+  },
+  "raw_browser_files": {
+    "grass_original.json": "76b0d5601d47ec363a8273e7a392abc55bb98ff5b0a4319a1b26c6e540b73b60",
+    "grass_paraphrase.json": "e0cde8753743fa6a9c66a97342975c62938a39a1f28df9eb3c1b5d4a3cf37552",
+    "pressure_original.json": "8bc186f30813d4b4cac831762a1a3c33a112668a24b7c001a463b3694ea43170",
+    "pressure_paraphrase.json": "8bd9b07a3dd546d3b82e91369bbd6486cf2521a2d92823bffc16535e749c9d89",
+    "goal_both_paraphrase.json": "281301b803bbe7913f56c86308f762c15dc86b2baa49c1f3e332417950fb744f",
+    "players.json": "ab9c3665ad224dd5beae7c8a0e66bc2c85f7d79f2e43a5df241d6e534ebcdd2f",
+    "D036_gate.json": "15592e020d36da4684637934c92d3378e9b9220ec97f443e55b885cc561099f9"
+  },
+  "replay": {
+    "path": "optimization/reports/E13_replay.json",
+    "size_bytes": 52779,
+    "sha256": "a0f3c75b2a68a31f9ccacfa321426527235d9d8da11afa2d33aaec8343b5abb3"
+  },
+  "mechanism": {
+    "path": "optimization/reports/E13_mechanism.json",
+    "size_bytes": 220,
+    "sha256": "c155ecce1db381dd5fa5ea38f5ae4beefd1e29cb1a315290117b3bb5346736a7"
+  },
+  "decision": "STOP_BEFORE_FULL90",
+  "test_ports_closed": {
+    "11434": true,
+    "7867": true
+  },
+  "services_closed": true,
+  "raw_run_records": {
+    ".runtime/phase2/e13-special01/worker/ambiguous-A.json": {
+      "path": ".runtime/phase2/e13-special01/worker/ambiguous-A.json",
+      "size_bytes": 94112,
+      "sha256": "e104db7572c07c670a7781a1d2947b774dbc2842cc0249836a41808b311865ec"
+    },
+    ".runtime/phase2/e13-special01/worker/ambiguous-B.json": {
+      "path": ".runtime/phase2/e13-special01/worker/ambiguous-B.json",
+      "size_bytes": 94270,
+      "sha256": "052268c838255008d92a5bd2da32db9dd43b43c01b67569544a7724ad63d9282"
+    },
+    ".runtime/phase2/e13-special01/worker/completed.json": {
+      "path": ".runtime/phase2/e13-special01/worker/completed.json",
+      "size_bytes": 2618,
+      "sha256": "92a4197de8a7e36d4c4355623b01b8d63bb3d7500488c9f65958a6e5c1a4b5d1"
+    },
+    ".runtime/phase2/e13-special01/worker/D036_gate-A.json": {
+      "path": ".runtime/phase2/e13-special01/worker/D036_gate-A.json",
+      "size_bytes": 8331,
+      "sha256": "9ceaa384cd0eec176c8df455f056b206a5faf675b2a5ce6b9bbd021f62b4676e"
+    },
+    ".runtime/phase2/e13-special01/worker/D036_gate-B.json": {
+      "path": ".runtime/phase2/e13-special01/worker/D036_gate-B.json",
+      "size_bytes": 8332,
+      "sha256": "a6f7193df33af71005ab71bf027d9f01037135091cc263904b25c1cb49dbe964"
+    },
+    ".runtime/phase2/e13-special01/worker/extra_attribute-A.json": {
+      "path": ".runtime/phase2/e13-special01/worker/extra_attribute-A.json",
+      "size_bytes": 97460,
+      "sha256": "67935eb8f066d0481f3cd7ac792200f8c8b30d0be6bf94e991b3337cf0692116"
+    },
+    ".runtime/phase2/e13-special01/worker/extra_attribute-B.json": {
+      "path": ".runtime/phase2/e13-special01/worker/extra_attribute-B.json",
+      "size_bytes": 97613,
+      "sha256": "6fdb60f9d5bb4a97e47e5f7d4185ddf97ec595ce959d025c4ea546f934b1f884"
+    },
+    ".runtime/phase2/e13-special01/worker/goal_both_original-A.json": {
+      "path": ".runtime/phase2/e13-special01/worker/goal_both_original-A.json",
+      "size_bytes": 97564,
+      "sha256": "a5c02c2747bd00bb61b9059f4139ba1538c97919dc27193347bc9381c31e561b"
+    },
+    ".runtime/phase2/e13-special01/worker/goal_both_original-B.json": {
+      "path": ".runtime/phase2/e13-special01/worker/goal_both_original-B.json",
+      "size_bytes": 197949,
+      "sha256": "c1f96ee2c20e72753d51bd6a4daf4cb3edf3c27066c96e3e13b7924f332b023c"
+    },
+    ".runtime/phase2/e13-special01/worker/goal_both_paraphrase-A.json": {
+      "path": ".runtime/phase2/e13-special01/worker/goal_both_paraphrase-A.json",
+      "size_bytes": 100484,
+      "sha256": "0fa4524be9aecd317c17461fb830d8837ac8d1a196a568acc93adc263657f4d2"
+    },
+    ".runtime/phase2/e13-special01/worker/goal_both_paraphrase-B.json": {
+      "path": ".runtime/phase2/e13-special01/worker/goal_both_paraphrase-B.json",
+      "size_bytes": 100484,
+      "sha256": "d49e3c1c01b131ac21a303128a49e2320b952719b2b639711f73c1e9a70b7822"
+    },
+    ".runtime/phase2/e13-special01/worker/grass_original-A.json": {
+      "path": ".runtime/phase2/e13-special01/worker/grass_original-A.json",
+      "size_bytes": 91996,
+      "sha256": "c1cb9973b17121b8b054d6f48a0e762189fb1b61876cc0a0b3bdaf7cc8bcae31"
+    },
+    ".runtime/phase2/e13-special01/worker/grass_original-B.json": {
+      "path": ".runtime/phase2/e13-special01/worker/grass_original-B.json",
+      "size_bytes": 186681,
+      "sha256": "6683930dd69b2f6b2c2bb9902169912f1ad635c6854605895988b23833b8aa81"
+    },
+    ".runtime/phase2/e13-special01/worker/grass_paraphrase-A.json": {
+      "path": ".runtime/phase2/e13-special01/worker/grass_paraphrase-A.json",
+      "size_bytes": 101386,
+      "sha256": "9e8eaf552f9a80499975e9b6b791a1e64f9944e73f759ef2e629a5b2bea199ab"
+    },
+    ".runtime/phase2/e13-special01/worker/grass_paraphrase-B.json": {
+      "path": ".runtime/phase2/e13-special01/worker/grass_paraphrase-B.json",
+      "size_bytes": 101380,
+      "sha256": "74dce34d1390992df3ff77d14dc3ccebcd5fa6863feb28b0718d777ea125d93e"
+    },
+    ".runtime/phase2/e13-special01/worker/half_time-A.json": {
+      "path": ".runtime/phase2/e13-special01/worker/half_time-A.json",
+      "size_bytes": 105512,
+      "sha256": "160c97bd1a80b29b8b303da48848ca776cdbed7f4f91efd76ca227aa06784cd1"
+    },
+    ".runtime/phase2/e13-special01/worker/half_time-B.json": {
+      "path": ".runtime/phase2/e13-special01/worker/half_time-B.json",
+      "size_bytes": 105496,
+      "sha256": "26fea90c857ba63545b9a3e6401124a74140a860cddfc70b47b2af5b4c445cbc"
+    },
+    ".runtime/phase2/e13-special01/worker/material-A.json": {
+      "path": ".runtime/phase2/e13-special01/worker/material-A.json",
+      "size_bytes": 96779,
+      "sha256": "f4ee0fe65b76190eca3fbb4c8698ea7d3037119fbc0ec1831098c0520a3716b6"
+    },
+    ".runtime/phase2/e13-special01/worker/material-B.json": {
+      "path": ".runtime/phase2/e13-special01/worker/material-B.json",
+      "size_bytes": 96951,
+      "sha256": "8c6da4fc5bfd3d1c51c392be87ffc1f63f9cb2c2fb7fe2549c4b89ab9f2b29ef"
+    },
+    ".runtime/phase2/e13-special01/worker/metadata.json": {
+      "path": ".runtime/phase2/e13-special01/worker/metadata.json",
+      "size_bytes": 48829,
+      "sha256": "b2131937e2428d8eee2ae3af5377b3e8b9bebf7824dec5e30ac5284c79f2b18e"
+    },
+    ".runtime/phase2/e13-special01/worker/players-A.json": {
+      "path": ".runtime/phase2/e13-special01/worker/players-A.json",
+      "size_bytes": 100592,
+      "sha256": "6b4f10861f53d44e20d60d157c96beeceecc571ae450022d459e24a5ec42b442"
+    },
+    ".runtime/phase2/e13-special01/worker/players-B.json": {
+      "path": ".runtime/phase2/e13-special01/worker/players-B.json",
+      "size_bytes": 100602,
+      "sha256": "3356482d99fc8e7693d8b048d698250164f84b6bf8ef0f9a64bb6d997350333a"
+    },
+    ".runtime/phase2/e13-special01/worker/pressure_original-A.json": {
+      "path": ".runtime/phase2/e13-special01/worker/pressure_original-A.json",
+      "size_bytes": 98575,
+      "sha256": "7f43f5a9077f291a64fd54be60ce9afb75b7148e8ade1c79ed16538a517b7d23"
+    },
+    ".runtime/phase2/e13-special01/worker/pressure_original-B.json": {
+      "path": ".runtime/phase2/e13-special01/worker/pressure_original-B.json",
+      "size_bytes": 199463,
+      "sha256": "7dc188784c4a994090aef544e56654ea6963758b43b23c6e6928dbb9307c2701"
+    },
+    ".runtime/phase2/e13-special01/worker/pressure_paraphrase-A.json": {
+      "path": ".runtime/phase2/e13-special01/worker/pressure_paraphrase-A.json",
+      "size_bytes": 102669,
+      "sha256": "9b1083a8877bc11d07c38509bc5d2196347ba97f740232867d3c4d4d3405525a"
+    },
+    ".runtime/phase2/e13-special01/worker/pressure_paraphrase-B.json": {
+      "path": ".runtime/phase2/e13-special01/worker/pressure_paraphrase-B.json",
+      "size_bytes": 207717,
+      "sha256": "47a76ee2d60b19faee555c4b6e996a0349322b408ca67aaa2cd219221fbd8256"
+    },
+    ".runtime/phase2/e13-special01/worker/resources.jsonl": {
+      "path": ".runtime/phase2/e13-special01/worker/resources.jsonl",
+      "size_bytes": 1005268,
+      "sha256": "c167afab9b9f963c57a6a0860f7fcb392f2ab416dc8c9e68b0135968df39cb90"
+    },
+    ".runtime/phase2/e13-special01/worker/schedule.json": {
+      "path": ".runtime/phase2/e13-special01/worker/schedule.json",
+      "size_bytes": 5833,
+      "sha256": "ac31fb63d2958f7b8d58d272b7e62abd94db8fd4836440a263d9ea36c76a7989"
+    },
+    ".runtime/phase2/e13-special01/worker/version-A.json": {
+      "path": ".runtime/phase2/e13-special01/worker/version-A.json",
+      "size_bytes": 7931,
+      "sha256": "e645d746ab2d5879f7404215c45c1e9ab575b38576c9575a744af2a79a479858"
+    },
+    ".runtime/phase2/e13-special01/worker/version-B.json": {
+      "path": ".runtime/phase2/e13-special01/worker/version-B.json",
+      "size_bytes": 7929,
+      "sha256": "db726a84a78c581f665b8460768dd0bab5ecd208ff6f96862afb3eb80d4a6cc1"
+    },
+    ".runtime/phase2/e13-special01/browser/chrome-version.json": {
+      "path": ".runtime/phase2/e13-special01/browser/chrome-version.json",
+      "size_bytes": 300,
+      "sha256": "3d45d1d6c984f8a51403f09d9593adc6e38881c2329f7402c372cf40c91b5af2"
+    },
+    ".runtime/phase2/e13-special01/browser/chrome.log": {
+      "path": ".runtime/phase2/e13-special01/browser/chrome.log",
+      "size_bytes": 151,
+      "sha256": "c29681f9196ff75047556d190db720e75e3d095d42817949e9d328f7954ca0bf"
+    },
+    ".runtime/phase2/e13-special01/browser/D036_gate.json": {
+      "path": ".runtime/phase2/e13-special01/browser/D036_gate.json",
+      "size_bytes": 13120,
+      "sha256": "15592e020d36da4684637934c92d3378e9b9220ec97f443e55b885cc561099f9"
+    },
+    ".runtime/phase2/e13-special01/browser/goal_both_paraphrase.json": {
+      "path": ".runtime/phase2/e13-special01/browser/goal_both_paraphrase.json",
+      "size_bytes": 105164,
+      "sha256": "281301b803bbe7913f56c86308f762c15dc86b2baa49c1f3e332417950fb744f"
+    },
+    ".runtime/phase2/e13-special01/browser/grass-ui.png": {
+      "path": ".runtime/phase2/e13-special01/browser/grass-ui.png",
+      "size_bytes": 230197,
+      "sha256": "4bdcee70215131ba8681371208bab6d1ff952c100f9048565d373d3d106b812d"
+    },
+    ".runtime/phase2/e13-special01/browser/grass_original.json": {
+      "path": ".runtime/phase2/e13-special01/browser/grass_original.json",
+      "size_bytes": 100415,
+      "sha256": "76b0d5601d47ec363a8273e7a392abc55bb98ff5b0a4319a1b26c6e540b73b60"
+    },
+    ".runtime/phase2/e13-special01/browser/grass_paraphrase.json": {
+      "path": ".runtime/phase2/e13-special01/browser/grass_paraphrase.json",
+      "size_bytes": 106068,
+      "sha256": "e0cde8753743fa6a9c66a97342975c62938a39a1f28df9eb3c1b5d4a3cf37552"
+    },
+    ".runtime/phase2/e13-special01/browser/metadata.json": {
+      "path": ".runtime/phase2/e13-special01/browser/metadata.json",
+      "size_bytes": 48445,
+      "sha256": "ec8e473db50c519b495e90a76faa836dc6f38e83e5b5b95df79b22827e0afc7c"
+    },
+    ".runtime/phase2/e13-special01/browser/players.json": {
+      "path": ".runtime/phase2/e13-special01/browser/players.json",
+      "size_bytes": 105293,
+      "sha256": "ab9c3665ad224dd5beae7c8a0e66bc2c85f7d79f2e43a5df241d6e534ebcdd2f"
+    },
+    ".runtime/phase2/e13-special01/browser/pressure_original.json": {
+      "path": ".runtime/phase2/e13-special01/browser/pressure_original.json",
+      "size_bytes": 106678,
+      "sha256": "8bc186f30813d4b4cac831762a1a3c33a112668a24b7c001a463b3694ea43170"
+    },
+    ".runtime/phase2/e13-special01/browser/pressure_paraphrase.json": {
+      "path": ".runtime/phase2/e13-special01/browser/pressure_paraphrase.json",
+      "size_bytes": 110764,
+      "sha256": "8bd9b07a3dd546d3b82e91369bbd6486cf2521a2d92823bffc16535e749c9d89"
+    },
+    ".runtime/phase2/e13-special01/browser/resources.jsonl": {
+      "path": ".runtime/phase2/e13-special01/browser/resources.jsonl",
+      "size_bytes": 270582,
+      "sha256": "89b87f666c2a85c81719c3125535a83c49bfe2d211d624e182dbc843dc008957"
+    },
+    ".runtime/phase2/e13-special01/browser/result.json": {
+      "path": ".runtime/phase2/e13-special01/browser/result.json",
+      "size_bytes": 6936,
+      "sha256": "5c0d76e33d92de655d87f4a55500af6d4fd1598a87d0fa7a73a047a762a59d35"
+    },
+    ".runtime/phase2/e13-special01/services/ollama.stderr.log": {
+      "path": ".runtime/phase2/e13-special01/services/ollama.stderr.log",
+      "size_bytes": 959017,
+      "sha256": "a154f624adf8fb1a0ab6318778e3a2580b6e8039c6b3996f63858aab39bf2754"
+    },
+    ".runtime/phase2/e13-special01/services/ollama.stdout.log": {
+      "path": ".runtime/phase2/e13-special01/services/ollama.stdout.log",
+      "size_bytes": 44352,
+      "sha256": "add73a2033fedc72422e8cba012b43a1badab744ccc00e1dd25ea46efa3014d7"
+    },
+    ".runtime/phase2/e13-special01/services/owned-services.json": {
+      "path": ".runtime/phase2/e13-special01/services/owned-services.json",
+      "size_bytes": 227,
+      "sha256": "ce59b5aa9868a53f59702843c64c5d64b0ad16cd550c99b579d627cb24419a89"
+    },
+    ".runtime/phase2/e13-special01/services/ui.stderr.log": {
+      "path": ".runtime/phase2/e13-special01/services/ui.stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".runtime/phase2/e13-special01/services/ui.stdout.log": {
+      "path": ".runtime/phase2/e13-special01/services/ui.stdout.log",
+      "size_bytes": 3072,
+      "sha256": "14224c4d40a275e87c0671be14d9843f409d86b847d1e305088bdb688a4e5148"
+    }
+  },
+  "default_feature_enabled": false,
+  "local_branch": "optimization/e13-source-bound-facts"
+}
