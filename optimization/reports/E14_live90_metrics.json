@@ -1,0 +1,5501 @@
+{
+  "partial": false,
+  "actual_records": 90,
+  "pending_reviews": 0,
+  "summaries": {
+    "candidate": {
+      "scored": 90,
+      "counts": {
+        "correct": 54,
+        "false_refusal": 7,
+        "incorrect": 5,
+        "partial": 6,
+        "correct_refusal": 18
+      },
+      "full_answerable": {
+        "numerator": 54,
+        "denominator": 72
+      },
+      "correct_refusal": {
+        "numerator": 18,
+        "denominator": 18
+      },
+      "technical": {
+        "numerator": 90,
+        "denominator": 90
+      },
+      "citation_support": {
+        "numerator": 75,
+        "denominator": 123
+      }
+    },
+    "shared_response_shadow": {
+      "scored": 90,
+      "counts": {
+        "false_refusal": 10,
+        "correct": 51,
+        "incorrect": 5,
+        "partial": 6,
+        "correct_refusal": 18
+      },
+      "full_answerable": {
+        "numerator": 51,
+        "denominator": 72
+      },
+      "correct_refusal": {
+        "numerator": 18,
+        "denominator": 18
+      },
+      "technical": {
+        "numerator": 90,
+        "denominator": 90
+      },
+      "citation_support": {
+        "numerator": 72,
+        "denominator": 120
+      }
+    }
+  },
+  "gates": {
+    "complete90": true,
+    "refusal18": true,
+    "technical90": true,
+    "full_above51": true,
+    "requests_at_most60": true,
+    "available_at_least1": false,
+    "no_wrong_supplement": true
+  },
+  "overall_pass": false,
+  "gains": [
+    "D001",
+    "D002",
+    "T001"
+  ],
+  "regressions": [],
+  "citation_changes": [
+    {
+      "question_id": "D001",
+      "historical_ids": [],
+      "current_ids": [
+        "L01-01"
+      ],
+      "historical_supported_ids": [],
+      "current_supported_ids": [
+        "L01-01"
+      ],
+      "added_ids": [
+        "L01-01"
+      ],
+      "removed_ids": [],
+      "newly_unsupported_ids": []
+    },
+    {
+      "question_id": "D002",
+      "historical_ids": [],
+      "current_ids": [
+        "L01-03"
+      ],
+      "historical_supported_ids": [],
+      "current_supported_ids": [
+        "L01-03"
+      ],
+      "added_ids": [
+        "L01-03"
+      ],
+      "removed_ids": [],
+      "newly_unsupported_ids": []
+    },
+    {
+      "question_id": "D007",
+      "historical_ids": [
+        "L06-02"
+      ],
+      "current_ids": [
+        "L06-02",
+        "L11-06",
+        "L06-04"
+      ],
+      "historical_supported_ids": [
+        "L06-02"
+      ],
+      "current_supported_ids": [
+        "L06-02"
+      ],
+      "added_ids": [
+        "L06-04",
+        "L11-06"
+      ],
+      "removed_ids": [],
+      "newly_unsupported_ids": [
+        "L06-04",
+        "L11-06"
+      ]
+    },
+    {
+      "question_id": "T001",
+      "historical_ids": [],
+      "current_ids": [
+        "L02-02"
+      ],
+      "historical_supported_ids": [],
+      "current_supported_ids": [
+        "L02-02"
+      ],
+      "added_ids": [
+        "L02-02"
+      ],
+      "removed_ids": [],
+      "newly_unsupported_ids": []
+    }
+  ],
+  "cases": [
+    {
+      "question_id": "D001",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L01-01"
+      ],
+      "status": "answered",
+      "recovery": {
+        "applied": true,
+        "base_prompt_sha256": "eb56be2d96c283bcf5aa089bcb72f7fa0bd8e6b615abe86f929c36065a1a2da9",
+        "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "fact_ids": [
+          "artificial_surface_color"
+        ],
+        "matched_object": "artificial_football_surface",
+        "proof": [
+          {
+            "body_sha256": "9cb486bf33d04ea6994931412158a93a96f8a0ad676b6995bbc37b5891d38312",
+            "chunk_id": "L01-01",
+            "fact_id": "artificial_surface_color",
+            "prompt_position": 1,
+            "property": "color",
+            "quote_sha256": "78fe43cf1676ccba848a36cfc1adec601f193df625c6778936555164441cd191",
+            "record_sha256": "44f2b8c87a8ffe41304f8d45d35109eff500e629a07e6479af35062b57e57491"
+          }
+        ],
+        "reason": "reviewed_facts_fully_supported_in_prompt",
+        "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+        "requested_properties": [
+          "color"
+        ],
+        "selected_ids": [
+          "L01-01"
+        ],
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct",
+      "point_mask": [
+        true
+      ],
+      "supported_citation_ids": [
+        "L01-01"
+      ],
+      "note": "E13原文复核：人造表面只允许使用绿色，完整支持颜色限制；来源已在实际Prompt且正文哈希校验通过。",
+      "review_file": "optimization/experiments/E14_runtime/source_reviews.tsv",
+      "historical_grade": "false_refusal",
+      "seconds": 38.85630740000124,
+      "available_min_GiB": 0.9535598754882812,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D001-B.json",
+        "size_bytes": 194713,
+        "sha256": "98121f21ee8ce949ef06e6c41c33aeddeff1262b305b11ec788056f8a6ff67b9"
+      }
+    },
+    {
+      "question_id": "D001",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": null,
+      "grade": "false_refusal",
+      "point_mask": [
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D001-B.json",
+        "size_bytes": 194713,
+        "sha256": "98121f21ee8ce949ef06e6c41c33aeddeff1262b305b11ec788056f8a6ff67b9"
+      }
+    },
+    {
+      "question_id": "D002",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L01-03"
+      ],
+      "status": "answered",
+      "recovery": {
+        "applied": true,
+        "base_prompt_sha256": "15ef0343fe8ab90fd4217be787b81bf01c1d3380c0c92c628b54403baca3e117",
+        "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "fact_ids": [
+          "adult_goal_inside_width_m",
+          "adult_goal_crossbar_lower_edge_height_m"
+        ],
+        "matched_object": "standard_adult_goal",
+        "proof": [
+          {
+            "body_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+            "chunk_id": "L01-03",
+            "fact_id": "adult_goal_inside_width_m",
+            "prompt_position": 1,
+            "property": "inside_width_m",
+            "quote_sha256": "e5f062b17892e3c2c151c6256b27ce2b14139abd5b509bcf782aa835d7126e92",
+            "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836"
+          },
+          {
+            "body_sha256": "ab914f42fb775a9417f47fca21dc6b8b69c0ba856fbdd7b2a9f7e806772c9735",
+            "chunk_id": "L01-03",
+            "fact_id": "adult_goal_crossbar_lower_edge_height_m",
+            "prompt_position": 1,
+            "property": "crossbar_lower_edge_height_m",
+            "quote_sha256": "014c3eefc6843b9d5cf373566762baa2c9ad0156bf85267f8bc4112d7042d940",
+            "record_sha256": "51fa4fafb2373b78b738cdec2e2f32a154b46314c3edaab6b7f05c99103f5836"
+          }
+        ],
+        "reason": "reviewed_facts_fully_supported_in_prompt",
+        "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+        "requested_properties": [
+          "inside_width_m",
+          "crossbar_lower_edge_height_m"
+        ],
+        "selected_ids": [
+          "L01-03"
+        ],
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L01-03"
+      ],
+      "note": "E13原文复核：两门柱内侧7.32米、横梁下沿离地2.44米，同时支持两个必要属性；保留成人适用范围。",
+      "review_file": "optimization/experiments/E14_runtime/source_reviews.tsv",
+      "historical_grade": "false_refusal",
+      "seconds": 40.177985099999205,
+      "available_min_GiB": 1.0694503784179688,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D002-B.json",
+        "size_bytes": 203642,
+        "sha256": "bd85773ae23240569b26e147858526c9796d29438f672b96389a673306eabe73"
+      }
+    },
+    {
+      "question_id": "D002",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": null,
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D002-B.json",
+        "size_bytes": 203642,
+        "sha256": "bd85773ae23240569b26e147858526c9796d29438f672b96389a673306eabe73"
+      }
+    },
+    {
+      "question_id": "D003",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": 42.77629910000178,
+      "available_min_GiB": 0.9322929382324219,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D003-B.json",
+        "size_bytes": 204727,
+        "sha256": "a971b7afb5ca88713e1d2df529153d87aaf570f99235904c758158a1513033f6"
+      }
+    },
+    {
+      "question_id": "D003",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D003-B.json",
+        "size_bytes": 204727,
+        "sha256": "a971b7afb5ca88713e1d2df529153d87aaf570f99235904c758158a1513033f6"
+      }
+    },
+    {
+      "question_id": "D004",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L03-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L03-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 覆盖最多11人、不含替补及须有守门员。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 40.24512560000221,
+      "available_min_GiB": 1.061920166015625,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D004-B.json",
+        "size_bytes": 206445,
+        "sha256": "323ae31742993bf601a499f03077e601e419fb83065a3bf16818104bc9bba4db"
+      }
+    },
+    {
+      "question_id": "D004",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L03-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L03-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 覆盖最多11人、不含替补及须有守门员。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D004-B.json",
+        "size_bytes": 206445,
+        "sha256": "323ae31742993bf601a499f03077e601e419fb83065a3bf16818104bc9bba4db"
+      }
+    },
+    {
+      "question_id": "D005",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L04-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L04-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 五项基本装备齐全，并保留守门员长裤例外。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 40.70506970000133,
+      "available_min_GiB": 0.9763526916503906,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D005-B.json",
+        "size_bytes": 203926,
+        "sha256": "5c24999ca84188d812d39582e36204d7189c0d195fe3d9debaa167b46cc1020d"
+      }
+    },
+    {
+      "question_id": "D005",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L04-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L04-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 五项基本装备齐全，并保留守门员长裤例外。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D005-B.json",
+        "size_bytes": 203926,
+        "sha256": "5c24999ca84188d812d39582e36204d7189c0d195fe3d9debaa167b46cc1020d"
+      }
+    },
+    {
+      "question_id": "D006",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L12-14"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L12-14"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出有利时继续以及未实现时按原违例处理，两点均在选中的证据里。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 37.55268780000188,
+      "available_min_GiB": 1.2508468627929688,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D006-B.json",
+        "size_bytes": 209538,
+        "sha256": "cc63578c9755db2615c804ec3ae4d459ba3849b25865615608a0dc47b1bdcb93"
+      }
+    },
+    {
+      "question_id": "D006",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L12-14"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L12-14"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出有利时继续以及未实现时按原违例处理，两点均在选中的证据里。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D006-B.json",
+        "size_bytes": 209538,
+        "sha256": "cc63578c9755db2615c804ec3ae4d459ba3849b25865615608a0dc47b1bdcb93"
+      }
+    },
+    {
+      "question_id": "D007",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L06-02",
+        "L11-06",
+        "L06-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L06-02"
+      ],
+      "note": "L06-02给出建议不约束和主裁可不采纳；越位旗示和第四官员职责均未说明该约束关系。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 40.17032599999948,
+      "available_min_GiB": 1.2323760986328125,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D007-B.json",
+        "size_bytes": 220518,
+        "sha256": "f1e590f68da8b66417122fd466d5a86ff5a75646bf504713fff2e0b6c02fbf29"
+      }
+    },
+    {
+      "question_id": "D007",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L06-02",
+        "L11-06",
+        "L06-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L06-02"
+      ],
+      "note": "L06-02给出建议不约束和主裁可不采纳；越位旗示和第四官员职责均未说明该约束关系。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D007-B.json",
+        "size_bytes": 220518,
+        "sha256": "f1e590f68da8b66417122fd466d5a86ff5a75646bf504713fff2e0b6c02fbf29"
+      }
+    },
+    {
+      "question_id": "D008",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L07-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L07-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出每半场45分钟及出界不停表。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 40.39265330000126,
+      "available_min_GiB": 1.2428817749023438,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D008-B.json",
+        "size_bytes": 215596,
+        "sha256": "c00d50747678674dd67dee336eadc43457675073e3ceff7ded006996802376cb"
+      }
+    },
+    {
+      "question_id": "D008",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L07-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L07-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出每半场45分钟及出界不停表。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D008-B.json",
+        "size_bytes": 215596,
+        "sha256": "c00d50747678674dd67dee336eadc43457675073e3ceff7ded006996802376cb"
+      }
+    },
+    {
+      "question_id": "D009",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L08A-02",
+        "L01-07"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L08A-02"
+      ],
+      "note": "Byte-identical A0 result: inherit the frozen source-review mask (L08A-02 only). L01-07 is not counted under that frozen mask; do not substitute a review from a different paragraph combination. No reannotation.",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 39.52548509999906,
+      "available_min_GiB": 1.1348152160644531,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D009-B.json",
+        "size_bytes": 214918,
+        "sha256": "863f6db856f163e7a513ab8410ce3c3c522d0e73c77e4c0e1af58d314ef34983"
+      }
+    },
+    {
+      "question_id": "D009",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L08A-02",
+        "L01-07"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L08A-02"
+      ],
+      "note": "Byte-identical A0 result: inherit the frozen source-review mask (L08A-02 only). L01-07 is not counted under that frozen mask; do not substitute a review from a different paragraph combination. No reannotation.",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D009-B.json",
+        "size_bytes": 214918,
+        "sha256": "863f6db856f163e7a513ab8410ce3c3c522d0e73c77e4c0e1af58d314ef34983"
+      }
+    },
+    {
+      "question_id": "D010",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L08B-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L08B-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 在2019年程序的范围内给出至少4米、触地生效。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 39.06461459999991,
+      "available_min_GiB": 1.2915153503417969,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D010-B.json",
+        "size_bytes": 211138,
+        "sha256": "d08994b7a899b52a2deb7692409757836f0d5f1a5edd2523a466e7fb80f33026"
+      }
+    },
+    {
+      "question_id": "D010",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L08B-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L08B-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 在2019年程序的范围内给出至少4米、触地生效。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D010-B.json",
+        "size_bytes": 211138,
+        "sha256": "d08994b7a899b52a2deb7692409757836f0d5f1a5edd2523a466e7fb80f33026"
+      }
+    },
+    {
+      "question_id": "D011",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L09-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "incorrect",
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 只说碰到官员并造成规定后果可用坠球，未列出三种具体后果。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "incorrect",
+      "seconds": 40.021597900002234,
+      "available_min_GiB": 1.3253021240234375,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D011-B.json",
+        "size_bytes": 214737,
+        "sha256": "e89de5f95103738ab1790efa8492bc97a1843f1b16dbf355e28a2e017df98894"
+      }
+    },
+    {
+      "question_id": "D011",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L09-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "incorrect",
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 只说碰到官员并造成规定后果可用坠球，未列出三种具体后果。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "incorrect",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D011-B.json",
+        "size_bytes": 214737,
+        "sha256": "e89de5f95103738ab1790efa8492bc97a1843f1b16dbf355e28a2e017df98894"
+      }
+    },
+    {
+      "question_id": "D012",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": 37.07078090000141,
+      "available_min_GiB": 1.4257316589355469,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D012-B.json",
+        "size_bytes": 191703,
+        "sha256": "33cd396ca85c6ac115f2370e92486957be7aa538cfc6636cdfb04f7af172bb80"
+      }
+    },
+    {
+      "question_id": "D012",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D012-B.json",
+        "size_bytes": 191703,
+        "sha256": "33cd396ca85c6ac115f2370e92486957be7aa538cfc6636cdfb04f7af172bb80"
+      }
+    },
+    {
+      "question_id": "D013",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L11-01",
+        "L11-03",
+        "L12-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L11-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 标注支持段明确列出头、身体、脚，排除手和手臂，守门员同样适用。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 41.67695140000069,
+      "available_min_GiB": 1.2819786071777344,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D013-B.json",
+        "size_bytes": 218623,
+        "sha256": "eee39dc871ff2fb47cbc1c08aba42bd679f70f91f0df89690f63f98da7824591"
+      }
+    },
+    {
+      "question_id": "D013",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L11-01",
+        "L11-03",
+        "L12-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L11-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 标注支持段明确列出头、身体、脚，排除手和手臂，守门员同样适用。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D013-B.json",
+        "size_bytes": 218623,
+        "sha256": "eee39dc871ff2fb47cbc1c08aba42bd679f70f91f0df89690f63f98da7824591"
+      }
+    },
+    {
+      "question_id": "D014",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L12-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L12-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 无身体接触的阻挡列为间接任意球。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 39.45711289999963,
+      "available_min_GiB": 1.247528076171875,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D014-B.json",
+        "size_bytes": 210018,
+        "sha256": "62e4ff4bd9bf84c7409b58f328b61966907aefcef31109d7223bc1d9459c93b2"
+      }
+    },
+    {
+      "question_id": "D014",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L12-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L12-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 无身体接触的阻挡列为间接任意球。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D014-B.json",
+        "size_bytes": 210018,
+        "sha256": "62e4ff4bd9bf84c7409b58f328b61966907aefcef31109d7223bc1d9459c93b2"
+      }
+    },
+    {
+      "question_id": "D015",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L15-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L15-05"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 选中的界外球规则已覆盖直接从队友来球、罚球区内和间接任意球。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 39.48975689999861,
+      "available_min_GiB": 1.5467720031738281,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D015-B.json",
+        "size_bytes": 211362,
+        "sha256": "cc53dbdfc5dbf9d426a87721fb8e047d1e9d1086996000eee14927870dface55"
+      }
+    },
+    {
+      "question_id": "D015",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L15-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L15-05"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 选中的界外球规则已覆盖直接从队友来球、罚球区内和间接任意球。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D015-B.json",
+        "size_bytes": 211362,
+        "sha256": "cc53dbdfc5dbf9d426a87721fb8e047d1e9d1086996000eee14927870dface55"
+      }
+    },
+    {
+      "question_id": "D016",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L13-05",
+        "L17-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L13-05",
+        "L17-01"
+      ],
+      "note": "L13-05直接给间接任意球直接入对方球门判球门球和直接入本方球门判角球；L17-01进一步列明未被其他队员触及的间接任意球直接进本方球门判角球，两段均支持本题必要要点。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 40.01971350000167,
+      "available_min_GiB": 1.3059043884277344,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D016-B.json",
+        "size_bytes": 216293,
+        "sha256": "d17b6184a2b1f11e74b2071663c7090ea81dc52351356403cc75fe3757dc1958"
+      }
+    },
+    {
+      "question_id": "D016",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L13-05",
+        "L17-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L13-05",
+        "L17-01"
+      ],
+      "note": "L13-05直接给间接任意球直接入对方球门判球门球和直接入本方球门判角球；L17-01进一步列明未被其他队员触及的间接任意球直接进本方球门判角球，两段均支持本题必要要点。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D016-B.json",
+        "size_bytes": 216293,
+        "sha256": "d17b6184a2b1f11e74b2071663c7090ea81dc52351356403cc75fe3757dc1958"
+      }
+    },
+    {
+      "question_id": "D017",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L14-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L14-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出场内、罚球区外、点后，且至少9.15米。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 40.630344799999875,
+      "available_min_GiB": 1.4529876708984375,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D017-B.json",
+        "size_bytes": 212023,
+        "sha256": "3bf73ecc5252891459f5a6176e78bccd991f13476a26e0a66050827f1d9c5cdd"
+      }
+    },
+    {
+      "question_id": "D017",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L14-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L14-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出场内、罚球区外、点后，且至少9.15米。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D017-B.json",
+        "size_bytes": 212023,
+        "sha256": "3bf73ecc5252891459f5a6176e78bccd991f13476a26e0a66050827f1d9c5cdd"
+      }
+    },
+    {
+      "question_id": "D018",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L15-01",
+        "L16-01",
+        "L16-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L15-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出整体越边线、归最后触球者的对方，有意及意外同样处理。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 38.41235759999836,
+      "available_min_GiB": 1.2874679565429688,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D018-B.json",
+        "size_bytes": 215607,
+        "sha256": "63a5990c2efee7f3d8bd606b3fbd5caff2f0936c7c0af8dafb6acd49c0243417"
+      }
+    },
+    {
+      "question_id": "D018",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L15-01",
+        "L16-01",
+        "L16-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L15-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出整体越边线、归最后触球者的对方，有意及意外同样处理。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D018-B.json",
+        "size_bytes": 215607,
+        "sha256": "63a5990c2efee7f3d8bd606b3fbd5caff2f0936c7c0af8dafb6acd49c0243417"
+      }
+    },
+    {
+      "question_id": "D019",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L16-04",
+        "L17-04",
+        "L08B-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "incorrect",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 未给出球门球的生效时点或球无须离开罚球区；把角球和坠球的材料放进了回答。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "incorrect",
+      "seconds": 41.55910519999816,
+      "available_min_GiB": 1.526153564453125,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D019-B.json",
+        "size_bytes": 223267,
+        "sha256": "eabf4948c10309c14dbb6bc53a4d85a4d6ecad0353f072b8466a1c1acc3259f8"
+      }
+    },
+    {
+      "question_id": "D019",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L16-04",
+        "L17-04",
+        "L08B-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "incorrect",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 未给出球门球的生效时点或球无须离开罚球区；把角球和坠球的材料放进了回答。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "incorrect",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D019-B.json",
+        "size_bytes": 223267,
+        "sha256": "eabf4948c10309c14dbb6bc53a4d85a4d6ecad0353f072b8466a1c1acc3259f8"
+      }
+    },
+    {
+      "question_id": "D020",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L17-01",
+        "L16-01",
+        "L16-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L17-01",
+        "L16-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出最后守方触球、越过球门线且未进球时判角球。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 38.7588324999997,
+      "available_min_GiB": 1.5071144104003906,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D020-B.json",
+        "size_bytes": 215656,
+        "sha256": "42e521e6248442084b5c3e5655c44463867c4b1a93189b49663f5d91dbc33ae8"
+      }
+    },
+    {
+      "question_id": "D020",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L17-01",
+        "L16-01",
+        "L16-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L17-01",
+        "L16-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出最后守方触球、越过球门线且未进球时判角球。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D020-B.json",
+        "size_bytes": 215656,
+        "sha256": "42e521e6248442084b5c3e5655c44463867c4b1a93189b49663f5d91dbc33ae8"
+      }
+    },
+    {
+      "question_id": "D021",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L11-03",
+        "L12-05",
+        "L15-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "partial",
+      "point_mask": [
+        false,
+        true
+      ],
+      "supported_citation_ids": [
+        "L11-03",
+        "L15-03"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确直接接界外球的越位例外，未明确说明直接接任意球仍可能越位。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "partial",
+      "seconds": 39.85536739999952,
+      "available_min_GiB": 1.3745956420898438,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D021-B.json",
+        "size_bytes": 221681,
+        "sha256": "139983f98785da2418ac2355b56a9209d3c71725748fba9e8dcac226c9c9b447"
+      }
+    },
+    {
+      "question_id": "D021",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L11-03",
+        "L12-05",
+        "L15-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "partial",
+      "point_mask": [
+        false,
+        true
+      ],
+      "supported_citation_ids": [
+        "L11-03",
+        "L15-03"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确直接接界外球的越位例外，未明确说明直接接任意球仍可能越位。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "partial",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D021-B.json",
+        "size_bytes": 221681,
+        "sha256": "139983f98785da2418ac2355b56a9209d3c71725748fba9e8dcac226c9c9b447"
+      }
+    },
+    {
+      "question_id": "D022",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L16-03",
+        "L17-04",
+        "L17-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L16-03",
+        "L17-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 分别说明球门球无须离开罚球区、角球无须离开角球区。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 41.640986400001566,
+      "available_min_GiB": 1.1717338562011719,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D022-B.json",
+        "size_bytes": 218302,
+        "sha256": "0fb9a5428de90809ebaa5f9b4132baec1091258eddd3b7a3918bd506bd074748"
+      }
+    },
+    {
+      "question_id": "D022",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L16-03",
+        "L17-04",
+        "L17-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L16-03",
+        "L17-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 分别说明球门球无须离开罚球区、角球无须离开角球区。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D022-B.json",
+        "size_bytes": 218302,
+        "sha256": "0fb9a5428de90809ebaa5f9b4132baec1091258eddd3b7a3918bd506bd074748"
+      }
+    },
+    {
+      "question_id": "D023",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L12-11",
+        "L12-01",
+        "L12-12"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L12-12"
+      ],
+      "note": "Post-run Codex source review: L12-12 directly defines both conditions. L12-11 only lists red-card categories and L12-01 covers force/contact, not the requested distinction. No new human review.",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 42.14522840000063,
+      "available_min_GiB": 0.9963607788085938,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D023-B.json",
+        "size_bytes": 226360,
+        "sha256": "62c9002de60f9f973edb89afbad3ea79ee4fc5da3576930269828d02f4e11f3c"
+      }
+    },
+    {
+      "question_id": "D023",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L12-11",
+        "L12-01",
+        "L12-12"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L12-12"
+      ],
+      "note": "Post-run Codex source review: L12-12 directly defines both conditions. L12-11 only lists red-card categories and L12-01 covers force/contact, not the requested distinction. No new human review.",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D023-B.json",
+        "size_bytes": 226360,
+        "sha256": "62c9002de60f9f973edb89afbad3ea79ee4fc5da3576930269828d02f4e11f3c"
+      }
+    },
+    {
+      "question_id": "D024",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L09-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L09-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 交代原重启通常不变、后续纪律处罚及重启前可纠正决定。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 39.18829619999815,
+      "available_min_GiB": 1.3628997802734375,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D024-B.json",
+        "size_bytes": 213417,
+        "sha256": "3f1b9fe8be20368be8c35fea02de00cd9ecbf45fe0536de8b00c2bcfad0b37b1"
+      }
+    },
+    {
+      "question_id": "D024",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L09-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L09-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 交代原重启通常不变、后续纪律处罚及重启前可纠正决定。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D024-B.json",
+        "size_bytes": 213417,
+        "sha256": "3f1b9fe8be20368be8c35fea02de00cd9ecbf45fe0536de8b00c2bcfad0b37b1"
+      }
+    },
+    {
+      "question_id": "D025",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L04-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L04-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 包含适当材料、合理保护、球袜遮盖及队员的尺寸适用性责任。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 40.228421899999375,
+      "available_min_GiB": 1.2453536987304688,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D025-B.json",
+        "size_bytes": 211686,
+        "sha256": "2761bd198b2ab1dd0381a03bb66b578438f561bfd59100ac7d32285aea7c36a7"
+      }
+    },
+    {
+      "question_id": "D025",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L04-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L04-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 包含适当材料、合理保护、球袜遮盖及队员的尺寸适用性责任。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D025-B.json",
+        "size_bytes": 211686,
+        "sha256": "2761bd198b2ab1dd0381a03bb66b578438f561bfd59100ac7d32285aea7c36a7"
+      }
+    },
+    {
+      "question_id": "D026",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L10-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "partial",
+      "point_mask": [
+        false,
+        true
+      ],
+      "supported_citation_ids": [
+        "L10-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出按赛事规程进行的两个15分钟半场，没有说明正常补时的目的和裁判决定权。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "partial",
+      "seconds": 40.722597799998766,
+      "available_min_GiB": 1.2984848022460938,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D026-B.json",
+        "size_bytes": 205982,
+        "sha256": "2262ca14ef4d9b37cd57e1d3c2a2296d48cc9f84e685395e1ad1e418503ac422"
+      }
+    },
+    {
+      "question_id": "D026",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L10-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "partial",
+      "point_mask": [
+        false,
+        true
+      ],
+      "supported_citation_ids": [
+        "L10-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出按赛事规程进行的两个15分钟半场，没有说明正常补时的目的和裁判决定权。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "partial",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D026-B.json",
+        "size_bytes": 205982,
+        "sha256": "2262ca14ef4d9b37cd57e1d3c2a2296d48cc9f84e685395e1ad1e418503ac422"
+      }
+    },
+    {
+      "question_id": "D027",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L09-02",
+        "L08B-04",
+        "L14-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true
+      ],
+      "supported_citation_ids": [
+        "L09-02",
+        "L14-04"
+      ],
+      "note": "Post-run Codex source review: L09-02 directly answers and L14-04 supplies the qualified no-infringement rebound example, consistent with prior citation grading; L08B-04 concerns added external interference. No new human review.",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 42.61302629999773,
+      "available_min_GiB": 1.4890785217285156,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D027-B.json",
+        "size_bytes": 227185,
+        "sha256": "8b741866dbf4b863bfc1cab3fe787377fc6cc17fea75adeb9bdda88aa4eb46f7"
+      }
+    },
+    {
+      "question_id": "D027",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L09-02",
+        "L08B-04",
+        "L14-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true
+      ],
+      "supported_citation_ids": [
+        "L09-02",
+        "L14-04"
+      ],
+      "note": "Post-run Codex source review: L09-02 directly answers and L14-04 supplies the qualified no-infringement rebound example, consistent with prior citation grading; L08B-04 concerns added external interference. No new human review.",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D027-B.json",
+        "size_bytes": 227185,
+        "sha256": "8b741866dbf4b863bfc1cab3fe787377fc6cc17fea75adeb9bdda88aa4eb46f7"
+      }
+    },
+    {
+      "question_id": "D028",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L05-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L05-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出计时、记录及提交报告，包含纪律处罚与赛前赛中赛后有关事件。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 40.1355939999994,
+      "available_min_GiB": 1.36712646484375,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D028-B.json",
+        "size_bytes": 211548,
+        "sha256": "b2b1e5d049b337c08544e3689875bb8a04748c240297fff640e51ba22fb46101"
+      }
+    },
+    {
+      "question_id": "D028",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L05-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L05-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出计时、记录及提交报告，包含纪律处罚与赛前赛中赛后有关事件。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D028-B.json",
+        "size_bytes": 211548,
+        "sha256": "b2b1e5d049b337c08544e3689875bb8a04748c240297fff640e51ba22fb46101"
+      }
+    },
+    {
+      "question_id": "D029",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L08A-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L08A-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确另一队选择进攻方向，并在下半场由上半场未先开球的一方开球。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 38.1011533000019,
+      "available_min_GiB": 1.4230499267578125,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D029-B.json",
+        "size_bytes": 204685,
+        "sha256": "7a5afe8ca016d7e70f9a0fda3ec9dd14d4c10dd1940024a6cb8e4d9530e96fae"
+      }
+    },
+    {
+      "question_id": "D029",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L08A-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L08A-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确另一队选择进攻方向，并在下半场由上半场未先开球的一方开球。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D029-B.json",
+        "size_bytes": 204685,
+        "sha256": "7a5afe8ca016d7e70f9a0fda3ec9dd14d4c10dd1940024a6cb8e4d9530e96fae"
+      }
+    },
+    {
+      "question_id": "D030",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L12-10",
+        "L03-01",
+        "L12-12"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L12-10",
+        "L03-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 三项齐全：必须有人守门，可由场上队员承担，且红牌人数缺额不能补回。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 40.74830970000039,
+      "available_min_GiB": 1.3858871459960938,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D030-B.json",
+        "size_bytes": 219792,
+        "sha256": "754c09ec2045a62ce897d30f2e68bf34f906e79e95eee93709c9ae72aa715aed"
+      }
+    },
+    {
+      "question_id": "D030",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L12-10",
+        "L03-01",
+        "L12-12"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L12-10",
+        "L03-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 三项齐全：必须有人守门，可由场上队员承担，且红牌人数缺额不能补回。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D030-B.json",
+        "size_bytes": 219792,
+        "sha256": "754c09ec2045a62ce897d30f2e68bf34f906e79e95eee93709c9ae72aa715aed"
+      }
+    },
+    {
+      "question_id": "D031",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L02-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L02-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 列出机缝、手缝、热黏合连接，以及乳胶或丁基橡胶球胆。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 41.007263199997396,
+      "available_min_GiB": 1.3049545288085938,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D031-B.json",
+        "size_bytes": 213601,
+        "sha256": "bfa92edc51801a9cc0af1c65e5b6d89edc51e70f01891f3f781e2dd2806d5d11"
+      }
+    },
+    {
+      "question_id": "D031",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L02-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L02-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 列出机缝、手缝、热黏合连接，以及乳胶或丁基橡胶球胆。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D031-B.json",
+        "size_bytes": 213601,
+        "sha256": "bfa92edc51801a9cc0af1c65e5b6d89edc51e70f01891f3f781e2dd2806d5d11"
+      }
+    },
+    {
+      "question_id": "D032",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "scope_or_version_not_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": 39.65946999999869,
+      "available_min_GiB": 1.5193672180175781,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D032-B.json",
+        "size_bytes": 205609,
+        "sha256": "0c3038d4c0c3b296d18602d28a2a1ace4843e52a29000583784843b097e002e0"
+      }
+    },
+    {
+      "question_id": "D032",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "scope_or_version_not_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D032-B.json",
+        "size_bytes": 205609,
+        "sha256": "0c3038d4c0c3b296d18602d28a2a1ace4843e52a29000583784843b097e002e0"
+      }
+    },
+    {
+      "question_id": "D033",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 37.88846380000177,
+      "available_min_GiB": 1.5263099670410156,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D033-B.json",
+        "size_bytes": 197326,
+        "sha256": "79ff5afa7cb4d1710daeea9d829eeb1c34db777766bba334a1e2f6017434e75e"
+      }
+    },
+    {
+      "question_id": "D033",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D033-B.json",
+        "size_bytes": 197326,
+        "sha256": "79ff5afa7cb4d1710daeea9d829eeb1c34db777766bba334a1e2f6017434e75e"
+      }
+    },
+    {
+      "question_id": "D034",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "scope_or_version_not_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 39.865863799997896,
+      "available_min_GiB": 1.5287551879882812,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D034-B.json",
+        "size_bytes": 205264,
+        "sha256": "2d77a8269eadeb8289f5541850586b125dbf4c5e32b48759e64913578747e6b6"
+      }
+    },
+    {
+      "question_id": "D034",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "scope_or_version_not_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D034-B.json",
+        "size_bytes": 205264,
+        "sha256": "2d77a8269eadeb8289f5541850586b125dbf4c5e32b48759e64913578747e6b6"
+      }
+    },
+    {
+      "question_id": "D035",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 40.51640630000111,
+      "available_min_GiB": 1.5291786193847656,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D035-B.json",
+        "size_bytes": 206450,
+        "sha256": "5dc502cdf95a51e99ba88c0ff067cae29fb8c5cf23880dc53425604c5b163867"
+      }
+    },
+    {
+      "question_id": "D035",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D035-B.json",
+        "size_bytes": 206450,
+        "sha256": "5dc502cdf95a51e99ba88c0ff067cae29fb8c5cf23880dc53425604c5b163867"
+      }
+    },
+    {
+      "question_id": "D036",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": null,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 10.080210699998133,
+      "available_min_GiB": 3.9131736755371094,
+      "calls": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D036-B.json",
+        "size_bytes": 22191,
+        "sha256": "d7ef9401e1a81d00333ff540909f4b9d88a68a28ef23b4113b99486ebd072639"
+      }
+    },
+    {
+      "question_id": "D036",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": null,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D036-B.json",
+        "size_bytes": 22191,
+        "sha256": "d7ef9401e1a81d00333ff540909f4b9d88a68a28ef23b4113b99486ebd072639"
+      }
+    },
+    {
+      "question_id": "D037",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 39.19842100000096,
+      "available_min_GiB": 1.4950294494628906,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D037-B.json",
+        "size_bytes": 196803,
+        "sha256": "e8eb320768f9c39314b3a50837d6159507e808468cc2fe35ab84cc84e1d66bc8"
+      }
+    },
+    {
+      "question_id": "D037",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D037-B.json",
+        "size_bytes": 196803,
+        "sha256": "e8eb320768f9c39314b3a50837d6159507e808468cc2fe35ab84cc84e1d66bc8"
+      }
+    },
+    {
+      "question_id": "D038",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": null,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 9.84451099999933,
+      "available_min_GiB": 3.662525177001953,
+      "calls": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D038-B.json",
+        "size_bytes": 21513,
+        "sha256": "f717624c86ca9c79f761b644d644d507a1d03f8a29a459a95033f8c37d040d3b"
+      }
+    },
+    {
+      "question_id": "D038",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": null,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D038-B.json",
+        "size_bytes": 21513,
+        "sha256": "f717624c86ca9c79f761b644d644d507a1d03f8a29a459a95033f8c37d040d3b"
+      }
+    },
+    {
+      "question_id": "D039",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 39.203467600000295,
+      "available_min_GiB": 1.5618858337402344,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D039-B.json",
+        "size_bytes": 186877,
+        "sha256": "5c925e549363d4e8e3df762be1e3ea1b9a79e673f464efc56b597e023c592d7e"
+      }
+    },
+    {
+      "question_id": "D039",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D039-B.json",
+        "size_bytes": 186877,
+        "sha256": "5c925e549363d4e8e3df762be1e3ea1b9a79e673f464efc56b597e023c592d7e"
+      }
+    },
+    {
+      "question_id": "D040",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": null,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 9.60642789999838,
+      "available_min_GiB": 3.607830047607422,
+      "calls": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D040-B.json",
+        "size_bytes": 21495,
+        "sha256": "1d7a1a636f9b0700f2bd8db90aefffcca1469dd78be5ce8e99703c1112a6dac0"
+      }
+    },
+    {
+      "question_id": "D040",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": null,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/D040-B.json",
+        "size_bytes": 21495,
+        "sha256": "1d7a1a636f9b0700f2bd8db90aefffcca1469dd78be5ce8e99703c1112a6dac0"
+      }
+    },
+    {
+      "question_id": "T001",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L02-02"
+      ],
+      "status": "answered",
+      "recovery": {
+        "applied": true,
+        "base_prompt_sha256": "68f26e9733380c507ac939ec8477ca476962e4ae4d3a85e6693092f26730184d",
+        "corpus_sha256": "05dcd08126b5c71031ebe025f1a4ed1b73e00f71007b60ac0a3e0814f386a0b3",
+        "fact_ids": [
+          "adult_ball_pressure_kpa"
+        ],
+        "matched_object": "standard_adult_size5_ball",
+        "proof": [
+          {
+            "body_sha256": "aaf69e77f266fa144df20549ff0a7286853d7556d2f558dcd86e3d7039e23129",
+            "chunk_id": "L02-02",
+            "fact_id": "adult_ball_pressure_kpa",
+            "prompt_position": 1,
+            "property": "pressure_kpa",
+            "quote_sha256": "4047227222090c0b0e384822212a5eed48a2cb732924af8e6174f7d94fab705f",
+            "record_sha256": "6c65f30e691befa68a7ed4781c18b63ec23f02508c3d0d6e98856a875106f05e"
+          }
+        ],
+        "reason": "reviewed_facts_fully_supported_in_prompt",
+        "registry_sha256": "8353c6c4efd43d9b50f6b50305711c105fd9565addea6cb9bf5ee092b6b37676",
+        "requested_properties": [
+          "pressure_kpa"
+        ],
+        "selected_ids": [
+          "L02-02"
+        ],
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct",
+      "point_mask": [
+        true
+      ],
+      "supported_citation_ids": [
+        "L02-02"
+      ],
+      "note": "E13原文复核：标准成人足球球压约59—108千帕，完整支持所问范围；保留约数和原始单位。",
+      "review_file": "optimization/experiments/E14_runtime/source_reviews.tsv",
+      "historical_grade": "false_refusal",
+      "seconds": 38.98904060000132,
+      "available_min_GiB": 1.46142578125,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T001-B.json",
+        "size_bytes": 205798,
+        "sha256": "20177c7bab10c107fa0cbdb7ac0bda97a37b6d7eef663d390e5a4a4981121d57"
+      }
+    },
+    {
+      "question_id": "T001",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": null,
+      "grade": "false_refusal",
+      "point_mask": [
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T001-B.json",
+        "size_bytes": 205798,
+        "sha256": "20177c7bab10c107fa0cbdb7ac0bda97a37b6d7eef663d390e5a4a4981121d57"
+      }
+    },
+    {
+      "question_id": "T002",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L01-02",
+        "L17-03",
+        "L01-07"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L01-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 包含标线宽度一致、不能超过12厘米以及四角角旗；另两段未直接支持这两个问题。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 41.126982400001,
+      "available_min_GiB": 1.3793830871582031,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T002-B.json",
+        "size_bytes": 205421,
+        "sha256": "176d2c4fffb1f825be750d3851ae915dceb9db80116155176b3f17c1f50e7211"
+      }
+    },
+    {
+      "question_id": "T002",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L01-02",
+        "L17-03",
+        "L01-07"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L01-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 包含标线宽度一致、不能超过12厘米以及四角角旗；另两段未直接支持这两个问题。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T002-B.json",
+        "size_bytes": 205421,
+        "sha256": "176d2c4fffb1f825be750d3851ae915dceb9db80116155176b3f17c1f50e7211"
+      }
+    },
+    {
+      "question_id": "T003",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L01-01",
+        "L14-02",
+        "L16-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L01-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确界线属于其划定区域，罚球区线上的相应犯规在区内。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 42.54692520000026,
+      "available_min_GiB": 1.2884559631347656,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T003-B.json",
+        "size_bytes": 224463,
+        "sha256": "cb997e7b9eef1303e9a4300b67758715601469665b6ee72d2ac6f2bf2d7061bf"
+      }
+    },
+    {
+      "question_id": "T003",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L01-01",
+        "L14-02",
+        "L16-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L01-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确界线属于其划定区域，罚球区线上的相应犯规在区内。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T003-B.json",
+        "size_bytes": 224463,
+        "sha256": "cb997e7b9eef1303e9a4300b67758715601469665b6ee72d2ac6f2bf2d7061bf"
+      }
+    },
+    {
+      "question_id": "T004",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L14-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "partial",
+      "point_mask": [
+        false,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L14-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明执行前其他队员的位置限制，未明确罚球弧以罚球点为圆心。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "partial",
+      "seconds": 40.48517169999832,
+      "available_min_GiB": 1.4830207824707031,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T004-B.json",
+        "size_bytes": 206419,
+        "sha256": "cfda93d4eae37371136ae5f8cb338202dbe6ebb4fc738839dc5c24bcadba21b7"
+      }
+    },
+    {
+      "question_id": "T004",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L14-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "partial",
+      "point_mask": [
+        false,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L14-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明执行前其他队员的位置限制，未明确罚球弧以罚球点为圆心。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "partial",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T004-B.json",
+        "size_bytes": 206419,
+        "sha256": "cfda93d4eae37371136ae5f8cb338202dbe6ebb4fc738839dc5c24bcadba21b7"
+      }
+    },
+    {
+      "question_id": "T005",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L03-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L03-01"
+      ],
+      "note": "Post-run Codex source review: L03-01 explicitly allows coach-assigned tactical positions and says the Laws do not require one position division. Both points covered. No new human review.",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 41.26874930000122,
+      "available_min_GiB": 1.3392791748046875,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T005-B.json",
+        "size_bytes": 212414,
+        "sha256": "fc812d996c8beab6ef41f8a440a7a0f0d23edeb95cb0ee379ddfccb928a14bf3"
+      }
+    },
+    {
+      "question_id": "T005",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L03-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L03-01"
+      ],
+      "note": "Post-run Codex source review: L03-01 explicitly allows coach-assigned tactical positions and says the Laws do not require one position division. Both points covered. No new human review.",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T005-B.json",
+        "size_bytes": 212414,
+        "sha256": "fc812d996c8beab6ef41f8a440a7a0f0d23edeb95cb0ee379ddfccb928a14bf3"
+      }
+    },
+    {
+      "question_id": "T006",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L03-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L03-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 列出身份误认、进球与此前违例、直接红牌、点球判罚四类。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 38.551211899997725,
+      "available_min_GiB": 1.1063194274902344,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T006-B.json",
+        "size_bytes": 205448,
+        "sha256": "5177fb388c9a80978a366e503e422afc91dd9380a40cb52f3c479cbc59e708a8"
+      }
+    },
+    {
+      "question_id": "T006",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L03-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L03-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 列出身份误认、进球与此前违例、直接红牌、点球判罚四类。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T006-B.json",
+        "size_bytes": 205448,
+        "sha256": "5177fb388c9a80978a366e503e422afc91dd9380a40cb52f3c479cbc59e708a8"
+      }
+    },
+    {
+      "question_id": "T007",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L04-05",
+        "L03-02",
+        "L11-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L04-05"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明所有队员可戴手套、守门员通常使用专用手套；另两段未直接支持手套许可。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 40.91678159999719,
+      "available_min_GiB": 1.3093681335449219,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T007-B.json",
+        "size_bytes": 224893,
+        "sha256": "8140349ea92732f74fd3759fb03e599443bbc7557be257c400c2021520f84b1e"
+      }
+    },
+    {
+      "question_id": "T007",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L04-05",
+        "L03-02",
+        "L11-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L04-05"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明所有队员可戴手套、守门员通常使用专用手套；另两段未直接支持手套许可。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T007-B.json",
+        "size_bytes": 224893,
+        "sha256": "8140349ea92732f74fd3759fb03e599443bbc7557be257c400c2021520f84b1e"
+      }
+    },
+    {
+      "question_id": "T008",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L04-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L04-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明两队颜色相互区分且与裁判和助理裁判区分，客场球衣也可在主场穿。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 39.546224699999584,
+      "available_min_GiB": 1.2865142822265625,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T008-B.json",
+        "size_bytes": 210323,
+        "sha256": "5c71668d615288cd034fcd19c0e3f24d0cd9f5637a8a5b2e53aae1245470a01a"
+      }
+    },
+    {
+      "question_id": "T008",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L04-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L04-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明两队颜色相互区分且与裁判和助理裁判区分，客场球衣也可在主场穿。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T008-B.json",
+        "size_bytes": 210323,
+        "sha256": "5c71668d615288cd034fcd19c0e3f24d0cd9f5637a8a5b2e53aae1245470a01a"
+      }
+    },
+    {
+      "question_id": "T009",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": 40.6440376999999,
+      "available_min_GiB": 1.0866050720214844,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T009-B.json",
+        "size_bytes": 209918,
+        "sha256": "1677b2570112b8c65c9aae4897d46bb88d7404d79bd5df456dc053f059515442"
+      }
+    },
+    {
+      "question_id": "T009",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T009-B.json",
+        "size_bytes": 209918,
+        "sha256": "1677b2570112b8c65c9aae4897d46bb88d7404d79bd5df456dc053f059515442"
+      }
+    },
+    {
+      "question_id": "T010",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L05-04",
+        "L12-15",
+        "L12-16"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L05-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 包含技术区域最高级别教练的责任及无替代医疗人员时的留场例外。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 38.75074549999772,
+      "available_min_GiB": 1.3310127258300781,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T010-B.json",
+        "size_bytes": 222995,
+        "sha256": "8780b45977c189a39159487337383ae102f693c0d76cec19bf934a6edfb52763"
+      }
+    },
+    {
+      "question_id": "T010",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L05-04",
+        "L12-15",
+        "L12-16"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L05-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 包含技术区域最高级别教练的责任及无替代医疗人员时的留场例外。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T010-B.json",
+        "size_bytes": 222995,
+        "sha256": "8780b45977c189a39159487337383ae102f693c0d76cec19bf934a6edfb52763"
+      }
+    },
+    {
+      "question_id": "T011",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L05-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L05-03"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 列出处罚、重启方式、接触严重程度和战术影响。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 36.28625169999941,
+      "available_min_GiB": 1.3660392761230469,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T011-B.json",
+        "size_bytes": 208520,
+        "sha256": "eba633789a338ca2f018261f196c5668a2c7294776e443147e4de5fb7eb6dda0"
+      }
+    },
+    {
+      "question_id": "T011",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L05-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L05-03"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 列出处罚、重启方式、接触严重程度和战术影响。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T011-B.json",
+        "size_bytes": 208520,
+        "sha256": "eba633789a338ca2f018261f196c5668a2c7294776e443147e4de5fb7eb6dda0"
+      }
+    },
+    {
+      "question_id": "T012",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L06-01",
+        "L03-04",
+        "L06-06"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L06-01",
+        "L03-04",
+        "L06-06"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确主裁判最终决定，其他官员提供更清楚的观察意见；附加助理的报告是这一协作的具体例子。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 37.07204950000232,
+      "available_min_GiB": 1.36724853515625,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T012-B.json",
+        "size_bytes": 218246,
+        "sha256": "b1b9baa2c4f888254317923bec8abd18ee5e88301247adff6a4e2eb87ab66f1c"
+      }
+    },
+    {
+      "question_id": "T012",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L06-01",
+        "L03-04",
+        "L06-06"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L06-01",
+        "L03-04",
+        "L06-06"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确主裁判最终决定，其他官员提供更清楚的观察意见；附加助理的报告是这一协作的具体例子。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T012-B.json",
+        "size_bytes": 218246,
+        "sha256": "b1b9baa2c4f888254317923bec8abd18ee5e88301247adff6a4e2eb87ab66f1c"
+      }
+    },
+    {
+      "question_id": "T013",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L06-04",
+        "L07-01",
+        "L06-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L06-04",
+        "L07-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 包含补时公布和号码牌或电子屏的换人辅助。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 39.996516499999416,
+      "available_min_GiB": 0.9137306213378906,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T013-B.json",
+        "size_bytes": 215549,
+        "sha256": "639d02511936488dc7dd9ecc38aa9e27dbee498dedbb5296bf9c4655632ce709"
+      }
+    },
+    {
+      "question_id": "T013",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L06-04",
+        "L07-01",
+        "L06-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L06-04",
+        "L07-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 包含补时公布和号码牌或电子屏的换人辅助。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T013-B.json",
+        "size_bytes": 215549,
+        "sha256": "639d02511936488dc7dd9ecc38aa9e27dbee498dedbb5296bf9c4655632ce709"
+      }
+    },
+    {
+      "question_id": "T014",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "incorrect",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Post-run Codex source review: reserve/fourth-official and VAR paragraphs do not identify the goal-line additional assistant role or its nonmandatory competition scope. A passing mention of the role as a replacement is not the requested identification. Consistent with the frozen A0 failure; no new human review.",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "incorrect",
+      "seconds": 41.58846079999785,
+      "available_min_GiB": 0.951202392578125,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T014-B.json",
+        "size_bytes": 226905,
+        "sha256": "856254788b2cc590db14aff98acec5b105c283e885daf5a585074c93fa5dd667"
+      }
+    },
+    {
+      "question_id": "T014",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L06-05",
+        "L06-04",
+        "L03-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "incorrect",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Post-run Codex source review: reserve/fourth-official and VAR paragraphs do not identify the goal-line additional assistant role or its nonmandatory competition scope. A passing mention of the role as a replacement is not the requested identification. Consistent with the frozen A0 failure; no new human review.",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "incorrect",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T014-B.json",
+        "size_bytes": 226905,
+        "sha256": "856254788b2cc590db14aff98acec5b105c283e885daf5a585074c93fa5dd667"
+      }
+    },
+    {
+      "question_id": "T015",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "scope_or_version_not_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": 40.539895599999,
+      "available_min_GiB": 1.2165145874023438,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T015-B.json",
+        "size_bytes": 203445,
+        "sha256": "9f96295954182913b0b093954273199a6a0347b0733c0a51420e6745d7d969a9"
+      }
+    },
+    {
+      "question_id": "T015",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "scope_or_version_not_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T015-B.json",
+        "size_bytes": 203445,
+        "sha256": "9f96295954182913b0b093954273199a6a0347b0733c0a51420e6745d7d969a9"
+      }
+    },
+    {
+      "question_id": "T016",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L07-01",
+        "L06-04",
+        "L14-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L07-01"
+      ],
+      "note": "Post-run Codex source review: L07-01 explicitly covers both extension after announced added time and completion of a penalty/re-take. L06-04 only announces time and L14-03 describes execution, not extension. No new human review.",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 41.30152299999827,
+      "available_min_GiB": 1.2417945861816406,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T016-B.json",
+        "size_bytes": 226184,
+        "sha256": "44b77648c0b69d9683d23120f892a93fd89c0617efb1b78eab7ea7f327682835"
+      }
+    },
+    {
+      "question_id": "T016",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L07-01",
+        "L06-04",
+        "L14-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L07-01"
+      ],
+      "note": "Post-run Codex source review: L07-01 explicitly covers both extension after announced added time and completion of a penalty/re-take. L06-04 only announces time and L14-03 describes execution, not extension. No new human review.",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T016-B.json",
+        "size_bytes": 226184,
+        "sha256": "44b77648c0b69d9683d23120f892a93fd89c0617efb1b78eab7ea7f327682835"
+      }
+    },
+    {
+      "question_id": "T017",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": 39.780035099996894,
+      "available_min_GiB": 1.2594947814941406,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T017-B.json",
+        "size_bytes": 200892,
+        "sha256": "7368375654d4579892a79d897e01ba8f2cef01fd552bd213e24bb8d7f1543880"
+      }
+    },
+    {
+      "question_id": "T017",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T017-B.json",
+        "size_bytes": 200892,
+        "sha256": "7368375654d4579892a79d897e01ba8f2cef01fd552bd213e24bb8d7f1543880"
+      }
+    },
+    {
+      "question_id": "T018",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L17-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "incorrect",
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 引用的是角球二次触球规定，未按题设的开球情形提供相应规则证据。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "incorrect",
+      "seconds": 40.5516168000031,
+      "available_min_GiB": 0.9332733154296875,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T018-B.json",
+        "size_bytes": 207622,
+        "sha256": "e1397d455783cad72990cbf4965450b5e0522269f3f4a474747040b36ccb3c7b"
+      }
+    },
+    {
+      "question_id": "T018",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L17-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "incorrect",
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 引用的是角球二次触球规定，未按题设的开球情形提供相应规则证据。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "incorrect",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T018-B.json",
+        "size_bytes": 207622,
+        "sha256": "e1397d455783cad72990cbf4965450b5e0522269f3f4a474747040b36ccb3c7b"
+      }
+    },
+    {
+      "question_id": "T019",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L08B-03",
+        "L17-06",
+        "L17-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L08B-03",
+        "L17-06"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出至少两名不同队员及首次触球队员可继续触球，并保留本地资料边界。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 41.37879260000045,
+      "available_min_GiB": 1.1028022766113281,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T019-B.json",
+        "size_bytes": 220269,
+        "sha256": "042dc11f3655f8e29466a700ebe0c2bddea8e2dfb28e39725306aca16780ca94"
+      }
+    },
+    {
+      "question_id": "T019",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L08B-03",
+        "L17-06",
+        "L17-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L08B-03",
+        "L17-06"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出至少两名不同队员及首次触球队员可继续触球，并保留本地资料边界。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T019-B.json",
+        "size_bytes": 220269,
+        "sha256": "042dc11f3655f8e29466a700ebe0c2bddea8e2dfb28e39725306aca16780ca94"
+      }
+    },
+    {
+      "question_id": "T020",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L08B-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L08B-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确2020年背景，并列出外部人员、额外物体或动物及观众哨声干扰。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 42.237683299998025,
+      "available_min_GiB": 1.2764778137207031,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T020-B.json",
+        "size_bytes": 215686,
+        "sha256": "118a367d63c22add791d553b04321cdb3b7ba28429d6e9f62ef62d41bc588508"
+      }
+    },
+    {
+      "question_id": "T020",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L08B-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L08B-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确2020年背景，并列出外部人员、额外物体或动物及观众哨声干扰。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T020-B.json",
+        "size_bytes": 215686,
+        "sha256": "118a367d63c22add791d553b04321cdb3b7ba28429d6e9f62ef62d41bc588508"
+      }
+    },
+    {
+      "question_id": "T021",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L09-02",
+        "L15-01",
+        "L16-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L09-02",
+        "L15-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确整体在空中越过边线即出界，无须落地。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 40.56532760000118,
+      "available_min_GiB": 1.4537506103515625,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T021-B.json",
+        "size_bytes": 218406,
+        "sha256": "0d60c58f86cf5f1579eaa259d21a490852e57e4f799cad733f31dec2d0d766cd"
+      }
+    },
+    {
+      "question_id": "T021",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L09-02",
+        "L15-01",
+        "L16-01"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L09-02",
+        "L15-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确整体在空中越过边线即出界，无须落地。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T021-B.json",
+        "size_bytes": 218406,
+        "sha256": "0d60c58f86cf5f1579eaa259d21a490852e57e4f799cad733f31dec2d0d766cd"
+      }
+    },
+    {
+      "question_id": "T022",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L15-01",
+        "L16-01",
+        "L17-06"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L15-01",
+        "L16-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 界外球和球门球原段合计覆盖三类通常归属；补充的乌龙重启段与题设不同。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 40.36534550000215,
+      "available_min_GiB": 0.9553337097167969,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T022-B.json",
+        "size_bytes": 214465,
+        "sha256": "80725d83d93a185d2ac293acb149a3533be5dacfaddafae6bd352208da290a89"
+      }
+    },
+    {
+      "question_id": "T022",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L15-01",
+        "L16-01",
+        "L17-06"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L15-01",
+        "L16-01"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 界外球和球门球原段合计覆盖三类通常归属；补充的乌龙重启段与题设不同。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T022-B.json",
+        "size_bytes": 214465,
+        "sha256": "80725d83d93a185d2ac293acb149a3533be5dacfaddafae6bd352208da290a89"
+      }
+    },
+    {
+      "question_id": "T023",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L07-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "partial",
+      "point_mask": [
+        true,
+        false,
+        true
+      ],
+      "supported_citation_ids": [
+        "L07-03"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明规程和客场进球制度的适用限制，没有明确回答有些杯赛可省略加时直接点球。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "partial",
+      "seconds": 39.566072199999326,
+      "available_min_GiB": 1.0979766845703125,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T023-B.json",
+        "size_bytes": 204593,
+        "sha256": "e3a7a1b0145329d9747a794eca2258bf1d98c3fcc8e7a807318c3ed0535f1506"
+      }
+    },
+    {
+      "question_id": "T023",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L07-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "partial",
+      "point_mask": [
+        true,
+        false,
+        true
+      ],
+      "supported_citation_ids": [
+        "L07-03"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明规程和客场进球制度的适用限制，没有明确回答有些杯赛可省略加时直接点球。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "partial",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T023-B.json",
+        "size_bytes": 204593,
+        "sha256": "e3a7a1b0145329d9747a794eca2258bf1d98c3fcc8e7a807318c3ed0535f1506"
+      }
+    },
+    {
+      "question_id": "T024",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L11-06"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L11-06"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 先竖直举旗，停赛后平举对应场地中间。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 38.425331799997366,
+      "available_min_GiB": 1.2311515808105469,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T024-B.json",
+        "size_bytes": 208799,
+        "sha256": "b005e169add6e07bc94733fcf3d349869d5844345310ffaec31a00424e91158d"
+      }
+    },
+    {
+      "question_id": "T024",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L11-06"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L11-06"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 先竖直举旗，停赛后平举对应场地中间。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T024-B.json",
+        "size_bytes": 208799,
+        "sha256": "b005e169add6e07bc94733fcf3d349869d5844345310ffaec31a00424e91158d"
+      }
+    },
+    {
+      "question_id": "T025",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L11-09",
+        "L03-04",
+        "L12-08"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L11-09",
+        "L03-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明高速摄像机、三维回放和辅助裁判的性质；纪律处罚段未支持该问题。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 41.37849569999889,
+      "available_min_GiB": 0.9231758117675781,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T025-B.json",
+        "size_bytes": 224910,
+        "sha256": "69f211b5f6af6c5ee30a1bdece340f954ec5c09ba29c399b3076763cf847ac72"
+      }
+    },
+    {
+      "question_id": "T025",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L11-09",
+        "L03-04",
+        "L12-08"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L11-09",
+        "L03-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明高速摄像机、三维回放和辅助裁判的性质；纪律处罚段未支持该问题。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T025-B.json",
+        "size_bytes": 224910,
+        "sha256": "69f211b5f6af6c5ee30a1bdece340f954ec5c09ba29c399b3076763cf847ac72"
+      }
+    },
+    {
+      "question_id": "T026",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-15"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "partial",
+      "point_mask": [
+        false,
+        false,
+        true
+      ],
+      "supported_citation_ids": [
+        "L12-15"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明不当行为可警告或罚令出场，未明确区分一般技术性违例与身体犯规。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "partial",
+      "seconds": 40.14270729999771,
+      "available_min_GiB": 0.9135208129882812,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T026-B.json",
+        "size_bytes": 218135,
+        "sha256": "7977a9f40023115d257249c69cb0cad73af15b47e264fb97e9bee8f5c2a57073"
+      }
+    },
+    {
+      "question_id": "T026",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-15"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "partial",
+      "point_mask": [
+        false,
+        false,
+        true
+      ],
+      "supported_citation_ids": [
+        "L12-15"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明不当行为可警告或罚令出场，未明确区分一般技术性违例与身体犯规。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "partial",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T026-B.json",
+        "size_bytes": 218135,
+        "sha256": "7977a9f40023115d257249c69cb0cad73af15b47e264fb97e9bee8f5c2a57073"
+      }
+    },
+    {
+      "question_id": "T027",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L12-07",
+        "L12-11"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L12-07",
+        "L12-11"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 先再次出示黄牌，再出示红牌罚下；红牌类别段补充了第二次警告的结果。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 40.85765890000039,
+      "available_min_GiB": 1.373260498046875,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T027-B.json",
+        "size_bytes": 218957,
+        "sha256": "6c0b1399da32f7d40318f02e902026cecf6b92a0eef13a5d02cdb61d285465fc"
+      }
+    },
+    {
+      "question_id": "T027",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L12-07",
+        "L12-11"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L12-07",
+        "L12-11"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 先再次出示黄牌，再出示红牌罚下；红牌类别段补充了第二次警告的结果。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T027-B.json",
+        "size_bytes": 218957,
+        "sha256": "6c0b1399da32f7d40318f02e902026cecf6b92a0eef13a5d02cdb61d285465fc"
+      }
+    },
+    {
+      "question_id": "T028",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L12-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "incorrect",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 选中手球规则，没有回答脱衣庆祝的黄牌处理。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "incorrect",
+      "seconds": 39.9415728999993,
+      "available_min_GiB": 1.3557815551757812,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T028-B.json",
+        "size_bytes": 216494,
+        "sha256": "0f96743e049b7dc896b72597a1c13c3be8923e7046eafaea4fbcffe8aeb519d9"
+      }
+    },
+    {
+      "question_id": "T028",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L12-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "incorrect",
+      "point_mask": [
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 选中手球规则，没有回答脱衣庆祝的黄牌处理。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "incorrect",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T028-B.json",
+        "size_bytes": 216494,
+        "sha256": "0f96743e049b7dc896b72597a1c13c3be8923e7046eafaea4fbcffe8aeb519d9"
+      }
+    },
+    {
+      "question_id": "T029",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L13-02",
+        "L16-02",
+        "L13-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L13-02",
+        "L13-05"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 包含间接任意球单臂过头与直接任意球伸臂指方向；保持举臂的段落补充间接球信号。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 41.311894099999336,
+      "available_min_GiB": 1.3574485778808594,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T029-B.json",
+        "size_bytes": 219961,
+        "sha256": "bda6f8e895effd9409f2634a516406d5e4429feb649d2ec616b3a0a16a23def2"
+      }
+    },
+    {
+      "question_id": "T029",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L13-02",
+        "L16-02",
+        "L13-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L13-02",
+        "L13-05"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 包含间接任意球单臂过头与直接任意球伸臂指方向；保持举臂的段落补充间接球信号。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T029-B.json",
+        "size_bytes": 219961,
+        "sha256": "bda6f8e895effd9409f2634a516406d5e4429feb649d2ec616b3a0a16a23def2"
+      }
+    },
+    {
+      "question_id": "T030",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L01-05",
+        "L13-01",
+        "L13-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L01-05"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 完整给出己方球门区内任一点与对方球门区线上最近点的差别。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 43.43107170000076,
+      "available_min_GiB": 1.1394729614257812,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T030-B.json",
+        "size_bytes": 219029,
+        "sha256": "31c657dffd9484dc648a19f6ce91548a621fd3115bf8b3fe58477538b7975447"
+      }
+    },
+    {
+      "question_id": "T030",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L01-05",
+        "L13-01",
+        "L13-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L01-05"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 完整给出己方球门区内任一点与对方球门区线上最近点的差别。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T030-B.json",
+        "size_bytes": 219029,
+        "sha256": "31c657dffd9484dc648a19f6ce91548a621fd3115bf8b3fe58477538b7975447"
+      }
+    },
+    {
+      "question_id": "T031",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L13-07"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L13-07"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 至少3人人墙、至少1米及违例判守方间接任意球齐全。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 37.22165529999984,
+      "available_min_GiB": 1.1953811645507812,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T031-B.json",
+        "size_bytes": 206306,
+        "sha256": "0f3a6f19fd6f1cc0714f5c36506fee9d4a35a1e02e171fd14b79285d6fd26c03"
+      }
+    },
+    {
+      "question_id": "T031",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L13-07"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L13-07"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 至少3人人墙、至少1米及违例判守方间接任意球齐全。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T031-B.json",
+        "size_bytes": 206306,
+        "sha256": "0f3a6f19fd6f1cc0714f5c36506fee9d4a35a1e02e171fd14b79285d6fd26c03"
+      }
+    },
+    {
+      "question_id": "T032",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L14-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "partial",
+      "point_mask": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "supported_citation_ids": [
+        "L14-05"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明完成助跑后假动作的间接任意球与警告后果，未区分仍允许的助跑中假动作。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "partial",
+      "seconds": 41.41514569999708,
+      "available_min_GiB": 1.3237152099609375,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T032-B.json",
+        "size_bytes": 216556,
+        "sha256": "cbcbbfb8a69f64322b833bfe0411e2fd368faaed188acfa1239474d71b4b9fa6"
+      }
+    },
+    {
+      "question_id": "T032",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L14-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "partial",
+      "point_mask": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "supported_citation_ids": [
+        "L14-05"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明完成助跑后假动作的间接任意球与警告后果，未区分仍允许的助跑中假动作。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "partial",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T032-B.json",
+        "size_bytes": 216556,
+        "sha256": "cbcbbfb8a69f64322b833bfe0411e2fd368faaed188acfa1239474d71b4b9fa6"
+      }
+    },
+    {
+      "question_id": "T033",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L14-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L14-03"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确只碰门柱且无人再碰时，主罚者不能直接补射。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 39.40922870000213,
+      "available_min_GiB": 1.3017196655273438,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T033-B.json",
+        "size_bytes": 209755,
+        "sha256": "cf66e66da4124332ca742bd72028431d0f709f033315a91efcec79901429a139"
+      }
+    },
+    {
+      "question_id": "T033",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L14-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L14-03"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确只碰门柱且无人再碰时，主罚者不能直接补射。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T033-B.json",
+        "size_bytes": 209755,
+        "sha256": "cf66e66da4124332ca742bd72028431d0f709f033315a91efcec79901429a139"
+      }
+    },
+    {
+      "question_id": "T034",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": 39.43170470000041,
+      "available_min_GiB": 1.4110069274902344,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T034-B.json",
+        "size_bytes": 202723,
+        "sha256": "49c60e3f33881b71593145baff6258dabf07e819568f1d03240de6b1fb40dd0b"
+      }
+    },
+    {
+      "question_id": "T034",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "false_refusal",
+      "point_mask": [
+        false,
+        false,
+        false
+      ],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "false_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T034-B.json",
+        "size_bytes": 202723,
+        "sha256": "49c60e3f33881b71593145baff6258dabf07e819568f1d03240de6b1fb40dd0b"
+      }
+    },
+    {
+      "question_id": "T035",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L15-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L15-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 身体朝向、双脚位置及双手从头后经头顶掷出的动作齐全。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 37.279872799997975,
+      "available_min_GiB": 1.1841850280761719,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T035-B.json",
+        "size_bytes": 208322,
+        "sha256": "9d2e2b1411d96a29c461a51b724859a63cba2a035537dc035a02ada3245e99b5"
+      }
+    },
+    {
+      "question_id": "T035",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L15-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L15-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 身体朝向、双脚位置及双手从头后经头顶掷出的动作齐全。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T035-B.json",
+        "size_bytes": 208322,
+        "sha256": "9d2e2b1411d96a29c461a51b724859a63cba2a035537dc035a02ada3245e99b5"
+      }
+    },
+    {
+      "question_id": "T036",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L15-04",
+        "L15-01",
+        "L15-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L15-04"
+      ],
+      "note": "Post-run Codex source review: L15-04 explicitly binds correct execution plus pre-entry ground contact to a same-team same-place re-take. L15-01 and L15-02 do not state that exception. No new human review.",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 37.33919909999895,
+      "available_min_GiB": 1.1749267578125,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T036-B.json",
+        "size_bytes": 214465,
+        "sha256": "4cce9855607b8261f3feadec797f7db270753adf757406f32e274d7df862ddb4"
+      }
+    },
+    {
+      "question_id": "T036",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L15-04",
+        "L15-01",
+        "L15-02"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L15-04"
+      ],
+      "note": "Post-run Codex source review: L15-04 explicitly binds correct execution plus pre-entry ground contact to a same-team same-place re-take. L15-01 and L15-02 do not state that exception. No new human review.",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T036-B.json",
+        "size_bytes": 214465,
+        "sha256": "4cce9855607b8261f3feadec797f7db270753adf757406f32e274d7df862ddb4"
+      }
+    },
+    {
+      "question_id": "T037",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L16-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L16-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确二次触球、应处罚手球及非守门员在本方罚球区内可能点球的条件。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 37.483357900000556,
+      "available_min_GiB": 1.402191162109375,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T037-B.json",
+        "size_bytes": 209711,
+        "sha256": "2625baf485f711959359acf7c61599a10d5d4822e48027f5ef4836c1e79713f1"
+      }
+    },
+    {
+      "question_id": "T037",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L16-04"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L16-04"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确二次触球、应处罚手球及非守门员在本方罚球区内可能点球的条件。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T037-B.json",
+        "size_bytes": 209711,
+        "sha256": "2625baf485f711959359acf7c61599a10d5d4822e48027f5ef4836c1e79713f1"
+      }
+    },
+    {
+      "question_id": "T038",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L16-02",
+        "L17-01",
+        "L16-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L16-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 四种直接进入对方球门后判球门球的例子齐全；其他两段谈的是不同重启情形。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 40.31647160000284,
+      "available_min_GiB": 1.177093505859375,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T038-B.json",
+        "size_bytes": 220536,
+        "sha256": "26eb43bd61b47f908b6ec15767f2d40d236e3e62dfb36c6e88eaaaa14c55353d"
+      }
+    },
+    {
+      "question_id": "T038",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L16-02",
+        "L17-01",
+        "L16-03"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L16-02"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 四种直接进入对方球门后判球门球的例子齐全；其他两段谈的是不同重启情形。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T038-B.json",
+        "size_bytes": 220536,
+        "sha256": "26eb43bd61b47f908b6ec15767f2d40d236e3e62dfb36c6e88eaaaa14c55353d"
+      }
+    },
+    {
+      "question_id": "T039",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L17-03",
+        "L01-07"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L17-03"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确静止放在相应角球区，并给出至少9.15米；近似英制换算段不足以支持精确距离。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 40.14122359999965,
+      "available_min_GiB": 1.3866806030273438,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T039-B.json",
+        "size_bytes": 217699,
+        "sha256": "715abd00faedb1d59f90f75e95ccf89399332689a8b9375e78d95376d1cfbf2e"
+      }
+    },
+    {
+      "question_id": "T039",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L17-03",
+        "L01-07"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L17-03"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 明确静止放在相应角球区，并给出至少9.15米；近似英制换算段不足以支持精确距离。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T039-B.json",
+        "size_bytes": 217699,
+        "sha256": "715abd00faedb1d59f90f75e95ccf89399332689a8b9375e78d95376d1cfbf2e"
+      }
+    },
+    {
+      "question_id": "T040",
+      "variant": "candidate",
+      "answerable": true,
+      "selected_ids": [
+        "L17-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L17-05"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出其他队员触球前再次触球，按违例地点判守方间接任意球。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": 37.0293743000002,
+      "available_min_GiB": 1.0642929077148438,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T040-B.json",
+        "size_bytes": 208512,
+        "sha256": "54d65c519d6bde606818e52691f77f6039ed635acb961f3d5cb2e48e9f596be4"
+      }
+    },
+    {
+      "question_id": "T040",
+      "variant": "shared_response_shadow",
+      "answerable": true,
+      "selected_ids": [
+        "L17-05"
+      ],
+      "status": "answered",
+      "recovery": null,
+      "grade": "correct",
+      "point_mask": [
+        true,
+        true,
+        true
+      ],
+      "supported_citation_ids": [
+        "L17-05"
+      ],
+      "note": "Reuse prior source review for identical question and paragraph set; order may differ. 给出其他队员触球前再次触球，按违例地点判守方间接任意球。",
+      "review_file": "optimization/experiments/D036_business_gate/source_reviews.tsv",
+      "historical_grade": "correct",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T040-B.json",
+        "size_bytes": 208512,
+        "sha256": "54d65c519d6bde606818e52691f77f6039ed635acb961f3d5cb2e48e9f596be4"
+      }
+    },
+    {
+      "question_id": "T041",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "scope_or_version_not_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 42.205131300001085,
+      "available_min_GiB": 1.0514068603515625,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T041-B.json",
+        "size_bytes": 202715,
+        "sha256": "3008030a43f639d4fd2a4155029bc15631ffda937017fdd7d966ad1186de9249"
+      }
+    },
+    {
+      "question_id": "T041",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "scope_or_version_not_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T041-B.json",
+        "size_bytes": 202715,
+        "sha256": "3008030a43f639d4fd2a4155029bc15631ffda937017fdd7d966ad1186de9249"
+      }
+    },
+    {
+      "question_id": "T042",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "scope_or_version_not_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 40.54019490000064,
+      "available_min_GiB": 1.2168655395507812,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T042-B.json",
+        "size_bytes": 203049,
+        "sha256": "8c838713e6df9a00d3b3f9ecd0bfe1e70f15d6ab87082f76fbcb9ee54bb42eea"
+      }
+    },
+    {
+      "question_id": "T042",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "scope_or_version_not_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T042-B.json",
+        "size_bytes": 203049,
+        "sha256": "8c838713e6df9a00d3b3f9ecd0bfe1e70f15d6ab87082f76fbcb9ee54bb42eea"
+      }
+    },
+    {
+      "question_id": "T043",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": null,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 10.505891200002225,
+      "available_min_GiB": 3.2654190063476562,
+      "calls": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T043-B.json",
+        "size_bytes": 21531,
+        "sha256": "ba3d5f6104c3a8ebb8e433728c6b06b28c7841516b4c215d7cbfda43654d106a"
+      }
+    },
+    {
+      "question_id": "T043",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": null,
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T043-B.json",
+        "size_bytes": 21531,
+        "sha256": "ba3d5f6104c3a8ebb8e433728c6b06b28c7841516b4c215d7cbfda43654d106a"
+      }
+    },
+    {
+      "question_id": "T044",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 38.53527260000192,
+      "available_min_GiB": 1.4288101196289062,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T044-B.json",
+        "size_bytes": 202954,
+        "sha256": "e987d8815b0ca1bac35002d5112dfcfc8e28f1ec529536d6229018be22915fa9"
+      }
+    },
+    {
+      "question_id": "T044",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T044-B.json",
+        "size_bytes": 202954,
+        "sha256": "e987d8815b0ca1bac35002d5112dfcfc8e28f1ec529536d6229018be22915fa9"
+      }
+    },
+    {
+      "question_id": "T045",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "scope_or_version_not_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 41.34455809999781,
+      "available_min_GiB": 1.2616462707519531,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T045-B.json",
+        "size_bytes": 204505,
+        "sha256": "32cd29394d8bcded51c4fa0f2f813780e967173eb03a5324af8ababc53f0e75d"
+      }
+    },
+    {
+      "question_id": "T045",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "scope_or_version_not_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T045-B.json",
+        "size_bytes": 204505,
+        "sha256": "32cd29394d8bcded51c4fa0f2f813780e967173eb03a5324af8ababc53f0e75d"
+      }
+    },
+    {
+      "question_id": "T046",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 40.46233159999974,
+      "available_min_GiB": 1.445770263671875,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T046-B.json",
+        "size_bytes": 211228,
+        "sha256": "97ea18c777fe7be778f1d1c26e407d43f79aed0fdd5b276e47397d3309cd16d0"
+      }
+    },
+    {
+      "question_id": "T046",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T046-B.json",
+        "size_bytes": 211228,
+        "sha256": "97ea18c777fe7be778f1d1c26e407d43f79aed0fdd5b276e47397d3309cd16d0"
+      }
+    },
+    {
+      "question_id": "T047",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 38.97048530000029,
+      "available_min_GiB": 1.4142951965332031,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T047-B.json",
+        "size_bytes": 204487,
+        "sha256": "6920944520cb7ac86b91ab0aac3ab61a3b1feff531fc109f3050603d52587387"
+      }
+    },
+    {
+      "question_id": "T047",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T047-B.json",
+        "size_bytes": 204487,
+        "sha256": "6920944520cb7ac86b91ab0aac3ab61a3b1feff531fc109f3050603d52587387"
+      }
+    },
+    {
+      "question_id": "T048",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "scope_or_version_not_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 39.80740240000159,
+      "available_min_GiB": 1.5159187316894531,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T048-B.json",
+        "size_bytes": 200939,
+        "sha256": "5eaa5a37002d1e242e12c911e9f3ed4cf4db9a13ff4d8347b38bcdb9f62c5d41"
+      }
+    },
+    {
+      "question_id": "T048",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "scope_or_version_not_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T048-B.json",
+        "size_bytes": 200939,
+        "sha256": "5eaa5a37002d1e242e12c911e9f3ed4cf4db9a13ff4d8347b38bcdb9f62c5d41"
+      }
+    },
+    {
+      "question_id": "T049",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 40.94341129999884,
+      "available_min_GiB": 1.4542312622070312,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T049-B.json",
+        "size_bytes": 210364,
+        "sha256": "dffe4e8d19d8b22b32bc3eb8ad6e919ff6f347105faed486ba04bc97057e6790"
+      }
+    },
+    {
+      "question_id": "T049",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T049-B.json",
+        "size_bytes": 210364,
+        "sha256": "dffe4e8d19d8b22b32bc3eb8ad6e919ff6f347105faed486ba04bc97057e6790"
+      }
+    },
+    {
+      "question_id": "T050",
+      "variant": "candidate",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": 40.20694459999868,
+      "available_min_GiB": 1.5117034912109375,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T050-B.json",
+        "size_bytes": 202832,
+        "sha256": "91970156536676aca509606c5d6c8b864a5082b100bfe9024972ff0dfd884c7c"
+      }
+    },
+    {
+      "question_id": "T050",
+      "variant": "shared_response_shadow",
+      "answerable": false,
+      "selected_ids": [],
+      "status": "refused",
+      "recovery": {
+        "applied": false,
+        "reason": "question_not_uniquely_registered",
+        "version": "source-bound-fact-recovery-1.0"
+      },
+      "grade": "correct_refusal",
+      "point_mask": [],
+      "supported_citation_ids": [],
+      "note": "Frozen answerability label",
+      "review_file": "Frozen label",
+      "historical_grade": "correct_refusal",
+      "seconds": null,
+      "available_min_GiB": null,
+      "calls": 1,
+      "raw_record": {
+        "path": ".runtime/phase2/e14-live90-final/worker/T050-B.json",
+        "size_bytes": 202832,
+        "sha256": "91970156536676aca509606c5d6c8b864a5082b100bfe9024972ff0dfd884c7c"
+      }
+    }
+  ],
+  "holdout_used": false,
+  "method": "Frozen necessary points, prior reviewed exact question/paragraph sets and separately recorded Codex source reviews; not gold-ID exact match. Source renderer emits full original paragraphs. Shadow uses same actual model response before deterministic recovery, not independent baseline inference; no shadow wall time.",
+  "review_scope": "Codex source audit; no new human/expert adjudication"
+}

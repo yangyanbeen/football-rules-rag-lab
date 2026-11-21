@@ -1,0 +1,32 @@
+{
+  "trace_id": "8297fd99084f4bab9e4b23d4fe18f001",
+  "worker_pid": 11212,
+  "binding": "Unique Worker in sequential parent launch/return window matched by question hash; venv launcher is an intermediate process",
+  "stages": [
+    "worker_enter",
+    "module_import_start",
+    "module_import_end",
+    "source_environment_validation_start",
+    "source_environment_validation_end",
+    "engine_module_import_start",
+    "engine_module_import_end",
+    "engine_construction_start",
+    "chat_identity_validation_start",
+    "chat_identity_validation_end",
+    "engine_construction_end",
+    "answer_start",
+    "answer_end",
+    "result_validation_start",
+    "result_validation_end",
+    "engine_close_start",
+    "engine_close_end",
+    "result_write_start",
+    "result_write_end",
+    "worker_return"
+  ],
+  "heavy_retrieval_initialized": false,
+  "retrieval": null,
+  "answer_calls": 0,
+  "worker_peak_RSS_GiB": 0.043670654296875,
+  "seconds": 10.080210699998133
+}

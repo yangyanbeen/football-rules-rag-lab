@@ -25,10 +25,11 @@ class Sampler(Base):
                 details=[]
                 for pid,(p,role) in processes.items():
                     try:
-                        if pid not in self.process_labels:
-                            cmd=' '.join(p.cmdline());self.process_labels[pid]='worker' if 'query_task13_audit.py' in cmd else 'chrome' if 'chrome.exe' in cmd.lower() else role
+                        identity=(pid,p.create_time())
+                        if identity not in self.process_labels:
+                            cmd=' '.join(p.cmdline());self.process_labels[identity]='worker' if 'query_task13_audit.py' in cmd else 'chrome' if 'chrome.exe' in cmd.lower() else role
                         m=p.memory_info();cpu=p.cpu_times()
-                        details.append(dict(pid=pid,parent_pid=p.ppid(),role=self.process_labels[pid],rss=m.rss,private=getattr(m,'private',None),native_peak_rss=getattr(m,'peak_wset',m.rss),cpu_seconds=cpu.user+cpu.system))
+                        details.append(dict(pid=pid,parent_pid=p.ppid(),created_at=identity[1],role=self.process_labels[identity],rss=m.rss,private=getattr(m,'private',None),native_peak_rss=getattr(m,'peak_wset',m.rss),cpu_seconds=cpu.user+cpu.system))
                     except (psutil.NoSuchProcess,psutil.AccessDenied):pass
                 now=time.perf_counter()
                 if now-last>=1:loaded=models();last=now

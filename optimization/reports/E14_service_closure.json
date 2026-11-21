@@ -1,0 +1,7 @@
+{
+  "owned_processes_still_present": [],
+  "ports_closed": true,
+  "listeners": [],
+  "method": "Windows OS listener table and owned process IDs",
+  "owned_processes_closed": true
+}

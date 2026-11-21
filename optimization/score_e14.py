@@ -7,6 +7,8 @@ from answer_eval_core import read,record,canonical,digest
 
 def save(p,v):p.write_bytes((json.dumps(v,ensure_ascii=False,indent=2)+'\n').encode())
 def audit(run):
+    corrected_path=ROOT/'optimization/reports/E14_process_memory_reconciliation.json'
+    corrected={c['trace_id']:c for c in read(corrected_path)['cases']} if corrected_path.exists() else {}
     meta=read(run/'probe-metadata.json');done=read(run/'probe-completed.json');rows=[]
     for n,ref in meta['source_files'].items():
         assert digest(subprocess.check_output(['git','show',meta['source_commit']+':'+n],cwd=ROOT))==ref['sha256']
@@ -31,14 +33,17 @@ def audit(run):
         low=r['resources'].get('low_point');prior=[e for e in r['events'] if e['pid']==pid and low and e['monotonic']<=low['monotonic']]
         row=dict(entry=r['entry'],name=r['name'],error=r['error'],semantic_ok=ok,visible=r['visible'],seconds=r['seconds'],
             before_available_GiB=r['before']['available_GiB'],after_2s_available_GiB=r['after_2s']['available_GiB'],available_min_GiB=r['resources']['available_min_GiB'],
-            worker_peak_RSS_GiB=r['resources']['role_peak_rss_GiB']['worker'],role_peaks=r['resources']['role_peak_rss_GiB'],
+            worker_peak_RSS_GiB=corrected.get(v['trace_id'],{}).get('sampled_main_RSS_peak_GiB',r['resources']['role_peak_rss_GiB']['worker']),role_peaks=r['resources']['role_peak_rss_GiB'],
             low_time_ns=low['wall_ns'] if low else None,low_latest_worker_stage=max(prior,key=lambda e:e['monotonic'])['stage'] if prior else None,
             low_models=[m['name'] for m in (low.get('loaded_models') or [])] if low else [],stage_seconds=durations,
             selected_ids=v['selected_ids'] if v else None,model_calls=len(v['attempts']) if v else None,
             recovery=v.get('fact_recovery') if v else None,messages_sha256=digest(canonical(v['messages'])) if v else None,
             context_sha256=digest(canonical(v['context'])) if v else None)
         rows.append(row)
+    samples=[json.loads(s) for s in (run/'resources.jsonl').read_text('utf8').splitlines()]
+    gaps=[b['monotonic']-a['monotonic'] for a,b in zip(samples,samples[1:])]
     return dict(run=run.relative_to(ROOT).as_posix(),producer_commit=meta['source_commit'],status=done['status'],observations=len(rows),rows=rows,
+        sampling=dict(target_wait_seconds=.25,actual_median_interval_seconds=statistics.median(gaps),actual_max_gap_seconds=max(gaps),samples=len(samples)),
         gate_passed=len(rows)==10 and all(not r['error'] and r['semantic_ok'] and (r['visible'] or r['entry']=='worker') and r['seconds']<=60 and r['available_min_GiB'] is not None and r['available_min_GiB']>=1 for r in rows))
 
 def main(a):
@@ -59,7 +64,7 @@ def main(a):
         f"对照执行版本 `{baseline['producer_commit']}`，候选执行版本 `{candidate['producer_commit']}`。分支仅保留本地。",'',
         '**结论：** '+('串行工程资源门槛通过，可进入原E13专项。' if candidate['gate_passed'] else '候选未通过全部单请求资源门槛，停止在E13完整复验及90题回归之前。D036收益与普通问答资源问题分别报告，不能将局部改善视为整体交付通过。'),'',
         '## 实测方法','',
-        '默认Worker子进程及实际网页均顺序测D036、普通可答题、已有模型驻留后的D036、事实题关闭/开启E13补答。网页每次新建会话。250毫秒采样系统可用内存及各进程RSS/private/native peak；每约1秒查询Ollama驻留模型。记录启动前、低点、退出后2秒，Worker内独立记录导入、环境/来源校验、依赖构造、回答及返回。外部采样依赖未安装进锁定262包Worker环境。',
+        '默认Worker子进程及实际网页均顺序测D036、普通可答题、已有模型驻留后的D036、事实题关闭/开启E13补答。网页每次新建会话。目标等待间隔250毫秒，叠加进程采样耗时；系统可用内存及各进程RSS/private/native peak均由外部进程记录，每约1秒查询Ollama驻留模型。记录启动前、采样低点、退出后2秒，Worker内独立记录导入、环境/来源校验、依赖构造、回答及返回。外部采样依赖未安装进锁定262包Worker环境。',
         '初轮原始记录完整保留。网页fact_A的显示断言误用了“证据”关键词，实际标准拒答是“现有资料不足以可靠回答”；那次显示核验计为测试断言失败，未据此认定模型或服务超时。修正测试后完整复测对照，再测候选；未删除或改写旧结果。','',
         '## 各入口实际结果','',
         '| 版本/入口 | 请求 | 回复秒 | 启动前GiB | 最低GiB | 退出后2秒GiB | Worker峰值RSS GiB | 低点最近Worker阶段 |',
