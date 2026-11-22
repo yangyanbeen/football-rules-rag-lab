@@ -17,7 +17,7 @@ def main(a):
         for key,grade,bits,ids,note in csv.reader(p.open(encoding='utf8'),delimiter='\t'):
             qid,selected=key.split('|',1);known[qid,frozenset(selected.split(','))]=dict(grade=grade,point_mask=[b=='1' for b in bits],supported_citation_ids=[] if ids=='-' else ids.split(','),note=note,review_file=p.relative_to(ROOT).as_posix())
     for v in history.values():
-        if v['selected_ids']:known.setdefault((v['question_id'],frozenset(v['selected_ids'])),{**{k:v[k] for k in ('grade','point_mask','supported_citation_ids','note')},'review_file':'optimization/reports/D036_business_gate_metrics.json'})
+        if v['selected_ids']:known.setdefault((v['question_id'],frozenset(v['selected_ids'])),{**{k:v[k] for k in ('grade','point_mask','supported_citation_ids','note')},'review_file':'optimization/reports/E14_live90_metrics.json'})
     queue={};cases=[];verified_implementations=set();done=read(a.run/'completed.json') if (a.run/'completed.json').exists() else None
     files=sorted(a.run.glob('[DT][0-9][0-9][0-9]-B.json'))
     for p in files:
@@ -54,7 +54,7 @@ def main(a):
                 historical_grade=history[qid]['grade'],seconds=t['seconds'] if variant=='candidate' else None,
                 available_min_GiB=t['resources']['available_min_GiB'] if variant=='candidate' else None,
                 calls=len(value['attempts']) if value else 0,raw_record=record(p)))
-    save(ROOT/'optimization/reports/E15_live90_review_queue.json',list(queue.values()))
+    save(ROOT/('optimization/reports/'+a.prefix+'_live90_review_queue.json'),list(queue.values()))
     summaries={}
     for variant in ('candidate','shared_response_shadow'):
         vals=[v for v in cases if v['variant']==variant];counts=collections.Counter(v['grade'] for v in vals)
@@ -82,8 +82,8 @@ def main(a):
         cases=cases,holdout_used=False,
         method='Frozen necessary points, prior reviewed exact question/paragraph sets and separately recorded Codex source reviews; not gold-ID exact match. Source renderer emits full original paragraphs. Shadow uses same actual model response before deterministic recovery, not independent baseline inference; no shadow wall time.',
         review_scope='Codex source audit; no new human/expert adjudication')
-    save(ROOT/'optimization/reports/E15_live90_metrics.json',value)
+    save(ROOT/('optimization/reports/'+a.prefix+'_live90_metrics.json'),value)
     print(json.dumps(dict(actual_records=len(files),pending_reviews=len(queue),summaries=summaries,gates=gates),ensure_ascii=False))
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--partial',action='store_true');main(p.parse_args())
+    p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--partial',action='store_true');p.add_argument('--prefix',default='E15');main(p.parse_args())

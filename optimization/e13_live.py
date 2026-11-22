@@ -26,7 +26,7 @@ def content_score(result,case,facts):
         wrong_supplement=bool(result.get('fact_recovery',{}).get('applied')) and
             (not all(mask) or any(i not in support for i in ids)))
 
-def run(out,pid,mode,gate=None):
+def run(out,pid,mode,gate=None,gate_key='all_gates_passed',admission=None):
     assert not out.exists();out.mkdir(parents=True)
     plan=read(PLAN);refs=source_refs()
     for n in ('optimization/e13_live.py','optimization/experiments/E13_source_facts/plan.json'):
@@ -41,7 +41,7 @@ def run(out,pid,mode,gate=None):
     if mode=='special':
         schedule=[dict(case=c,variant=v) for i,c in enumerate(cases) for v in ('AB' if i%2==0 else 'BA')]
     else:
-        assert read(gate or ROOT/'optimization/reports/E13_special_metrics.json')['all_gates_passed']
+        assert read(gate or ROOT/'optimization/reports/E13_special_metrics.json')[gate_key]
         labels=read(ROOT/'optimization/datasets/dev_40.json')+read(ROOT/'optimization/datasets/regression_50.json')
         assert len(labels)==90
         schedule=[dict(case=dict(name=c['question_id'],question=c['question']),variant='B') for c in labels]
@@ -49,6 +49,10 @@ def run(out,pid,mode,gate=None):
     try:
         for pos,item in enumerate(schedule,1):
             c=item['case'];variant=item['variant'];os.environ['FOOTBALL_SOURCE_FACTS']='1' if variant=='B' else '0'
+            if admission is not None:
+                decision=admission()
+                if not decision['admitted']:
+                    save(out/'admission-stop.json',dict(next_case=c['name'],**decision));status='HEADROOM_STOP';break
             before=sampler.begin(c['name']+'-'+variant);start=time.perf_counter();r=None;error=None;reference=None
             try:
                 r,reference,wall=call_worker(c['question'])

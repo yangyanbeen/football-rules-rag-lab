@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-22 Asia/Shanghai",
+  "runtime_source_commit": "566b9cfc396598c1a1f31fc9b9c96782dcfc98ef",
+  "pilot_report": {
+    "path": "optimization/reports/E15_low_memory_pilot.json",
+    "size_bytes": 14051,
+    "sha256": "5251b1588148bc30820bae3933d2fe5bf4442db436ee2869608eb8f9001b09a5"
+  },
+  "changes": "No additional runtime changes; low-memory flag plus E13 facts, E14 lazy, E15 JIT/release. Fixed models, input contracts, corpus and indexes.",
+  "candidate_only": true,
+  "historical_quality": "E14 54/72 full,18/18 refusal,90/90 technical; cites75/123. Same-response shadow is not independent inference.",
+  "gates": {
+    "full_answerable_min": 54,
+    "answerable_denominator": 72,
+    "correct_refusals": 18,
+    "technical": 90,
+    "maximum_seconds": 60,
+    "minimum_available_GiB": 1,
+    "no_original_correct_regression": true,
+    "citation_support_minimum_ratio": "75/123",
+    "no_wrong_fact_supplement": true
+  },
+  "input_parity": "Compare all90 actual queries, candidate order, full contexts and exact messages with corresponding E14 archives.",
+  "safety": {
+    "launch_floor_GiB": 5.0,
+    "request_floor_GiB": 3.25,
+    "idle_models_required_empty": true,
+    "critical_available_GiB": 0.35,
+    "critical_consecutive_samples": 3
+  },
+  "measurement": "Normal Worker; real frontend and dedicated Chrome resident. Target200ms periodic plus exact Worker stage snapshots. Report actual sampling gaps, process working set and private commit, not just Python object release.",
+  "holdout": "Only after all actual90 quality/resource gates pass, frozen40 may be used once. Predeclared >=75% full answerable,100% correct refusal/technical,cites>=75/123,same resource gates. No tuning on holdout; no human/expert adjudication claimed.",
+  "merge_or_push": false
+}
