@@ -1,0 +1,444 @@
+{
+  "scope": "Candidate-only serial residency pilot; historical input comparisons are not concurrent A/B.",
+  "source_commit": "566b9cfc396598c1a1f31fc9b9c96782dcfc98ef",
+  "startup_available_GiB": 6.390583038330078,
+  "gates": {
+    "complete10": true,
+    "technical": true,
+    "historical_inputs_identical": true,
+    "source_review_no_change": true,
+    "latency": true,
+    "available_at_least1": true,
+    "residency_order": true,
+    "idle_no_models": true,
+    "D036_zero": true
+  },
+  "pilot_passed": true,
+  "requests": 10,
+  "normal_requests": 8,
+  "minimum_available_GiB": 2.991626739501953,
+  "max_seconds": 35.48627839999972,
+  "normal_median_seconds": 34.2247913999995,
+  "citation_support": {
+    "numerator": 8,
+    "denominator": 12
+  },
+  "unload_available_gain_GiB": {
+    "embedding": {
+      "observations": 8,
+      "median": 1.1646785736083984,
+      "minimum": 1.1602249145507812,
+      "maximum": 1.17547607421875
+    },
+    "answer_after_generation": {
+      "observations": 8,
+      "median": 2.286846160888672,
+      "minimum": 2.2795562744140625,
+      "maximum": 2.2987518310546875
+    }
+  },
+  "sampling": {
+    "target_seconds": 0.2,
+    "actual_median_seconds": 0.3106720000000678,
+    "maximum_gap_seconds": 0.9510202999999819
+  },
+  "cases": [
+    {
+      "name": "worker-1-D036",
+      "entry": "worker",
+      "question_id": "D036",
+      "error": null,
+      "seconds": 6.749430599999869,
+      "minimum_available_GiB": 5.698570251464844,
+      "before_available_GiB": 5.732658386230469,
+      "process_tree_rss_peak_GiB": 0.5469093322753906,
+      "role_peak_rss": {
+        "worker": 0.043437957763671875,
+        "ui": 0.40587615966796875,
+        "ollama": 0.0570220947265625,
+        "chrome": 0.0,
+        "observer": 0.042572021484375
+      },
+      "idle_models": [],
+      "inputs_equal_to_E14": true,
+      "review": {
+        "grade": "correct_refusal",
+        "point_mask": [],
+        "supported_citation_ids": [],
+        "note": "Frozen answerability label"
+      },
+      "D036_zero": true,
+      "residency_order": true,
+      "selected_ids": [],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory01/worker-1-D036.json",
+        "size_bytes": 21419,
+        "sha256": "c3a202f624f47cea36cf58c4f45371ae88bf89cdb43f6a516b98e2ec9fdaa018"
+      }
+    },
+    {
+      "name": "worker-2-D001",
+      "entry": "worker",
+      "question_id": "D001",
+      "error": null,
+      "seconds": 34.37073150000015,
+      "minimum_available_GiB": 3.3458480834960938,
+      "before_available_GiB": 5.729900360107422,
+      "process_tree_rss_peak_GiB": 2.9973220825195312,
+      "role_peak_rss": {
+        "worker": 2.3326339721679688,
+        "ui": 0.40587615966796875,
+        "ollama": 2.367389678955078,
+        "chrome": 0.0,
+        "observer": 0.045780181884765625
+      },
+      "idle_models": [],
+      "inputs_equal_to_E14": true,
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "supported_citation_ids": [
+          "L01-01"
+        ],
+        "note": "E13原文复核：人造表面只允许使用绿色，完整支持颜色限制；来源已在实际Prompt且正文哈希校验通过。"
+      },
+      "D036_zero": false,
+      "residency_order": true,
+      "selected_ids": [
+        "L01-01"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory01/worker-2-D001.json",
+        "size_bytes": 119208,
+        "sha256": "41d673bae8412fc934d8fc8e9d1ca12ba65760b6bfa73200c238dd1efcb803ba"
+      }
+    },
+    {
+      "name": "worker-3-D004",
+      "entry": "worker",
+      "question_id": "D004",
+      "error": null,
+      "seconds": 34.21767319999981,
+      "minimum_available_GiB": 3.3840179443359375,
+      "before_available_GiB": 5.818328857421875,
+      "process_tree_rss_peak_GiB": 3.003154754638672,
+      "role_peak_rss": {
+        "worker": 2.0890541076660156,
+        "ui": 0.4057960510253906,
+        "ollama": 2.368335723876953,
+        "chrome": 0.0,
+        "observer": 0.046344757080078125
+      },
+      "idle_models": [],
+      "inputs_equal_to_E14": true,
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L03-01"
+        ],
+        "note": "Reuse prior source review for identical question and paragraph set; order may differ. 覆盖最多11人、不含替补及须有守门员。"
+      },
+      "D036_zero": false,
+      "residency_order": true,
+      "selected_ids": [
+        "L03-01"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory01/worker-3-D004.json",
+        "size_bytes": 124046,
+        "sha256": "ec4c04b061b0b04c1879db1be52732e8de7392bff7805f6a9e4a2e289df8a17b"
+      }
+    },
+    {
+      "name": "worker-4-T026",
+      "entry": "worker",
+      "question_id": "T026",
+      "error": null,
+      "seconds": 34.00370420000036,
+      "minimum_available_GiB": 3.3579483032226562,
+      "before_available_GiB": 5.848400115966797,
+      "process_tree_rss_peak_GiB": 3.0015106201171875,
+      "role_peak_rss": {
+        "worker": 2.07781982421875,
+        "ui": 0.4057960510253906,
+        "ollama": 2.3688278198242188,
+        "chrome": 0.0,
+        "observer": 0.04138946533203125
+      },
+      "idle_models": [],
+      "inputs_equal_to_E14": true,
+      "review": {
+        "grade": "partial",
+        "point_mask": [
+          false,
+          false,
+          true
+        ],
+        "supported_citation_ids": [
+          "L12-15"
+        ],
+        "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明不当行为可警告或罚令出场，未明确区分一般技术性违例与身体犯规。"
+      },
+      "D036_zero": false,
+      "residency_order": true,
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-15"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory01/worker-4-T026.json",
+        "size_bytes": 129213,
+        "sha256": "7d88b93da45b38ffc562836556e7c1879d2194b66028c769e45b1251cc81e477"
+      }
+    },
+    {
+      "name": "worker-5-D001",
+      "entry": "worker",
+      "question_id": "D001",
+      "error": null,
+      "seconds": 33.23931100000027,
+      "minimum_available_GiB": 3.3713607788085938,
+      "before_available_GiB": 5.872509002685547,
+      "process_tree_rss_peak_GiB": 3.0042037963867188,
+      "role_peak_rss": {
+        "worker": 2.084911346435547,
+        "ui": 0.40576171875,
+        "ollama": 2.3698196411132812,
+        "chrome": 0.0,
+        "observer": 0.049213409423828125
+      },
+      "idle_models": [],
+      "inputs_equal_to_E14": true,
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "supported_citation_ids": [
+          "L01-01"
+        ],
+        "note": "E13原文复核：人造表面只允许使用绿色，完整支持颜色限制；来源已在实际Prompt且正文哈希校验通过。"
+      },
+      "D036_zero": false,
+      "residency_order": true,
+      "selected_ids": [
+        "L01-01"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory01/worker-5-D001.json",
+        "size_bytes": 119241,
+        "sha256": "bdc652a4420d6079af18206bd2f6b36bc2cd5d5a1431df76ecbe989062e373b7"
+      }
+    },
+    {
+      "name": "browser-1-D036",
+      "entry": "browser",
+      "question_id": "D036",
+      "error": null,
+      "seconds": 6.257944300000418,
+      "minimum_available_GiB": 5.355083465576172,
+      "before_available_GiB": 5.412635803222656,
+      "process_tree_rss_peak_GiB": 1.3522605895996094,
+      "role_peak_rss": {
+        "worker": 0.04434967041015625,
+        "ui": 0.4166755676269531,
+        "ollama": 0.060512542724609375,
+        "chrome": 0.7938194274902344,
+        "observer": 0.038181304931640625
+      },
+      "idle_models": [],
+      "inputs_equal_to_E14": true,
+      "review": {
+        "grade": "correct_refusal",
+        "point_mask": [],
+        "supported_citation_ids": [],
+        "note": "Frozen answerability label"
+      },
+      "D036_zero": true,
+      "residency_order": true,
+      "selected_ids": [],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory01/browser-1-D036.json",
+        "size_bytes": 24913,
+        "sha256": "71a80f186d863981d8c158b975edcb5d9d3f259523f611270051b5b72eaffa51"
+      }
+    },
+    {
+      "name": "browser-2-D001",
+      "entry": "browser",
+      "question_id": "D001",
+      "error": null,
+      "seconds": 34.2319095999992,
+      "minimum_available_GiB": 2.991626739501953,
+      "before_available_GiB": 5.331932067871094,
+      "process_tree_rss_peak_GiB": 3.6734161376953125,
+      "role_peak_rss": {
+        "worker": 2.0772018432617188,
+        "ui": 0.4180641174316406,
+        "ollama": 2.3689231872558594,
+        "chrome": 0.8242759704589844,
+        "observer": 0.09804153442382812
+      },
+      "idle_models": [],
+      "inputs_equal_to_E14": true,
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "supported_citation_ids": [
+          "L01-01"
+        ],
+        "note": "E13原文复核：人造表面只允许使用绿色，完整支持颜色限制；来源已在实际Prompt且正文哈希校验通过。"
+      },
+      "D036_zero": false,
+      "residency_order": true,
+      "selected_ids": [
+        "L01-01"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory01/browser-2-D001.json",
+        "size_bytes": 122486,
+        "sha256": "7b61433380ad7c34fda29e25e8cc2ac7f7b4eb5fcf493941fdfe814d958191f1"
+      }
+    },
+    {
+      "name": "browser-3-D004",
+      "entry": "browser",
+      "question_id": "D004",
+      "error": null,
+      "seconds": 34.11275670000032,
+      "minimum_available_GiB": 3.050273895263672,
+      "before_available_GiB": 5.427207946777344,
+      "process_tree_rss_peak_GiB": 3.6719017028808594,
+      "role_peak_rss": {
+        "worker": 2.4126052856445312,
+        "ui": 0.4256782531738281,
+        "ollama": 2.367870330810547,
+        "chrome": 0.7026290893554688,
+        "observer": 0.040500640869140625
+      },
+      "idle_models": [],
+      "inputs_equal_to_E14": true,
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L03-01"
+        ],
+        "note": "Reuse prior source review for identical question and paragraph set; order may differ. 覆盖最多11人、不含替补及须有守门员。"
+      },
+      "D036_zero": false,
+      "residency_order": true,
+      "selected_ids": [
+        "L03-01"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory01/browser-3-D004.json",
+        "size_bytes": 126661,
+        "sha256": "c0b3db5c0182b551cc1120e4618b0aeecf13489939a1044e441ca4ec33590b24"
+      }
+    },
+    {
+      "name": "browser-4-T026",
+      "entry": "browser",
+      "question_id": "T026",
+      "error": null,
+      "seconds": 35.48627839999972,
+      "minimum_available_GiB": 3.062480926513672,
+      "before_available_GiB": 5.508052825927734,
+      "process_tree_rss_peak_GiB": 3.676044464111328,
+      "role_peak_rss": {
+        "worker": 2.4526329040527344,
+        "ui": 0.41971588134765625,
+        "ollama": 2.369129180908203,
+        "chrome": 0.6941642761230469,
+        "observer": 0.04265594482421875
+      },
+      "idle_models": [],
+      "inputs_equal_to_E14": true,
+      "review": {
+        "grade": "partial",
+        "point_mask": [
+          false,
+          false,
+          true
+        ],
+        "supported_citation_ids": [
+          "L12-15"
+        ],
+        "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明不当行为可警告或罚令出场，未明确区分一般技术性违例与身体犯规。"
+      },
+      "D036_zero": false,
+      "residency_order": true,
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-15"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory01/browser-4-T026.json",
+        "size_bytes": 132518,
+        "sha256": "51cfb8247065d964a6ce1335aaa92cb1ed722ef793fcdad0f0a776a6bbe2d7df"
+      }
+    },
+    {
+      "name": "browser-5-D001",
+      "entry": "browser",
+      "question_id": "D001",
+      "error": null,
+      "seconds": 34.538121199999296,
+      "minimum_available_GiB": 3.1050186157226562,
+      "before_available_GiB": 5.439476013183594,
+      "process_tree_rss_peak_GiB": 3.68072509765625,
+      "role_peak_rss": {
+        "worker": 2.0912818908691406,
+        "ui": 0.4260978698730469,
+        "ollama": 2.3697891235351562,
+        "chrome": 0.7050514221191406,
+        "observer": 0.04427337646484375
+      },
+      "idle_models": [],
+      "inputs_equal_to_E14": true,
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "supported_citation_ids": [
+          "L01-01"
+        ],
+        "note": "E13原文复核：人造表面只允许使用绿色，完整支持颜色限制；来源已在实际Prompt且正文哈希校验通过。"
+      },
+      "D036_zero": false,
+      "residency_order": true,
+      "selected_ids": [
+        "L01-01"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory01/browser-5-D001.json",
+        "size_bytes": 122482,
+        "sha256": "33b25d3778eff62f8378e635b9944ca6579f7b703c9a45b3fcef24ceac736453"
+      }
+    }
+  ],
+  "pending_reviews": [],
+  "full90_executed": false,
+  "holdout40_used": false,
+  "limitations": [
+    "Historical E14 input and source-review comparison; not simultaneous A/B.",
+    "5.0GiB launch floor is an experimental precheck; this run does not establish a minimum hardware specification.",
+    "Working-set sum may double-count shared pages; role peaks occur at different times and must not be summed.",
+    "Periodic and stage snapshots cannot rule out unobserved gaps; no concurrency or long-run acceptance."
+  ]
+}

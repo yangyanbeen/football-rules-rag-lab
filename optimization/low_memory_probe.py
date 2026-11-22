@@ -69,6 +69,8 @@ def main(a):
                 if minimum<1:status='RESOURCE_GATE_FAILED';break
             if status!='COMPLETED':break
         assert all(record(ROOT/n)==v for n,v in refs.items())
+    except Exception:
+        status='SCRIPT_ERROR';raise
     finally:
         if page:
             try:page.close()
