@@ -1,0 +1,35 @@
+{
+  "status": "RESOURCE_STOP",
+  "completed_requests": 1,
+  "rows": [
+    {
+      "name": "D001-r1-A",
+      "before_available_GiB": 2.3373680114746094,
+      "before_models": [],
+      "minimum_available_GiB": 0.016021728515625,
+      "periodic_low_GiB": 0.016021728515625,
+      "low_latest_stage": "retrieval_query_start",
+      "resource_protection_triggered": true,
+      "controller_error": "TimeoutError: D001-r1-A UI outcome",
+      "valid_final_result": false,
+      "worker_RSS_at_low_GiB": 2.0595741271972656,
+      "ollama_RSS_at_low_GiB": 0.8981742858886719,
+      "raw": {
+        "path": ".runtime/phase2/e15-jit-special02/D001-r1-A.json",
+        "size_bytes": 23441,
+        "sha256": "9989cbd16e614723de4583fddbeb189f4328ef895babe4d78759683c39440582"
+      }
+    }
+  ],
+  "new_model_calls": 0,
+  "classification": "Deployment headroom/resource interruption, not a semantic wrong-answer score. No completed A/B pair or acceptance from this run.",
+  "decision": "No further heavy requests under this background load pending resource recovery or user choice to finish capacity diagnosis.",
+  "full90_executed": false,
+  "holdout40_used": false,
+  "raw_resources": {
+    "path": ".runtime/phase2/e15-jit-special02/resources.jsonl",
+    "size_bytes": 181203,
+    "sha256": "56ac3b7cf0466ecc1c1f95d695a1fb197a798ff77401c3abc08118857870ea32"
+  },
+  "source_commit": "849a0655e18cb031bf0866f4e2b3422d7875c1f9"
+}

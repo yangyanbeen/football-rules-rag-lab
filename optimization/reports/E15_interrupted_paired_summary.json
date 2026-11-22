@@ -1,0 +1,22 @@
+{
+  "completed_pairs": 7,
+  "inputs_identical": true,
+  "point_quality_preserved": true,
+  "groups": {
+    "A": {
+      "observations": 7,
+      "min_available_GiB": 0.47422027587890625,
+      "citations_numerator": 6,
+      "citations_denominator": 11
+    },
+    "B": {
+      "observations": 7,
+      "min_available_GiB": 1.6536598205566406,
+      "citations_numerator": 6,
+      "citations_denominator": 11
+    }
+  },
+  "status": "Incomplete continuous cohort; supplementary evidence only, not special pass",
+  "date": "2026-11-22",
+  "new_model_calls": 0
+}

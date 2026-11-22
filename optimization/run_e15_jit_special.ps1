@@ -19,7 +19,16 @@ function Test-Loopback([int]$Port) {
 try {
     if ((Test-Loopback 11434) -or (Test-Loopback 7867)) {throw 'Port occupied; preexisting services unchanged.'}
     if (Test-Path -LiteralPath $base) {throw 'Fresh output directory required.'}
+    $capacityText=& $workerPython -B -c "import sys,json;sys.path.insert(0,'optimization');from e10_resources import snapshot;print(json.dumps(snapshot()))"
+    if ($LASTEXITCODE -ne 0) {throw 'Cannot verify available memory before startup.'}
+    $capacity=$capacityText|ConvertFrom-Json
+    if ($capacity.available_GiB -lt 6.5) {
+        New-Item -ItemType Directory -Path $base|Out-Null
+        @{status='START_HEADROOM_STOP';snapshot=$capacity;required_GiB=6.5;model_calls=0}|ConvertTo-Json -Depth 5|Set-Content -LiteralPath (Join-Path $base 'preflight.json') -Encoding utf8
+        throw 'Available memory below6.5GiB before deployment startup; no model service started.'
+    }
     New-Item -ItemType Directory -Path $services | Out-Null
+    @{status='START_HEADROOM_PASSED';snapshot=$capacity;required_GiB=6.5}|ConvertTo-Json -Depth 5|Set-Content -LiteralPath (Join-Path $base 'preflight.json') -Encoding utf8
     $env:OLLAMA_HOST='127.0.0.1:11434';$env:OLLAMA_MODELS=Join-Path $root '.runtime/phase2/e10-models'
     $env:OLLAMA_NOPRUNE='true';$env:OLLAMA_NO_CLOUD='1';$env:OLLAMA_MAX_LOADED_MODELS='1';$env:OLLAMA_NUM_PARALLEL='1'
     $server=Start-Process -FilePath $exe -ArgumentList @('serve') -WorkingDirectory $root -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $services 'ollama.stdout.log') -RedirectStandardError (Join-Path $services 'ollama.stderr.log')

@@ -1,0 +1,9 @@
+{
+  "client_date":"2026-11-22",
+  "retained_runs":{"e15-jit-special01":"Interrupted overnight after15saved observations, no completed manifest or surviving services; incomplete pair not accepted as a completed28","e15-jit-special02":"Resource protection at first control request; actual starting availability2.337GiB,minimum.016GiB. No final valid answer or paired result; retained as capacity failure, not semantic error"},
+  "user_choice":"Release memory and continue. Do not terminate other user apps. Resume heavy work only after observed headroom recovers.",
+  "startup_preflight":"Require observed available>=6.5GiB before local deployment startup; preserve failed preflight in fresh run directory, no service/model start when below.",
+  "request_preflight":"Before each paired request, require>=5.25GiB if no resident model is observed,>=3.0GiB if a model is resident. These are conservative experiment safety margins, not validated deployment capacity guarantees. Abort cleanly without dispatch below them. Same guard for A/B.",
+  "unchanged_acceptance":"Entire attempted candidate request<=60s and periodic plus exact-stage sampled availability>=1GiB. Preflight-stopped and interrupted runs are not passes. Retain all lower-background-capacity failures and disclose headroom profile; do not generalize a higher-headroom pass to previously failing background load.",
+  "resume_policy":"Re-run frozen full28 in a new run directory for a single continuous cohort. Do not join overnight fragments into an uninterrupted run. No full90 or holdout unless all preceding gates truly pass. Visible UI operational failure ends wait promptly; no120s artificial wait after resource-stop response."
+}

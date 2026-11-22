@@ -22,9 +22,22 @@ def main(a):
         for index,item in enumerate(schedule,1):
             q=labels[item['qid']]['question'];name=item['qid']+'-r'+str(item['repeat'])+'-'+item['variant'];page.fresh();time.sleep(1.5)
             (out/'release-flag.json').write_bytes(json.dumps(dict(enabled=item['variant']=='B')).encode())
-            before=snapshot();before_models=models();offset=len(lines(JOURNAL));qh=hashlib.sha256(q.encode()).hexdigest();start=sampler.begin(name);error=None;r=None;event=None
+            before=snapshot();before_models=models()
+            floor=3.0 if before_models else 5.25
+            if before['available_GiB']<floor:
+                status='HEADROOM_STOP'
+                save(out/'headroom-stop.json',dict(unattempted_name=name,before=before,before_models=before_models,required_available_GiB=floor,
+                    reason='Conservative paired-test safety margin; not a candidate success or a model error.'))
+                print(json.dumps(dict(status=status,name=name,available_GiB=before['available_GiB'],required_GiB=floor),ensure_ascii=False),flush=True);break
+            offset=len(lines(JOURNAL));qh=hashlib.sha256(q.encode()).hexdigest();start=sampler.begin(name);error=None;r=None;event=None
             try:
-                page.submit(q);event=wait(lambda:next((e for e in lines(JOURNAL)[offset:] if e.get('question_sha256')==qh),None),120,name+' UI outcome')
+                page.submit(q)
+                def outcome():
+                    event=next((e for e in lines(JOURNAL)[offset:] if e.get('question_sha256')==qh),None)
+                    if event:return event
+                    answers=page.answers()
+                    if answers and '本次请求未能完成' in answers[-1]:raise RuntimeError('Visible operational failure; inspect resource guard and private Worker failure trace')
+                event=wait(outcome,120,name+' UI outcome')
                 ref=event['private_trace'];assert record(ROOT/ref['path'])==ref;r=read(ROOT/ref['path'])
                 def rendered():
                     answers=page.answers()
