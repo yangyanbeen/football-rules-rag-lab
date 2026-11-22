@@ -1,0 +1,58 @@
+{
+  "scope": "Capacity-only D036 gate and resident frontend; no ordinary answer/rerank experiment or acceptance.",
+  "status": "COMPLETED",
+  "observations": [
+    {
+      "entry": "worker",
+      "seconds": 4.499159999999847,
+      "before_available_GiB": 5.530780792236328,
+      "minimum_available_GiB": 5.489925384521484,
+      "after_available_GiB": 5.520656585693359,
+      "before_models": [],
+      "error": null,
+      "zero_query_and_answer": true,
+      "heavy_constructed": false
+    },
+    {
+      "entry": "browser",
+      "seconds": 5.285279199999877,
+      "before_available_GiB": 5.114006042480469,
+      "minimum_available_GiB": 4.736125946044922,
+      "after_available_GiB": 4.753231048583984,
+      "before_models": [],
+      "error": null,
+      "zero_query_and_answer": true,
+      "heavy_constructed": false
+    }
+  ],
+  "full28_executed": false,
+  "full90_executed": false,
+  "holdout40_used": false,
+  "client_date": "2026-11-22",
+  "ordinary_AB_accepted": false,
+  "startup_preflight": {
+    "status": "START_HEADROOM_PASSED",
+    "required_GiB": 5.5,
+    "snapshot": {
+      "total_GiB": 15.700675964355469,
+      "available_GiB": 5.833198547363281,
+      "logical_cpus": 20,
+      "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+      "psutil_version": "7.2.2"
+    }
+  },
+  "raw_refs": {
+    ".runtime/phase2/e15-capacity01/capacity-result.json": {
+      "sha256": "426bc8a6b7485a3daf08696cb4c12b35613527dbe1134a6c9735d656cbaa5397",
+      "size_bytes": 927
+    },
+    ".runtime/phase2/e15-capacity01/probe-completed.json": {
+      "sha256": "51726f8d2b94c84c3c132b787d052290dedd1472b0da381a4f9b82714f560562",
+      "size_bytes": 302
+    },
+    ".runtime/phase2/e15-capacity01/resources.jsonl": {
+      "sha256": "276ba40149e5f0ef79d00eeb92633c5b134ed21c79122c7d30b6c23b75b0aea1",
+      "size_bytes": 186477
+    }
+  }
+}
