@@ -1,0 +1,3029 @@
+{
+  "source_commit": "7ff1873b5ffef4c37d7a09a58f6d8c8b5b668277",
+  "quality_report": {
+    "path": "optimization/reports/E15_low_memory_live90_metrics.json",
+    "size_bytes": 177160,
+    "sha256": "e6a700ffc876742e999017d7af4578a2a418bf2d019b5c928fd72f5925e2d359"
+  },
+  "gates": {
+    "complete90": true,
+    "all_inputs_identical": true,
+    "all_residency_order": true,
+    "quality_and_resource": true,
+    "startup_and_request_stage_minimum": true
+  },
+  "overall_pass": true,
+  "actual_records": 90,
+  "memory": {
+    "minimum_available_GiB": 3.0360870361328125,
+    "all_stage_minimum_including_UI_readiness_GiB": 3.065288543701172,
+    "below1": 0,
+    "low_stages": {
+      "answer_model_start": 83,
+      "subprocess_start": 1,
+      "result_validation_start": 1,
+      "chat_identity_validation_start": 1,
+      "answer_model_end": 3,
+      "parent_validation_end": 1
+    },
+    "peak_task_tree_rss_GiB": 3.8231544494628906
+  },
+  "latency": {
+    "median_seconds": 40.80484374999969,
+    "p95_nearest_rank_seconds": 43.35739680000006,
+    "maximum_seconds": 44.519887300000846,
+    "above60": 0
+  },
+  "calls": {
+    "answer": 86,
+    "retry": 0,
+    "input_tokens": 112780,
+    "output_tokens": 2154
+  },
+  "sampling": {
+    "target_seconds": 0.2,
+    "actual_median_seconds": 0.3343823000000157,
+    "maximum_gap_seconds": 0.6337942000000112
+  },
+  "trend": {
+    "first10_start_available_median_GiB": 5.699838638305664,
+    "last10_start_available_median_GiB": 6.389509201049805,
+    "per_question": [
+      {
+        "question_id": "D001",
+        "first_available_GiB": 5.602500915527344,
+        "last_available_GiB": 5.738616943359375
+      },
+      {
+        "question_id": "D002",
+        "first_available_GiB": 5.7388916015625,
+        "last_available_GiB": 5.5240936279296875
+      },
+      {
+        "question_id": "D003",
+        "first_available_GiB": 5.524929046630859,
+        "last_available_GiB": 5.526176452636719
+      },
+      {
+        "question_id": "D004",
+        "first_available_GiB": 5.552436828613281,
+        "last_available_GiB": 5.571338653564453
+      },
+      {
+        "question_id": "D005",
+        "first_available_GiB": 5.565093994140625,
+        "last_available_GiB": 5.663970947265625
+      },
+      {
+        "question_id": "D006",
+        "first_available_GiB": 5.660785675048828,
+        "last_available_GiB": 5.764820098876953
+      },
+      {
+        "question_id": "D007",
+        "first_available_GiB": 5.761486053466797,
+        "last_available_GiB": 5.843986511230469
+      },
+      {
+        "question_id": "D008",
+        "first_available_GiB": 5.835414886474609,
+        "last_available_GiB": 5.889919281005859
+      },
+      {
+        "question_id": "D009",
+        "first_available_GiB": 5.876445770263672,
+        "last_available_GiB": 5.9554595947265625
+      },
+      {
+        "question_id": "D010",
+        "first_available_GiB": 5.950405120849609,
+        "last_available_GiB": 5.956203460693359
+      },
+      {
+        "question_id": "D011",
+        "first_available_GiB": 5.946041107177734,
+        "last_available_GiB": 5.925800323486328
+      },
+      {
+        "question_id": "D012",
+        "first_available_GiB": 5.9173736572265625,
+        "last_available_GiB": 5.934093475341797
+      },
+      {
+        "question_id": "D013",
+        "first_available_GiB": 5.932216644287109,
+        "last_available_GiB": 5.811389923095703
+      },
+      {
+        "question_id": "D014",
+        "first_available_GiB": 5.875099182128906,
+        "last_available_GiB": 5.962436676025391
+      },
+      {
+        "question_id": "D015",
+        "first_available_GiB": 5.959827423095703,
+        "last_available_GiB": 5.972648620605469
+      },
+      {
+        "question_id": "D016",
+        "first_available_GiB": 5.956920623779297,
+        "last_available_GiB": 6.032012939453125
+      },
+      {
+        "question_id": "D017",
+        "first_available_GiB": 6.020885467529297,
+        "last_available_GiB": 5.978450775146484
+      },
+      {
+        "question_id": "D018",
+        "first_available_GiB": 5.970405578613281,
+        "last_available_GiB": 5.840465545654297
+      },
+      {
+        "question_id": "D019",
+        "first_available_GiB": 5.842578887939453,
+        "last_available_GiB": 5.906303405761719
+      },
+      {
+        "question_id": "D020",
+        "first_available_GiB": 5.9063262939453125,
+        "last_available_GiB": 5.965599060058594
+      },
+      {
+        "question_id": "D021",
+        "first_available_GiB": 5.970714569091797,
+        "last_available_GiB": 5.982841491699219
+      },
+      {
+        "question_id": "D022",
+        "first_available_GiB": 5.969615936279297,
+        "last_available_GiB": 5.99359130859375
+      },
+      {
+        "question_id": "D023",
+        "first_available_GiB": 5.934505462646484,
+        "last_available_GiB": 5.974399566650391
+      },
+      {
+        "question_id": "D024",
+        "first_available_GiB": 5.943794250488281,
+        "last_available_GiB": 5.897674560546875
+      },
+      {
+        "question_id": "D025",
+        "first_available_GiB": 5.888206481933594,
+        "last_available_GiB": 5.930908203125
+      },
+      {
+        "question_id": "D026",
+        "first_available_GiB": 5.923229217529297,
+        "last_available_GiB": 5.988971710205078
+      },
+      {
+        "question_id": "D027",
+        "first_available_GiB": 5.981845855712891,
+        "last_available_GiB": 5.9923095703125
+      },
+      {
+        "question_id": "D028",
+        "first_available_GiB": 5.9825286865234375,
+        "last_available_GiB": 6.118862152099609
+      },
+      {
+        "question_id": "D029",
+        "first_available_GiB": 6.114566802978516,
+        "last_available_GiB": 6.117221832275391
+      },
+      {
+        "question_id": "D030",
+        "first_available_GiB": 6.107597351074219,
+        "last_available_GiB": 6.116111755371094
+      },
+      {
+        "question_id": "D031",
+        "first_available_GiB": 6.115139007568359,
+        "last_available_GiB": 6.180377960205078
+      },
+      {
+        "question_id": "D032",
+        "first_available_GiB": 6.167842864990234,
+        "last_available_GiB": 5.833061218261719
+      },
+      {
+        "question_id": "D033",
+        "first_available_GiB": 5.829914093017578,
+        "last_available_GiB": 5.967357635498047
+      },
+      {
+        "question_id": "D034",
+        "first_available_GiB": 5.957012176513672,
+        "last_available_GiB": 5.99383544921875
+      },
+      {
+        "question_id": "D035",
+        "first_available_GiB": 5.987491607666016,
+        "last_available_GiB": 5.854667663574219
+      },
+      {
+        "question_id": "D036",
+        "first_available_GiB": 5.900634765625,
+        "last_available_GiB": 6.068305969238281
+      },
+      {
+        "question_id": "D037",
+        "first_available_GiB": 6.059307098388672,
+        "last_available_GiB": 6.194042205810547
+      },
+      {
+        "question_id": "D038",
+        "first_available_GiB": 6.195518493652344,
+        "last_available_GiB": 6.173095703125
+      },
+      {
+        "question_id": "D039",
+        "first_available_GiB": 6.162605285644531,
+        "last_available_GiB": 6.219337463378906
+      },
+      {
+        "question_id": "D040",
+        "first_available_GiB": 6.224143981933594,
+        "last_available_GiB": 6.211692810058594
+      },
+      {
+        "question_id": "T001",
+        "first_available_GiB": 6.218326568603516,
+        "last_available_GiB": 6.2274322509765625
+      },
+      {
+        "question_id": "T002",
+        "first_available_GiB": 6.228313446044922,
+        "last_available_GiB": 6.177028656005859
+      },
+      {
+        "question_id": "T003",
+        "first_available_GiB": 6.195068359375,
+        "last_available_GiB": 6.233451843261719
+      },
+      {
+        "question_id": "T004",
+        "first_available_GiB": 6.234401702880859,
+        "last_available_GiB": 6.288105010986328
+      },
+      {
+        "question_id": "T005",
+        "first_available_GiB": 6.279094696044922,
+        "last_available_GiB": 6.0302886962890625
+      },
+      {
+        "question_id": "T006",
+        "first_available_GiB": 6.013526916503906,
+        "last_available_GiB": 6.144985198974609
+      },
+      {
+        "question_id": "T007",
+        "first_available_GiB": 6.141300201416016,
+        "last_available_GiB": 6.162570953369141
+      },
+      {
+        "question_id": "T008",
+        "first_available_GiB": 6.139991760253906,
+        "last_available_GiB": 6.137371063232422
+      },
+      {
+        "question_id": "T009",
+        "first_available_GiB": 6.128719329833984,
+        "last_available_GiB": 6.117389678955078
+      },
+      {
+        "question_id": "T010",
+        "first_available_GiB": 6.111324310302734,
+        "last_available_GiB": 6.144214630126953
+      },
+      {
+        "question_id": "T011",
+        "first_available_GiB": 6.124820709228516,
+        "last_available_GiB": 6.117237091064453
+      },
+      {
+        "question_id": "T012",
+        "first_available_GiB": 6.121242523193359,
+        "last_available_GiB": 6.136447906494141
+      },
+      {
+        "question_id": "T013",
+        "first_available_GiB": 6.137535095214844,
+        "last_available_GiB": 6.1217041015625
+      },
+      {
+        "question_id": "T014",
+        "first_available_GiB": 6.11712646484375,
+        "last_available_GiB": 6.134525299072266
+      },
+      {
+        "question_id": "T015",
+        "first_available_GiB": 6.132854461669922,
+        "last_available_GiB": 6.071708679199219
+      },
+      {
+        "question_id": "T016",
+        "first_available_GiB": 6.068641662597656,
+        "last_available_GiB": 6.181026458740234
+      },
+      {
+        "question_id": "T017",
+        "first_available_GiB": 6.182651519775391,
+        "last_available_GiB": 6.210269927978516
+      },
+      {
+        "question_id": "T018",
+        "first_available_GiB": 6.204654693603516,
+        "last_available_GiB": 6.246242523193359
+      },
+      {
+        "question_id": "T019",
+        "first_available_GiB": 6.236534118652344,
+        "last_available_GiB": 6.0964202880859375
+      },
+      {
+        "question_id": "T020",
+        "first_available_GiB": 6.166767120361328,
+        "last_available_GiB": 6.199089050292969
+      },
+      {
+        "question_id": "T021",
+        "first_available_GiB": 6.188480377197266,
+        "last_available_GiB": 6.178256988525391
+      },
+      {
+        "question_id": "T022",
+        "first_available_GiB": 6.183635711669922,
+        "last_available_GiB": 6.269824981689453
+      },
+      {
+        "question_id": "T023",
+        "first_available_GiB": 6.271232604980469,
+        "last_available_GiB": 6.307697296142578
+      },
+      {
+        "question_id": "T024",
+        "first_available_GiB": 6.30242919921875,
+        "last_available_GiB": 6.336704254150391
+      },
+      {
+        "question_id": "T025",
+        "first_available_GiB": 6.330623626708984,
+        "last_available_GiB": 6.342494964599609
+      },
+      {
+        "question_id": "T026",
+        "first_available_GiB": 6.339084625244141,
+        "last_available_GiB": 6.339992523193359
+      },
+      {
+        "question_id": "T027",
+        "first_available_GiB": 6.327594757080078,
+        "last_available_GiB": 6.347728729248047
+      },
+      {
+        "question_id": "T028",
+        "first_available_GiB": 6.334465026855469,
+        "last_available_GiB": 6.340465545654297
+      },
+      {
+        "question_id": "T029",
+        "first_available_GiB": 6.3315582275390625,
+        "last_available_GiB": 6.333324432373047
+      },
+      {
+        "question_id": "T030",
+        "first_available_GiB": 6.321590423583984,
+        "last_available_GiB": 6.031124114990234
+      },
+      {
+        "question_id": "T031",
+        "first_available_GiB": 6.027442932128906,
+        "last_available_GiB": 6.061603546142578
+      },
+      {
+        "question_id": "T032",
+        "first_available_GiB": 6.0587005615234375,
+        "last_available_GiB": 6.064579010009766
+      },
+      {
+        "question_id": "T033",
+        "first_available_GiB": 6.071743011474609,
+        "last_available_GiB": 6.066619873046875
+      },
+      {
+        "question_id": "T034",
+        "first_available_GiB": 6.0694122314453125,
+        "last_available_GiB": 6.231571197509766
+      },
+      {
+        "question_id": "T035",
+        "first_available_GiB": 6.224933624267578,
+        "last_available_GiB": 6.279655456542969
+      },
+      {
+        "question_id": "T036",
+        "first_available_GiB": 6.2754669189453125,
+        "last_available_GiB": 6.323799133300781
+      },
+      {
+        "question_id": "T037",
+        "first_available_GiB": 6.309455871582031,
+        "last_available_GiB": 6.287601470947266
+      },
+      {
+        "question_id": "T038",
+        "first_available_GiB": 6.2854156494140625,
+        "last_available_GiB": 6.427204132080078
+      },
+      {
+        "question_id": "T039",
+        "first_available_GiB": 6.418460845947266,
+        "last_available_GiB": 6.3566436767578125
+      },
+      {
+        "question_id": "T040",
+        "first_available_GiB": 6.3562774658203125,
+        "last_available_GiB": 6.29901123046875
+      },
+      {
+        "question_id": "T041",
+        "first_available_GiB": 6.2937164306640625,
+        "last_available_GiB": 6.307804107666016
+      },
+      {
+        "question_id": "T042",
+        "first_available_GiB": 6.297985076904297,
+        "last_available_GiB": 6.436637878417969
+      },
+      {
+        "question_id": "T043",
+        "first_available_GiB": 6.425743103027344,
+        "last_available_GiB": 6.3736114501953125
+      },
+      {
+        "question_id": "T044",
+        "first_available_GiB": 6.368808746337891,
+        "last_available_GiB": 6.40521240234375
+      },
+      {
+        "question_id": "T045",
+        "first_available_GiB": 6.410209655761719,
+        "last_available_GiB": 6.444068908691406
+      },
+      {
+        "question_id": "T046",
+        "first_available_GiB": 6.4376068115234375,
+        "last_available_GiB": 6.46990966796875
+      },
+      {
+        "question_id": "T047",
+        "first_available_GiB": 6.464103698730469,
+        "last_available_GiB": 6.408176422119141
+      },
+      {
+        "question_id": "T048",
+        "first_available_GiB": 6.4134674072265625,
+        "last_available_GiB": 6.156547546386719
+      },
+      {
+        "question_id": "T049",
+        "first_available_GiB": 6.1533203125,
+        "last_available_GiB": 6.298397064208984
+      },
+      {
+        "question_id": "T050",
+        "first_available_GiB": 6.296043395996094,
+        "last_available_GiB": 6.484462738037109
+      }
+    ],
+    "interpretation": "System background and page cache are uncontrolled; do not infer a leak or leak absence from these medians alone."
+  },
+  "cases": [
+    {
+      "question_id": "D001",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 39.46135419999973,
+      "minimum_available_GiB": 3.227153778076172,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.8231544494628906,
+      "roles": {
+        "worker": 2.2783660888671875,
+        "ui": 0.4091377258300781,
+        "ollama": 2.367462158203125,
+        "chrome": 0.7674331665039062,
+        "observer": 0.099029541015625
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1162,
+      "output_tokens": 18,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D001-B.json",
+        "size_bytes": 217287,
+        "sha256": "3f3e4b85dd4b07aa6c70efab7483ced78ffb06024c820e195eb8e1e07c91c0da"
+      }
+    },
+    {
+      "question_id": "D002",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.824583300000086,
+      "minimum_available_GiB": 3.0360870361328125,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6332168579101562,
+      "roles": {
+        "worker": 2.2231369018554688,
+        "ui": 0.4088630676269531,
+        "ollama": 2.367809295654297,
+        "chrome": 0.6512603759765625,
+        "observer": 0.048915863037109375
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1380,
+      "output_tokens": 18,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D002-B.json",
+        "size_bytes": 226496,
+        "sha256": "d2bd6b1b762105144eb589ba7c45ff4006c31fc906eae9608b0c54e5400ed4d0"
+      }
+    },
+    {
+      "question_id": "D003",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 44.17574080000031,
+      "minimum_available_GiB": 3.13262939453125,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6322593688964844,
+      "roles": {
+        "worker": 2.281230926513672,
+        "ui": 0.4088020324707031,
+        "ollama": 2.3682937622070312,
+        "chrome": 0.6572380065917969,
+        "observer": 0.05092620849609375
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1608,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D003-B.json",
+        "size_bytes": 227588,
+        "sha256": "e32fcd39137e399fd21a5cdeffbb92453f4a2c407078f2f2617548da429d20f6"
+      }
+    },
+    {
+      "question_id": "D004",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 39.15943010000046,
+      "minimum_available_GiB": 3.133983612060547,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6336517333984375,
+      "roles": {
+        "worker": 2.257843017578125,
+        "ui": 0.4087677001953125,
+        "ollama": 2.368610382080078,
+        "chrome": 0.6263999938964844,
+        "observer": 0.05188751220703125
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1169,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D004-B.json",
+        "size_bytes": 227878,
+        "sha256": "7fc08155f877704ce57515f29ac73de5c5e8d74533c99eafbe3ae638089f1a2b"
+      }
+    },
+    {
+      "question_id": "D005",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 42.456669900000634,
+      "minimum_available_GiB": 3.0401992797851562,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6366729736328125,
+      "roles": {
+        "worker": 2.2331581115722656,
+        "ui": 0.4087677001953125,
+        "ollama": 2.366851806640625,
+        "chrome": 0.8053512573242188,
+        "observer": 0.05401611328125
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1267,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D005-B.json",
+        "size_bytes": 225353,
+        "sha256": "24138f45820c9267565c8ca3ff93a4f2d53c5658e1c226e35207aa2a11de00e3"
+      }
+    },
+    {
+      "question_id": "D006",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 39.67108009999993,
+      "minimum_available_GiB": 3.23046875,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6210784912109375,
+      "roles": {
+        "worker": 2.305828094482422,
+        "ui": 0.40518951416015625,
+        "ollama": 2.3667373657226562,
+        "chrome": 0.6145858764648438,
+        "observer": 0.055938720703125
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1237,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D006-B.json",
+        "size_bytes": 230873,
+        "sha256": "7c970529195e3c630ca448ca14ad7ea9cdb29e5bbda5ff62f9af78a53a66f7e1"
+      }
+    },
+    {
+      "question_id": "D007",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 41.37687869999991,
+      "minimum_available_GiB": 3.3712081909179688,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6231040954589844,
+      "roles": {
+        "worker": 2.424816131591797,
+        "ui": 0.40558624267578125,
+        "ollama": 2.3669471740722656,
+        "chrome": 0.6145591735839844,
+        "observer": 0.057628631591796875
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1367,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D007-B.json",
+        "size_bytes": 241871,
+        "sha256": "763cf00f3fa12f3e90297be2166936eb492c112632195174b3c979b1f33c0b5d"
+      }
+    },
+    {
+      "question_id": "D008",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 41.318776199999775,
+      "minimum_available_GiB": 3.399791717529297,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6290245056152344,
+      "roles": {
+        "worker": 2.2711830139160156,
+        "ui": 0.40558624267578125,
+        "ollama": 2.3668785095214844,
+        "chrome": 0.6146812438964844,
+        "observer": 0.059787750244140625
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1418,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D008-B.json",
+        "size_bytes": 237014,
+        "sha256": "a251657f14d4e049f0f12d58081fbe3447044fbabaca17a5d172708094b555e7"
+      }
+    },
+    {
+      "question_id": "D009",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.69885239999985,
+      "minimum_available_GiB": 3.4765586853027344,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6287574768066406,
+      "roles": {
+        "worker": 2.086406707763672,
+        "ui": 0.4055671691894531,
+        "ollama": 2.367351531982422,
+        "chrome": 0.6146392822265625,
+        "observer": 0.06159210205078125
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1288,
+      "output_tokens": 29,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D009-B.json",
+        "size_bytes": 236332,
+        "sha256": "0dbdcbbb74efa6ba0e31e7d3e39e916d9bb3d710ddbfc9d78b9f7a09ea75c69d"
+      }
+    },
+    {
+      "question_id": "D010",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.75825460000033,
+      "minimum_available_GiB": 3.5101356506347656,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.627368927001953,
+      "roles": {
+        "worker": 2.089588165283203,
+        "ui": 0.40544891357421875,
+        "ollama": 2.3669586181640625,
+        "chrome": 0.614593505859375,
+        "observer": 0.06284332275390625
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1321,
+      "output_tokens": 22,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D010-B.json",
+        "size_bytes": 233232,
+        "sha256": "2e987104886d6636309bfeecf38277c6bcba9ee39dbe92202f81900abd57c86f"
+      }
+    },
+    {
+      "question_id": "D011",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 42.11034579999978,
+      "minimum_available_GiB": 3.451152801513672,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.631877899169922,
+      "roles": {
+        "worker": 2.2362136840820312,
+        "ui": 0.40544891357421875,
+        "ollama": 2.3673629760742188,
+        "chrome": 0.613800048828125,
+        "observer": 0.06292343139648438
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1437,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D011-B.json",
+        "size_bytes": 236195,
+        "sha256": "d005df39b8e98821a473b7ee3937d253a5995d16ef520520b6659265a9d42016"
+      }
+    },
+    {
+      "question_id": "D012",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 39.84606050000002,
+      "minimum_available_GiB": 3.4663047790527344,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.630939483642578,
+      "roles": {
+        "worker": 2.2570648193359375,
+        "ui": 0.40544891357421875,
+        "ollama": 2.367504119873047,
+        "chrome": 0.6136512756347656,
+        "observer": 0.06616973876953125
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1134,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D012-B.json",
+        "size_bytes": 213876,
+        "sha256": "5ccea25feafddebe51ddf5ff41967116edfedb51079c2558ea6a67e7ec585303"
+      }
+    },
+    {
+      "question_id": "D013",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 42.96605410000029,
+      "minimum_available_GiB": 3.4747314453125,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6334266662597656,
+      "roles": {
+        "worker": 2.2681427001953125,
+        "ui": 0.40544891357421875,
+        "ollama": 2.36724853515625,
+        "chrome": 0.6136054992675781,
+        "observer": 0.06607818603515625
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1352,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D013-B.json",
+        "size_bytes": 240103,
+        "sha256": "c6ab08bcf1144d4843c331b32a6d677400f7eb5f1c4c6771a65225104d6e74a2"
+      }
+    },
+    {
+      "question_id": "D014",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 43.35739680000006,
+      "minimum_available_GiB": 3.4554481506347656,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6407470703125,
+      "roles": {
+        "worker": 2.0967483520507812,
+        "ui": 0.4055519104003906,
+        "ollama": 2.368602752685547,
+        "chrome": 0.6136131286621094,
+        "observer": 0.07059478759765625
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1199,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D014-B.json",
+        "size_bytes": 230710,
+        "sha256": "dc5e78a82abcbda38bbe0acff588a747f97fd37c397617b7f45a2186158a2503"
+      }
+    },
+    {
+      "question_id": "D015",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 41.81069709999974,
+      "minimum_available_GiB": 3.5349159240722656,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.637176513671875,
+      "roles": {
+        "worker": 2.3086585998535156,
+        "ui": 0.4055519104003906,
+        "ollama": 2.3676795959472656,
+        "chrome": 0.6142768859863281,
+        "observer": 0.0724945068359375
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1323,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D015-B.json",
+        "size_bytes": 232723,
+        "sha256": "e6a216c89ffb04287c23c811256ed89ce577917b3e1c62e5d87818d40a88b15f"
+      }
+    },
+    {
+      "question_id": "D016",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.908415899999454,
+      "minimum_available_GiB": 3.6206703186035156,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.640827178955078,
+      "roles": {
+        "worker": 2.291179656982422,
+        "ui": 0.4055519104003906,
+        "ollama": 2.3675537109375,
+        "chrome": 0.6140556335449219,
+        "observer": 0.07366561889648438
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1284,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D016-B.json",
+        "size_bytes": 237697,
+        "sha256": "e2008e4e43e5b4c84b256246eb1ae37a5e44c65ed0268cbd58d1020edb794953"
+      }
+    },
+    {
+      "question_id": "D017",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 43.90235269999994,
+      "minimum_available_GiB": 3.4780731201171875,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6409225463867188,
+      "roles": {
+        "worker": 2.0909080505371094,
+        "ui": 0.4054603576660156,
+        "ollama": 2.367969512939453,
+        "chrome": 0.6140289306640625,
+        "observer": 0.075439453125
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1447,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D017-B.json",
+        "size_bytes": 233467,
+        "sha256": "986a5c0c0f0f8dbce92e28d5b6d02a4d73a8f97df60c9c5780ea724563692bd3"
+      }
+    },
+    {
+      "question_id": "D018",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.91755069999999,
+      "minimum_available_GiB": 3.3962020874023438,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6448135375976562,
+      "roles": {
+        "worker": 2.106037139892578,
+        "ui": 0.4054603576660156,
+        "ollama": 2.3683547973632812,
+        "chrome": 0.6137733459472656,
+        "observer": 0.07712554931640625
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1186,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D018-B.json",
+        "size_bytes": 237046,
+        "sha256": "ab60b8a74fe8872c2816ae13acce7141c45ba39cd09c345de92a22a7304974be"
+      }
+    },
+    {
+      "question_id": "D019",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 42.975606799999696,
+      "minimum_available_GiB": 3.395275115966797,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.645763397216797,
+      "roles": {
+        "worker": 2.1993064880371094,
+        "ui": 0.4054603576660156,
+        "ollama": 2.3681297302246094,
+        "chrome": 0.6138038635253906,
+        "observer": 0.08487319946289062
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1418,
+      "output_tokens": 36,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D019-B.json",
+        "size_bytes": 244684,
+        "sha256": "88f1c4f291b880eb1a074130590b0ffc2f8e3bc7691580db465a5a3a0d7eb578"
+      }
+    },
+    {
+      "question_id": "D020",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.50554969999939,
+      "minimum_available_GiB": 3.4609527587890625,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6477012634277344,
+      "roles": {
+        "worker": 2.1386795043945312,
+        "ui": 0.4054603576660156,
+        "ollama": 2.3673973083496094,
+        "chrome": 0.6138038635253906,
+        "observer": 0.08211898803710938
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1169,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D020-B.json",
+        "size_bytes": 237090,
+        "sha256": "6678212bcd3ce8ab360d10751ba87d88d1840f0fe540044d218eecb98e8c2fdf"
+      }
+    },
+    {
+      "question_id": "D021",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 41.70505959999991,
+      "minimum_available_GiB": 3.5527114868164062,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6494369506835938,
+      "roles": {
+        "worker": 2.0976104736328125,
+        "ui": 0.4054603576660156,
+        "ollama": 2.3690338134765625,
+        "chrome": 0.6138267517089844,
+        "observer": 0.08395767211914062
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1339,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D021-B.json",
+        "size_bytes": 243081,
+        "sha256": "4e883fc27635fa0a9ed5d091d8674933f86b19ac8564bf6fc155b61813455e10"
+      }
+    },
+    {
+      "question_id": "D022",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 41.19208460000027,
+      "minimum_available_GiB": 3.5298080444335938,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6521034240722656,
+      "roles": {
+        "worker": 2.0931129455566406,
+        "ui": 0.4054603576660156,
+        "ollama": 2.3683509826660156,
+        "chrome": 0.6137237548828125,
+        "observer": 0.0827484130859375
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1274,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D022-B.json",
+        "size_bytes": 239722,
+        "sha256": "575a040027035b844d78c8f569aee09a31af7a381c06220f0917629ee0811c0e"
+      }
+    },
+    {
+      "question_id": "D023",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 42.05721840000024,
+      "minimum_available_GiB": 3.498668670654297,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.653636932373047,
+      "roles": {
+        "worker": 2.2841644287109375,
+        "ui": 0.4054832458496094,
+        "ollama": 2.367950439453125,
+        "chrome": 0.61322021484375,
+        "observer": 0.07880783081054688
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1418,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D023-B.json",
+        "size_bytes": 247865,
+        "sha256": "4bfed70f050ba062a51920cfb01b0e5647d89aec9485eb5a19fd1354e14f3ba6"
+      }
+    },
+    {
+      "question_id": "D024",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.86631820000002,
+      "minimum_available_GiB": 3.2930908203125,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.658496856689453,
+      "roles": {
+        "worker": 2.193065643310547,
+        "ui": 0.405487060546875,
+        "ollama": 2.3683509826660156,
+        "chrome": 0.61273193359375,
+        "observer": 0.08870315551757812
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1380,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D024-B.json",
+        "size_bytes": 234902,
+        "sha256": "c3be667779cc4b257bf0624497fbdf03b901fd2e88212ad5cb1e0b1115b627d7"
+      }
+    },
+    {
+      "question_id": "D025",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.966449000000466,
+      "minimum_available_GiB": 3.4859771728515625,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6543121337890625,
+      "roles": {
+        "worker": 2.261913299560547,
+        "ui": 0.405487060546875,
+        "ollama": 2.3681106567382812,
+        "chrome": 0.612701416015625,
+        "observer": 0.082122802734375
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1314,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D025-B.json",
+        "size_bytes": 233116,
+        "sha256": "24e772a104de9707f223bd73a4989f14a252727df3a1ee425d3b19c8149a83c5"
+      }
+    },
+    {
+      "question_id": "D026",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 41.340342899999996,
+      "minimum_available_GiB": 3.551830291748047,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.654296875,
+      "roles": {
+        "worker": 2.248180389404297,
+        "ui": 0.4054718017578125,
+        "ollama": 2.3685531616210938,
+        "chrome": 0.6127052307128906,
+        "observer": 0.0838470458984375
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1299,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D026-B.json",
+        "size_bytes": 228113,
+        "sha256": "444c54ac2b1002a7f1e5cd7a207efc1f278d28781b0352af45a3784d61c7a60f"
+      }
+    },
+    {
+      "question_id": "D027",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 43.23378049999974,
+      "minimum_available_GiB": 3.5609092712402344,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6611671447753906,
+      "roles": {
+        "worker": 2.0984878540039062,
+        "ui": 0.4054718017578125,
+        "ollama": 2.3685836791992188,
+        "chrome": 0.6126823425292969,
+        "observer": 0.09252548217773438
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1468,
+      "output_tokens": 36,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D027-B.json",
+        "size_bytes": 248612,
+        "sha256": "d99e1b267b460032cb7b3e5e7a2ce9ed7ab258c39907d737ba0d4c1600e11191"
+      }
+    },
+    {
+      "question_id": "D028",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 39.876215899999806,
+      "minimum_available_GiB": 3.5461807250976562,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.662811279296875,
+      "roles": {
+        "worker": 2.0935440063476562,
+        "ui": 0.4054718017578125,
+        "ollama": 2.3682861328125,
+        "chrome": 0.6126823425292969,
+        "observer": 0.08737564086914062
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1289,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D028-B.json",
+        "size_bytes": 232333,
+        "sha256": "79fe1afd3d9594e52b367b0d8cbc9a9b1f6a46eb7baee40fb782c691a3cc27ec"
+      }
+    },
+    {
+      "question_id": "D029",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 37.647387799999706,
+      "minimum_available_GiB": 3.675090789794922,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.665271759033203,
+      "roles": {
+        "worker": 2.089855194091797,
+        "ui": 0.4054756164550781,
+        "ollama": 2.368938446044922,
+        "chrome": 0.6126174926757812,
+        "observer": 0.09712600708007812
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1087,
+      "output_tokens": 22,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D029-B.json",
+        "size_bytes": 226137,
+        "sha256": "c227d665f0f3c49c53aceccbe8fbb5ac98a3c0b0aba67e1a31018d248e5b5996"
+      }
+    },
+    {
+      "question_id": "D030",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.41234290000011,
+      "minimum_available_GiB": 3.6632957458496094,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.663257598876953,
+      "roles": {
+        "worker": 2.1010971069335938,
+        "ui": 0.405487060546875,
+        "ollama": 2.3676910400390625,
+        "chrome": 0.6126289367675781,
+        "observer": 0.09914398193359375
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1239,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D030-B.json",
+        "size_bytes": 241231,
+        "sha256": "b9fbb8aff70d93abede02690b26714c5e7b55afa3ef8d90446b029d92b20c5a8"
+      }
+    },
+    {
+      "question_id": "D031",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 42.37508179999986,
+      "minimum_available_GiB": 3.6423377990722656,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6684494018554688,
+      "roles": {
+        "worker": 2.0949249267578125,
+        "ui": 0.4054908752441406,
+        "ollama": 2.368816375732422,
+        "chrome": 0.612640380859375,
+        "observer": 0.0941009521484375
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1480,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D031-B.json",
+        "size_bytes": 234994,
+        "sha256": "ad943bca422af310be4b5cb4c9f46370aa0bdf04d6ba5aae351bd7b42f844f58"
+      }
+    },
+    {
+      "question_id": "D032",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.4632060999993,
+      "minimum_available_GiB": 3.7402915954589844,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.665637969970703,
+      "roles": {
+        "worker": 2.095592498779297,
+        "ui": 0.4054718017578125,
+        "ollama": 2.3682327270507812,
+        "chrome": 0.6108131408691406,
+        "observer": 0.1032867431640625
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1364,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D032-B.json",
+        "size_bytes": 227785,
+        "sha256": "001659478f58afbd8da7c65746be04c6614c7590b025786ccc0183f621ae55b6"
+      }
+    },
+    {
+      "question_id": "D033",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.197427200000675,
+      "minimum_available_GiB": 3.424724578857422,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.667205810546875,
+      "roles": {
+        "worker": 2.3149757385253906,
+        "ui": 0.4054718017578125,
+        "ollama": 2.3682937622070312,
+        "chrome": 0.6108283996582031,
+        "observer": 0.10428237915039062
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1213,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D033-B.json",
+        "size_bytes": 219540,
+        "sha256": "8a152fd0ea139867d3915c1188b3e4e5232af43e7d74a2d38268c9eafee9652a"
+      }
+    },
+    {
+      "question_id": "D034",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.82877989999997,
+      "minimum_available_GiB": 3.547138214111328,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.669658660888672,
+      "roles": {
+        "worker": 2.4287796020507812,
+        "ui": 0.4054756164550781,
+        "ollama": 2.3687515258789062,
+        "chrome": 0.6105918884277344,
+        "observer": 0.10346221923828125
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1285,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D034-B.json",
+        "size_bytes": 227424,
+        "sha256": "d4a5004f059b8c96749a6dd27465d7e9baa1b4220a436ef4cb7140f9e8335d26"
+      }
+    },
+    {
+      "question_id": "D035",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 41.81452199999967,
+      "minimum_available_GiB": 3.4697532653808594,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6724700927734375,
+      "roles": {
+        "worker": 2.084991455078125,
+        "ui": 0.4054756164550781,
+        "ollama": 2.3692398071289062,
+        "chrome": 0.6106071472167969,
+        "observer": 0.10804367065429688
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1281,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D035-B.json",
+        "size_bytes": 228716,
+        "sha256": "4868a0a4a349f918f260182bd770f6ef60aa0d7e075b22a4f154edd43c29a577"
+      }
+    },
+    {
+      "question_id": "D036",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": false,
+      "seconds": 12.915618600000016,
+      "minimum_available_GiB": 5.8541107177734375,
+      "low_stage": "subprocess_start",
+      "peak_process_tree_rss_GiB": 1.2195281982421875,
+      "roles": {
+        "worker": 0.04328155517578125,
+        "ui": 0.40547943115234375,
+        "ollama": 0.059688568115234375,
+        "chrome": 0.6106109619140625,
+        "observer": 0.10046768188476562
+      },
+      "calls": 0,
+      "extra_retry_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D036-B.json",
+        "size_bytes": 32895,
+        "sha256": "7314fd9bf3f791b400b97cd72ffe9a4a569beaaa639ceb5d8cacd2348f54e969"
+      }
+    },
+    {
+      "question_id": "D037",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.126322699999946,
+      "minimum_available_GiB": 3.7065086364746094,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6763229370117188,
+      "roles": {
+        "worker": 2.4088897705078125,
+        "ui": 0.40547943115234375,
+        "ollama": 2.370067596435547,
+        "chrome": 0.6106376647949219,
+        "observer": 0.1097869873046875
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1349,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D037-B.json",
+        "size_bytes": 219046,
+        "sha256": "aa0eeca172a8cd7170ce57be22da5b2ea6c5674cef7b7a309e4434371aa3b124"
+      }
+    },
+    {
+      "question_id": "D038",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": false,
+      "seconds": 12.488614699999744,
+      "minimum_available_GiB": 6.1594085693359375,
+      "low_stage": "result_validation_start",
+      "peak_process_tree_rss_GiB": 1.221893310546875,
+      "roles": {
+        "worker": 0.0434112548828125,
+        "ui": 0.40547943115234375,
+        "ollama": 0.0598602294921875,
+        "chrome": 0.6106300354003906,
+        "observer": 0.11594772338867188
+      },
+      "calls": 0,
+      "extra_retry_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D038-B.json",
+        "size_bytes": 31725,
+        "sha256": "a1b9377512ab824e069562ee081156704d79c949a562d322674332ed8752782e"
+      }
+    },
+    {
+      "question_id": "D039",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 39.073046200000135,
+      "minimum_available_GiB": 3.7427215576171875,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.674358367919922,
+      "roles": {
+        "worker": 2.2845687866210938,
+        "ui": 0.405487060546875,
+        "ollama": 2.368804931640625,
+        "chrome": 0.6106414794921875,
+        "observer": 0.11041641235351562
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1200,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D039-B.json",
+        "size_bytes": 208507,
+        "sha256": "341a021ec92c7f9a419f6e7031e491a30d795bec3d5191bf0f4060bbca279605"
+      }
+    },
+    {
+      "question_id": "D040",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": false,
+      "seconds": 12.204989300000307,
+      "minimum_available_GiB": 6.184822082519531,
+      "low_stage": "chat_identity_validation_start",
+      "peak_process_tree_rss_GiB": 1.2256240844726562,
+      "roles": {
+        "worker": 0.04477691650390625,
+        "ui": 0.405487060546875,
+        "ollama": 0.06003570556640625,
+        "chrome": 0.61065673828125,
+        "observer": 0.11278915405273438
+      },
+      "calls": 0,
+      "extra_retry_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/D040-B.json",
+        "size_bytes": 32116,
+        "sha256": "de9914a9e50a93fdadf1772322de58d72911a5049f1239a38132af43eb03c596"
+      }
+    },
+    {
+      "question_id": "T001",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.81344529999933,
+      "minimum_available_GiB": 3.8012847900390625,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.678813934326172,
+      "roles": {
+        "worker": 2.0855941772460938,
+        "ui": 0.4054908752441406,
+        "ollama": 2.368999481201172,
+        "chrome": 0.6106681823730469,
+        "observer": 0.11354446411132812
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1411,
+      "output_tokens": 18,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T001-B.json",
+        "size_bytes": 227380,
+        "sha256": "5451d9a0795ebfa983707006f413e1b511603937ddc8eba4066d2b39173eca23"
+      }
+    },
+    {
+      "question_id": "T002",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 42.31315730000006,
+      "minimum_available_GiB": 3.694732666015625,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6812820434570312,
+      "roles": {
+        "worker": 2.4150733947753906,
+        "ui": 0.4054985046386719,
+        "ollama": 2.36871337890625,
+        "chrome": 0.610687255859375,
+        "observer": 0.10797882080078125
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1391,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T002-B.json",
+        "size_bytes": 227536,
+        "sha256": "fccb36b440b1f1804fabcb126a318714e536646caa86b271cedfb882e6d03706"
+      }
+    },
+    {
+      "question_id": "T003",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 43.025967199999286,
+      "minimum_available_GiB": 3.7484092712402344,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.680622100830078,
+      "roles": {
+        "worker": 2.2775726318359375,
+        "ui": 0.4054985046386719,
+        "ollama": 2.3691787719726562,
+        "chrome": 0.6107063293457031,
+        "observer": 0.11800765991210938
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1448,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T003-B.json",
+        "size_bytes": 245908,
+        "sha256": "252e8b64e2e9e69c40ed66d3f35877d8598715013fc8b3072db8817e6f8d0ac7"
+      }
+    },
+    {
+      "question_id": "T004",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 41.088109799999984,
+      "minimum_available_GiB": 3.818675994873047,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6824378967285156,
+      "roles": {
+        "worker": 2.191875457763672,
+        "ui": 0.4055061340332031,
+        "ollama": 2.3688697814941406,
+        "chrome": 0.6107063293457031,
+        "observer": 0.11147308349609375
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1461,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T004-B.json",
+        "size_bytes": 227173,
+        "sha256": "c2424280c808fdd9d5ea7d7604e3844e1ee391b8f01e1eaa95261fd04e21b155"
+      }
+    },
+    {
+      "question_id": "T005",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.41359480000028,
+      "minimum_available_GiB": 3.81243896484375,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.684497833251953,
+      "roles": {
+        "worker": 2.0999221801757812,
+        "ui": 0.4055061340332031,
+        "ollama": 2.3691177368164062,
+        "chrome": 0.6107368469238281,
+        "observer": 0.12061309814453125
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1314,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T005-B.json",
+        "size_bytes": 233889,
+        "sha256": "6e8c336928b304ebfa69d3fccadc86a30d5a8a7373d8e09c74ba2cbc38b72ce7"
+      }
+    },
+    {
+      "question_id": "T006",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 39.92782879999868,
+      "minimum_available_GiB": 3.6120834350585938,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6896705627441406,
+      "roles": {
+        "worker": 2.2758255004882812,
+        "ui": 0.40550994873046875,
+        "ollama": 2.3693313598632812,
+        "chrome": 0.6108436584472656,
+        "observer": 0.1159515380859375
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1202,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T006-B.json",
+        "size_bytes": 226915,
+        "sha256": "6e80b48c90b6e69c413a361cb3704b306f135c013b20ff1c6269abb1f4838130"
+      }
+    },
+    {
+      "question_id": "T007",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 42.50494869999966,
+      "minimum_available_GiB": 3.6847763061523438,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.686046600341797,
+      "roles": {
+        "worker": 2.0764122009277344,
+        "ui": 0.4055213928222656,
+        "ollama": 2.3685302734375,
+        "chrome": 0.6108856201171875,
+        "observer": 0.12398147583007812
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1422,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T007-B.json",
+        "size_bytes": 247040,
+        "sha256": "27da080570c465a29dce364899fe8037e5ec4590dae0300d80ba73e0d992e28b"
+      }
+    },
+    {
+      "question_id": "T008",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 39.957219600000826,
+      "minimum_available_GiB": 3.6998977661132812,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6901016235351562,
+      "roles": {
+        "worker": 2.1010704040527344,
+        "ui": 0.4055213928222656,
+        "ollama": 2.368793487548828,
+        "chrome": 0.6109199523925781,
+        "observer": 0.12612533569335938
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1223,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T008-B.json",
+        "size_bytes": 231757,
+        "sha256": "6be8445731d0c532bb94152916904b2bf4cb1616bfa64c92afe6955e174d5540"
+      }
+    },
+    {
+      "question_id": "T009",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 42.25552079999943,
+      "minimum_available_GiB": 3.6950759887695312,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6904296875,
+      "roles": {
+        "worker": 2.096302032470703,
+        "ui": 0.4055213928222656,
+        "ollama": 2.3684654235839844,
+        "chrome": 0.6109428405761719,
+        "observer": 0.1291351318359375
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1416,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T009-B.json",
+        "size_bytes": 232180,
+        "sha256": "d22708a41c66d5829f8890fe3b467e3569cb021d88776101c7a3a8ab25dd5999"
+      }
+    },
+    {
+      "question_id": "T010",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.41102950000095,
+      "minimum_available_GiB": 3.7122535705566406,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6951065063476562,
+      "roles": {
+        "worker": 2.088573455810547,
+        "ui": 0.4055328369140625,
+        "ollama": 2.368968963623047,
+        "chrome": 0.6109161376953125,
+        "observer": 0.12242507934570312
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1239,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T010-B.json",
+        "size_bytes": 244482,
+        "sha256": "0cf71114571ef89a2f6617a155d273be6bb0415521b5c665521d3b1a589dba6e"
+      }
+    },
+    {
+      "question_id": "T011",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 38.93396989999928,
+      "minimum_available_GiB": 3.6887130737304688,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6967086791992188,
+      "roles": {
+        "worker": 2.2542991638183594,
+        "ui": 0.4055366516113281,
+        "ollama": 2.3686790466308594,
+        "chrome": 0.6109199523925781,
+        "observer": 0.13138961791992188
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1137,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T011-B.json",
+        "size_bytes": 229979,
+        "sha256": "8caedeb4b476e5dcc0e2b495a0e40a0c0227a87a6f0d1829ba15439874f0e16f"
+      }
+    },
+    {
+      "question_id": "T012",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 38.916554800000085,
+      "minimum_available_GiB": 3.6878738403320312,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6968421936035156,
+      "roles": {
+        "worker": 2.2060317993164062,
+        "ui": 0.4055366516113281,
+        "ollama": 2.3691635131835938,
+        "chrome": 0.6109352111816406,
+        "observer": 0.13303756713867188
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1151,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T012-B.json",
+        "size_bytes": 239711,
+        "sha256": "d0da30c347d0660ff0f1db9796fef4743d2562e2ed8f6197edb0b1a0fa2ad242"
+      }
+    },
+    {
+      "question_id": "T013",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.46354229999997,
+      "minimum_available_GiB": 3.6953125,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6998672485351562,
+      "roles": {
+        "worker": 2.320098876953125,
+        "ui": 0.40554046630859375,
+        "ollama": 2.3696365356445312,
+        "chrome": 0.6109466552734375,
+        "observer": 0.1358184814453125
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1186,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T013-B.json",
+        "size_bytes": 236968,
+        "sha256": "a0352a5455e8b7ce4967fd36ce8c1b473d8b774e8c872f6f3de10528ace909e2"
+      }
+    },
+    {
+      "question_id": "T014",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 42.73900219999996,
+      "minimum_available_GiB": 3.6817054748535156,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.6999282836914062,
+      "roles": {
+        "worker": 2.2569961547851562,
+        "ui": 0.4055519104003906,
+        "ollama": 2.36907958984375,
+        "chrome": 0.6109848022460938,
+        "observer": 0.13446044921875
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1396,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T014-B.json",
+        "size_bytes": 248378,
+        "sha256": "ca428bd0e6edbe42d3e822cd89938620afc7bbc22c2f4c4d8890606b79cc105e"
+      }
+    },
+    {
+      "question_id": "T015",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.79624220000005,
+      "minimum_available_GiB": 3.6751632690429688,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.701679229736328,
+      "roles": {
+        "worker": 2.2153892517089844,
+        "ui": 0.4055519104003906,
+        "ollama": 2.3693389892578125,
+        "chrome": 0.6110038757324219,
+        "observer": 0.13836669921875
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1315,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T015-B.json",
+        "size_bytes": 225642,
+        "sha256": "ddf256a3b02a0d78c540474377c09198779f30c8a28fd09dc39eac273437e843"
+      }
+    },
+    {
+      "question_id": "T016",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 43.12382090000028,
+      "minimum_available_GiB": 3.7436676025390625,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.7073898315429688,
+      "roles": {
+        "worker": 2.0770111083984375,
+        "ui": 0.4055519104003906,
+        "ollama": 2.368621826171875,
+        "chrome": 0.6110000610351562,
+        "observer": 0.13903427124023438
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1416,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T016-B.json",
+        "size_bytes": 247638,
+        "sha256": "b3c3d41a0808bc629a864309d3ca5142670397327285b00e72f986d78c1c5eee"
+      }
+    },
+    {
+      "question_id": "T017",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 39.4203280999991,
+      "minimum_available_GiB": 3.7369728088378906,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.709197998046875,
+      "roles": {
+        "worker": 2.1560401916503906,
+        "ui": 0.4055595397949219,
+        "ollama": 2.372528076171875,
+        "chrome": 0.6110038757324219,
+        "observer": 0.34593963623046875
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1238,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T017-B.json",
+        "size_bytes": 223815,
+        "sha256": "bf1f558dc2fa7d1f252f8d88a65c0dc1d1bcc4fa39ddd7b6eb91821723099aa6"
+      }
+    },
+    {
+      "question_id": "T018",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 38.68019319999985,
+      "minimum_available_GiB": 3.7755279541015625,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.7065200805664062,
+      "roles": {
+        "worker": 2.0917396545410156,
+        "ui": 0.4055595397949219,
+        "ollama": 2.368633270263672,
+        "chrome": 0.6110153198242188,
+        "observer": 0.14345932006835938
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1194,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T018-B.json",
+        "size_bytes": 229068,
+        "sha256": "789d4ac768b2bc39aeb0f2b06d71762b130af6bb0a6d054324d0df864bdc1df6"
+      }
+    },
+    {
+      "question_id": "T019",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 42.522914299999684,
+      "minimum_available_GiB": 3.779388427734375,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.7085304260253906,
+      "roles": {
+        "worker": 2.455585479736328,
+        "ui": 0.4055671691894531,
+        "ollama": 2.3689231872558594,
+        "chrome": 0.6110343933105469,
+        "observer": 0.14550399780273438
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1330,
+      "output_tokens": 36,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T019-B.json",
+        "size_bytes": 241673,
+        "sha256": "b17f1a845f554f46b02f27a628373eada0d9e2d4402fb0ba78166bc72b97540e"
+      }
+    },
+    {
+      "question_id": "T020",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 43.18068160000075,
+      "minimum_available_GiB": 3.7254371643066406,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.7139053344726562,
+      "roles": {
+        "worker": 2.0804672241210938,
+        "ui": 0.40557861328125,
+        "ollama": 2.3698196411132812,
+        "chrome": 0.611053466796875,
+        "observer": 0.153167724609375
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1509,
+      "output_tokens": 22,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T020-B.json",
+        "size_bytes": 237187,
+        "sha256": "c750579eb61dce1bd81fbfef2047a81db845d98b2fcf793b651d015fc6a894c4"
+      }
+    },
+    {
+      "question_id": "T021",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.14779920000001,
+      "minimum_available_GiB": 3.7390098571777344,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.7150802612304688,
+      "roles": {
+        "worker": 2.2412147521972656,
+        "ui": 0.4055824279785156,
+        "ollama": 2.3693389892578125,
+        "chrome": 0.6110801696777344,
+        "observer": 0.14876556396484375
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1249,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T021-B.json",
+        "size_bytes": 239837,
+        "sha256": "dbe9993c988939c473a32158ed4ab6cf4caa4fe7c76414ece94fb4d334ae5bc1"
+      }
+    },
+    {
+      "question_id": "T022",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.282406100001026,
+      "minimum_available_GiB": 3.751983642578125,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.7167739868164062,
+      "roles": {
+        "worker": 2.2529525756835938,
+        "ui": 0.4055824279785156,
+        "ollama": 2.369232177734375,
+        "chrome": 0.6111068725585938,
+        "observer": 0.15123367309570312
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1154,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T022-B.json",
+        "size_bytes": 235837,
+        "sha256": "715db372855e41d0071a425e9c6360cd1b207a70576fcb678943e2d42faf9edc"
+      }
+    },
+    {
+      "question_id": "T023",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.32802320000155,
+      "minimum_available_GiB": 3.850860595703125,
+      "low_stage": "answer_model_end",
+      "peak_process_tree_rss_GiB": 3.719409942626953,
+      "roles": {
+        "worker": 2.1814804077148438,
+        "ui": 0.40558624267578125,
+        "ollama": 2.369190216064453,
+        "chrome": 0.6111717224121094,
+        "observer": 0.15292739868164062
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1267,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T023-B.json",
+        "size_bytes": 226719,
+        "sha256": "6736ac83367715e2ae118a51ef91162d53ed61a6ff64886c3e3b3ac6186de943"
+      }
+    },
+    {
+      "question_id": "T024",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 39.60561280000002,
+      "minimum_available_GiB": 3.886157989501953,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.720531463623047,
+      "roles": {
+        "worker": 2.403705596923828,
+        "ui": 0.4055900573730469,
+        "ollama": 2.369770050048828,
+        "chrome": 0.6111869812011719,
+        "observer": 0.15154266357421875
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1160,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T024-B.json",
+        "size_bytes": 230278,
+        "sha256": "caecb575ef506b523d82b14488c759431871b32b607c9f6ba5701b6692b658e5"
+      }
+    },
+    {
+      "question_id": "T025",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.855137299999114,
+      "minimum_available_GiB": 3.875476837158203,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.7230987548828125,
+      "roles": {
+        "worker": 2.0993576049804688,
+        "ui": 0.4055938720703125,
+        "ollama": 2.369464874267578,
+        "chrome": 0.611175537109375,
+        "observer": 0.1559600830078125
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1339,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T025-B.json",
+        "size_bytes": 245676,
+        "sha256": "51c52b92206082f4a0aaccc8854c9393102f735b09ee42c610775b04900d9dfa"
+      }
+    },
+    {
+      "question_id": "T026",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.302986699998655,
+      "minimum_available_GiB": 3.8964385986328125,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.72406005859375,
+      "roles": {
+        "worker": 2.369335174560547,
+        "ui": 0.4055938720703125,
+        "ollama": 2.369518280029297,
+        "chrome": 0.6111679077148438,
+        "observer": 0.15566635131835938
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1251,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T026-B.json",
+        "size_bytes": 239630,
+        "sha256": "100a853f530583fa22ca0d1ea615aac6f58f7bebba54ca010a74883d449f271a"
+      }
+    },
+    {
+      "question_id": "T027",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.044554199999766,
+      "minimum_available_GiB": 3.8796234130859375,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.7254867553710938,
+      "roles": {
+        "worker": 2.0902671813964844,
+        "ui": 0.4056053161621094,
+        "ollama": 2.3689956665039062,
+        "chrome": 0.6112060546875,
+        "observer": 0.15960311889648438
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1317,
+      "output_tokens": 28,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T027-B.json",
+        "size_bytes": 239749,
+        "sha256": "1ea3883777f49697c1f38f8ce146184c313f418adae1a8eac6ca644ed5336b83"
+      }
+    },
+    {
+      "question_id": "T028",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 41.446914500000275,
+      "minimum_available_GiB": 3.856456756591797,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.726959228515625,
+      "roles": {
+        "worker": 2.0907554626464844,
+        "ui": 0.405609130859375,
+        "ollama": 2.369800567626953,
+        "chrome": 0.6112251281738281,
+        "observer": 0.16131973266601562
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1386,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T028-B.json",
+        "size_bytes": 237919,
+        "sha256": "a63f35f1e4c326ed3113820e7eb5c7ba822bfdc9004291017d164b4f2bcee4c6"
+      }
+    },
+    {
+      "question_id": "T029",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 41.141629899999316,
+      "minimum_available_GiB": 3.901195526123047,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.7306289672851562,
+      "roles": {
+        "worker": 2.261066436767578,
+        "ui": 0.405609130859375,
+        "ollama": 2.3704376220703125,
+        "chrome": 0.6113739013671875,
+        "observer": 0.16301345825195312
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1282,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T029-B.json",
+        "size_bytes": 241376,
+        "sha256": "060a5d81817e1f58cc8002d987b3e566d1c99e3369981dd363b61450c96ffe2f"
+      }
+    },
+    {
+      "question_id": "T030",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 44.519887300000846,
+      "minimum_available_GiB": 3.837963104248047,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.7281341552734375,
+      "roles": {
+        "worker": 2.1241722106933594,
+        "ui": 0.4056205749511719,
+        "ollama": 2.3692398071289062,
+        "chrome": 0.6113204956054688,
+        "observer": 0.16510391235351562
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1429,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T030-B.json",
+        "size_bytes": 240468,
+        "sha256": "ac61d7b5a42326a3e37e62d12bd963c98ebfedf47a170656f70d9a48abc2ec22"
+      }
+    },
+    {
+      "question_id": "T031",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 39.16215270000066,
+      "minimum_available_GiB": 3.573627471923828,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.72979736328125,
+      "roles": {
+        "worker": 2.2359771728515625,
+        "ui": 0.4056205749511719,
+        "ollama": 2.3684463500976562,
+        "chrome": 0.6113243103027344,
+        "observer": 0.1664276123046875
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1145,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T031-B.json",
+        "size_bytes": 227083,
+        "sha256": "5df45a9b03d7c0c1ab6732f5a47b19b8c5a44c1932af82a3e5da60da93bb7d41"
+      }
+    },
+    {
+      "question_id": "T032",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 42.50252680000085,
+      "minimum_available_GiB": 3.6374855041503906,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.7345809936523438,
+      "roles": {
+        "worker": 2.2970008850097656,
+        "ui": 0.4056129455566406,
+        "ollama": 2.370014190673828,
+        "chrome": 0.6113128662109375,
+        "observer": 0.16844940185546875
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1458,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T032-B.json",
+        "size_bytes": 238043,
+        "sha256": "29484b559104f29d9fb4be21b2ffa80f518f554245151d2d6e01172b1f9c17b7"
+      }
+    },
+    {
+      "question_id": "T033",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 39.69833859999926,
+      "minimum_available_GiB": 3.6257476806640625,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.734466552734375,
+      "roles": {
+        "worker": 2.080097198486328,
+        "ui": 0.40561676025390625,
+        "ollama": 2.369861602783203,
+        "chrome": 0.6112861633300781,
+        "observer": 0.17018508911132812
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1292,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T033-B.json",
+        "size_bytes": 231188,
+        "sha256": "00147c71879fc69a6c814dfb1731f11c613f48f0bd387b1de8c4b36be1714c14"
+      }
+    },
+    {
+      "question_id": "T034",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 41.35547559999941,
+      "minimum_available_GiB": 3.6669273376464844,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.738170623779297,
+      "roles": {
+        "worker": 2.2761573791503906,
+        "ui": 0.4056205749511719,
+        "ollama": 2.369892120361328,
+        "chrome": 0.6113090515136719,
+        "observer": 0.17114639282226562
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1369,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T034-B.json",
+        "size_bytes": 224959,
+        "sha256": "eb8c6b98cc78217ec9eeb92b7dbbf4853bc951f924de38fc101843daaf579a84"
+      }
+    },
+    {
+      "question_id": "T035",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 38.82810490000156,
+      "minimum_available_GiB": 3.8511428833007812,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.546772003173828,
+      "roles": {
+        "worker": 2.223712921142578,
+        "ui": 0.2806663513183594,
+        "ollama": 2.3677520751953125,
+        "chrome": 0.54766845703125,
+        "observer": 0.165374755859375
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1206,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T035-B.json",
+        "size_bytes": 229698,
+        "sha256": "637f57863a045f329e6b4a43b9c3c2080e3d98cc0a0f8a5713c404f7362db978"
+      }
+    },
+    {
+      "question_id": "T036",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 39.9011945000002,
+      "minimum_available_GiB": 3.84954833984375,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.5509910583496094,
+      "roles": {
+        "worker": 2.4102096557617188,
+        "ui": 0.2806739807128906,
+        "ollama": 2.3684043884277344,
+        "chrome": 0.5476760864257812,
+        "observer": 0.17291259765625
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1138,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T036-B.json",
+        "size_bytes": 235868,
+        "sha256": "c008ab99bf7d203d406408ba083e033f4a48c7892439171f9f799cfa145f74fa"
+      }
+    },
+    {
+      "question_id": "T037",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.332245100000364,
+      "minimum_available_GiB": 3.8383636474609375,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.5507659912109375,
+      "roles": {
+        "worker": 2.266326904296875,
+        "ui": 0.2806739807128906,
+        "ollama": 2.36834716796875,
+        "chrome": 0.5476951599121094,
+        "observer": 0.17481613159179688
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1238,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T037-B.json",
+        "size_bytes": 231138,
+        "sha256": "0da0cb3bec8bfd4ee9ed2e936e50d3a6583fa3bf19c7b00db60fc45922a41dd7"
+      }
+    },
+    {
+      "question_id": "T038",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 41.47354119999909,
+      "minimum_available_GiB": 3.984485626220703,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.54327392578125,
+      "roles": {
+        "worker": 2.0812454223632812,
+        "ui": 0.2806739807128906,
+        "ollama": 2.3679351806640625,
+        "chrome": 0.5477218627929688,
+        "observer": 0.17815399169921875
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1327,
+      "output_tokens": 35,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T038-B.json",
+        "size_bytes": 242637,
+        "sha256": "898a469d7f3cef01f903ad0314a44fcac76e9e66d86749818a8bb4c78407dd26"
+      }
+    },
+    {
+      "question_id": "T039",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 44.27347759999975,
+      "minimum_available_GiB": 3.9141387939453125,
+      "low_stage": "answer_model_end",
+      "peak_process_tree_rss_GiB": 3.55572509765625,
+      "roles": {
+        "worker": 2.3105010986328125,
+        "ui": 0.2806816101074219,
+        "ollama": 2.3681602478027344,
+        "chrome": 0.5477523803710938,
+        "observer": 0.18002700805664062
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1417,
+      "output_tokens": 28,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T039-B.json",
+        "size_bytes": 239547,
+        "sha256": "d5a7e1cc05e5f498fce6b3f14f6cd4e91699e9fe15e0bb3d4d07cef66786af69"
+      }
+    },
+    {
+      "question_id": "T040",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 41.991547299998274,
+      "minimum_available_GiB": 3.8578262329101562,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.558124542236328,
+      "roles": {
+        "worker": 2.0824661254882812,
+        "ui": 0.2806892395019531,
+        "ollama": 2.3678932189941406,
+        "chrome": 0.5477714538574219,
+        "observer": 0.18166732788085938
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1233,
+      "output_tokens": 21,
+      "status": "answered",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T040-B.json",
+        "size_bytes": 229994,
+        "sha256": "986847ff21a5ad76c7e75fb49300caa561cec7c2d721a5504aef16c9a3ecfaf2"
+      }
+    },
+    {
+      "question_id": "T041",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 42.87546730000031,
+      "minimum_available_GiB": 3.8381118774414062,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.5567893981933594,
+      "roles": {
+        "worker": 2.357311248779297,
+        "ui": 0.2806892395019531,
+        "ollama": 2.368053436279297,
+        "chrome": 0.5477867126464844,
+        "observer": 0.1755828857421875
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1422,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T041-B.json",
+        "size_bytes": 225000,
+        "sha256": "759920cacc84385d2a85ab75ec8896fd072086effe253fb9945eda4b0c7f7c52"
+      }
+    },
+    {
+      "question_id": "T042",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.30834529999993,
+      "minimum_available_GiB": 3.874073028564453,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.5589332580566406,
+      "roles": {
+        "worker": 2.2756004333496094,
+        "ui": 0.2803535461425781,
+        "ollama": 2.367717742919922,
+        "chrome": 0.5451545715332031,
+        "observer": 0.18426895141601562
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1382,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T042-B.json",
+        "size_bytes": 225195,
+        "sha256": "18e3edf7c5e1962ee1e49566bfbb501e118e1915c272644a8b1f3e4743c839f2"
+      }
+    },
+    {
+      "question_id": "T043",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": false,
+      "seconds": 12.369623499998852,
+      "minimum_available_GiB": 6.371959686279297,
+      "low_stage": "parent_validation_end",
+      "peak_process_tree_rss_GiB": 1.1054763793945312,
+      "roles": {
+        "worker": 0.043064117431640625,
+        "ui": 0.28035736083984375,
+        "ollama": 0.05910491943359375,
+        "chrome": 0.5451736450195312,
+        "observer": 0.18555068969726562
+      },
+      "calls": 0,
+      "extra_retry_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T043-B.json",
+        "size_bytes": 30915,
+        "sha256": "b549ec750dff7374c24a96a9b8d9dd8b49b3faa6d0a6c2e30d0b752db787ee23"
+      }
+    },
+    {
+      "question_id": "T044",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 38.84424819999913,
+      "minimum_available_GiB": 3.9881668090820312,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.55908203125,
+      "roles": {
+        "worker": 2.0851402282714844,
+        "ui": 0.2803611755371094,
+        "ollama": 2.368511199951172,
+        "chrome": 0.5451698303222656,
+        "observer": 0.18608856201171875
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1201,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T044-B.json",
+        "size_bytes": 224477,
+        "sha256": "ba948e42fa50c5843da9a87b273dc8d6af5be5b10da33b27eb781e776fe32235"
+      }
+    },
+    {
+      "question_id": "T045",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.74942220000048,
+      "minimum_available_GiB": 3.9771347045898438,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.564983367919922,
+      "roles": {
+        "worker": 2.273181915283203,
+        "ui": 0.2803611755371094,
+        "ollama": 2.367259979248047,
+        "chrome": 0.5451927185058594,
+        "observer": 0.18732070922851562
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1451,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T045-B.json",
+        "size_bytes": 226729,
+        "sha256": "1f7ee432db3b587d9cded0de8ce6e4fda95e637039a91f3f32fdf7f25222b691"
+      }
+    },
+    {
+      "question_id": "T046",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.87580049999997,
+      "minimum_available_GiB": 4.042598724365234,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.561962127685547,
+      "roles": {
+        "worker": 2.076862335205078,
+        "ui": 0.280364990234375,
+        "ollama": 2.367828369140625,
+        "chrome": 0.5454216003417969,
+        "observer": 0.18822860717773438
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1450,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T046-B.json",
+        "size_bytes": 234106,
+        "sha256": "c8dd7f16c0076d3a81ef6ad9f5ac5c5d3c8a64c2ed83f5684bf7bd85a03f5cbb"
+      }
+    },
+    {
+      "question_id": "T047",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 42.728616799999145,
+      "minimum_available_GiB": 3.9371681213378906,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.568145751953125,
+      "roles": {
+        "worker": 2.091815948486328,
+        "ui": 0.28037261962890625,
+        "ollama": 2.3683547973632812,
+        "chrome": 0.5454559326171875,
+        "observer": 0.19823074340820312
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1379,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T047-B.json",
+        "size_bytes": 226752,
+        "sha256": "fb4e0a8dc9994b99fb6b6fee4cb49f4181d7e796a40130151bda262bba98d494"
+      }
+    },
+    {
+      "question_id": "T048",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.59631020000052,
+      "minimum_available_GiB": 3.7094268798828125,
+      "low_stage": "answer_model_end",
+      "peak_process_tree_rss_GiB": 3.5668869018554688,
+      "roles": {
+        "worker": 2.0751190185546875,
+        "ui": 0.2803764343261719,
+        "ollama": 2.368427276611328,
+        "chrome": 0.5455360412597656,
+        "observer": 0.194488525390625
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1260,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T048-B.json",
+        "size_bytes": 223569,
+        "sha256": "7bd97216752a2f8dfdbe306e70c2be7569d4dfcad263ab9676032e6e7f1a9c43"
+      }
+    },
+    {
+      "question_id": "T049",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.38174149999941,
+      "minimum_available_GiB": 3.701152801513672,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.569110870361328,
+      "roles": {
+        "worker": 2.2270965576171875,
+        "ui": 0.2803802490234375,
+        "ollama": 2.3673362731933594,
+        "chrome": 0.5455551147460938,
+        "observer": 0.1954803466796875
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1425,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T049-B.json",
+        "size_bytes": 232632,
+        "sha256": "57302f8ff8e38e81070023023ef8c73f0ce5f848de5dc0dd005074fcef85de0b"
+      }
+    },
+    {
+      "question_id": "T050",
+      "inputs_equal_E14": true,
+      "residency_order": true,
+      "normal": true,
+      "seconds": 40.49370699999963,
+      "minimum_available_GiB": 4.017662048339844,
+      "low_stage": "answer_model_start",
+      "peak_process_tree_rss_GiB": 3.401214599609375,
+      "roles": {
+        "worker": 2.1036376953125,
+        "ui": 0.2803840637207031,
+        "ollama": 2.367351531982422,
+        "chrome": 0.5455131530761719,
+        "observer": 0.19525909423828125
+      },
+      "calls": 1,
+      "extra_retry_calls": 0,
+      "input_tokens": 1309,
+      "output_tokens": 18,
+      "status": "refused",
+      "error": null,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemory90-01/worker/T050-B.json",
+        "size_bytes": 225046,
+        "sha256": "b8d25a34ebbab02f4d206dc8f2612c313958c829dd332667d60497a54b41bb47"
+      }
+    }
+  ],
+  "holdout_used": false,
+  "comparison": "Actual candidate90 versus historical E14 source review and inputs; no concurrent independent control inference."
+}
