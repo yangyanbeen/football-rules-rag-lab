@@ -52,7 +52,9 @@ def main(run):
         technical40=len(rows)==40 and counts['runtime_error']==0,citations_at_least_E14=cited>0 and supported*123>=75*cited,
         maximum_seconds=all(r['seconds']<=60 for r in rows),minimum_available_GiB=all(r['minimum_available_GiB']>=1 for r in rows))
     times=sorted(r['seconds'] for r in rows)
-    result=dict(scope=meta['scope'],source_commit=meta['source_commit'],gates=gates,overall_pass=all(gates.values()),
+    result=dict(scope=meta['scope'],source_commit=meta['source_commit'],dataset=meta['dataset'],
+        source_review_ledger=record(ledger) if ledger.exists() else None,scorer=record(Path(__file__)),
+        completion=record(run/'completed.json'),gates=gates,overall_pass=all(gates.values()),
         actual_records=len(rows),pending_reviews=len(queue),counts=dict(counts),
         full_answerable=dict(numerator=counts['correct'],denominator=answers),
         correct_refusal=dict(numerator=counts['correct_refusal'],denominator=refusals),

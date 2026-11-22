@@ -17,6 +17,8 @@ function Test-Loopback([int]$Port) {
     try {$client.Connect('127.0.0.1',$Port);return $true} catch {return $false} finally {$client.Dispose()}
 }
 try {
+    $priorHoldout=Join-Path $root 'optimization/reports/E15_low_memory_holdout_metrics.json'
+    if ((Test-Path -LiteralPath $priorHoldout) -and (Get-Content -Raw $priorHoldout | ConvertFrom-Json).holdout_used) {throw 'Sealed40 already used; use archived score recomputation only. No test services started.'}
     if ((Test-Loopback 11434) -or (Test-Loopback 7867)) {throw 'Port occupied; preexisting services unchanged.'}
     if (Test-Path -LiteralPath $base) {throw 'Fresh output directory required.'}
     $holdoutGate=Get-Content -Raw (Join-Path $root 'optimization/reports/E15_low_memory90_resource_audit.json') | ConvertFrom-Json

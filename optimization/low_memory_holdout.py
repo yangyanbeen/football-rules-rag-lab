@@ -16,6 +16,9 @@ def main(a):
     gate=ROOT/'optimization/reports/E15_low_memory90_resource_audit.json'
     quality=ROOT/'optimization/reports/E15_low_memory_live90_metrics.json'
     assert read(gate)['overall_pass'] and read(quality)['overall_pass']
+    published=ROOT/'optimization/reports/E15_low_memory_holdout_metrics.json'
+    if published.exists() and read(published).get('holdout_used') is True:
+        raise RuntimeError('Sealed40 has already been evaluated; recompute archived scores only, do not rerun inference.')
     refs=source_refs();freeze=read(ROOT/'optimization/datasets/freeze_manifest.json')
     dataset=ROOT/'optimization/datasets/holdout_40.json'
     sealed=next(v for v in freeze['files'] if v['path']=='datasets/holdout_40.json')

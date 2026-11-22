@@ -1,0 +1,1108 @@
+{
+  "scope": "One actual candidate run; no tuning. AI-authored/source-checked same-corpus holdout; human review pending.",
+  "source_commit": "e8664687224a4f55d229bbab4af05c30c6ad3da5",
+  "dataset": {
+    "path": "optimization/datasets/holdout_40.json",
+    "size_bytes": 52139,
+    "sha256": "a289d274475718619dccaf1c6661a9201dc33be06a84af9d550167160bf786bd"
+  },
+  "source_review_ledger": {
+    "path": "optimization/experiments/E15_low_memory/holdout_source_reviews.tsv",
+    "size_bytes": 5910,
+    "sha256": "00a67e1e13c0dc1e6262f4727c05859979f6ad76a85f3af4b7991d0ea1bdc58b"
+  },
+  "scorer": {
+    "path": "optimization/score_low_memory_holdout.py",
+    "size_bytes": 6051,
+    "sha256": "751d2a466161512c97b5317f09a7c8ad443b574c72dd3519b8c432665fcfa453"
+  },
+  "completion": {
+    "path": ".runtime/phase2/e15-lowmemoryholdout40-01/completed.json",
+    "size_bytes": 3537,
+    "sha256": "352af4c9ff9437c277caaed4c3d5c6b5066a8e43fd07fb879b5ac1dfa4e32bb4"
+  },
+  "gates": {
+    "complete40": true,
+    "source_reviews_complete": true,
+    "full_at_least75percent": true,
+    "refusals_all_correct": true,
+    "technical40": true,
+    "citations_at_least_E14": false,
+    "maximum_seconds": true,
+    "minimum_available_GiB": true
+  },
+  "overall_pass": false,
+  "actual_records": 40,
+  "pending_reviews": 0,
+  "counts": {
+    "incorrect": 7,
+    "correct": 24,
+    "false_refusal": 1,
+    "correct_refusal": 8
+  },
+  "full_answerable": {
+    "numerator": 24,
+    "denominator": 32
+  },
+  "correct_refusal": {
+    "numerator": 8,
+    "denominator": 8
+  },
+  "technical": {
+    "numerator": 40,
+    "denominator": 40
+  },
+  "citation_support": {
+    "numerator": 27,
+    "denominator": 59
+  },
+  "resources": {
+    "minimum_available_GiB": 2.6372833251953125,
+    "below1": 0,
+    "maximum_seconds": 46.21970529999999,
+    "median_seconds": 41.990642200000366,
+    "p95_nearest_rank_seconds": 45.13324939999984
+  },
+  "calls": 39,
+  "retries": 0,
+  "cases": [
+    {
+      "question_id": "H001",
+      "answerable": true,
+      "selected_ids": [
+        "L09-03",
+        "L17-01",
+        "L03-04"
+      ],
+      "review": {
+        "grade": "incorrect",
+        "point_mask": [
+          false,
+          false
+        ],
+        "supported_citation_ids": [],
+        "note": "所选段仅讲非进球后的重启、重启中的直接乌龙例外和门线技术；未说明守方触球仍可构成进球，也未给出门柱与横梁限定。"
+      },
+      "seconds": 41.818673700001455,
+      "minimum_available_GiB": 3.7943458557128906,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H001.json",
+        "size_bytes": 138324,
+        "sha256": "421c2cb4ab3aa01131be2e4234cf4915f26abb80dc747dc023a7493f3efad047"
+      }
+    },
+    {
+      "question_id": "H002",
+      "answerable": true,
+      "selected_ids": [
+        "L01-07"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L01-07"
+        ],
+        "note": "原文明确中点为圆心，半径10码约9.14米，两个必要要点完整。"
+      },
+      "seconds": 39.85628369999904,
+      "minimum_available_GiB": 3.865966796875,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H002.json",
+        "size_bytes": 128119,
+        "sha256": "7ebf15868935b556622bb528f0512c1d6a565714e647031b262c4e6107832af9"
+      }
+    },
+    {
+      "question_id": "H003",
+      "answerable": true,
+      "selected_ids": [
+        "L01-07"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "supported_citation_ids": [
+          "L01-07"
+        ],
+        "note": "原文明示中线与边线交点附近的标志旗可以设置且为可选。"
+      },
+      "seconds": 42.285707699998966,
+      "minimum_available_GiB": 3.810741424560547,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H003.json",
+        "size_bytes": 132979,
+        "sha256": "6476af925bc16e1dbe2e4b158374e41a5a89bc4fdbf093c5ce680fcf334c8d11"
+      }
+    },
+    {
+      "question_id": "H004",
+      "answerable": true,
+      "selected_ids": [
+        "L03-02"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L03-02"
+        ],
+        "note": "原文同时给出不得穿戴危险物品的理由，并明确首饰和手表两个例子。"
+      },
+      "seconds": 39.03256819999842,
+      "minimum_available_GiB": 3.8797149658203125,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H004.json",
+        "size_bytes": 128742,
+        "sha256": "f53bcd17d81256f64934895753fe118a85da6c6f17d499bbd2f1829c030de364"
+      }
+    },
+    {
+      "question_id": "H005",
+      "answerable": true,
+      "selected_ids": [
+        "L03-02"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L03-02"
+        ],
+        "note": "原文明示守门员服装应与其他队员及比赛官员区分。"
+      },
+      "seconds": 40.23081309999907,
+      "minimum_available_GiB": 3.9146385192871094,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H005.json",
+        "size_bytes": 126693,
+        "sha256": "8aae4e3fbb9e7e02e84d0a4e7a5e5d79e046945940aeb3f59889b40c28036401"
+      }
+    },
+    {
+      "question_id": "H006",
+      "answerable": true,
+      "selected_ids": [],
+      "review": {
+        "grade": "false_refusal",
+        "point_mask": [
+          false,
+          false
+        ],
+        "supported_citation_ids": [],
+        "note": "Frozen answerability label"
+      },
+      "seconds": 41.50058700000045,
+      "minimum_available_GiB": 3.9158554077148438,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H006.json",
+        "size_bytes": 128884,
+        "sha256": "66db5e33e82b36136ac7225f17eef7ef0976ad5e1eb29d1554299921eaa1fc84"
+      }
+    },
+    {
+      "question_id": "H007",
+      "answerable": true,
+      "selected_ids": [
+        "L06-03",
+        "L11-06",
+        "L17-03"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L06-03"
+        ],
+        "note": "L06-03完整支持颜色及裁判、队员、观众三类接收者；另外两段仅讲越位或角球旗示程序，未支持所问颜色或完整接收对象。"
+      },
+      "seconds": 38.522834800000055,
+      "minimum_available_GiB": 3.9965362548828125,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H007.json",
+        "size_bytes": 130581,
+        "sha256": "120893a9fc9764878de1ad2c0b638f0be8aa32c02c66cadc58db1e17659f5528"
+      }
+    },
+    {
+      "question_id": "H008",
+      "answerable": true,
+      "selected_ids": [
+        "L06-02"
+      ],
+      "review": {
+        "grade": "incorrect",
+        "point_mask": [
+          false,
+          false
+        ],
+        "supported_citation_ids": [],
+        "note": "选段仅说明一般助理裁判在没有第四官员时协助换人；没有较资深者位于技术区域一侧的事实，也未建立该站位与监督换人的理由关系。相关职责片段未按完整要点计分。"
+      },
+      "seconds": 39.981564299998354,
+      "minimum_available_GiB": 3.917266845703125,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H008.json",
+        "size_bytes": 130440,
+        "sha256": "c7682b1c48abf31ccddab4f5fe0283780c5d9b457ce9a4457b16ff36ca7d240f"
+      }
+    },
+    {
+      "question_id": "H009",
+      "answerable": true,
+      "selected_ids": [
+        "L03-04",
+        "L06-01",
+        "L06-04"
+      ],
+      "review": {
+        "grade": "incorrect",
+        "point_mask": [
+          false,
+          false
+        ],
+        "supported_citation_ids": [],
+        "note": "L06-01只有一般执法团队可配耳机的上位描述，没有明确VAR与场上裁判的通信链路；所选三段也均无由赛事组织方决定采用VAR的事实。按具体对象和限定条件保守评分。"
+      },
+      "seconds": 42.745059999999285,
+      "minimum_available_GiB": 3.8223037719726562,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H009.json",
+        "size_bytes": 137405,
+        "sha256": "c858823ff976c064b67aa97945288b4f4c7aaaf388c263a68ab079aca741d6f9"
+      }
+    },
+    {
+      "question_id": "H010",
+      "answerable": true,
+      "selected_ids": [
+        "L06-05"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L06-05"
+        ],
+        "note": "原文明确历史第五官员不可根据电视通知漏判，校核提示保留其与当下VAR权限的区别。"
+      },
+      "seconds": 42.27132840000013,
+      "minimum_available_GiB": 3.7040023803710938,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H010.json",
+        "size_bytes": 128929,
+        "sha256": "7461cfede998fd170e7091a125de056451e9a28cfa9fa5e97e28a5fa99a486c8"
+      }
+    },
+    {
+      "question_id": "H011",
+      "answerable": true,
+      "selected_ids": [
+        "L09-03"
+      ],
+      "review": {
+        "grade": "incorrect",
+        "point_mask": [
+          false,
+          false
+        ],
+        "supported_citation_ids": [],
+        "note": "选段只给通用坠球与其他重启类型，没有VAR撤销误判时的恢复及其地点，也未保留2019/2020来源版本背景。"
+      },
+      "seconds": 39.66105340000104,
+      "minimum_available_GiB": 3.7477378845214844,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H011.json",
+        "size_bytes": 128072,
+        "sha256": "4d41833362ffc03911879b23e5a3e8173f95aaaf363336b55e42d1c894aaba52"
+      }
+    },
+    {
+      "question_id": "H012",
+      "answerable": true,
+      "selected_ids": [
+        "L11-02"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L11-02"
+        ],
+        "note": "原文明示遮挡对方视线属于干扰对方队员，并要求结合实际影响。"
+      },
+      "seconds": 38.461221400000795,
+      "minimum_available_GiB": 3.7246665954589844,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H012.json",
+        "size_bytes": 129175,
+        "sha256": "58b84bcb096764f4ccdc2680dfd7b88a1626171446db367f26ec47189af9d142"
+      }
+    },
+    {
+      "question_id": "H013",
+      "answerable": true,
+      "selected_ids": [
+        "L11-02",
+        "L11-03",
+        "L12-05"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L11-02"
+        ],
+        "note": "L11-02完整支持触及队友传球的干扰比赛定义及实际参与限制；另两段只讲获益例外或越位的间接任意球处罚，不完整支持本题两个要点。"
+      },
+      "seconds": 40.947840499999074,
+      "minimum_available_GiB": 3.71575927734375,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H013.json",
+        "size_bytes": 132126,
+        "sha256": "839784ab44b00f1796ea419cfc2f452be93bf35930597d311d6e1e940016e0d0"
+      }
+    },
+    {
+      "question_id": "H014",
+      "answerable": true,
+      "selected_ids": [
+        "L11-03"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L11-03"
+        ],
+        "note": "原文明确对方有意识处理球通常排除此前越位位置判罚，有意识救球为例外。"
+      },
+      "seconds": 42.280218899999454,
+      "minimum_available_GiB": 3.4949111938476562,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H014.json",
+        "size_bytes": 131580,
+        "sha256": "f8d1f4b33fcc3b434d7f3168fa52864a933890d7ab5b2be349cc717a271a2186"
+      }
+    },
+    {
+      "question_id": "H015",
+      "answerable": true,
+      "selected_ids": [
+        "L11-03",
+        "L15-03",
+        "L11-01"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L11-01"
+        ],
+        "note": "L11-01虽非标注参考段，但明确以队友踢球或触球时刻判断、再看之后参与，足以解释非最终接球时刻；其余两段为对方处理球或界外球例外，不支持本题一般传球的判断时点。"
+      },
+      "seconds": 44.515508299999055,
+      "minimum_available_GiB": 3.539276123046875,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H015.json",
+        "size_bytes": 137468,
+        "sha256": "6d04956add47272aabd03292d240d7b01dc06e1f8558bb9a015273e067712e35"
+      }
+    },
+    {
+      "question_id": "H016",
+      "answerable": true,
+      "selected_ids": [
+        "L11-05"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L11-05"
+        ],
+        "note": "原文明示实际犯规地点执行间接任意球，即使跑回本方半场也如此。"
+      },
+      "seconds": 42.0534303000004,
+      "minimum_available_GiB": 3.5803794860839844,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H016.json",
+        "size_bytes": 132363,
+        "sha256": "a81972e88682cf3eb96684aee79ac5e9b7d2cba5896a6ae79c4dde5a2647ad9c"
+      }
+    },
+    {
+      "question_id": "H017",
+      "answerable": true,
+      "selected_ids": [
+        "L11-06"
+      ],
+      "review": {
+        "grade": "incorrect",
+        "point_mask": [
+          false,
+          false
+        ],
+        "supported_citation_ids": [],
+        "note": "选段只讲助理裁判平齐观察和举旗动作，没有透视缩短效应，也未完整说明攻守距离不同且未在观察同一直线的条件。"
+      },
+      "seconds": 38.802711599999384,
+      "minimum_available_GiB": 3.6788482666015625,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H017.json",
+        "size_bytes": 129532,
+        "sha256": "65f935b8662d7d30470778e6745cf3b55bc972d9f4cec4a01233950c9be3f97f"
+      }
+    },
+    {
+      "question_id": "H018",
+      "answerable": true,
+      "selected_ids": [
+        "L11-08",
+        "L11-01",
+        "L12-08"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L11-08"
+        ],
+        "note": "L11-08完整解释自然结束点与VAR复核目的，并保留不能推广为全部不明显越位的限定；另外两段未支持这些延迟举旗要点。"
+      },
+      "seconds": 41.18364339999971,
+      "minimum_available_GiB": 3.7262725830078125,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H018.json",
+        "size_bytes": 134269,
+        "sha256": "b481b85f2d12227edd499fd2fa574fd4eeec1ee8d05f057fe060631675c7e3da"
+      }
+    },
+    {
+      "question_id": "H019",
+      "answerable": true,
+      "selected_ids": [
+        "L12-01",
+        "L12-08",
+        "L12-02"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L12-01",
+          "L12-08"
+        ],
+        "note": "L12-01完整说明草率、鲁莽、过分力量及裁判分类；L12-08也直接支持鲁莽警告与过分力量红牌，按等价支持段计引用；L12-02为手球概述，不支持三档接触分类。"
+      },
+      "seconds": 41.894642600000225,
+      "minimum_available_GiB": 3.6085357666015625,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H019.json",
+        "size_bytes": 137265,
+        "sha256": "3a4166b7f04aaeaa30ec183f22d66807b7be6399fca006e70c0a15f63f55f0e1"
+      }
+    },
+    {
+      "question_id": "H020",
+      "answerable": true,
+      "selected_ids": [
+        "L12-02"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "supported_citation_ids": [
+          "L12-02"
+        ],
+        "note": "原文明示用手或手臂直接攻入对方球门，即使意外且无法避免也不能算进球。"
+      },
+      "seconds": 41.689566600000035,
+      "minimum_available_GiB": 3.7280731201171875,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H020.json",
+        "size_bytes": 132870,
+        "sha256": "74e8500bb3c84b00ab765a6c410fd50cb2834d6a675f5160f1e4774c972abfcf"
+      }
+    },
+    {
+      "question_id": "H021",
+      "answerable": true,
+      "selected_ids": [
+        "L12-02"
+      ],
+      "review": {
+        "grade": "incorrect",
+        "point_mask": [
+          false
+        ],
+        "supported_citation_ids": [],
+        "note": "所选段为身体手臂手球概述，没有把手中拿的物体触球纳入直接任意球列举，不能以一般手球替代该具体对象和行为。"
+      },
+      "seconds": 41.17503419999957,
+      "minimum_available_GiB": 3.7128219604492188,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H021.json",
+        "size_bytes": 131728,
+        "sha256": "d1711a8082fa162bef4871c144bf7670b1c17fcc2c39ec6da80533e79415f2f8"
+      }
+    },
+    {
+      "question_id": "H022",
+      "answerable": true,
+      "selected_ids": [
+        "L12-09",
+        "L07-01",
+        "L03-03"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L12-09"
+        ],
+        "note": "L12-09完整给出2017年、四类可选赛事、90分钟时长10分钟及来源适用限制；另两段仅说正常比赛时长或换人，不支持临时罚下。"
+      },
+      "seconds": 42.63134440000067,
+      "minimum_available_GiB": 3.6857032775878906,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H022.json",
+        "size_bytes": 133662,
+        "sha256": "00b13e2d13523f29e95c3ac76b98f4f9489d394814ed8237171f6e5083b67d73"
+      }
+    },
+    {
+      "question_id": "H023",
+      "answerable": true,
+      "selected_ids": [
+        "L12-07",
+        "L12-11",
+        "L17-05"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "supported_citation_ids": [
+          "L12-07",
+          "L12-11"
+        ],
+        "note": "L12-07明示同场第二黄后出红牌罚下，L12-11也列出对应红牌类别，均为直接支持；L17-05只讲角球违例黄牌，不支持第二黄后果。"
+      },
+      "seconds": 42.50982489999842,
+      "minimum_available_GiB": 3.6634292602539062,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H023.json",
+        "size_bytes": 136753,
+        "sha256": "dbcd5bd289011ff99e78446adda9ca6ace14671b3d0cabf5799b7a9a16676594"
+      }
+    },
+    {
+      "question_id": "H024",
+      "answerable": true,
+      "selected_ids": [
+        "L12-13"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L12-13"
+        ],
+        "note": "原文完整给出2020年背景、故意咳嗽红牌、较轻黄牌及不能直接当当前条款的限制。"
+      },
+      "seconds": 42.03323050000108,
+      "minimum_available_GiB": 3.3995094299316406,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H024.json",
+        "size_bytes": 128111,
+        "sha256": "6821751125d80c4cae5bb24c19b9369eeb039d73d1229d2fbf1bb5d480ecded6"
+      }
+    },
+    {
+      "question_id": "H025",
+      "answerable": true,
+      "selected_ids": [
+        "L12-15"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L12-15"
+        ],
+        "note": "原文直接说明球已在比赛外时重启按最初停止原因决定，行为仍可构成不当行为。"
+      },
+      "seconds": 41.94805389999965,
+      "minimum_available_GiB": 3.469554901123047,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H025.json",
+        "size_bytes": 132169,
+        "sha256": "5889af778024f20e1fb47fbf8570739acc870f2f5e6328e6d326890e2832bd6d"
+      }
+    },
+    {
+      "question_id": "H026",
+      "answerable": true,
+      "selected_ids": [
+        "L12-16",
+        "L05-04",
+        "L12-08"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L12-16"
+        ],
+        "note": "L12-16明确2019年IFAB认可及球队官员同场两黄红牌；另外两段未给出该年份或同场两黄后的具体后果。"
+      },
+      "seconds": 42.426426199999696,
+      "minimum_available_GiB": 3.5388641357421875,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H026.json",
+        "size_bytes": 132362,
+        "sha256": "dc673424ad2442d7ce9c3273331be6a0a4c32199c9f27b148e4bcf32e3ac0188"
+      }
+    },
+    {
+      "question_id": "H027",
+      "answerable": true,
+      "selected_ids": [
+        "L13-01",
+        "L13-05",
+        "L17-06"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L13-01",
+          "L13-05"
+        ],
+        "note": "L13-01与L13-05均直接说明直接任意球可进对方球门，间接任意球须另一队员触球；L17-06只有本方乌龙重启，未支持对方球门的区别。"
+      },
+      "seconds": 42.29543349999949,
+      "minimum_available_GiB": 3.614276885986328,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H027.json",
+        "size_bytes": 134623,
+        "sha256": "863d3cb9ace18e05b5a2655732dde1d106af62db2449c801bd621674e6a0c4df"
+      }
+    },
+    {
+      "question_id": "H028",
+      "answerable": true,
+      "selected_ids": [
+        "L17-05",
+        "L13-06",
+        "L08A-03"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L13-06"
+        ],
+        "note": "L13-06完整支持任意球移动或地点错误重罚、故意错误位置及拖延警告；其余分别为角球与中点开球，类似文字不替代本题任意球的适用范围。"
+      },
+      "seconds": 43.704224900000554,
+      "minimum_available_GiB": 3.654857635498047,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H028.json",
+        "size_bytes": 134180,
+        "sha256": "b5e598512b1d11384f35b5ab5535ce002a4f062086cfae70f2ddc451d5bbc054"
+      }
+    },
+    {
+      "question_id": "H029",
+      "answerable": true,
+      "selected_ids": [
+        "L13-06"
+      ],
+      "review": {
+        "grade": "incorrect",
+        "point_mask": [
+          false,
+          false
+        ],
+        "supported_citation_ids": [],
+        "note": "选段只说不足距离通常重罚及快发按相应条件处理，没有快发后被对手截球不能仅凭距离重罚的明确例外，也没有裁判现场授权判断的完整条件。"
+      },
+      "seconds": 45.204517600001054,
+      "minimum_available_GiB": 3.583984375,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H029.json",
+        "size_bytes": 131564,
+        "sha256": "0c311f57148b872aa5ac84f7994feb513f22f942b2701077367107f7addf8891"
+      }
+    },
+    {
+      "question_id": "H030",
+      "answerable": true,
+      "selected_ids": [
+        "L12-06",
+        "L05-03",
+        "L12-14"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "supported_citation_ids": [
+          "L12-06"
+        ],
+        "note": "L12-06虽非标注参考段，但明确持续违反规则本身可成为警告理由，足以支持本题纪律处理；另两段只有一般纪律权限或裁量，不直接支持持续违例警告这一事实。"
+      },
+      "seconds": 43.01865390000057,
+      "minimum_available_GiB": 3.628948211669922,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H030.json",
+        "size_bytes": 134303,
+        "sha256": "0a6c77840edc54dec6c38f0a38afe1781a2ff47d96213448ce21601a28538d2e"
+      }
+    },
+    {
+      "question_id": "H031",
+      "answerable": true,
+      "selected_ids": [
+        "L14-04"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L14-04"
+        ],
+        "note": "原表明确仅守方违例且进球时有效，校核提示也明确未涵盖优先级、影响及现行全部条件，不能不加条件作完整矩阵。"
+      },
+      "seconds": 46.21970529999999,
+      "minimum_available_GiB": 3.564167022705078,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H031.json",
+        "size_bytes": 130120,
+        "sha256": "1e41a6bef8660a617ac0ec176548e43594d40474276565f8fe89cdad7af5c06c"
+      }
+    },
+    {
+      "question_id": "H032",
+      "answerable": true,
+      "selected_ids": [
+        "L13-05",
+        "L17-01",
+        "L16-02"
+      ],
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L17-01"
+        ],
+        "note": "L17-01虽非参考段，但明示包括界外球在内的直接本方球门改判角球，并列出开球、两类任意球、界外球、球门球、角球及坠球等多类重启，足以支持多数重启归纳；L13-05只涉及任意球，本题具体界外球不由其直接支持；L16-02讲对方球门与球门球，球门方向不同。"
+      },
+      "seconds": 42.776494800000364,
+      "minimum_available_GiB": 3.6157264709472656,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H032.json",
+        "size_bytes": 134919,
+        "sha256": "bd8e4c53b797ee7dc7f906216b9626111c1aa553c730b3021d7a3727688a625e"
+      }
+    },
+    {
+      "question_id": "H033",
+      "answerable": false,
+      "selected_ids": [],
+      "review": {
+        "grade": "correct_refusal",
+        "point_mask": [],
+        "supported_citation_ids": [],
+        "note": "Frozen answerability label"
+      },
+      "seconds": 41.73592590000044,
+      "minimum_available_GiB": 3.676177978515625,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H033.json",
+        "size_bytes": 131032,
+        "sha256": "afe3a82521a0d11cdbfdec11e628aec9e819c3c85524048cfd8015b7f5cc3e5b"
+      }
+    },
+    {
+      "question_id": "H034",
+      "answerable": false,
+      "selected_ids": [],
+      "review": {
+        "grade": "correct_refusal",
+        "point_mask": [],
+        "supported_citation_ids": [],
+        "note": "Frozen answerability label"
+      },
+      "seconds": 40.83739510000123,
+      "minimum_available_GiB": 3.617473602294922,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H034.json",
+        "size_bytes": 126048,
+        "sha256": "8fe7edc8c0043bdd1f4316e77e0550c55691e447ef9d31ca779095d17eb990d8"
+      }
+    },
+    {
+      "question_id": "H035",
+      "answerable": false,
+      "selected_ids": [],
+      "review": {
+        "grade": "correct_refusal",
+        "point_mask": [],
+        "supported_citation_ids": [],
+        "note": "Frozen answerability label"
+      },
+      "seconds": 42.838730899999064,
+      "minimum_available_GiB": 3.5719528198242188,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H035.json",
+        "size_bytes": 121743,
+        "sha256": "fd1a47e62a29a39f38c32a64c7cc127474bacc0a0cde9cec8649e2cef1106a1c"
+      }
+    },
+    {
+      "question_id": "H036",
+      "answerable": false,
+      "selected_ids": [],
+      "review": {
+        "grade": "correct_refusal",
+        "point_mask": [],
+        "supported_citation_ids": [],
+        "note": "Frozen answerability label"
+      },
+      "seconds": 14.350969299999633,
+      "minimum_available_GiB": 6.01007080078125,
+      "calls": 0,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H036.json",
+        "size_bytes": 24411,
+        "sha256": "b13758860aa892dd28f7e5a022767178c9a2397ac263f3f1838f80856d6dd4bc"
+      }
+    },
+    {
+      "question_id": "H037",
+      "answerable": false,
+      "selected_ids": [],
+      "review": {
+        "grade": "correct_refusal",
+        "point_mask": [],
+        "supported_citation_ids": [],
+        "note": "Frozen answerability label"
+      },
+      "seconds": 38.8340221999988,
+      "minimum_available_GiB": 2.8330917358398438,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H037.json",
+        "size_bytes": 124045,
+        "sha256": "e04ac558c15342176e9647db0c11d89eba63664e46ff5f435dc6a49bd0708258"
+      }
+    },
+    {
+      "question_id": "H038",
+      "answerable": false,
+      "selected_ids": [],
+      "review": {
+        "grade": "correct_refusal",
+        "point_mask": [],
+        "supported_citation_ids": [],
+        "note": "Frozen answerability label"
+      },
+      "seconds": 45.13324939999984,
+      "minimum_available_GiB": 2.6372833251953125,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H038.json",
+        "size_bytes": 125024,
+        "sha256": "c2609cbdf02ab3ab6b35e6b1249140fe561fb03efb7b9f953c8807829d2f795b"
+      }
+    },
+    {
+      "question_id": "H039",
+      "answerable": false,
+      "selected_ids": [],
+      "review": {
+        "grade": "correct_refusal",
+        "point_mask": [],
+        "supported_citation_ids": [],
+        "note": "Frozen answerability label"
+      },
+      "seconds": 44.721622499999285,
+      "minimum_available_GiB": 2.868724822998047,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H039.json",
+        "size_bytes": 124964,
+        "sha256": "db1519a107e0a120b3b1f38eae4c08d942c187ae3a53d33911c0e35bf4a4c768"
+      }
+    },
+    {
+      "question_id": "H040",
+      "answerable": false,
+      "selected_ids": [],
+      "review": {
+        "grade": "correct_refusal",
+        "point_mask": [],
+        "supported_citation_ids": [],
+        "note": "Frozen answerability label"
+      },
+      "seconds": 42.4985461999986,
+      "minimum_available_GiB": 2.9185256958007812,
+      "calls": 1,
+      "retries": 0,
+      "raw_record": {
+        "path": ".runtime/phase2/e15-lowmemoryholdout40-01/H040.json",
+        "size_bytes": 130137,
+        "sha256": "9076f42e16742e2a628030cc7c7fa4e3f7129077a2d138e55df4de5fda701505"
+      }
+    }
+  ],
+  "holdout_used": true,
+  "review_scope": "Codex source/necessary-point audit. No new human or expert adjudication. Equivalent supporting paragraphs allowed; gold-ID equality is not the scoring rule.",
+  "no_tuning_after_holdout": true
+}

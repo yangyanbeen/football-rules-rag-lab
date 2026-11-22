@@ -1,0 +1,947 @@
+{
+  "source_commit": "e8664687224a4f55d229bbab4af05c30c6ad3da5",
+  "metrics": {
+    "path": "optimization/reports/E15_low_memory_holdout_metrics.json",
+    "size_bytes": 33437,
+    "sha256": "4bdb240506c2e5bfe628f9a2b243941fcd6befec05f04d1b04de1fd440876a40"
+  },
+  "normal_requests": 39,
+  "zero_inference_requests": [
+    "H036"
+  ],
+  "all_residency_order": true,
+  "expected_evidence_coverage": {
+    "scope": "Frozen annotated IDs for this32-item same-corpus set; equivalent actual support allowed in scoring.",
+    "denominator": 32,
+    "top10_all": 32,
+    "prompt_all": 32
+  },
+  "failures": [
+    {
+      "question_id": "H001",
+      "answerable": true,
+      "grade": "incorrect",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L01-04": 1
+      },
+      "selected_ids": [
+        "L09-03",
+        "L17-01",
+        "L03-04"
+      ],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [
+        "L09-03",
+        "L17-01",
+        "L03-04"
+      ],
+      "residency_order": true,
+      "first_observed_failure": "evidence_in_prompt_wrong_selection"
+    },
+    {
+      "question_id": "H006",
+      "answerable": true,
+      "grade": "false_refusal",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L04-04": 1
+      },
+      "selected_ids": [],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [],
+      "residency_order": true,
+      "first_observed_failure": "evidence_in_prompt_false_refusal"
+    },
+    {
+      "question_id": "H008",
+      "answerable": true,
+      "grade": "incorrect",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L06-03": 1
+      },
+      "selected_ids": [
+        "L06-02"
+      ],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [
+        "L06-02"
+      ],
+      "residency_order": true,
+      "first_observed_failure": "evidence_in_prompt_wrong_selection"
+    },
+    {
+      "question_id": "H009",
+      "answerable": true,
+      "grade": "incorrect",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L06-05": 1
+      },
+      "selected_ids": [
+        "L03-04",
+        "L06-01",
+        "L06-04"
+      ],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [
+        "L03-04",
+        "L06-01",
+        "L06-04"
+      ],
+      "residency_order": true,
+      "first_observed_failure": "evidence_in_prompt_wrong_selection"
+    },
+    {
+      "question_id": "H011",
+      "answerable": true,
+      "grade": "incorrect",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L08B-01": 1
+      },
+      "selected_ids": [
+        "L09-03"
+      ],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [
+        "L09-03"
+      ],
+      "residency_order": true,
+      "first_observed_failure": "evidence_in_prompt_wrong_selection"
+    },
+    {
+      "question_id": "H017",
+      "answerable": true,
+      "grade": "incorrect",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L11-07": 1
+      },
+      "selected_ids": [
+        "L11-06"
+      ],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [
+        "L11-06"
+      ],
+      "residency_order": true,
+      "first_observed_failure": "evidence_in_prompt_wrong_selection"
+    },
+    {
+      "question_id": "H021",
+      "answerable": true,
+      "grade": "incorrect",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L12-03": 1
+      },
+      "selected_ids": [
+        "L12-02"
+      ],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [
+        "L12-02"
+      ],
+      "residency_order": true,
+      "first_observed_failure": "evidence_in_prompt_wrong_selection"
+    },
+    {
+      "question_id": "H029",
+      "answerable": true,
+      "grade": "incorrect",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L13-08": 1
+      },
+      "selected_ids": [
+        "L13-06"
+      ],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [
+        "L13-06"
+      ],
+      "residency_order": true,
+      "first_observed_failure": "evidence_in_prompt_wrong_selection"
+    }
+  ],
+  "first_observed_failure_counts": {
+    "evidence_in_prompt_wrong_selection": 7,
+    "evidence_in_prompt_false_refusal": 1
+  },
+  "correct_answers_with_unsupported_citations": 12,
+  "unsupported_citations_within_correct_answers": 21,
+  "equivalent_complete_support_without_reference_ids": [
+    "H015",
+    "H030",
+    "H032"
+  ],
+  "resource_only_pass": true,
+  "all_stage_minimum_including_UI_readiness_GiB": 2.7755584716796875,
+  "peak_task_tree_rss_GiB": 3.833690643310547,
+  "sampling": {
+    "target_seconds": 0.2,
+    "actual_median_seconds": 0.34085400000003574,
+    "maximum_gap_seconds": 0.6055369999994582
+  },
+  "calls": {
+    "answer": 39,
+    "input_tokens": 51297,
+    "output_tokens": 992
+  },
+  "conservative_review_sensitivity": {
+    "note": "Even granting H008 L06-02 and H009 L06-01 as broadly supportive would not alter the failed citation gate or full-answer count.",
+    "upper_numerator_if_both_added": 29,
+    "denominator": 59
+  },
+  "cases": [
+    {
+      "question_id": "H001",
+      "answerable": true,
+      "grade": "incorrect",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L01-04": 1
+      },
+      "selected_ids": [
+        "L09-03",
+        "L17-01",
+        "L03-04"
+      ],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [
+        "L09-03",
+        "L17-01",
+        "L03-04"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H002",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L01-07": 1
+      },
+      "selected_ids": [
+        "L01-07"
+      ],
+      "supported_citation_ids": [
+        "L01-07"
+      ],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H003",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L01-07": 1
+      },
+      "selected_ids": [
+        "L01-07"
+      ],
+      "supported_citation_ids": [
+        "L01-07"
+      ],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H004",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L03-02": 1
+      },
+      "selected_ids": [
+        "L03-02"
+      ],
+      "supported_citation_ids": [
+        "L03-02"
+      ],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H005",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L03-02": 1
+      },
+      "selected_ids": [
+        "L03-02"
+      ],
+      "supported_citation_ids": [
+        "L03-02"
+      ],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H006",
+      "answerable": true,
+      "grade": "false_refusal",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L04-04": 1
+      },
+      "selected_ids": [],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H007",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L06-03": 1
+      },
+      "selected_ids": [
+        "L06-03",
+        "L11-06",
+        "L17-03"
+      ],
+      "supported_citation_ids": [
+        "L06-03"
+      ],
+      "unsupported_citation_ids": [
+        "L11-06",
+        "L17-03"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H008",
+      "answerable": true,
+      "grade": "incorrect",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L06-03": 1
+      },
+      "selected_ids": [
+        "L06-02"
+      ],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [
+        "L06-02"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H009",
+      "answerable": true,
+      "grade": "incorrect",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L06-05": 1
+      },
+      "selected_ids": [
+        "L03-04",
+        "L06-01",
+        "L06-04"
+      ],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [
+        "L03-04",
+        "L06-01",
+        "L06-04"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H010",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L06-05": 1
+      },
+      "selected_ids": [
+        "L06-05"
+      ],
+      "supported_citation_ids": [
+        "L06-05"
+      ],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H011",
+      "answerable": true,
+      "grade": "incorrect",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L08B-01": 1
+      },
+      "selected_ids": [
+        "L09-03"
+      ],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [
+        "L09-03"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H012",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L11-02": 1
+      },
+      "selected_ids": [
+        "L11-02"
+      ],
+      "supported_citation_ids": [
+        "L11-02"
+      ],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H013",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L11-02": 1
+      },
+      "selected_ids": [
+        "L11-02",
+        "L11-03",
+        "L12-05"
+      ],
+      "supported_citation_ids": [
+        "L11-02"
+      ],
+      "unsupported_citation_ids": [
+        "L11-03",
+        "L12-05"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H014",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L11-03": 1
+      },
+      "selected_ids": [
+        "L11-03"
+      ],
+      "supported_citation_ids": [
+        "L11-03"
+      ],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H015",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L11-04": 1
+      },
+      "selected_ids": [
+        "L11-03",
+        "L15-03",
+        "L11-01"
+      ],
+      "supported_citation_ids": [
+        "L11-01"
+      ],
+      "unsupported_citation_ids": [
+        "L11-03",
+        "L15-03"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H016",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L11-05": 1
+      },
+      "selected_ids": [
+        "L11-05"
+      ],
+      "supported_citation_ids": [
+        "L11-05"
+      ],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H017",
+      "answerable": true,
+      "grade": "incorrect",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L11-07": 1
+      },
+      "selected_ids": [
+        "L11-06"
+      ],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [
+        "L11-06"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H018",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L11-08": 1
+      },
+      "selected_ids": [
+        "L11-08",
+        "L11-01",
+        "L12-08"
+      ],
+      "supported_citation_ids": [
+        "L11-08"
+      ],
+      "unsupported_citation_ids": [
+        "L11-01",
+        "L12-08"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H019",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L12-01": 1
+      },
+      "selected_ids": [
+        "L12-01",
+        "L12-08",
+        "L12-02"
+      ],
+      "supported_citation_ids": [
+        "L12-01",
+        "L12-08"
+      ],
+      "unsupported_citation_ids": [
+        "L12-02"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H020",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L12-02": 1
+      },
+      "selected_ids": [
+        "L12-02"
+      ],
+      "supported_citation_ids": [
+        "L12-02"
+      ],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H021",
+      "answerable": true,
+      "grade": "incorrect",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L12-03": 1
+      },
+      "selected_ids": [
+        "L12-02"
+      ],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [
+        "L12-02"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H022",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L12-09": 1
+      },
+      "selected_ids": [
+        "L12-09",
+        "L07-01",
+        "L03-03"
+      ],
+      "supported_citation_ids": [
+        "L12-09"
+      ],
+      "unsupported_citation_ids": [
+        "L07-01",
+        "L03-03"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H023",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L12-11": 2
+      },
+      "selected_ids": [
+        "L12-07",
+        "L12-11",
+        "L17-05"
+      ],
+      "supported_citation_ids": [
+        "L12-07",
+        "L12-11"
+      ],
+      "unsupported_citation_ids": [
+        "L17-05"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H024",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L12-13": 1
+      },
+      "selected_ids": [
+        "L12-13"
+      ],
+      "supported_citation_ids": [
+        "L12-13"
+      ],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H025",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L12-15": 2
+      },
+      "selected_ids": [
+        "L12-15"
+      ],
+      "supported_citation_ids": [
+        "L12-15"
+      ],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H026",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L12-16": 1
+      },
+      "selected_ids": [
+        "L12-16",
+        "L05-04",
+        "L12-08"
+      ],
+      "supported_citation_ids": [
+        "L12-16"
+      ],
+      "unsupported_citation_ids": [
+        "L05-04",
+        "L12-08"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H027",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L13-01": 1
+      },
+      "selected_ids": [
+        "L13-01",
+        "L13-05",
+        "L17-06"
+      ],
+      "supported_citation_ids": [
+        "L13-01",
+        "L13-05"
+      ],
+      "unsupported_citation_ids": [
+        "L17-06"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H028",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L13-06": 2
+      },
+      "selected_ids": [
+        "L17-05",
+        "L13-06",
+        "L08A-03"
+      ],
+      "supported_citation_ids": [
+        "L13-06"
+      ],
+      "unsupported_citation_ids": [
+        "L17-05",
+        "L08A-03"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H029",
+      "answerable": true,
+      "grade": "incorrect",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L13-08": 1
+      },
+      "selected_ids": [
+        "L13-06"
+      ],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [
+        "L13-06"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H030",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L14-06": 1
+      },
+      "selected_ids": [
+        "L12-06",
+        "L05-03",
+        "L12-14"
+      ],
+      "supported_citation_ids": [
+        "L12-06"
+      ],
+      "unsupported_citation_ids": [
+        "L05-03",
+        "L12-14"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H031",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L14-04": 1
+      },
+      "selected_ids": [
+        "L14-04"
+      ],
+      "supported_citation_ids": [
+        "L14-04"
+      ],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H032",
+      "answerable": true,
+      "grade": "correct",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {
+        "L17-06": 1
+      },
+      "selected_ids": [
+        "L13-05",
+        "L17-01",
+        "L16-02"
+      ],
+      "supported_citation_ids": [
+        "L17-01"
+      ],
+      "unsupported_citation_ids": [
+        "L13-05",
+        "L16-02"
+      ],
+      "residency_order": true
+    },
+    {
+      "question_id": "H033",
+      "answerable": false,
+      "grade": "correct_refusal",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {},
+      "selected_ids": [],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H034",
+      "answerable": false,
+      "grade": "correct_refusal",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {},
+      "selected_ids": [],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H035",
+      "answerable": false,
+      "grade": "correct_refusal",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {},
+      "selected_ids": [],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H036",
+      "answerable": false,
+      "grade": "correct_refusal",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {},
+      "selected_ids": [],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H037",
+      "answerable": false,
+      "grade": "correct_refusal",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {},
+      "selected_ids": [],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H038",
+      "answerable": false,
+      "grade": "correct_refusal",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {},
+      "selected_ids": [],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H039",
+      "answerable": false,
+      "grade": "correct_refusal",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {},
+      "selected_ids": [],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    },
+    {
+      "question_id": "H040",
+      "answerable": false,
+      "grade": "correct_refusal",
+      "expected_evidence_in_top10": true,
+      "expected_evidence_in_prompt": true,
+      "expected_prompt_positions": {},
+      "selected_ids": [],
+      "supported_citation_ids": [],
+      "unsupported_citation_ids": [],
+      "residency_order": true
+    }
+  ],
+  "holdout_used": true,
+  "no_new_model_calls": true,
+  "no_tuning_after_holdout": true
+}

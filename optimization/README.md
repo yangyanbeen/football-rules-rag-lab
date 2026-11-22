@@ -1,6 +1,8 @@
 # Phase 2 experiments
 
-Only E1 is authorized in this iteration. The production prompt and frozen baseline remain unchanged until a candidate passes review and regression gates.
+Latest local status (2026-11-22): E15 low-memory fixed90 passed quality and resource gates. The sealed40 was subsequently used once: resource gates passed, citation support27/59 failed the predeclared threshold. Overall delivery is not accepted; no merge/push or default promotion. See [final E15 report](reports/E15_low_memory_final_report.md) and [low-memory usage](../docs/LOW_MEMORY_MODE.md). The original40 is now exposed and must not be reused as unseen data for tuning acceptance.
+
+The following E1 instructions describe the historical first experiment; later experiments and their frozen plans/reports remain separate. The production prompt and original baseline artifacts are preserved.
 
 Datasets were sealed in commit 9c4f06a before candidate prompts or new model calls. New holdout40 is AI-authored and AI source-checked; human review is pending. It uses source paragraphs not used as gold in the original90, but shares the same corpus and author, so it is not a human-reviewed blind benchmark. Never read it in the E1 runner.
 
