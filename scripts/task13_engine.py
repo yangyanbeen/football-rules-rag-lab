@@ -6,6 +6,7 @@ from answer_eval_core import config as answer_config,parse_selection
 from answer_eval_engine import pack,request_json
 from citation_catalog_guard import safe_render
 from disciplinary_query_policy import evaluate_suspension_query, refusal_message, PUBLIC_REASON
+from low_memory_runtime import enabled as low_memory, unload_model
 
 
 def index_snapshot(cfg):
@@ -14,9 +15,10 @@ def index_snapshot(cfg):
 
 class StageReranker:
     """Own the unchanged pinned cross-encoder only when scoring actually starts."""
-    def __init__(self,cfg):self.cfg=cfg;self._owner=None
+    def __init__(self,cfg,before_load=None):self.cfg=cfg;self._owner=None;self.before_load=before_load
     def ensure_loaded(self):
         if self._owner is None:
+            if self.before_load is not None:self.before_load()
             from bge_reranker import BgeReranker
             mark('jit_reranker_construction_start')
             self._owner=BgeReranker(self.cfg)
@@ -48,14 +50,17 @@ def retriever(cfg):
                 self.embedder=PinnedEmbedder(read(ROOT/'config/dense_index.json'))
                 self.dense=DenseIndex(ROOT/cfg['dense_index'],embedder=self.embedder)
                 mark('dense_construction_end')
-                if os.environ.get('FOOTBALL_JIT_RERANKER','0')=='1':
-                    self.reranker=StageReranker(self.cfg);mark('reranker_deferred')
+                if low_memory() or os.environ.get('FOOTBALL_JIT_RERANKER','0')=='1':
+                    self.reranker=self.stage_reranker();mark('reranker_deferred')
                 else:
                     mark('reranker_construction_start')
                     self.reranker=BgeReranker(self.cfg);mark('reranker_construction_end')
             except BaseException:
                 if self.dense is not None:self.dense.close()
                 raise
+        def stage_reranker(self):
+            callback=(lambda:unload_model(self.embedder.base_url,self.embedder.cfg['model'],'embedding')) if low_memory() else None
+            return StageReranker(self.cfg,callback)
     return RebuiltRetriever()
 
 
@@ -65,7 +70,7 @@ class IntegratedEngine:
         self.cfg=app_config();self.answer_cfg=answer_config();self.retriever=None;self.closed=False
         self.before=index_snapshot(self.cfg)
         try:
-            if os.environ.get('FOOTBALL_LAZY_RETRIEVAL','0')!='1':self.retriever=retriever(self.cfg)
+            if not low_memory() and os.environ.get('FOOTBALL_LAZY_RETRIEVAL','0')!='1':self.retriever=retriever(self.cfg)
             self.chat=PinnedChat(self.answer_cfg)
             mark('chat_identity_validation_start')
             self.chat.verify_model();self.prompt=(ROOT/'config/answer_evaluation_system.txt').read_text('utf-8')
@@ -81,11 +86,13 @@ class IntegratedEngine:
             mark('lazy_retrieval_construction_start')
             self.retriever=retriever(self.cfg)
             mark('lazy_retrieval_construction_end')
-        elif (os.environ.get('FOOTBALL_RELEASE_RERANKER','0')=='1'
+        elif ((low_memory() or os.environ.get('FOOTBALL_RELEASE_RERANKER','0')=='1')
               and hasattr(self.retriever,'reranker') and self.retriever.reranker is None):
             from bge_reranker import BgeReranker
             mark('reranker_reconstruction_start')
-            self.retriever.reranker=StageReranker(self.retriever.cfg) if os.environ.get('FOOTBALL_JIT_RERANKER','0')=='1' else BgeReranker(self.retriever.cfg)
+            if low_memory():self.retriever.reranker=self.retriever.stage_reranker()
+            elif os.environ.get('FOOTBALL_JIT_RERANKER','0')=='1':self.retriever.reranker=StageReranker(self.retriever.cfg)
+            else:self.retriever.reranker=BgeReranker(self.retriever.cfg)
             mark('reranker_reconstruction_end')
         return self.retriever
 
@@ -135,6 +142,7 @@ class IntegratedEngine:
                 return r
             if re.search(r'官方|现行|最新|IFAB',question,re.I) and re.search(r'赛季|20\d{2}|规则',question):
                 r['refusal_reason']='version_unverified';return r
+            if low_memory():unload_model(self.chat.base_url,self.answer_cfg['llm'],'answer_before_retrieval')
             self.ensure_retriever()
             t=time.perf_counter()
             try:
@@ -145,7 +153,7 @@ class IntegratedEngine:
             r.update(retrieved_ids=[v['chunk_id'] for v in evidence],context=context,messages=messages,
                 offered_ids=[v['chunk_id'] for v in context],prompt_utf8_bytes=size)
             mark('context_packed')
-            if os.environ.get('FOOTBALL_RELEASE_RERANKER','0')=='1':self.release_reranker()
+            if low_memory() or os.environ.get('FOOTBALL_RELEASE_RERANKER','0')=='1':self.release_reranker()
             if not context:r['refusal_reason']='no_whole_evidence_within_budget';return r
             from answer_json_chat import selection_schema
             t=time.perf_counter()
@@ -155,7 +163,9 @@ class IntegratedEngine:
                     lambda s:parse_selection(s,r['offered_ids'],self.answer_cfg),selection_schema(r['offered_ids'],3))
                 mark('answer_model_end')
                 r['attempts']=attempts
-            finally:r['timing']['generation_seconds']=time.perf_counter()-t
+            finally:
+                if low_memory():unload_model(self.chat.base_url,self.answer_cfg['llm'],'answer_after_generation')
+                r['timing']['generation_seconds']=time.perf_counter()-t
             if error:raise ValueError(error)
             if not selection['answerable'] and selection['reason']=='insufficient_evidence':
                 from source_bound_facts import enabled, evaluate

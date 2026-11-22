@@ -8,7 +8,7 @@ SOURCE_FILES=('scripts/task13_audit.py','scripts/query_task13_audit.py','scripts
     'scripts/task13_audit_pipeline.py','scripts/run_integrated_rag_audit.py','scripts/prepare_task13_environment_checked.py',
     'scripts/export_task13_citation_sources.py','scripts/task13_query_rewrite.py','scripts/task13_history_actions.py',
     'scripts/source_bound_facts.py','config/source_bound_facts.json','scripts/runtime_observation.py','scripts/runtime_memory_snapshot.py',
-    'config/task13_audit.json','data/manifests/task13_citation_sources.json')
+    'scripts/low_memory_runtime.py','config/task13_audit.json','data/manifests/task13_citation_sources.json')
 PUBLIC_FIELDS={'trace_id','question','profile','status','selected_ids','offered_ids','retrieved_ids','refusal_reason','error','answer_sha256','citations','configuration','indexes','timing','prompt_utf8_bytes','attempts','private_trace','new_formal_test_runs'}
 
 
