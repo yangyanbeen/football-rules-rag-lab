@@ -1,0 +1,867 @@
+{
+  "partial": true,
+  "gates": {
+    "complete28": false,
+    "inputs_preserved": false,
+    "quality_preserved": false,
+    "source_facts_correct": true,
+    "D036_zero": false,
+    "object_release": true,
+    "latency": true,
+    "resource": true,
+    "citations": false
+  },
+  "all_gates_passed": false,
+  "summaries": {
+    "A": {
+      "requests": 7,
+      "grades": {
+        "correct": 4,
+        "false_refusal": 2,
+        "partial": 1
+      },
+      "citations": {
+        "numerator": 6,
+        "denominator": 11,
+        "value": 0.5454545454545454
+      },
+      "max_seconds": 38.05719790000148,
+      "minimum_available_GiB": 0.47422027587890625,
+      "below1": 6
+    },
+    "B": {
+      "requests": 8,
+      "grades": {
+        "correct": 5,
+        "false_refusal": 2,
+        "partial": 1
+      },
+      "citations": {
+        "numerator": 7,
+        "denominator": 14,
+        "value": 0.5
+      },
+      "max_seconds": 38.555613900003664,
+      "minimum_available_GiB": 1.6536598205566406,
+      "below1": 0
+    }
+  },
+  "pairs": [
+    {
+      "question_id": "D001",
+      "repeat": 1,
+      "inputs_identical": true,
+      "ranked_results_identical": true,
+      "final_identity_equal": true,
+      "quality_not_degraded": true,
+      "A_ids": [
+        "L01-01"
+      ],
+      "B_ids": [
+        "L01-01"
+      ],
+      "A_grade": "correct",
+      "B_grade": "correct"
+    },
+    {
+      "question_id": "D001",
+      "repeat": 2,
+      "inputs_identical": true,
+      "ranked_results_identical": true,
+      "final_identity_equal": true,
+      "quality_not_degraded": true,
+      "A_ids": [
+        "L01-01"
+      ],
+      "B_ids": [
+        "L01-01"
+      ],
+      "A_grade": "correct",
+      "B_grade": "correct"
+    },
+    {
+      "question_id": "D003",
+      "repeat": 1,
+      "inputs_identical": true,
+      "ranked_results_identical": true,
+      "final_identity_equal": true,
+      "quality_not_degraded": true,
+      "A_ids": [],
+      "B_ids": [],
+      "A_grade": "false_refusal",
+      "B_grade": "false_refusal"
+    },
+    {
+      "question_id": "D003",
+      "repeat": 2,
+      "inputs_identical": true,
+      "ranked_results_identical": true,
+      "final_identity_equal": true,
+      "quality_not_degraded": true,
+      "A_ids": [],
+      "B_ids": [],
+      "A_grade": "false_refusal",
+      "B_grade": "false_refusal"
+    },
+    {
+      "question_id": "D023",
+      "repeat": 1,
+      "inputs_identical": true,
+      "ranked_results_identical": true,
+      "final_identity_equal": true,
+      "quality_not_degraded": true,
+      "A_ids": [
+        "L12-11",
+        "L12-01",
+        "L12-12"
+      ],
+      "B_ids": [
+        "L12-11",
+        "L12-01",
+        "L12-12"
+      ],
+      "A_grade": "correct",
+      "B_grade": "correct"
+    },
+    {
+      "question_id": "T013",
+      "repeat": 1,
+      "inputs_identical": true,
+      "ranked_results_identical": true,
+      "final_identity_equal": true,
+      "quality_not_degraded": true,
+      "A_ids": [
+        "L06-04",
+        "L07-01",
+        "L06-02"
+      ],
+      "B_ids": [
+        "L06-04",
+        "L07-01",
+        "L06-02"
+      ],
+      "A_grade": "correct",
+      "B_grade": "correct"
+    },
+    {
+      "question_id": "T026",
+      "repeat": 1,
+      "inputs_identical": true,
+      "ranked_results_identical": true,
+      "final_identity_equal": true,
+      "quality_not_degraded": true,
+      "A_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-15"
+      ],
+      "B_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-15"
+      ],
+      "A_grade": "partial",
+      "B_grade": "partial"
+    }
+  ],
+  "cases": [
+    {
+      "name": "D001-r1-A",
+      "question_id": "D001",
+      "repeat": 1,
+      "variant": "A",
+      "error": null,
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "supported_citation_ids": [
+          "L01-01"
+        ],
+        "note": "E13原文复核：人造表面只允许使用绿色，完整支持颜色限制；来源已在实际Prompt且正文哈希校验通过。"
+      },
+      "status": "answered",
+      "seconds": 34.191483000002336,
+      "minimum_available_GiB": 1.8092193603515625,
+      "low_stage": "context_packed",
+      "low_before_release": true,
+      "post_release_min_available_GiB": 2.723846435546875,
+      "before_available_GiB": 5.18609619140625,
+      "before_models": [],
+      "delta": {
+        "object_collected": true,
+        "seconds": 0.422507700001006,
+        "RSS_freed_GiB": 2.0405044555664062,
+        "private_freed_GiB": 3.0130233764648438,
+        "available_gain_GiB": 2.0406570434570312
+      },
+      "D036_zero": false,
+      "actual_calls": 1,
+      "selected_ids": [
+        "L01-01"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-jit-special01/D001-r1-A.json",
+        "size_bytes": 126499,
+        "sha256": "3348bfcd9e1a771f92beb2a5efab1d49039b022d6f37988807b1a420cb909b11"
+      }
+    },
+    {
+      "name": "D001-r1-B",
+      "question_id": "D001",
+      "repeat": 1,
+      "variant": "B",
+      "error": null,
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "supported_citation_ids": [
+          "L01-01"
+        ],
+        "note": "E13原文复核：人造表面只允许使用绿色，完整支持颜色限制；来源已在实际Prompt且正文哈希校验通过。"
+      },
+      "status": "answered",
+      "seconds": 32.78466139999364,
+      "minimum_available_GiB": 1.6536598205566406,
+      "low_stage": "jit_reranker_construction_start",
+      "low_before_release": true,
+      "post_release_min_available_GiB": 2.7659530639648438,
+      "before_available_GiB": 2.8457794189453125,
+      "before_models": [
+        "qwen2.5:3b"
+      ],
+      "delta": {
+        "object_collected": true,
+        "seconds": 0.40198949999467004,
+        "RSS_freed_GiB": 2.147106170654297,
+        "private_freed_GiB": 3.1542587280273438,
+        "available_gain_GiB": 2.144123077392578
+      },
+      "D036_zero": false,
+      "actual_calls": 1,
+      "selected_ids": [
+        "L01-01"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-jit-special01/D001-r1-B.json",
+        "size_bytes": 125461,
+        "sha256": "ebee9229bc3e6203ad3d58a64978f77ca3a964a4147b60241e7c8788c0ca8ee5"
+      }
+    },
+    {
+      "name": "D001-r2-A",
+      "question_id": "D001",
+      "repeat": 2,
+      "variant": "A",
+      "error": null,
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "supported_citation_ids": [
+          "L01-01"
+        ],
+        "note": "E13原文复核：人造表面只允许使用绿色，完整支持颜色限制；来源已在实际Prompt且正文哈希校验通过。"
+      },
+      "status": "answered",
+      "seconds": 33.9521667999943,
+      "minimum_available_GiB": 0.8865699768066406,
+      "low_stage": "retrieval_query_start",
+      "low_before_release": true,
+      "post_release_min_available_GiB": 2.7646522521972656,
+      "before_available_GiB": 2.888813018798828,
+      "before_models": [
+        "qwen2.5:3b"
+      ],
+      "delta": {
+        "object_collected": true,
+        "seconds": 0.4127712999979849,
+        "RSS_freed_GiB": 1.9218292236328125,
+        "private_freed_GiB": 2.1181602478027344,
+        "available_gain_GiB": 1.916778564453125
+      },
+      "D036_zero": false,
+      "actual_calls": 1,
+      "selected_ids": [
+        "L01-01"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-jit-special01/D001-r2-A.json",
+        "size_bytes": 125018,
+        "sha256": "6b2d5d572336cbde82e68e9e485a60b67a89596f0af8ce423452eba560cef115"
+      }
+    },
+    {
+      "name": "D001-r2-B",
+      "question_id": "D001",
+      "repeat": 2,
+      "variant": "B",
+      "error": null,
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true
+        ],
+        "supported_citation_ids": [
+          "L01-01"
+        ],
+        "note": "E13原文复核：人造表面只允许使用绿色，完整支持颜色限制；来源已在实际Prompt且正文哈希校验通过。"
+      },
+      "status": "answered",
+      "seconds": 33.63696619999973,
+      "minimum_available_GiB": 1.9493904113769531,
+      "low_stage": "jit_reranker_construction_end",
+      "low_before_release": true,
+      "post_release_min_available_GiB": 2.7782211303710938,
+      "before_available_GiB": 2.8477630615234375,
+      "before_models": [
+        "qwen2.5:3b"
+      ],
+      "delta": {
+        "object_collected": true,
+        "seconds": 0.39751219999743626,
+        "RSS_freed_GiB": 1.9085578918457031,
+        "private_freed_GiB": 2.3803138732910156,
+        "available_gain_GiB": 1.9226760864257812
+      },
+      "D036_zero": false,
+      "actual_calls": 1,
+      "selected_ids": [
+        "L01-01"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-jit-special01/D001-r2-B.json",
+        "size_bytes": 125470,
+        "sha256": "e2bba2b65bf64b22370bd53c004f7387c631e63a33436c927208ad3cf4f1c7ab"
+      }
+    },
+    {
+      "name": "D003-r1-A",
+      "question_id": "D003",
+      "repeat": 1,
+      "variant": "A",
+      "error": null,
+      "review": {
+        "grade": "false_refusal",
+        "point_mask": [
+          false,
+          false
+        ],
+        "supported_citation_ids": []
+      },
+      "status": "refused",
+      "seconds": 38.0544832999949,
+      "minimum_available_GiB": 0.9195747375488281,
+      "low_stage": "retrieval_query_start",
+      "low_before_release": true,
+      "post_release_min_available_GiB": 2.7586822509765625,
+      "before_available_GiB": 2.9344558715820312,
+      "before_models": [
+        "qwen2.5:3b"
+      ],
+      "delta": {
+        "object_collected": true,
+        "seconds": 0.43885430000227643,
+        "RSS_freed_GiB": 1.8968315124511719,
+        "private_freed_GiB": 2.117115020751953,
+        "available_gain_GiB": 1.8947486877441406
+      },
+      "D036_zero": false,
+      "actual_calls": 1,
+      "selected_ids": [],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-jit-special01/D003-r1-A.json",
+        "size_bytes": 129418,
+        "sha256": "a4942c6c687dee67ee06e065f41230f0573c2e2b0a084c0456d65dbaf7b28dba"
+      }
+    },
+    {
+      "name": "D003-r1-B",
+      "question_id": "D003",
+      "repeat": 1,
+      "variant": "B",
+      "error": null,
+      "review": {
+        "grade": "false_refusal",
+        "point_mask": [
+          false,
+          false
+        ],
+        "supported_citation_ids": []
+      },
+      "status": "refused",
+      "seconds": 36.6051523999995,
+      "minimum_available_GiB": 1.9607887268066406,
+      "low_stage": "jit_reranker_construction_end",
+      "low_before_release": true,
+      "post_release_min_available_GiB": 2.75897216796875,
+      "before_available_GiB": 2.9205245971679688,
+      "before_models": [
+        "qwen2.5:3b"
+      ],
+      "delta": {
+        "object_collected": true,
+        "seconds": 0.3937646000049426,
+        "RSS_freed_GiB": 1.9030876159667969,
+        "private_freed_GiB": 2.1222763061523438,
+        "available_gain_GiB": 1.909271240234375
+      },
+      "D036_zero": false,
+      "actual_calls": 1,
+      "selected_ids": [],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-jit-special01/D003-r1-B.json",
+        "size_bytes": 129758,
+        "sha256": "f4ee3b9160407313c2fb0767472314b7e925c8cfdac716964e8a2eccc4107433"
+      }
+    },
+    {
+      "name": "D003-r2-A",
+      "question_id": "D003",
+      "repeat": 2,
+      "variant": "A",
+      "error": null,
+      "review": {
+        "grade": "false_refusal",
+        "point_mask": [
+          false,
+          false
+        ],
+        "supported_citation_ids": []
+      },
+      "status": "refused",
+      "seconds": 38.05719790000148,
+      "minimum_available_GiB": 0.6013374328613281,
+      "low_stage": "reranker_construction_start",
+      "low_before_release": true,
+      "post_release_min_available_GiB": 2.6010971069335938,
+      "before_available_GiB": 2.914020538330078,
+      "before_models": [
+        "qwen2.5:3b"
+      ],
+      "delta": {
+        "object_collected": true,
+        "seconds": 0.4379670999987866,
+        "RSS_freed_GiB": 1.9030227661132812,
+        "private_freed_GiB": 2.3743858337402344,
+        "available_gain_GiB": 1.8969459533691406
+      },
+      "D036_zero": false,
+      "actual_calls": 1,
+      "selected_ids": [],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-jit-special01/D003-r2-A.json",
+        "size_bytes": 129395,
+        "sha256": "41e59e366155f97a4be9ccb869bf04ae6075cb8ded14c6257e6908e0f3de8b08"
+      }
+    },
+    {
+      "name": "D003-r2-B",
+      "question_id": "D003",
+      "repeat": 2,
+      "variant": "B",
+      "error": null,
+      "review": {
+        "grade": "false_refusal",
+        "point_mask": [
+          false,
+          false
+        ],
+        "supported_citation_ids": []
+      },
+      "status": "refused",
+      "seconds": 38.555613900003664,
+      "minimum_available_GiB": 1.9601936340332031,
+      "low_stage": "jit_reranker_construction_end",
+      "low_before_release": true,
+      "post_release_min_available_GiB": 2.6534156799316406,
+      "before_available_GiB": 2.893310546875,
+      "before_models": [
+        "qwen2.5:3b"
+      ],
+      "delta": {
+        "object_collected": true,
+        "seconds": 0.41591739999421407,
+        "RSS_freed_GiB": 1.9173583984375,
+        "private_freed_GiB": 2.1132583618164062,
+        "available_gain_GiB": 1.9198722839355469
+      },
+      "D036_zero": false,
+      "actual_calls": 1,
+      "selected_ids": [],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-jit-special01/D003-r2-B.json",
+        "size_bytes": 129810,
+        "sha256": "5174fdb6232abcced945637ae63d43f4421f5cfbcf922acb5e69d6313567e5ae"
+      }
+    },
+    {
+      "name": "D023-r1-A",
+      "question_id": "D023",
+      "repeat": 1,
+      "variant": "A",
+      "error": null,
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L12-12"
+        ],
+        "note": "Post-run Codex source review: L12-12 directly defines both conditions. L12-11 only lists red-card categories and L12-01 covers force/contact, not the requested distinction. No new human review."
+      },
+      "status": "answered",
+      "seconds": 37.58750249999866,
+      "minimum_available_GiB": 0.6428298950195312,
+      "low_stage": "reranker_construction_start",
+      "low_before_release": true,
+      "post_release_min_available_GiB": 2.8147926330566406,
+      "before_available_GiB": 2.912189483642578,
+      "before_models": [
+        "qwen2.5:3b"
+      ],
+      "delta": {
+        "object_collected": true,
+        "seconds": 0.42222440000477945,
+        "RSS_freed_GiB": 1.8867111206054688,
+        "private_freed_GiB": 1.9199714660644531,
+        "available_gain_GiB": 1.8878135681152344
+      },
+      "D036_zero": false,
+      "actual_calls": 1,
+      "selected_ids": [
+        "L12-11",
+        "L12-01",
+        "L12-12"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-jit-special01/D023-r1-A.json",
+        "size_bytes": 139137,
+        "sha256": "478c7fed961ddd14a35bc3eaf21eb3bd59432f2012c10f24f8c514b9202eb7dd"
+      }
+    },
+    {
+      "name": "D023-r1-B",
+      "question_id": "D023",
+      "repeat": 1,
+      "variant": "B",
+      "error": null,
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L12-12"
+        ],
+        "note": "Post-run Codex source review: L12-12 directly defines both conditions. L12-11 only lists red-card categories and L12-01 covers force/contact, not the requested distinction. No new human review."
+      },
+      "status": "answered",
+      "seconds": 36.46017009999923,
+      "minimum_available_GiB": 2.005962371826172,
+      "low_stage": "jit_reranker_construction_end",
+      "low_before_release": true,
+      "post_release_min_available_GiB": 2.7820892333984375,
+      "before_available_GiB": 2.958904266357422,
+      "before_models": [
+        "qwen2.5:3b"
+      ],
+      "delta": {
+        "object_collected": true,
+        "seconds": 0.40549669999745674,
+        "RSS_freed_GiB": 1.8849220275878906,
+        "private_freed_GiB": 1.9731521606445312,
+        "available_gain_GiB": 1.8884315490722656
+      },
+      "D036_zero": false,
+      "actual_calls": 1,
+      "selected_ids": [
+        "L12-11",
+        "L12-01",
+        "L12-12"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-jit-special01/D023-r1-B.json",
+        "size_bytes": 139537,
+        "sha256": "1f5cd8cfd36a7f8056bd7262c420d6a8cc53ed9ba6718e79752707460373048b"
+      }
+    },
+    {
+      "name": "D023-r2-B",
+      "question_id": "D023",
+      "repeat": 2,
+      "variant": "B",
+      "error": null,
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L12-12"
+        ],
+        "note": "Post-run Codex source review: L12-12 directly defines both conditions. L12-11 only lists red-card categories and L12-01 covers force/contact, not the requested distinction. No new human review."
+      },
+      "status": "answered",
+      "seconds": 37.315502299999935,
+      "minimum_available_GiB": 1.7751121520996094,
+      "low_stage": "jit_reranker_construction_end",
+      "low_before_release": true,
+      "post_release_min_available_GiB": 2.7191238403320312,
+      "before_available_GiB": 2.8315887451171875,
+      "before_models": [
+        "qwen2.5:3b"
+      ],
+      "delta": {
+        "object_collected": true,
+        "seconds": 0.4007368999955361,
+        "RSS_freed_GiB": 2.0539474487304688,
+        "private_freed_GiB": 2.1074485778808594,
+        "available_gain_GiB": 2.0535507202148438
+      },
+      "D036_zero": false,
+      "actual_calls": 1,
+      "selected_ids": [
+        "L12-11",
+        "L12-01",
+        "L12-12"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-jit-special01/D023-r2-B.json",
+        "size_bytes": 139572,
+        "sha256": "ee3559f8d13d1141063f7dc8a998a6971f7ed29b4c9d7296bfb1a0a66c184df1"
+      }
+    },
+    {
+      "name": "T013-r1-A",
+      "question_id": "T013",
+      "repeat": 1,
+      "variant": "A",
+      "error": null,
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L06-04",
+          "L07-01"
+        ],
+        "note": "Reuse prior source review for identical question and paragraph set; order may differ. 包含补时公布和号码牌或电子屏的换人辅助。"
+      },
+      "status": "answered",
+      "seconds": 35.12997899999755,
+      "minimum_available_GiB": 0.8561935424804688,
+      "low_stage": "retrieval_query_start",
+      "low_before_release": true,
+      "post_release_min_available_GiB": 2.753612518310547,
+      "before_available_GiB": 2.872539520263672,
+      "before_models": [
+        "qwen2.5:3b"
+      ],
+      "delta": {
+        "object_collected": true,
+        "seconds": 0.43159250000462634,
+        "RSS_freed_GiB": 2.0772476196289062,
+        "private_freed_GiB": 2.8860626220703125,
+        "available_gain_GiB": 2.0732498168945312
+      },
+      "D036_zero": false,
+      "actual_calls": 1,
+      "selected_ids": [
+        "L06-04",
+        "L07-01",
+        "L06-02"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-jit-special01/T013-r1-A.json",
+        "size_bytes": 133747,
+        "sha256": "646279591682171677c2b76728782f9c79872164d195b87cac1194b99d5b59b5"
+      }
+    },
+    {
+      "name": "T013-r1-B",
+      "question_id": "T013",
+      "repeat": 1,
+      "variant": "B",
+      "error": null,
+      "review": {
+        "grade": "correct",
+        "point_mask": [
+          true,
+          true
+        ],
+        "supported_citation_ids": [
+          "L06-04",
+          "L07-01"
+        ],
+        "note": "Reuse prior source review for identical question and paragraph set; order may differ. 包含补时公布和号码牌或电子屏的换人辅助。"
+      },
+      "status": "answered",
+      "seconds": 34.35604070000409,
+      "minimum_available_GiB": 1.84259033203125,
+      "low_stage": "jit_reranker_construction_end",
+      "low_before_release": true,
+      "post_release_min_available_GiB": 2.7470016479492188,
+      "before_available_GiB": 2.933818817138672,
+      "before_models": [
+        "qwen2.5:3b"
+      ],
+      "delta": {
+        "object_collected": true,
+        "seconds": 0.4183798999947612,
+        "RSS_freed_GiB": 2.0612449645996094,
+        "private_freed_GiB": 3.018115997314453,
+        "available_gain_GiB": 2.0631561279296875
+      },
+      "D036_zero": false,
+      "actual_calls": 1,
+      "selected_ids": [
+        "L06-04",
+        "L07-01",
+        "L06-02"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-jit-special01/T013-r1-B.json",
+        "size_bytes": 134147,
+        "sha256": "c959143c6f5530aeabdea965e1903b23da8d92b64a1d22a45164d97afd2fdfa6"
+      }
+    },
+    {
+      "name": "T026-r1-A",
+      "question_id": "T026",
+      "repeat": 1,
+      "variant": "A",
+      "error": null,
+      "review": {
+        "grade": "partial",
+        "point_mask": [
+          false,
+          false,
+          true
+        ],
+        "supported_citation_ids": [
+          "L12-15"
+        ],
+        "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明不当行为可警告或罚令出场，未明确区分一般技术性违例与身体犯规。"
+      },
+      "status": "answered",
+      "seconds": 35.72511430000304,
+      "minimum_available_GiB": 0.47422027587890625,
+      "low_stage": "reranker_construction_start",
+      "low_before_release": true,
+      "post_release_min_available_GiB": 2.7806053161621094,
+      "before_available_GiB": 2.888111114501953,
+      "before_models": [
+        "qwen2.5:3b"
+      ],
+      "delta": {
+        "object_collected": true,
+        "seconds": 0.40793330000451533,
+        "RSS_freed_GiB": 1.8924369812011719,
+        "private_freed_GiB": 2.1153793334960938,
+        "available_gain_GiB": 1.8945503234863281
+      },
+      "D036_zero": false,
+      "actual_calls": 1,
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-15"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-jit-special01/T026-r1-A.json",
+        "size_bytes": 135066,
+        "sha256": "7614ff4bdda05da71929fb071233323fe9c103493f0f8825b2b06e8a92b77da1"
+      }
+    },
+    {
+      "name": "T026-r1-B",
+      "question_id": "T026",
+      "repeat": 1,
+      "variant": "B",
+      "error": null,
+      "review": {
+        "grade": "partial",
+        "point_mask": [
+          false,
+          false,
+          true
+        ],
+        "supported_citation_ids": [
+          "L12-15"
+        ],
+        "note": "Reuse prior source review for identical question and paragraph set; order may differ. 说明不当行为可警告或罚令出场，未明确区分一般技术性违例与身体犯规。"
+      },
+      "status": "answered",
+      "seconds": 35.256394199997885,
+      "minimum_available_GiB": 1.7029228210449219,
+      "low_stage": "jit_reranker_construction_start",
+      "low_before_release": true,
+      "post_release_min_available_GiB": 2.7445526123046875,
+      "before_available_GiB": 2.91522216796875,
+      "before_models": [
+        "qwen2.5:3b"
+      ],
+      "delta": {
+        "object_collected": true,
+        "seconds": 0.42076519999682205,
+        "RSS_freed_GiB": 1.9049949645996094,
+        "private_freed_GiB": 2.367572784423828,
+        "available_gain_GiB": 1.9066085815429688
+      },
+      "D036_zero": false,
+      "actual_calls": 1,
+      "selected_ids": [
+        "L12-01",
+        "L12-02",
+        "L12-15"
+      ],
+      "raw_record": {
+        "path": ".runtime/phase2/e15-jit-special01/T026-r1-B.json",
+        "size_bytes": 135434,
+        "sha256": "7876c0a820e0f6d20b11c3869e6a410a4b2cd665d154fc85115fbb195e13c8ea"
+      }
+    }
+  ],
+  "release_summary": {
+    "RSS_freed_GiB": {
+      "median": 1.9129581451416016,
+      "minimum": 1.8849220275878906,
+      "maximum": 2.147106170654297
+    },
+    "private_freed_GiB": {
+      "median": 2.244924545288086,
+      "minimum": 1.9731521606445312,
+      "maximum": 3.1542587280273438
+    },
+    "available_gain_GiB": {
+      "median": 1.921274185180664,
+      "minimum": 1.8884315490722656,
+      "maximum": 2.144123077392578
+    }
+  },
+  "pending_reviews": 0,
+  "full90_executed": false,
+  "holdout40_used": false,
+  "sampling": {
+    "target_wait_seconds": 0.2,
+    "actual_median_seconds": 0.39695430000210763,
+    "actual_max_gap_seconds": 0.5587789999990491
+  },
+  "original_archive_audit": {
+    "path": "optimization/reports/E15_archive_memory_audit.json",
+    "size_bytes": 727748,
+    "sha256": "eebbc6e3124efba337bffd8e3c07edbeccc797f1cc96345ddcd51752460ee5d2"
+  },
+  "method": "Concurrent source/body/order comparisons; reviewed necessary points and exact source sets. Object collection separate from actual Windows physical availability and process working set/private commit. Whole-request minimum includes construction; endpoints and periodic samples both counted."
+}

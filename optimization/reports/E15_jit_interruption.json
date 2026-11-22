@@ -1,0 +1,185 @@
+{
+  "status": "INTERRUPTED_NO_FINAL_MANIFEST",
+  "recorded_at_client_date": "2026-11-22",
+  "completed_observations": 15,
+  "services_and_controller_found_running": false,
+  "record_policy": "Preserve all observations, orphan pair member and incomplete request artifacts; do not count as one completed continuous28. Frozen full schedule rerun in e15-jit-special02.",
+  "files": {
+    ".runtime/phase2/e15-jit-special01/chrome.log": {
+      "sha256": "10f913bd4786d99d3701cdb52589e328df4a99b0cc59ef8903e921a2f7f3cd53",
+      "size_bytes": 151
+    },
+    ".runtime/phase2/e15-jit-special01/comparison.json": {
+      "sha256": "6b0356797bf830bae8380a13f795bc22562af1ffee8454bd1aa8d75951b4d485",
+      "size_bytes": 232
+    },
+    ".runtime/phase2/e15-jit-special01/D001-r1-A.json": {
+      "sha256": "3348bfcd9e1a771f92beb2a5efab1d49039b022d6f37988807b1a420cb909b11",
+      "size_bytes": 126499
+    },
+    ".runtime/phase2/e15-jit-special01/D001-r1-B.json": {
+      "sha256": "ebee9229bc3e6203ad3d58a64978f77ca3a964a4147b60241e7c8788c0ca8ee5",
+      "size_bytes": 125461
+    },
+    ".runtime/phase2/e15-jit-special01/D001-r2-A.json": {
+      "sha256": "6b2d5d572336cbde82e68e9e485a60b67a89596f0af8ce423452eba560cef115",
+      "size_bytes": 125018
+    },
+    ".runtime/phase2/e15-jit-special01/D001-r2-B.json": {
+      "sha256": "e2bba2b65bf64b22370bd53c004f7387c631e63a33436c927208ad3cf4f1c7ab",
+      "size_bytes": 125470
+    },
+    ".runtime/phase2/e15-jit-special01/D003-r1-A.json": {
+      "sha256": "a4942c6c687dee67ee06e065f41230f0573c2e2b0a084c0456d65dbaf7b28dba",
+      "size_bytes": 129418
+    },
+    ".runtime/phase2/e15-jit-special01/D003-r1-B.json": {
+      "sha256": "f4ee3b9160407313c2fb0767472314b7e925c8cfdac716964e8a2eccc4107433",
+      "size_bytes": 129758
+    },
+    ".runtime/phase2/e15-jit-special01/D003-r2-A.json": {
+      "sha256": "41e59e366155f97a4be9ccb869bf04ae6075cb8ded14c6257e6908e0f3de8b08",
+      "size_bytes": 129395
+    },
+    ".runtime/phase2/e15-jit-special01/D003-r2-B.json": {
+      "sha256": "5174fdb6232abcced945637ae63d43f4421f5cfbcf922acb5e69d6313567e5ae",
+      "size_bytes": 129810
+    },
+    ".runtime/phase2/e15-jit-special01/D023-r1-A.json": {
+      "sha256": "478c7fed961ddd14a35bc3eaf21eb3bd59432f2012c10f24f8c514b9202eb7dd",
+      "size_bytes": 139137
+    },
+    ".runtime/phase2/e15-jit-special01/D023-r1-B.json": {
+      "sha256": "1f5cd8cfd36a7f8056bd7262c420d6a8cc53ed9ba6718e79752707460373048b",
+      "size_bytes": 139537
+    },
+    ".runtime/phase2/e15-jit-special01/D023-r2-B.json": {
+      "sha256": "ee3559f8d13d1141063f7dc8a998a6971f7ed29b4c9d7296bfb1a0a66c184df1",
+      "size_bytes": 139572
+    },
+    ".runtime/phase2/e15-jit-special01/metadata.json": {
+      "sha256": "1fb2d3f9b2657555adcb5b00edbe14c5d4c1f4d2d6bee37b282e69e209135d53",
+      "size_bytes": 50806
+    },
+    ".runtime/phase2/e15-jit-special01/release-flag.json": {
+      "sha256": "b86c8ad9a72841ba209d28dccc2e16b35e92522d6d46717658aebb2d1070a705",
+      "size_bytes": 18
+    },
+    ".runtime/phase2/e15-jit-special01/resources.jsonl": {
+      "sha256": "7b834034002ff1901e466c0d35efef5cf6a29918b0aadf298f71e46156bdfd06",
+      "size_bytes": 6155028
+    },
+    ".runtime/phase2/e15-jit-special01/schedule.json": {
+      "sha256": "f6282e43be6076ff649db78bb63fac9206e1ff500bedb0ff5d8f0ff7127fcb41",
+      "size_bytes": 1935
+    },
+    ".runtime/phase2/e15-jit-special01/T013-r1-A.json": {
+      "sha256": "646279591682171677c2b76728782f9c79872164d195b87cac1194b99d5b59b5",
+      "size_bytes": 133747
+    },
+    ".runtime/phase2/e15-jit-special01/T013-r1-B.json": {
+      "sha256": "c959143c6f5530aeabdea965e1903b23da8d92b64a1d22a45164d97afd2fdfa6",
+      "size_bytes": 134147
+    },
+    ".runtime/phase2/e15-jit-special01/T026-r1-A.json": {
+      "sha256": "7614ff4bdda05da71929fb071233323fe9c103493f0f8825b2b06e8a92b77da1",
+      "size_bytes": 135066
+    },
+    ".runtime/phase2/e15-jit-special01/T026-r1-B.json": {
+      "sha256": "7876c0a820e0f6d20b11c3869e6a410a4b2cd665d154fc85115fbb195e13c8ea",
+      "size_bytes": 135434
+    },
+    ".runtime/phase2/e15-jit-special01/events/11864.jsonl": {
+      "sha256": "0e7111d8cd08eb727fe108bf3f59fa3b2b775139a1f83f99781f762b12e1f32e",
+      "size_bytes": 10421
+    },
+    ".runtime/phase2/e15-jit-special01/events/12176.jsonl": {
+      "sha256": "92e17dba218e717c395626e261cf03bfacd3b11f5ab04eb4b84a4cc76676a9ba",
+      "size_bytes": 9905
+    },
+    ".runtime/phase2/e15-jit-special01/events/13804.jsonl": {
+      "sha256": "3af398b9b91f54362a90c093dc3490e209f48527ca9cb48cad6e7963d03cdbb0",
+      "size_bytes": 7335
+    },
+    ".runtime/phase2/e15-jit-special01/events/17252.jsonl": {
+      "sha256": "e466ae58696cac61baf3218069041ad86b3f531f16c4c33d239204e56698ead5",
+      "size_bytes": 10161
+    },
+    ".runtime/phase2/e15-jit-special01/events/17476.jsonl": {
+      "sha256": "c830dbb6e141b7061d7abc2f29deb54d5fe32fcceceae5ea8f2755a4e816c898",
+      "size_bytes": 9644
+    },
+    ".runtime/phase2/e15-jit-special01/events/18328.jsonl": {
+      "sha256": "77b36d7facc188f74596388733288ba7e7060bb1080dab68590f8916b390a00f",
+      "size_bytes": 10423
+    },
+    ".runtime/phase2/e15-jit-special01/events/20760.jsonl": {
+      "sha256": "e13c3efb05cfa5f5709c4d73c1ac3abd96d9d4c8e2d7baa606ce7451f8cd16aa",
+      "size_bytes": 17748
+    },
+    ".runtime/phase2/e15-jit-special01/events/2204.jsonl": {
+      "sha256": "eac3a8a6fd2f3e93312389f3e027a3f3524dc7cc76e5869fe50415963d769549",
+      "size_bytes": 9605
+    },
+    ".runtime/phase2/e15-jit-special01/events/24520.jsonl": {
+      "sha256": "c8b7cb5e070d64a0539c568c31d897d0482dd968064fbc16b633959f57eac432",
+      "size_bytes": 10421
+    },
+    ".runtime/phase2/e15-jit-special01/events/27488.jsonl": {
+      "sha256": "1a7d4eaddcf63a6a3e78c7f7e6051f676b7014c9e6bc97701e0e84eded49c598",
+      "size_bytes": 10382
+    },
+    ".runtime/phase2/e15-jit-special01/events/27508.jsonl": {
+      "sha256": "05ef389c7d2e2b5c355581c701d18fe141b766390764aafd9dd86efc0d080de1",
+      "size_bytes": 6278
+    },
+    ".runtime/phase2/e15-jit-special01/events/31332.jsonl": {
+      "sha256": "d7c2632d9da9f01a61f487b5fee3bb5ca1ee8c6de0aea2b810367add05dca49c",
+      "size_bytes": 9644
+    },
+    ".runtime/phase2/e15-jit-special01/events/31692.jsonl": {
+      "sha256": "abfb7cfb6be546cea179cc7f316bc34ea8ba9859b4a424e094aabf0cd87ce0c1",
+      "size_bytes": 9908
+    },
+    ".runtime/phase2/e15-jit-special01/events/31748.jsonl": {
+      "sha256": "6253d9cbdac9976c6a2cc74162d0627d5b62355111839cc1a01cea10bf3a18b7",
+      "size_bytes": 9908
+    },
+    ".runtime/phase2/e15-jit-special01/events/3248.jsonl": {
+      "sha256": "82e0eeb0fc08962d475b8df54ab0488bf0833e7b09134df92c68389ab261a3e1",
+      "size_bytes": 10124
+    },
+    ".runtime/phase2/e15-jit-special01/events/4148.jsonl": {
+      "sha256": "4ab50a3827e42df0d0f1fc59714c111838302618d1ac132e3f96ce3389dac856",
+      "size_bytes": 10124
+    },
+    ".runtime/phase2/e15-jit-special01/events/8428.jsonl": {
+      "sha256": "fd36afca8f1f22ce2959b84dcd7ca3d3739cf3e3428157d878973a9940897cf6",
+      "size_bytes": 9869
+    },
+    ".runtime/phase2/e15-jit-special01/events/9132.jsonl": {
+      "sha256": "e201ae7415a693eccc369ced973580f385055772b5d86e3027c8e32cedfa83bf",
+      "size_bytes": 10082
+    },
+    ".runtime/phase2/e15-jit-special01/services/ollama.stderr.log": {
+      "sha256": "9ba3173f7ff81727b4d37909faf10c8bc3072476e2f1b20662cdb9884fab9286",
+      "size_bytes": 534051
+    },
+    ".runtime/phase2/e15-jit-special01/services/ollama.stdout.log": {
+      "sha256": "a9f7c90f21b8c670b3c3938b84c8282a28cd1cc9bd3fcf384c3504e0357de716",
+      "size_bytes": 69113
+    },
+    ".runtime/phase2/e15-jit-special01/services/owned-services.json": {
+      "sha256": "0b56cd9644eba17ebf1cf379e24e57114d63a0e240f58833cdcde0d6cbdd6073",
+      "size_bytes": 230
+    },
+    ".runtime/phase2/e15-jit-special01/services/ui.stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    ".runtime/phase2/e15-jit-special01/services/ui.stdout.log": {
+      "sha256": "e85c12e633bfd4cdd59cc1ed7d2af687ebf1417b4fdac1722723d62085808784",
+      "size_bytes": 6261
+    }
+  }
+}
