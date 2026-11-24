@@ -1,0 +1,41 @@
+{
+  "experiment": "E21_full_regression_acceptance",
+  "commit": "b612012ccbac54787dae9c81547a6200dda2b855",
+  "new_model_calls": 0,
+  "services_started": false,
+  "fixed90": {
+    "technical_completion": "90/90",
+    "full_answerable": "54/72",
+    "correct_refusal": "18/18",
+    "citation_support": "75/123",
+    "p95_seconds": 43.36,
+    "max_seconds": 44.5198873,
+    "min_available_gib": 3.0360870361,
+    "answer_calls": 86,
+    "retry_calls": 0,
+    "input_tokens": 112780,
+    "output_tokens": 2154,
+    "gates": {
+      "technical90": true,
+      "full54": true,
+      "refusal18": true,
+      "citation75of123": true,
+      "p95_under60": true,
+      "memory_over1gib": true
+    }
+  },
+  "exposed40_historical": {
+    "technical_completion": "40/40",
+    "full_answerable": "24/32",
+    "correct_refusal": "8/8",
+    "citation_support": "27/59",
+    "p95_seconds": 45.13,
+    "max_seconds": 46.2197053,
+    "min_available_gib": 2.6372833252,
+    "citation_gate": false,
+    "unseen_reusable": false
+  },
+  "merge_decision": "do_not_merge_runtime_optimization",
+  "reason": "fixed90_passes_but_exposed40_citation_gate_fails; no fresh unseen final set; multiturn/concurrency acceptance pending",
+  "replay_artifact": ".runtime/six-layer/e21-full-regression-audit.json"
+}

@@ -1,0 +1,40 @@
+{
+  "experiment": "E17_error_taxonomy_baseline",
+  "baseline_commit": "f1080201a4fbc54c076e516de521ad1ff4843846",
+  "snapshot_identity": "839c081d87a120a0b6d69b44e97edbf0544d09eba30da68580387f90cc039c0a",
+  "new_model_calls": 0,
+  "fixed": {
+    "corpus_records": 99,
+    "dense_top_k": 80,
+    "bm25_top_k": 80,
+    "rrf_fused_top_k": 80,
+    "rrf_k": 60,
+    "rerank_input": 40,
+    "rerank_output": 10,
+    "context_window": 5,
+    "message_budget_utf8_bytes": 6200,
+    "max_selected": 3,
+    "max_answer_calls": 2,
+    "temperature": 0
+  },
+  "e15_90": {
+    "technical_completion": "90/90",
+    "full_answerable": "54/72",
+    "correct_refusal": "18/18",
+    "citation_support": "75/123",
+    "wall_max_seconds": 44.5198873,
+    "memory_min_gib": 3.0360870361,
+    "semantic_grade_counts": {"correct": 54, "false_refusal": 7, "incorrect": 5, "partial": 6, "correct_refusal": 18},
+    "earliest_failure_counts": {"retrieval": 0, "rerank": 0, "context": 1, "generation": 17, "parsing": 0, "engineering": 0},
+    "generation_findings": {"wrong_evidence_selection": 5, "evidence_coverage_incomplete": 6, "false_refusal_with_evidence": 6, "unsupported_citations_questions": 31}
+  },
+  "e15_exposed40_historical": {
+    "technical_completion": "40/40",
+    "full_answerable": "24/32",
+    "correct_refusal": "8/8",
+    "citation_support": "27/59",
+    "earliest_failure_counts": {"retrieval": 0, "rerank": 0, "context": 0, "generation": 8, "parsing": 0, "engineering": 0},
+    "note": "Already consumed; not an unseen final set"
+  },
+  "next_priority": "generation evidence selection and citation support, with T034 context as a separate control"
+}

@@ -1,0 +1,57 @@
+{
+  "experiment": "E16_six_layer_governance",
+  "date": "2026-11-22",
+  "branch": "optimization/e16-six-layer-governance",
+  "baseline_commit": "9f7a97ac5adec5cbfaa46166a3980bd3aac79c33",
+  "new_model_calls": 0,
+  "services_started": false,
+  "controls": {
+    "passed": 37,
+    "total": 37,
+    "valid_plan_smoke": true,
+    "exposed_as_unseen_rejected": true
+  },
+  "archive_replay": {
+    "worker_traces": 130,
+    "suites": {
+      "e15_90": {
+        "complete": 90,
+        "full_answerable": "54/72",
+        "correct_refusal": "18/18",
+        "technical_completion": "90/90",
+        "citation_support": "75/123",
+        "minimum_available_gib": 3.0360870361,
+        "maximum_worker_seconds": 44.5198873,
+        "primary_failure_layers": {
+          "generation": 41,
+          "context": 1,
+          "no_observed_failure": 48
+        }
+      },
+      "e15_exposed40": {
+        "complete": 40,
+        "full_answerable": "24/32",
+        "correct_refusal": "8/8",
+        "technical_completion": "40/40",
+        "citation_support": "27/59",
+        "minimum_available_gib": 2.6372833252,
+        "maximum_worker_seconds": 46.2197053,
+        "citation_gate": "failed"
+      }
+    },
+    "model_calls_added": 0
+  },
+  "scope": {
+    "implemented": [
+      "six-layer inventory and config/source consistency checks",
+      "source-bound snapshot and single-variable plan preflight",
+      "trace-stage attribution, semantic review binding, and integrity checks"
+    ],
+    "not_done": [
+      "no new model experiment or RAG algorithm tuning",
+      "no new unseen final acceptance set",
+      "multiturn, session isolation, concurrency, long-running, and incremental ingestion remain unverified"
+    ]
+  },
+  "private_replay_artifact": ".runtime/six-layer/audit-final-e16.json"
+}

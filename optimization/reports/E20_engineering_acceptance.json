@@ -1,0 +1,38 @@
+{
+  "experiment": "E20_engineering_acceptance",
+  "baseline_commit": "9539a673cdf6fd0dc095c2ed47562db73294f1f5",
+  "new_model_calls": 0,
+  "services_started": false,
+  "offline_controls": {
+    "worker_contract": "10 checks passed",
+    "lazy_construction": "passed",
+    "low_memory_lifecycle": "passed",
+    "cache_scope_ttl": "passed"
+  },
+  "current_limits": {
+    "history_max_turns": 3,
+    "history_input_bytes": 32768,
+    "rewrite_timeout_seconds": 30,
+    "model_timeout_seconds": 180,
+    "worker_timeout_seconds": 420,
+    "cache_ttl_seconds": 300,
+    "cache_capacity": 128,
+    "default_concurrency": 1,
+    "semantic_cache": "disabled"
+  },
+  "status": {
+    "session_isolation": "implementation protected; fresh real acceptance pending",
+    "history_rewrite": "implementation protected; fresh real acceptance pending",
+    "concurrency_1_2_4": "pending",
+    "timeout_recovery": "offline handling protected; real recovery pending",
+    "exact_cache": "historical live miss-hit evidence; independent entry",
+    "semantic_cache": "rejected by prior wrong-hit evidence; remains disabled"
+  },
+  "required_next_runs": [
+    "two-session isolation",
+    "explicit/pronoun/new-topic rewrite matrix",
+    "concurrency 1, 2, 4 with queue and memory sampling",
+    "injected timeout/crash followed by recovery request",
+    "exact-cache invalidation and non-cacheable refusal/error cases"
+  ]
+}

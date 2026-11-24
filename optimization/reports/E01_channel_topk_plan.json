@@ -1,0 +1,15 @@
+{
+  "experiment": "E01_channel_topk",
+  "variable": "channel_depth",
+  "before": 80,
+  "after": 90,
+  "rrf_fused_depth": 80,
+  "rerank_input": 40,
+  "rerank_output": 10,
+  "context_window": 5,
+  "status": "planned_not_run",
+  "reason": "Ollama and UI service unavailable; archived traces contain only Top80 channel results",
+  "new_model_calls": 0,
+  "services_started": false,
+  "merge": false
+}

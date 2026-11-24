@@ -42,6 +42,7 @@ def local_corpus():
 
 def validate_result(value,question):
     from answer_eval_engine import pack
+    from generation_decision import prompt_for as generation_prompt
     from answer_eval_core import parse_selection
     from citation_catalog_guard import safe_render
     from disciplinary_query_policy import evaluate_suspension_query,refusal_message,PUBLIC_REASON
@@ -71,7 +72,7 @@ def validate_result(value,question):
         known={cid:{k:r[k] for k in SOURCE_FIELDS} for cid,r in corpus.items()}
         validate_packet(value['retrieval'],q,'top40',known,reranker_config())
         if value['retrieved_ids']!=[r['chunk_id'] for r in value['retrieval']['results']]:raise ValueError('Retrieved order differs')
-        context,messages,size=pack(q,[corpus[c] for c in value['retrieved_ids']],answer_config(),(ROOT/'config/answer_evaluation_system.txt').read_text('utf-8'))
+        context,messages,size=pack(q,[corpus[c] for c in value['retrieved_ids']],answer_config(),generation_prompt((ROOT/'config/answer_evaluation_system.txt').read_text('utf-8')))
         if (value['context'],value['messages'],value['prompt_utf8_bytes'])!=(context,messages,size):raise ValueError('Actual offered context differs')
     elif not value['error'] and value['refusal_reason']!='version_unverified' and not decision:raise ValueError('Unexpected missing retrieval')
     attempts=value['attempts']

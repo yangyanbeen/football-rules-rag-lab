@@ -1,5 +1,9 @@
 # Phase 2 experiments
 
+The current code/config inventory, six-layer diagnosis map, experiment freeze and plan gates are documented in [RAG tuning map](../docs/RAG_TUNING_MAP.md). Offline commands: `python -B optimization/rag_diagnostics.py inventory|audit|case|freeze|check-plan`; outputs must use new paths. The tools do not call models. Run the governance controls with `python -B optimization/verify_six_layer_governance.py`.
+
+The current fixed error taxonomy and baseline are recorded in [E17 baseline](reports/E17_error_taxonomy_baseline.md) with an aggregate machine-readable copy at `reports/E17_error_taxonomy_baseline.json`.
+
 Latest local status (2026-11-22): E15 low-memory fixed90 passed quality and resource gates. The sealed40 was subsequently used once: resource gates passed, citation support27/59 failed the predeclared threshold. Overall delivery is not accepted; no merge/push or default promotion. See [final E15 report](reports/E15_low_memory_final_report.md) and [low-memory usage](../docs/LOW_MEMORY_MODE.md). The original40 is now exposed and must not be reused as unseen data for tuning acceptance.
 
 The following E1 instructions describe the historical first experiment; later experiments and their frozen plans/reports remain separate. The production prompt and original baseline artifacts are preserved.

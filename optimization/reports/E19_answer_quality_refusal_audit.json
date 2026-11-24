@@ -1,0 +1,24 @@
+{
+  "experiment": "E19_answer_quality_refusal_audit",
+  "baseline_commit": "9539a673cdf6fd0dc095c2ed47562db73294f1f5",
+  "baseline_snapshot_identity": "a4dcea772e56f9baa5882a34b175d1eb4936cf49587866124849f32e1d334db1",
+  "new_model_calls": 0,
+  "fixed90": {
+    "answerable": 72,
+    "all_expected_evidence_in_prompt": 70,
+    "context_control_cases": ["T022", "T034"],
+    "semantic": {"full": "54/72", "false_refusal": "7/72", "partial": "6/72", "incorrect": "5/72", "correct_refusal": "18/18"},
+    "generation_findings": {
+      "wrong_evidence_selection": ["D011", "D019", "T014", "T018", "T028"],
+      "evidence_coverage_incomplete": ["D021", "D026", "T004", "T023", "T026", "T032"],
+      "false_refusal_with_evidence": ["D003", "D012", "D032", "T009", "T015", "T017"],
+      "unsupported_citation_question_count": 31,
+      "schema_or_parsing_failures": 0
+    },
+    "citation_support": "75/123",
+    "max_seconds": 44.5198873,
+    "min_available_gib": 3.0360870361
+  },
+  "next_variable": "selection_instruction",
+  "next_candidate_scope": "generation-only; context, retrieval, rerank, schema and model fixed"
+}

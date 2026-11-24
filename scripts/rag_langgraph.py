@@ -56,6 +56,8 @@ class QueryState(TypedDict, total=False):
     business_decision: dict
     retry: bool
     selection: dict | None
+    generation_decision: dict | None
+    fact_recovery: dict | None
     answer: str
     citations: list
     selected_ids: list[str]
@@ -251,9 +253,19 @@ class Flow:
         audits.append({'attempt': len(attempts) + 1, 'response': response,
                        'normalized_selection': selection, 'error': None})
         attempts.append({'attempt': len(attempts) + 1, 'chat_calls': self.ops.chat_calls - before, 'outcome': 'accepted'})
+        from generation_decision import decide as apply_generation_decision
+        decision=apply_generation_decision(state['question'],selection,state['context'],state['messages'])
+        update={'attempts': attempts, 'selection_audits': audits, 'retry': False, 'selection': selection}
+        if decision['trace']['enabled'] or decision['recovery'] is not None:
+            update['generation_decision']=decision['trace']
+        if decision['recovery'] is not None:
+            update['fact_recovery']=decision['recovery']
+            if decision['recovery']['applied']:
+                selection={**selection,'answerable':True,'chunk_ids':decision['recovery']['selected_ids'],'reason':None}
+                update['selection']=selection
         if not selection['answerable']:
-            return {'attempts': attempts, 'selection_audits': audits, 'retry': False, 'status': 'refused', 'reason': selection['reason']}
-        return {'attempts': attempts, 'selection_audits': audits, 'retry': False, 'selection': selection}
+            update.update(status='refused',reason=selection['reason'])
+        return update
 
     def check_citations(self, state):
         ids = state['selection']['chunk_ids']

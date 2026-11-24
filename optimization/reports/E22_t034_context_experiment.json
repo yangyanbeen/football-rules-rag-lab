@@ -1,0 +1,24 @@
+{
+  "experiment": "E22_t034_context_experiment",
+  "variable": "packing_window",
+  "baseline": 5,
+  "candidate": 10,
+  "special_case": {
+    "T034_prompt_contains_L14-01": true,
+    "T034_final_segments": 5,
+    "T034_prompt_bytes": 6069
+  },
+  "structural_regression": {
+    "retrieved_traces": 86,
+    "prompt_changed": 59,
+    "prompt_unchanged": 27,
+    "budget_over": 0,
+    "max_prompt_bytes": 6196,
+    "annotated_missing": {"T022": ["L09-03"]}
+  },
+  "new_model_calls": 0,
+  "services_started": false,
+  "decision": "rollback_candidate",
+  "reason": "candidate_changes_too_many_prompts_and_does_not_resolve_T022",
+  "next_candidate": "preserve_original_packed_segments_then_fill_remaining_slots_from_top10"
+}

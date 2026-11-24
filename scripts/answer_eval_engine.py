@@ -1,7 +1,19 @@
 """Actual Task12 answer and judge requests; generation never opens evaluation labels."""
 from __future__ import annotations
-import json,re,time
+import json,os,re,time
 from answer_eval_core import ROOT,BOUNDARY,REFUSAL,canonical,digest,config,parse_selection,render,parse_grade,normalized,write_new,record
+
+
+STRICT_SELECTION_SUFFIX = """
+严格证据复核（仅在实验开关开启时使用）：先在内部逐项核对问题要求的对象、数字、条件、否定、例外和多部分子问，再选择证据。每个必要要点都必须由当前已提供段落直接支持；只有同主题或间接相关不能算支持。选择能覆盖全部必要要点的最少段，避免加入不支持所问事实的段。准备拒答前，再检查所有已提供段落：只要证据直接支持所问要点，就不要以“资料不足”拒答；只有关键要点确实缺少证据、来源冲突或版本要求无法确认时才拒答。保持答案与选段一致。
+"""
+
+
+def selection_prompt(prompt):
+    """Return the opt-in E19 instruction without changing the default prompt."""
+    if os.environ.get('FOOTBALL_STRICT_SELECTION') == '1':
+        return prompt + STRICT_SELECTION_SUFFIX
+    return prompt
 
 
 def pack(question,evidence,cfg,prompt):
@@ -11,7 +23,17 @@ def pack(question,evidence,cfg,prompt):
                'needs_rule_review':r['needs_rule_review'],'review_notes':r['review_notes']} for r in rows]
         return [{'role':'system','content':prompt},{'role':'user','content':json.dumps({'question':question,'evidence':body},ensure_ascii=False)}]
     if len(canonical(messages([])))>cfg['input_utf8_byte_budget']:raise ValueError('Question cannot fit whole prompt')
-    for r in evidence[:cfg['max_context_chunks']]:
+    # The normal path examines only the configured window.  The opt-in E22
+    # candidate preserves every segment selected by that pass, then scans the
+    # existing Top10 only to fill unused segment/byte capacity.  It never
+    # replaces or reorders an already packed segment, and remains off by
+    # default so historical prompts stay byte-identical.
+    consideration_window = cfg['max_context_chunks']
+    if os.environ.get('FOOTBALL_PACKING_FILL_TOP10') == '1':
+        consideration_window = max(consideration_window, 10)
+    for r in evidence[:consideration_window]:
+        if len(selected) >= cfg['max_context_chunks']:
+            break
         if len(canonical(messages(selected+[r])))<=cfg['input_utf8_byte_budget']:selected.append(r)
     m=messages(selected)
     return selected,m,len(canonical(m))
@@ -43,7 +65,8 @@ class AnswerEngine:
         from reranker_eval import config as reranker_config
         from rag_b0 import PinnedChat
         self.cfg=config();self.retriever=RerankerRetriever(reranker_config());self.chat=PinnedChat(self.cfg)
-        self.prompt=(ROOT/self.cfg['prompt_file']).read_text('utf-8')
+        from generation_decision import prompt_for as generation_prompt
+        self.prompt=generation_prompt((ROOT/self.cfg['prompt_file']).read_text('utf-8'))
         self.chat.verify_model()
 
     def close(self):self.retriever.close()
@@ -70,6 +93,16 @@ class AnswerEngine:
             selection,attempts,error=request_json(self.chat,messages,self.cfg,lambda s:parse_selection(s,r['offered_ids'],self.cfg),selection_schema(r['offered_ids'],self.cfg['max_selected_chunks']))
             r['attempts']=attempts;r['timing']['generation_seconds']=time.perf_counter()-begin
             if error:raise ValueError(error)
+            from generation_decision import decide as apply_generation_decision
+            decision=apply_generation_decision(question,selection,context,messages)
+            r['generation_decision']=decision['trace']
+            recovery=decision['recovery']
+            if recovery is not None:
+                r['fact_recovery']=recovery
+                if recovery['applied']:
+                    selected=recovery['selected_ids'];answer,cites=render(selected,{v['chunk_id']:v for v in context})
+                    r.update(status='answered',answer=answer,citations=cites,selected_ids=selected)
+                    return r
             if selection['answerable']:
                 selected=selection['chunk_ids'];answer,cites=render(selected,{v['chunk_id']:v for v in context})
                 r.update(status='answered',answer=answer,citations=cites,selected_ids=selected)

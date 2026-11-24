@@ -1,0 +1,19 @@
+{
+  "experiment": "E24_t022_reclassification",
+  "new_model_calls": 0,
+  "question_id": "T022",
+  "expected_ids": ["L15-01", "L16-01", "L17-01", "L09-03"],
+  "L09-03_rerank_rank": 16,
+  "top10_contains_L09-03": false,
+  "original_prompt_segments": 5,
+  "original_prompt_bytes": 4692,
+  "semantic_grade": "correct",
+  "unsupported_citation": "L17-06",
+  "classification": {
+    "retrieval_or_rerank_boundary": true,
+    "packing_budget_loss": false,
+    "generation_citation_issue": true,
+    "semantic_answer_failure": false
+  },
+  "decision": "do_not_change_E23_candidate; register separate rerank-output/citation experiment"
+}

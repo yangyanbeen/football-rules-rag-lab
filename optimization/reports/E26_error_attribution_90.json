@@ -1,0 +1,35 @@
+{
+  "experiment": "E26_error_attribution_90",
+  "commit": "b7ca9fda04f4d3ed23b31a74b65c2ab77165acd1",
+  "new_model_calls": 0,
+  "services_started": false,
+  "semantic_grade_counts": {"correct": 54, "false_refusal": 7, "incorrect": 5, "partial": 6, "correct_refusal": 18},
+  "first_failure_partition": {
+    "retrieval": 0,
+    "rerank": 0,
+    "context": 1,
+    "generation": 17,
+    "parsing_or_engineering": 0,
+    "no_observed_failure": 48
+  },
+  "secondary_findings": {
+    "wrong_evidence_selection": 5,
+    "evidence_coverage_incomplete": 6,
+    "false_refusal_with_evidence_generation": 6,
+    "false_refusal_total": 7,
+    "unsupported_citation_questions": 31
+  },
+  "execution_chain": {
+    "worker_single_turn_trace": "largely_complete",
+    "original_question": true,
+    "query_resolution": "present_when_history_path_is_used; unchanged single-turn otherwise",
+    "dense_bm25_channels_and_scores": true,
+    "rerank_results_and_scores": true,
+    "final_context_and_prompt": true,
+    "raw_and_parsed_llm_attempts": true,
+    "per_question_evaluation": true,
+    "multiturn_session_isolation": "not established by fixed90",
+    "legacy_graph_full_trace": "only when archived observations are present"
+  },
+  "priority": "freeze retrieval; optimize generation/citation selection, then T034 context assembly"
+}

@@ -1,0 +1,14 @@
+{
+  "experiment": "E27_strict_selection_candidate",
+  "default_enabled": false,
+  "switch": "FOOTBALL_STRICT_SELECTION=1",
+  "target": ["wrong_evidence_selection", "evidence_coverage_incomplete", "false_refusal_with_evidence"],
+  "candidate_prompt_suffix_chars": 214,
+  "T022_strict_prompt_bytes": 5332,
+  "default_prompt_unchanged": true,
+  "governance_controls": "37/37",
+  "new_model_calls": 0,
+  "services_started": false,
+  "semantic_validation": "blocked_until_ollama_runtime_available",
+  "promotion": "pending_special_AB_and_fixed90_regression"
+}

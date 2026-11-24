@@ -1,0 +1,21 @@
+{
+  "experiment": "E23_evidence_fill_candidate",
+  "commit": "6db723c76896cb96599a5253ac58ffe88127ab83",
+  "snapshot_identity": "cbbb53e22c64f8fce824a15c9aab6d9fcf66bd512bb4a23284eb36fbe97829e0",
+  "default_enabled": false,
+  "candidate": "preserve_original_packing_then_fill_from_top10",
+  "offline_special": {
+    "T034_original_ids": ["L01-07", "L07-03", "L14-03", "L05-03"],
+    "T034_candidate_ids": ["L01-07", "L07-03", "L14-03", "L05-03", "L14-01"],
+    "T034_prompt_bytes": 6069,
+    "retrieved_traces": 86,
+    "prompt_changed": 13,
+    "budget_over": 0,
+    "max_prompt_bytes": 6194,
+    "remaining_missing": {"T022": {"ids": ["L09-03"], "reason": "rerank_rank_16_outside_top10; original_prompt_already_has_five_segments"}}
+  },
+  "new_model_calls": 0,
+  "services_started": false,
+  "semantic_regression": "pending",
+  "promotion": "do_not_enable_default_until_real_AB_and_90_question_regression"
+}

@@ -1,0 +1,26 @@
+{
+  "experiment": "E18_retrieval_evidence_audit",
+  "baseline_snapshot_identity": "d481bc87e0f094c99c44e4d0cf275a2020dd5966ccb5bb13fb0d242ba2443e6c",
+  "source_commit": "71b721077f0b317003fe8be98cd33273a799c020",
+  "new_model_calls": 0,
+  "services_started": false,
+  "fixed90_answerable_questions": 72,
+  "coverage": {
+    "union160_all_hit": "72/72",
+    "union160_micro": "84/84",
+    "fused80_all_hit": "72/72",
+    "fused80_micro": "84/84",
+    "rerank_input40_all_hit": "72/72",
+    "rerank_input40_micro": "84/84",
+    "rerank_top10_all_hit": "71/72",
+    "rerank_top10_micro": "83/84",
+    "prompt_top5_all_hit": "70/72",
+    "prompt_top5_micro": "82/84"
+  },
+  "prompt_exclusions": {
+    "T022": ["one annotated segment; final semantic grade was not a failure"],
+    "T034": ["L14-01; present in Top10 but outside the current packing window"]
+  },
+  "decision": "Do not change embedding, retrieval depth, fusion or reranker from this audit alone; gate a context-window-only experiment first.",
+  "unseen_final_set_available": false
+}

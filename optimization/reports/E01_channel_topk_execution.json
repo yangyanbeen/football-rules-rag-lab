@@ -1,0 +1,14 @@
+{
+  "experiment": "E01_channel_topk",
+  "status": "blocked_before_runtime_start",
+  "requested_change": "Dense/BM25 channel depth 80 to 90",
+  "ollama_executable_found": false,
+  "ollama_api_listening": false,
+  "ui_7867_listening": false,
+  "archived_channel_max_k": 80,
+  "new_model_calls": 0,
+  "services_started": false,
+  "default_configuration_changed": false,
+  "reason": "Cannot obtain real ranks 81-90 or answer outputs without the pinned runtime; using old Top80 traces would invalidate the experiment.",
+  "next_action": "Start the pinned Ollama/BGE-M3 runtime, then run the 10-question special gate before the fixed90 regression."
+}

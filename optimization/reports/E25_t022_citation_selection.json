@@ -1,0 +1,20 @@
+{
+  "experiment": "E25_t022_citation_selection",
+  "question_id": "T022",
+  "new_model_calls": 0,
+  "fixed_prompt": true,
+  "original_selected_ids": ["L15-01", "L16-01", "L17-06"],
+  "review_supported_ids": ["L15-01", "L16-01"],
+  "filtered_ids": ["L15-01", "L16-01"],
+  "rendered_citation_count": 2,
+  "unsupported_removed": ["L17-06"],
+  "semantic_answer_status": "already_correct",
+  "citation_filter_special": "passed",
+  "generalization": "pending_per_question_source_review",
+  "L09_03_rerank_rank": 16,
+  "next_experiments": [
+    "rerank_output_top10_to_top20_visibility_only",
+    "separate_evidence_selection_with_fixed_candidate_list"
+  ],
+  "default_enabled": false
+}

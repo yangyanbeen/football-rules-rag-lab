@@ -1,0 +1,212 @@
+{
+  "version": "six-layer-governance-1",
+  "baseline_commit": "184a18d",
+  "layers": {
+    "data": {
+      "name": "数据质量层",
+      "order": 1,
+      "sources": [
+        "scripts/build_rag_dataset.py",
+        "scripts/validate_rag_dataset.py",
+        "config/dense_index.json"
+      ],
+      "metrics": [
+        "corpus_integrity",
+        "metadata_coverage",
+        "chunk_length",
+        "duplicate_bodies"
+      ],
+      "experiment_variables": [
+        "chunk_policy",
+        "metadata_policy",
+        "source_cleaning"
+      ]
+    },
+    "retrieval": {
+      "name": "检索召回层",
+      "order": 2,
+      "sources": [
+        "scripts/dense_index.py",
+        "scripts/bm25_index.py",
+        "scripts/rrf.py",
+        "scripts/task13_query_rewrite.py"
+      ],
+      "metrics": [
+        "annotated_any_hit@K",
+        "annotated_all_hit@K",
+        "annotated_recall_micro@K",
+        "annotated_precision_proxy@K",
+        "MRR@K"
+      ],
+      "experiment_variables": [
+        "embedding_model",
+        "channel_depth",
+        "fusion_policy",
+        "query_rewrite"
+      ]
+    },
+    "rerank": {
+      "name": "检索精排层",
+      "order": 3,
+      "sources": [
+        "scripts/bge_reranker.py",
+        "scripts/reranker_live.py",
+        "config/reranker_experiment.json"
+      ],
+      "metrics": [
+        "MRR@K",
+        "annotated_all_hit@K",
+        "pair_truncation",
+        "graded_nDCG_pending"
+      ],
+      "experiment_variables": [
+        "reranker_model",
+        "rerank_budget",
+        "rerank_threshold",
+        "dedup_policy"
+      ]
+    },
+    "context": {
+      "name": "上下文装配层",
+      "order": 4,
+      "sources": [
+        "scripts/answer_eval_engine.py",
+        "config/answer_evaluation.json"
+      ],
+      "metrics": [
+        "annotated_evidence_in_prompt",
+        "packing_window_loss",
+        "packing_budget_loss",
+        "prompt_utf8_bytes"
+      ],
+      "experiment_variables": [
+        "packing_window",
+        "packing_budget",
+        "evidence_order",
+        "conflict_policy"
+      ]
+    },
+    "generation": {
+      "name": "答案生成层",
+      "order": 5,
+      "sources": [
+        "scripts/task13_engine.py",
+        "scripts/task13_audit.py",
+        "scripts/source_bound_facts.py",
+        "scripts/citation_catalog_guard.py"
+      ],
+      "metrics": [
+        "full_answerable",
+        "correct_refusal",
+        "false_refusal",
+        "citation_support",
+        "schema_repair",
+        "semantic_review_pending"
+      ],
+      "experiment_variables": [
+        "selection_instruction",
+        "answer_model",
+        "refusal_policy",
+        "selection_protocol"
+      ]
+    },
+    "engineering": {
+      "name": "工程性能层",
+      "order": 6,
+      "sources": [
+        "scripts/task13_audit_client.py",
+        "scripts/task13_audit_pipeline.py",
+        "scripts/task13_history_actions.py",
+        "scripts/low_memory_runtime.py",
+        "scripts/runtime_observation.py"
+      ],
+      "metrics": [
+        "technical_completion",
+        "wall_seconds",
+        "available_memory_GiB",
+        "retry_calls",
+        "session_isolation_pending",
+        "concurrency_pending"
+      ],
+      "experiment_variables": [
+        "model_residency",
+        "worker_lifetime",
+        "queue_policy",
+        "cache_policy",
+        "session_policy"
+      ]
+    }
+  },
+  "limits": {
+    "wall_seconds": 60,
+    "available_memory_GiB": 1,
+    "maximum_answer_calls": 2
+  },
+  "profiles": {
+    "default": {
+      "FOOTBALL_LOW_MEMORY": "0",
+      "FOOTBALL_SOURCE_FACTS": "0",
+      "FOOTBALL_LAZY_RETRIEVAL": "0",
+      "FOOTBALL_JIT_RERANKER": "0",
+      "FOOTBALL_RELEASE_RERANKER": "0"
+    },
+    "low_memory_facts": {
+      "FOOTBALL_LOW_MEMORY": "1",
+      "FOOTBALL_SOURCE_FACTS": "1",
+      "FOOTBALL_LAZY_RETRIEVAL": "1",
+      "FOOTBALL_JIT_RERANKER": "1",
+      "FOOTBALL_RELEASE_RERANKER": "1"
+    }
+  },
+  "datasets": [
+    {
+      "id": "dev40",
+      "path": "optimization/datasets/dev_40.json",
+      "role": "development",
+      "unseen": false
+    },
+    {
+      "id": "regression50",
+      "path": "optimization/datasets/regression_50.json",
+      "role": "regression",
+      "unseen": false
+    },
+    {
+      "id": "exposed40",
+      "path": "optimization/datasets/holdout_40.json",
+      "role": "exposed_acceptance",
+      "unseen": false,
+      "consumed_receipt": "optimization/reports/E15_low_memory_holdout_metrics.json"
+    }
+  ],
+  "archives": {
+    "e15_90": {
+      "metrics": "optimization/reports/E15_low_memory_live90_metrics.json",
+      "variant": "candidate",
+      "datasets": [
+        "dev40",
+        "regression50"
+      ],
+      "completion": ".runtime/phase2/e15-lowmemory90-01/worker/completed.json",
+      "metrics_sha256": "e6a700ffc876742e999017d7af4578a2a418bf2d019b5c928fd72f5925e2d359"
+    },
+    "e15_40": {
+      "metrics": "optimization/reports/E15_low_memory_holdout_metrics.json",
+      "datasets": [
+        "exposed40"
+      ],
+      "completion": ".runtime/phase2/e15-lowmemoryholdout40-01/completed.json",
+      "metrics_sha256": "4bdb240506c2e5bfe628f9a2b243941fcd6befec05f04d1b04de1fd440876a40"
+    }
+  },
+  "acceptance": {
+    "fixed90": {
+      "complete": 90,
+      "full_answerable": 54,
+      "correct_refusal": 18,
+      "citation_min_numerator": 75,
+      "citation_min_denominator": 123
+    },
+    "new_final_set": "Required for a future release; no unused final set is currently registered."
+  }
+}

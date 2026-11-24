@@ -3,7 +3,8 @@ import os,sys,time,re
 from runtime_observation import mark
 from task13_core import *
 from answer_eval_core import config as answer_config,parse_selection
-from answer_eval_engine import pack,request_json
+from answer_eval_engine import pack,request_json,selection_prompt
+from generation_decision import decide as apply_generation_decision, prompt_for as generation_prompt
 from citation_catalog_guard import safe_render
 from disciplinary_query_policy import evaluate_suspension_query, refusal_message, PUBLIC_REASON
 from low_memory_runtime import enabled as low_memory, unload_model
@@ -73,7 +74,7 @@ class IntegratedEngine:
             if not low_memory() and os.environ.get('FOOTBALL_LAZY_RETRIEVAL','0')!='1':self.retriever=retriever(self.cfg)
             self.chat=PinnedChat(self.answer_cfg)
             mark('chat_identity_validation_start')
-            self.chat.verify_model();self.prompt=(ROOT/'config/answer_evaluation_system.txt').read_text('utf-8')
+            self.chat.verify_model();self.prompt=generation_prompt((ROOT/'config/answer_evaluation_system.txt').read_text('utf-8'))
             mark('chat_identity_validation_end')
         except BaseException:
             if self.retriever is not None:
@@ -167,16 +168,19 @@ class IntegratedEngine:
                 if low_memory():unload_model(self.chat.base_url,self.answer_cfg['llm'],'answer_after_generation')
                 r['timing']['generation_seconds']=time.perf_counter()-t
             if error:raise ValueError(error)
-            if not selection['answerable'] and selection['reason']=='insufficient_evidence':
-                from source_bound_facts import enabled, evaluate
-                if enabled() and getattr(self,'fact_recovery_allowed',True):
-                    mark('fact_binding_start');recovery=evaluate(question,selection,context,messages);mark('fact_binding_end')
-                    r['fact_recovery']=recovery
-                    if recovery['applied']:
-                        answer,cites=safe_render(recovery['selected_ids'],{v['chunk_id']:v for v in context})
-                        r.update(status='answered',answer=answer,citations=cites,
-                                 selected_ids=recovery['selected_ids'],refusal_reason=None)
-                        return r
+            decision=apply_generation_decision(
+                question,selection,context,messages,
+                recovery_allowed=getattr(self,'fact_recovery_allowed',True))
+            r['generation_decision']=decision['trace']
+            recovery=decision['recovery']
+            if recovery is not None:
+                r['fact_recovery']=recovery
+                if recovery['applied']:
+                    mark('fact_binding_start');answer,cites=safe_render(
+                        recovery['selected_ids'],{v['chunk_id']:v for v in context});mark('fact_binding_end')
+                    r.update(status='answered',answer=answer,citations=cites,
+                             selected_ids=recovery['selected_ids'],refusal_reason=None)
+                    return r
             if selection['answerable']:
                 answer,cites=safe_render(selection['chunk_ids'],{v['chunk_id']:v for v in context})
                 r.update(status='answered',answer=answer,citations=cites,selected_ids=selection['chunk_ids'])

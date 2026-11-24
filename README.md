@@ -1,5 +1,7 @@
 # 足球规则 RAG Lab
 
+**六层 RAG 调优地图已整理。** 当前真实数据流、分层指标、错误归因、实验冻结与门禁见[六层调优地图](docs/RAG_TUNING_MAP.md)和[离线诊断工具](optimization/README.md)。E15 固定90题质量/资源门禁通过，但已使用的40题验收集引用支持为27/59，整体交付门禁未通过；不把该集重用为 unseen。详见[最终报告](optimization/reports/E15_low_memory_final_report.md)。
+
 **任务 14–17 已复查并补交付。** 修复归档数字校验、FAISS 输入冻结、精确缓存一致性和 LangGraph 请求追踪。 [缺陷与验收](reports/TASK_14_17_SUPPLEMENT.md) · [复验方式](docs/TASK_14_17_AUDIT.md)
 
 **原计划任务 1–17 已交付。** 任务十七新增独立 LangGraph 问答入口，提供真实普通链路对照、受控重试与引用失败记录。 [任务十七交付](reports/TASK_17_DELIVERY.md) · [流程与复跑](docs/LANGGRAPH_FLOW.md)
@@ -66,7 +68,7 @@
 
 | 层 | 目录/入口 | 现状 |
 | --- | --- | --- |
-| 前端 | [frontend/](frontend/README.md) | 固定Kotaemon Gradio UI；当前入口 `frontend/start_integrated_rag.ps1`（7866）；旧任务二/B0入口保留 |
+| 前端 | [frontend/](frontend/README.md) | 固定Kotaemon Gradio UI；当前审计入口 `frontend/start_integrated_rag_audit.ps1`（7867）；旧任务二/B0入口保留 |
 | 后端 | [backend/](backend/README.md)、`scripts/rag_b0.py` | 当前Dense/BM25→RRF→BGE→本机LLM→引用/拒答；UI通过独立Python问答进程调用 |
 | 数据 | [data/](data/README.md)、`scripts/build_rag_dataset.py` | 冻结语料、稳定 ID、统一 Schema、独立校验与来源清单 |
 | 环境 | [infra/](infra/README.md)、`config/` | 上游 commit、锁定依赖、本地模型配置 |
