@@ -1,6 +1,8 @@
 param(
     [Parameter(Mandatory=$true)][string]$Out,
-    [switch]$SourceFacts
+    [switch]$SourceFacts,
+    [switch]$AnchorGuard,
+    [string[]]$Only
 )
 $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
@@ -25,6 +27,10 @@ $cases = @(
     @('D032','false_refusal_with_evidence'), @('T009','false_refusal_with_evidence'),
     @('T015','false_refusal_with_evidence'), @('T017','false_refusal_with_evidence')
 )
+if ($Only -and $Only.Count -gt 0) {
+    $wanted = @($Only | ForEach-Object { $_ -split ',' } | ForEach-Object { $_.Trim() })
+    $cases = @($cases | Where-Object {$wanted -contains $_[0]})
+}
 
 function Set-RunEnvironment {
     $env:OLLAMA_HOST='127.0.0.1:11434'
@@ -35,6 +41,7 @@ function Set-RunEnvironment {
     $env:FOOTBALL_GENERATION_DECISION='0'
     $env:FOOTBALL_SELECTION_AUDIT='1'
     $env:FOOTBALL_PACKING_FILL_TOP10='0'
+    $env:FOOTBALL_ANCHOR_GUARD=if ($AnchorGuard) {'1'} else {'0'}
     $env:PYTHONIOENCODING='utf-8'
     $env:PYTHONDONTWRITEBYTECODE='1'
     foreach ($key in @('HTTP_PROXY','HTTPS_PROXY','ALL_PROXY','http_proxy','https_proxy','all_proxy')) { Set-Item "Env:$key" '' }
@@ -74,5 +81,5 @@ for ($i=0; $i -lt $cases.Count; $i++) {
     ($row | ConvertTo-Json -Depth 40) + "`n" | Set-Content -LiteralPath $file -Encoding utf8
     [ordered]@{done=$i+1;total=$cases.Count;qid=$qid;status=$row.status;selected_ids=$row.selected_ids;offered_ids=$row.offered_ids;elapsed_seconds=$row.elapsed_seconds;error=$row.error} | ConvertTo-Json -Compress
 }
-$summary=[ordered]@{status='COMPLETED';source_commit=(& git -C $root rev-parse HEAD);model='qwen2.5:3b';ollama_version='0.40.16';variant='C_selection_audit';generation_cases=$cases.Count;generation_observations=$rows.Count;rows=$rows}
+$summary=[ordered]@{status='COMPLETED';source_commit=(& git -C $root rev-parse HEAD);model='qwen2.5:3b';ollama_version='0.40.16';variant='C_selection_audit';source_facts=[bool]$SourceFacts;anchor_guard=[bool]$AnchorGuard;generation_cases=$cases.Count;generation_observations=$rows.Count;rows=$rows}
 ($summary | ConvertTo-Json -Depth 40) + "`n" | Set-Content -LiteralPath (Join-Path $outPath 'summary.json') -Encoding utf8

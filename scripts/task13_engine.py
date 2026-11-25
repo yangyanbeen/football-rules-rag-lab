@@ -7,7 +7,8 @@ from answer_eval_engine import pack,request_json,selection_prompt
 from generation_decision import (decide as apply_generation_decision,
                                   prompt_for as generation_prompt,
                                   run_selection_audit,
-                                  choose_audited_selection)
+                                  choose_audited_selection,
+                                  apply_anchor_guard)
 from citation_catalog_guard import safe_render
 from disciplinary_query_policy import evaluate_suspension_query, refusal_message, PUBLIC_REASON
 from low_memory_runtime import enabled as low_memory, unload_model
@@ -178,6 +179,10 @@ class IntegratedEngine:
             if audit is not None:
                 selection = choose_audited_selection(selection, audit)
                 r['selection_audit'] = audit
+            guarded = apply_anchor_guard(question, selection, context)
+            selection = guarded['selection']
+            if guarded['trace']['enabled']:
+                r['selection_anchor_guard'] = guarded['trace']
             decision=apply_generation_decision(
                 question,selection,context,messages,
                 recovery_allowed=getattr(self,'fact_recovery_allowed',True))

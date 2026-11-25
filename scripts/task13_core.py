@@ -97,6 +97,14 @@ def validate_result(value,question):
             if audited!=audit.get('selection'):
                 raise ValueError('Selection audit result differs')
             selected=choose_audited_selection(selected,audit)
+        from generation_decision import apply_anchor_guard
+        guarded=apply_anchor_guard(q,selected,value['context'])
+        if guarded['trace']['enabled']:
+            if value.get('selection_anchor_guard')!=guarded['trace']:
+                raise ValueError('Selection anchor guard trace differs')
+            selected=guarded['selection']
+        elif value.get('selection_anchor_guard') is not None:
+            raise ValueError('Unexpected selection anchor guard trace')
         recovery=value.get('fact_recovery')
         if recovery is not None:
             from source_bound_facts import evaluate

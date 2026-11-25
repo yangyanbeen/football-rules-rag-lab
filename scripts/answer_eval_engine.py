@@ -95,7 +95,8 @@ class AnswerEngine:
             if error:raise ValueError(error)
             from generation_decision import (decide as apply_generation_decision,
                                               run_selection_audit,
-                                              choose_audited_selection)
+                                              choose_audited_selection,
+                                              apply_anchor_guard)
             from answer_json_chat import selection_schema
             audit = run_selection_audit(
                 self.chat, messages, self.cfg,
@@ -105,6 +106,10 @@ class AnswerEngine:
             if audit is not None:
                 selection = choose_audited_selection(selection, audit)
                 r['selection_audit'] = audit
+            guarded = apply_anchor_guard(question, selection, context)
+            selection = guarded['selection']
+            if guarded['trace']['enabled']:
+                r['selection_anchor_guard'] = guarded['trace']
             decision=apply_generation_decision(question,selection,context,messages)
             r['generation_decision']=decision['trace']
             recovery=decision['recovery']

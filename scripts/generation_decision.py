@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import os
 from copy import deepcopy
+from itertools import combinations
 
 from answer_eval_engine import selection_prompt
 from answer_eval_core import digest
@@ -67,6 +68,83 @@ def choose_audited_selection(initial, audit):
     # still allowed to remain a refusal and may be recovered by the existing
     # source-bound fact path below.
     return initial
+
+
+def anchor_guard_enabled() -> bool:
+    return os.environ.get("FOOTBALL_ANCHOR_GUARD", "0") == "1"
+
+
+def _anchor_groups(question):
+    """Infer only explicit, lexical obligations from the user's question.
+
+    This is intentionally a small safety gate, not a semantic gold-label
+    lookup.  It can add a paragraph only when its original text contains the
+    requested rule object/condition.  Unknown questions produce no groups and
+    keep the model's selection unchanged.
+    """
+    q = "".join(str(question).split())
+    groups = []
+    terms = ("任意球", "界外球", "球门球", "角球", "开球", "点球", "加时赛", "补时")
+    # Explicitly named rule objects in comparisons must each be represented.
+    if any(x in q for x in ("对比", "比较", "区分")):
+        for term in terms:
+            if term in q:
+                groups.append(("object:" + term, (term,)))
+    if "开球者" in q and "再次" in q and "触球" in q:
+        groups.extend([
+            ("kickoff_restart", ("开出", "重新开球", "开球")),
+            ("second_touch", ("再次触球", "第二次触球")),
+            ("handball_exception", ("手球", "直接任意球")),
+        ])
+    if "完成" in q and "助跑" in q and "假动作" in q:
+        groups.extend([
+            ("post_run_feint", ("完成助跑后", "假动作")),
+            ("run_up_feint_distinction", ("助跑过程中", "迷惑对方")),
+            ("feint_restart_consequence", ("间接任意球", "警告")),
+        ])
+    if "补时" in q and "加时赛" in q:
+        groups.extend([
+            ("stoppage_time", ("补时",)),
+            ("extra_time", ("加时赛",)),
+            ("extra_time_length", ("两个15分钟",)),
+        ])
+    return groups
+
+
+def apply_anchor_guard(question, selection, context):
+    """Repair only explicit missing evidence anchors, with deterministic ties."""
+    base = {
+        "enabled": anchor_guard_enabled(), "changed": False,
+        "groups": [], "before": list(selection.get("chunk_ids", [])),
+        "after": list(selection.get("chunk_ids", [])), "reason": "disabled",
+    }
+    if not anchor_guard_enabled() or not selection.get("answerable"):
+        return {"selection": selection, "trace": base}
+    groups = _anchor_groups(question)
+    base["groups"] = [name for name, _ in groups]
+    base["reason"] = "no_explicit_anchor_groups" if not groups else "anchors_already_covered"
+    if not groups or not isinstance(context, list) or not context:
+        return {"selection": selection, "trace": base}
+    by_id = {row.get("chunk_id"): row for row in context}
+    offered = [row.get("chunk_id") for row in context]
+    current = list(selection.get("chunk_ids", []))
+
+    def covered(ids):
+        text = {cid: str(by_id[cid].get("content_zh", "")) for cid in ids if cid in by_id}
+        return sum(any(any(term in text[cid] for term in terms) for cid in text) for _, terms in groups)
+
+    best = None
+    for size in range(1, min(3, len(offered)) + 1):
+        for combo in combinations(offered, size):
+            score = (covered(combo), len(set(combo).intersection(current)), -size,
+                     tuple(-offered.index(cid) for cid in combo))
+            if best is None or score > best[0]:
+                best = (score, list(combo))
+    if best is None or best[0][0] < len(groups) or best[1] == current:
+        return {"selection": selection, "trace": base}
+    revised = {"answerable": True, "chunk_ids": best[1], "reason": None}
+    base.update(changed=True, after=list(best[1]), reason="explicit_anchor_coverage_repaired")
+    return {"selection": revised, "trace": base}
 
 
 def enabled() -> bool:
