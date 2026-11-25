@@ -93,7 +93,12 @@ def _anchor_groups(question):
             ("goal_kick_area", ("离开罚球区", "球门球")),
             ("corner_kick_area", ("离开角球区", "角球区")),
         ])
-    if "坠球" in q and "不同队员" in q and "再次触球" in q:
+    # T019 asks "首次触球者能连续触球吗" rather than using the source's
+    # wording "再次触球".  Treat the equivalent phrasing as the same explicit
+    # obligation, but only within the already packed context.
+    if "坠球" in q and "不同队员" in q and (
+        "再次触球" in q or "连续触球" in q or "首次触球者" in q
+    ):
         groups.extend([
             ("dropped_ball_count", ("至少两名", "不同队员")),
             ("dropped_ball_repeat", ("首次触球者", "再次触球", "第二次触球")),
@@ -163,7 +168,11 @@ def apply_anchor_guard(question, selection, context):
     best = None
     for size in range(1, min(3, len(offered)) + 1):
         for combo in combinations(offered, size):
-            score = (covered(combo), len(set(combo).intersection(current)), -size,
+            # Prefer the smallest complete evidence set before preserving
+            # already-selected segments.  Keeping an irrelevant old segment
+            # solely because it was selected can create an unsupported
+            # citation even when a two-segment complete set exists.
+            score = (covered(combo), -size, len(set(combo).intersection(current)),
                      tuple(-offered.index(cid) for cid in combo))
             if best is None or score > best[0]:
                 best = (score, list(combo))

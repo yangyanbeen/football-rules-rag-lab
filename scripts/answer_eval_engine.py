@@ -18,6 +18,9 @@ def selection_prompt(prompt):
 
 
 def pack(question,evidence,cfg,prompt):
+    if os.environ.get('FOOTBALL_EVIDENCE_SELECT_EXPANDED') == '1':
+        from evidence_selection_candidate import reorder
+        evidence = reorder(question, evidence, cfg['max_context_chunks'])
     selected=[]
     def messages(rows):
         body=[{'chunk_id':r['chunk_id'],'law_number':r['law_number'],'content_zh':r['content_zh'],

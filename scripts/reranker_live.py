@@ -38,7 +38,16 @@ class RerankerRetriever:
         # Control has no score-model invocation; both branches include preparation/output adapter costs.
         if budget:
             d=time.perf_counter_ns();reranker=self.reranker.score(query,ranked[:budget],self.dense.by_id)
-            results=[{k:r[k] for k in ('chunk_id','rank','score')} for r in reranker['results'][:10]]
+            # The frozen policy exposes the top 10.  E39 uses an explicit,
+            # opt-in output expansion for T022 only; leaving the environment
+            # unset preserves the byte-for-byte production/default behavior.
+            try:
+                output_k = int(os.environ.get('FOOTBALL_RERANK_OUTPUT_K', '10'))
+            except ValueError:
+                raise ValueError('FOOTBALL_RERANK_OUTPUT_K must be an integer')
+            if not 1 <= output_k <= len(reranker['results']):
+                raise ValueError('FOOTBALL_RERANK_OUTPUT_K outside reranker result range')
+            results=[{k:r[k] for k in ('chunk_id','rank','score')} for r in reranker['results'][:output_k]]
             end=time.perf_counter_ns();rerank_seconds=(end-d)/1e9;fusion_seconds=(d-c)/1e9
         else:
             reranker=None;results=[dict(r) for r in before[:10]];end=time.perf_counter_ns();rerank_seconds=0.;fusion_seconds=(end-c)/1e9
@@ -78,3 +87,4 @@ class RerankerRetriever:
         except Exception as exc:
             if primary:print('Cleanup additionally failed: '+type(exc).__name__,file=sys.stderr)
             else:raise
+
