@@ -1,6 +1,6 @@
 """Standard-library Task13 configuration, local data import and result contracts."""
 from __future__ import annotations
-import copy,html,json,math,re,subprocess,uuid
+import copy,html,json,math,re,os,subprocess,uuid
 from pathlib import Path
 from answer_eval_core import ROOT,BOUNDARY,REFUSAL,canonical,digest,read,record,now,write_new,config as answer_config
 
@@ -98,13 +98,24 @@ def validate_result(value,question):
                 raise ValueError('Selection audit result differs')
             selected=choose_audited_selection(selected,audit)
         from generation_decision import apply_anchor_guard
-        guarded=apply_anchor_guard(q,selected,value['context'])
-        if guarded['trace']['enabled']:
-            if value.get('selection_anchor_guard')!=guarded['trace']:
+        # Validate against the flag captured by the trace, not the validator's
+        # current process environment.  A live candidate may have enabled the
+        # opt-in anchor guard while the offline scorer intentionally leaves all
+        # feature flags at their defaults.
+        persisted_guard=value.get('selection_anchor_guard')
+        previous_anchor=os.environ.get('FOOTBALL_ANCHOR_GUARD')
+        try:
+            if isinstance(persisted_guard,dict) and 'enabled' in persisted_guard:
+                os.environ['FOOTBALL_ANCHOR_GUARD']='1' if persisted_guard.get('enabled') else '0'
+            guarded=apply_anchor_guard(q,selected,value['context'])
+        finally:
+            if previous_anchor is None: os.environ.pop('FOOTBALL_ANCHOR_GUARD',None)
+            else: os.environ['FOOTBALL_ANCHOR_GUARD']=previous_anchor
+        if persisted_guard is not None:
+            if persisted_guard!=guarded['trace']:
                 raise ValueError('Selection anchor guard trace differs')
-            selected=guarded['selection']
-        elif value.get('selection_anchor_guard') is not None:
-            raise ValueError('Unexpected selection anchor guard trace')
+            if guarded['trace']['enabled']:
+                selected=guarded['selection']
         recovery=value.get('fact_recovery')
         if recovery is not None:
             from source_bound_facts import evaluate
@@ -148,3 +159,4 @@ def render_panel(value):
         blocks.append('<details><summary>'+html.escape(cid+' · 本地编目第'+str(c['catalog_number'])+'组')+'</summary><pre style="white-space:pre-wrap">'+html.escape(r['content_zh'])+'</pre><p><a target="_blank" rel="noopener noreferrer" href="'+html.escape(c['source_url'],quote=True)+'">原始来源</a> · '+html.escape(str(c['source_lines']))+'</p><p>'+html.escape(c['catalog_notice'])+'</p><p>'+html.escape(str(c['source_attribution'])+' · '+str(c['license']))+'</p></details>')
     blocks.append('<p>'+html.escape(BOUNDARY)+'</p>')
     return ''.join(blocks)
+

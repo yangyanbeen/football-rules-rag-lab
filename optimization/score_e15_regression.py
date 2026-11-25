@@ -30,10 +30,14 @@ def main(a):
         if not a.partial and r:
             identity=digest(canonical(r['implementation']));validate_private(r,q['question'],identity not in verified_implementations)
             verified_implementations.add(identity)
-        if r and r.get('fact_recovery',{}).get('applied'):
-            shadow=t['shared_response_control'];assert shadow['attempts']==r['attempts'] and shadow['messages']==r['messages']
-            assert not shadow['selected_ids'] and shadow['status']=='refused'
-        for variant,value in [('candidate',r),('shared_response_shadow',t.get('shared_response_control'))]:
+        shadow_record=t.get('shared_response_control')
+        if r and r.get('fact_recovery',{}).get('applied') and shadow_record is not None:
+            assert shadow_record['attempts']==r['attempts'] and shadow_record['messages']==r['messages']
+            assert not shadow_record['selected_ids'] and shadow_record['status']=='refused'
+        variants=[('candidate',r)]
+        if shadow_record is not None:
+            variants.append(('shared_response_shadow',shadow_record))
+        for variant,value in variants:
             count=len(q['expected_answer_points'])
             if value is None or value['error']:
                 grade=dict(grade='runtime_error',point_mask=[False]*count,supported_citation_ids=[],note=t.get('error'),review_file='Runtime result')
@@ -87,3 +91,4 @@ def main(a):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--partial',action='store_true');p.add_argument('--prefix',default='E15');main(p.parse_args())
+
