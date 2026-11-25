@@ -82,6 +82,21 @@ def validate_result(value,question):
         from answer_json_chat import selection_schema
         selected=validate_attempts(attempts,value['messages'],selection_schema(value['offered_ids'],3),lambda s:parse_selection(s,value['offered_ids'],answer_config()))
         if selected is None:raise ValueError('No completed actual selection')
+        audit=value.get('selection_audit')
+        if audit is not None:
+            from generation_decision import AUDIT_SYSTEM,choose_audited_selection
+            audit_messages=audit.get('prompt_messages')
+            if (audit.get('enabled') is not True or not isinstance(audit_messages,list)
+                    or len(audit_messages)!=2 or audit_messages[0].get('content')!=AUDIT_SYSTEM
+                    or audit_messages[1]!=value['messages'][1]):
+                raise ValueError('Selection audit prompt differs')
+            audited=validate_attempts(
+                audit.get('attempts'),audit_messages,
+                selection_schema(value['offered_ids'],3),
+                lambda s:parse_selection(s,value['offered_ids'],answer_config()))
+            if audited!=audit.get('selection'):
+                raise ValueError('Selection audit result differs')
+            selected=choose_audited_selection(selected,audit)
         recovery=value.get('fact_recovery')
         if recovery is not None:
             from source_bound_facts import evaluate

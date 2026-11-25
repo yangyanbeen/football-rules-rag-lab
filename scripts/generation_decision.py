@@ -8,8 +8,65 @@ No arbitrary fact extraction or unverified answer is added here.
 from __future__ import annotations
 
 import os
+from copy import deepcopy
 
 from answer_eval_engine import selection_prompt
+from answer_eval_core import digest
+
+
+# E31 is deliberately a separate, opt-in pass.  It does not feed the first
+# model's self-justification back into the review prompt: the reviewer sees the
+# same question and evidence, but receives a shorter role-specific instruction.
+# This helps distinguish a genuinely supported multi-part answer from a
+# first-pass selection that merely shares vocabulary with the question.
+AUDIT_SYSTEM = """你是第二道证据审核器。只依据用户问题和证据正文，不相信任何先前选择。先逐项检查问题中的对象、数字、条件、否定、例外和比较两侧；再选择覆盖全部必要要点的最少证据段。只有正文直接支持整个要点才可选；同主题、部分支持或反驳不能算完整支持。证据足够时回答，只有关键要点缺失、冲突或版本无法确认时拒答。最多选择3段。只输出规定JSON。"""
+
+
+def selection_audit_enabled() -> bool:
+    return os.environ.get("FOOTBALL_SELECTION_AUDIT", "0") == "1"
+
+
+def audit_messages(messages):
+    """Build an independent audit prompt without changing the frozen payload."""
+    if not isinstance(messages, list) or len(messages) != 2:
+        raise ValueError("Selection audit requires the frozen two-message prompt")
+    result = deepcopy(messages)
+    result[0] = {**result[0], "content": AUDIT_SYSTEM}
+    return result
+
+
+def run_selection_audit(chat, messages, cfg, parser, schema, request_json):
+    """Run one opt-in second pass and return an auditable record.
+
+    The first selection remains the fallback.  A valid answerable audit result
+    may replace it; an audit refusal never turns an already answered result into
+    a refusal.  Parse failures are recorded and do not alter the answer.
+    """
+    if not selection_audit_enabled():
+        return None
+    audit_input = audit_messages(messages)
+    parsed, attempts, error = request_json(chat, audit_input, cfg, parser, schema)
+    return {
+        "enabled": True,
+        "system_prompt_sha256": digest(AUDIT_SYSTEM.encode("utf-8")),
+        "selection": parsed,
+        "attempts": attempts,
+        "error": error,
+        "prompt_messages": audit_input,
+    }
+
+
+def choose_audited_selection(initial, audit):
+    """Apply the conservative replacement policy for E31."""
+    if not audit or not audit.get("selection"):
+        return initial
+    reviewed = audit["selection"]
+    if reviewed.get("answerable") is True:
+        return reviewed
+    # Never introduce an audit-only refusal regression.  An initial refusal is
+    # still allowed to remain a refusal and may be recovered by the existing
+    # source-bound fact path below.
+    return initial
 
 
 def enabled() -> bool:

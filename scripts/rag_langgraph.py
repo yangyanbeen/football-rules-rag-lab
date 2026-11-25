@@ -253,7 +253,17 @@ class Flow:
         audits.append({'attempt': len(attempts) + 1, 'response': response,
                        'normalized_selection': selection, 'error': None})
         attempts.append({'attempt': len(attempts) + 1, 'chat_calls': self.ops.chat_calls - before, 'outcome': 'accepted'})
-        from generation_decision import decide as apply_generation_decision
+        from generation_decision import (decide as apply_generation_decision,
+                                          run_selection_audit,
+                                          choose_audited_selection)
+        from answer_eval_engine import request_json
+        audit = run_selection_audit(
+            self.ops.chat, state['messages'], self.ops.answer_policy,
+            lambda s: parse_selection(s, state['offered_ids'], self.ops.answer_policy),
+            schema, request_json)
+        if audit is not None:
+            selection = choose_audited_selection(selection, audit)
+            audits.append({'selection_audit': audit})
         decision=apply_generation_decision(state['question'],selection,state['context'],state['messages'])
         update={'attempts': attempts, 'selection_audits': audits, 'retry': False, 'selection': selection}
         if decision['trace']['enabled'] or decision['recovery'] is not None:

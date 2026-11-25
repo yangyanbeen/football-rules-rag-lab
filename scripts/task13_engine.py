@@ -4,7 +4,10 @@ from runtime_observation import mark
 from task13_core import *
 from answer_eval_core import config as answer_config,parse_selection
 from answer_eval_engine import pack,request_json,selection_prompt
-from generation_decision import decide as apply_generation_decision, prompt_for as generation_prompt
+from generation_decision import (decide as apply_generation_decision,
+                                  prompt_for as generation_prompt,
+                                  run_selection_audit,
+                                  choose_audited_selection)
 from citation_catalog_guard import safe_render
 from disciplinary_query_policy import evaluate_suspension_query, refusal_message, PUBLIC_REASON
 from low_memory_runtime import enabled as low_memory, unload_model
@@ -168,6 +171,13 @@ class IntegratedEngine:
                 if low_memory():unload_model(self.chat.base_url,self.answer_cfg['llm'],'answer_after_generation')
                 r['timing']['generation_seconds']=time.perf_counter()-t
             if error:raise ValueError(error)
+            audit = run_selection_audit(
+                self.chat, messages, self.answer_cfg,
+                lambda s: parse_selection(s, r['offered_ids'], self.answer_cfg),
+                selection_schema(r['offered_ids'], 3), request_json)
+            if audit is not None:
+                selection = choose_audited_selection(selection, audit)
+                r['selection_audit'] = audit
             decision=apply_generation_decision(
                 question,selection,context,messages,
                 recovery_allowed=getattr(self,'fact_recovery_allowed',True))

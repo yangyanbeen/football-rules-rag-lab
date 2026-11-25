@@ -93,7 +93,18 @@ class AnswerEngine:
             selection,attempts,error=request_json(self.chat,messages,self.cfg,lambda s:parse_selection(s,r['offered_ids'],self.cfg),selection_schema(r['offered_ids'],self.cfg['max_selected_chunks']))
             r['attempts']=attempts;r['timing']['generation_seconds']=time.perf_counter()-begin
             if error:raise ValueError(error)
-            from generation_decision import decide as apply_generation_decision
+            from generation_decision import (decide as apply_generation_decision,
+                                              run_selection_audit,
+                                              choose_audited_selection)
+            from answer_json_chat import selection_schema
+            audit = run_selection_audit(
+                self.chat, messages, self.cfg,
+                lambda s: parse_selection(s, r['offered_ids'], self.cfg),
+                selection_schema(r['offered_ids'], self.cfg['max_selected_chunks']),
+                request_json)
+            if audit is not None:
+                selection = choose_audited_selection(selection, audit)
+                r['selection_audit'] = audit
             decision=apply_generation_decision(question,selection,context,messages)
             r['generation_decision']=decision['trace']
             recovery=decision['recovery']

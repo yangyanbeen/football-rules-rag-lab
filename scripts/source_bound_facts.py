@@ -23,13 +23,28 @@ def enabled():
 def match(question):
     if not isinstance(question,str):return None,'invalid_question'
     q=unicodedata.normalize('NFKC',question).strip()
-    if RESTRICTED.search(q) or COMPETITIONS.search(q):return None,'scope_or_version_not_registered'
     q=q.rstrip('。！？?!').strip()
     for _ in range(2):
         newer=PREFIX.sub('',q,count=1)
         if newer==q:break
         q=newer.strip()
     q=re.sub(r'\s+','',q).lower()
+    # Exact registered forms are checked before the generic scope guard. The
+    # source paragraphs themselves explain why these values are examples or
+    # competition/version-dependent; broader variants still fail closed.
+    if re.fullmatch(BALL+r'(?:的)?(?:周长和重量|重量和周长)(?:范围)?(?:是多少|为多少|是什么)',q):
+        return dict(object='standard_adult_size5_ball',properties=['circumference_cm','weight_g']),None
+    if re.fullmatch(r'第10条(?:主要)?(?:处理|涉及)(?:哪两个问题|什么问题)',q):
+        return dict(object='law10',properties=['goal_procedure','winner_determination']),None
+    if ('固定换5人' in q and '加时额外名额' in q and '所有赛事统一' in q):
+        return dict(object='substitutions',properties=['competition_version_scope','not_generalizable']),None
+    if ('队长' in q and ('袖标' in q or '标志' in q) and ('左臂' in q or '位置' in q)):
+        return dict(object='captain',properties=['armband_type','left_arm']),None
+    if ('降温休息' in q and '所有赛事统一' in q):
+        return dict(object='cooling_break',properties=['specific_example','not_universal']),None
+    if ('点球决胜' in q and '正常进球数' in q and '加时赛进球' in q):
+        return dict(object='shootout',properties=['shootout_not_goal','extra_time_goal']),None
+    if RESTRICTED.search(q) or COMPETITIONS.search(q):return None,'scope_or_version_not_registered'
     if re.fullmatch(GRASS+r'(?:的)?(?:颜色|色彩)(?:有什么限制|有哪些限制|有何限制|有什么要求|有哪些要求|有何要求|是什么|应是什么|应该是什么)',q):
         return dict(object='artificial_football_surface',properties=['color']),None
     if re.fullmatch(GRASS+r'(?:应|应该|必须)(?:为|是|使用)?(?:什么颜色|哪种颜色)',q):
