@@ -2,6 +2,7 @@
 from __future__ import annotations
 import json,os,re,time
 from answer_eval_core import ROOT,BOUNDARY,REFUSAL,canonical,digest,config,parse_selection,render,parse_grade,normalized,write_new,record
+from version_validity_policy import version_validity_query
 
 
 STRICT_SELECTION_SUFFIX = """
@@ -77,7 +78,9 @@ class AnswerEngine:
           'refusal_reason':None,'error':None,'prompt_utf8_bytes':0,'timing':{'retrieval_seconds':0.,'generation_seconds':0.}}
         try:
             if not isinstance(question,str) or not question.strip() or len(question.encode())>1200:raise ValueError('Invalid or oversize query')
-            if re.search(r'官方|现行|最新|IFAB',question,re.I) and re.search(r'赛季|20\d{2}|规则',question):
+            version_decision=version_validity_query(question)
+            if version_decision:
+                r['version_decision']=version_decision
                 r['refusal_reason']='version_unverified';return r
             if evidence_override is None:
                 packet=self.retriever.query(question,self.cfg['retrieval_method']);r['retrieval']=packet
@@ -155,3 +158,4 @@ def judge(q,p,private_result,chat,path):
     return {'question_id':q['question_id'],'judgment_kind':'AI_not_human','grade':value,'error':error,'trace':record(path),
             'literal_points':[normalized(x) in normalized(quotes) for x in q['expected_answer_points']],
             'literal_conditions':[normalized(x) in normalized(quotes) for x in q['required_conditions']]}
+

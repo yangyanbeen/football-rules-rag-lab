@@ -11,7 +11,7 @@ def main(a):
     history={v['question_id']:v for v in read(ROOT/'optimization/reports/E14_live90_metrics.json')['cases'] if v['variant']=='candidate'}
     corpus={v['chunk_id']:v for v in map(json.loads,(ROOT/'data/processed/rag_chunks_zh.jsonl').read_text('utf8').splitlines())}
     known={}
-    for name in ('E1_selection_prompt','E4_duplicate_repair','E5_A_candidate_window','D036_business_gate','E14_runtime','E15_lifecycle'):
+    for name in ('E1_selection_prompt','E4_duplicate_repair','E5_A_candidate_window','D036_business_gate','E14_runtime','E15_lifecycle','E33_source_review'):
         p=ROOT/'optimization/experiments'/name/'source_reviews.tsv'
         if not p.exists():continue
         for key,grade,bits,ids,note in csv.reader(p.open(encoding='utf8'),delimiter='\t'):

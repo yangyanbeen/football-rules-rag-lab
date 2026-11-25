@@ -17,6 +17,7 @@ from dense_retrieval_eval import normalize_query
 from rrf import SOURCE_FIELDS, fuse
 from task13_core import normalize_question
 from disciplinary_query_policy import evaluate_suspension_query, refusal_message, PUBLIC_REASON
+from version_validity_policy import version_validity_query
 
 CONFIG = ROOT / 'config/langgraph_flow.json'
 POLICY_ERRORS = (ValueError, KeyError, TypeError, OSError, RuntimeError, TimeoutError)
@@ -187,8 +188,9 @@ class Flow:
 
     def version_check(self, state):
         q = state['question']
-        if re.search(r'官方|现行|最新|IFAB', q, re.I) and re.search(r'赛季|20\d{2}|规则', q):
-            return {'status': 'refused', 'reason': 'version_unverified'}
+        decision=version_validity_query(q)
+        if decision:
+            return {'status': 'refused', 'reason': 'version_unverified', 'version_decision': decision}
         return {}
 
     def retrieve(self, state):
@@ -332,3 +334,4 @@ class Flow:
             'events': result['events'], 'wall_ns': time.perf_counter_ns() - started,
             **({'business_decision': result['business_decision']} if result.get('business_decision') else {}),
         }
+

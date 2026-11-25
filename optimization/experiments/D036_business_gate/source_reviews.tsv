@@ -113,3 +113,15 @@ T037|L16-04	correct	111	L16-04	Reuse prior source review for identical question 
 T038|L16-02,L17-01,L16-03	correct	1111	L16-02	Reuse prior source review for identical question and paragraph set; order may differ. 四种直接进入对方球门后判球门球的例子齐全；其他两段谈的是不同重启情形。
 T039|L17-03,L01-07	correct	11	L17-03	Reuse prior source review for identical question and paragraph set; order may differ. 明确静止放在相应角球区，并给出至少9.15米；近似英制换算段不足以支持精确距离。
 T040|L17-05	correct	111	L17-05	Reuse prior source review for identical question and paragraph set; order may differ. 给出其他队员触球前再次触球，按违例地点判守方间接任意球。
+D040|L14-05,L08B-03,L12-02	correct_refusal		-	题目要求确认2026/27官方意外双触球在所有进球与未进球情形都一律重罚；来源明确提示条件不完整，必须拒答。
+D002|L01-03,L01-02	correct	11	L01-03	L01-03逐字给出7.32米内宽和2.44米横梁下沿高度；L01-02是场地尺寸背景，不支持这两个数值。
+D011|L09-01,L09-03,L15-04	correct	111	L09-01	L09-01完整列出希望进攻、直接进球和控球队改变三类后果；其余段不改变该覆盖判断。
+D017|L14-02,L01-06	correct	111	L14-02	L14-02完整给出场内、罚球区外、罚球点后及至少9.15米；L01-06仅为罚球区/弧线背景。
+D023|L12-11,L12-01	correct	11	L12-11	L12-11直接区分严重犯规须在争抢球与暴力行为不局限争抢球；L12-01为接触和力量背景。
+D024|L09-04,L09-02	correct	111	L09-04	L09-04完整支持原重启、后续纪律处罚和重启前纠正决定；L09-02不支持该具体场景。
+T008|L04-02,L04-01,L04-03	correct	11	L04-02	L04-02直接支持双方及裁判区分、客场球衣可在主场使用；L04-01和L04-03未增加所问要点。
+T014|L06-06,L14-02,L06-05	correct	11	L06-06	L06-06直接说明附加助理裁判及其历史批准不等于所有赛事强制配备；其他两段不支持该岗位判断。
+T025|L11-08,L03-04,L12-08	partial	001	L03-04	L03-04只支持技术系统是辅助判定而非取消裁判；所选L11-08和L12-08没有高速摄像机及三维回放证据。
+T029|L13-02,L12-02,L13-05	correct	11	L13-02,L13-05	L13-02直接给出间接任意球竖臂和直接任意球伸臂指方向；L13-05补充间接球信号保持，L12-02不相关。
+T045|L17-02,L16-05	answer_instead_of_refusal		-	题目要求确认2026/27所有比赛守门员超8秒一律无例外判角球；来源包含版本适用范围校核提示，不能据此确认，必须拒答。
+

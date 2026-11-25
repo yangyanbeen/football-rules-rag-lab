@@ -46,9 +46,12 @@ def validate_result(value,question):
     from answer_eval_core import parse_selection
     from citation_catalog_guard import safe_render
     from disciplinary_query_policy import evaluate_suspension_query,refusal_message,PUBLIC_REASON
+    from version_validity_policy import version_validity_query
     cfg=app_config();q=normalize_question(question);corpus=local_corpus()
     decision=evaluate_suspension_query(q)
+    version_decision=version_validity_query(q)
     if value.get('business_decision')!=decision:raise ValueError('Business decision does not match effective query')
+    if value.get('version_decision')!=version_decision:raise ValueError('Version decision does not match effective query')
     if value['profile']!=cfg['version'] or value['question']!=q or value['configuration']!=source_identity():raise ValueError('Integrated result identity differs')
     if not re.fullmatch('[a-f0-9]{32}',value['trace_id']) or value['status'] not in ('answered','refused'):raise ValueError('Invalid request identity or status')
     expected_indexes={n:record(ROOT/cfg[n]/'index_manifest.json') for n in ('dense_index','bm25_index')}
@@ -59,11 +62,14 @@ def validate_result(value,question):
     if not set(value['selected_ids'])<=set(value['offered_ids'])<=set(value['retrieved_ids']):raise ValueError('Unoffered/unretrieved source')
     if (value['status']=='answered')!=bool(value['selected_ids']):raise ValueError('Answer selection differs')
     if value['status']=='answered' and (value['error'] is not None or value['refusal_reason'] is not None):raise ValueError('Failure asserted answer')
-    expected=(refusal_message(decision)+'\n'+BOUNDARY,[]) if decision else safe_render(value['selected_ids'],corpus)
+    expected=(refusal_message(decision)+'\n'+BOUNDARY,[]) if decision else ((REFUSAL+'\n'+BOUNDARY,[]) if version_decision else safe_render(value['selected_ids'],corpus))
     if expected!=(value['answer'],value['citations']):raise ValueError('Answer quote/citation/render differs')
     if decision and (value['status']!='refused' or value['refusal_reason']!=PUBLIC_REASON or value['error'] is not None
                      or any(value[k] for k in ('retrieval','context','messages','attempts','retrieved_ids','offered_ids','selected_ids','prompt_utf8_bytes'))):
         raise ValueError('Business refusal contains retrieval or generation')
+    if version_decision and (value['status']!='refused' or value['refusal_reason']!='version_unverified' or value['error'] is not None
+                             or any(value[k] for k in ('retrieval','context','messages','attempts','retrieved_ids','offered_ids','selected_ids','prompt_utf8_bytes'))):
+        raise ValueError('Version refusal contains retrieval or generation')
     if value['status']=='refused' and (not isinstance(value['refusal_reason'],str) or not value['refusal_reason']):raise ValueError('Missing refusal reason')
     if not value['answer'].endswith(BOUNDARY):raise ValueError('Lost source/version boundary')
     if value['retrieval'] is not None:

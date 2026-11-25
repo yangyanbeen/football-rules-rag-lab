@@ -11,6 +11,7 @@ from generation_decision import (decide as apply_generation_decision,
                                   apply_anchor_guard)
 from citation_catalog_guard import safe_render
 from disciplinary_query_policy import evaluate_suspension_query, refusal_message, PUBLIC_REASON
+from version_validity_policy import version_validity_query
 from low_memory_runtime import enabled as low_memory, unload_model
 
 
@@ -145,8 +146,10 @@ class IntegratedEngine:
                 r.update(business_decision=decision,refusal_reason=PUBLIC_REASON,
                          answer=refusal_message(decision)+'\n'+BOUNDARY)
                 return r
-            if re.search(r'官方|现行|最新|IFAB',question,re.I) and re.search(r'赛季|20\d{2}|规则',question):
-                r['refusal_reason']='version_unverified';return r
+            version_decision=version_validity_query(question)
+            if version_decision:
+                r.update(version_decision=version_decision,refusal_reason='version_unverified')
+                return r
             if low_memory():unload_model(self.chat.base_url,self.answer_cfg['llm'],'answer_before_retrieval')
             self.ensure_retriever()
             t=time.perf_counter()
@@ -204,3 +207,4 @@ class IntegratedEngine:
             r.update(error=type(exc).__name__+': '+str(exc),refusal_reason='runtime_or_validation_error')
         finally:r['timing']['total_seconds']=time.perf_counter()-start
         return r
+
