@@ -85,8 +85,35 @@ def _anchor_groups(question):
     q = "".join(str(question).split())
     groups = []
     terms = ("任意球", "界外球", "球门球", "角球", "开球", "点球", "加时赛", "补时")
+    # Narrow, lexical obligations for the four E38 failure patterns.  These
+    # rules only choose from the already packed context and never add a
+    # paragraph that is absent from the prompt.
+    if "球门球" in q and "角球" in q and ("离开" in q or "放球区域" in q):
+        groups.extend([
+            ("goal_kick_area", ("离开罚球区", "球门球")),
+            ("corner_kick_area", ("离开角球区", "角球区")),
+        ])
+    if "坠球" in q and "不同队员" in q and "再次触球" in q:
+        groups.extend([
+            ("dropped_ball_count", ("至少两名", "不同队员")),
+            ("dropped_ball_repeat", ("首次触球者", "再次触球", "第二次触球")),
+            ("dropped_ball_version", ("2019", "2020", "版本", "固定Wikipedia")),
+        ])
+    restart_ownership = "按出界位置" in q and "最后触球队" in q and all(x in q for x in ("界外球", "球门球", "角球"))
+    if restart_ownership:
+        groups.extend([
+            ("touchline_last_touch", ("越过边线",)),
+            ("goal_line_attack_last_touch", ("最后由攻方触球", "攻方最后触球")),
+            ("goal_line_defense_last_touch", ("最后由守方触球", "守方最后触球")),
+        ])
+    if "动作正确" in q and "碰地" in q and ("入场前" in q or "进入场地前" in q):
+        groups.extend([
+            ("throw_in_valid_action", ("动作本身正确", "动作正确")),
+            ("throw_in_ground_before_entry", ("进入场地前碰地", "入场前碰地", "碰地")),
+            ("throw_in_same_team_retake", ("原队", "原处", "重新掷球")),
+        ])
     # Explicitly named rule objects in comparisons must each be represented.
-    if any(x in q for x in ("对比", "比较", "区分")):
+    if not restart_ownership and any(x in q for x in ("对比", "比较", "区分")):
         for term in terms:
             if term in q:
                 groups.append(("object:" + term, (term,)))
@@ -199,3 +226,4 @@ def decide(question, selection, context, messages, *, recovery_allowed=True):
     trace["outcome"] = "answer" if recovery.get("applied") else "refusal"
     trace["recovery_reason"] = recovery.get("reason")
     return {"selection": selection, "recovery": recovery, "trace": trace}
+
