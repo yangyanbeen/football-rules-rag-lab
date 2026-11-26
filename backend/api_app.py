@@ -19,6 +19,7 @@ from pathlib import Path
 from typing import Any, Iterator
 
 from fastapi import FastAPI, HTTPException, Request, Response
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, Field
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -159,6 +160,15 @@ class SessionCreate(BaseModel):
 
 
 app = FastAPI(title="Football Rules RAG API", version="task13-api-1.0")
+
+
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
+def chat_page() -> HTMLResponse:
+    """Serve the small browser client for the same /chat API boundary."""
+    page = ROOT / "backend" / "static" / "index.html"
+    if not page.is_file():
+        raise HTTPException(status_code=503, detail="browser client is not installed")
+    return HTMLResponse(page.read_text(encoding="utf-8"))
 
 
 @app.middleware("http")

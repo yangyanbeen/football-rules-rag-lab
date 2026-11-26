@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>足球规则知识库</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    body { max-width: 920px; margin: 0 auto; padding: 24px; background: #f5f7fb; color: #182230; }
+    h1 { margin: 0 0 4px; font-size: 24px; } .muted { color: #667085; font-size: 13px; }
+    .bar, .composer, .turn { background: white; border: 1px solid #dfe5ee; border-radius: 12px; padding: 14px; margin-top: 14px; }
+    .bar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    input, textarea, button { font: inherit; } input { flex: 1; min-width: 220px; padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 8px; }
+    textarea { width: 100%; min-height: 76px; resize: vertical; box-sizing: border-box; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; }
+    button { border: 0; border-radius: 8px; padding: 9px 14px; background: #2563eb; color: white; cursor: pointer; }
+    button.secondary { background: #64748b; } button:disabled { opacity: .55; cursor: wait; }
+    .turn strong { display: block; margin-bottom: 8px; } .answer { white-space: pre-wrap; line-height: 1.6; }
+    .cite { color: #475467; font-size: 12px; margin-top: 8px; } #status { margin-left: auto; }
+  </style>
+</head>
+<body>
+  <h1>足球规则知识库</h1>
+  <div class="muted">持久化 Session · 引用回答 · 与 /chat API 使用同一 Worker</div>
+  <div class="bar">
+    <button id="new" class="secondary">新建会话</button>
+    <input id="token" type="password" placeholder="公网部署时填写 API Token（本机可留空）">
+    <span id="status" class="muted">正在连接…</span>
+  </div>
+  <main id="turns"></main>
+  <form id="form" class="composer">
+    <textarea id="question" required placeholder="输入问题，Enter 发送；Shift+Enter 换行"></textarea>
+    <div style="text-align:right;margin-top:8px"><button id="send">发送</button></div>
+  </form>
+  <script>
+    const turns = document.querySelector('#turns'), status = document.querySelector('#status');
+    const question = document.querySelector('#question'), send = document.querySelector('#send');
+    const token = document.querySelector('#token');
+    let session = localStorage.getItem('football_session');
+    const headers = () => token.value ? {'Authorization': 'Bearer ' + token.value, 'Content-Type': 'application/json'} : {'Content-Type': 'application/json'};
+    async function api(path, options={}) { options.headers = {...headers(), ...(options.headers || {})}; const r = await fetch(path, options); if (!r.ok) throw new Error(await r.text()); return r.status === 204 ? null : r.json(); }
+    function addTurn(q, a, citations=[]) { const box=document.createElement('div'); box.className='turn'; box.innerHTML='<strong></strong><div class="answer"></div><div class="cite"></div>'; box.querySelector('strong').textContent='问：'+q; box.querySelector('.answer').textContent=a || ''; box.querySelector('.cite').textContent=citations.length ? '引用：' + citations.join(', ') : ''; turns.appendChild(box); window.scrollTo(0, document.body.scrollHeight); }
+    async function ensureSession() { if (session) return session; const x=await api('/sessions',{method:'POST',body:'{}'}); session=x.session_id; localStorage.setItem('football_session',session); return session; }
+    async function loadHistory() { turns.innerHTML=''; if (!session) return; try { const x=await api('/sessions/'+session); for (const t of x.turns) addTurn(t.question,t.answer); status.textContent='会话 '+session.slice(0,8); } catch (_) { session=null; localStorage.removeItem('football_session'); } }
+    document.querySelector('#new').onclick=async()=>{ session=null; localStorage.removeItem('football_session'); turns.innerHTML=''; await ensureSession(); status.textContent='新会话 '+session.slice(0,8); question.focus(); };
+    document.querySelector('#form').onsubmit=async(e)=>{ e.preventDefault(); const q=question.value.trim(); if(!q) return; send.disabled=true; status.textContent='回答中…'; try { const x=await api('/chat',{method:'POST',body:JSON.stringify({question:q,session_id:await ensureSession()})}); addTurn(q,x.result?.answer || x.result?.error || '未返回答案',x.result?.citations || []); question.value=''; status.textContent='会话 '+session.slice(0,8); } catch(err) { addTurn(q,'请求失败：'+err.message); status.textContent='请求失败'; } finally { send.disabled=false; question.focus(); } };
+    question.addEventListener('keydown',e=>{ if(e.key==='Enter'&&!e.shiftKey){e.preventDefault(); document.querySelector('#form').requestSubmit();} });
+    loadHistory().then(()=>ensureSession().then(()=>{status.textContent='会话 '+session.slice(0,8); question.focus();}));
+  </script>
+</body>
+</html>
