@@ -19,7 +19,9 @@ if (-not (Test-Path -LiteralPath $worker)) { throw "Worker Python not found: $wo
 
 $labels = @()
 foreach ($name in @('dev_40.json','regression_50.json')) {
-    $rows = Get-Content -Raw (Join-Path $root "optimization/datasets/$name") | ConvertFrom-Json
+    # The frozen labels are UTF-8 Chinese JSON; Windows PowerShell otherwise
+    # decodes them with the active ANSI code page and can corrupt the JSON.
+    $rows = Get-Content -Raw -Encoding UTF8 (Join-Path $root "optimization/datasets/$name") | ConvertFrom-Json
     $labels += @($rows)
 }
 $labels = @($labels | Sort-Object @{Expression={ if ($_.question_id -match '^[DT](\d+)$') {[int]$Matches[1]} else {9999} }}, question_id)
@@ -50,11 +52,14 @@ function Set-RunEnvironment {
 function Invoke-DirectWorker([object]$Label,[string]$TracePath) {
     Set-RunEnvironment
     $errPath = "$TracePath.stderr"
+    $stdoutPath = "$TracePath.stdout"
     $before = Get-AvailableMemoryGiB
     $started = Get-Date
     $question = [string]$Label.question
-    & $worker -u -B (Join-Path $root 'scripts/query_task13_audit.py') --question=$question --trace=$TracePath 2> $errPath | Out-Null
-    $exitCode = $LASTEXITCODE
+    # Start-Process keeps benign Python warnings on stderr from being treated
+    # as terminating native-command errors by Windows PowerShell 5.1.
+    $proc = Start-Process -FilePath $worker -ArgumentList @('-u','-B',(Join-Path $root 'scripts/query_task13_audit.py'),("--question=" + $question),("--trace=" + $TracePath)) -WorkingDirectory $root -Wait -PassThru -WindowStyle Hidden -RedirectStandardError $errPath -RedirectStandardOutput $stdoutPath
+    $exitCode = $proc.ExitCode
     $elapsed = ((Get-Date) - $started).TotalSeconds
     $after = Get-AvailableMemoryGiB
     $avail = @($before,$after) | Where-Object { $null -ne $_ }
@@ -68,7 +73,7 @@ function Invoke-DirectWorker([object]$Label,[string]$TracePath) {
             stderr=(Get-Content -Raw $errPath -ErrorAction SilentlyContinue); result=$null
         }
     }
-    $result = Get-Content -Raw -LiteralPath $TracePath | ConvertFrom-Json
+    $result = Get-Content -Raw -Encoding UTF8 -LiteralPath $TracePath | ConvertFrom-Json
     return [ordered]@{
         status=$result.status; error=$result.error; answer=$result.answer; selected_ids=@($result.selected_ids)
         offered_ids=@($result.offered_ids); retrieved_ids=@($result.retrieved_ids); refusal_reason=$result.refusal_reason
@@ -135,4 +140,3 @@ $completed = [ordered]@{status=$manifest.status;completed_at=$manifest.finished_
 $summary = [ordered]@{status=$manifest.status; experiment=$manifest.experiment; variant='candidate'; source_commit=$manifest.source_commit; model=$manifest.model; ollama_version=$manifest.ollama_version; flags=$manifest.flags; total=$labels.Count; completed=$files.Count; files=@($files.Name); generated_at=(Get-Date).ToString('o')}
 ($summary | ConvertTo-Json -Depth 20) + "`n" | Set-Content -LiteralPath (Join-Path $outPath 'summary.json') -Encoding utf8
 $summary | ConvertTo-Json -Depth 5
-

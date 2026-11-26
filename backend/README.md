@@ -1,6 +1,8 @@
 # 后端层
 
-任务二后端是同一 Kotaemon/Gradio Python 进程的推理覆盖层，尚未新增 FastAPI 或独立 REST 服务。
+任务二后端仍保留同一 Kotaemon/Gradio Python 进程的推理覆盖层；本轮新增了一个不改变 RAG
+决策的 FastAPI 传输层，入口见 [`API.md`](API.md)。Gradio 仍是原页面入口，FastAPI 用于长期
+会话和外部客户端，不会绕过 Worker 的检索、引用和拒答校验。
 
 | 文件 | 职责 |
 | --- | --- |
@@ -9,6 +11,7 @@
 | `scripts/football_evidence.py` | 原知识段检索、模型选 ID、完整证据恢复和引用校验 |
 | `config/answer_quality.json` | 模型、上下文和候选数量配置 |
 | `scripts/run_answer_quality_regression.py` | 原已交付开发回归入口，非锁定评测集 |
+| `backend/api_app.py` / `scripts/run_api.py` | `/health`、`/chat`、`/sessions` HTTP 边界与 SQLite 会话存储 |
 
 为保留原数据 manifest 的实现哈希与相对路径，这些脚本本轮仍位于 scripts/。未来迁移为 Python 包时单独增加任务、兼容入口和验收记录。
 
@@ -17,7 +20,7 @@
 
 ## 任务六：生成式RAG B0
 
-新入口使用rag_b0.py接通任务五DenseIndex和本机Qwen中文生成；rag_b0_worker_client.py提供进程边界，避免本机完整UI导入后的HNSW原生异常。每条UI请求启动独立Python问答进程，串行调度；没有新增REST服务。原证据摘录链路和旧应用未改。
+新入口使用rag_b0.py接通任务五DenseIndex和本机Qwen中文生成；rag_b0_worker_client.py提供进程边界，避免本机完整UI导入后的HNSW原生异常。每条UI请求启动独立Python问答进程，串行调度。新增 FastAPI 只封装该 Worker，SQLite 保存会话和最近三轮历史；原证据摘录链路和旧应用未改。
 
 当前配置固定Top5召回、最多1个完整生成证据块、最多1次无效输出重试。回答来源由程序绑定已提供块；数值/格式/重复/残句不通过则拒绝，不能当作完整语义验证。详情及故障记录见docs/RAG_B0.md、reports/TASK_06_DELIVERY.md。
 

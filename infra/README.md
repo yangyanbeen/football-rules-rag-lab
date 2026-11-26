@@ -9,4 +9,7 @@
 - 当前核心安装：`scripts/install_local_runtime.ps1`，本目录独立 Python/虚拟环境；从原锁导出核心依赖，260 + 两个源码包。可选高级/图/开发 extras 不包含。
 - 当前复核：[FRESH_ACCEPTANCE](../docs/FRESH_ACCEPTANCE.md)，新实例 7861；未复用旧虚拟环境或索引数据库，显式复用本机 Ollama 模型服务。
 
-本轮不增加 Docker、远程部署或 CI 模型任务；这些尚未在原任务中完成。
+本轮新增本机 FastAPI/SQLite 运行边界，见 [`backend/API.md`](../backend/API.md)。公网部署仍未宣称完成：
+Ollama、BGE-M3、FAISS/索引和中文语料需要在同一受控 Python 主机或私有模型服务中运行，不能把当前
+Python Worker 直接塞进静态站点/Cloudflare Worker。公网发布前必须提供云主机、HTTPS、鉴权、持久卷、
+模型下载和密钥/防火墙配置；部署清单见 [`PUBLIC_DEPLOYMENT.md`](PUBLIC_DEPLOYMENT.md)。

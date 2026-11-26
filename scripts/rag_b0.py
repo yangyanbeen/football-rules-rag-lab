@@ -4,6 +4,7 @@ from __future__ import annotations
 import html
 import json
 import math
+import os
 import re
 import threading
 import time
@@ -245,7 +246,12 @@ def validate_model_response(response, config):
 
 
 class PinnedChat:
-    def __init__(self, config, base_url='http://127.0.0.1:11434'):
+    def __init__(self, config, base_url=None):
+        # Keep the frozen loopback default, while allowing the API/diagnostic
+        # process to point at another loopback listener when the desktop
+        # Ollama process owns 11434.  This is deliberately limited to local
+        # HTTP by the validation below; it is not a remote model escape hatch.
+        base_url = base_url or os.environ.get('FOOTBALL_OLLAMA_BASE_URL','http://127.0.0.1:11434')
         self.config=config;self.base_url=base_url.rstrip('/')
         parsed=urlsplit(self.base_url)
         if parsed.scheme!='http' or parsed.hostname not in ('127.0.0.1','localhost','::1') or parsed.path or parsed.username or parsed.password or parsed.query or parsed.fragment:
