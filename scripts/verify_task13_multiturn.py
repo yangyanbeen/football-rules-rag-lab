@@ -100,6 +100,17 @@ class ConversationTests(unittest.TestCase):
         self.assertEqual('rewritten', info['outcome'])
         generate.assert_not_called()
 
+    def test_refused_followup_chain_walks_back_to_explicit_subject(self):
+        history = bounded_history([
+            ('人工草坪的颜色有什么限制？', REFUSAL),
+            ('那它的表面通常是什么？', REFUSAL),
+        ])
+        with patch('answer_json_chat.generate') as generate:
+            query, info = resolve_question('那它的材质通常是什么？', history, config())
+        self.assertEqual('人工草坪的材质通常是什么？', query)
+        self.assertEqual('rewritten', info['outcome'])
+        generate.assert_not_called()
+
     def test_topic_change_preserves_the_new_question(self):
         question = '普通场上队员能否戴手套？'
         turns = bounded_history(PREVIOUS)

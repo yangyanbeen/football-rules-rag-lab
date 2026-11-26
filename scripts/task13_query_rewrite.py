@@ -42,6 +42,11 @@ def _subject_from_refused_question(history):
         previous, answer = pair
         if not isinstance(previous, str) or not isinstance(answer, str) or answer.strip():
             continue
+        # A refused follow-up may itself be stored with an empty answer. Do
+        # not mistake its pronoun (``那它的…``) for a new subject; walk back
+        # to the last explicit user object instead.
+        if REFERENCE_PREFIX.match(previous.strip()):
+            continue
         text = QUESTION_INTRO.sub('', previous.strip())
         # Pick the explicit noun phrase immediately before a possessive
         # ``的``.  The suffix is deliberately bounded so this cannot become a
