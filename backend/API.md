@@ -15,6 +15,7 @@ $env:FOOTBALL_OLLAMA_BASE_URL = 'http://127.0.0.1:11434'
 
 Endpoints:
 
+- `GET /` — browser chat client backed by the same `/chat` endpoint.
 - `GET /health` — API, SQLite and model inventory; never generates text.
 - `POST /sessions` — create an isolated session.
 - `GET /sessions/{id}` / `GET /sessions` — inspect persisted session state.
