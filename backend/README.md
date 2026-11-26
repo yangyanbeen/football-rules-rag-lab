@@ -34,4 +34,4 @@ run_dense_retrieval.py复用原索引，只把question_id/question交给检索�
 
 ## 浏览器入口
 
-启动 `scripts/run_api.py` 后，直接打开 `http://127.0.0.1:8080/` 即可进入聊天页面；页面使用同一套 `/chat`、`/sessions` API，不会绕过现有检索、选证和拒答链路。
+启动 `scripts/run_api.py` 后，直接打开 `http://127.0.0.1:8080/` 即可进入聊天页面；页面使用同一套 `/chat`、`/sessions` API，不会绕过现有检索、选证和拒答链路。Windows 可直接运行 `powershell -ExecutionPolicy Bypass -File scripts/start_local_stack.ps1`，它会先检查固定的 Ollama 0.40.16 和 API 监听状态，避免把浏览器错误误判成代理故障。
