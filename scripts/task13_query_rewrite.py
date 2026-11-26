@@ -18,6 +18,7 @@ JSON 输入的 history 是从旧到新的 [用户问题, 助手回答]，questio
 例：上文先问“角球从哪里发？”，再问“站多远？”，question 是“那它可以直接得分吗？”，输出 {"subject":"角球"}。
 例：上文问球门尺寸，question 是“场上普通队员可以戴手套吗？”，输出 {"subject":null}。"""
 REFERENCE_PREFIX = re.compile(r'^(?:那(?:么)?[\s，,：:]*)?(?:它(?:们)?|其(?=中|的))')
+QUESTION_INTRO = re.compile(r'^(?:请(?:你|帮我)?|麻烦(?:你)?|帮我)\s*')
 RESOLVE_REFERENCE = '\n最新提问含有指代。请向前检查用户提出的相关主题，找出能替换这个代词的对象名称，再输出 JSON。'
 SCHEMA = {
     'type': 'object',
@@ -25,6 +26,33 @@ SCHEMA = {
     'required': ['subject'],
     'additionalProperties': False,
 }
+
+
+def _subject_from_refused_question(history):
+    """Recover an explicit object when the previous answer was a refusal.
+
+    A refusal must not be treated as evidence, but its user question still
+    carries the conversation subject.  Keeping this narrow and lexical avoids
+    sending a follow-up such as ``那它的表面呢？`` to an unrelated model topic
+    after the previous turn was refused.
+    """
+    for pair in reversed(history):
+        if not isinstance(pair, (list, tuple)) or len(pair) != 2:
+            continue
+        previous, answer = pair
+        if not isinstance(previous, str) or not isinstance(answer, str) or answer.strip():
+            continue
+        text = QUESTION_INTRO.sub('', previous.strip())
+        # Pick the explicit noun phrase immediately before a possessive
+        # ``的``.  The suffix is deliberately bounded so this cannot become a
+        # free-form answer or include a complete sentence.
+        match = re.search(r'([\u4e00-\u9fffA-Za-z0-9·（）()\-]{2,30})的(?=[\u4e00-\u9fff])', text)
+        if not match:
+            continue
+        subject = match.group(1).strip(' ，,：:')
+        if subject and not re.search(r'[？?。！!；;]', subject):
+            return subject
+    return None
 
 
 def clip(text, limit):
@@ -87,32 +115,37 @@ def resolve_question(question, history, answer_cfg):
         user_input = canonical({'history': history, 'question': question}).decode('utf-8')
         reference = REFERENCE_PREFIX.match(question)
         try:
-            chat = PinnedChat(config)
-            for suffix in ('', RESOLVE_REFERENCE) if reference else ('',):
-                messages = [{'role': 'system', 'content': SYSTEM + suffix}, {'role': 'user', 'content': user_input}]
-                if len(canonical(messages)) > config['input_utf8_byte_budget']:
-                    raise ValueError('Conversation rewrite prompt exceeds its input budget')
-                response = generate(chat, messages, SCHEMA)
-                payload = json.loads(response['message']['content'])
-                if not isinstance(payload, dict) or set(payload) != {'subject'}:
-                    raise ValueError('Invalid subject resolution')
-                subject = payload['subject']
-                if subject is None:
-                    if not reference:
-                        break
-                    continue
-                if not isinstance(subject, str):
-                    raise ValueError('Invalid subject type')
-                subject = subject.strip()
-                if (not subject or len(subject.encode('utf-8')) > 120
-                        or re.search(r'[\r\n?？。；;]', subject) or REFERENCE_PREFIX.match(subject)):
-                    raise ValueError('Invalid subject text')
-                candidate = subject + question[reference.end():] if reference else subject + '：' + question
-                query = normalize_question(candidate)
+            refused_subject = _subject_from_refused_question(history) if reference else None
+            if refused_subject:
+                query = normalize_question(refused_subject + question[reference.end():])
                 outcome = 'rewritten'
-                break
             else:
-                raise ValueError('Conversation reference could not be resolved')
+                chat = PinnedChat(config)
+                for suffix in ('', RESOLVE_REFERENCE) if reference else ('',):
+                    messages = [{'role': 'system', 'content': SYSTEM + suffix}, {'role': 'user', 'content': user_input}]
+                    if len(canonical(messages)) > config['input_utf8_byte_budget']:
+                        raise ValueError('Conversation rewrite prompt exceeds its input budget')
+                    response = generate(chat, messages, SCHEMA)
+                    payload = json.loads(response['message']['content'])
+                    if not isinstance(payload, dict) or set(payload) != {'subject'}:
+                        raise ValueError('Invalid subject resolution')
+                    subject = payload['subject']
+                    if subject is None:
+                        if not reference:
+                            break
+                        continue
+                    if not isinstance(subject, str):
+                        raise ValueError('Invalid subject type')
+                    subject = subject.strip()
+                    if (not subject or len(subject.encode('utf-8')) > 120
+                            or re.search(r'[\r\n?？。；;]', subject) or REFERENCE_PREFIX.match(subject)):
+                        raise ValueError('Invalid subject text')
+                    candidate = subject + question[reference.end():] if reference else subject + '：' + question
+                    query = normalize_question(candidate)
+                    outcome = 'rewritten'
+                    break
+                else:
+                    raise ValueError('Conversation reference could not be resolved')
         except (ValueError, KeyError, TypeError, OSError, RuntimeError, TimeoutError) as exc:
             if getattr(exc, 'retryable', True) is False:
                 raise

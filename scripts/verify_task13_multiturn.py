@@ -92,6 +92,14 @@ class ConversationTests(unittest.TestCase):
         self.assertEqual(2, generate.call_count)
         self.assertEqual((rewritten, 'rewritten'), (query, info['outcome']))
 
+    def test_refusal_keeps_subject_without_treating_refusal_as_evidence(self):
+        history = bounded_history([('人工草坪的颜色有什么限制？', REFUSAL)])
+        with patch('answer_json_chat.generate') as generate:
+            query, info = resolve_question('那它的表面通常是什么？', history, config())
+        self.assertEqual('人工草坪的表面通常是什么？', query)
+        self.assertEqual('rewritten', info['outcome'])
+        generate.assert_not_called()
+
     def test_topic_change_preserves_the_new_question(self):
         question = '普通场上队员能否戴手套？'
         turns = bounded_history(PREVIOUS)

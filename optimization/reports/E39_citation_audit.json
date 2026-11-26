@@ -1,0 +1,1418 @@
+{
+  "run": "E39_fixed90_python",
+  "source_metrics": "optimization/reports/E39_live90_metrics.json",
+  "scope": "逐条引用与原文支持关系；沿用已登记的 source review，不新增模型或专家判断",
+  "supported": 100,
+  "total": 155,
+  "rate": 0.6451612903225806,
+  "unsupported_count": 55,
+  "rows": [
+    {
+      "question_id": "D001",
+      "chunk_id": "L01-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D002",
+      "chunk_id": "L01-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D003",
+      "chunk_id": "L02-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D004",
+      "chunk_id": "L03-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D004",
+      "chunk_id": "L12-10",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D004",
+      "chunk_id": "L12-12",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D005",
+      "chunk_id": "L04-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D005",
+      "chunk_id": "L03-02",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D006",
+      "chunk_id": "L12-14",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D006",
+      "chunk_id": "L05-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D006",
+      "chunk_id": "L09-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D007",
+      "chunk_id": "L06-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D007",
+      "chunk_id": "L11-06",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D008",
+      "chunk_id": "L07-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D008",
+      "chunk_id": "L09-02",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D009",
+      "chunk_id": "L08A-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D009",
+      "chunk_id": "L08A-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D009",
+      "chunk_id": "L13-06",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D010",
+      "chunk_id": "L08B-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D010",
+      "chunk_id": "L08B-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D011",
+      "chunk_id": "L09-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D011",
+      "chunk_id": "L09-03",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D011",
+      "chunk_id": "L08B-04",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D012",
+      "chunk_id": "L10-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D013",
+      "chunk_id": "L11-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D013",
+      "chunk_id": "L12-05",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D014",
+      "chunk_id": "L12-04",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D014",
+      "chunk_id": "L12-03",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D015",
+      "chunk_id": "L15-05",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D015",
+      "chunk_id": "L16-02",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D015",
+      "chunk_id": "L12-05",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D016",
+      "chunk_id": "L13-05",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D017",
+      "chunk_id": "L14-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D017",
+      "chunk_id": "L01-06",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D017",
+      "chunk_id": "L14-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D018",
+      "chunk_id": "L15-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D018",
+      "chunk_id": "L16-04",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D018",
+      "chunk_id": "L16-01",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D019",
+      "chunk_id": "L16-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D019",
+      "chunk_id": "L16-04",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D020",
+      "chunk_id": "L16-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D020",
+      "chunk_id": "L17-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D021",
+      "chunk_id": "L13-05",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D022",
+      "chunk_id": "L17-04",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D022",
+      "chunk_id": "L16-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D023",
+      "chunk_id": "L12-12",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D023",
+      "chunk_id": "L12-01",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D024",
+      "chunk_id": "L09-04",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D025",
+      "chunk_id": "L04-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D025",
+      "chunk_id": "L03-02",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D026",
+      "chunk_id": "L07-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D026",
+      "chunk_id": "L10-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D027",
+      "chunk_id": "L09-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D027",
+      "chunk_id": "L14-04",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D027",
+      "chunk_id": "L15-04",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D028",
+      "chunk_id": "L05-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D028",
+      "chunk_id": "L05-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D028",
+      "chunk_id": "L12-07",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D029",
+      "chunk_id": "L08A-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D030",
+      "chunk_id": "L12-10",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D030",
+      "chunk_id": "L03-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D030",
+      "chunk_id": "L12-12",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D031",
+      "chunk_id": "L02-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "D032",
+      "chunk_id": "L03-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T001",
+      "chunk_id": "L02-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T002",
+      "chunk_id": "L01-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T002",
+      "chunk_id": "L17-03",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T002",
+      "chunk_id": "L01-07",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T003",
+      "chunk_id": "L01-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T004",
+      "chunk_id": "L01-06",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T004",
+      "chunk_id": "L14-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T004",
+      "chunk_id": "L14-04",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T005",
+      "chunk_id": "L03-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T006",
+      "chunk_id": "L03-04",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T006",
+      "chunk_id": "L12-08",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T007",
+      "chunk_id": "L03-02",
+      "directly_supported": false,
+      "grade": "incorrect",
+      "status": "answered"
+    },
+    {
+      "question_id": "T007",
+      "chunk_id": "L11-03",
+      "directly_supported": false,
+      "grade": "incorrect",
+      "status": "answered"
+    },
+    {
+      "question_id": "T007",
+      "chunk_id": "L12-02",
+      "directly_supported": false,
+      "grade": "incorrect",
+      "status": "answered"
+    },
+    {
+      "question_id": "T008",
+      "chunk_id": "L04-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T008",
+      "chunk_id": "L04-01",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T009",
+      "chunk_id": "L04-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T010",
+      "chunk_id": "L05-04",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T010",
+      "chunk_id": "L12-16",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T010",
+      "chunk_id": "L06-02",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T011",
+      "chunk_id": "L05-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T011",
+      "chunk_id": "L05-04",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T011",
+      "chunk_id": "L12-06",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T012",
+      "chunk_id": "L03-04",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T012",
+      "chunk_id": "L06-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T012",
+      "chunk_id": "L06-06",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T013",
+      "chunk_id": "L06-04",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T013",
+      "chunk_id": "L07-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T013",
+      "chunk_id": "L06-02",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T014",
+      "chunk_id": "L06-06",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T014",
+      "chunk_id": "L06-05",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T014",
+      "chunk_id": "L06-04",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T015",
+      "chunk_id": "L07-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T016",
+      "chunk_id": "L07-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T016",
+      "chunk_id": "L07-02",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T017",
+      "chunk_id": "L07-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T017",
+      "chunk_id": "L10-02",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T018",
+      "chunk_id": "L08A-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T019",
+      "chunk_id": "L08B-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T019",
+      "chunk_id": "L08B-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T020",
+      "chunk_id": "L08B-04",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T020",
+      "chunk_id": "L09-03",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T020",
+      "chunk_id": "L14-06",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T021",
+      "chunk_id": "L09-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T021",
+      "chunk_id": "L15-01",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T021",
+      "chunk_id": "L12-15",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T022",
+      "chunk_id": "L17-01",
+      "directly_supported": true,
+      "grade": "partial",
+      "status": "answered"
+    },
+    {
+      "question_id": "T022",
+      "chunk_id": "L16-01",
+      "directly_supported": true,
+      "grade": "partial",
+      "status": "answered"
+    },
+    {
+      "question_id": "T022",
+      "chunk_id": "L17-06",
+      "directly_supported": false,
+      "grade": "partial",
+      "status": "answered"
+    },
+    {
+      "question_id": "T023",
+      "chunk_id": "L10-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T023",
+      "chunk_id": "L07-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T024",
+      "chunk_id": "L11-06",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T025",
+      "chunk_id": "L11-09",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T025",
+      "chunk_id": "L03-04",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T025",
+      "chunk_id": "L12-08",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T026",
+      "chunk_id": "L12-06",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T026",
+      "chunk_id": "L12-15",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T026",
+      "chunk_id": "L12-01",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T027",
+      "chunk_id": "L12-07",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T027",
+      "chunk_id": "L12-11",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T028",
+      "chunk_id": "L12-08",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T029",
+      "chunk_id": "L13-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T029",
+      "chunk_id": "L12-02",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T029",
+      "chunk_id": "L15-05",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T030",
+      "chunk_id": "L01-05",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T030",
+      "chunk_id": "L13-01",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T030",
+      "chunk_id": "L13-05",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T031",
+      "chunk_id": "L13-06",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T031",
+      "chunk_id": "L13-07",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T032",
+      "chunk_id": "L14-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T032",
+      "chunk_id": "L14-05",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T033",
+      "chunk_id": "L14-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T033",
+      "chunk_id": "L14-05",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T034",
+      "chunk_id": "L07-03",
+      "directly_supported": true,
+      "grade": "partial",
+      "status": "answered"
+    },
+    {
+      "question_id": "T034",
+      "chunk_id": "L14-03",
+      "directly_supported": false,
+      "grade": "partial",
+      "status": "answered"
+    },
+    {
+      "question_id": "T034",
+      "chunk_id": "L05-03",
+      "directly_supported": false,
+      "grade": "partial",
+      "status": "answered"
+    },
+    {
+      "question_id": "T035",
+      "chunk_id": "L15-04",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T035",
+      "chunk_id": "L15-05",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T035",
+      "chunk_id": "L15-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T036",
+      "chunk_id": "L15-04",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T037",
+      "chunk_id": "L16-04",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T037",
+      "chunk_id": "L15-05",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T037",
+      "chunk_id": "L12-05",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T038",
+      "chunk_id": "L16-02",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T038",
+      "chunk_id": "L17-01",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T038",
+      "chunk_id": "L16-03",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T039",
+      "chunk_id": "L17-03",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T039",
+      "chunk_id": "L01-07",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T040",
+      "chunk_id": "L17-05",
+      "directly_supported": true,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T040",
+      "chunk_id": "L15-05",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    },
+    {
+      "question_id": "T040",
+      "chunk_id": "L16-04",
+      "directly_supported": false,
+      "grade": "correct",
+      "status": "answered"
+    }
+  ],
+  "by_chunk": {
+    "L01-01": {
+      "total": 2,
+      "supported": 2
+    },
+    "L01-02": {
+      "total": 1,
+      "supported": 1
+    },
+    "L01-03": {
+      "total": 1,
+      "supported": 1
+    },
+    "L01-05": {
+      "total": 1,
+      "supported": 1
+    },
+    "L01-06": {
+      "total": 2,
+      "supported": 2
+    },
+    "L01-07": {
+      "total": 2,
+      "supported": 0
+    },
+    "L02-01": {
+      "total": 1,
+      "supported": 1
+    },
+    "L02-02": {
+      "total": 2,
+      "supported": 2
+    },
+    "L03-01": {
+      "total": 3,
+      "supported": 3
+    },
+    "L03-02": {
+      "total": 3,
+      "supported": 0
+    },
+    "L03-03": {
+      "total": 1,
+      "supported": 1
+    },
+    "L03-04": {
+      "total": 3,
+      "supported": 3
+    },
+    "L04-01": {
+      "total": 3,
+      "supported": 2
+    },
+    "L04-02": {
+      "total": 1,
+      "supported": 1
+    },
+    "L04-03": {
+      "total": 1,
+      "supported": 1
+    },
+    "L05-01": {
+      "total": 1,
+      "supported": 1
+    },
+    "L05-02": {
+      "total": 1,
+      "supported": 1
+    },
+    "L05-03": {
+      "total": 3,
+      "supported": 2
+    },
+    "L05-04": {
+      "total": 2,
+      "supported": 1
+    },
+    "L06-01": {
+      "total": 1,
+      "supported": 1
+    },
+    "L06-02": {
+      "total": 3,
+      "supported": 1
+    },
+    "L06-04": {
+      "total": 2,
+      "supported": 1
+    },
+    "L06-05": {
+      "total": 1,
+      "supported": 0
+    },
+    "L06-06": {
+      "total": 2,
+      "supported": 2
+    },
+    "L07-01": {
+      "total": 4,
+      "supported": 4
+    },
+    "L07-02": {
+      "total": 2,
+      "supported": 1
+    },
+    "L07-03": {
+      "total": 3,
+      "supported": 3
+    },
+    "L08A-01": {
+      "total": 1,
+      "supported": 1
+    },
+    "L08A-02": {
+      "total": 1,
+      "supported": 1
+    },
+    "L08A-03": {
+      "total": 2,
+      "supported": 2
+    },
+    "L08B-02": {
+      "total": 2,
+      "supported": 2
+    },
+    "L08B-03": {
+      "total": 2,
+      "supported": 2
+    },
+    "L08B-04": {
+      "total": 2,
+      "supported": 2
+    },
+    "L09-01": {
+      "total": 1,
+      "supported": 1
+    },
+    "L09-02": {
+      "total": 4,
+      "supported": 3
+    },
+    "L09-03": {
+      "total": 2,
+      "supported": 0
+    },
+    "L09-04": {
+      "total": 1,
+      "supported": 1
+    },
+    "L10-01": {
+      "total": 1,
+      "supported": 1
+    },
+    "L10-02": {
+      "total": 3,
+      "supported": 2
+    },
+    "L11-01": {
+      "total": 1,
+      "supported": 1
+    },
+    "L11-03": {
+      "total": 1,
+      "supported": 0
+    },
+    "L11-06": {
+      "total": 2,
+      "supported": 1
+    },
+    "L11-09": {
+      "total": 1,
+      "supported": 1
+    },
+    "L12-01": {
+      "total": 2,
+      "supported": 0
+    },
+    "L12-02": {
+      "total": 2,
+      "supported": 0
+    },
+    "L12-03": {
+      "total": 1,
+      "supported": 0
+    },
+    "L12-04": {
+      "total": 1,
+      "supported": 1
+    },
+    "L12-05": {
+      "total": 3,
+      "supported": 1
+    },
+    "L12-06": {
+      "total": 2,
+      "supported": 1
+    },
+    "L12-07": {
+      "total": 2,
+      "supported": 2
+    },
+    "L12-08": {
+      "total": 3,
+      "supported": 1
+    },
+    "L12-10": {
+      "total": 2,
+      "supported": 2
+    },
+    "L12-11": {
+      "total": 1,
+      "supported": 1
+    },
+    "L12-12": {
+      "total": 3,
+      "supported": 1
+    },
+    "L12-14": {
+      "total": 1,
+      "supported": 1
+    },
+    "L12-15": {
+      "total": 2,
+      "supported": 1
+    },
+    "L12-16": {
+      "total": 1,
+      "supported": 0
+    },
+    "L13-01": {
+      "total": 1,
+      "supported": 0
+    },
+    "L13-02": {
+      "total": 1,
+      "supported": 1
+    },
+    "L13-05": {
+      "total": 3,
+      "supported": 2
+    },
+    "L13-06": {
+      "total": 2,
+      "supported": 0
+    },
+    "L13-07": {
+      "total": 1,
+      "supported": 1
+    },
+    "L14-02": {
+      "total": 2,
+      "supported": 2
+    },
+    "L14-03": {
+      "total": 4,
+      "supported": 3
+    },
+    "L14-04": {
+      "total": 2,
+      "supported": 1
+    },
+    "L14-05": {
+      "total": 2,
+      "supported": 2
+    },
+    "L14-06": {
+      "total": 1,
+      "supported": 0
+    },
+    "L15-01": {
+      "total": 2,
+      "supported": 2
+    },
+    "L15-02": {
+      "total": 1,
+      "supported": 1
+    },
+    "L15-04": {
+      "total": 3,
+      "supported": 1
+    },
+    "L15-05": {
+      "total": 5,
+      "supported": 1
+    },
+    "L16-01": {
+      "total": 3,
+      "supported": 2
+    },
+    "L16-02": {
+      "total": 2,
+      "supported": 1
+    },
+    "L16-03": {
+      "total": 3,
+      "supported": 2
+    },
+    "L16-04": {
+      "total": 4,
+      "supported": 1
+    },
+    "L17-01": {
+      "total": 3,
+      "supported": 2
+    },
+    "L17-03": {
+      "total": 2,
+      "supported": 1
+    },
+    "L17-04": {
+      "total": 1,
+      "supported": 1
+    },
+    "L17-05": {
+      "total": 1,
+      "supported": 1
+    },
+    "L17-06": {
+      "total": 1,
+      "supported": 0
+    }
+  }
+}
